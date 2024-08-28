@@ -1,0 +1,361 @@
+\doxysection{DCL\+::CQuad\+Tree\+Node Class Reference}
+\hypertarget{class_d_c_l_1_1_c_quad_tree_node}{}\label{class_d_c_l_1_1_c_quad_tree_node}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+
+
+A node used by the \doxylink{class_d_c_l_1_1_c_quad_tree}{CQuad\+Tree} class.  
+
+
+
+
+{\ttfamily \#include $<$Quad\+Tree\+Node.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9}{Child\+Node}} \{ \newline
+\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9ab7ce9781da2e253810e1cb3097cabe31}{BL}}
+, \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9af3dab5420ed28f3f65c3cb2c8ecf38b2}{BR}}
+, \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9ad3a52ece1e612f5aff621fc03172f985}{TL}}
+, \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9a74dec8ad00bf3dbb0f2b613cd0d218b2}{TR}}
+, \newline
+{\bfseries NONE}
+ \}
+\begin{DoxyCompactList}\small\item\em Used for accessing child nodes based upon their location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a964d66ce6b82183419d83696fbeb9f5e}{CQuad\+Tree\+Node}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_rect}{CRect}} \&rect\+Region, \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}} \texorpdfstring{$\ast$}{*}p\+Parent\+Node, \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree}{CQuad\+Tree}} \texorpdfstring{$\ast$}{*}p\+Quad\+Tree)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_ae2111faa5414f60358be8d046aeb7e7c}{\texorpdfstring{$\sim$}{\string~}\+CQuad\+Tree\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a94375b17a94e8e6b0ccdc7f1973472eb}{has\+Child\+Node}} (\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9}{Child\+Node}} child\+Node) const
+\begin{DoxyCompactList}\small\item\em Debug renders this node and it\textquotesingle{}s child nodes\textquotesingle{}, node boundaries. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a81bcf0ce165c9758efe58980d2a483ea}{has\+Any\+Child\+Nodes}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns whether this node has any child nodes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_abfb86cea18141fba2f1454a9a508868c}{has\+Entities\+In\+This\+And\+All\+Children}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns whether this node and all it\textquotesingle{}s children have any entities within. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a581f00573e76ad8869541f6320a1d207}{create\+Child\+Node}} (\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9}{Child\+Node}} child\+Node)
+\begin{DoxyCompactList}\small\item\em Creates the specified child node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_rect}{CRect}} \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a48a5c9b6a26e96fd1b2152406c20a024}{compute\+Child\+Node\+Region}} (\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9}{Child\+Node}} child\+Node) const
+\begin{DoxyCompactList}\small\item\em Calculates and returns a child\textquotesingle{}s region. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a89ee664d569af05db057f86a5017908b}{add\+Entity}} (\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_entity}{CQuad\+Tree\+Entity}} \texorpdfstring{$\ast$}{*}p\+Entity)
+\begin{DoxyCompactList}\small\item\em Adds an entity into this node, or it\textquotesingle{}s children. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_aac4758d56368b19263cc266becf851dc}{remove\+Entity}} (\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_entity}{CQuad\+Tree\+Entity}} \texorpdfstring{$\ast$}{*}p\+Entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from this node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a2ccccdeafdec84ed27032ef32396ff28}{get\+Nodes\+With\+Entities}} (std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \&vec\+Nodes)
+\begin{DoxyCompactList}\small\item\em Adds nodes to a vector of CQuad\+Tree\+Nodes which have entities in them. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_ace2178c87efa601cb587e8b04a97ec50}{get\+Nodes\+With\+Entities\+Which\+Intersect}} (std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \&vec\+Nodes, const \mbox{\hyperlink{class_d_c_l_1_1_c_rect}{CRect}} \&rect)
+\begin{DoxyCompactList}\small\item\em Adds nodes to a vector of CQuad\+Tree\+Nodes which intersect with the given \doxylink{class_d_c_l_1_1_c_rect}{CRect} and have entities. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_ac75e8c509b5a8fc11f852d76d078e3c3}{get\+Max\+Node\+Depth}} (unsigned int \&ui\+Max\+Node\+Depth)
+\begin{DoxyCompactList}\small\item\em Go through all children and if their depth is greater, increases given ui\+Max\+Node\+Depth. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a0f80f21f4f783bcf161a5c246e333019}{CQuad\+Tree}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A node used by the \doxylink{class_d_c_l_1_1_c_quad_tree}{CQuad\+Tree} class. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8h_source_l00021}{21}} of file \mbox{\hyperlink{_quad_tree_node_8h_source}{Quad\+Tree\+Node.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!ChildNode@{ChildNode}}
+\index{ChildNode@{ChildNode}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{ChildNode}{ChildNode}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9} 
+enum \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9}{DCL\+::\+CQuad\+Tree\+Node\+::\+Child\+Node}}}
+
+
+
+Used for accessing child nodes based upon their location. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BL@{BL}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!BL@{BL}}}\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9ab7ce9781da2e253810e1cb3097cabe31}\label{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9} 
+BL&Bottom left child node. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BR@{BR}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!BR@{BR}}}\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9af3dab5420ed28f3f65c3cb2c8ecf38b2}\label{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9} 
+BR&Bottom right child node. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TL@{TL}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!TL@{TL}}}\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9ad3a52ece1e612f5aff621fc03172f985}\label{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9} 
+TL&Top left child node. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TR@{TR}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!TR@{TR}}}\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9a74dec8ad00bf3dbb0f2b613cd0d218b2}\label{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9} 
+TR&Top right child node. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8h_source_l00026}{26}} of file \mbox{\hyperlink{_quad_tree_node_8h_source}{Quad\+Tree\+Node.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a964d66ce6b82183419d83696fbeb9f5e}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!CQuadTreeNode@{CQuadTreeNode}}
+\index{CQuadTreeNode@{CQuadTreeNode}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{CQuadTreeNode()}{CQuadTreeNode()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_a964d66ce6b82183419d83696fbeb9f5e} 
+DCL\+::\+CQuad\+Tree\+Node\+::\+CQuad\+Tree\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_rect}{CRect}} \&}]{rect\+Region}{, }\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}} \texorpdfstring{$\ast$}{*}}]{p\+Parent\+Node}{, }\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree}{CQuad\+Tree}} \texorpdfstring{$\ast$}{*}}]{p\+Quad\+Tree}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect\+Region} & The 2D area/region which this node represents. \\
+\hline
+{\em p\+Parent\+Node} & A pointer to this node\textquotesingle{}s parent node. However, if this node is to represent the root node, this will be 0. \\
+\hline
+{\em p\+Quad\+Tree} & The quad tree which owns this node\\
+\hline
+\end{DoxyParams}
+Sets up the node to represent the given region within the 2D world, with no child nodes. p\+Parent\+Node is a pointer to this node\textquotesingle{}s parent node. However, if this node is to represent the root node, this will be 0. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_ae2111faa5414f60358be8d046aeb7e7c}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!````~CQuadTreeNode@{\texorpdfstring{$\sim$}{\string~}CQuadTreeNode}}
+\index{````~CQuadTreeNode@{\texorpdfstring{$\sim$}{\string~}CQuadTreeNode}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CQuadTreeNode()}{\string~CQuadTreeNode()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_ae2111faa5414f60358be8d046aeb7e7c} 
+DCL\+::\+CQuad\+Tree\+Node\+::\texorpdfstring{$\sim$}{\string~}\+CQuad\+Tree\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Removes all child nodes Although this obviously removes the entities from the nodes, because the nodes themselves no longer exist, this does NOT delete the entity pointers. They are stored in the \doxylink{class_d_c_l_1_1_c_quad_tree}{CQuad\+Tree}\textquotesingle{}s \+\_\+mmap\+Entities hashmap. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a89ee664d569af05db057f86a5017908b}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!addEntity@{addEntity}}
+\index{addEntity@{addEntity}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{addEntity()}{addEntity()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_a89ee664d569af05db057f86a5017908b} 
+void DCL\+::\+CQuad\+Tree\+Node\+::add\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_entity}{CQuad\+Tree\+Entity}} \texorpdfstring{$\ast$}{*}}]{p\+Entity}{}\end{DoxyParamCaption})}
+
+
+
+Adds an entity into this node, or it\textquotesingle{}s children. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Entity} & A pointer to the entity to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00196}{196}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a48a5c9b6a26e96fd1b2152406c20a024}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!computeChildNodeRegion@{computeChildNodeRegion}}
+\index{computeChildNodeRegion@{computeChildNodeRegion}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{computeChildNodeRegion()}{computeChildNodeRegion()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_a48a5c9b6a26e96fd1b2152406c20a024} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_rect}{CRect}} DCL\+::\+CQuad\+Tree\+Node\+::compute\+Child\+Node\+Region (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9}{Child\+Node}}}]{child\+Node}{}\end{DoxyParamCaption}) const}
+
+
+
+Calculates and returns a child\textquotesingle{}s region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em child\+Node} & A Child\+Node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_d_c_l_1_1_c_rect}{CRect} representing the node\textquotesingle{}s region. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a581f00573e76ad8869541f6320a1d207}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!createChildNode@{createChildNode}}
+\index{createChildNode@{createChildNode}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{createChildNode()}{createChildNode()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_a581f00573e76ad8869541f6320a1d207} 
+void DCL\+::\+CQuad\+Tree\+Node\+::create\+Child\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9}{Child\+Node}}}]{child\+Node}{}\end{DoxyParamCaption})}
+
+
+
+Creates the specified child node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em child\+Node} & A Child\+Node\\
+\hline
+\end{DoxyParams}
+If the node already exists, this does nothing. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_ac75e8c509b5a8fc11f852d76d078e3c3}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!getMaxNodeDepth@{getMaxNodeDepth}}
+\index{getMaxNodeDepth@{getMaxNodeDepth}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{getMaxNodeDepth()}{getMaxNodeDepth()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_ac75e8c509b5a8fc11f852d76d078e3c3} 
+void DCL\+::\+CQuad\+Tree\+Node\+::get\+Max\+Node\+Depth (\begin{DoxyParamCaption}\item[{unsigned int \&}]{ui\+Max\+Node\+Depth}{}\end{DoxyParamCaption})}
+
+
+
+Go through all children and if their depth is greater, increases given ui\+Max\+Node\+Depth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\+Max\+Node\+Depth} & Will hold maximum node depth \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00350}{350}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a2ccccdeafdec84ed27032ef32396ff28}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!getNodesWithEntities@{getNodesWithEntities}}
+\index{getNodesWithEntities@{getNodesWithEntities}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{getNodesWithEntities()}{getNodesWithEntities()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_a2ccccdeafdec84ed27032ef32396ff28} 
+void DCL\+::\+CQuad\+Tree\+Node\+::get\+Nodes\+With\+Entities (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \&}]{vec\+Nodes}{}\end{DoxyParamCaption})}
+
+
+
+Adds nodes to a vector of CQuad\+Tree\+Nodes which have entities in them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec\+Nodes} & A vector of \doxylink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node} pointers which have entities within them \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00301}{301}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_ace2178c87efa601cb587e8b04a97ec50}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!getNodesWithEntitiesWhichIntersect@{getNodesWithEntitiesWhichIntersect}}
+\index{getNodesWithEntitiesWhichIntersect@{getNodesWithEntitiesWhichIntersect}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{getNodesWithEntitiesWhichIntersect()}{getNodesWithEntitiesWhichIntersect()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_ace2178c87efa601cb587e8b04a97ec50} 
+void DCL\+::\+CQuad\+Tree\+Node\+::get\+Nodes\+With\+Entities\+Which\+Intersect (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \&}]{vec\+Nodes}{, }\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_rect}{CRect}} \&}]{rect}{}\end{DoxyParamCaption})}
+
+
+
+Adds nodes to a vector of CQuad\+Tree\+Nodes which intersect with the given \doxylink{class_d_c_l_1_1_c_rect}{CRect} and have entities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec\+Nodes} & A vector of \doxylink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node} pointers which have entities within them and intersect with the given AABB \\
+\hline
+{\em rect} & The \doxylink{class_d_c_l_1_1_c_rect}{CRect} to use for the test. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00324}{324}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a81bcf0ce165c9758efe58980d2a483ea}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!hasAnyChildNodes@{hasAnyChildNodes}}
+\index{hasAnyChildNodes@{hasAnyChildNodes}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{hasAnyChildNodes()}{hasAnyChildNodes()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_a81bcf0ce165c9758efe58980d2a483ea} 
+bool DCL\+::\+CQuad\+Tree\+Node\+::has\+Any\+Child\+Nodes (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns whether this node has any child nodes. 
+
+\begin{DoxyReturn}{Returns}
+Whether this node has any child nodes 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a94375b17a94e8e6b0ccdc7f1973472eb}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!hasChildNode@{hasChildNode}}
+\index{hasChildNode@{hasChildNode}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{hasChildNode()}{hasChildNode()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_a94375b17a94e8e6b0ccdc7f1973472eb} 
+bool DCL\+::\+CQuad\+Tree\+Node\+::has\+Child\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node_a9e26268f6f4e36661f1e2bdc94c4f8a9}{Child\+Node}}}]{child\+Node}{}\end{DoxyParamCaption}) const}
+
+
+
+Debug renders this node and it\textquotesingle{}s child nodes\textquotesingle{}, node boundaries. 
+
+p\+Line is the CResource\+Line object which is being used to add vertices to be rendered vertex is the vertex object we\textquotesingle{}re using to add vertices using the p\+Line object.
+
+Debug renders this node and it\textquotesingle{}s child nodes\textquotesingle{} entities
+
+p\+Line is the CResource\+Line object which is being used to add vertices to be rendered
+
+Returns true if this node has the specified child node
+
+
+\begin{DoxyParams}{Parameters}
+{\em child\+Node} & A Child\+Node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this node has the specified child node, else false. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_abfb86cea18141fba2f1454a9a508868c}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!hasEntitiesInThisAndAllChildren@{hasEntitiesInThisAndAllChildren}}
+\index{hasEntitiesInThisAndAllChildren@{hasEntitiesInThisAndAllChildren}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{hasEntitiesInThisAndAllChildren()}{hasEntitiesInThisAndAllChildren()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_abfb86cea18141fba2f1454a9a508868c} 
+bool DCL\+::\+CQuad\+Tree\+Node\+::has\+Entities\+In\+This\+And\+All\+Children (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns whether this node and all it\textquotesingle{}s children have any entities within. 
+
+\begin{DoxyReturn}{Returns}
+Whether this node and all it\textquotesingle{}s children have any entities within 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_aac4758d56368b19263cc266becf851dc}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!removeEntity@{removeEntity}}
+\index{removeEntity@{removeEntity}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{removeEntity()}{removeEntity()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_aac4758d56368b19263cc266becf851dc} 
+void DCL\+::\+CQuad\+Tree\+Node\+::remove\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_entity}{CQuad\+Tree\+Entity}} \texorpdfstring{$\ast$}{*}}]{p\+Entity}{}\end{DoxyParamCaption})}
+
+
+
+Removes an entity from this node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Entity} & A pointer to the entity to remove\\
+\hline
+\end{DoxyParams}
+If the entity couldn\textquotesingle{}t be found, an exception occurs 
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8cpp_source_l00292}{292}} of file \mbox{\hyperlink{_quad_tree_node_8cpp_source}{Quad\+Tree\+Node.\+cpp}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_node_a0f80f21f4f783bcf161a5c246e333019}\index{DCL::CQuadTreeNode@{DCL::CQuadTreeNode}!CQuadTree@{CQuadTree}}
+\index{CQuadTree@{CQuadTree}!DCL::CQuadTreeNode@{DCL::CQuadTreeNode}}
+\doxysubsubsection{\texorpdfstring{CQuadTree}{CQuadTree}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_node_a0f80f21f4f783bcf161a5c246e333019} 
+friend class \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree}{CQuad\+Tree}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_node_8h_source_l00023}{23}} of file \mbox{\hyperlink{_quad_tree_node_8h_source}{Quad\+Tree\+Node.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Spatial\+Partitioning/\mbox{\hyperlink{_quad_tree_node_8h}{Quad\+Tree\+Node.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Spatial\+Partitioning/Quad\+Tree\+Node.\+cpp\end{DoxyCompactItemize}

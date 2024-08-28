@@ -1,0 +1,294 @@
+\doxysection{DCL\+::CColouruc Class Reference}
+\hypertarget{class_d_c_l_1_1_c_colouruc}{}\label{class_d_c_l_1_1_c_colouruc}\index{DCL::CColouruc@{DCL::CColouruc}}
+
+
+Used to represent a colour using an unsigned char for each colour component RGBA, totalling 4 bytes (1 byte per unsigned char \texorpdfstring{$\ast$}{*} 4 components)  
+
+
+
+
+{\ttfamily \#include $<$Colouruc.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_af9a85b9f52eec0be176715fd2daba77d}{CColouruc}} ()
+\begin{DoxyCompactList}\small\item\em Constructor, sets to default values (white with full alpha) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_a556fbb9436c56f1608637a2f0c308905}{CColouruc}} (unsigned char uc\+Red, unsigned char uc\+Green, unsigned char uc\+Blue, unsigned char uc\+Alpha)
+\begin{DoxyCompactList}\small\item\em Constructor, sets to parsed values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_a9f7370bc9c9455b840087df076347dd8}{set}} (unsigned char uc\+Red, unsigned char uc\+Green, unsigned char uc\+Blue, unsigned char uc\+Alpha)
+\begin{DoxyCompactList}\small\item\em Sets the colour to the given values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_a9c5a364251f16bee85c3f6f69c22c527}{set\+From\+HSB}} (float f\+Hue\+Amount, float f\+Saturation=1.\+0f, float f\+Brightness=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Sets this colour to RGB using the given the HSB (Hue, Saturation and Brightness) values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_a767129ecdfbcd68bd759fb678b345706}{get\+HSB}} (float \&f\+Hue, float \&f\+Saturation, float \&f\+Brightness) const
+\begin{DoxyCompactList}\small\item\em From this colour in RGBA format, computes and sets the passed variables to hold the HSB (Hue, saturation and brightness values) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colouruc}{CColouruc}} \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_a56b81aecbdafb2b64d5bb587eee93dc9}{interpolate}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc}{CColouruc}} other, float f\+Value) const
+\begin{DoxyCompactList}\small\item\em Interpolates between this colour and the one given by the given float and returns the new colour. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_a0e0a5b7c02155bd39b66aa19f3ab1646}{operator==}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc}{CColouruc}} \&col)
+\begin{DoxyCompactList}\small\item\em Overload the == operator to compare colours. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colouruc}{CColouruc}} \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_ae715bd9574b23e0efbd365bd7f2170b7}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc}{CColouruc}} \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \texorpdfstring{$\ast$}{*} operator to multiply two colours together. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_a73651277b667562fa83762b62653991c}{red}}
+\begin{DoxyCompactList}\small\item\em Red colour between 0 and 255. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_a75cfd3830cc4bdfe90d68013baec609a}{green}}
+\begin{DoxyCompactList}\small\item\em Green colour between 0 and 255. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_ab2296924a13b6b286ceefb8f941fc01b}{blue}}
+\begin{DoxyCompactList}\small\item\em Blue colour between 0 and 255. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc_ad648687e9f489cf4522c4d7423be38d4}{alpha}}
+\begin{DoxyCompactList}\small\item\em Alpha colour between 0 and 255. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to represent a colour using an unsigned char for each colour component RGBA, totalling 4 bytes (1 byte per unsigned char \texorpdfstring{$\ast$}{*} 4 components) 
+
+Definition at line \mbox{\hyperlink{_colouruc_8h_source_l00012}{12}} of file \mbox{\hyperlink{_colouruc_8h_source}{Colouruc.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_colouruc_af9a85b9f52eec0be176715fd2daba77d}\index{DCL::CColouruc@{DCL::CColouruc}!CColouruc@{CColouruc}}
+\index{CColouruc@{CColouruc}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{CColouruc()}{CColouruc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_af9a85b9f52eec0be176715fd2daba77d} 
+DCL\+::\+CColouruc\+::\+CColouruc (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor, sets to default values (white with full alpha) 
+
+
+
+Definition at line \mbox{\hyperlink{_colouruc_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_colouruc_8cpp_source}{Colouruc.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colouruc_a556fbb9436c56f1608637a2f0c308905}\index{DCL::CColouruc@{DCL::CColouruc}!CColouruc@{CColouruc}}
+\index{CColouruc@{CColouruc}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{CColouruc()}{CColouruc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_a556fbb9436c56f1608637a2f0c308905} 
+DCL\+::\+CColouruc\+::\+CColouruc (\begin{DoxyParamCaption}\item[{unsigned char}]{uc\+Red}{, }\item[{unsigned char}]{uc\+Green}{, }\item[{unsigned char}]{uc\+Blue}{, }\item[{unsigned char}]{uc\+Alpha}{}\end{DoxyParamCaption})}
+
+
+
+Constructor, sets to parsed values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Red} & A value between 0 and 255 representing the intensity of the red component of this colour. \\
+\hline
+{\em uc\+Green} & A value between 0 and 255 representing the intensity of the green component of this colour. \\
+\hline
+{\em uc\+Blue} & A value between 0 and 255 representing the intensity of the blue component of this colour. \\
+\hline
+{\em uc\+Alpha} & A value between 0 and 255 representing the intensity of the alpha component of this colour. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_colouruc_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_colouruc_8cpp_source}{Colouruc.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_colouruc_a767129ecdfbcd68bd759fb678b345706}\index{DCL::CColouruc@{DCL::CColouruc}!getHSB@{getHSB}}
+\index{getHSB@{getHSB}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{getHSB()}{getHSB()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_a767129ecdfbcd68bd759fb678b345706} 
+void DCL\+::\+CColouruc\+::get\+HSB (\begin{DoxyParamCaption}\item[{float \&}]{f\+Hue}{, }\item[{float \&}]{f\+Saturation}{, }\item[{float \&}]{f\+Brightness}{}\end{DoxyParamCaption}) const}
+
+
+
+From this colour in RGBA format, computes and sets the passed variables to hold the HSB (Hue, saturation and brightness values) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Hue} & A value between 0.\+0f and 1.\+0f representing the hue. \\
+\hline
+{\em f\+Saturation} & A value between 0.\+0f and 1.\+0f representing the saturation. \\
+\hline
+{\em f\+Brightness} & A value between 0.\+0f and 1.\+0f representing the brightness. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_colouruc_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{_colouruc_8cpp_source}{Colouruc.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colouruc_a56b81aecbdafb2b64d5bb587eee93dc9}\index{DCL::CColouruc@{DCL::CColouruc}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_a56b81aecbdafb2b64d5bb587eee93dc9} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colouruc}{CColouruc}} DCL\+::\+CColouruc\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc}{CColouruc}}}]{other}{, }\item[{float}]{f\+Value}{}\end{DoxyParamCaption}) const}
+
+
+
+Interpolates between this colour and the one given by the given float and returns the new colour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other colour to interpolate between this one. \\
+\hline
+{\em f\+Value} & The interpolation value between this and the other colour. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting colours interpolated between.
+\end{DoxyReturn}
+If the float is 0.\+0f, the returned colour will be this colour. If the float is 0.\+5f, the returned colour will be half way between this colour and the one given. If the float is 1.\+0f, the returned colour will be the one given. 
+
+Definition at line \mbox{\hyperlink{_colouruc_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{_colouruc_8cpp_source}{Colouruc.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colouruc_ae715bd9574b23e0efbd365bd7f2170b7}\index{DCL::CColouruc@{DCL::CColouruc}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_ae715bd9574b23e0efbd365bd7f2170b7} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colouruc}{CColouruc}} DCL\+::\+CColouruc\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc}{CColouruc}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload the \texorpdfstring{$\ast$}{*} operator to multiply two colours together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other colour which is multiplied with this one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_d_c_l_1_1_c_colourf}{CColourf} object holding the resulting colour. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_colouruc_8h_source_l00078}{78}} of file \mbox{\hyperlink{_colouruc_8h_source}{Colouruc.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colouruc_a0e0a5b7c02155bd39b66aa19f3ab1646}\index{DCL::CColouruc@{DCL::CColouruc}!operator==@{operator==}}
+\index{operator==@{operator==}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_a0e0a5b7c02155bd39b66aa19f3ab1646} 
+bool DCL\+::\+CColouruc\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_colouruc}{CColouruc}} \&}]{col}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload the == operator to compare colours. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & The other colour to compare with this one. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_colouruc_8h_source_l00067}{67}} of file \mbox{\hyperlink{_colouruc_8h_source}{Colouruc.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colouruc_a9f7370bc9c9455b840087df076347dd8}\index{DCL::CColouruc@{DCL::CColouruc}!set@{set}}
+\index{set@{set}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_a9f7370bc9c9455b840087df076347dd8} 
+void DCL\+::\+CColouruc\+::set (\begin{DoxyParamCaption}\item[{unsigned char}]{uc\+Red}{, }\item[{unsigned char}]{uc\+Green}{, }\item[{unsigned char}]{uc\+Blue}{, }\item[{unsigned char}]{uc\+Alpha}{}\end{DoxyParamCaption})}
+
+
+
+Sets the colour to the given values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Red} & A value between 0 and 255 representing the intensity of the red component of this colour. \\
+\hline
+{\em uc\+Green} & A value between 0 and 255 representing the intensity of the green component of this colour. \\
+\hline
+{\em uc\+Blue} & A value between 0 and 255 representing the intensity of the blue component of this colour. \\
+\hline
+{\em uc\+Alpha} & A value between 0 and 255 representing the intensity of the alpha component of this colour. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_colouruc_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_colouruc_8cpp_source}{Colouruc.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colouruc_a9c5a364251f16bee85c3f6f69c22c527}\index{DCL::CColouruc@{DCL::CColouruc}!setFromHSB@{setFromHSB}}
+\index{setFromHSB@{setFromHSB}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{setFromHSB()}{setFromHSB()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_a9c5a364251f16bee85c3f6f69c22c527} 
+void DCL\+::\+CColouruc\+::set\+From\+HSB (\begin{DoxyParamCaption}\item[{float}]{f\+Hue\+Amount}{, }\item[{float}]{f\+Saturation}{ = {\ttfamily 1.0f}, }\item[{float}]{f\+Brightness}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})}
+
+
+
+Sets this colour to RGB using the given the HSB (Hue, Saturation and Brightness) values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Hue\+Amount} & A value between 0.\+0f and 1.\+0f representing the hue. \\
+\hline
+{\em f\+Saturation} & A value between 0.\+0f and 1.\+0f representing the saturation. \\
+\hline
+{\em f\+Brightness} & A value between 0.\+0f and 1.\+0f representing the brightness.\\
+\hline
+\end{DoxyParams}
+Leaves the alpha value alone Hue value should be between 0 and 1 (Although it is clamped) Saturation value should be between 0 and 1 (Although it is clamped) Brightness value should be between 0 and 1 (Although it is clamped) 
+
+Definition at line \mbox{\hyperlink{_colouruc_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_colouruc_8cpp_source}{Colouruc.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_d_c_l_1_1_c_colouruc_ad648687e9f489cf4522c4d7423be38d4}\index{DCL::CColouruc@{DCL::CColouruc}!alpha@{alpha}}
+\index{alpha@{alpha}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_ad648687e9f489cf4522c4d7423be38d4} 
+unsigned char DCL\+::\+CColouruc\+::alpha}
+
+
+
+Alpha colour between 0 and 255. 
+
+
+
+Definition at line \mbox{\hyperlink{_colouruc_8h_source_l00086}{86}} of file \mbox{\hyperlink{_colouruc_8h_source}{Colouruc.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colouruc_ab2296924a13b6b286ceefb8f941fc01b}\index{DCL::CColouruc@{DCL::CColouruc}!blue@{blue}}
+\index{blue@{blue}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{blue}{blue}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_ab2296924a13b6b286ceefb8f941fc01b} 
+unsigned char DCL\+::\+CColouruc\+::blue}
+
+
+
+Blue colour between 0 and 255. 
+
+
+
+Definition at line \mbox{\hyperlink{_colouruc_8h_source_l00085}{85}} of file \mbox{\hyperlink{_colouruc_8h_source}{Colouruc.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colouruc_a75cfd3830cc4bdfe90d68013baec609a}\index{DCL::CColouruc@{DCL::CColouruc}!green@{green}}
+\index{green@{green}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{green}{green}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_a75cfd3830cc4bdfe90d68013baec609a} 
+unsigned char DCL\+::\+CColouruc\+::green}
+
+
+
+Green colour between 0 and 255. 
+
+
+
+Definition at line \mbox{\hyperlink{_colouruc_8h_source_l00084}{84}} of file \mbox{\hyperlink{_colouruc_8h_source}{Colouruc.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colouruc_a73651277b667562fa83762b62653991c}\index{DCL::CColouruc@{DCL::CColouruc}!red@{red}}
+\index{red@{red}!DCL::CColouruc@{DCL::CColouruc}}
+\doxysubsubsection{\texorpdfstring{red}{red}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colouruc_a73651277b667562fa83762b62653991c} 
+unsigned char DCL\+::\+CColouruc\+::red}
+
+
+
+Red colour between 0 and 255. 
+
+
+
+Definition at line \mbox{\hyperlink{_colouruc_8h_source_l00083}{83}} of file \mbox{\hyperlink{_colouruc_8h_source}{Colouruc.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/\mbox{\hyperlink{_colouruc_8h}{Colouruc.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/Colouruc.\+cpp\end{DoxyCompactItemize}

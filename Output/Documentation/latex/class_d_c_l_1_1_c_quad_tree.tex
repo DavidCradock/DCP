@@ -1,0 +1,429 @@
+\doxysection{DCL\+::CQuad\+Tree Class Reference}
+\hypertarget{class_d_c_l_1_1_c_quad_tree}{}\label{class_d_c_l_1_1_c_quad_tree}\index{DCL::CQuadTree@{DCL::CQuadTree}}
+
+
+This is a 2D spatial partitioning class.  
+
+
+
+
+{\ttfamily \#include $<$Quad\+Tree.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a2ff788282e41b7112e9dca0eab9d799b}{CQuad\+Tree}} (int i\+Max\+Entities\+Per\+Node=10, int i\+Rect\+Size\+Increase\+Multiplier=2)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_ab3addd55948e7cf6980ffa79551f340b}{\texorpdfstring{$\sim$}{\string~}\+CQuad\+Tree}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a918f72656ab8a4987f02935e4b00e2e7}{init}} (int i\+Max\+Entities\+Per\+Node=10, int i\+Rect\+Size\+Increase\+Multiplier=2)
+\begin{DoxyCompactList}\small\item\em Initialise the quad tree using the new given settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a30338d1e99509a901bcb3e8dd6392ef9}{free}} (void)
+\begin{DoxyCompactList}\small\item\em Deletes the root node and in turn all of it\textquotesingle{}s children and all entities. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a823acb9eaea9a219f6472b493ca3f87e}{add\+Entity}} (const std\+::string \&str\+Name, int i\+PosX, int i\+PosY, int i\+User\+Data=0, void \texorpdfstring{$\ast$}{*}p\+User\+Data=0)
+\begin{DoxyCompactList}\small\item\em Add entity to the quad tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a544b113c09d8a64956624c05982312fe}{remove\+Entity}} (const std\+::string \&str\+Name)
+\begin{DoxyCompactList}\small\item\em Removes the named entity from the tree. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a432c1d0b43df287fe51924da777449d3}{get\+Entity\+Exists}} (const std\+::string \&str\+Name) const
+\begin{DoxyCompactList}\small\item\em Returns whether the named entity exists or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a65ffa9b56f14be3febd9e73f5ca94d60}{remove\+All\+Entities}} (bool b\+Reset\+Tree=false)
+\begin{DoxyCompactList}\small\item\em Removes all entities from the tree and depending upon the passed bool, resets the tree to contain just the root node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a53c56ae62f02f8ea6e0c7b2856ac819f}{set\+Entity\+Position}} (const std\+::string \&str\+Name, int i\+New\+PosX, int i\+New\+PosY)
+\begin{DoxyCompactList}\small\item\em Set an existing entity\textquotesingle{}s position to the one given, moving to the correct node if needed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_aec3e0f6ec0ae6f08f96353f4f6dda782}{get\+Entity\+Position}} (const std\+::string \&str\+Name, int \&i\+PosX, int \&i\+PosY) const
+\begin{DoxyCompactList}\small\item\em Sets the given integers to the named entity\textquotesingle{}s position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a60e0f735e0fc98bd833b1b9415b4dd6c}{get\+Nodes\+With\+Entities}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of CQuad\+Tree\+Nodes which holds all nodes which have entities in them. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a6f1e7deccc5af1db165e48afef990409}{get\+Nodes\+With\+Entities\+Which\+Intersect}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_rect}{CRect}} \&rect) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of \doxylink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node} which holds all nodes which intersect with the given \doxylink{class_d_c_l_1_1_c_rect}{CRect} and have entities. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_entity}{CQuad\+Tree\+Entity}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a73ecc8b79b814219407bd7468902f126}{get\+Entities\+Within\+Range}} (int i\+PosX, int i\+PosY, int i\+Range) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of entities which are within range of the given position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_entity}{CQuad\+Tree\+Entity}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a472cc59968776671be855acdf8cca5bd}{get\+Entities\+Within\+Rect}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_rect}{CRect}} \&rect) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of entities which are within the given \doxylink{class_d_c_l_1_1_c_rect}{CRect}. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_a09851196b46c076368a6a79105a7ad31}{get\+Node\+Depth\+Current}} (void)
+\begin{DoxyCompactList}\small\item\em Returns current node depth stat. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_aa73cb201c3586f56bf1a3da0b253540e}{get\+Node\+Depth\+Max}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns max node depth stat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_ad4769e8a8d53775431c76006c3e6e4f6}{CQuad\+Tree\+Node}}
+\item 
+class \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_ab77f306f1fd5214d0ff735993d2373fd}{CQuad\+Tree\+Entity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a 2D spatial partitioning class. 
+
+For 3D spatial partitioning, see the \doxylink{class_d_c_l_1_1_c_oct_tree}{COct\+Tree} class
+
+A quad tree gives us fast retrieval of entities which are within a specified range of a given position aswell as fast retrieval of entities which are within a given area of space. This is great for rendering only visible entities and also for getting a list of entities which can be used to perform collision detection only upon entities which are closeby, instead of having to perform collision for ALL entities within a world.
+
+A quad tree begins with an initial root 2D space (node) with which to insert uniquely named entities into, specifying their position. The quad tree has a maximum number of entities which can be inserted into a node and once this number is reached, the node is split into one or more (up to four) child nodes and the entities are removed from the parent node and into the child nodes. The position of entities determines which child nodes need to be created and then the entity inserted into. Each of the child nodes have half the dimensions of their parent node and there are four of them.
+
+This is a recursive process, so smaller and smaller child nodes of child nodes and so on are created until a "{}max node depth"{} value is reached, then what happens is the child nodes no longer get any more child nodes and the entities inserted, ignore the maximum number of entities per node value. The max node depth is computed upon the tree\textquotesingle{}s construction based upon it\textquotesingle{}s dimensions and then again if the root node of the tree gets resized (due to insertion of an entity outside of the root node\textquotesingle{}s region). The reason we have a max node depth is because, as the nodes get divided, their dimensions get smaller and smaller, until they reach a dimension of 1x1 and if they were to become zero dimensions, no entities would fit in them and the algorithm would enter an infinite recursive loop, forever creating useless zero sized child nodes and cause a stack overflow.
+
+The initial region covered by the root node has to be a multiple of 2, otherwise division of the child nodes may cause certain position to not be covered (For example, if the initial region was (3, 3) in dimensions, when creating the child nodes, their dims would be (1, 1) meaning half the region of the parent node would not be covered and make it so an entity within the uncovered area would not fit. The intial region is set to -\/1024, +1024 along each axis. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_8h_source_l00046}{46}} of file \mbox{\hyperlink{_quad_tree_8h_source}{Quad\+Tree.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a2ff788282e41b7112e9dca0eab9d799b}\index{DCL::CQuadTree@{DCL::CQuadTree}!CQuadTree@{CQuadTree}}
+\index{CQuadTree@{CQuadTree}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{CQuadTree()}{CQuadTree()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a2ff788282e41b7112e9dca0eab9d799b} 
+DCL\+::\+CQuad\+Tree\+::\+CQuad\+Tree (\begin{DoxyParamCaption}\item[{int}]{i\+Max\+Entities\+Per\+Node}{ = {\ttfamily 10}, }\item[{int}]{i\+Rect\+Size\+Increase\+Multiplier}{ = {\ttfamily 2}}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Max\+Entities\+Per\+Node} & is the maximum number of entities able to be stored within a node before that node will be subdivided again into child nodes. This must be at least 1, otherwise an exception occurs. If we add an entity which is outside of the root node\textquotesingle{}s initial region of -\/1024 to 1024, then the tree is rebuilt.\\
+\hline
+{\em i\+Rect\+Size\+Increase\+Multiplier} & is used when the tree is rebuilt. It is the amount to increase the root node\textquotesingle{}s dimensions by until the new entity\textquotesingle{}s position fits. A value of 2 would double the new root node\textquotesingle{}s dimensions each time. It must be at least 2 otherwise an exception occurs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_ab3addd55948e7cf6980ffa79551f340b}\index{DCL::CQuadTree@{DCL::CQuadTree}!````~CQuadTree@{\texorpdfstring{$\sim$}{\string~}CQuadTree}}
+\index{````~CQuadTree@{\texorpdfstring{$\sim$}{\string~}CQuadTree}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CQuadTree()}{\string~CQuadTree()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_ab3addd55948e7cf6980ffa79551f340b} 
+DCL\+::\+CQuad\+Tree\+::\texorpdfstring{$\sim$}{\string~}\+CQuad\+Tree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Deletes the root node, which will delete all children and their children and so on. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a823acb9eaea9a219f6472b493ca3f87e}\index{DCL::CQuadTree@{DCL::CQuadTree}!addEntity@{addEntity}}
+\index{addEntity@{addEntity}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{addEntity()}{addEntity()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a823acb9eaea9a219f6472b493ca3f87e} 
+void DCL\+::\+CQuad\+Tree\+::add\+Entity (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Name}{, }\item[{int}]{i\+PosX}{, }\item[{int}]{i\+PosY}{, }\item[{int}]{i\+User\+Data}{ = {\ttfamily 0}, }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+User\+Data}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Add entity to the quad tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Name} & The name to be given to the new entity within the tree. It must be unique, if it already exists, an exception occurs. \\
+\hline
+{\em i\+PosX} & The position of the new entity for the X axis \\
+\hline
+{\em i\+PosY} & The position of the new entity for the Y axis \\
+\hline
+{\em i\+User\+Data} & Optional integer which you can use for anything. \\
+\hline
+{\em p\+User\+Data} & A void pointer to anything you wish to associate with this entity.\\
+\hline
+\end{DoxyParams}
+Each entity needs a unique name, if the name given already exists, an exception occurs. If the specified position is outside of the tree\textquotesingle{}s region, the tree is rebuilt 
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a30338d1e99509a901bcb3e8dd6392ef9}\index{DCL::CQuadTree@{DCL::CQuadTree}!free@{free}}
+\index{free@{free}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a30338d1e99509a901bcb3e8dd6392ef9} 
+void DCL\+::\+CQuad\+Tree\+::free (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Deletes the root node and in turn all of it\textquotesingle{}s children and all entities. 
+
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a73ecc8b79b814219407bd7468902f126}\index{DCL::CQuadTree@{DCL::CQuadTree}!getEntitiesWithinRange@{getEntitiesWithinRange}}
+\index{getEntitiesWithinRange@{getEntitiesWithinRange}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{getEntitiesWithinRange()}{getEntitiesWithinRange()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a73ecc8b79b814219407bd7468902f126} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_entity}{CQuad\+Tree\+Entity}} \texorpdfstring{$\ast$}{*} $>$ DCL\+::\+CQuad\+Tree\+::get\+Entities\+Within\+Range (\begin{DoxyParamCaption}\item[{int}]{i\+PosX}{, }\item[{int}]{i\+PosY}{, }\item[{int}]{i\+Range}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of entities which are within range of the given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+PosX} & The position in 3D space along X axis \\
+\hline
+{\em i\+PosY} & The position in 3D space along Y axis \\
+\hline
+{\em i\+Range} & The range from the given position with which any entities within this range will be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of CQuad\+Tree\+Entity\texorpdfstring{$\ast$}{*} which are within range of the given position and range.
+\end{DoxyReturn}
+This may return some entities which are outside of the range, as the test to see whether the entities aren\textquotesingle{}t in range isn\textquotesingle{}t 100\% accurate. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00362}{362}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a472cc59968776671be855acdf8cca5bd}\index{DCL::CQuadTree@{DCL::CQuadTree}!getEntitiesWithinRect@{getEntitiesWithinRect}}
+\index{getEntitiesWithinRect@{getEntitiesWithinRect}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{getEntitiesWithinRect()}{getEntitiesWithinRect()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a472cc59968776671be855acdf8cca5bd} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_entity}{CQuad\+Tree\+Entity}} \texorpdfstring{$\ast$}{*} $>$ DCL\+::\+CQuad\+Tree\+::get\+Entities\+Within\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_rect}{CRect}} \&}]{rect}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of entities which are within the given \doxylink{class_d_c_l_1_1_c_rect}{CRect}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & The \doxylink{class_d_c_l_1_1_c_rect}{CRect} to use for the test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of CQuad\+Tree\+Entity\texorpdfstring{$\ast$}{*} which are within the given \doxylink{class_d_c_l_1_1_c_rect}{CRect}
+\end{DoxyReturn}
+This may return some entities which are outside of the range, as the test to see whether the entities aren\textquotesingle{}t in range isn\textquotesingle{}t 100\% accurate. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00387}{387}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a432c1d0b43df287fe51924da777449d3}\index{DCL::CQuadTree@{DCL::CQuadTree}!getEntityExists@{getEntityExists}}
+\index{getEntityExists@{getEntityExists}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{getEntityExists()}{getEntityExists()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a432c1d0b43df287fe51924da777449d3} 
+bool DCL\+::\+CQuad\+Tree\+::get\+Entity\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Name}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns whether the named entity exists or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Name} & The name of the entity within the tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the named entity exists, else false. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00259}{259}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_aec3e0f6ec0ae6f08f96353f4f6dda782}\index{DCL::CQuadTree@{DCL::CQuadTree}!getEntityPosition@{getEntityPosition}}
+\index{getEntityPosition@{getEntityPosition}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{getEntityPosition()}{getEntityPosition()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_aec3e0f6ec0ae6f08f96353f4f6dda782} 
+void DCL\+::\+CQuad\+Tree\+::get\+Entity\+Position (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Name}{, }\item[{int \&}]{i\+PosX}{, }\item[{int \&}]{i\+PosY}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets the given integers to the named entity\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em str\+Name} & The name of the entity within the tree. If the named entity doesn\textquotesingle{}t exist, an exception occurs. \\
+\hline
+\mbox{\texttt{ out}}  & {\em i\+PosX} & Will hold the current position of the named entity along X axis. \\
+\hline
+\mbox{\texttt{ out}}  & {\em i\+PosY} & Will hold the current position of the named entity along Y axis. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00322}{322}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a09851196b46c076368a6a79105a7ad31}\index{DCL::CQuadTree@{DCL::CQuadTree}!getNodeDepthCurrent@{getNodeDepthCurrent}}
+\index{getNodeDepthCurrent@{getNodeDepthCurrent}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{getNodeDepthCurrent()}{getNodeDepthCurrent()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a09851196b46c076368a6a79105a7ad31} 
+unsigned int DCL\+::\+CQuad\+Tree\+::get\+Node\+Depth\+Current (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Returns current node depth stat. 
+
+\begin{DoxyReturn}{Returns}
+The current node depth
+\end{DoxyReturn}
+If there are no child nodes, this would be zero. It\textquotesingle{}s used by the debug rendering code to colour the nodes accordingly. It\textquotesingle{}s also used to determine if the tree has reached the maximum child division depth, in which case, additionally added entities no longer subdivide a node into children and instead simply add the new entity into the node, ignoring the \+\_\+mi\+Max\+Entities\+Per\+Node value. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00405}{405}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_aa73cb201c3586f56bf1a3da0b253540e}\index{DCL::CQuadTree@{DCL::CQuadTree}!getNodeDepthMax@{getNodeDepthMax}}
+\index{getNodeDepthMax@{getNodeDepthMax}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{getNodeDepthMax()}{getNodeDepthMax()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_aa73cb201c3586f56bf1a3da0b253540e} 
+unsigned int DCL\+::\+CQuad\+Tree\+::get\+Node\+Depth\+Max (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns max node depth stat. 
+
+\begin{DoxyReturn}{Returns}
+The max node depth stat
+\end{DoxyReturn}
+If adding an entity into a node, that node\textquotesingle{}s depth is equal to this value, then \+\_\+mi\+Max\+Entities\+Per\+Node is ignored and the new entity is simply added to the node, instead of trying to sub-\/divide the node further. This is to prevent node dimensions of less than 1x1 which would cause infinite sub-\/division of nodes and cause a stack overflow. This value is computed upon construction and whenever the root node\textquotesingle{}s dimensions are increased. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00413}{413}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a60e0f735e0fc98bd833b1b9415b4dd6c}\index{DCL::CQuadTree@{DCL::CQuadTree}!getNodesWithEntities@{getNodesWithEntities}}
+\index{getNodesWithEntities@{getNodesWithEntities}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{getNodesWithEntities()}{getNodesWithEntities()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a60e0f735e0fc98bd833b1b9415b4dd6c} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ DCL\+::\+CQuad\+Tree\+::get\+Nodes\+With\+Entities (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of CQuad\+Tree\+Nodes which holds all nodes which have entities in them. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node} which holds all nodes which have entities in them 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00348}{348}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a6f1e7deccc5af1db165e48afef990409}\index{DCL::CQuadTree@{DCL::CQuadTree}!getNodesWithEntitiesWhichIntersect@{getNodesWithEntitiesWhichIntersect}}
+\index{getNodesWithEntitiesWhichIntersect@{getNodesWithEntitiesWhichIntersect}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{getNodesWithEntitiesWhichIntersect()}{getNodesWithEntitiesWhichIntersect()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a6f1e7deccc5af1db165e48afef990409} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ DCL\+::\+CQuad\+Tree\+::get\+Nodes\+With\+Entities\+Which\+Intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_rect}{CRect}} \&}]{rect}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of \doxylink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node} which holds all nodes which intersect with the given \doxylink{class_d_c_l_1_1_c_rect}{CRect} and have entities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & The \doxylink{class_d_c_l_1_1_c_rect}{CRect} to use for the intersection test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of CQuad\+Tree\+Node\texorpdfstring{$\ast$}{*} which have entities in them and intersect with the given \doxylink{class_d_c_l_1_1_c_rect}{CRect} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00355}{355}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a918f72656ab8a4987f02935e4b00e2e7}\index{DCL::CQuadTree@{DCL::CQuadTree}!init@{init}}
+\index{init@{init}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a918f72656ab8a4987f02935e4b00e2e7} 
+void DCL\+::\+CQuad\+Tree\+::init (\begin{DoxyParamCaption}\item[{int}]{i\+Max\+Entities\+Per\+Node}{ = {\ttfamily 10}, }\item[{int}]{i\+Rect\+Size\+Increase\+Multiplier}{ = {\ttfamily 2}}\end{DoxyParamCaption})}
+
+
+
+Initialise the quad tree using the new given settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Max\+Entities\+Per\+Node} & is the maximum number of entities able to be stored within a node before that node will be subdivided again into child nodes. This must be at least 1, otherwise an exception occurs. If we add an entity which is outside of the root nodes initial region of -\/1024 to 1024, then the tree is rebuilt.\\
+\hline
+{\em i\+Rect\+Size\+Increase\+Multiplier} & is used when the tree is rebuilt. It is the amount to increase the root node\textquotesingle{}s dimensions by until the new entity\textquotesingle{}s position fits. A value of 2 would double the new root node\textquotesingle{}s dimensions each time. It must be at least 2 otherwise an exception occurs.\\
+\hline
+\end{DoxyParams}
+This will free the existing tree and any entities. 
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a65ffa9b56f14be3febd9e73f5ca94d60}\index{DCL::CQuadTree@{DCL::CQuadTree}!removeAllEntities@{removeAllEntities}}
+\index{removeAllEntities@{removeAllEntities}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{removeAllEntities()}{removeAllEntities()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a65ffa9b56f14be3febd9e73f5ca94d60} 
+void DCL\+::\+CQuad\+Tree\+::remove\+All\+Entities (\begin{DoxyParamCaption}\item[{bool}]{b\+Reset\+Tree}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Removes all entities from the tree and depending upon the passed bool, resets the tree to contain just the root node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Reset\+Tree} & Whether to reset the tree whist we\textquotesingle{}re here. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00266}{266}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a544b113c09d8a64956624c05982312fe}\index{DCL::CQuadTree@{DCL::CQuadTree}!removeEntity@{removeEntity}}
+\index{removeEntity@{removeEntity}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{removeEntity()}{removeEntity()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a544b113c09d8a64956624c05982312fe} 
+void DCL\+::\+CQuad\+Tree\+::remove\+Entity (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Removes the named entity from the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Name} & The name of the entity within the tree. If it doesn\textquotesingle{}t exist, an exception occurs. To determine whether the entity exists, use \doxylink{class_d_c_l_1_1_c_quad_tree_a432c1d0b43df287fe51924da777449d3}{get\+Entity\+Exists()} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00203}{203}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_a53c56ae62f02f8ea6e0c7b2856ac819f}\index{DCL::CQuadTree@{DCL::CQuadTree}!setEntityPosition@{setEntityPosition}}
+\index{setEntityPosition@{setEntityPosition}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{setEntityPosition()}{setEntityPosition()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_a53c56ae62f02f8ea6e0c7b2856ac819f} 
+void DCL\+::\+CQuad\+Tree\+::set\+Entity\+Position (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Name}{, }\item[{int}]{i\+New\+PosX}{, }\item[{int}]{i\+New\+PosY}{}\end{DoxyParamCaption})}
+
+
+
+Set an existing entity\textquotesingle{}s position to the one given, moving to the correct node if needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Name} & The name of the entity within the tree. If the named entity doesn\textquotesingle{}t exist, an exception occurs. \\
+\hline
+{\em i\+New\+PosX} & The new position of the entity along X axis. \\
+\hline
+{\em i\+New\+PosY} & The new position of the entity along Y axis. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8cpp_source_l00298}{298}} of file \mbox{\hyperlink{_quad_tree_8cpp_source}{Quad\+Tree.\+cpp}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_ab77f306f1fd5214d0ff735993d2373fd}\index{DCL::CQuadTree@{DCL::CQuadTree}!CQuadTreeEntity@{CQuadTreeEntity}}
+\index{CQuadTreeEntity@{CQuadTreeEntity}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{CQuadTreeEntity}{CQuadTreeEntity}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_ab77f306f1fd5214d0ff735993d2373fd} 
+friend class \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_entity}{CQuad\+Tree\+Entity}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8h_source_l00049}{49}} of file \mbox{\hyperlink{_quad_tree_8h_source}{Quad\+Tree.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_quad_tree_ad4769e8a8d53775431c76006c3e6e4f6}\index{DCL::CQuadTree@{DCL::CQuadTree}!CQuadTreeNode@{CQuadTreeNode}}
+\index{CQuadTreeNode@{CQuadTreeNode}!DCL::CQuadTree@{DCL::CQuadTree}}
+\doxysubsubsection{\texorpdfstring{CQuadTreeNode}{CQuadTreeNode}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_quad_tree_ad4769e8a8d53775431c76006c3e6e4f6} 
+friend class \mbox{\hyperlink{class_d_c_l_1_1_c_quad_tree_node}{CQuad\+Tree\+Node}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_quad_tree_8h_source_l00048}{48}} of file \mbox{\hyperlink{_quad_tree_8h_source}{Quad\+Tree.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Spatial\+Partitioning/\mbox{\hyperlink{_quad_tree_8h}{Quad\+Tree.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Spatial\+Partitioning/Quad\+Tree.\+cpp\end{DoxyCompactItemize}

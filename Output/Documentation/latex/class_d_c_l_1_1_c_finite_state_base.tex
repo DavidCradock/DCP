@@ -1,0 +1,54 @@
+\doxysection{DCL\+::CFinite\+State\+Base Class Reference}
+\hypertarget{class_d_c_l_1_1_c_finite_state_base}{}\label{class_d_c_l_1_1_c_finite_state_base}\index{DCL::CFiniteStateBase@{DCL::CFiniteStateBase}}
+
+
+Finite state base class with which to derive our FSM state classes from for use with the \doxylink{class_d_c_l_1_1_c_finite_state_machine}{CFinite\+State\+Machine} class.  
+
+
+
+
+{\ttfamily \#include $<$Finite\+State\+Machine.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_d_c_l_1_1_c_finite_state_base_afca53c3205fd4eafce018bdfcf05aa66}\label{class_d_c_l_1_1_c_finite_state_base_afca53c3205fd4eafce018bdfcf05aa66} 
+virtual void {\bfseries on\+Enter} (void)=0
+\begin{DoxyCompactList}\small\item\em This is called when this state is first entered. \end{DoxyCompactList}\item 
+\Hypertarget{class_d_c_l_1_1_c_finite_state_base_ac1c4cc2c07e32c5157d8e8b347f07a9b}\label{class_d_c_l_1_1_c_finite_state_base_ac1c4cc2c07e32c5157d8e8b347f07a9b} 
+virtual void {\bfseries on\+Exit} (void)=0
+\begin{DoxyCompactList}\small\item\em This is called when this state is left. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_base_aadc0fa636755c6064acc4bb61a5d996e}{on\+Active}} (\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine}{CFinite\+State\+Machine}} \texorpdfstring{$\ast$}{*}p\+FSM)=0
+\begin{DoxyCompactList}\small\item\em This is called whilst the state is active. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Finite state base class with which to derive our FSM state classes from for use with the \doxylink{class_d_c_l_1_1_c_finite_state_machine}{CFinite\+State\+Machine} class. 
+
+This represents a single state in a finite state machine and has several pure virtual methods which need to be implemented within any class which is derived from this one. 
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_8h_source_l00020}{20}} of file \mbox{\hyperlink{_finite_state_machine_8h_source}{Finite\+State\+Machine.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_finite_state_base_aadc0fa636755c6064acc4bb61a5d996e}\index{DCL::CFiniteStateBase@{DCL::CFiniteStateBase}!onActive@{onActive}}
+\index{onActive@{onActive}!DCL::CFiniteStateBase@{DCL::CFiniteStateBase}}
+\doxysubsubsection{\texorpdfstring{onActive()}{onActive()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_finite_state_base_aadc0fa636755c6064acc4bb61a5d996e} 
+virtual void DCL\+::\+CFinite\+State\+Base\+::on\+Active (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine}{CFinite\+State\+Machine}} \texorpdfstring{$\ast$}{*}}]{p\+FSM}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This is called whilst the state is active. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+FSM} & A pointer to a \doxylink{class_d_c_l_1_1_c_finite_state_machine}{CFinite\+State\+Machine} which will manage this state. This is usefull to allow the state to change to another named state by calling p\+FSM-\/\texorpdfstring{$>$}{>}switch\+To\+State() \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Artificial\+Intelligence/\mbox{\hyperlink{_finite_state_machine_8h}{Finite\+State\+Machine.\+h}}\end{DoxyCompactItemize}

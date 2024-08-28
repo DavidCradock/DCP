@@ -1,0 +1,93 @@
+\doxysection{DCL\+::CNeuron\+Layer Class Reference}
+\hypertarget{class_d_c_l_1_1_c_neuron_layer}{}\label{class_d_c_l_1_1_c_neuron_layer}\index{DCL::CNeuronLayer@{DCL::CNeuronLayer}}
+
+
+A neuron layer.  
+
+
+
+
+{\ttfamily \#include $<$Neural\+Net\+Feed\+Forward.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_neuron_layer_ade0db75a1bd9651cd2cc1243a791de8a}{CNeuron\+Layer}} (int i\+Num\+Neurons, int i\+Num\+Inputs\+Per\+Neuron)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_neuron}{CNeuron}} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_neuron_layer_a5da24daae5b3f969c9004552216a55e6}{mvec\+Neurons}}
+\begin{DoxyCompactList}\small\item\em Holds each neuron in this layer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_d_c_l_1_1_c_neuron_layer_a64dd27603a32d748a0ac71ea43d5f585}{mi\+Num\+Neurons}}
+\begin{DoxyCompactList}\small\item\em This holds the number of neurons in this layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A neuron layer. 
+
+This holds a layer of neurons 
+
+Definition at line \mbox{\hyperlink{_neural_net_feed_forward_8h_source_l00043}{43}} of file \mbox{\hyperlink{_neural_net_feed_forward_8h_source}{Neural\+Net\+Feed\+Forward.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_neuron_layer_ade0db75a1bd9651cd2cc1243a791de8a}\index{DCL::CNeuronLayer@{DCL::CNeuronLayer}!CNeuronLayer@{CNeuronLayer}}
+\index{CNeuronLayer@{CNeuronLayer}!DCL::CNeuronLayer@{DCL::CNeuronLayer}}
+\doxysubsubsection{\texorpdfstring{CNeuronLayer()}{CNeuronLayer()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_neuron_layer_ade0db75a1bd9651cd2cc1243a791de8a} 
+DCL\+::\+CNeuron\+Layer\+::\+CNeuron\+Layer (\begin{DoxyParamCaption}\item[{int}]{i\+Num\+Neurons}{, }\item[{int}]{i\+Num\+Inputs\+Per\+Neuron}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Num\+Neurons} & The number of neurons this layer will have \\
+\hline
+{\em i\+Num\+Inputs\+Per\+Neuron} & The number of inputs each neuron of this layer will have.\\
+\hline
+\end{DoxyParams}
+Sets the number of neurons in this layer. 
+
+Definition at line \mbox{\hyperlink{_neural_net_feed_forward_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_neural_net_feed_forward_8cpp_source}{Neural\+Net\+Feed\+Forward.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_d_c_l_1_1_c_neuron_layer_a64dd27603a32d748a0ac71ea43d5f585}\index{DCL::CNeuronLayer@{DCL::CNeuronLayer}!miNumNeurons@{miNumNeurons}}
+\index{miNumNeurons@{miNumNeurons}!DCL::CNeuronLayer@{DCL::CNeuronLayer}}
+\doxysubsubsection{\texorpdfstring{miNumNeurons}{miNumNeurons}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_neuron_layer_a64dd27603a32d748a0ac71ea43d5f585} 
+int DCL\+::\+CNeuron\+Layer\+::mi\+Num\+Neurons}
+
+
+
+This holds the number of neurons in this layer. 
+
+We could just call mvec\+Neurons.\+size(), but for speed purposes, we store the value here. 
+
+Definition at line \mbox{\hyperlink{_neural_net_feed_forward_8h_source_l00061}{61}} of file \mbox{\hyperlink{_neural_net_feed_forward_8h_source}{Neural\+Net\+Feed\+Forward.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_neuron_layer_a5da24daae5b3f969c9004552216a55e6}\index{DCL::CNeuronLayer@{DCL::CNeuronLayer}!mvecNeurons@{mvecNeurons}}
+\index{mvecNeurons@{mvecNeurons}!DCL::CNeuronLayer@{DCL::CNeuronLayer}}
+\doxysubsubsection{\texorpdfstring{mvecNeurons}{mvecNeurons}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_neuron_layer_a5da24daae5b3f969c9004552216a55e6} 
+std\+::vector$<$\mbox{\hyperlink{class_d_c_l_1_1_c_neuron}{CNeuron}}$>$ DCL\+::\+CNeuron\+Layer\+::mvec\+Neurons}
+
+
+
+Holds each neuron in this layer. 
+
+
+
+Definition at line \mbox{\hyperlink{_neural_net_feed_forward_8h_source_l00055}{55}} of file \mbox{\hyperlink{_neural_net_feed_forward_8h_source}{Neural\+Net\+Feed\+Forward.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Artificial\+Intelligence/\mbox{\hyperlink{_neural_net_feed_forward_8h}{Neural\+Net\+Feed\+Forward.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Artificial\+Intelligence/Neural\+Net\+Feed\+Forward.\+cpp\end{DoxyCompactItemize}

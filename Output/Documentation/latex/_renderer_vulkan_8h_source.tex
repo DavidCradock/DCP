@@ -1,0 +1,50 @@
+\doxysection{Renderer\+Vulkan.\+h}
+\hypertarget{_renderer_vulkan_8h_source}{}\label{_renderer_vulkan_8h_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Renderers/RendererVulkan.h@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Renderers/RendererVulkan.h}}
+\mbox{\hyperlink{_renderer_vulkan_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ RENDERERVULKAN\_H}}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ RENDERERVULKAN\_H}}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_renderer_base_8h}{RendererBase.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00013}\mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan}{00013}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan}{CRendererVulkan}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base}{CRendererBase}}}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan}{CRendererVulkan}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan}{\string~CRendererVulkan}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_a9a416551edb0ba5a569f36a72e6806ab}{initialise}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iWindowWidth,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iWindowHeight,\ \textcolor{keyword}{const}\ std::string\&\ strWindowTitle,\ \textcolor{keywordtype}{bool}\ bFullscreen);}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_a58b8aeb96ea35bb8eaa33b50ec4177c9}{shutdown}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_ac1b5449e19a4558a547ad2a1c6a4f51e}{blendDisable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_aced3cff4ed1554a154ef549eb2698441}{blendEnable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_a774f7e246fb85a822ebab56d2a018e7e}{blendFunction\_SrcAlpha\_One}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_aac27440a5ce3d3267d77974d122dde90}{blendFunction\_SrcAlpha\_OneMinusSrcAlpha}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_a431fbd8e87a82af4363810e3f21fc07e}{cullFaceAntiClockwise}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_a572029c54a0717c4760ce0feec65cba5}{cullFaceClockwise}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_a9d4e3306372307d290d9f1791be8db4e}{cullFaceDisable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_a34012be76591983c586f182881e32d08}{cullFaceEnable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_ab55bb1d23b1ae2b40de72fc8476f7cdc}{depthTestDisable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_afb739e7056329e1c990f1bca351d5d52}{depthTestEnable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_a6a634e04b6a2f99ebdfacfb7431fda4d}{pixelsRead}}(\textcolor{keywordtype}{int}\ iPositionX,\ \textcolor{keywordtype}{int}\ iPositionY,\ \textcolor{keywordtype}{int}\ iWidth,\ \textcolor{keywordtype}{int}\ iHeight,\ \textcolor{keywordtype}{void}*\ pixels);}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_a7b1a663e9fd1a5ff2d63e48bc8619ae8}{pixelsWrite}}(\textcolor{keywordtype}{int}\ iPositionX,\ \textcolor{keywordtype}{int}\ iPositionY,\ \textcolor{keywordtype}{int}\ iWidth,\ \textcolor{keywordtype}{int}\ iHeight,\ \textcolor{keywordtype}{void}*\ pixels);}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_a2c8bd6b906ddd002e787736d5643b60b}{scissorTest}}(\textcolor{keywordtype}{int}\ iPositionX,\ \textcolor{keywordtype}{int}\ iPositionY,\ \textcolor{keywordtype}{int}\ iWidth,\ \textcolor{keywordtype}{int}\ iHeight);}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_ad2b08d56bef8a6f29b0dad95ebb60847}{scissorTestDisable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_vulkan_aeff92dfb7982751a2df47bf9e18efd43}{scissorTestEnable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00044}00044\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00045}00045\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_renderer_vulkan_8h_source_l00047}00047\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \#ifndef\ FILENAME\_H}}
+
+\end{DoxyCode}

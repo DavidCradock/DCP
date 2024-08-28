@@ -1,0 +1,474 @@
+\doxysection{DCL\+::COct\+Tree Class Reference}
+\hypertarget{class_d_c_l_1_1_c_oct_tree}{}\label{class_d_c_l_1_1_c_oct_tree}\index{DCL::COctTree@{DCL::COctTree}}
+
+
+3D spatial partitioning class.  
+
+
+
+
+{\ttfamily \#include $<$Oct\+Tree.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a79e4f6d05e80805452c40cde536ab8e3}{COct\+Tree}} (int i\+Max\+Entities\+Per\+Node=10, float f\+Size\+Increase\+Multiplier=2.\+0f)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_aedf2b29944d85ad2a7e9bb583b78edd2}{\texorpdfstring{$\sim$}{\string~}\+COct\+Tree}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a10b1942b258b8c1868625a1e649f82b7}{init}} (int i\+Max\+Entities\+Per\+Node=10, float f\+Size\+Increase\+Multiplier=2.\+0f)
+\begin{DoxyCompactList}\small\item\em Initialise the oct tree using the new given settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_abe06c4c330f0bb0eaf3ceeb2d45a84c5}{free}} (void)
+\begin{DoxyCompactList}\small\item\em Deletes the root node and in turn all of it\textquotesingle{}s children and all entities. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a2948772e21f9310653136883cd92399f}{add\+Entity}} (const std\+::string \&str\+Name, const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Position, int i\+User\+Data=0, void \texorpdfstring{$\ast$}{*}p\+User\+Data=0)
+\begin{DoxyCompactList}\small\item\em Add entity to the oct tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_adebcbd5a9cda64f91b49731ed5913c60}{remove\+Entity}} (const std\+::string \&str\+Name)
+\begin{DoxyCompactList}\small\item\em Removes the named entity from the tree. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_acf0e29bf49823dc2c20e3d704e9a1265}{get\+Entity\+Exists}} (const std\+::string \&str\+Name) const
+\begin{DoxyCompactList}\small\item\em Returns whether the named entity exists or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a991d8430b2c0a0a18a8e22bdb911c079}{remove\+All\+Entities}} (bool b\+Reset\+Tree=false)
+\begin{DoxyCompactList}\small\item\em Removes all entities from the tree and depending upon the passed bool, resets the tree to contain just the root node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a6a68cbc48c96b05b9ce4ca8e3289c9f1}{set\+Entity\+Position}} (const std\+::string \&str\+Name, const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+New\+Position)
+\begin{DoxyCompactList}\small\item\em Set an existing entity\textquotesingle{}s position to the one given, moving to the correct node if needed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a52e65031d68ab1d104132a51813ddd98}{get\+Entity\+Position}} (const std\+::string \&str\+Name, \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Position) const
+\begin{DoxyCompactList}\small\item\em Sets the given vector to the named entity\textquotesingle{}s position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_node}{COct\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_acf0f4c925af320cf4550f9b7cec10469}{get\+Nodes\+With\+Entities}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of COct\+Tree\+Nodes which holds all nodes which have entities in them. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_node}{COct\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_afc7668878cd0c2250940d84f5e13967e}{get\+Nodes\+With\+Entities\+Which\+Intersect}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_a_a_b_b}{CAABB}} \&aabb) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of COct\+Tree\+Nodes which holds all nodes which intersect with the given AABB and have entities. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_node}{COct\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_aeda89df6aa2db3f2f5b2a3af80f4ce7f}{get\+Nodes\+With\+Entities\+Which\+Intersect}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_frustum}{CFrustum}} \&frustum) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of COct\+Tree\+Nodes which holds all nodes which intersect with the given \doxylink{class_d_c_l_1_1_c_frustum}{CFrustum} and have entities. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_entity}{COct\+Tree\+Entity}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_ae8b74523e7bcc2555c37d12b6b5b41f3}{get\+Entities\+Within\+Range}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Position, float f\+Range) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of entities which are within range of the given position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_entity}{COct\+Tree\+Entity}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a8f35a4a5d92dfc74c1b81e91612f91da}{get\+Entities\+Within\+AABB}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_a_a_b_b}{CAABB}} \&aabb) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of entities which are within the given \doxylink{class_d_c_l_1_1_c_a_a_b_b}{CAABB}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_entity}{COct\+Tree\+Entity}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a673d30946a9719b6e5df9bbb3041d287}{get\+Entities\+Within\+Frustum}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_frustum}{CFrustum}} \&frustum) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of entities which are within the given \doxylink{class_d_c_l_1_1_c_frustum}{CFrustum}. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a2e9dd3609e8147a128c5f373497ac134}{get\+Node\+Depth\+Current}} (void)
+\begin{DoxyCompactList}\small\item\em Returns current node depth stat. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_ac68dab7339f8c8a2c7159fc081f89648}{get\+Node\+Depth\+Max}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns max node depth stat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a50a4fdcef86d1f8496c255c827edd71e}{COct\+Tree\+Node}}
+\item 
+class \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a3b5706716f44b92bb055136dc3dd4c69}{COct\+Tree\+Entity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+3D spatial partitioning class. 
+
+For 2D spatial partitioning, see the \doxylink{class_d_c_l_1_1_c_quad_tree}{CQuad\+Tree} class
+
+An oct tree gives us fast retrieval of entities which are within a specified range of a given position aswell as fast retrieval of entities which are within a given area of space. This is great for rendering only visible entities and also for getting a list of entities which can be used to perform collision detection only upon entities which are closeby, instead of having to perform collision for ALL entities within a world.
+
+An oct tree begins with an initial root 3D space (node) with which to insert uniquely named entities into, specifying their position. The oct tree has a maximum number of entities which can be inserted into a node and once this number is reached, the node is split into one or more (up to eight) child nodes and the entities are removed from the parent node and into the child nodes. The position of entities determines which child nodes need to be created and then the entity inserted into. Each of the child nodes have half the dimensions of their parent node and there are eight of them.
+
+This is a recursive process, so smaller and smaller child nodes of child nodes and so on are created until a "{}max node depth"{} value is reached, then what happens is the child nodes no longer get any more child nodes and the entities inserted, ignore the maximum number of entities per node value. The max node depth is computed upon the tree\textquotesingle{}s construction based upon it\textquotesingle{}s dimensions and then again if the root node of the tree gets resized (due to insertion of an entity outside of the root node\textquotesingle{}s region). The reason we have a max node depth is because, as the nodes get divided, their dimensions get smaller and smaller, until they reach a dimension of 1x1x1 and if they were to become zero dimensions, no entities would fit in them and the algorithm would enter an infinite recursive loop, forever creating useless zero sized child nodes and cause a stack overflow.
+
+The intial region is set to -\/8, +8 along each axis. ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_oct_tree_8h_source_l00044}{44}} of file \mbox{\hyperlink{_oct_tree_8h_source}{Oct\+Tree.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a79e4f6d05e80805452c40cde536ab8e3}\index{DCL::COctTree@{DCL::COctTree}!COctTree@{COctTree}}
+\index{COctTree@{COctTree}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{COctTree()}{COctTree()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a79e4f6d05e80805452c40cde536ab8e3} 
+DCL\+::\+COct\+Tree\+::\+COct\+Tree (\begin{DoxyParamCaption}\item[{int}]{i\+Max\+Entities\+Per\+Node}{ = {\ttfamily 10}, }\item[{float}]{f\+Size\+Increase\+Multiplier}{ = {\ttfamily 2.0f}}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Max\+Entities\+Per\+Node} & The maximum number of entities able to be stored within a node before that node will be subdivided again into child nodes. This must be at least 1, otherwise an exception occurs. If we add an entity which is outside of the root node\textquotesingle{}s initial region then the tree is rebuilt.\\
+\hline
+{\em f\+Size\+Increase\+Multiplier} & is used when the tree is rebuilt. It is the amount to increase the root node\textquotesingle{}s dimensions by until the new entity\textquotesingle{}s position fits. A value of 2 would double the new root node\textquotesingle{}s dimensions each time. It must be at least 2 otherwise an exception occurs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_aedf2b29944d85ad2a7e9bb583b78edd2}\index{DCL::COctTree@{DCL::COctTree}!````~COctTree@{\texorpdfstring{$\sim$}{\string~}COctTree}}
+\index{````~COctTree@{\texorpdfstring{$\sim$}{\string~}COctTree}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}COctTree()}{\string~COctTree()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_aedf2b29944d85ad2a7e9bb583b78edd2} 
+DCL\+::\+COct\+Tree\+::\texorpdfstring{$\sim$}{\string~}\+COct\+Tree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Deletes the root node, which will delete all children and their children and so on. 
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a2948772e21f9310653136883cd92399f}\index{DCL::COctTree@{DCL::COctTree}!addEntity@{addEntity}}
+\index{addEntity@{addEntity}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{addEntity()}{addEntity()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a2948772e21f9310653136883cd92399f} 
+void DCL\+::\+COct\+Tree\+::add\+Entity (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Name}{, }\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Position}{, }\item[{int}]{i\+User\+Data}{ = {\ttfamily 0}, }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+User\+Data}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Add entity to the oct tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Name} & The name to be given to the new entity within the tree. It must be unique, if it already exists, an exception occurs. \\
+\hline
+{\em v\+Position} & The position of the new entity. \\
+\hline
+{\em i\+User\+Data} & Optional integer which you can use for anything. \\
+\hline
+{\em p\+User\+Data} & A void pointer to anything you wish to associate with this entity.\\
+\hline
+\end{DoxyParams}
+Each entity needs a unique name, if the name given already exists, an exception occurs. If the specified position is outside of the tree\textquotesingle{}s region, the tree is rebuilt 
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_abe06c4c330f0bb0eaf3ceeb2d45a84c5}\index{DCL::COctTree@{DCL::COctTree}!free@{free}}
+\index{free@{free}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_abe06c4c330f0bb0eaf3ceeb2d45a84c5} 
+void DCL\+::\+COct\+Tree\+::free (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Deletes the root node and in turn all of it\textquotesingle{}s children and all entities. 
+
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a8f35a4a5d92dfc74c1b81e91612f91da}\index{DCL::COctTree@{DCL::COctTree}!getEntitiesWithinAABB@{getEntitiesWithinAABB}}
+\index{getEntitiesWithinAABB@{getEntitiesWithinAABB}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{getEntitiesWithinAABB()}{getEntitiesWithinAABB()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a8f35a4a5d92dfc74c1b81e91612f91da} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_entity}{COct\+Tree\+Entity}} \texorpdfstring{$\ast$}{*} $>$ DCL\+::\+COct\+Tree\+::get\+Entities\+Within\+AABB (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_a_a_b_b}{CAABB}} \&}]{aabb}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of entities which are within the given \doxylink{class_d_c_l_1_1_c_a_a_b_b}{CAABB}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aabb} & The axis aligned bounding box which to use for the test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of COct\+Tree\+Entity\texorpdfstring{$\ast$}{*} which are within the given AABB
+\end{DoxyReturn}
+This may return some entities which are outside of the range, as the test to see whether the entities aren\textquotesingle{}t in range isn\textquotesingle{}t 100\% accurate. 
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00370}{370}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a673d30946a9719b6e5df9bbb3041d287}\index{DCL::COctTree@{DCL::COctTree}!getEntitiesWithinFrustum@{getEntitiesWithinFrustum}}
+\index{getEntitiesWithinFrustum@{getEntitiesWithinFrustum}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{getEntitiesWithinFrustum()}{getEntitiesWithinFrustum()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a673d30946a9719b6e5df9bbb3041d287} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_entity}{COct\+Tree\+Entity}} \texorpdfstring{$\ast$}{*} $>$ DCL\+::\+COct\+Tree\+::get\+Entities\+Within\+Frustum (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_frustum}{CFrustum}} \&}]{frustum}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of entities which are within the given \doxylink{class_d_c_l_1_1_c_frustum}{CFrustum}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frustum} & The frustum to use for the test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of COct\+Tree\+Entity\texorpdfstring{$\ast$}{*} which are within the given frustum 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000012}{Todo}}]check this \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00388}{388}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_ae8b74523e7bcc2555c37d12b6b5b41f3}\index{DCL::COctTree@{DCL::COctTree}!getEntitiesWithinRange@{getEntitiesWithinRange}}
+\index{getEntitiesWithinRange@{getEntitiesWithinRange}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{getEntitiesWithinRange()}{getEntitiesWithinRange()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_ae8b74523e7bcc2555c37d12b6b5b41f3} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_entity}{COct\+Tree\+Entity}} \texorpdfstring{$\ast$}{*} $>$ DCL\+::\+COct\+Tree\+::get\+Entities\+Within\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Position}{, }\item[{float}]{f\+Range}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of entities which are within range of the given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Position} & The position in 3D space \\
+\hline
+{\em f\+Range} & The range from the given position with which any entities within this range will be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of COct\+Tree\+Entity\texorpdfstring{$\ast$}{*} which are within range of the given position and range.
+\end{DoxyReturn}
+This may return some entities which are outside of the range, as the test to see whether the entities aren\textquotesingle{}t in range isn\textquotesingle{}t 100\% accurate. 
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00347}{347}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_acf0e29bf49823dc2c20e3d704e9a1265}\index{DCL::COctTree@{DCL::COctTree}!getEntityExists@{getEntityExists}}
+\index{getEntityExists@{getEntityExists}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{getEntityExists()}{getEntityExists()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_acf0e29bf49823dc2c20e3d704e9a1265} 
+bool DCL\+::\+COct\+Tree\+::get\+Entity\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Name}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns whether the named entity exists or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Name} & The name of the entity within the tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the named entity exists, else false. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00237}{237}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a52e65031d68ab1d104132a51813ddd98}\index{DCL::COctTree@{DCL::COctTree}!getEntityPosition@{getEntityPosition}}
+\index{getEntityPosition@{getEntityPosition}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{getEntityPosition()}{getEntityPosition()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a52e65031d68ab1d104132a51813ddd98} 
+void DCL\+::\+COct\+Tree\+::get\+Entity\+Position (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Name}{, }\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Position}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets the given vector to the named entity\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em str\+Name} & The name of the entity within the tree. If the named entity doesn\textquotesingle{}t exist, an exception occurs. \\
+\hline
+\mbox{\texttt{ out}}  & {\em v\+Position} & Will hold the current position of the named entity. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00299}{299}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a2e9dd3609e8147a128c5f373497ac134}\index{DCL::COctTree@{DCL::COctTree}!getNodeDepthCurrent@{getNodeDepthCurrent}}
+\index{getNodeDepthCurrent@{getNodeDepthCurrent}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{getNodeDepthCurrent()}{getNodeDepthCurrent()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a2e9dd3609e8147a128c5f373497ac134} 
+unsigned int DCL\+::\+COct\+Tree\+::get\+Node\+Depth\+Current (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Returns current node depth stat. 
+
+\begin{DoxyReturn}{Returns}
+The current node depth
+\end{DoxyReturn}
+If there are no child nodes, this would be zero. It\textquotesingle{}s used by the debug rendering code to colour the nodes accordingly. It\textquotesingle{}s also used to determine if the tree has reached the maximum child division depth, in which case, additionally added entities no longer subdivide a node into children and instead simply add the new entity into the node, ignoring the \+\_\+mi\+Max\+Entities\+Per\+Node value. 
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00406}{406}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_ac68dab7339f8c8a2c7159fc081f89648}\index{DCL::COctTree@{DCL::COctTree}!getNodeDepthMax@{getNodeDepthMax}}
+\index{getNodeDepthMax@{getNodeDepthMax}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{getNodeDepthMax()}{getNodeDepthMax()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_ac68dab7339f8c8a2c7159fc081f89648} 
+unsigned int DCL\+::\+COct\+Tree\+::get\+Node\+Depth\+Max (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns max node depth stat. 
+
+\begin{DoxyReturn}{Returns}
+The max node depth stat
+\end{DoxyReturn}
+If adding an entity into a node, that node\textquotesingle{}s depth is equal to this value, then \+\_\+mi\+Max\+Entities\+Per\+Node is ignored and the new entity is simply added to the node, instead of trying to sub-\/divide the node further. This is to prevent node dimensions of less than 1x1 which would cause infinite sub-\/division of nodes and cause a stack overflow. This value is computed upon construction and whenever the root node\textquotesingle{}s dimensions are increased. 
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00414}{414}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_acf0f4c925af320cf4550f9b7cec10469}\index{DCL::COctTree@{DCL::COctTree}!getNodesWithEntities@{getNodesWithEntities}}
+\index{getNodesWithEntities@{getNodesWithEntities}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{getNodesWithEntities()}{getNodesWithEntities()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_acf0f4c925af320cf4550f9b7cec10469} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_node}{COct\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ DCL\+::\+COct\+Tree\+::get\+Nodes\+With\+Entities (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of COct\+Tree\+Nodes which holds all nodes which have entities in them. 
+
+\begin{DoxyReturn}{Returns}
+A vector of COct\+Tree\+Nodes which holds all nodes which have entities in them 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00326}{326}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_afc7668878cd0c2250940d84f5e13967e}\index{DCL::COctTree@{DCL::COctTree}!getNodesWithEntitiesWhichIntersect@{getNodesWithEntitiesWhichIntersect}}
+\index{getNodesWithEntitiesWhichIntersect@{getNodesWithEntitiesWhichIntersect}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{getNodesWithEntitiesWhichIntersect()}{getNodesWithEntitiesWhichIntersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_afc7668878cd0c2250940d84f5e13967e} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_node}{COct\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ DCL\+::\+COct\+Tree\+::get\+Nodes\+With\+Entities\+Which\+Intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_a_a_b_b}{CAABB}} \&}]{aabb}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of COct\+Tree\+Nodes which holds all nodes which intersect with the given AABB and have entities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aabb} & The axis aligned bounding box which to use for the intersection test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of COct\+Tree\+Node\texorpdfstring{$\ast$}{*} which have entities in them and intersect with the given AABB 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00333}{333}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_aeda89df6aa2db3f2f5b2a3af80f4ce7f}\index{DCL::COctTree@{DCL::COctTree}!getNodesWithEntitiesWhichIntersect@{getNodesWithEntitiesWhichIntersect}}
+\index{getNodesWithEntitiesWhichIntersect@{getNodesWithEntitiesWhichIntersect}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{getNodesWithEntitiesWhichIntersect()}{getNodesWithEntitiesWhichIntersect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_aeda89df6aa2db3f2f5b2a3af80f4ce7f} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_node}{COct\+Tree\+Node}} \texorpdfstring{$\ast$}{*} $>$ DCL\+::\+COct\+Tree\+::get\+Nodes\+With\+Entities\+Which\+Intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_frustum}{CFrustum}} \&}]{frustum}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of COct\+Tree\+Nodes which holds all nodes which intersect with the given \doxylink{class_d_c_l_1_1_c_frustum}{CFrustum} and have entities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frustum} & The frustum to use for the intersection test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of COct\+Tree\+Node\texorpdfstring{$\ast$}{*} which have entities in them and intersect with the given frustum 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00340}{340}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a10b1942b258b8c1868625a1e649f82b7}\index{DCL::COctTree@{DCL::COctTree}!init@{init}}
+\index{init@{init}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a10b1942b258b8c1868625a1e649f82b7} 
+void DCL\+::\+COct\+Tree\+::init (\begin{DoxyParamCaption}\item[{int}]{i\+Max\+Entities\+Per\+Node}{ = {\ttfamily 10}, }\item[{float}]{f\+Size\+Increase\+Multiplier}{ = {\ttfamily 2.0f}}\end{DoxyParamCaption})}
+
+
+
+Initialise the oct tree using the new given settings. 
+
+This will free the existing tree and any entities.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Max\+Entities\+Per\+Node} & is the maximum number of entities able to be stored within a node before that node will be subdivided again into child nodes. This must be at least 1, otherwise an exception occurs. If we add an entity which is outside of the root node\textquotesingle{}s initial region then the tree is rebuilt.\\
+\hline
+{\em f\+Size\+Increase\+Multiplier} & is used when the tree is rebuilt. It is the amount to increase the root node\textquotesingle{}s dimensions by until the new entity\textquotesingle{}s position fits. A value of 2 would double the new root node\textquotesingle{}s dimensions each time. It must be at least 2 otherwise an exception occurs. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a991d8430b2c0a0a18a8e22bdb911c079}\index{DCL::COctTree@{DCL::COctTree}!removeAllEntities@{removeAllEntities}}
+\index{removeAllEntities@{removeAllEntities}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{removeAllEntities()}{removeAllEntities()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a991d8430b2c0a0a18a8e22bdb911c079} 
+void DCL\+::\+COct\+Tree\+::remove\+All\+Entities (\begin{DoxyParamCaption}\item[{bool}]{b\+Reset\+Tree}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Removes all entities from the tree and depending upon the passed bool, resets the tree to contain just the root node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Reset\+Tree} & Whether to reset the tree whist we\textquotesingle{}re here. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00244}{244}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_adebcbd5a9cda64f91b49731ed5913c60}\index{DCL::COctTree@{DCL::COctTree}!removeEntity@{removeEntity}}
+\index{removeEntity@{removeEntity}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{removeEntity()}{removeEntity()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_adebcbd5a9cda64f91b49731ed5913c60} 
+void DCL\+::\+COct\+Tree\+::remove\+Entity (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Removes the named entity from the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Name} & The name of the entity within the tree. If it doesn\textquotesingle{}t exist, an exception occurs. To determine whether the entity exists, use \doxylink{class_d_c_l_1_1_c_oct_tree_acf0e29bf49823dc2c20e3d704e9a1265}{get\+Entity\+Exists()} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00181}{181}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a6a68cbc48c96b05b9ce4ca8e3289c9f1}\index{DCL::COctTree@{DCL::COctTree}!setEntityPosition@{setEntityPosition}}
+\index{setEntityPosition@{setEntityPosition}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{setEntityPosition()}{setEntityPosition()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a6a68cbc48c96b05b9ce4ca8e3289c9f1} 
+void DCL\+::\+COct\+Tree\+::set\+Entity\+Position (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Name}{, }\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+New\+Position}{}\end{DoxyParamCaption})}
+
+
+
+Set an existing entity\textquotesingle{}s position to the one given, moving to the correct node if needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Name} & The name of the entity within the tree. If the named entity doesn\textquotesingle{}t exist, an exception occurs. \\
+\hline
+{\em v\+New\+Position} & The new position of the entity. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8cpp_source_l00276}{276}} of file \mbox{\hyperlink{_oct_tree_8cpp_source}{Oct\+Tree.\+cpp}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a3b5706716f44b92bb055136dc3dd4c69}\index{DCL::COctTree@{DCL::COctTree}!COctTreeEntity@{COctTreeEntity}}
+\index{COctTreeEntity@{COctTreeEntity}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{COctTreeEntity}{COctTreeEntity}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a3b5706716f44b92bb055136dc3dd4c69} 
+friend class \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_entity}{COct\+Tree\+Entity}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8h_source_l00047}{47}} of file \mbox{\hyperlink{_oct_tree_8h_source}{Oct\+Tree.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_oct_tree_a50a4fdcef86d1f8496c255c827edd71e}\index{DCL::COctTree@{DCL::COctTree}!COctTreeNode@{COctTreeNode}}
+\index{COctTreeNode@{COctTreeNode}!DCL::COctTree@{DCL::COctTree}}
+\doxysubsubsection{\texorpdfstring{COctTreeNode}{COctTreeNode}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_oct_tree_a50a4fdcef86d1f8496c255c827edd71e} 
+friend class \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_node}{COct\+Tree\+Node}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_oct_tree_8h_source_l00046}{46}} of file \mbox{\hyperlink{_oct_tree_8h_source}{Oct\+Tree.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Spatial\+Partitioning/\mbox{\hyperlink{_oct_tree_8h}{Oct\+Tree.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Spatial\+Partitioning/Oct\+Tree.\+cpp\end{DoxyCompactItemize}

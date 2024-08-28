@@ -1,0 +1,139 @@
+\doxysection{DCL\+::CRay Class Reference}
+\hypertarget{class_d_c_l_1_1_c_ray}{}\label{class_d_c_l_1_1_c_ray}\index{DCL::CRay@{DCL::CRay}}
+
+
+A ray class used to represent a ray.  
+
+
+
+
+{\ttfamily \#include $<$Ray.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_ray_a90a6123ebf2e84e88ea68013fb9045de}{CRay}} ()
+\begin{DoxyCompactList}\small\item\em Constructor, does nothing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \mbox{\hyperlink{class_d_c_l_1_1_c_ray_a47cec0c24873352a125fbcc795859e4d}{at}} (float t) const
+\begin{DoxyCompactList}\small\item\em Given the value t, returns a \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} which represents a point along a ray. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \mbox{\hyperlink{class_d_c_l_1_1_c_ray_aa6b02669c77e9984c7c60d140605baa6}{v\+Origin}}
+\begin{DoxyCompactList}\small\item\em The origin position of the ray. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \mbox{\hyperlink{class_d_c_l_1_1_c_ray_a7e1e7035a5c4672ded7826b5c8e537e1}{v\+Direction}}
+\begin{DoxyCompactList}\small\item\em The direction of the ray. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A ray class used to represent a ray. 
+
+
+\begin{DoxyPre}
+All ray tracers need rays!
+This class represents one.
+A ray tracer sends rays through pixels and computes the colour seen by these rays.
+Here's the steps involved...
+Step 1: Compute a ray from the eye, through a pixel
+Step 2: Compute which objects if any that the ray intersects with
+Step 3: Compute the colour for the closest intersection position.
+
+
+\end{DoxyPre}
+ 
+
+Definition at line \mbox{\hyperlink{_ray_8h_source_l00026}{26}} of file \mbox{\hyperlink{_ray_8h_source}{Ray.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_ray_a90a6123ebf2e84e88ea68013fb9045de}\index{DCL::CRay@{DCL::CRay}!CRay@{CRay}}
+\index{CRay@{CRay}!DCL::CRay@{DCL::CRay}}
+\doxysubsubsection{\texorpdfstring{CRay()}{CRay()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_ray_a90a6123ebf2e84e88ea68013fb9045de} 
+DCL\+::\+CRay\+::\+CRay (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor, does nothing. 
+
+Initial values of v\+Origin and v\+Direction are both zero upon their construction 
+
+Definition at line \mbox{\hyperlink{_ray_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_ray_8cpp_source}{Ray.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_ray_a47cec0c24873352a125fbcc795859e4d}\index{DCL::CRay@{DCL::CRay}!at@{at}}
+\index{at@{at}!DCL::CRay@{DCL::CRay}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_ray_a47cec0c24873352a125fbcc795859e4d} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} DCL\+::\+CRay\+::at (\begin{DoxyParamCaption}\item[{float}]{t}{}\end{DoxyParamCaption}) const}
+
+
+
+Given the value t, returns a \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} which represents a point along a ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The amount along the ray from it\textquotesingle{}s origin which we wish to "{}project"{} along and find the position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed position along the ray
+\end{DoxyReturn}
+
+\begin{DoxyPre}
+Here's an equation I borrowed from somewhere...
+P(t) = A + tb
+P is a 3D position along a line/ray
+A is the ray's origin position
+b is the ray direction
+t is a float or double which represents the position along the ray
+So for example...
+if t was 0.0, then the position would be at the ray's origin
+if t was 1.0, then the position would be from the ray's origin, along it's direction by 1 unit
+if t was -\/1.0, then the position would be from the ray's origin, "{}behind"{} the origin by 1 unit
+Doxygen to the rescue again, here's an image I badly drew on the Wacom tablet...
+\end{DoxyPre}
+  
+
+Definition at line \mbox{\hyperlink{_ray_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_ray_8cpp_source}{Ray.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_d_c_l_1_1_c_ray_a7e1e7035a5c4672ded7826b5c8e537e1}\index{DCL::CRay@{DCL::CRay}!vDirection@{vDirection}}
+\index{vDirection@{vDirection}!DCL::CRay@{DCL::CRay}}
+\doxysubsubsection{\texorpdfstring{vDirection}{vDirection}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_ray_a7e1e7035a5c4672ded7826b5c8e537e1} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} DCL\+::\+CRay\+::v\+Direction}
+
+
+
+The direction of the ray. 
+
+
+
+Definition at line \mbox{\hyperlink{_ray_8h_source_l00056}{56}} of file \mbox{\hyperlink{_ray_8h_source}{Ray.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_ray_aa6b02669c77e9984c7c60d140605baa6}\index{DCL::CRay@{DCL::CRay}!vOrigin@{vOrigin}}
+\index{vOrigin@{vOrigin}!DCL::CRay@{DCL::CRay}}
+\doxysubsubsection{\texorpdfstring{vOrigin}{vOrigin}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_ray_aa6b02669c77e9984c7c60d140605baa6} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} DCL\+::\+CRay\+::v\+Origin}
+
+
+
+The origin position of the ray. 
+
+
+
+Definition at line \mbox{\hyperlink{_ray_8h_source_l00055}{55}} of file \mbox{\hyperlink{_ray_8h_source}{Ray.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Ray\+Tracer/\mbox{\hyperlink{_ray_8h}{Ray.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Ray\+Tracer/Ray.\+cpp\end{DoxyCompactItemize}

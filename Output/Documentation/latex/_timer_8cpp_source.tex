@@ -1,0 +1,183 @@
+\doxysection{Timer.\+cpp}
+\hypertarget{_timer_8cpp_source}{}\label{_timer_8cpp_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Timer.cpp@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Timer.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_timer_8h}{Timer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00007}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a3fc9269f2e2fc2e0b453f23fd8926e4a}{00007}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a3fc9269f2e2fc2e0b453f23fd8926e4a}{CTimer::CTimer}}()}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a9adc43ebbe892eed4bb2dfed176fe11b}{reset}}();}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00010}00010\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00012}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a883c48b1ee400e150d4994b970cbb555}{00012}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a883c48b1ee400e150d4994b970cbb555}{CTimer::pause}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \_mbPaused\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00017}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_ae748a6ffae05ad8f42e38728cb16a285}{00017}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_ae748a6ffae05ad8f42e38728cb16a285}{CTimer::resume}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \_mbPaused\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00022}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_accc8d2378a3e86ffe1c74dbc79c454b4}{00022}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_accc8d2378a3e86ffe1c74dbc79c454b4}{CTimer::getSecondsPast}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00023}00023\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mbPaused)}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})\_mdDeltaSec;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00029}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{00029}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{CTimer::update}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \_mdTimePointNew\ =\ std::chrono::steady\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \_mdTimeDeltaSec\ =\ \_mdTimePointNew\ -\/\ \_mdTimePointOld;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \_mdTimePointOld\ =\ \_mdTimePointNew;\textcolor{comment}{//\ std::chrono::steady\_clock::now();}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \_mdDeltaSec\ =\ \_mdTimeDeltaSec.count();}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ FPS}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ ++\_muiNumFrames;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \_mdFPSFrameTime\ +=\ \_mdDeltaSec\ *\ 1000.0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mdFPSFrameTime\ >\ 0.0)}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \_mdFPS\ =\ \_muiNumFrames\ *\ (1000.0\ /\ \_mdFPSFrameTime);}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \_muiNumFrames\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \_mdFPSFrameTime\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ FPS\ smoothed}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \_mdFPSAveragedTimeCount\ +=\ \_mdDeltaSec;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ ++\_miFPSAveragedNumCallsPerSec;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \_mdFPSAveragedAccum\ +=\ \_mdFPS;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mdFPSAveragedTimeCount\ >\ \_mdFPSAveragedRate)}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_miFPSAveragedNumCallsPerSec\ <\ 1)}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_miFPSAveragedNumCallsPerSec\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \_mdFPSAveraged\ =\ \_mdFPSAveragedAccum\ /\ \_miFPSAveragedNumCallsPerSec;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \_mdFPSAveragedTimeCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \_miFPSAveragedNumCallsPerSec\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \_mdFPSAveragedAccum\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Runtime}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \_mdRuntimeInSeconds\ +=\ \_mdDeltaSec;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00066}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a536c37fa1bcd48ac1ed74faecd34d6f3}{00066}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a536c37fa1bcd48ac1ed74faecd34d6f3}{CTimer::sleep}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiMilliseconds)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00067}00067\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Sleep(uiMilliseconds);\ //\ Legacy\ Windows\ function.\ Use\ modern\ crossplatform\ method\ instead...}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::milliseconds(uiMilliseconds));}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00072}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_ab1e55329385452b5a1b604995353912b}{00072}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_ab1e55329385452b5a1b604995353912b}{CTimer::setAveragedFPSRate}}(\textcolor{keywordtype}{float}\ fSecondsBetweenUpdates)}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \_mdFPSAveragedRate\ =\ (double)fSecondsBetweenUpdates;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mdFPSAveragedRate\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \_mdFPSAveragedRate\ =\ 0.001;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00079}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a5108a66e6cbb48da0edc3d4e65b0b3a9}{00079}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a5108a66e6cbb48da0edc3d4e65b0b3a9}{CTimer::getAveragedFPSRate}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00080}00080\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})\_mdFPSAveragedRate;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00084}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a9a06de522d2c363ea7d046d423cedb50}{00084}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a9a06de522d2c363ea7d046d423cedb50}{CTimer::getFPS}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00085}00085\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})\_mdFPS;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00089}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228}{00089}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228}{CTimer::getFPSAveraged}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00090}00090\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})\_mdFPSAveraged;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00094}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a870ebc959aa7b290aa59823d82637e04}{00094}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a870ebc959aa7b290aa59823d82637e04}{CTimer::getFPSAveragedTimeUntilNextUpdate}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00095}00095\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ float(\_mdFPSAveragedRate\ -\/\ \_mdFPSAveragedTimeCount);}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00099}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a9adc43ebbe892eed4bb2dfed176fe11b}{00099}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a9adc43ebbe892eed4bb2dfed176fe11b}{CTimer::reset}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00100}00100\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \_mbPaused\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \_mdTimePointNew\ =\ std::chrono::steady\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \_mdTimePointOld\ =\ \_mdTimePointNew;\textcolor{comment}{//\ std::chrono::steady\_clock::now();}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \_mdTimeDeltaSec\ =\ \_mdTimePointNew\ -\/\ \_mdTimePointOld;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \_mdDeltaSec\ =\ \_mdTimeDeltaSec.count();}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stuff\ for\ FPS}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \_mdFPS\ =\ 1.0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Holds\ computed\ current\ frames\ per\ second\ value}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \_muiNumFrames\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Used\ to\ compute\ FPS\ stuff\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \_mdFPSFrameTime\ =\ 0;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Used\ to\ compute\ FPS\ stuff}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stuff\ for\ FPS\ averaged}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \_mdFPSAveraged\ =\ 1.0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Holds\ computed\ averaged\ frames\ per\ second\ value}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \_mdFPSAveragedRate\ =\ 3.0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Number\ of\ seconds\ between\ updating\ the\ value\ returned\ by\ getFPSAveraged()\ method.}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \_mdFPSAveragedTimeCount\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Used\ to\ compute\ FPSAveraged\ stuff}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \_miFPSAveragedNumCallsPerSec\ =\ 0;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Used\ to\ compute\ FPSAveraged\ stuff}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \_mdFPSAveragedAccum\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Used\ to\ compute\ FPSAveraged\ stuff}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \_mdRuntimeInSeconds\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00122}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a603011ab25a0fa23c976e8eb5640ea8e}{00122}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a603011ab25a0fa23c976e8eb5640ea8e}{CTimer::getRuntimeSeconds}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00123}00123\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})\_mdRuntimeInSeconds;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00127}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a03ea9e97cde374fb2d575850cef4682a}{00127}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a5ce7073369ddf605d30c43a305f6dc48}{CTimer::getClock}}(\textcolor{keywordtype}{float}\&\ fSeconds,\ \textcolor{keywordtype}{int}\&\ iMinutes,\ \textcolor{keywordtype}{int}\&\ iHours,\ \textcolor{keywordtype}{int}\&\ iDays,\ \textcolor{keywordtype}{int}\&\ iWeeks)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00128}00128\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ fSeconds\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ iMinutes\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ iHours\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ iDays\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ iWeeks\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ How\ many\ seconds\ are\ in\ a\ week?}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 60seconds\ in\ a\ minute,\ 60\ minutes\ in\ an\ hour,\ 24\ hours\ in\ a\ day\ and\ 7\ days\ in\ a\ week.}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 60\ *\ 60\ =\ 3600\ seconds\ per\ hour}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3600\ *\ 24\ =\ 86400\ seconds\ in\ a\ day}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 86400\ *\ 7\ =\ 604800\ seconds\ in\ a\ week}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ seconds\ =\ \_mdRuntimeInSeconds;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (seconds\ >=\ 604800)\ \ \ \textcolor{comment}{//\ Weeks}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ seconds\ -\/=\ 604800;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ iWeeks++;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (seconds\ >=\ 86400)\ \ \ \ \textcolor{comment}{//\ Days}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ seconds\ -\/=\ 86400;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ iDays++;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (seconds\ >=\ 3600)\ \ \ \ \ \textcolor{comment}{//\ Hours}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ seconds\ -\/=\ 3600;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ iHours++;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (seconds\ >=\ 60)\ \ \ \ \ \ \ \textcolor{comment}{//\ Minutes}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ seconds\ -\/=\ 60;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ iMinutes++;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ fSeconds\ =\ (float)seconds;\ \ \textcolor{comment}{//\ Seconds}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00164}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a5ce7073369ddf605d30c43a305f6dc48}{00164}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a5ce7073369ddf605d30c43a305f6dc48}{CTimer::getClock}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00165}00165\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fSecs\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iMins,\ iHours,\ iDays,\ iWeeks\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a5ce7073369ddf605d30c43a305f6dc48}{getClock}}(fSecs,\ iMins,\ iHours,\ iDays,\ iWeeks);}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ std::string\ strRuntime\ =\ std::to\_string((\textcolor{keywordtype}{int})fSecs)\ +\ \textcolor{stringliteral}{"{}sec\ "{}};}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ strRuntime\ +=\ std::to\_string(iMins)\ +\ \textcolor{stringliteral}{"{}min\ "{}};}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ strRuntime\ +=\ std::to\_string(iHours)\ +\ \textcolor{stringliteral}{"{}hr\ "{}};}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ strRuntime\ +=\ std::to\_string(iDays)\ +\ \textcolor{stringliteral}{"{}days\ "{}};}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ strRuntime\ +=\ std::to\_string(iWeeks)\ +\ \textcolor{stringliteral}{"{}weeks."{}};}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ strRuntime;}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00175}00175\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_timer_8cpp_source_l00177}00177\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+
+\end{DoxyCode}

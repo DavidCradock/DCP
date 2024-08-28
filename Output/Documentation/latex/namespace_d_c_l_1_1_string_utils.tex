@@ -1,0 +1,476 @@
+\doxysection{DCL\+::String\+Utils Namespace Reference}
+\hypertarget{namespace_d_c_l_1_1_string_utils}{}\label{namespace_d_c_l_1_1_string_utils}\index{DCL::StringUtils@{DCL::StringUtils}}
+
+
+Contains various functions for messing around with strings.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wstring \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a7ac150fc723206dac77e136c3e0d8947}{string\+To\+Wide}} (const std\+::string \&string)
+\begin{DoxyCompactList}\small\item\em Converts a string to wide string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a735f2e39e4c6ac7b407455934aca20f2}{wide\+To\+String}} (const std\+::wstring \&wstring)
+\begin{DoxyCompactList}\small\item\em Converts a wide string to a string. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_af36b57cc542867678af151407667ad0f}{get\+Files\+In\+Dir}} (const std\+::string \&str\+Directory, bool b\+Recursive\+Dirs=false)
+\begin{DoxyCompactList}\small\item\em Returns a vector of strings holding each filename stored within the given directory. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a61a75202f694b4c7eb642861a9defac8}{get\+Files\+In\+Dir}} (const std\+::string \&str\+Directory, const std\+::string \&ext, bool b\+Recursive\+Dirs=false)
+\begin{DoxyCompactList}\small\item\em Returns a vector of strings holding each filename stored within the given directory which have the given filename extension. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a57f1f9830b219f881224d7dcda91bd32}{get\+Dirs\+In\+Dir}} (const std\+::string \&str\+Directory, bool b\+Recursive\+Dirs=false)
+\begin{DoxyCompactList}\small\item\em Returns a vector of strings holding each directory stored within the given directory. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a960d50b591fd1063327d4ef70d68535f}{get\+Current\+Directory}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the current directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aca44d0ea45da9975f46c89d634567163}{string\+To\+Lowercase}} (std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Converts the given string to lowercase. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a6486775e1a8eefa2eccd5aa7e7500dd7}{add\+Filename\+Extension}} (const std\+::string \&str\+Filename\+Extension, const std\+::string \&str\+Filename)
+\begin{DoxyCompactList}\small\item\em Takes the given filename and filename extension and adds the given filename extension to the end of the given filename and returns the result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a6162f48fbbd42687547b5b2d14b8c0c8}{append\+Int}} (std\+::string \&string, int i\+Int)
+\begin{DoxyCompactList}\small\item\em Append an integer to given string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a586a536579a2c7a429778cd8357039e2}{append\+UInt}} (std\+::string \&string, unsigned int ui\+Int)
+\begin{DoxyCompactList}\small\item\em Append an integer to given string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_ad61c6262044d65bde479d207b1a23833}{append\+Float}} (std\+::string \&string, float f\+Value, unsigned int ui\+Num\+Decimal\+Points=2)
+\begin{DoxyCompactList}\small\item\em Append float to given string with the given number of decimals. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aa9a87126773e76e56baf0f5583b9aaaf}{append\+Double}} (std\+::string \&string, double d\+Value, unsigned int ui\+Num\+Decimal\+Points=2)
+\begin{DoxyCompactList}\small\item\em Append double to given string with the given number of decimals. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_af8ee29ad5b8f15a48b8fe4fa7c6a3774}{split\+String}} (const std\+::string \&string, const std\+::string \&str\+Split\+Chars="{}\textbackslash{}n"{})
+\begin{DoxyCompactList}\small\item\em Given a string, finds each occurrence of str\+Split\+Chars and returns a vector of strings which contains strings that are either side of the str\+Split\+Chars, with the str\+Split\+Chars removed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aad219e6030fefb779d29e47e5de8cecd}{represents\+Number}} (const std\+::string \&string)
+\begin{DoxyCompactList}\small\item\em Returns true if the given string has nothing but digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_ab03bcf3477ad1abe6cc54ef28e4282e0}{string\+Write}} (const std\+::string \&str\+String, std\+::ofstream \&file)
+\begin{DoxyCompactList}\small\item\em Writes out a string to an already opened ofstream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a9fdcf957f02524143839348c2d6751a2}{string\+Read}} (std\+::string \&str\+String, std\+::ifstream \&file)
+\item 
+std\+::string \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_abba86030f3fdbd94e5d9d24e9c9ea61d}{blender\+Anim\+Filename}} (const std\+::string \&str\+Basename="{}image"{}, const std\+::string \&str\+Extension="{}.png"{}, int i\+Frame\+Number=0)
+\begin{DoxyCompactList}\small\item\em Blender animation frame filename helper. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aa0b0f2836534ac187680870ba1295d22}{string\+To\+Float}} (const std\+::string \&string)
+\begin{DoxyCompactList}\small\item\em Converts the given string to a float. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a65acb5e82182a51525d69a0212665b3f}{string\+To\+Int}} (const std\+::string \&string)
+\begin{DoxyCompactList}\small\item\em Converts the given string to an int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains various functions for messing around with strings. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_d_c_l_1_1_string_utils_a6486775e1a8eefa2eccd5aa7e7500dd7}\index{DCL::StringUtils@{DCL::StringUtils}!addFilenameExtension@{addFilenameExtension}}
+\index{addFilenameExtension@{addFilenameExtension}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{addFilenameExtension()}{addFilenameExtension()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_a6486775e1a8eefa2eccd5aa7e7500dd7} 
+std\+::string DCL\+::\+String\+Utils\+::add\+Filename\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Filename\+Extension}{, }\item[{const std\+::string \&}]{str\+Filename}{}\end{DoxyParamCaption})}
+
+
+
+Takes the given filename and filename extension and adds the given filename extension to the end of the given filename and returns the result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Filename\+Extension} & The filename extension to add. \\
+\hline
+{\em str\+Filename} & The filename to add the extension to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The filename with the appended filename extension, all lowercase.
+\end{DoxyReturn}
+The returned filename is all lowercase. The filename extension may or may not have the "{}."{} at the beginning. If it doesn\textquotesingle{}t exist, it is added. If passed strings are of zero length, an exception occurs. Also, if the str\+Filename already has an extension, it is removed and replaced with the new one. 
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00125}{125}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_aa9a87126773e76e56baf0f5583b9aaaf}\index{DCL::StringUtils@{DCL::StringUtils}!appendDouble@{appendDouble}}
+\index{appendDouble@{appendDouble}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{appendDouble()}{appendDouble()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_aa9a87126773e76e56baf0f5583b9aaaf} 
+void DCL\+::\+String\+Utils\+::append\+Double (\begin{DoxyParamCaption}\item[{std\+::string \&}]{string}{, }\item[{double}]{d\+Value}{, }\item[{unsigned int}]{ui\+Num\+Decimal\+Points}{ = {\ttfamily 2}}\end{DoxyParamCaption})}
+
+
+
+Append double to given string with the given number of decimals. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to have the value appended to. \\
+\hline
+{\em d\+Value} & The value to append. \\
+\hline
+{\em ui\+Num\+Decimal\+Points} & The number of decimal points of the given value to use (can be from 0 to 9)\\
+\hline
+\end{DoxyParams}
+ui\+Num\+Decimal\+Points can be from 0 to 9, if outside this range, then 2 is used. 
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00182}{182}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_ad61c6262044d65bde479d207b1a23833}\index{DCL::StringUtils@{DCL::StringUtils}!appendFloat@{appendFloat}}
+\index{appendFloat@{appendFloat}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{appendFloat()}{appendFloat()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_ad61c6262044d65bde479d207b1a23833} 
+void DCL\+::\+String\+Utils\+::append\+Float (\begin{DoxyParamCaption}\item[{std\+::string \&}]{string}{, }\item[{float}]{f\+Value}{, }\item[{unsigned int}]{ui\+Num\+Decimal\+Points}{ = {\ttfamily 2}}\end{DoxyParamCaption})}
+
+
+
+Append float to given string with the given number of decimals. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to have the value appended to. \\
+\hline
+{\em f\+Value} & The value to append. \\
+\hline
+{\em ui\+Num\+Decimal\+Points} & The number of decimal points of the given value to use (can be from 0 to 9)\\
+\hline
+\end{DoxyParams}
+ui\+Num\+Decimal\+Points can be from 0 to 9, if outside this range, then 2 is used. 
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_a6162f48fbbd42687547b5b2d14b8c0c8}\index{DCL::StringUtils@{DCL::StringUtils}!appendInt@{appendInt}}
+\index{appendInt@{appendInt}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{appendInt()}{appendInt()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_a6162f48fbbd42687547b5b2d14b8c0c8} 
+void DCL\+::\+String\+Utils\+::append\+Int (\begin{DoxyParamCaption}\item[{std\+::string \&}]{string}{, }\item[{int}]{i\+Int}{}\end{DoxyParamCaption})}
+
+
+
+Append an integer to given string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to have the value appended to. \\
+\hline
+{\em i\+Int} & The integer to append. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_a586a536579a2c7a429778cd8357039e2}\index{DCL::StringUtils@{DCL::StringUtils}!appendUInt@{appendUInt}}
+\index{appendUInt@{appendUInt}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{appendUInt()}{appendUInt()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_a586a536579a2c7a429778cd8357039e2} 
+void DCL\+::\+String\+Utils\+::append\+UInt (\begin{DoxyParamCaption}\item[{std\+::string \&}]{string}{, }\item[{unsigned int}]{ui\+Int}{}\end{DoxyParamCaption})}
+
+
+
+Append an integer to given string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to have the value appended to. \\
+\hline
+{\em ui\+Int} & The unsigned integer to append. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_abba86030f3fdbd94e5d9d24e9c9ea61d}\index{DCL::StringUtils@{DCL::StringUtils}!blenderAnimFilename@{blenderAnimFilename}}
+\index{blenderAnimFilename@{blenderAnimFilename}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{blenderAnimFilename()}{blenderAnimFilename()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_abba86030f3fdbd94e5d9d24e9c9ea61d} 
+std\+::string DCL\+::\+String\+Utils\+::blender\+Anim\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Basename}{ = {\ttfamily "{}image"{}}, }\item[{const std\+::string \&}]{str\+Extension}{ = {\ttfamily "{}.png"{}}, }\item[{int}]{i\+Frame\+Number}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Blender animation frame filename helper. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Basename} & The base name of all the images \\
+\hline
+{\em str\+Extension} & The extension of all the images, for example "{}.\+png"{} \\
+\hline
+{\em i\+Frame\+Number} & The frame number we wish to create the full filename for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed filename from all the given parameters.
+\end{DoxyReturn}
+Say we create an animation in Blender with 100 frames and we save them out as "{}image"{} The first 10 images will be named "{}image0000.\+png"{} through to "{}image0009.\+png"{} The next 90 will be named "{}image0010.\+png"{} through to "{}image0099.\+png"{} What this function does is given, a basename, an integer and extension, it returns a string which holds the correct final name. So for example, passing "{}image"{} as the basename, "{}png"{} (or "{}.\+png"{}) as the extension and "{}50"{} for the int will return the string "{}image0050.\+png"{} 
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00284}{284}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_a960d50b591fd1063327d4ef70d68535f}\index{DCL::StringUtils@{DCL::StringUtils}!getCurrentDirectory@{getCurrentDirectory}}
+\index{getCurrentDirectory@{getCurrentDirectory}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{getCurrentDirectory()}{getCurrentDirectory()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_a960d50b591fd1063327d4ef70d68535f} 
+std\+::string DCL\+::\+String\+Utils\+::get\+Current\+Directory (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the current directory. 
+
+\begin{DoxyReturn}{Returns}
+A string holding the current directory 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_a57f1f9830b219f881224d7dcda91bd32}\index{DCL::StringUtils@{DCL::StringUtils}!getDirsInDir@{getDirsInDir}}
+\index{getDirsInDir@{getDirsInDir}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{getDirsInDir()}{getDirsInDir()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_a57f1f9830b219f881224d7dcda91bd32} 
+std\+::vector$<$ std\+::string $>$ DCL\+::\+String\+Utils\+::get\+Dirs\+In\+Dir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Directory}{, }\item[{bool}]{b\+Recursive\+Dirs}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Returns a vector of strings holding each directory stored within the given directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Directory} & The directory which we wish to find all directories within it. \\
+\hline
+{\em b\+Recursive\+Dirs} & If true, then dirs within sub directories are also added instead of just the ones in the given directory. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings holding each directory found.
+\end{DoxyReturn}
+If b\+Recursive\+Dirs is true, then directories within sub directories are also added instead of just the ones in the given directory. 
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_af36b57cc542867678af151407667ad0f}\index{DCL::StringUtils@{DCL::StringUtils}!getFilesInDir@{getFilesInDir}}
+\index{getFilesInDir@{getFilesInDir}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{getFilesInDir()}{getFilesInDir()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_af36b57cc542867678af151407667ad0f} 
+std\+::vector$<$ std\+::string $>$ DCL\+::\+String\+Utils\+::get\+Files\+In\+Dir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Directory}{, }\item[{bool}]{b\+Recursive\+Dirs}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Returns a vector of strings holding each filename stored within the given directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Directory} & The directory which we wish to find all files within it. \\
+\hline
+{\em b\+Recursive\+Dirs} & If true, then files within sub directories are also added instead of just the ones in the given directory. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings holding each filename found.
+\end{DoxyReturn}
+If b\+Recursive\+Dirs is true, then files within sub directories are also added instead of just the ones in the given directory. 
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_a61a75202f694b4c7eb642861a9defac8}\index{DCL::StringUtils@{DCL::StringUtils}!getFilesInDir@{getFilesInDir}}
+\index{getFilesInDir@{getFilesInDir}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{getFilesInDir()}{getFilesInDir()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_a61a75202f694b4c7eb642861a9defac8} 
+std\+::vector$<$ std\+::string $>$ DCL\+::\+String\+Utils\+::get\+Files\+In\+Dir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Directory}{, }\item[{const std\+::string \&}]{ext}{, }\item[{bool}]{b\+Recursive\+Dirs}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Returns a vector of strings holding each filename stored within the given directory which have the given filename extension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Directory} & The directory which we wish to find all files within it. \\
+\hline
+{\em b\+Recursive\+Dirs} & If true, then files within sub directories are also added instead of just the ones in the given directory. \\
+\hline
+{\em ext} & The filename extension for the files which match this to be added to the returned results. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings holding each filename found.
+\end{DoxyReturn}
+If b\+Recursive\+Dirs is true, then files within sub directories are also added instead of just the ones in the given directory. The parsed filename extension may or may not have the "{}."{} character at the start. 
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_aad219e6030fefb779d29e47e5de8cecd}\index{DCL::StringUtils@{DCL::StringUtils}!representsNumber@{representsNumber}}
+\index{representsNumber@{representsNumber}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{representsNumber()}{representsNumber()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_aad219e6030fefb779d29e47e5de8cecd} 
+bool DCL\+::\+String\+Utils\+::represents\+Number (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Returns true if the given string has nothing but digits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the given string has nothing but digits 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00258}{258}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_af8ee29ad5b8f15a48b8fe4fa7c6a3774}\index{DCL::StringUtils@{DCL::StringUtils}!splitString@{splitString}}
+\index{splitString@{splitString}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{splitString()}{splitString()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_af8ee29ad5b8f15a48b8fe4fa7c6a3774} 
+std\+::vector$<$ std\+::string $>$ DCL\+::\+String\+Utils\+::split\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string}{, }\item[{const std\+::string \&}]{str\+Split\+Chars}{ = {\ttfamily "{}\textbackslash{}n"{}}}\end{DoxyParamCaption})}
+
+
+
+Given a string, finds each occurrence of str\+Split\+Chars and returns a vector of strings which contains strings that are either side of the str\+Split\+Chars, with the str\+Split\+Chars removed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to use as input for the operation \\
+\hline
+{\em str\+Split\+Chars} & The split chars to use for the operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings holding the results
+\end{DoxyReturn}
+This is usefull for splitting text into multiple lines, using a specified character sequence used to represent the end of the line of text. For example, if the string is "{}\+Line1\textbackslash{}n\+Line2\textbackslash{}n\+Line3"{} and the str\+Splite\+Chars is "{}\textbackslash{}n"{} then the returned vector would have 3 entries, "{}\+Line1"{} "{}\+Line2"{} and "{}\+Line3"{} 
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00217}{217}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_a9fdcf957f02524143839348c2d6751a2}\index{DCL::StringUtils@{DCL::StringUtils}!stringRead@{stringRead}}
+\index{stringRead@{stringRead}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{stringRead()}{stringRead()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_a9fdcf957f02524143839348c2d6751a2} 
+void DCL\+::\+String\+Utils\+::string\+Read (\begin{DoxyParamCaption}\item[{std\+::string \&}]{str\+String}{, }\item[{std\+::ifstream \&}]{file}{}\end{DoxyParamCaption})}
+
+Reads in a string from an already opened ifstream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+String} & The string to hold the data read in \\
+\hline
+{\em file} & An allready opened ifstream to read the string from.\\
+\hline
+\end{DoxyParams}
+This reads in the size of the string, resizes it to make room and then loads it in If the file is not open or there was an error during reading, an exception occurs. 
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00272}{272}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_aa0b0f2836534ac187680870ba1295d22}\index{DCL::StringUtils@{DCL::StringUtils}!stringToFloat@{stringToFloat}}
+\index{stringToFloat@{stringToFloat}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{stringToFloat()}{stringToFloat()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_aa0b0f2836534ac187680870ba1295d22} 
+float DCL\+::\+String\+Utils\+::string\+To\+Float (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Converts the given string to a float. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string holding a float \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The float value contained within the string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00320}{320}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_a65acb5e82182a51525d69a0212665b3f}\index{DCL::StringUtils@{DCL::StringUtils}!stringToInt@{stringToInt}}
+\index{stringToInt@{stringToInt}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{stringToInt()}{stringToInt()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_a65acb5e82182a51525d69a0212665b3f} 
+int DCL\+::\+String\+Utils\+::string\+To\+Int (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Converts the given string to an int. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string holding the integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The int value contained within the string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00326}{326}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_aca44d0ea45da9975f46c89d634567163}\index{DCL::StringUtils@{DCL::StringUtils}!stringToLowercase@{stringToLowercase}}
+\index{stringToLowercase@{stringToLowercase}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{stringToLowercase()}{stringToLowercase()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_aca44d0ea45da9975f46c89d634567163} 
+void DCL\+::\+String\+Utils\+::string\+To\+Lowercase (\begin{DoxyParamCaption}\item[{std\+::string \&}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Converts the given string to lowercase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string who\textquotesingle{}s characters are to be set to all lowercase. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_a7ac150fc723206dac77e136c3e0d8947}\index{DCL::StringUtils@{DCL::StringUtils}!stringToWide@{stringToWide}}
+\index{stringToWide@{stringToWide}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{stringToWide()}{stringToWide()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_a7ac150fc723206dac77e136c3e0d8947} 
+std\+::wstring DCL\+::\+String\+Utils\+::string\+To\+Wide (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Converts a string to wide string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_ab03bcf3477ad1abe6cc54ef28e4282e0}\index{DCL::StringUtils@{DCL::StringUtils}!stringWrite@{stringWrite}}
+\index{stringWrite@{stringWrite}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{stringWrite()}{stringWrite()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_ab03bcf3477ad1abe6cc54ef28e4282e0} 
+void DCL\+::\+String\+Utils\+::string\+Write (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+String}{, }\item[{std\+::ofstream \&}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Writes out a string to an already opened ofstream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+String} & The string to write to the file \\
+\hline
+{\em file} & An allready opened ofstream to write the string to.\\
+\hline
+\end{DoxyParams}
+The writes out the size of the string and then the string itself. It\textquotesingle{}s paired with \doxylink{namespace_d_c_l_1_1_string_utils_a9fdcf957f02524143839348c2d6751a2}{string\+Read()} If the file is not open, an exception occurs 
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00263}{263}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+
+\Hypertarget{namespace_d_c_l_1_1_string_utils_a735f2e39e4c6ac7b407455934aca20f2}\index{DCL::StringUtils@{DCL::StringUtils}!wideToString@{wideToString}}
+\index{wideToString@{wideToString}!DCL::StringUtils@{DCL::StringUtils}}
+\doxysubsubsection{\texorpdfstring{wideToString()}{wideToString()}}
+{\footnotesize\ttfamily \label{namespace_d_c_l_1_1_string_utils_a735f2e39e4c6ac7b407455934aca20f2} 
+std\+::string DCL\+::\+String\+Utils\+::wide\+To\+String (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{wstring}{}\end{DoxyParamCaption})}
+
+
+
+Converts a wide string to a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wstring} & The string to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_string_utils_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_string_utils_8cpp_source}{String\+Utils.\+cpp}}.
+

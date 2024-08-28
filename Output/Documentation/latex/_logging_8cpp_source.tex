@@ -1,0 +1,140 @@
+\doxysection{Logging.\+cpp}
+\hypertarget{_logging_8cpp_source}{}\label{_logging_8cpp_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Logging.cpp@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Logging.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logging_8h}{Logging.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_exceptions_8h}{Exceptions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00007}00007\ \ \ \ \ CLogEntry::CLogEntry()}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_ab10c00c447814d37997677d6f48fd6db}{fTimeSeconds}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a6971b9c22d2a855dd498ab70128cb73b}{iTimeMin}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a6bab9fe7185a9cc52f74e91fd1acdbf9}{iTimeHours}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_aafff27b488dca7885410181cd0df9ef3}{iTimeDays}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a5f3473a654e2443e11338e486e755de4}{iTimeWeeks}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00017}\mbox{\hyperlink{class_d_c_l_1_1_c_log_a01564a0f3ccde4df91ac46065bf77615}{00017}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_a01564a0f3ccde4df91ac46065bf77615}{CLog::CLog}}()}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \_mstrLogFilename\ =\ \textcolor{stringliteral}{"{}log.txt"{}};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_a1d2d3914007154c46d7c154297ff7e39}{clear}}();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00023}\mbox{\hyperlink{class_d_c_l_1_1_c_log_a80598d56065645c31b629abb58222a36}{00023}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_log_a80598d56065645c31b629abb58222a36}{CLog::add}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{string})}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_entry}{CLogEntry}}\ logEntry;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00026}00026\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ std::fstream\ fs;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ fs.open(\_mstrLogFilename,\ std::ios::out\ |\ std::ios::app);}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ the\ given\ string\ in\ the\ log\ entry}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a8038010ff8efc37a30d7305271afeba9}{strText}}\ =\ string;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ current\ runtime\ in\ the\ log\ entry}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \_timer.\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update}}();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \_timer.\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a03ea9e97cde374fb2d575850cef4682a}{getClock}}(logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_ab10c00c447814d37997677d6f48fd6db}{fTimeSeconds}},\ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a6971b9c22d2a855dd498ab70128cb73b}{iTimeMin}},\ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a6bab9fe7185a9cc52f74e91fd1acdbf9}{iTimeHours}},\ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_aafff27b488dca7885410181cd0df9ef3}{iTimeDays}},\ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a5f3473a654e2443e11338e486e755de4}{iTimeWeeks}});}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ the\ current\ runtime\ as\ a\ string\ in\ the\ log\ entry}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a79829a4aeb88d73ec9cfc0f366525e2e}{strTime}}\ +=\ std::to\_string(logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a5f3473a654e2443e11338e486e755de4}{iTimeWeeks}})\ +\ \textcolor{stringliteral}{"{}w:"{}};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a79829a4aeb88d73ec9cfc0f366525e2e}{strTime}}\ +=\ std::to\_string(logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_aafff27b488dca7885410181cd0df9ef3}{iTimeDays}})\ +\ \textcolor{stringliteral}{"{}d:"{}};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a79829a4aeb88d73ec9cfc0f366525e2e}{strTime}}\ +=\ std::to\_string(logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a6bab9fe7185a9cc52f74e91fd1acdbf9}{iTimeHours}})\ +\ \textcolor{stringliteral}{"{}h:"{}};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a79829a4aeb88d73ec9cfc0f366525e2e}{strTime}}\ +=\ std::to\_string(logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a6971b9c22d2a855dd498ab70128cb73b}{iTimeMin}})\ +\ \textcolor{stringliteral}{"{}m:"{}};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_ab10c00c447814d37997677d6f48fd6db}{fTimeSeconds}}\ <\ 10.0f)}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a79829a4aeb88d73ec9cfc0f366525e2e}{strTime}}\ +=\ \textcolor{stringliteral}{"{}0"{}};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a79829a4aeb88d73ec9cfc0f366525e2e}{strTime}}\ +=\ std::to\_string(\textcolor{keywordtype}{int}(logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_ab10c00c447814d37997677d6f48fd6db}{fTimeSeconds}}))\ +\ \textcolor{stringliteral}{"{}s\ :\ "{}};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Output\ time\ string\ to\ file}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ fs\ <<\ logEntry.\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry_a79829a4aeb88d73ec9cfc0f366525e2e}{strTime}}.c\_str();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Output\ the\ log\ entry's\ text\ to\ the\ file}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ fs\ <<\ \textcolor{keywordtype}{string}.c\_str();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ fs\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ fs.close();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ the\ log\ entry\ in\ memory\ for\ future\ access.}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \_mlogEntries.push\_back(logEntry);}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00058}\mbox{\hyperlink{class_d_c_l_1_1_c_log_a1d2d3914007154c46d7c154297ff7e39}{00058}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_log_a1d2d3914007154c46d7c154297ff7e39}{CLog::clear}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ std::fstream\ fs;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ fs.open(\_mstrLogFilename,\ std::ios::out\ |\ std::ios::trunc);}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ fs.close();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \_mlogEntries.clear();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00066}\mbox{\hyperlink{class_d_c_l_1_1_c_log_a3653540972d38fdc601920d9f19e4dd4}{00066}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_log_a3653540972d38fdc601920d9f19e4dd4}{CLog::deleteLogFile}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\ file\_path(\_mstrLogFilename);}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::filesystem::exists(file\_path))}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::remove(file\_path);}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}File\ deleted\ successfully."{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cerr\ <<\ "{}File\ does\ not\ exist."{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::filesystem::filesystem\_error\&\ e)}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cerr\ <<\ "{}Error\ deleting\ file:\ "{}\ <<\ e.what()\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strError\ =\ \textcolor{stringliteral}{"{}Error\ deleting\ file:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ strError\ +=\ e.what();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_a80598d56065645c31b629abb58222a36}{add}}(strError);}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00093}\mbox{\hyperlink{class_d_c_l_1_1_c_log_a4ff6c01be34d498694b20112980f6d6b}{00093}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_log_a4ff6c01be34d498694b20112980f6d6b}{CLog::setLogFileName}}(\textcolor{keyword}{const}\ std::string\&\ strLogFileName)}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_a3653540972d38fdc601920d9f19e4dd4}{deleteLogFile}}();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \_mstrLogFilename\ =\ strLogFileName;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_a1d2d3914007154c46d7c154297ff7e39}{clear}}();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00101}\mbox{\hyperlink{class_d_c_l_1_1_c_log_aec810fa6176e0ef2a27f7aa3281e0fbf}{00101}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_d_c_l_1_1_c_log_aec810fa6176e0ef2a27f7aa3281e0fbf}{CLog::getNumEntries}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00102}00102\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mlogEntries.size();}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00106}\mbox{\hyperlink{class_d_c_l_1_1_c_log_aab3211186ea1a191333d54b34a6cc463}{00106}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_d_c_l_1_1_c_log_aab3211186ea1a191333d54b34a6cc463}{CLog::getEntryText}}(\textcolor{keywordtype}{size\_t}\ entryIndex)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00107}00107\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(entryIndex\ >=\ \_mlogEntries.size(),\ \textcolor{stringliteral}{"{}CLog::getEntryText()\ with\ given\ index\ of\ "{}}\ +\ std::to\_string(entryIndex)\ +\ \textcolor{stringliteral}{"{}\ failed\ as\ given\ index\ is\ invalid."{}});}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mlogEntries[entryIndex].strText;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00112}\mbox{\hyperlink{class_d_c_l_1_1_c_log_acfdc36c83c257b05e234124ff65a1e6a}{00112}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_d_c_l_1_1_c_log_acfdc36c83c257b05e234124ff65a1e6a}{CLog::getEntryTime}}(\textcolor{keywordtype}{size\_t}\ entryIndex)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00113}00113\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(entryIndex\ >=\ \_mlogEntries.size(),\ \textcolor{stringliteral}{"{}CLog::getEntryTime()\ with\ given\ index\ of\ "{}}\ +\ std::to\_string(entryIndex)\ +\ \textcolor{stringliteral}{"{}\ failed\ as\ given\ index\ is\ invalid."{}});}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mlogEntries[entryIndex].strTime;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00118}\mbox{\hyperlink{class_d_c_l_1_1_c_log_a63db6883a75bbd242279df668a538798}{00118}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_log_a63db6883a75bbd242279df668a538798}{CLog::getEntryTimes}}(\textcolor{keywordtype}{size\_t}\ entryIndex,\ \textcolor{keywordtype}{float}\&\ fSecondsOut,\ \textcolor{keywordtype}{int}\&\ iMinutesOut,\ \textcolor{keywordtype}{int}\&\ iHoursOut,\ \textcolor{keywordtype}{int}\&\ iDaysOut,\ \textcolor{keywordtype}{int}\&\ iWeeksOut)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00119}00119\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(entryIndex\ >=\ \_mlogEntries.size(),\ \textcolor{stringliteral}{"{}CLog::getEntryTimes()\ with\ given\ index\ of\ "{}}\ +\ std::to\_string(entryIndex)\ +\ \textcolor{stringliteral}{"{}\ failed\ as\ given\ index\ is\ invalid."{}});}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ fSecondsOut\ =\ \_mlogEntries[entryIndex].fTimeSeconds;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ iMinutesOut\ =\ \_mlogEntries[entryIndex].iTimeMin;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ iHoursOut\ =\ \_mlogEntries[entryIndex].iTimeHours;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ iDaysOut\ =\ \_mlogEntries[entryIndex].iTimeDays;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ iWeeksOut\ =\ \_mlogEntries[entryIndex].iTimeWeeks;}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00128}\mbox{\hyperlink{class_d_c_l_1_1_c_log_ae4a23a7eb5136c4530c6b9b1b0cbda71}{00128}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_log_entry}{CLogEntry}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_log_ae4a23a7eb5136c4530c6b9b1b0cbda71}{CLog::getEntry}}(\textcolor{keywordtype}{size\_t}\ entryIndex)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00129}00129\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(entryIndex\ >=\ \_mlogEntries.size(),\ \textcolor{stringliteral}{"{}CLog::getEntry()\ with\ given\ index\ of\ "{}}\ +\ std::to\_string(entryIndex)\ +\ \textcolor{stringliteral}{"{}\ failed\ as\ given\ index\ is\ invalid."{}});}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mlogEntries[entryIndex];}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_logging_8cpp_source_l00134}00134\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+
+\end{DoxyCode}

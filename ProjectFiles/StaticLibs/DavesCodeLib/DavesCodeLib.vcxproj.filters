@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ArtificialIntelligence">
+      <UniqueIdentifier>{4a965b0f-d127-4688-9f16-92ae9df5e6df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{166c6329-a495-49c6-a19b-682ba4e71fa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{fd18ca04-b31d-41ec-b9d6-161164ac580c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Files">
+      <UniqueIdentifier>{b4a5938c-0f37-468d-830d-d7ac7d5fe131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image">
+      <UniqueIdentifier>{f42a7b13-81aa-4f70-bd14-7dfbf77c21f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{3ab9b09f-4d0a-4acd-b676-82e271f3a1c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderers">
+      <UniqueIdentifier>{52458fcf-46a4-494e-989c-c319c469956a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SpatialPartitioning">
+      <UniqueIdentifier>{1f3370c7-ee52-4383-8bdc-08ddf22c717f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="RayTracer">
+      <UniqueIdentifier>{5bdd64a9-e9bd-4e3d-9780-26017b9abef9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ArtificialIntelligence\FiniteStateMachine.h">
+      <Filter>ArtificialIntelligence</Filter>
+    </ClInclude>
+    <ClInclude Include="ArtificialIntelligence\GeneticAlgorithm.h">
+      <Filter>ArtificialIntelligence</Filter>
+    </ClInclude>
+    <ClInclude Include="ArtificialIntelligence\NeuralNetFeedForward.h">
+      <Filter>ArtificialIntelligence</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\AudioManager.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\AudioSample.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Colourf.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Colouruc.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Exceptions.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Logging.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Multithreading.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Profiler.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Singleton.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\StringUtils.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Timer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TimerMinimal.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Utilities.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Files\FileManager.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Files\FileMemory.h">
+      <Filter>Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Image\Image.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Image\ImageAtlas.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Image\stb_image.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Image\stb_image_write.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\AABB.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Frustum.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Matrix.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Plane.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Quaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Rect.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector2f.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector3f.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector4f.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="RayTracer\Ray.h">
+      <Filter>RayTracer</Filter>
+    </ClInclude>
+    <ClInclude Include="SpatialPartitioning\OctTree.h">
+      <Filter>SpatialPartitioning</Filter>
+    </ClInclude>
+    <ClInclude Include="SpatialPartitioning\OctTreeEntity.h">
+      <Filter>SpatialPartitioning</Filter>
+    </ClInclude>
+    <ClInclude Include="SpatialPartitioning\OctTreeNode.h">
+      <Filter>SpatialPartitioning</Filter>
+    </ClInclude>
+    <ClInclude Include="SpatialPartitioning\QuadTree.h">
+      <Filter>SpatialPartitioning</Filter>
+    </ClInclude>
+    <ClInclude Include="SpatialPartitioning\QuadTreeEntity.h">
+      <Filter>SpatialPartitioning</Filter>
+    </ClInclude>
+    <ClInclude Include="SpatialPartitioning\QuadTreeNode.h">
+      <Filter>SpatialPartitioning</Filter>
+    </ClInclude>
+    <ClInclude Include="DavesCodeLibrary.h" />
+    <ClInclude Include="NewFileTemplate.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ArtificialIntelligence\GeneticAlgorithm.cpp">
+      <Filter>ArtificialIntelligence</Filter>
+    </ClCompile>
+    <ClCompile Include="ArtificialIntelligence\NeuralNetFeedForward.cpp">
+      <Filter>ArtificialIntelligence</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\AudioManager.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\AudioSample.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Colourf.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Colouruc.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Exceptions.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Logging.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Multithreading.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Profiler.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\StringUtils.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Timer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TimerMinimal.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Utilities.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Files\FileManager.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Files\FileMemory.cpp">
+      <Filter>Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Image\Image.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Image\ImageAtlas.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\AABB.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Frustum.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Matrix.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Plane.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Quaternion.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Rect.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Vector2f.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Vector3f.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Vector4f.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="RayTracer\Ray.cpp">
+      <Filter>RayTracer</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialPartitioning\OctTree.cpp">
+      <Filter>SpatialPartitioning</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialPartitioning\OctTreeEntity.cpp">
+      <Filter>SpatialPartitioning</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialPartitioning\OctTreeNode.cpp">
+      <Filter>SpatialPartitioning</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialPartitioning\QuadTree.cpp">
+      <Filter>SpatialPartitioning</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialPartitioning\QuadTreeEntity.cpp">
+      <Filter>SpatialPartitioning</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialPartitioning\QuadTreeNode.cpp">
+      <Filter>SpatialPartitioning</Filter>
+    </ClCompile>
+    <ClCompile Include="DavesCodeLibrary.cpp" />
+    <ClCompile Include="NewFileTemplate.cpp" />
+    <ClCompile Include="ArtificialIntelligence\FiniteStateMachine.cpp">
+      <Filter>ArtificialIntelligence</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

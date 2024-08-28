@@ -1,0 +1,83 @@
+\doxysection{File\+Manager.\+cpp}
+\hypertarget{_file_manager_8cpp_source}{}\label{_file_manager_8cpp_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Files/FileManager.cpp@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Files/FileManager.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_manager_8h}{FileManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00011}\mbox{\hyperlink{namespace_d_c_l_a59a6d9b5f42275453df6434b51689c63}{00011}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_file_manager}{CFileManager}}\ \mbox{\hyperlink{namespace_d_c_l_a59a6d9b5f42275453df6434b51689c63}{gFileManager}};}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00013}\mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_a3c4ef18f6636d841da61229ae42a4e8d}{00013}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_a3c4ef18f6636d841da61229ae42a4e8d}{CFileManager::CFileManager}}()}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00017}\mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_acb79de81086db8eb01b1878529e3abc3}{00017}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_acb79de81086db8eb01b1878529e3abc3}{CFileManager::writeString}}(std::ofstream\&\ file,\ std::string\&\ strString)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00018}00018\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(file.is\_open(),\ \textcolor{stringliteral}{"{}CFileManager::write()\ failed.\ The\ given\ ofstream\ is\ not\ open."{}});}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(file.bad(),\ \textcolor{stringliteral}{"{}CFileManager::write()\ failed.\ The\ given\ ofstream\ is\ bad."{}});}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ out\ length\ of\ string}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ stringLength\ =\ strString.size();}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ file.write((\textcolor{keywordtype}{char}*)\&stringLength,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ out\ characters}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ file.write(strString.c\_str(),\ stringLength);}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(file.bad(),\ \textcolor{stringliteral}{"{}CFileManager::write()\ failed.\ The\ given\ ofstream\ is\ bad."{}});}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00032}\mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_a16a9841ced4c530c5bbad04d0fb354bc}{00032}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_a16a9841ced4c530c5bbad04d0fb354bc}{CFileManager::readString}}(std::ifstream\&\ file,\ std::string\&\ strString)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00033}00033\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(file.is\_open(),\ \textcolor{stringliteral}{"{}CFileManager::read()\ failed.\ The\ given\ ifstream\ is\ not\ open."{}});}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(file.bad(),\ \textcolor{stringliteral}{"{}CFileManager::read()\ failed.\ The\ given\ ifstream\ is\ bad."{}});}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ in\ length\ of\ string}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ stringLength;}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)\&stringLength,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{size\_t}));}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ in\ characters}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ charTemp\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[stringLength];}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(charTemp,\ \textcolor{stringliteral}{"{}CFileManager::read()\ failed.\ Temporary\ memory\ allocation\ failed."{}});}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ file.read(charTemp,\ stringLength);}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(file.bad(),\ \textcolor{stringliteral}{"{}CFileManager::read()\ failed.\ The\ given\ ifstream\ is\ bad."{}});}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ strString.clear();}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ strString.append(charTemp);}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ charTemp;}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00052}\mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_a458622fce6faf686836671e304b4b7ca}{00052}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_a458622fce6faf686836671e304b4b7ca}{CFileManager::getFileExists}}(\textcolor{keyword}{const}\ std::string\&\ strFilename)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00053}00053\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00055}00055\ \textcolor{comment}{\ \ \ \ \ \ \ \ FILE*\ f;}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00056}00056\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (fopen\_s(\&f,\ strFilename.c\_str(),\ "{}rb"{}))}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00057}00057\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00058}00058\ \textcolor{comment}{\ \ \ \ \ \ \ \ fclose(f);}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00059}00059\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ true;}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00060}00060\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ bExists\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ std::ifstream\ file(strFilename);}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (file.is\_open())}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ bExists\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bExists;}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00071}\mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_a2a531c167bd1042b785f90c95b095697}{00071}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_a2a531c167bd1042b785f90c95b095697}{CFileManager::deleteFile}}(\textcolor{keyword}{const}\ std::string\&\ strFilenameToDelete)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00072}00072\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ std::remove(strFilenameToDelete.c\_str());}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !\mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_a458622fce6faf686836671e304b4b7ca}{getFileExists}}(strFilenameToDelete);}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00077}\mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_aacc4f5a7b41e9268b0e035e437eea746}{00077}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_file_manager_aacc4f5a7b41e9268b0e035e437eea746}{CFileManager::renameFile}}(\textcolor{keyword}{const}\ std::string\&\ strOldFilename,\ \textcolor{keyword}{const}\ std::string\&\ strNewFilename)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00078}00078\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ ==\ std::rename(strOldFilename.c\_str(),\ strNewFilename.c\_str()))}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_manager_8cpp_source_l00083}00083\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+
+\end{DoxyCode}

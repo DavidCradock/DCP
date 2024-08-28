@@ -1,0 +1,438 @@
+\doxysection{Image\+Atlas.\+cpp}
+\hypertarget{_image_atlas_8cpp_source}{}\label{_image_atlas_8cpp_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Image/ImageAtlas.cpp@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Image/ImageAtlas.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_atlas_8h}{ImageAtlas.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_exceptions_8h}{../Core/Exceptions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_string_utils_8h}{../Core/StringUtils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00007}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a7e173b191de5710c893b4da1a7be6383}{00007}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a7e173b191de5710c893b4da1a7be6383}{CImageAtlasDetails::write}}(std::ofstream\&\ file)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(file.is\_open(),\ \textcolor{stringliteral}{"{}CImageAtlasDetails::write()\ failed.\ The\ given\ ofstream\ is\ not\ open."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ file.write((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a819cbcf638be064106735e23a5d35355}{sTexCoords}}.\mbox{\hyperlink{struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords_aceab5f2a86dd51cdb530a6124f3e8924}{vBL}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ file.write((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a819cbcf638be064106735e23a5d35355}{sTexCoords}}.\mbox{\hyperlink{struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords_a0a60ad113a1214ff9366ca10a1f5fd4e}{vBR}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ file.write((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a819cbcf638be064106735e23a5d35355}{sTexCoords}}.\mbox{\hyperlink{struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords_aff0eca23457e9577f08172adc9085461}{vTL}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ file.write((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a819cbcf638be064106735e23a5d35355}{sTexCoords}}.\mbox{\hyperlink{struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords_af5540bd271f3bb0760a3684df259c631}{vTR}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ file.write((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a85b2058da892f7e2cf994aa85bd1a96b}{vDims}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_ab03bcf3477ad1abe6cc54ef28e4282e0}{StringUtils::stringWrite}}(\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a1df98bc8057a36ad3ca28aa765cc8d61}{strImageFilename}},\ file);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ file.write((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a1421b14b195e6f887c62de5d1f7c2996}{uiAtlasImage}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ file.write((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a64a172aecb584690f38847b63ba24cd2}{bRotated}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(file.good(),\ \textcolor{stringliteral}{"{}CImageAtlasDetails::write()\ failed.\ The\ ofstream\ is\ not\ good."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00023}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a595b094eda2d8714d2d2838be076477d}{00023}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a595b094eda2d8714d2d2838be076477d}{CImageAtlasDetails::read}}(std::ifstream\&\ file)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(file.is\_open(),\ \textcolor{stringliteral}{"{}CImageAtlasDetails::read()\ failed.\ The\ given\ ifstream\ is\ not\ open."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a819cbcf638be064106735e23a5d35355}{sTexCoords}}.\mbox{\hyperlink{struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords_aceab5f2a86dd51cdb530a6124f3e8924}{vBL}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a819cbcf638be064106735e23a5d35355}{sTexCoords}}.\mbox{\hyperlink{struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords_a0a60ad113a1214ff9366ca10a1f5fd4e}{vBR}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a819cbcf638be064106735e23a5d35355}{sTexCoords}}.\mbox{\hyperlink{struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords_aff0eca23457e9577f08172adc9085461}{vTL}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a819cbcf638be064106735e23a5d35355}{sTexCoords}}.\mbox{\hyperlink{struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords_af5540bd271f3bb0760a3684df259c631}{vTR}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a85b2058da892f7e2cf994aa85bd1a96b}{vDims}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a9fdcf957f02524143839348c2d6751a2}{StringUtils::stringRead}}(\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a1df98bc8057a36ad3ca28aa765cc8d61}{strImageFilename}},\ file);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a1421b14b195e6f887c62de5d1f7c2996}{uiAtlasImage}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)\&\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a64a172aecb584690f38847b63ba24cd2}{bRotated}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(file.good(),\ \textcolor{stringliteral}{"{}CImageAtlasDetails::read()\ failed.\ The\ ifstream\ is\ not\ good."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00039}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aaa64644f4f5d27fa8ee342023ebd3ac2}{00039}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aaa64644f4f5d27fa8ee342023ebd3ac2}{CImageAtlasPacker::CImageAtlasPacker}}()}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00043}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a7f778b00d7c2bb217d31f71aab0f313d}{00043}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a7f778b00d7c2bb217d31f71aab0f313d}{CImageAtlasPacker::\string~CImageAtlasPacker}}()}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aa1f6904623a24e7e7e93a243cf188c6f}{reset}}();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00048}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}{00048}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}{CImageAtlasPacker::createAtlasImages}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ vstrImages,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiMaxAtlasImageWidth,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiMaxAtlasImageHeight,\ \textcolor{keywordtype}{bool}\ bAllowRotationOfImages,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiImageSpacing)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(0\ ==\ vstrImages.size(),\ \textcolor{stringliteral}{"{}CImageAtlasPacker::createAtlasImages()\ failed.\ The\ passed\ vector<string>\ containing\ individual\ image\ filenames\ contains\ no\ data."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(0\ ==\ uiMaxAtlasImageWidth\ ||\ 0\ ==\ uiMaxAtlasImageHeight,\ \textcolor{stringliteral}{"{}CImageAtlasPacker::createAtlasImages()\ failed.\ uiMaxAtlasImageWidth\ or\ uiMaxAtlasImageHeight\ was\ set\ to\ zero."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset,\ freeing\ atlas\ images\ if\ they\ exist}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aa1f6904623a24e7e7e93a243cf188c6f}{reset}}();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Store\ each\ image\ filename\ and\ as\ we\ go,\ create\ and\ load\ each\ individual\ image\ into\ memory}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ std::vector<std::string>\ vStrImageFilenames;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ std::vector<CImage*>\ vImages;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ui\ =\ 0;\ ui\ <\ vstrImages.size();\ ui++)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ vStrImageFilenames.push\_back(vstrImages[ui]);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Allocate\ memory\ for\ individual\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}*\ pNewImage\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(pNewImage,\ \textcolor{stringliteral}{"{}CImageAtlasPacker::createAtlasImages()\ failed.\ Unable\ to\ allocate\ memory\ for\ individual\ image."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ vImages.push\_back(pNewImage);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Load\ each\ individual\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(vImages[ui]-\/>load(vStrImageFilenames[ui],\ \textcolor{keyword}{false}),\ \textcolor{stringliteral}{"{}CImageAtlasPacker::createAtlasImages()\ failed.\ Unable\ to\ load\ image\ from\ file:\ "{}}\ +\ vStrImageFilenames[ui]\ +\ \textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ check\ to\ see\ if\ the\ loaded\ image's\ dimensions\ are\ not\ the\ same\ as\ the\ first\ one\ and\ throw\ an\ exception}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00072}00072\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ bool\ bNotSameDims\ =\ vImages[ui]-\/>getWidth()\ !=\ vImages[0]-\/>getWidth()\ ||\ vImages[ui]-\/>getHeight()\ !=\ vImages[0]-\/>getHeight();}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00073}00073\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ if\ (bNotSameDims)}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00074}00074\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00075}00075\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strTxt\ =\ "{}CImageAtlasPacker::createAtlasImages()\ failed.\ All\ images\ added\ to\ an\ atlas\ must\ have\ the\ same\ dimensions."{};}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00076}00076\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ strTxt\ +=\ "{}The\ first\ image\ dims:\ "{}\ +\ std::to\_string(vImages[0]-\/>getWidth())\ +\ "{}x"{}\ +\ std::to\_string(vImages[0]-\/>getHeight());}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00077}00077\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ strTxt\ +=\ "{}\ The\ current\ image\ dims:\ "{}\ +\ std::to\_string(vImages[ui]-\/>getWidth())\ +\ "{}x"{}\ +\ std::to\_string(vImages[ui]-\/>getHeight());}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00078}00078\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ strTxt\ +=\ "{}."{};}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00079}00079\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ ThrowIfTrue(1,\ strTxt);}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00080}00080\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ maximum\ width/height\ of\ the\ individual\ images\ and\ make\ sure,\ including\ image\ spacing,\ they\ can\ all\ fit\ within\ the\ specified\ max\ atlas\ image\ width/height}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiMaxImageWidth\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiMaxImageHeight\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiImageWidth;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiImageHeight;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiImageSpacingTimes2\ =\ uiImageSpacing\ *\ 2;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ui\ =\ 0;\ ui\ <\ vImages.size();\ ui++)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ uiImageWidth\ =\ vImages[ui]-\/>getWidth()\ +\ uiImageSpacingTimes2;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ uiImageHeight\ =\ vImages[ui]-\/>getHeight()\ +\ uiImageSpacingTimes2;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uiMaxImageWidth\ <\ uiImageWidth)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uiMaxImageWidth\ =\ uiImageWidth;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uiMaxImageHeight\ <\ uiImageHeight)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uiMaxImageHeight\ =\ uiImageHeight;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(uiMaxImageWidth\ >\ uiMaxAtlasImageWidth,\ \textcolor{stringliteral}{"{}CImageAtlasPacker::createAtlasImages()\ failed.\ An\ individual\ image's\ width("{}}\ +\ std::to\_string(uiMaxImageWidth)\ +\ \textcolor{stringliteral}{"{}),\ including\ spacing\ of\ "{}}\ +\ std::to\_string(uiImageSpacing)\ +\ \textcolor{stringliteral}{"{}\ is\ greater\ than\ the\ specified\ max\ atlas\ image's\ width("{}}\ +\ std::to\_string(uiMaxAtlasImageWidth)\ +\ \textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(uiMaxImageHeight\ >\ uiMaxAtlasImageHeight,\ \textcolor{stringliteral}{"{}CImageAtlasPacker::createAtlasImages()\ failed.\ An\ individual\ image's\ height("{}}\ +\ std::to\_string(uiMaxImageHeight)\ +\ \textcolor{stringliteral}{"{}),\ including\ spacing\ of\ "{}}\ +\ std::to\_string(uiImageSpacing)\ +\ \textcolor{stringliteral}{"{}\ is\ greater\ than\ the\ specified\ max\ atlas\ image's\ height("{}}\ +\ std::to\_string(uiMaxAtlasImageHeight)\ +\ \textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ each\ image\ detail\ for\ each\ individual\ image,\ determining\ whether\ we\ should\ rotate\ the\ image\ or\ not}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Also,\ rotate\ the\ images\ that\ should\ be}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ui\ =\ 0;\ ui\ <\ vImages.size();\ ui++)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImageAtlasDetails}}\ imageDetail;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ imageDetail.\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a64a172aecb584690f38847b63ba24cd2}{bRotated}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ imageDetail.\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a1df98bc8057a36ad3ca28aa765cc8d61}{strImageFilename}}\ =\ vStrImageFilenames[ui];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ imageDetail.\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a1421b14b195e6f887c62de5d1f7c2996}{uiAtlasImage}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ imageDetail.\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a85b2058da892f7e2cf994aa85bd1a96b}{vDims}}\ =\ vImages[ui]-\/>getDimensions();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bAllowRotationOfImages)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rotate\ image\ so\ that\ it's\ height\ is\ greatest}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageDetail.\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a85b2058da892f7e2cf994aa85bd1a96b}{vDims}}.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ >\ imageDetail.\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a85b2058da892f7e2cf994aa85bd1a96b}{vDims}}.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}})}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageDetail.\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a64a172aecb584690f38847b63ba24cd2}{bRotated}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vImages[ui]-\/>rotateClockwise();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageDetail.\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details_a85b2058da892f7e2cf994aa85bd1a96b}{vDims}}\ =\ vImages[ui]-\/>getDimensions();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails.push\_back(imageDetail);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Bubble\ sort\ temp\ vectors\ by\ their\ image's\ width}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ vectors\ which\ we\ have\ to\ sort...}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::vector<std::string>\ vStrImageFilenames;\ \ \ \ \ //\ Holds\ each\ individual\ image's\ filename\ }}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::vector<CImage*>\ vImages;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Holds\ each\ individual\ image's\ image\ data}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::vector<CImageAtlasDetails>\ \_mvImageDetails;\ //\ Holds\ each\ individual\ image's\ details}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ std::string\ strFilenameTemp;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}*\ pImageTemp;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImageAtlasDetails}}\ imageAtlasDetailsTemp;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)vImages.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ (int)vImages.size();\ ++j)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Swap\ by\ largest\ first}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mvImageDetails[j].vDims.x\ <\ \_mvImageDetails[i].vDims.x)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Temporarily\ store\ image,\ filename\ and\ image\ details}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ i\ to\ temp}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pImageTemp\ =\ vImages[i];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strFilenameTemp\ =\ vStrImageFilenames[i];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageAtlasDetailsTemp\ =\ \_mvImageDetails[i];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ j\ to\ i}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vImages[i]\ =\ vImages[j];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vStrImageFilenames[i]\ =\ vStrImageFilenames[j];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[i]\ =\ \_mvImageDetails[j];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ temp\ to\ j}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vImages[j]\ =\ pImageTemp;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vStrImageFilenames[j]\ =\ strFilenameTemp;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[j]\ =\ imageAtlasDetailsTemp;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Bubble\ sort\ temp\ vectors\ by\ their\ image's\ height}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)vImages.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ (int)vImages.size();\ ++j)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Swap\ by\ largest\ first}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mvImageDetails[j].vDims.y\ <\ \_mvImageDetails[i].vDims.y)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Temporarily\ store\ image,\ filename\ and\ image\ details}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ i\ to\ temp}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pImageTemp\ =\ vImages[i];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strFilenameTemp\ =\ vStrImageFilenames[i];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageAtlasDetailsTemp\ =\ \_mvImageDetails[i];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ j\ to\ i}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vImages[i]\ =\ vImages[j];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vStrImageFilenames[i]\ =\ vStrImageFilenames[j];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[i]\ =\ \_mvImageDetails[j];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ temp\ to\ j}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vImages[j]\ =\ pImageTemp;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vStrImageFilenames[j]\ =\ strFilenameTemp;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[j]\ =\ imageAtlasDetailsTemp;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now,\ vStrImageFilenames,\ vImages\ and\ \_mvImageDetails\ contain\ the\ filename\ and\ images\ sorted\ by\ greatest\ width,\ then\ height\ first}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ we\ have\ to\ following\ arrays\ filled...}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::vector<std::string>\ vStrImageFilenames;\ \ \ \ \ //\ Holds\ each\ individual\ image's\ filename\ }}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::vector<CImage*>\ vImages;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Holds\ each\ individual\ image's\ image\ data}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::vector<CImageAtlasDetails>\ \_mvImageDetails;\ //\ Holds\ each\ individual\ image's\ details}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \_mvImageDetails[X].sTexCoords\ is\ not\ computed\ yet,\ we'll\ temporarily\ use\ this\ to\ hold\ position\ of\ each\ individual\ image\ inside\ of\ texture\ atlas}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ and\ then\ convert\ to\ actual\ texture\ coordinates\ later\ further\ below.}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ now\ need\ to\ compute\ each\ image's\ position\ within\ the\ large\ atlas\ image\ and\ once\ done,\ we'll\ have\ the\ dimensions\ of\ the\ atlas\ image/s\ and\ the\ number\ required.}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ std::vector<CVector2f>\ vv2fAtlasDims;\ \ \ \textcolor{comment}{//\ Will\ hold\ computed\ dims\ of\ each\ atlas\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ vv2fAtlasDims.push\_back(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}(0.0f,\ (\textcolor{keywordtype}{float})vImages[0]-\/>getHeight()));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iCurAtlasImage\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ v2fCurrentPositionInAtlas(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fSpacing\ =\ (float)uiImageSpacing;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fSpacingTimesTwo\ =\ fSpacing\ *\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ go\ from\ left\ to\ right\ for\ each\ row,\ adding\ images\ one\ at\ a\ time,\ then\ when\ we\ can\ no\ longer\ add\ any\ more}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ images\ along\ the\ X\ axis,\ we\ move\ down\ a\ row\ and\ add\ more\ images\ starting\ from\ the\ left\ again.}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ui\ =\ 0;\ ui\ <\ vImages.size();\ ui++)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ position\ of\ current\ image\ in\ atlas}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vImageDims\ =\ vImages[ui]-\/>getDimensions();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTL.x\ =\ fSpacing\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTL.y\ =\ fSpacing\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.x\ =\ fSpacingTimesTwo\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ +\ vImageDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.y\ =\ fSpacingTimesTwo\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}}\ +\ vImageDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ image\ position\ fits\ in\ current\ atlas\ row}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mvImageDetails[ui].sTexCoords.vBR.x\ <=\ (\textcolor{keywordtype}{float})uiMaxAtlasImageWidth)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Image\ fits,\ fill\ in\ the\ rest\ of\ it's\ information}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.x\ =\ \_mvImageDetails[ui].sTexCoords.vBR.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.y\ =\ \_mvImageDetails[ui].sTexCoords.vTL.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.x\ =\ \_mvImageDetails[ui].sTexCoords.vTL.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.y\ =\ \_mvImageDetails[ui].sTexCoords.vBR.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ maximum\ atlas\ size}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vv2fAtlasDims[iCurAtlasImage].x\ <\ \_mvImageDetails[ui].sTexCoords.vBR.x)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vv2fAtlasDims[iCurAtlasImage].x\ =\ \_mvImageDetails[ui].sTexCoords.vBR.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vv2fAtlasDims[iCurAtlasImage].y\ <\ \_mvImageDetails[ui].sTexCoords.vBR.y)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vv2fAtlasDims[iCurAtlasImage].y\ =\ \_mvImageDetails[ui].sTexCoords.vBR.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ position\ in\ atlas\ right}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ +=\ fSpacingTimesTwo\ +\ vImageDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ atlas\ image\ index\ for\ current\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].uiAtlasImage\ =\ iCurAtlasImage;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ This\ image\ doesn't\ fit\ along\ current\ row,\ so\ start\ a\ new\ one}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ position\ in\ atlas\ down\ by\ max\ image\ height\ in\ row}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}}\ =\ vv2fAtlasDims[iCurAtlasImage].y\ -\/\ fSpacing;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ position\ of\ current\ image\ in\ atlas}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTL.x\ =\ fSpacing\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTL.y\ =\ fSpacing\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.x\ =\ fSpacingTimesTwo\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ +\ vImageDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.y\ =\ fSpacingTimesTwo\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}}\ +\ vImageDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ image\ position\ fits\ in\ current\ atlas}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mvImageDetails[ui].sTexCoords.vBR.y\ <=\ (\textcolor{keywordtype}{float})uiMaxAtlasImageHeight)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Image\ fits,\ fill\ in\ the\ rest\ of\ it's\ information}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.x\ =\ \_mvImageDetails[ui].sTexCoords.vBR.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.y\ =\ \_mvImageDetails[ui].sTexCoords.vTL.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.x\ =\ \_mvImageDetails[ui].sTexCoords.vTL.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.y\ =\ \_mvImageDetails[ui].sTexCoords.vBR.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ maximum\ atlas\ size}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vv2fAtlasDims[iCurAtlasImage].x\ <\ \_mvImageDetails[ui].sTexCoords.vBR.x)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vv2fAtlasDims[iCurAtlasImage].x\ =\ \_mvImageDetails[ui].sTexCoords.vBR.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vv2fAtlasDims[iCurAtlasImage].y\ <\ \_mvImageDetails[ui].sTexCoords.vBR.y)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vv2fAtlasDims[iCurAtlasImage].y\ =\ \_mvImageDetails[ui].sTexCoords.vBR.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ position\ in\ atlas\ right}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ +=\ fSpacingTimesTwo\ +\ vImageDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ atlas\ image\ index\ for\ current\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].uiAtlasImage\ =\ iCurAtlasImage;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ This\ image\ doesn't\ fit\ in\ this\ atlas\ and\ maximum\ dims\ of\ the\ atlas\ have\ been\ reached}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iCurAtlasImage++;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vv2fAtlasDims.push\_back(\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}(0.0f,\ (\textcolor{keywordtype}{float})vImages[ui]-\/>getHeight()));}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a2dc1e42a1e2d31576110ed02eb40ddd0}{setZero}}();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ image\ to\ new\ atlas\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTL.x\ =\ fSpacing\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTL.y\ =\ fSpacing\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.x\ =\ fSpacingTimesTwo\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ +\ vImageDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.y\ =\ fSpacingTimesTwo\ +\ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}}\ +\ vImageDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.x\ =\ \_mvImageDetails[ui].sTexCoords.vBR.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.y\ =\ \_mvImageDetails[ui].sTexCoords.vTL.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.x\ =\ \_mvImageDetails[ui].sTexCoords.vTL.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.y\ =\ \_mvImageDetails[ui].sTexCoords.vBR.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ maximum\ atlas\ size}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vv2fAtlasDims[iCurAtlasImage].x\ <\ \_mvImageDetails[ui].sTexCoords.vBR.x)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vv2fAtlasDims[iCurAtlasImage].x\ =\ \_mvImageDetails[ui].sTexCoords.vBR.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vv2fAtlasDims[iCurAtlasImage].y\ <\ \_mvImageDetails[ui].sTexCoords.vBR.y)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vv2fAtlasDims[iCurAtlasImage].y\ =\ \_mvImageDetails[ui].sTexCoords.vBR.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ position\ in\ atlas\ right}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v2fCurrentPositionInAtlas.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ +=\ fSpacingTimesTwo\ +\ vImageDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ atlas\ image\ index\ for\ current\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].uiAtlasImage\ =\ iCurAtlasImage;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ we\ get\ here...}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ iCurAtlasImage\ holds\ number\ of\ atlas\ images\ needed}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ vv2fAtlasDims[X]\ holds\ each\ atlas\ image's\ dimensions}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \_mvImageDetails[X].sTexCoords\ holds\ position\ in\ atlas\ of\ each\ individual\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ each\ atlas\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ui\ =\ 0;\ ui\ <\ (\textcolor{keywordtype}{unsigned}\ int)iCurAtlasImage\ +\ 1;\ ui++)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}*\ pNewImage\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(pNewImage,\ \textcolor{stringliteral}{"{}CImageAtlasPacker::createAtlasImages()\ failed.\ Unable\ to\ allocate\ memory\ for\ atlas\ image."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ pNewImage-\/>\mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{createBlank}}((\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int})vv2fAtlasDims[ui].x,\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int})vv2fAtlasDims[ui].y,\ 4);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvAtlasImages.push\_back(pNewImage);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ copy\ each\ image\ into\ atlas\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ui\ =\ 0;\ ui\ <\ vImages.size();\ ui++)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ vImages[ui]-\/>copyRectTo(*\_mvAtlasImages[\_mvImageDetails[ui].uiAtlasImage],}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ 0,}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})vImages[ui]-\/>getWidth(),}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})vImages[ui]-\/>getHeight(),}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})\_mvImageDetails[ui].sTexCoords.vTL.x,}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})\_mvImageDetails[ui].sTexCoords.vTL.y);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ compute\ texture\ coordinates}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vAtlasDims\ =\ \_mvAtlasImages[\_mvImageDetails[ui].uiAtlasImage]-\/>getDimensions();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prevent\ divide\ by\ zero}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(vAtlasDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ <\ 1.0f,\ \textcolor{stringliteral}{"{}CImageAtlasPacker::createAtlasImages()\ failed.\ Atlas\ width\ less\ than\ 1."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(vAtlasDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}}\ <\ 1.0f,\ \textcolor{stringliteral}{"{}CImageAtlasPacker::createAtlasImages()\ failed.\ Atlas\ height\ less\ than\ 1."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vAtlasDimsRecip(1.0f\ /\ vAtlasDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}},\ 1.0f\ /\ vAtlasDims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ correct\ image\ positions,\ not\ including\ the\ spacing}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ From\ above,\ top\ left\ position\ is\ correct\ for\ x\ and\ y.}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ All\ others\ include\ spacing\ and\ need\ to\ be\ recalculated.}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.x\ =\ \_mvImageDetails[ui].sTexCoords.vTL.x\ +\ \_mvImageDetails[ui].vDims.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.y\ =\ \_mvImageDetails[ui].sTexCoords.vTL.y\ +\ \_mvImageDetails[ui].vDims.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.x\ =\ \_mvImageDetails[ui].sTexCoords.vTL.x\ +\ \_mvImageDetails[ui].vDims.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.y\ =\ \_mvImageDetails[ui].sTexCoords.vTL.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.x\ =\ \_mvImageDetails[ui].sTexCoords.vTL.x;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.y\ =\ \_mvImageDetails[ui].sTexCoords.vTL.y\ +\ \_mvImageDetails[ui].vDims.y;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ all\ positions\ are\ correct}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00334}00334\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ convert\ from\ pixel\ position\ in\ image\ to\ 0.0f\ -\/\ 1.0f}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.x\ *=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.y\ *=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.x\ *=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.y\ *=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTL.x\ *=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTL.y\ *=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.x\ *=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.y\ *=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00344}00344\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ nearest\ filtering\ this\ is\ all\ we\ have\ to\ do.}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ However,\ with\ linear\ filtering,\ we\ need\ to\ offset\ the\ texture\ coordinates}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ by\ half\ a\ texel\ so\ that\ everything\ looks\ great\ when\ using\ linear\ filtering.}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.x\ +=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBL.y\ -\/=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.x\ -\/=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vBR.y\ -\/=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTL.x\ +=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTL.y\ +=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.x\ -\/=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \_mvImageDetails[ui].sTexCoords.vTR.y\ +=\ vAtlasDimsRecip.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ we're\ done,\ we\ setup\ the\ hashmap\ for\ fast\ lookup\ of\ image\ details\ by\ individual\ image\ names}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ui\ =\ 0;\ ui\ <\ \_mvImageDetails.size();\ ui++)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \_mmapImageDetails[\_mvImageDetails[ui].strImageFilename]\ =\ \_mvImageDetails[ui];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00364}00364\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Free\ each\ individual\ loaded\ image}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ui\ =\ 0;\ ui\ <\ vImages.size();\ ui++)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ vImages[ui];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ vImages.clear();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00371}00371\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00373}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a052e6aadd2f8deede16598cde1dd3caa}{00373}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a052e6aadd2f8deede16598cde1dd3caa}{CImageAtlasPacker::getNumAtlases}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00374}00374\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int})\_mvAtlasImages.size();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00376}00376\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00378}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aa37c3333111a0892fc93521493a748b8}{00378}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}*\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aa37c3333111a0892fc93521493a748b8}{CImageAtlasPacker::getAtlasImage}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiIndex)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00379}00379\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(0\ ==\ \_mvAtlasImages.size(),\ \textcolor{stringliteral}{"{}CImageAtlasPacker::getAtlasImage("{}}\ +\ std::to\_string(uiIndex)\ +\ \textcolor{stringliteral}{"{})\ failed.\ There\ are\ no\ atlas\ images."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(uiIndex\ >=\ \_mvAtlasImages.size(),\ \textcolor{stringliteral}{"{}CImageAtlasPacker::getAtlasImage("{}}\ +\ std::to\_string(uiIndex)\ +\ \textcolor{stringliteral}{"{})\ failed.\ Invalid\ atlas\ index\ given."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mvAtlasImages[uiIndex];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00383}00383\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00385}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_adab25a2a2a8d57a224e524f03c5d4243}{00385}}\ \ \ \ \ std::vector<CImageAtlasDetails>\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_adab25a2a2a8d57a224e524f03c5d4243}{CImageAtlasPacker::getAllImageDetails}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00386}00386\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(\_mvImageDetails.size(),\ \textcolor{stringliteral}{"{}CImageAtlasPacker::getAllImageDetails()\ failed.\ No\ image\ data\ currently\ exists."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mvImageDetails;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00389}00389\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00390}00390\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00391}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aad19a825c91d2f9423f7884fb5f362e6}{00391}}\ \ \ \ \ std::vector<CImageAtlasDetails>*\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aad19a825c91d2f9423f7884fb5f362e6}{CImageAtlasPacker::getAllImageDetailsPointer}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00392}00392\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(\_mvImageDetails.size(),\ \textcolor{stringliteral}{"{}CImageAtlasPacker::getAllImageDetailsPointer()\ failed.\ No\ image\ data\ currently\ exists."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&\_mvImageDetails;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00395}00395\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00397}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a4455958a8ae4891f76a1adad88fe6edb}{00397}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a4455958a8ae4891f76a1adad88fe6edb}{CImageAtlasPacker::getNumIndividualImages}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00398}00398\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{unsigned}\ int(\_mvImageDetails.size());}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00400}00400\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00401}00401\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00402}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_ad3c083e76cc31936b372e09d68de55bd}{00402}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImageAtlasDetails}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_ad3c083e76cc31936b372e09d68de55bd}{CImageAtlasPacker::getImageDetails}}(\textcolor{keyword}{const}\ std::string\&\ strImageName)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00403}00403\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ std::map<std::string,\ CImageAtlasDetails>::iterator\ it\ =\ \_mmapImageDetails.find(strImageName);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(it\ ==\ \_mmapImageDetails.end(),\ \textcolor{stringliteral}{"{}CImageAtlasPacker::getImageDetails("{}}\ +\ strImageName\ +\ \textcolor{stringliteral}{"{})\ failed.\ Named\ image\ doesn't\ exist."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00407}00407\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00409}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a283a806d99b587bd2d74f1a29d453c5d}{00409}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImageAtlasDetails}}*\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a283a806d99b587bd2d74f1a29d453c5d}{CImageAtlasPacker::getImageDetailsPointer}}(\textcolor{keyword}{const}\ std::string\&\ strImageName)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00410}00410\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ std::map<std::string,\ CImageAtlasDetails>::iterator\ it\ =\ \_mmapImageDetails.find(strImageName);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00412}00412\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(it\ ==\ \_mmapImageDetails.end(),\ \textcolor{stringliteral}{"{}CImageAtlasPacker::getImageDetailsPointer("{}}\ +\ strImageName\ +\ \textcolor{stringliteral}{"{})\ failed.\ Named\ image\ doesn't\ exist."{}});}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00413}00413\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00414}00414\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00415}00415\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00416}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aa1f6904623a24e7e7e93a243cf188c6f}{00416}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aa1f6904623a24e7e7e93a243cf188c6f}{CImageAtlasPacker::reset}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00417}00417\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00418}00418\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ui\ =\ 0;\ ui\ <\ \_mvAtlasImages.size();\ ui++)}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \_mvAtlasImages[ui];}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00422}00422\ \ \ \ \ \ \ \ \ \_mvImageDetails.clear();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \_mmapImageDetails.clear();}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00424}00424\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00425}00425\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00426}\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_ab4e040c1ba1c5e2c312414194fe6e358}{00426}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_ab4e040c1ba1c5e2c312414194fe6e358}{CImageAtlasPacker::getImageExists}}(\textcolor{keyword}{const}\ std::string\&\ strImageName)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00427}00427\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00428}00428\ \ \ \ \ \ \ \ \ std::map<std::string,\ CImageAtlasDetails>::iterator\ it\ =\ \_mmapImageDetails.find(strImageName);}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00429}00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (it\ !=\ \_mmapImageDetails.end());}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00430}00430\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{_image_atlas_8cpp_source_l00432}00432\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+
+\end{DoxyCode}

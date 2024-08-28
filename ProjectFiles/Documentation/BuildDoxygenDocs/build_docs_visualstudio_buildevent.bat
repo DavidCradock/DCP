@@ -1,0 +1,6 @@
+rem Add a custom build step inside Visual Studio to call this batch file...
+rem cmd.exe /C "$(SolutionDir)\ProjectFiles\Documentation\BuildDoxygenDocs\build_docs_visualstudio_buildevent.bat"
+
+rem Run Doxygen, parsing the Doxygen configuration file...
+doxygen DoxyfileConfig
+pause

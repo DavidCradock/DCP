@@ -1,0 +1,86 @@
+\doxysection{Exceptions.\+h}
+\hypertarget{_exceptions_8h_source}{}\label{_exceptions_8h_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Exceptions.h@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Exceptions.h}}
+\mbox{\hyperlink{_exceptions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00028}00028\ \textcolor{preprocessor}{\#ifndef\ EXCEPTIONS\_H}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ EXCEPTIONS\_H}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00033}00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00038}\mbox{\hyperlink{class_d_c_l_1_1_c_exception}{00038}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_c_l_1_1_c_exception}{CException}}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00048}\mbox{\hyperlink{class_d_c_l_1_1_c_exception_af72478b16a4e0051479beb942e824050}{00048}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_exception_af72478b16a4e0051479beb942e824050}{CException}}(std::string\ strExceptionText,\ std::string\ strFilename,\ \textcolor{keywordtype}{int}\ iLineNumber)}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_exception_a94d7aac70416a86584df5c1f3cbfd25d}{mstrException}}\ =\ \textcolor{stringliteral}{"{}File:\ "{}}\ +\ strFilename\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_exception_a94d7aac70416a86584df5c1f3cbfd25d}{mstrException}}\ +=\ \textcolor{stringliteral}{"{}Line:\ "{}}\ +\ std::to\_string(iLineNumber)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_exception_a94d7aac70416a86584df5c1f3cbfd25d}{mstrException}}\ +=\ \textcolor{stringliteral}{"{}Desc:\ "{}}\ +\ strExceptionText\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00054}\mbox{\hyperlink{class_d_c_l_1_1_c_exception_a94d7aac70416a86584df5c1f3cbfd25d}{00054}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_d_c_l_1_1_c_exception_a94d7aac70416a86584df5c1f3cbfd25d}{mstrException}};\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00055}00055\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00057}00057\ \textcolor{preprocessor}{\#ifndef\ \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00059}00059\ \textcolor{preprocessor}{\#ifndef\ ThrowIfFalse}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00061}\mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{00061}}\ \textcolor{preprocessor}{\#define\ ThrowIfFalse(x,\ y)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00062}00062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00063}00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(!x)\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00064}00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ throw\ CException(y,\ \_\_FILE\_\_,\ \_\_LINE\_\_);\}\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00065}00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00066}00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00068}00068\ \textcolor{preprocessor}{\#ifndef\ ThrowIfTrue}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00070}\mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{00070}}\ \textcolor{preprocessor}{\#define\ ThrowIfTrue(x,\ y)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00071}00071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00072}00072\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(x)\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00073}00073\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ throw\ CException(y,\ \_\_FILE\_\_,\ \_\_LINE\_\_);\}\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00074}00074\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00075}00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00077}00077\ \textcolor{preprocessor}{\#ifndef\ ThrowIfMemoryNotAllocated}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00079}\mbox{\hyperlink{_exceptions_8h_a9bd86a9c7b41cef1ebad126eb6f9806c}{00079}}\ \textcolor{preprocessor}{\#define\ ThrowIfMemoryNotAllocated(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00080}00080\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00081}00081\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ if(!x)\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00082}00082\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ throw\ CException("{}Memory\ allocation\ error."{},\ \_\_FILE\_\_,\ \_\_LINE\_\_);\}\ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00083}00083\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00084}00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00086}00086\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00087}00087\ \textcolor{preprocessor}{\#ifndef\ ThrowIfFalse}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00089}00089\ \textcolor{preprocessor}{\#define\ ThrowIfFalse(x,\ y)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00090}00090\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00091}00091\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(!x)\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00092}00092\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \_\_debugbreak();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00093}00093\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ throw\ CException(y,\ \_\_FILE\_\_,\ \_\_LINE\_\_);\}\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00094}00094\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00095}00095\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00097}00097\ \textcolor{preprocessor}{\#ifndef\ ThrowIfTrue}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00099}00099\ \textcolor{preprocessor}{\#define\ ThrowIfTrue(x,\ y)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00100}00100\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00101}00101\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(x)\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00102}00102\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \_\_debugbreak();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00103}00103\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ throw\ CException(y,\ \_\_FILE\_\_,\ \_\_LINE\_\_);\}\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00104}00104\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00105}00105\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00107}00107\ \textcolor{preprocessor}{\#ifndef\ ThrowIfMemoryNotAllocated}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00109}00109\ \textcolor{preprocessor}{\#define\ ThrowIfMemoryNotAllocated(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00110}00110\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00111}00111\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ if(!x)\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00112}00112\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \_\_debugbreak();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00113}00113\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ throw\ CException("{}Memory\ allocation\ error."{},\ \_\_FILE\_\_,\ \_\_LINE\_\_);\}\ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00114}00114\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00115}00115\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00116}00116\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \#ifndef\ \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00119}00119\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_exceptions_8h_source_l00121}00121\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ FILENAME\_H}}
+
+\end{DoxyCode}

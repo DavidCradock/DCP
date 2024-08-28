@@ -1,0 +1,78 @@
+\doxysection{DCL\+::CException Class Reference}
+\hypertarget{class_d_c_l_1_1_c_exception}{}\label{class_d_c_l_1_1_c_exception}\index{DCL::CException@{DCL::CException}}
+
+
+An exception containing information about what went wrong.  
+
+
+
+
+{\ttfamily \#include $<$Exceptions.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_exception_af72478b16a4e0051479beb942e824050}{CException}} (std\+::string str\+Exception\+Text, std\+::string str\+Filename, int i\+Line\+Number)
+\begin{DoxyCompactList}\small\item\em Constructor accepting a string describing the exceptional circumstance why the unrecoverable error occurred and two additional parameters for the source code file name and line number where the exception is thrown. These can of course be added manually using {\bfseries{FILE}} and {\bfseries{LINE}}, but it\textquotesingle{}s easier to use the various macros which fill these in for us. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_d_c_l_1_1_c_exception_a94d7aac70416a86584df5c1f3cbfd25d}{mstr\+Exception}}
+\begin{DoxyCompactList}\small\item\em String holding the complete text of the exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An exception containing information about what went wrong. 
+
+Gets thrown via the Throw\+If\+False/\+True/\+Throw\+If\+Memory\+Not\+Allocated macros below 
+
+Definition at line \mbox{\hyperlink{_exceptions_8h_source_l00038}{38}} of file \mbox{\hyperlink{_exceptions_8h_source}{Exceptions.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_exception_af72478b16a4e0051479beb942e824050}\index{DCL::CException@{DCL::CException}!CException@{CException}}
+\index{CException@{CException}!DCL::CException@{DCL::CException}}
+\doxysubsubsection{\texorpdfstring{CException()}{CException()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_exception_af72478b16a4e0051479beb942e824050} 
+DCL\+::\+CException\+::\+CException (\begin{DoxyParamCaption}\item[{std\+::string}]{str\+Exception\+Text}{, }\item[{std\+::string}]{str\+Filename}{, }\item[{int}]{i\+Line\+Number}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor accepting a string describing the exceptional circumstance why the unrecoverable error occurred and two additional parameters for the source code file name and line number where the exception is thrown. These can of course be added manually using {\bfseries{FILE}} and {\bfseries{LINE}}, but it\textquotesingle{}s easier to use the various macros which fill these in for us. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Exception\+Text} & A string describing the exceptional circumstance why the unrecoverable error occurred. \\
+\hline
+{\em str\+Filename} & A string holding the filename in which the exception was constructed \\
+\hline
+{\em i\+Line\+Number} & An int holding the line number in the source code in which the exception was constructed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_exceptions_8h_source_l00048}{48}} of file \mbox{\hyperlink{_exceptions_8h_source}{Exceptions.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_d_c_l_1_1_c_exception_a94d7aac70416a86584df5c1f3cbfd25d}\index{DCL::CException@{DCL::CException}!mstrException@{mstrException}}
+\index{mstrException@{mstrException}!DCL::CException@{DCL::CException}}
+\doxysubsubsection{\texorpdfstring{mstrException}{mstrException}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_exception_a94d7aac70416a86584df5c1f3cbfd25d} 
+std\+::string DCL\+::\+CException\+::mstr\+Exception}
+
+
+
+String holding the complete text of the exception. 
+
+
+
+Definition at line \mbox{\hyperlink{_exceptions_8h_source_l00054}{54}} of file \mbox{\hyperlink{_exceptions_8h_source}{Exceptions.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/\mbox{\hyperlink{_exceptions_8h}{Exceptions.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+/** \page 04_AddingNewProjects Adding New Projects.
+
+<h2>Adding new projects to the main DCP solution file.</h2>
+<pre>
+This text file details steps on how we add new project files to the main DavesCodingParadise Visual studio solution file.
+</pre>
+
+<h3>The main solution file which builds everything.</h3>
+<pre>
+The root directory contains a Microsoft Visual Studio solution file "DCP.sln" containing all projects found in /ProjectFiles/.
+Load this solution file and perform a batch build to build all libraries, documentation and executables.
+The solution file has four filters/folders Documentation, DynamicLibs, Executables and StaticLibs.
+When adding a new project to the solution, you can choose to create a project where ever you like, but when adding a project, depending upon it's type, should be placed inside one of those filters to keep things tidy.
+</pre>
+
+<h4>Adding a new executable project.</h4>
+<pre>
+Right click upon the Executables filter found within the solution explorer window, "Add...New Project" and select "Empty Project".
+Place new project in "/ProjectFiles/Executables" directory.
+Right click upon the new project in solution explorer, click upon "Properties"
+Make sure "Configuration" in the top left of the window is set to "All configurations" and set...
+@code
+	Configuration Properties/General/ "Output Directory" set to $(SolutionDir)Output\Executables\
+	Configuration Properties/General/ "Intermediate Directory" set to $(SolutionDir)BuildTemp\Executables\$(ProjectName)\$(Platform)\$(Configuration)\
+	Configuration Properties/General/ set "C++ Language Standard" to "ISO C++20 Standard (/std:c++20)"
+	Configuration Properties/General/ set "C Language Standard" to "ISO C17 (2018) Standard (/std:c17)"
+	Configuration Properties/Debugging/ "Working Directory" set to $(SolutionDir)Output\Executables\
+	Configuration Properties/Linker/System" set "SubSystem" from console to Windows
+Make sure "Configuration" in the top left of the window is set to "Debug" and set...
+	Configuration Properties/General/ "Target Name" set to $(ProjectName)_DEBUG this is so that when performing a batch build and building both debug and release builds,
+	the debug executable doesn't overwrite the release build and both are available.
+@endcode
+Make the executable depend upon all required static library projects so they are built first.
+Right click on the project name and select "Build Dependencies/Project Dependencies" and add...
+	DavesCodeLib
+This is all we have to set the project depend upon, as DavesCodeLib depends upon other libraries which are built before DavesCodeLib.
+	
+There's no need to set additional library links to "Linker/Input" set "Additional Dependencies" as we use Visual studio's
+preprocessor pragma comment(lib, "name_of_lib.lib") to link the libraries.
+
+Remove the "Header Files" and "Source Files" filters, unless you wish to keep them.
+</pre>
+
+<h3>Remove the 32bit configurations.</h3>
+<pre>
+Right click upon the DCP solution at the top of the solution explorer and select "Configuration Manager."
+For each "Active Solution Configuration", within "Active Solution Platform", select "Edit" and remove the Win32 platform.
+</pre>
+*/

@@ -1,0 +1,175 @@
+\doxysection{DCL\+::CProfiler Class Reference}
+\hypertarget{class_d_c_l_1_1_c_profiler}{}\label{class_d_c_l_1_1_c_profiler}\index{DCL::CProfiler@{DCL::CProfiler}}
+
+
+A class to deal with time profiling.  
+
+
+
+
+{\ttfamily \#include $<$Profiler.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_d_c_l_1_1_c_profiler_1_1_s_section}{SSection}}
+\begin{DoxyCompactList}\small\item\em Members needed by each code section. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_ae8b4248911462316c1dfaa5a7dbf6538}{begin}} (const std\+::string \&str\+Section\+Name="{}main"{})
+\begin{DoxyCompactList}\small\item\em Begin timing a named section of code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_a22d0077a6cd932e29fc9cd1a6cd3b28d}{end}} (const std\+::string \&str\+Section\+Name="{}main"{})
+\begin{DoxyCompactList}\small\item\em End timing a named section of code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_a8788dc4796e316c4fc880bf3b7be4133}{reset}} (void)
+\begin{DoxyCompactList}\small\item\em Resets the profiler, removing all previously used sections, except for "{}main"{}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_aca5b504535e8b625a504cdd4c7de042e}{get\+Section\+Time}} (const std\+::string \&str\+Section\+Name="{}main"{})
+\begin{DoxyCompactList}\small\item\em Returns the number of accumulated seconds for the named section. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_aa8b8978b4c23e8ade38a4313da984c4c}{get\+Section\+Number}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the total number of sections including "{}main"{}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_d_c_l_1_1_s_profiler_results}{SProfiler\+Results}} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_a477233528dd872388fba5682b6379e05}{get\+Results}} (bool b\+Return\+Cached\+Results=true)
+\begin{DoxyCompactList}\small\item\em Returns a vector of \doxylink{struct_d_c_l_1_1_s_profiler_results}{SProfiler\+Results}, sorted by accumulated time in seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to deal with time profiling. 
+
+It works on the concept of code sections. We create an object of this class (Or use the global one stored in x-\/\texorpdfstring{$>$}{>}p\+Profiler) and then call begin("{}name\+Of\+Section"{}) before any code we wish to time. Then after all the section code, we call end("{}name\+Of\+Section"{}) If elsewhere in the code, we wish to time a section and add that time to the named section we\textquotesingle{}ve already used, we add another \doxylink{class_d_c_l_1_1_c_profiler_ae8b4248911462316c1dfaa5a7dbf6538}{begin()}/end() pair and the time taken between those will be added to that code sections total time. For everything to be computed properly, we MUST have a section called "{}main"{} which encapsulates all other sections. This will allow the class to compute percentages each section takes. Example\+: \doxylink{class_d_c_l_1_1_c_profiler}{CProfiler} prof; void main\+Loop(void) \{ prof.\+begin("{}main"{}); prof.\+begin("{}audio"{}); // Audio code goes here prof.\+end("{}audio"{}); prof.\+begin("{}gfx"{}); // Rendering code goes here prof.\+end("{}gfx"{}); prof.\+end("{}main"{}); \} 
+
+Definition at line \mbox{\hyperlink{_profiler_8h_source_l00048}{48}} of file \mbox{\hyperlink{_profiler_8h_source}{Profiler.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_profiler_aa4736a7186cf30a0b08d804fe90d4898}\index{DCL::CProfiler@{DCL::CProfiler}!CProfiler@{CProfiler}}
+\index{CProfiler@{CProfiler}!DCL::CProfiler@{DCL::CProfiler}}
+\doxysubsubsection{\texorpdfstring{CProfiler()}{CProfiler()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_profiler_aa4736a7186cf30a0b08d804fe90d4898} 
+DCL\+::\+CProfiler\+::\+CProfiler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_profiler_ae8b4248911462316c1dfaa5a7dbf6538}\index{DCL::CProfiler@{DCL::CProfiler}!begin@{begin}}
+\index{begin@{begin}!DCL::CProfiler@{DCL::CProfiler}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_profiler_ae8b4248911462316c1dfaa5a7dbf6538} 
+void DCL\+::\+CProfiler\+::begin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Section\+Name}{ = {\ttfamily "{}main"{}}}\end{DoxyParamCaption})}
+
+
+
+Begin timing a named section of code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Section\+Name} & The name to use for a section of code to be timed.\\
+\hline
+\end{DoxyParams}
+There must be at least one section called "{}main"{} for things to work correctly. 
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_profiler_a22d0077a6cd932e29fc9cd1a6cd3b28d}\index{DCL::CProfiler@{DCL::CProfiler}!end@{end}}
+\index{end@{end}!DCL::CProfiler@{DCL::CProfiler}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_profiler_a22d0077a6cd932e29fc9cd1a6cd3b28d} 
+void DCL\+::\+CProfiler\+::end (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Section\+Name}{ = {\ttfamily "{}main"{}}}\end{DoxyParamCaption})}
+
+
+
+End timing a named section of code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Section\+Name} & The name to use for a section of code to be timed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_profiler_a477233528dd872388fba5682b6379e05}\index{DCL::CProfiler@{DCL::CProfiler}!getResults@{getResults}}
+\index{getResults@{getResults}!DCL::CProfiler@{DCL::CProfiler}}
+\doxysubsubsection{\texorpdfstring{getResults()}{getResults()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_profiler_a477233528dd872388fba5682b6379e05} 
+std\+::vector$<$ \mbox{\hyperlink{struct_d_c_l_1_1_s_profiler_results}{SProfiler\+Results}} $>$ DCL\+::\+CProfiler\+::get\+Results (\begin{DoxyParamCaption}\item[{bool}]{b\+Return\+Cached\+Results}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Returns a vector of \doxylink{struct_d_c_l_1_1_s_profiler_results}{SProfiler\+Results}, sorted by accumulated time in seconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Return\+Cached\+Results} & Whether or not to return results which are complete and one loop old \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{struct_d_c_l_1_1_s_profiler_results}{SProfiler\+Results} holding all profiling information.
+\end{DoxyReturn}
+Unfortunately, this only returns valid results after a call to \doxylink{class_d_c_l_1_1_c_profiler_a22d0077a6cd932e29fc9cd1a6cd3b28d}{end()} with the "{}main"{} section specified has been called, otherwise we don\textquotesingle{}t have all the needed information we need to compute the percentages of main. However, passing true to b\+Return\+Cached\+Results will return the results from results which have been obtained during the last call to \doxylink{class_d_c_l_1_1_c_profiler_a22d0077a6cd932e29fc9cd1a6cd3b28d}{end()} with "{}main"{} being given as the section. These results are one frame old, but are complete. 
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_profiler_aa8b8978b4c23e8ade38a4313da984c4c}\index{DCL::CProfiler@{DCL::CProfiler}!getSectionNumber@{getSectionNumber}}
+\index{getSectionNumber@{getSectionNumber}!DCL::CProfiler@{DCL::CProfiler}}
+\doxysubsubsection{\texorpdfstring{getSectionNumber()}{getSectionNumber()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_profiler_aa8b8978b4c23e8ade38a4313da984c4c} 
+size\+\_\+t DCL\+::\+CProfiler\+::get\+Section\+Number (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the total number of sections including "{}main"{}. 
+
+\begin{DoxyReturn}{Returns}
+the total number of sections including "{}main"{} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_profiler_aca5b504535e8b625a504cdd4c7de042e}\index{DCL::CProfiler@{DCL::CProfiler}!getSectionTime@{getSectionTime}}
+\index{getSectionTime@{getSectionTime}!DCL::CProfiler@{DCL::CProfiler}}
+\doxysubsubsection{\texorpdfstring{getSectionTime()}{getSectionTime()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_profiler_aca5b504535e8b625a504cdd4c7de042e} 
+double DCL\+::\+CProfiler\+::get\+Section\+Time (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Section\+Name}{ = {\ttfamily "{}main"{}}}\end{DoxyParamCaption})}
+
+
+
+Returns the number of accumulated seconds for the named section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Section\+Name} & The name to use for a section of code to be timed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of accumulated seconds for the named section.
+\end{DoxyReturn}
+If the section doesn\textquotesingle{}t exist, an exception occurs. 
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_profiler_a8788dc4796e316c4fc880bf3b7be4133}\index{DCL::CProfiler@{DCL::CProfiler}!reset@{reset}}
+\index{reset@{reset}!DCL::CProfiler@{DCL::CProfiler}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_profiler_a8788dc4796e316c4fc880bf3b7be4133} 
+void DCL\+::\+CProfiler\+::reset (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Resets the profiler, removing all previously used sections, except for "{}main"{}. 
+
+
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/\mbox{\hyperlink{_profiler_8h}{Profiler.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/Profiler.\+cpp\end{DoxyCompactItemize}

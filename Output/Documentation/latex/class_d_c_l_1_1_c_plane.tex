@@ -1,0 +1,156 @@
+\doxysection{DCL\+::CPlane Class Reference}
+\hypertarget{class_d_c_l_1_1_c_plane}{}\label{class_d_c_l_1_1_c_plane}\index{DCL::CPlane@{DCL::CPlane}}
+
+
+A representation of a plane in 3D space.  
+
+
+
+
+{\ttfamily \#include $<$Plane.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_plane_a5a5664868ba12dd6ec1cc2abd592a232}{CPlane}} ()
+\begin{DoxyCompactList}\small\item\em Constructor, sets plane\textquotesingle{}s normal to (0,1,0) and distance to 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_plane_a15cc3cbaa4b263e16fe1f3d37175df97}{CPlane}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Normal, float f\+Distance\+To\+Origin)
+\begin{DoxyCompactList}\small\item\em Constructor, sets the plane\textquotesingle{}s normal and distance to given values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_plane_a9acb651f1d3d5b5883b6d62c18ff8c5f}{set}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Normal, float f\+Distance\+To\+Origin)
+\begin{DoxyCompactList}\small\item\em Sets plane to given values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \mbox{\hyperlink{class_d_c_l_1_1_c_plane_a6a648f820551008099332ae1b9a6fb15}{get\+Normal}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns normal of plane. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_plane_a87849d5e5dbdbeb7200eb81650780ee3}{get\+Distance\+To\+Origin}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns distance from origin. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_plane_a989b7027b02e87b52e594415d4a6a1b1}{get\+Distance\+From\+Plane}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Point) const
+\begin{DoxyCompactList}\small\item\em Uses to dot product to compute the distance of a point from the plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A representation of a plane in 3D space. 
+
+A plane is defined by two things.
+\begin{DoxyEnumerate}
+\item Distance to the origin
+\item A normal vector 
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{_plane_8h_source_l00018}{18}} of file \mbox{\hyperlink{_plane_8h_source}{Plane.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_plane_a5a5664868ba12dd6ec1cc2abd592a232}\index{DCL::CPlane@{DCL::CPlane}!CPlane@{CPlane}}
+\index{CPlane@{CPlane}!DCL::CPlane@{DCL::CPlane}}
+\doxysubsubsection{\texorpdfstring{CPlane()}{CPlane()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_plane_a5a5664868ba12dd6ec1cc2abd592a232} 
+DCL\+::\+CPlane\+::\+CPlane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor, sets plane\textquotesingle{}s normal to (0,1,0) and distance to 0. 
+
+
+
+Definition at line \mbox{\hyperlink{_plane_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_plane_8cpp_source}{Plane.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_plane_a15cc3cbaa4b263e16fe1f3d37175df97}\index{DCL::CPlane@{DCL::CPlane}!CPlane@{CPlane}}
+\index{CPlane@{CPlane}!DCL::CPlane@{DCL::CPlane}}
+\doxysubsubsection{\texorpdfstring{CPlane()}{CPlane()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_plane_a15cc3cbaa4b263e16fe1f3d37175df97} 
+DCL\+::\+CPlane\+::\+CPlane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Normal}{, }\item[{float}]{f\+Distance\+To\+Origin}{}\end{DoxyParamCaption})}
+
+
+
+Constructor, sets the plane\textquotesingle{}s normal and distance to given values. 
+
+
+
+Definition at line \mbox{\hyperlink{_plane_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_plane_8cpp_source}{Plane.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_plane_a989b7027b02e87b52e594415d4a6a1b1}\index{DCL::CPlane@{DCL::CPlane}!getDistanceFromPlane@{getDistanceFromPlane}}
+\index{getDistanceFromPlane@{getDistanceFromPlane}!DCL::CPlane@{DCL::CPlane}}
+\doxysubsubsection{\texorpdfstring{getDistanceFromPlane()}{getDistanceFromPlane()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_plane_a989b7027b02e87b52e594415d4a6a1b1} 
+float DCL\+::\+CPlane\+::get\+Distance\+From\+Plane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Point}{}\end{DoxyParamCaption}) const}
+
+
+
+Uses to dot product to compute the distance of a point from the plane. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Point} & The point to test which side of the plane it is upon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A positive value if the given point is on the side the plane\textquotesingle{}s normal is pointing, else a negative value.
+\end{DoxyReturn}
+If the given point is on the side of the plane it\textquotesingle{}s normal is pointing, a positive value is returned, else negative. 
+
+Definition at line \mbox{\hyperlink{_plane_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_plane_8cpp_source}{Plane.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_plane_a87849d5e5dbdbeb7200eb81650780ee3}\index{DCL::CPlane@{DCL::CPlane}!getDistanceToOrigin@{getDistanceToOrigin}}
+\index{getDistanceToOrigin@{getDistanceToOrigin}!DCL::CPlane@{DCL::CPlane}}
+\doxysubsubsection{\texorpdfstring{getDistanceToOrigin()}{getDistanceToOrigin()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_plane_a87849d5e5dbdbeb7200eb81650780ee3} 
+float DCL\+::\+CPlane\+::get\+Distance\+To\+Origin (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns distance from origin. 
+
+\begin{DoxyReturn}{Returns}
+The plane\textquotesingle{}s distance from the origin 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_plane_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_plane_8cpp_source}{Plane.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_plane_a6a648f820551008099332ae1b9a6fb15}\index{DCL::CPlane@{DCL::CPlane}!getNormal@{getNormal}}
+\index{getNormal@{getNormal}!DCL::CPlane@{DCL::CPlane}}
+\doxysubsubsection{\texorpdfstring{getNormal()}{getNormal()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_plane_a6a648f820551008099332ae1b9a6fb15} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} DCL\+::\+CPlane\+::get\+Normal (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns normal of plane. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} holding the normal of the plane 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_plane_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_plane_8cpp_source}{Plane.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_plane_a9acb651f1d3d5b5883b6d62c18ff8c5f}\index{DCL::CPlane@{DCL::CPlane}!set@{set}}
+\index{set@{set}!DCL::CPlane@{DCL::CPlane}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_plane_a9acb651f1d3d5b5883b6d62c18ff8c5f} 
+void DCL\+::\+CPlane\+::set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Normal}{, }\item[{float}]{f\+Distance\+To\+Origin}{}\end{DoxyParamCaption})}
+
+
+
+Sets plane to given values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Normal} & The normal of the plane \\
+\hline
+{\em f\+Distance\+To\+Origin} & The distance from the origin \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_plane_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_plane_8cpp_source}{Plane.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Math/\mbox{\hyperlink{_plane_8h}{Plane.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Math/Plane.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,861 @@
+\doxysection{Image.\+cpp}
+\hypertarget{_image_8cpp_source}{}\label{_image_8cpp_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Image/Image.cpp@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Image/Image.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_exceptions_8h}{../Core/Exceptions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_utilities_8h}{../Core/Utilities.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector3f_8h}{../Math/Vector3f.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#define\ STB\_IMAGE\_IMPLEMENTATION}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}stb\_image.h"{}}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#define\ STB\_IMAGE\_WRITE\_IMPLEMENTATION}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}stb\_image\_write.h"{}}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00014}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a47aa28278f5952544f7ea78f3e90e9d8}{00014}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a47aa28278f5952544f7ea78f3e90e9d8}{CImage::CImage}}()}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \_mpData\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \_muiDataSize\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aff44dfd337ab0dffeb4e0b5c275a9ce8}{free}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00021}00021\ \ \ \ \ CImage::\string~CImage()}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aff44dfd337ab0dffeb4e0b5c275a9ce8}{free}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00026}\mbox{\hyperlink{class_d_c_l_1_1_c_image_aae7ecb041f2127f31fb6ed27176d9379}{00026}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}\&\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aae7ecb041f2127f31fb6ed27176d9379}{CImage::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}\&\ other)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Guard\ against\ self\ assignment}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&other)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ other.\mbox{\hyperlink{class_d_c_l_1_1_c_image_a1af88b9571885d6366baf2ed1937829f}{copyTo}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00037}\mbox{\hyperlink{class_d_c_l_1_1_c_image_aff44dfd337ab0dffeb4e0b5c275a9ce8}{00037}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aff44dfd337ab0dffeb4e0b5c275a9ce8}{CImage::free}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mpData)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_mpData;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \_muiDataSize\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \_miWidth\ =\ \_miHeight\ =\ \_miNumChannels\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00048}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{00048}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{CImage::createBlank}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iWidth,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iHeight,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ iNumChannels)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aff44dfd337ab0dffeb4e0b5c275a9ce8}{free}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(iWidth\ <\ 1,\ \textcolor{stringliteral}{"{}CImage::createBlank()\ failed\ as\ given\ width\ <\ 1."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(iHeight\ <\ 1,\ \textcolor{stringliteral}{"{}CImage::createBlank()\ failed\ as\ given\ height\ <\ 1."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(iNumChannels\ <\ 3,\ \textcolor{stringliteral}{"{}CImage::createBlank()\ failed\ as\ given\ number\ of\ channels\ <\ 1.\ (Only\ 3\ or\ 4\ is\ valid)"{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(iNumChannels\ >\ 4,\ \textcolor{stringliteral}{"{}CImage::createBlank()\ failed\ as\ given\ number\ of\ channels\ >\ 4.\ (Only\ 3\ or\ 4\ is\ valid)"{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \_miWidth\ =\ iWidth;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \_miHeight\ =\ iHeight;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \_miNumChannels\ =\ iNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \_muiDataSize\ =\ \_miWidth\ *\ \_miHeight\ *\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \_mpData\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[\_muiDataSize];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::createBlank()\ failed\ to\ allocate\ memory."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Zero\ out\ the\ new\ memory\ all\ to\ zero}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \_muiDataSize;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00070}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a6fc9e0fdac10a2f354aa61702b28118f}{00070}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a6fc9e0fdac10a2f354aa61702b28118f}{CImage::load}}(\textcolor{keyword}{const}\ std::string\&\ strFilename,\ \textcolor{keywordtype}{bool}\ bFlipForOpenGL)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aff44dfd337ab0dffeb4e0b5c275a9ce8}{free}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ stbi\_set\_flip\_vertically\_on\_load(bFlipForOpenGL);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ number\ of\ channels\ in\ the\ image\ file}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iDims[2];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iNumChannels\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ab35c248e5430d8143f124f84cbc8dfa6}{loadInfo}}(strFilename,\ iDims[0],\ iDims[1],\ iNumChannels);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ stbi\_uc*\ pixels\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (4\ ==\ iNumChannels)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ pixels\ =\ stbi\_load(strFilename.c\_str(),\ \&\_miWidth,\ \&\_miHeight,\ \&\_miNumChannels,\ STBI\_rgb\_alpha);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (3\ ==\ iNumChannels)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ pixels\ =\ stbi\_load(strFilename.c\_str(),\ \&\_miWidth,\ \&\_miHeight,\ \&\_miNumChannels,\ STBI\_rgb);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (1\ ==\ iNumChannels)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ pixels\ =\ stbi\_load(strFilename.c\_str(),\ \&\_miWidth,\ \&\_miHeight,\ \&\_miNumChannels,\ 1);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!pixels)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ number\ of\ channels\ is\ 1,\ then\ we\ convert\ that\ 1\ channel\ to\ 3\ and\ duplicate\ the\ R\ to\ G\ and\ B}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (1\ ==\ iNumChannels)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \_miNumChannels\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ size\ and\ allocate}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \_muiDataSize\ =\ \_miWidth\ *\ \_miHeight\ *\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \_mpData\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[\_muiDataSize];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (1\ !=\ iNumChannels)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\_mpData,\ pixels,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(\_muiDataSize));}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ We\ need\ to\ copy\ the\ R\ to\ G\ and\ B}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPixelIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \_muiDataSize;\ i\ +=\ 3)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i]\ =\ pixels[iPixelIndex];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 1]\ =\ pixels[iPixelIndex];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 2]\ =\ pixels[iPixelIndex];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iPixelIndex++;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ stbi\_image\_free(pixels);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00117}\mbox{\hyperlink{class_d_c_l_1_1_c_image_ab35c248e5430d8143f124f84cbc8dfa6}{00117}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ab35c248e5430d8143f124f84cbc8dfa6}{CImage::loadInfo}}(\textcolor{keyword}{const}\ std::string\&\ strFilename,\ \textcolor{keywordtype}{int}\&\ iWidth,\ \textcolor{keywordtype}{int}\&\ iHeight,\ \textcolor{keywordtype}{int}\&\ iComponentCount)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00118}00118\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ To\ query\ the\ width,\ height\ and\ component\ count\ of\ an\ image\ without\ having\ to}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ decode\ the\ full\ file,\ you\ can\ use\ the\ stbi\_info\ family\ of\ functions:}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ int\ ix,iy,n,ok;}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ ok\ =\ stbi\_info(filename,\ \&ix,\ \&iy,\ \&n);}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ //\ returns\ ok=1\ and\ sets\ ix,\ iy,\ n\ if\ image\ is\ a\ supported\ format,}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ //\ 0\ otherwise.}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{bool})stbi\_info(strFilename.c\_str(),\ \&iWidth,\ \&iHeight,\ \&iComponentCount);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00127}00127\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00129}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a0185bfd52c2695febf676ea4f7c18f69}{00129}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a0185bfd52c2695febf676ea4f7c18f69}{CImage::saveAsBMP}}(\textcolor{keyword}{const}\ std::string\&\ strFilename,\ \textcolor{keywordtype}{bool}\ bFlipOnSave)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00130}00130\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::saveAsBMP()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ stbi\_flip\_vertically\_on\_write(bFlipOnSave);\ \textcolor{comment}{//\ flag\ is\ non-\/zero\ to\ flip\ data\ vertically}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!stbi\_write\_bmp(strFilename.c\_str(),\ \_miWidth,\ \_miHeight,\ \_miNumChannels,\ \_mpData),\ \textcolor{stringliteral}{"{}CImage::saveAsBMP(\(\backslash\)"{}"{}}\ +\ strFilename\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{})\ failed.Image\ failed\ to\ be\ written."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00136}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a665c761250959f7a902c04541eca9919}{00136}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a665c761250959f7a902c04541eca9919}{CImage::saveAsJPG}}(\textcolor{keyword}{const}\ std::string\&\ strFilename,\ \textcolor{keywordtype}{bool}\ bFlipOnSave,\ \textcolor{keywordtype}{int}\ iQuality)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00137}00137\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::saveAsJPG()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ stbi\_flip\_vertically\_on\_write(bFlipOnSave);\ \textcolor{comment}{//\ flag\ is\ non-\/zero\ to\ flip\ data\ vertically}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!stbi\_write\_jpg(strFilename.c\_str(),\ \_miWidth,\ \_miHeight,\ \_miNumChannels,\ \_mpData,\ iQuality),\ \textcolor{stringliteral}{"{}CImage::saveAsJPG(\(\backslash\)"{}"{}}\ +\ strFilename\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{})\ failed.Image\ failed\ to\ be\ written."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00143}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a7975b279b2069d73e6f2358bd119403c}{00143}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a7975b279b2069d73e6f2358bd119403c}{CImage::saveAsPNG}}(\textcolor{keyword}{const}\ std::string\&\ strFilename,\ \textcolor{keywordtype}{bool}\ bFlipOnSave)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00144}00144\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::saveAsPNG()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ stbi\_flip\_vertically\_on\_write(bFlipOnSave);\ \textcolor{comment}{//\ flag\ is\ non-\/zero\ to\ flip\ data\ vertically}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!stbi\_write\_png(strFilename.c\_str(),\ \_miWidth,\ \_miHeight,\ \_miNumChannels,\ \_mpData,\ \_miWidth\ *\ \_miNumChannels),\ \textcolor{stringliteral}{"{}CImage::saveAsPNG(\(\backslash\)"{}"{}}\ +\ strFilename\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{})\ failed.Image\ failed\ to\ be\ written."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00150}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a90700febab26fd600366ffd27b28cf08}{00150}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a90700febab26fd600366ffd27b28cf08}{CImage::saveAsTGA}}(\textcolor{keyword}{const}\ std::string\&\ strFilename,\ \textcolor{keywordtype}{bool}\ bFlipOnSave)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00151}00151\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::saveAsTGA()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ stbi\_flip\_vertically\_on\_write(bFlipOnSave);\ \textcolor{comment}{//\ flag\ is\ non-\/zero\ to\ flip\ data\ vertically}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!stbi\_write\_tga(strFilename.c\_str(),\ \_miWidth,\ \_miHeight,\ \_miNumChannels,\ \_mpData),\ \textcolor{stringliteral}{"{}CImage::saveAsTGA(\(\backslash\)"{}"{}}\ +\ strFilename\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{})\ failed.Image\ failed\ to\ be\ written."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00157}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a7b66c26a5129486fe3a92c63733c13aa}{00157}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a7b66c26a5129486fe3a92c63733c13aa}{CImage::fill}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ ucRed,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ ucGreen,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ ucBlue,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ ucAlpha)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00158}00158\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::fill()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3\ Colour\ channels}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (3\ ==\ \_miNumChannels)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i]\ =\ ucRed;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 1]\ =\ ucGreen;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 2]\ =\ ucBlue;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 4\ colour\ channels}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (4\ ==\ \_miNumChannels)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i]\ =\ ucRed;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 1]\ =\ ucGreen;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 2]\ =\ ucBlue;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 3]\ =\ ucAlpha;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00189}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a73e72184c5c254d430d713eb0ab39917}{00189}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a73e72184c5c254d430d713eb0ab39917}{CImage::getData}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00190}00190\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mpData;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00192}00192\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00194}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a7c1929aee16e94a0989b0e4a6c4cbeee}{00194}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a7c1929aee16e94a0989b0e4a6c4cbeee}{CImage::getDataSize}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00195}00195\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_muiDataSize;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00197}00197\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00199}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a8559b8c3afd2614ac4721ddc09ca9afd}{00199}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a8559b8c3afd2614ac4721ddc09ca9afd}{CImage::getWidth}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00200}00200\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_miWidth;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00202}00202\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00204}\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae613b3d0c0239c474b05419cd2551141}{00204}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ae613b3d0c0239c474b05419cd2551141}{CImage::getHeight}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00205}00205\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_miHeight;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00207}00207\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00209}\mbox{\hyperlink{class_d_c_l_1_1_c_image_aea03cd9f57b940bc54e5b40485dd93b3}{00209}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aea03cd9f57b940bc54e5b40485dd93b3}{CImage::getDimensions}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00210}00210\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ dims;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ dims.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a5c7a920310e0cd14049d9c13aef3f54c}{set}}(\textcolor{keywordtype}{float}(\_miWidth),\ \textcolor{keywordtype}{float}(\_miHeight));}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dims;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00214}00214\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00216}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a0aaf0b50468abd96fbde689ba0db341f}{00216}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a0aaf0b50468abd96fbde689ba0db341f}{CImage::getNumChannels}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00217}00217\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00219}00219\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00221}\mbox{\hyperlink{class_d_c_l_1_1_c_image_ab6de34bd82e3ea0345fad9df2575d4ea}{00221}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ab6de34bd82e3ea0345fad9df2575d4ea}{CImage::getDimsArePowerOfTwo}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00222}00222\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iX\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iY\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iX\ <\ \_miWidth)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ iX\ *=\ 2;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iY\ <\ \_miHeight)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ iY\ *=\ 2;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iX\ !=\ \_miWidth\ ||\ iY\ !=\ \_miHeight)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00232}00232\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00234}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a4efdb1806d74ab3e7cbb11f050fc56e7}{00234}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a4efdb1806d74ab3e7cbb11f050fc56e7}{CImage::swapRedAndBlue}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00235}00235\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::swapRedAndBlue()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i2;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ chTemp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ i2\ =\ i\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ chTemp\ =\ \_mpData[i];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i]\ =\ \_mpData[i2];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i2]\ =\ chTemp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00249}00249\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00251}\mbox{\hyperlink{class_d_c_l_1_1_c_image_aa3e6f2e4159733a4ab8c0c96de9243a4}{00251}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aa3e6f2e4159733a4ab8c0c96de9243a4}{CImage::flipVertically}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00252}00252\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::flipVertically()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Size\ of\ a\ row}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iRowSize\ =\ \_miWidth\ *\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Allocate\ new\ flipped\ image}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ pNewImageStartAddress\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[\_muiDataSize];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ pNewImage\ =\ pNewImageStartAddress;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(0\ ==\ pNewImage,\ \textcolor{stringliteral}{"{}CImage::flipVertically()\ failed\ to\ allocate\ memory."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ pointer\ to\ current\ image}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ pOldImage\ =\ \_mpData;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Increment\ old\ image\ pointer\ to\ point\ to\ last\ row}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ pOldImage\ +=\ iRowSize\ *\ (\_miHeight\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Copy\ each\ row\ into\ new\ image}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iRowSizeBytes\ =\ iRowSize\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ char);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ iRow\ =\ 0;\ iRow\ <\ \_miHeight;\ ++iRow)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(pNewImage,\ pOldImage,\ iRowSizeBytes);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Adjust\ pointers}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ pNewImage\ +=\ iRowSizeBytes;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ pOldImage\ -\/=\ iRowSizeBytes;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ pNewImage\ contains\ flipped\ image\ data}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_mpData;\ \ \ \textcolor{comment}{//\ Delete\ old\ image\ data}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \_mpData\ =\ pNewImageStartAddress;\ \ \ \ \textcolor{comment}{//\ Make\ image\ data\ point\ to\ the\ new\ data}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00280}00280\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00282}\mbox{\hyperlink{class_d_c_l_1_1_c_image_aaa8b3d752ff6cfcda824b980d03f2adc}{00282}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aaa8b3d752ff6cfcda824b980d03f2adc}{CImage::invert}}(\textcolor{keywordtype}{bool}\ bInvertColour,\ \textcolor{keywordtype}{bool}\ bInvertAlpha)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00283}00283\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::invert()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iIndex;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bInvertColour)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iIndex\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex]\ =\ 255\ -\/\ \_mpData[iIndex];\ ++iIndex;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex]\ =\ 255\ -\/\ \_mpData[iIndex];\ ++iIndex;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex]\ =\ 255\ -\/\ \_mpData[iIndex];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_miNumChannels\ ==\ 4\ \&\&\ bInvertAlpha)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i]\ =\ 255\ -\/\ \_mpData[i];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00309}00309\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00311}\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae373c6e34527fd88bb4a9f7d6da844ff}{00311}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ae373c6e34527fd88bb4a9f7d6da844ff}{CImage::greyscaleSimple}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00312}00312\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::greyscaleSimple()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00314}00314\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ f1Over3\ =\ 1.0f\ /\ 3.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ cTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ fTmp\ =\ float(\_mpData[i]);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ fTmp\ +=\ float(\_mpData[i\ +\ 1]);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ fTmp\ +=\ float(\_mpData[i\ +\ 2]);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ fTmp\ *=\ f1Over3;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ cTmp\ =\ (\textcolor{keywordtype}{unsigned}\ char)fTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i]\ =\ cTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 1]\ =\ cTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 2]\ =\ cTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00331}00331\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00334}\mbox{\hyperlink{class_d_c_l_1_1_c_image_ab86c42477271bcc981e19dccfb62e880}{00334}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ab86c42477271bcc981e19dccfb62e880}{CImage::greyscale}}(\textcolor{keywordtype}{float}\ fRedSensitivity,\ \textcolor{keywordtype}{float}\ fGreenSensitivity,\ \textcolor{keywordtype}{float}\ fBlueSensitivity)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00335}00335\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::greyscale()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}\ vCol(fRedSensitivity,\ fGreenSensitivity,\ fBlueSensitivity);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ cTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ fTmp\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ fTmp\ =\ float(\_mpData[i])\ *\ vCol.\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f_a58a99415405d297acecfcf47739c5d88}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ fTmp\ +=\ float(\_mpData[i\ +\ 1])\ *\ vCol.\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f_a882373a4e02b56ee799943dd46115f2e}{y}};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ fTmp\ +=\ float(\_mpData[i\ +\ 2])\ *\ vCol.\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f_a4c1c48a42e179fd123e549376bcc6ec8}{z}};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ cTmp\ =\ (\textcolor{keywordtype}{unsigned}\ char)fTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i]\ =\ cTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 1]\ =\ cTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 2]\ =\ cTmp;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00355}00355\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00357}\mbox{\hyperlink{class_d_c_l_1_1_c_image_aa706e197b2addff0d5e5dd3806072bf9}{00357}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aa706e197b2addff0d5e5dd3806072bf9}{CImage::adjustBrightness}}(\textcolor{keywordtype}{int}\ iAmount)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00358}00358\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::adjustBrightness()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iCol;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ iCol\ =\ (int)\_mpData[i]\ +\ iAmount;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(iCol,\ 0,\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i]\ =\ \textcolor{keywordtype}{unsigned}\ char(iCol);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ iCol\ =\ (int)\_mpData[i\ +\ 1]\ +\ iAmount;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(iCol,\ 0,\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 1]\ =\ \textcolor{keywordtype}{unsigned}\ char(iCol);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ iCol\ =\ (int)\_mpData[i\ +\ 2]\ +\ iAmount;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(iCol,\ 0,\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[i\ +\ 2]\ =\ \textcolor{keywordtype}{unsigned}\ char(iCol);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00378}00378\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00380}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a2a0202fe46a28bb0520125fa7614217a}{00380}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a2a0202fe46a28bb0520125fa7614217a}{CImage::adjustContrast}}(\textcolor{keywordtype}{int}\ iAmount)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00381}00381\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::adjustContrast()\ failed.\ Image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00383}00383\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(iAmount,\ -\/100,\ 100);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dPixel;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d1Over255\ =\ 1.0\ /\ 255.0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dContrast\ =\ (100.0\ +\ double(iAmount))\ *\ 0.01;\ \textcolor{comment}{//\ 0\ and\ 2}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ dContrast\ *=\ dContrast;\ \textcolor{comment}{//\ 0\ and\ 4}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iIndex;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ iIndex\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ =\ double(\_mpData[iIndex])\ *\ d1Over255;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ -\/=\ 0.5;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ *=\ dContrast;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ +=\ 0.5;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ *=\ 255;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(dPixel,\ 0.0,\ 255.0);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex]\ =\ \textcolor{keywordtype}{unsigned}\ char(dPixel);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ ++iIndex;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ =\ double(\_mpData[iIndex])\ *\ d1Over255;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ -\/=\ 0.5;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ *=\ dContrast;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ +=\ 0.5;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ *=\ 255;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(dPixel,\ 0.0,\ 255.0);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex]\ =\ \textcolor{keywordtype}{unsigned}\ char(dPixel);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ ++iIndex;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00411}00411\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ =\ double(\_mpData[iIndex])\ *\ d1Over255;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ -\/=\ 0.5;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ *=\ dContrast;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ +=\ 0.5;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ dPixel\ *=\ 255;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(dPixel,\ 0.0,\ 255.0);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex]\ =\ \textcolor{keywordtype}{unsigned}\ char(dPixel);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00419}00419\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ \_miNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00422}00422\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00423}00423\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00424}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a1af88b9571885d6366baf2ed1937829f}{00424}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a1af88b9571885d6366baf2ed1937829f}{CImage::copyTo}}(\mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}\&\ destImage)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00425}00425\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00426}00426\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::copyTo()\ failed.\ Source\ image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00428}00428\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ destination\ image\ is\ the\ same\ as\ this\ one,\ do\ nothing}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00429}00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (destImage.\_mpData\ ==\ this-\/>\_mpData)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ destImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_aff44dfd337ab0dffeb4e0b5c275a9ce8}{free}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ destImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{createBlank}}(\_miWidth,\ \_miHeight,\ \_miNumChannels);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00434}00434\ \ \ \ \ \ \ \ \ memcpy(destImage.\_mpData,\ \_mpData,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})\ *\ \_muiDataSize);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00435}00435\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00437}\mbox{\hyperlink{class_d_c_l_1_1_c_image_ad2b5563fb1e05e5e994be6ae278e2b0d}{00437}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ad2b5563fb1e05e5e994be6ae278e2b0d}{CImage::copyRectTo}}(\mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}\&\ destImage,\ \textcolor{keywordtype}{int}\ iSrcPosX,\ \textcolor{keywordtype}{int}\ iSrcPosY,\ \textcolor{keywordtype}{int}\ iSrcWidth,\ \textcolor{keywordtype}{int}\ iSrcHeight,\ \textcolor{keywordtype}{int}\ iDestPosX,\ \textcolor{keywordtype}{int}\ iDestPosY)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00438}00438\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00439}00439\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ that\ both\ images\ have\ data}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00440}00440\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::copyRectTo()\ failed.\ Source\ image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00441}00441\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!destImage.\_mpData,\ \textcolor{stringliteral}{"{}CImage::copyRectTo()\ failed.\ Destination\ image\ not\ yet\ created."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00443}00443\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ source\ rect}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00444}00444\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iSrcLeft\ =\ iSrcPosX;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00445}00445\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iSrcBot\ =\ iSrcPosY;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00446}00446\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iSrcRight\ =\ iSrcLeft\ +\ iSrcWidth;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00447}00447\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iSrcTop\ =\ iSrcBot\ +\ iSrcHeight;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00448}00448\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ destination\ rect}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00449}00449\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iDstLeft\ =\ iDestPosX;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00450}00450\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iDstBot\ =\ iDestPosY;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00451}00451\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iDstRight\ =\ iDstLeft\ +\ iSrcWidth;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00452}00452\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iDstTop\ =\ iDstBot\ +\ iSrcHeight;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ above\ may\ be\ invalid\ due\ to\ different\ sizes,\ invalid\ positions,\ dims\ etc.}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invalid\ starting\ positions}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00456}00456\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iSrcLeft\ >=\ \_miWidth)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iSrcBot\ >=\ \_miHeight)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iDstLeft\ >=\ destImage.\_miWidth)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iDstBot\ >=\ destImage.\_miHeight)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00464}00464\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clamp\ right\ and\ top\ to\ edges\ of\ their\ respective\ images}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(iSrcRight,\ iSrcLeft,\ \_miWidth);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00466}00466\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(iSrcTop,\ iSrcBot,\ \_miHeight);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(iDstRight,\ iDstLeft,\ destImage.\_miWidth);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00468}00468\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(iDstTop,\ iDstBot,\ destImage.\_miHeight);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00469}00469\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ rect\ dims\ for\ both\ images}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iSrcRectWidth\ =\ iSrcRight\ -\/\ iSrcLeft;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iSrcRectHeight\ =\ iSrcTop\ -\/\ iSrcBot;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iDstRectWidth\ =\ iDstRight\ -\/\ iDstLeft;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iDstRectHeight\ =\ iDstTop\ -\/\ iDstBot;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ smallest\ rect}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iMinWidth\ =\ iSrcRectWidth;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iMinWidth\ >\ iDstRectWidth)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ iMinWidth\ =\ iDstRectWidth;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iMinHeight\ =\ iSrcRectHeight;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00479}00479\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iMinHeight\ >\ iDstRectHeight)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ iMinHeight\ =\ iDstRectHeight;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00481}00481\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ minimum\ =\ zero,\ then\ do\ nothing}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00482}00482\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iMinWidth\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00484}00484\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iMinHeight\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00486}00486\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00487}00487\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ colTmp[4];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00488}00488\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ isx,\ isy;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00489}00489\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idx,\ idy;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00490}00490\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ix\ =\ 0;\ ix\ <\ iMinWidth;\ ++ix)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00491}00491\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00492}00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iy\ =\ 0;\ iy\ <\ iMinHeight;\ ++iy)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00493}00493\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00494}00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isx\ =\ iSrcLeft\ +\ ix;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00495}00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isy\ =\ iSrcBot\ +\ iy;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00496}00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idx\ =\ iDstLeft\ +\ ix;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00497}00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idy\ =\ iDstBot\ +\ iy;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00498}00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ae5aab91e9fa803530f5dbc2b8be98c83}{getPixel}}(isx,\ isy,\ colTmp[0],\ colTmp[1],\ colTmp[2],\ colTmp[3]);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae450d95c59a0cbd74fb2b80620ad9e53}{setPixel}}(idx,\ idy,\ colTmp[0],\ colTmp[1],\ colTmp[2],\ colTmp[3]);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00500}00500\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00501}00501\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00502}00502\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00503}00503\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00504}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a0c7bf256f5510ba053c23663157024ce}{00504}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a0c7bf256f5510ba053c23663157024ce}{CImage::copyToAddBorder}}(\mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}\&\ outputImage)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00505}00505\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00506}00506\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::copyToAddBorder()\ failed.\ Image\ data\ doesn't\ exist."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00507}00507\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00508}00508\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ new\ larger\ dimensions\ and\ create\ the\ larger\ image}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00509}00509\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ newWidth\ =\ \_miWidth\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00510}00510\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ newHeight\ =\ \_miHeight\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00511}00511\ \ \ \ \ \ \ \ \ outputImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{createBlank}}(newWidth,\ newHeight,\ \_miNumChannels);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00512}00512\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00513}00513\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Copy\ this\ image\ to\ the\ centre\ of\ the\ larger\ image}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00514}00514\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ad2b5563fb1e05e5e994be6ae278e2b0d}{copyRectTo}}(outputImage,\ 0,\ 0,\ \_miWidth,\ \_miHeight,\ 1,\ 1);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00515}00515\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00516}00516\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ copy\ the\ edges\ of\ this\ image\ to\ the\ destination\ image}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00517}00517\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ r,\ g,\ b,\ a;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00518}00518\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ heightOfOutputImageMinusOne\ =\ newHeight\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00519}00519\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Top\ and\ bottom\ edges}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00520}00520\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ iX\ =\ 0;\ iX\ <\ \_miWidth;\ iX++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00521}00521\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00522}00522\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Top\ pixel\ row}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00523}00523\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ae5aab91e9fa803530f5dbc2b8be98c83}{getPixel}}(iX,\ 0,\ r,\ g,\ b,\ a);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \ \ outputImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae450d95c59a0cbd74fb2b80620ad9e53}{setPixel}}(iX\ +\ 1,\ 0,\ r,\ g,\ b,\ a);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00525}00525\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00526}00526\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Bottom\ pixel\ row}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00527}00527\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ae5aab91e9fa803530f5dbc2b8be98c83}{getPixel}}(iX,\ \_miHeight\ -\/\ 1,\ r,\ g,\ b,\ a);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00528}00528\ \ \ \ \ \ \ \ \ \ \ \ \ outputImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae450d95c59a0cbd74fb2b80620ad9e53}{setPixel}}(iX\ +\ 1,\ heightOfOutputImageMinusOne,\ r,\ g,\ b,\ a);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00529}00529\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00530}00530\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ widthOfOutputImageMinusOne\ =\ newWidth\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00531}00531\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Left\ and\ right\ edges}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00532}00532\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ iY\ =\ 0;\ iY\ <\ \_miHeight;\ iY++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00533}00533\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00534}00534\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Left\ pixel\ column}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ae5aab91e9fa803530f5dbc2b8be98c83}{getPixel}}(0,\ iY,\ r,\ g,\ b,\ a);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ outputImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae450d95c59a0cbd74fb2b80620ad9e53}{setPixel}}(0,\ iY\ +\ 1,\ r,\ g,\ b,\ a);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Right\ pixel\ column}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ae5aab91e9fa803530f5dbc2b8be98c83}{getPixel}}(\_miWidth\ -\/\ 1,\ iY,\ r,\ g,\ b,\ a);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ outputImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae450d95c59a0cbd74fb2b80620ad9e53}{setPixel}}(widthOfOutputImageMinusOne,\ iY\ +\ 1,\ r,\ g,\ b,\ a);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00541}00541\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00542}00542\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00543}00543\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00544}\mbox{\hyperlink{class_d_c_l_1_1_c_image_af2e8752a55675711c66735be9851a965}{00544}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_af2e8752a55675711c66735be9851a965}{CImage::rotateClockwise}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00545}00545\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00546}00546\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}\ oldImage;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00547}00547\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a1af88b9571885d6366baf2ed1937829f}{copyTo}}(oldImage);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00548}00548\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00549}00549\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ col[4];}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00550}00550\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idstX;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00551}00551\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idstY;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00552}00552\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00553}00553\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Non\ squared?}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00554}00554\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_miWidth\ !=\ \_miHeight)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00555}00555\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00556}00556\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{createBlank}}(\_miHeight,\ \_miWidth,\ \_miNumChannels);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00557}00557\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00558}00558\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00559}00559\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ isrcX\ =\ 0;\ isrcX\ <\ oldImage.\_miWidth;\ ++isrcX)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00560}00560\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00561}00561\ \ \ \ \ \ \ \ \ \ \ \ \ idstY\ =\ \_miHeight\ -\/\ isrcX\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ isrcY\ =\ 0;\ isrcY\ <\ oldImage.\_miHeight;\ ++isrcY)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00563}00563\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00564}00564\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idstX\ =\ isrcY;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00565}00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae5aab91e9fa803530f5dbc2b8be98c83}{getPixel}}(isrcX,\ isrcY,\ col[0],\ col[1],\ col[2],\ col[3]);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00566}00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_ae450d95c59a0cbd74fb2b80620ad9e53}{setPixel}}(idstX,\ idstY,\ col[0],\ col[1],\ col[2],\ col[3]);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00567}00567\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00568}00568\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00569}00569\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00570}00570\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00571}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a083831dace88a8decf3cb4359168aa8f}{00571}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a083831dace88a8decf3cb4359168aa8f}{CImage::edgeDetect}}(\mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}\&\ outputImage,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ r,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ g,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ b)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00572}00572\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00573}00573\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::edgeDetect()\ failed.\ Image\ data\ doesn't\ exist."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00574}00574\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(\_miNumChannels\ <\ 3,\ \textcolor{stringliteral}{"{}CImage::edgeDetect()\ failed.\ Some\ image\ data\ exists,\ but\ doesn't\ have\ enough\ colour\ channels."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00575}00575\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00576}00576\ \ \ \ \ \ \ \ \ outputImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{createBlank}}(\_miWidth,\ \_miHeight,\ 4);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00577}00577\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iX\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00578}00578\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iY\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00579}00579\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iX\ <\ (\textcolor{keywordtype}{int})\_miWidth)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00580}00580\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00581}00581\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iY\ <\ (\textcolor{keywordtype}{int})\_miHeight)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00582}00582\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00583}00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_isPixelEdge(iX,\ iY,\ r,\ g,\ b))}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00584}00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae450d95c59a0cbd74fb2b80620ad9e53}{setPixel}}(iX,\ iY,\ 255,\ 255,\ 255,\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00585}00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00586}00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae450d95c59a0cbd74fb2b80620ad9e53}{setPixel}}(iX,\ iY,\ 0,\ 0,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00587}00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++iY;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00588}00588\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00589}00589\ \ \ \ \ \ \ \ \ \ \ \ \ ++iX;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00590}00590\ \ \ \ \ \ \ \ \ \ \ \ \ iY\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00591}00591\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00592}00592\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00593}00593\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00594}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a27115d9fc6f86a161e1bf106f9717aad}{00594}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a27115d9fc6f86a161e1bf106f9717aad}{CImage::removeAlphaChannel}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00595}00595\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00596}00596\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::removeAlphaChannel()\ failed.\ Image\ data\ doesn't\ exist."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00597}00597\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(\_miNumChannels\ !=\ 4,\ \textcolor{stringliteral}{"{}CImage::removeAlphaChannel()\ failed.\ Some\ image\ data\ exists,\ but\ the\ alpha\ data\ doesn't\ exist\ (Image\ doesn't\ hold\ 4\ channels)"{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00598}00598\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00599}00599\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Copy\ this\ image\ to\ a\ new\ tmp\ image}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00600}00600\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}\ old;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00601}00601\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a1af88b9571885d6366baf2ed1937829f}{copyTo}}(old);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00602}00602\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00603}00603\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Recreate\ this\ one,\ but\ with\ 3\ channels}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00604}00604\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{createBlank}}(old.\mbox{\hyperlink{class_d_c_l_1_1_c_image_a8559b8c3afd2614ac4721ddc09ca9afd}{getWidth}}(),\ old.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae613b3d0c0239c474b05419cd2551141}{getHeight}}(),\ 3);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00605}00605\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00606}00606\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Copy\ RGB\ from\ old\ to\ this...}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00607}00607\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00608}00608\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iIndexOld\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00609}00609\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iIndex\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00610}00610\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00611}00611\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex]\ =\ old.\_mpData[iIndexOld];\ \ \ \ \ \ \ \textcolor{comment}{//\ Red}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00612}00612\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex\ +\ 1]\ =\ old.\_mpData[iIndexOld\ +\ 1];\ \ \ \textcolor{comment}{//\ Green}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00613}00613\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex\ +\ 2]\ =\ old.\_mpData[iIndexOld\ +\ 2];\ \ \ \textcolor{comment}{//\ Blue}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00614}00614\ \ \ \ \ \ \ \ \ \ \ \ \ iIndex\ +=\ 3;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00615}00615\ \ \ \ \ \ \ \ \ \ \ \ \ iIndexOld\ +=\ 4;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00616}00616\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00617}00617\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00618}00618\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00619}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a6bbb7068ac3c151f25facf369929e4bd}{00619}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a6bbb7068ac3c151f25facf369929e4bd}{CImage::copyAlphaChannelToRGB}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00620}00620\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00621}00621\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::copyAlphaChannelToRGB()\ failed.\ Image\ data\ doesn't\ exist."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00622}00622\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(\_miNumChannels\ !=\ 4,\ \textcolor{stringliteral}{"{}CImage::copyAlphaChannelToRGB()\ failed.\ Some\ image\ data\ exists,\ but\ the\ alpha\ data\ doesn't\ exist\ (Image\ doesn't\ hold\ 4\ channels)"{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00623}00623\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00624}00624\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00625}00625\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iIndex\ <\ \_muiDataSize)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00626}00626\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00627}00627\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex]\ =\ \_mpData[iIndex\ +\ 3];\ \ \textcolor{comment}{//\ Red}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00628}00628\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex\ +\ 1]\ =\ \_mpData[iIndex\ +\ 3];\ \ \textcolor{comment}{//\ Green}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iIndex\ +\ 2]\ =\ \_mpData[iIndex\ +\ 3];\ \ \textcolor{comment}{//\ Blue}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00630}00630\ \ \ \ \ \ \ \ \ \ \ \ \ iIndex\ +=\ 4;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00631}00631\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00632}00632\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00633}00633\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00634}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a6e203e51d05c5a6dc4feecf4a7a22504}{00634}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a6e203e51d05c5a6dc4feecf4a7a22504}{CImage::normalmap}}(\mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}\&\ outputImage,\ \textcolor{keywordtype}{float}\ fScale)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00635}00635\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00636}00636\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(!\_mpData,\ \textcolor{stringliteral}{"{}CImage::normalmap()\ failed.\ Image\ data\ doesn't\ exist."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00637}00637\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00638}00638\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_a83b188c4c4d0efafc04c87b4d94a0c13}{clamp}}(fScale,\ 0.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00639}00639\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00640}00640\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Copy\ this\ image\ into\ a\ new\ one\ so\ this\ is\ left\ unaffected.}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00641}00641\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ uses\ the\ copyToAddBorder()\ method\ which\ adds\ a\ border\ and\ copies\ the\ edge\ pixels\ to\ the\ new\ pixels\ in\ the\ border.}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00642}00642\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ makes\ it\ so\ we\ don't\ have\ to\ mess\ around\ with\ edge\ cases.}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00643}00643\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}}\ imageGreyscale;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00644}00644\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a0c7bf256f5510ba053c23663157024ce}{copyToAddBorder}}(imageGreyscale);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00645}00645\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00646}00646\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Greyscale\ the\ image}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00647}00647\ \ \ \ \ \ \ \ \ imageGreyscale.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae373c6e34527fd88bb4a9f7d6da844ff}{greyscaleSimple}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00648}00648\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00649}00649\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ output\ image\ with\ the\ same\ size\ as\ this\ one}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00650}00650\ \ \ \ \ \ \ \ \ outputImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{createBlank}}(\_miWidth,\ \_miHeight,\ 3);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00651}00651\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00652}00652\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ loop\ through\ greyscale\ image,\ computing\ each\ normal\ and\ storing\ in\ the\ output\ image.}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00653}00653\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ r[3],\ g[3],\ b[3],\ a;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00654}00654\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fX,\ fY,\ fZ;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00655}00655\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fLength;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00656}00656\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ \_miHeight;\ y++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00657}00657\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00658}00658\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ ix\ =\ 0;\ ix\ <\ \_miWidth;\ ix++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00659}00659\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00660}00660\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ add\ +1\ to\ imageGreyscale\ pixel\ positions\ as\ it\ has\ a\ border}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00661}00661\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00662}00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ height\ values\ of\ centre\ and\ surrounding\ pixels}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00663}00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageGreyscale.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae5aab91e9fa803530f5dbc2b8be98c83}{getPixel}}(ix\ +\ 1,\ y\ +\ 1,\ r[0],\ g[0],\ b[0],\ a);\ \ \ \ \textcolor{comment}{//\ Current\ pixel}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00664}00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageGreyscale.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae5aab91e9fa803530f5dbc2b8be98c83}{getPixel}}(ix,\ y\ +\ 1,\ r[1],\ g[1],\ b[1],\ a);\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Left\ pixel}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00665}00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageGreyscale.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae5aab91e9fa803530f5dbc2b8be98c83}{getPixel}}(ix\ +\ 1,\ y\ +\ 2,\ r[2],\ g[2],\ b[2],\ a);\ \ \ \ \textcolor{comment}{//\ Above\ pixel}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00666}00666\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00667}00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fX\ =\ float(r[1]\ -\/\ r[0])\ /\ 255.0f;\ \ \ \textcolor{comment}{//\ Convert\ to\ -\/1.0f\ to\ 1.0f}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00668}00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fY\ =\ float(r[2]\ -\/\ r[0])\ /\ 255.0f;\ \ \ \textcolor{comment}{//\ ....}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00669}00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fZ\ =\ fScale;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00670}00670\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00671}00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ length\ of\ vector\ and\ normalize}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fLength\ =\ sqrt((fX\ *\ fX)\ +\ (fY\ *\ fY)\ +\ (fZ\ *\ fZ));}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00673}00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_d_c_l_a29e5b7565323f2387653d8ac9fe7217c}{areFloatsEqual}}(fLength,\ 0.0f))\ \ \ \ \textcolor{comment}{//\ If\ length\ is\ nearly\ zero,\ just\ set\ as\ up\ vector}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00674}00674\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00675}00675\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fX\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00676}00676\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fY\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00677}00677\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fZ\ =\ fScale;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00678}00678\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00679}00679\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00680}00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00681}00681\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fX\ =\ fX\ /\ fLength;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00682}00682\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fY\ =\ fY\ /\ fLength;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00683}00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fZ\ =\ fZ\ /\ fLength;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00684}00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00685}00685\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00686}00686\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ from\ -\/1,\ +1\ to\ 0,\ 255}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00687}00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fX\ +=\ 1.0f;\ fX\ *=\ 127.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00688}00688\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fY\ +=\ 1.0f;\ fY\ *=\ 127.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00689}00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fZ\ +=\ 1.0f;\ fZ\ *=\ 127.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00690}00690\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r[0]\ =\ \textcolor{keywordtype}{unsigned}\ char(fX);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00691}00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g[0]\ =\ \textcolor{keywordtype}{unsigned}\ char(fY);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00692}00692\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b[0]\ =\ \textcolor{keywordtype}{unsigned}\ char(fZ);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00693}00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputImage.\mbox{\hyperlink{class_d_c_l_1_1_c_image_ae450d95c59a0cbd74fb2b80620ad9e53}{setPixel}}(ix,\ y,\ r[0],\ g[0],\ b[0],\ a);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00694}00694\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00695}00695\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00696}00696\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00697}00697\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00698}\mbox{\hyperlink{class_d_c_l_1_1_c_image_aa5b57d133454aa11e8365eaf3151b539}{00698}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_aa5b57d133454aa11e8365eaf3151b539}{CImage::drawColourWheel}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iWidthAndHeightOfImage,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ ucBrightness)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00699}00699\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00700}00700\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(iWidthAndHeightOfImage\ <\ 1,\ \textcolor{stringliteral}{"{}CImage::drawColourWheel()\ failed.\ Parsed\ iWidthAndHeightOfImage\ must\ be\ at\ least\ 1"{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00701}00701\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{createBlank}}(iWidthAndHeightOfImage,\ iWidthAndHeightOfImage,\ 4);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00702}00702\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00703}00703\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fBrightness\ =\ float(ucBrightness)\ /\ 255.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00704}00704\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vCentrePixelPosition;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00705}00705\ \ \ \ \ \ \ \ \ vCentrePixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ =\ float(iWidthAndHeightOfImage)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00706}00706\ \ \ \ \ \ \ \ \ vCentrePixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}}\ =\ vCentrePixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00707}00707\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00708}00708\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vCurrentPixelPosition;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00709}00709\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vCurrentPixelOffsetFromCentre;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00710}00710\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}}\ colour;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00711}00711\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fCircleRadius\ =\ float(iWidthAndHeightOfImage)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00712}00712\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fDistanceFromCentre;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00713}00713\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fSaturation;\ \ \textcolor{comment}{//\ 0.0f\ =\ white,\ 1.0f\ =\ full\ colour}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00714}00714\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fAngleDegrees;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00715}00715\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fOneOver360\ =\ 1.0f\ /\ 360.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00716}00716\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPixelIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00717}00717\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPosX\ =\ 0;\ iPosX\ <\ (\textcolor{keywordtype}{unsigned}\ int)\_miWidth;\ iPosX++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00718}00718\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00719}00719\ \ \ \ \ \ \ \ \ \ \ \ \ vCurrentPixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ =\ (float)iPosX;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00720}00720\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPosY\ =\ 0;\ iPosY\ <\ (\textcolor{keywordtype}{unsigned}\ int)\_miHeight;\ iPosY++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00721}00721\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00722}00722\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCurrentPixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}}\ =\ (float)iPosY;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00723}00723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCurrentPixelOffsetFromCentre\ =\ vCurrentPixelPosition\ -\/\ vCentrePixelPosition;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00724}00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fDistanceFromCentre\ =\ vCurrentPixelOffsetFromCentre.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a6b78d1441af1ed8274d8266fd72aa7a4}{getMagnitude}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00725}00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fSaturation\ =\ fCircleRadius\ -\/\ fDistanceFromCentre;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00726}00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fSaturation\ /=\ fCircleRadius;\ \ \ \textcolor{comment}{//\ 0\ at\ edge\ of\ circle,\ 1\ at\ centre.\ Can\ be\ <\ 0\ which\ is\ outside\ circle}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00727}00727\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fAngleDegrees\ =\ vCurrentPixelOffsetFromCentre.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a03ba2f69cb149a3c767ed04d0094252c}{getAngleDegrees360}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00728}00728\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fAngleDegrees\ *=\ fOneOver360;\ \ \ \textcolor{comment}{//\ 0\ when\ pixel\ is\ north,\ 0.25\ when\ east\ etc.}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00729}00729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fSaturation\ <\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00730}00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_af4c3232e5c169f7ccc5e9f57c145b2c9}{set}}(0.0f,\ 0.0f,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00731}00731\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00732}00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00733}00733\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a14e4ee68bc94160051feac508cd55205}{setFromHSB}}(fAngleDegrees,\ fSaturation,\ fBrightness);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00734}00734\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_aad116c6b016a38f1ebc0c288a9f255e4}{alpha}}\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00735}00735\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00736}00736\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_abe5256069d7e891ba8b964af01085ca4}{red}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00737}00737\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 1]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_adbf46ba7b6ec02249d8e75b07e6b58f7}{green}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00738}00738\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 2]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a0a313d7ac9f6e86e5eaa30f773ab014e}{blue}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00739}00739\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 3]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_aad116c6b016a38f1ebc0c288a9f255e4}{alpha}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00740}00740\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iPixelIndex\ +=\ 4;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00741}00741\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00742}00742\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00743}00743\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00744}00744\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00745}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a3d1a4594cd93963e18533ff7dd5429cd}{00745}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a3d1a4594cd93963e18533ff7dd5429cd}{CImage::getColourWheelColour}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPositionX,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPositionY,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iWidthAndHeightOfImage,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ ucBrightness)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00746}00746\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00747}00747\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(iWidthAndHeightOfImage\ <\ 1,\ \textcolor{stringliteral}{"{}CImage::getColourWheelColour()\ failed.\ Parsed\ iWidthAndHeightOfImage\ must\ be\ at\ least\ 1"{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00748}00748\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00749}00749\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}}\ colour;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00750}00750\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vCurrentPixelPosition((\textcolor{keywordtype}{float})iPositionX,\ \textcolor{keywordtype}{float}(iPositionY));}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00751}00751\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vCentrePixelPosition;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00752}00752\ \ \ \ \ \ \ \ \ vCentrePixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ =\ float(iWidthAndHeightOfImage)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00753}00753\ \ \ \ \ \ \ \ \ vCentrePixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}}\ =\ vCentrePixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00754}00754\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vCurrentPixelOffsetFromCentre\ =\ vCurrentPixelPosition\ -\/\ vCentrePixelPosition;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00755}00755\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fDistanceFromCentre\ =\ vCurrentPixelOffsetFromCentre.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a6b78d1441af1ed8274d8266fd72aa7a4}{getMagnitude}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00756}00756\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fCircleRadius\ =\ float(iWidthAndHeightOfImage)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00757}00757\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fSaturation\ =\ fCircleRadius\ -\/\ fDistanceFromCentre;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00758}00758\ \ \ \ \ \ \ \ \ fSaturation\ /=\ fCircleRadius;\ \ \ \textcolor{comment}{//\ 0\ at\ edge\ of\ circle,\ 1\ at\ centre.\ Can\ be\ <\ 0\ which\ is\ outside\ circle}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00759}00759\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fAngleDegrees\ =\ vCurrentPixelOffsetFromCentre.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a03ba2f69cb149a3c767ed04d0094252c}{getAngleDegrees360}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00760}00760\ \ \ \ \ \ \ \ \ fAngleDegrees\ /=\ 360.0f;\ \ \ \ \textcolor{comment}{//\ 0\ when\ pixel\ is\ north,\ 0.25\ when\ east\ etc.}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00761}00761\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fSaturation\ <\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00762}00762\ \ \ \ \ \ \ \ \ \ \ \ \ colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_af4c3232e5c169f7ccc5e9f57c145b2c9}{set}}(0.0f,\ 0.0f,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00763}00763\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00764}00764\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00765}00765\ \ \ \ \ \ \ \ \ \ \ \ \ colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a14e4ee68bc94160051feac508cd55205}{setFromHSB}}(fAngleDegrees,\ fSaturation,\ \textcolor{keywordtype}{float}(ucBrightness)\ /\ 255.0f);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00766}00766\ \ \ \ \ \ \ \ \ \ \ \ \ colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_aad116c6b016a38f1ebc0c288a9f255e4}{alpha}}\ =\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00767}00767\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00768}00768\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colour;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00769}00769\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00770}00770\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00771}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a28b6824f2cf4c6b87295ff13885947ae}{00771}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a28b6824f2cf4c6b87295ff13885947ae}{CImage::drawGradient}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iWidth,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iHeight,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iNumChannels,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}}\&\ colour0,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}}\&\ colour1)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00772}00772\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00773}00773\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(iWidth\ <\ 1\ ||\ iHeight\ <\ 1,\ \textcolor{stringliteral}{"{}CImage::drawGradient()\ failed.\ Invalid\ dimensions\ given."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00774}00774\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(iNumChannels\ <\ 3\ ||\ iNumChannels\ >\ 4,\ \textcolor{stringliteral}{"{}CImage::drawGradient()\ failed.\ Number\ of\ channels\ must\ be\ either\ 3\ or\ 4."{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00775}00775\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{createBlank}}(iWidth,\ iHeight,\ iNumChannels);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00776}00776\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ bHorizontal\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00777}00777\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iHeight\ >\ iWidth)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00778}00778\ \ \ \ \ \ \ \ \ \ \ \ \ bHorizontal\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00779}00779\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00780}00780\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}}\ colour;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00781}00781\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPixelIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00782}00782\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bHorizontal)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00783}00783\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00784}00784\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPosX\ =\ 0;\ iPosX\ <\ iWidth;\ iPosX++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00785}00785\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00786}00786\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colour\ =\ colour0.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_ac741ab6cb77e31e7047bae0d70e25ecb}{interpolate}}(colour1,\ \textcolor{keywordtype}{float}(iPosX)\ /\ \textcolor{keywordtype}{float}(iWidth));}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00787}00787\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPosY\ =\ 0;\ iPosY\ <\ iHeight;\ iPosY++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00788}00788\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00789}00789\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iPixelIndex\ =\ iPosX\ +\ (iPosY\ *\ \_miWidth);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00790}00790\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iPixelIndex\ *=\ iNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00791}00791\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_abe5256069d7e891ba8b964af01085ca4}{red}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00792}00792\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 1]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_adbf46ba7b6ec02249d8e75b07e6b58f7}{green}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00793}00793\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 2]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a0a313d7ac9f6e86e5eaa30f773ab014e}{blue}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00794}00794\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iNumChannels\ ==\ 4)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00795}00795\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 3]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_aad116c6b016a38f1ebc0c288a9f255e4}{alpha}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00796}00796\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00797}00797\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00798}00798\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00799}00799\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00800}00800\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00801}00801\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPosY\ =\ 0;\ iPosY\ <\ iHeight;\ iPosY++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00802}00802\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00803}00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colour\ =\ colour0.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_ac741ab6cb77e31e7047bae0d70e25ecb}{interpolate}}(colour1,\ \textcolor{keywordtype}{float}(iPosY)\ /\ \textcolor{keywordtype}{float}(iHeight));}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00804}00804\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPosX\ =\ 0;\ iPosX\ <\ iWidth;\ iPosX++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00805}00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00806}00806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iPixelIndex\ =\ iPosX\ +\ (iPosY\ *\ \_miWidth);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00807}00807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iPixelIndex\ *=\ iNumChannels;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00808}00808\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_abe5256069d7e891ba8b964af01085ca4}{red}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00809}00809\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 1]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_adbf46ba7b6ec02249d8e75b07e6b58f7}{green}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00810}00810\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 2]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a0a313d7ac9f6e86e5eaa30f773ab014e}{blue}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00811}00811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iNumChannels\ ==\ 4)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00812}00812\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 3]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_aad116c6b016a38f1ebc0c288a9f255e4}{alpha}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00813}00813\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00814}00814\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00815}00815\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00816}00816\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00817}00817\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00818}\mbox{\hyperlink{class_d_c_l_1_1_c_image_a36c33ab467a6759270aa5ba5b19b7078}{00818}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a36c33ab467a6759270aa5ba5b19b7078}{CImage::drawCircle}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iWidthAndHeightOfImage,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}}\&\ colourInner,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}}\&\ colourOuter)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00819}00819\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00820}00820\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(iWidthAndHeightOfImage\ <\ 1,\ \textcolor{stringliteral}{"{}CImage::drawCircle()\ failed.\ Parsed\ iWidthAndHeightOfImage\ must\ be\ at\ least\ 1"{}});}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00821}00821\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_image_a4a7d3f546124d395b0865e7527770e10}{createBlank}}(iWidthAndHeightOfImage,\ iWidthAndHeightOfImage,\ 4);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00822}00822\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00823}00823\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vCentrePixelPosition;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00824}00824\ \ \ \ \ \ \ \ \ vCentrePixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ =\ float(iWidthAndHeightOfImage)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00825}00825\ \ \ \ \ \ \ \ \ vCentrePixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}}\ =\ vCentrePixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}};}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00826}00826\ }
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00827}00827\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vCurrentPixelPosition;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00828}00828\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector2f}{CVector2f}}\ vCurrentPixelOffsetFromCentre;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00829}00829\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}}\ colour;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00830}00830\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fCircleRadius\ =\ float(iWidthAndHeightOfImage)\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00831}00831\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fDistanceFromCentre;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00832}00832\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fOneOver360\ =\ 1.0f\ /\ 360.0f;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00833}00833\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPixelIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00834}00834\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPosX\ =\ 0;\ iPosX\ <\ (\textcolor{keywordtype}{unsigned}\ int)\_miWidth;\ iPosX++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00835}00835\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00836}00836\ \ \ \ \ \ \ \ \ \ \ \ \ vCurrentPixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a248536bc7c0b0715cd35033c15221968}{x}}\ =\ (float)iPosX;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00837}00837\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ iPosY\ =\ 0;\ iPosY\ <\ (\textcolor{keywordtype}{unsigned}\ int)\_miHeight;\ iPosY++)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00838}00838\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00839}00839\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCurrentPixelPosition.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a011f0cdd32ba0c1959a1df3f5afcd969}{y}}\ =\ (float)iPosY;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00840}00840\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vCurrentPixelOffsetFromCentre\ =\ vCurrentPixelPosition\ -\/\ vCentrePixelPosition;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00841}00841\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fDistanceFromCentre\ =\ fCircleRadius\ -\/\ vCurrentPixelOffsetFromCentre.\mbox{\hyperlink{class_d_c_l_1_1_c_vector2f_a6b78d1441af1ed8274d8266fd72aa7a4}{getMagnitude}}();}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00842}00842\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fDistanceFromCentre\ /=\ fCircleRadius;\ \ \ \textcolor{comment}{//\ 0\ at\ edge\ of\ circle,\ 1\ at\ centre.\ Can\ be\ <\ 0\ which\ is\ outside\ circle}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00843}00843\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fDistanceFromCentre\ <\ 0.0f)}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00844}00844\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_af4c3232e5c169f7ccc5e9f57c145b2c9}{set}}(0.0f,\ 0.0f,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00845}00845\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00846}00846\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colour\ =\ colourOuter.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_ac741ab6cb77e31e7047bae0d70e25ecb}{interpolate}}(colourInner,\ fDistanceFromCentre);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00847}00847\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_abe5256069d7e891ba8b964af01085ca4}{red}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00848}00848\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 1]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_adbf46ba7b6ec02249d8e75b07e6b58f7}{green}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00849}00849\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 2]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a0a313d7ac9f6e86e5eaa30f773ab014e}{blue}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00850}00850\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mpData[iPixelIndex\ +\ 3]\ =\ \textcolor{keywordtype}{unsigned}\ char(colour.\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_aad116c6b016a38f1ebc0c288a9f255e4}{alpha}}\ *\ 255);}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00851}00851\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iPixelIndex\ +=\ 4;}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00852}00852\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00853}00853\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00854}00854\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_8cpp_source_l00855}00855\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+
+\end{DoxyCode}

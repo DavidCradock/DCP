@@ -1,0 +1,106 @@
+\doxysection{DCL\+::CSingleton\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_d_c_l_1_1_c_singleton}{}\label{class_d_c_l_1_1_c_singleton}\index{DCL::CSingleton$<$ T $>$@{DCL::CSingleton$<$ T $>$}}
+
+
+Singleton class to inherit from.  
+
+
+
+
+{\ttfamily \#include $<$Singleton.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a6b6cca79e720a235a3c40bef3ef70fc0}{get\+Pointer}} (void)
+\begin{DoxyCompactList}\small\item\em Obtain pointer to class object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee}{p\+Instance}} = 0
+\begin{DoxyCompactList}\small\item\em A pointer holding the single instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class DCL\+::\+CSingleton$<$ T $>$}
+Singleton class to inherit from. 
+
+Usage\+: Create a class from this template class with something like... 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MyClass\ :\ \textcolor{keyword}{public}\ CSingleton<MyClass>}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Rest\ of\ class\ declaration\ here}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ From then on, whenever we create an object of My\+Class like normal, it only has one instance, all variables are shared. To create a pointer to the singleton... 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{MyClass\ *pMyClass\ =\ MyClass::getPointer();}
+\DoxyCodeLine{\textcolor{comment}{//\ Then\ you\ can\ access\ all\ the\ public\ stuff\ with\ something\ like...}}
+\DoxyCodeLine{pMyClass-\/>someMethod();}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{_singleton_8h_source_l00029}{29}} of file \mbox{\hyperlink{_singleton_8h_source}{Singleton.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_singleton_a3a99983e81ca924280845779efa2f70d}\index{DCL::CSingleton$<$ T $>$@{DCL::CSingleton$<$ T $>$}!````~CSingleton@{\texorpdfstring{$\sim$}{\string~}CSingleton}}
+\index{````~CSingleton@{\texorpdfstring{$\sim$}{\string~}CSingleton}!DCL::CSingleton$<$ T $>$@{DCL::CSingleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CSingleton()}{\string~CSingleton()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_singleton_a3a99983e81ca924280845779efa2f70d} 
+template$<$class T $>$ \\
+virtual \mbox{\hyperlink{class_d_c_l_1_1_c_singleton}{DCL\+::\+CSingleton}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_d_c_l_1_1_c_singleton}{CSingleton}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_singleton_8h_source_l00032}{32}} of file \mbox{\hyperlink{_singleton_8h_source}{Singleton.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_singleton_a6b6cca79e720a235a3c40bef3ef70fc0}\index{DCL::CSingleton$<$ T $>$@{DCL::CSingleton$<$ T $>$}!getPointer@{getPointer}}
+\index{getPointer@{getPointer}!DCL::CSingleton$<$ T $>$@{DCL::CSingleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getPointer()}{getPointer()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_singleton_a6b6cca79e720a235a3c40bef3ef70fc0} 
+template$<$class T $>$ \\
+static T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_d_c_l_1_1_c_singleton}{DCL\+::\+CSingleton}}$<$ T $>$\+::get\+Pointer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtain pointer to class object. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the single instance of the class.
+\end{DoxyReturn}
+If not yet created, the object will be created here and it\textquotesingle{}s constructor called ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_singleton_8h_source_l00046}{46}} of file \mbox{\hyperlink{_singleton_8h_source}{Singleton.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee}\index{DCL::CSingleton$<$ T $>$@{DCL::CSingleton$<$ T $>$}!pInstance@{pInstance}}
+\index{pInstance@{pInstance}!DCL::CSingleton$<$ T $>$@{DCL::CSingleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pInstance}{pInstance}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee} 
+template$<$class T $>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_d_c_l_1_1_c_singleton}{DCL\+::\+CSingleton}}$<$ T $>$\+::p\+Instance = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+A pointer holding the single instance. 
+
+
+
+Definition at line \mbox{\hyperlink{_singleton_8h_source_l00056}{56}} of file \mbox{\hyperlink{_singleton_8h_source}{Singleton.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/\mbox{\hyperlink{_singleton_8h}{Singleton.\+h}}\end{DoxyCompactItemize}

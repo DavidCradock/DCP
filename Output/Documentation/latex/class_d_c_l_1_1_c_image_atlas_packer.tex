@@ -1,0 +1,299 @@
+\doxysection{DCL\+::CImage\+Atlas\+Packer Class Reference}
+\hypertarget{class_d_c_l_1_1_c_image_atlas_packer}{}\label{class_d_c_l_1_1_c_image_atlas_packer}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+
+
+Image atlas class used to pack many smaller images into as few as possible larger atlas images.  
+
+
+
+
+{\ttfamily \#include $<$Image\+Atlas.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aaa64644f4f5d27fa8ee342023ebd3ac2}{CImage\+Atlas\+Packer}} ()
+\begin{DoxyCompactList}\small\item\em Constructor, does nothing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a7f778b00d7c2bb217d31f71aab0f313d}{\texorpdfstring{$\sim$}{\string~}\+CImage\+Atlas\+Packer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor, calls \doxylink{class_d_c_l_1_1_c_image_atlas_packer_aa1f6904623a24e7e7e93a243cf188c6f}{reset()} to free all data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}{create\+Atlas\+Images}} (const std\+::vector$<$ std\+::string $>$ \&vstr\+Images, unsigned int ui\+Max\+Atlas\+Image\+Width, unsigned int ui\+Max\+Atlas\+Image\+Height, bool b\+Allow\+Rotation\+Of\+Images, unsigned int ui\+Image\+Spacing=1)
+\begin{DoxyCompactList}\small\item\em This creates texture atlas images. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aa1f6904623a24e7e7e93a243cf188c6f}{reset}} (void)
+\begin{DoxyCompactList}\small\item\em Resets everything, freeing computed data and atlas images. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a052e6aadd2f8deede16598cde1dd3caa}{get\+Num\+Atlases}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the number of generated atlas images holding the individual images. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aa37c3333111a0892fc93521493a748b8}{get\+Atlas\+Image}} (unsigned int ui\+Index) const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the atlas image at the specified index. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details}} $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_adab25a2a2a8d57a224e524f03c5d4243}{get\+All\+Image\+Details}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns a vector of \doxylink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details} containing each image\textquotesingle{}s details. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_aad19a825c91d2f9423f7884fb5f362e6}{get\+All\+Image\+Details\+Pointer}} (void)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to \+\_\+mv\+Image\+Details containing each image\textquotesingle{}s details. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a4455958a8ae4891f76a1adad88fe6edb}{get\+Num\+Individual\+Images}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the total number of individual images added to all the atlases. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details}} \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_ad3c083e76cc31936b372e09d68de55bd}{get\+Image\+Details}} (const std\+::string \&str\+Image\+Name) const
+\begin{DoxyCompactList}\small\item\em Returns the named image\textquotesingle{}s details. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_a283a806d99b587bd2d74f1a29d453c5d}{get\+Image\+Details\+Pointer}} (const std\+::string \&str\+Image\+Name) const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the named image\textquotesingle{}s details. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_packer_ab4e040c1ba1c5e2c312414194fe6e358}{get\+Image\+Exists}} (const std\+::string \&str\+Image\+Name) const
+\begin{DoxyCompactList}\small\item\em Returns whether the named image exists or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Image atlas class used to pack many smaller images into as few as possible larger atlas images. 
+
+Definition at line \mbox{\hyperlink{_image_atlas_8h_source_l00058}{58}} of file \mbox{\hyperlink{_image_atlas_8h_source}{Image\+Atlas.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_aaa64644f4f5d27fa8ee342023ebd3ac2}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!CImageAtlasPacker@{CImageAtlasPacker}}
+\index{CImageAtlasPacker@{CImageAtlasPacker}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{CImageAtlasPacker()}{CImageAtlasPacker()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_aaa64644f4f5d27fa8ee342023ebd3ac2} 
+DCL\+::\+CImage\+Atlas\+Packer\+::\+CImage\+Atlas\+Packer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor, does nothing. 
+
+
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_a7f778b00d7c2bb217d31f71aab0f313d}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!````~CImageAtlasPacker@{\texorpdfstring{$\sim$}{\string~}CImageAtlasPacker}}
+\index{````~CImageAtlasPacker@{\texorpdfstring{$\sim$}{\string~}CImageAtlasPacker}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CImageAtlasPacker()}{\string~CImageAtlasPacker()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_a7f778b00d7c2bb217d31f71aab0f313d} 
+DCL\+::\+CImage\+Atlas\+Packer\+::\texorpdfstring{$\sim$}{\string~}\+CImage\+Atlas\+Packer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor, calls \doxylink{class_d_c_l_1_1_c_image_atlas_packer_aa1f6904623a24e7e7e93a243cf188c6f}{reset()} to free all data. 
+
+
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!createAtlasImages@{createAtlasImages}}
+\index{createAtlasImages@{createAtlasImages}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{createAtlasImages()}{createAtlasImages()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc} 
+void DCL\+::\+CImage\+Atlas\+Packer\+::create\+Atlas\+Images (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{vstr\+Images}{, }\item[{unsigned int}]{ui\+Max\+Atlas\+Image\+Width}{, }\item[{unsigned int}]{ui\+Max\+Atlas\+Image\+Height}{, }\item[{bool}]{b\+Allow\+Rotation\+Of\+Images}{, }\item[{unsigned int}]{ui\+Image\+Spacing}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+
+
+This creates texture atlas images. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vstr\+Images} & A vector of strings holding each individual image\textquotesingle{}s filename which to add to the atlas image/s \\
+\hline
+{\em ui\+Max\+Atlas\+Image\+Width} & The maximum allowed width of the created atlas image/s \\
+\hline
+{\em ui\+Max\+Atlas\+Image\+Height} & The maximum allowed height of the created atlas image/s \\
+\hline
+{\em b\+Allow\+Rotation\+Of\+Images} & Whether to allow rotation of individual images to obtain greater packing efficiency or not. \\
+\hline
+{\em ui\+Image\+Spacing} & Amount of spacing between individual images.\\
+\hline
+\end{DoxyParams}
+We provide a vector of strings holding each individual image\textquotesingle{}s filename. Each individual image can have different dimensions. We specify a maximum width and height that an individual atlas image may be. We specify whether to allow or disallow rotation of images to allow better fitting of the images. If rotation is enabled, the computed texture coordinates are rotated accordingly. After calling this, we can call the various other methods to get at the information If the vector of strings is empty, an exception occurs If an individual image\textquotesingle{}s dimensions, including spacing is greater than the max atlas dimensions, an exception occurs. If all given images are the same dimensions, nothing is sorted. 
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_adab25a2a2a8d57a224e524f03c5d4243}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!getAllImageDetails@{getAllImageDetails}}
+\index{getAllImageDetails@{getAllImageDetails}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{getAllImageDetails()}{getAllImageDetails()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_adab25a2a2a8d57a224e524f03c5d4243} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details}} $>$ DCL\+::\+CImage\+Atlas\+Packer\+::get\+All\+Image\+Details (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of \doxylink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details} containing each image\textquotesingle{}s details. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details} which contain each image\textquotesingle{}s details.
+\end{DoxyReturn}
+Call \doxylink{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}{create\+Atlas\+Images()} first. If no image data exists, an exception occurs. 
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00385}{385}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_aad19a825c91d2f9423f7884fb5f362e6}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!getAllImageDetailsPointer@{getAllImageDetailsPointer}}
+\index{getAllImageDetailsPointer@{getAllImageDetailsPointer}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{getAllImageDetailsPointer()}{getAllImageDetailsPointer()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_aad19a825c91d2f9423f7884fb5f362e6} 
+std\+::vector$<$ \mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details}} $>$ \texorpdfstring{$\ast$}{*} DCL\+::\+CImage\+Atlas\+Packer\+::get\+All\+Image\+Details\+Pointer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to \+\_\+mv\+Image\+Details containing each image\textquotesingle{}s details. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to \+\_\+mv\+Image\+Details contained each image\textquotesingle{}s details
+\end{DoxyReturn}
+Call \doxylink{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}{create\+Atlas\+Images()} first. If no image data exists, an exception occurs. Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::vector<CImageAtlasDetails>*\ pviad\ =\ \_mAtlases.getAllImageDetailsPointer();}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiLastImageIndex\ =\ pviad-\/>size()\ -\/\ 1;}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiAtlasNumber\ =\ (*pviad)[uiLastImageIndex].uiAtlasImage;}
+
+\end{DoxyCode}
+ or 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiAtlasNumber\ =\ pviad-\/>operator[](uiLastImageIndex).uiAtlasImage;}
+
+\end{DoxyCode}
+ or 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiAtlasNumber\ =\ pviad[0][uiLastImageIndex].uiAtlasImage;}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00391}{391}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_aa37c3333111a0892fc93521493a748b8}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!getAtlasImage@{getAtlasImage}}
+\index{getAtlasImage@{getAtlasImage}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{getAtlasImage()}{getAtlasImage()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_aa37c3333111a0892fc93521493a748b8} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_image}{CImage}} \texorpdfstring{$\ast$}{*} DCL\+::\+CImage\+Atlas\+Packer\+::get\+Atlas\+Image (\begin{DoxyParamCaption}\item[{unsigned int}]{ui\+Index}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the atlas image at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\+Index} & The index of the atlas image to return a pointer to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{class_d_c_l_1_1_c_image}{CImage} holding the atlas image.
+\end{DoxyReturn}
+Call \doxylink{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}{create\+Atlas\+Images()} first. If an invalid index is given, or no atlases exist, an exception occurs 
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00378}{378}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_ad3c083e76cc31936b372e09d68de55bd}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!getImageDetails@{getImageDetails}}
+\index{getImageDetails@{getImageDetails}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{getImageDetails()}{getImageDetails()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_ad3c083e76cc31936b372e09d68de55bd} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details}} DCL\+::\+CImage\+Atlas\+Packer\+::get\+Image\+Details (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Image\+Name}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the named image\textquotesingle{}s details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Image\+Name} & The previously added image\textquotesingle{}s name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details} holding the named image\textquotesingle{}s details.
+\end{DoxyReturn}
+Call \doxylink{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}{create\+Atlas\+Images()} first. If an invalid image name is given, an exception occurs 
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00402}{402}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_a283a806d99b587bd2d74f1a29d453c5d}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!getImageDetailsPointer@{getImageDetailsPointer}}
+\index{getImageDetailsPointer@{getImageDetailsPointer}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{getImageDetailsPointer()}{getImageDetailsPointer()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_a283a806d99b587bd2d74f1a29d453c5d} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details}} \texorpdfstring{$\ast$}{*} DCL\+::\+CImage\+Atlas\+Packer\+::get\+Image\+Details\+Pointer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Image\+Name}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the named image\textquotesingle{}s details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Image\+Name} & The name of an image which was previously added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_d_c_l_1_1_c_image_atlas_details}{CImage\+Atlas\+Details} A pointer to the image\textquotesingle{}s details.
+\end{DoxyReturn}
+Call \doxylink{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}{create\+Atlas\+Images()} first. If an invalid image name is given, an exception occurs 
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00409}{409}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_ab4e040c1ba1c5e2c312414194fe6e358}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!getImageExists@{getImageExists}}
+\index{getImageExists@{getImageExists}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{getImageExists()}{getImageExists()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_ab4e040c1ba1c5e2c312414194fe6e358} 
+bool DCL\+::\+CImage\+Atlas\+Packer\+::get\+Image\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Image\+Name}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns whether the named image exists or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Image\+Name} & The name of the image we wish to determine whether it had been added or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the image exists, else false. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00426}{426}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_a052e6aadd2f8deede16598cde1dd3caa}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!getNumAtlases@{getNumAtlases}}
+\index{getNumAtlases@{getNumAtlases}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{getNumAtlases()}{getNumAtlases()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_a052e6aadd2f8deede16598cde1dd3caa} 
+unsigned int DCL\+::\+CImage\+Atlas\+Packer\+::get\+Num\+Atlases (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of generated atlas images holding the individual images. 
+
+\begin{DoxyReturn}{Returns}
+The number of generated atlas images holding the individual images
+\end{DoxyReturn}
+Call \doxylink{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}{create\+Atlas\+Images()} first. 
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00373}{373}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_a4455958a8ae4891f76a1adad88fe6edb}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!getNumIndividualImages@{getNumIndividualImages}}
+\index{getNumIndividualImages@{getNumIndividualImages}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{getNumIndividualImages()}{getNumIndividualImages()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_a4455958a8ae4891f76a1adad88fe6edb} 
+unsigned int DCL\+::\+CImage\+Atlas\+Packer\+::get\+Num\+Individual\+Images (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the total number of individual images added to all the atlases. 
+
+\begin{DoxyReturn}{Returns}
+The total number of individual images added to the atlases
+\end{DoxyReturn}
+Call \doxylink{class_d_c_l_1_1_c_image_atlas_packer_a0f790e56f9a656343ee291217658fcdc}{create\+Atlas\+Images()} first. 
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00397}{397}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_image_atlas_packer_aa1f6904623a24e7e7e93a243cf188c6f}\index{DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}!reset@{reset}}
+\index{reset@{reset}!DCL::CImageAtlasPacker@{DCL::CImageAtlasPacker}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_image_atlas_packer_aa1f6904623a24e7e7e93a243cf188c6f} 
+void DCL\+::\+CImage\+Atlas\+Packer\+::reset (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Resets everything, freeing computed data and atlas images. 
+
+
+
+Definition at line \mbox{\hyperlink{_image_atlas_8cpp_source_l00416}{416}} of file \mbox{\hyperlink{_image_atlas_8cpp_source}{Image\+Atlas.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Image/\mbox{\hyperlink{_image_atlas_8h}{Image\+Atlas.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Image/Image\+Atlas.\+cpp\end{DoxyCompactItemize}

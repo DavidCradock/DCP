@@ -1,0 +1,39 @@
+\doxysection{Frustum.\+h}
+\hypertarget{_frustum_8h_source}{}\label{_frustum_8h_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Math/Frustum.h@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Math/Frustum.h}}
+\mbox{\hyperlink{_frustum_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ FRUSTUM\_H}}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ FRUSTUM\_H}}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_a_a_b_b_8h}{AABB.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_matrix_8h}{Matrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plane_8h}{Plane.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00013}00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00018}\mbox{\hyperlink{class_d_c_l_1_1_c_frustum}{00018}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_c_l_1_1_c_frustum}{CFrustum}}}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum_ab75bf4734d22bf0a19a3f61cc4a179da}{CFrustum}}();}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum_af5f03f2e4eaed3447b7aeb19c2e26e51}{computeFromViewProjection}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}}\&\ cameraViewMatrix,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}}\&\ cameraProjectionMatrix);}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum_a3c827a97cf9db0ef176880246745ff42}{isPointInside}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}\&\ vPosition)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum_a2f7123cd1cc6439dfa2d79060ca5dc5e}{isAABBIntersecting}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_a_a_b_b}{CAABB}}\&\ aabb)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00045}\mbox{\hyperlink{class_d_c_l_1_1_c_frustum_aa0f850fcc9f7cfe1f20b757bed207d83}{00045}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_plane}{CPlane}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum_aa0f850fcc9f7cfe1f20b757bed207d83}{mPlaneNear}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00046}\mbox{\hyperlink{class_d_c_l_1_1_c_frustum_aa32466bdf20111250356650c204334f7}{00046}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_plane}{CPlane}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum_aa32466bdf20111250356650c204334f7}{mPlaneFar}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00047}\mbox{\hyperlink{class_d_c_l_1_1_c_frustum_a83c49ac3c8450872ac1a78f39489c92e}{00047}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_plane}{CPlane}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum_a83c49ac3c8450872ac1a78f39489c92e}{mPlaneLeft}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00048}\mbox{\hyperlink{class_d_c_l_1_1_c_frustum_a9e57b803f87384d096ecf7794b6cd48f}{00048}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_plane}{CPlane}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum_a9e57b803f87384d096ecf7794b6cd48f}{mPlaneRight}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00049}\mbox{\hyperlink{class_d_c_l_1_1_c_frustum_a587f8a6e1538d422ab741a6a626c93d4}{00049}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_plane}{CPlane}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum_a587f8a6e1538d422ab741a6a626c93d4}{mPlaneTop}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00050}\mbox{\hyperlink{class_d_c_l_1_1_c_frustum_ac02e1e593b82c8f0b1f212c44cb29072}{00050}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_plane}{CPlane}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum_ac02e1e593b82c8f0b1f212c44cb29072}{mPlaneBottom}};\ \ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00051}00051\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00053}00053\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_frustum_8h_source_l00055}00055\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \#ifndef\ FILENAME\_H}}
+
+\end{DoxyCode}

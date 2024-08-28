@@ -1,0 +1,320 @@
+\doxysection{DCL\+::CTimer Class Reference}
+\hypertarget{class_d_c_l_1_1_c_timer}{}\label{class_d_c_l_1_1_c_timer}\index{DCL::CTimer@{DCL::CTimer}}
+
+
+Deals with time related concepts with additional features compared to \doxylink{class_d_c_l_1_1_c_timer_minimal}{CTimer\+Minimal}.  
+
+
+
+
+{\ttfamily \#include $<$Timer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_timer_a3fc9269f2e2fc2e0b453f23fd8926e4a}{CTimer}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update}} (void)
+\begin{DoxyCompactList}\small\item\em Call this to compute time difference between last call to this method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a883c48b1ee400e150d4994b970cbb555}{pause}} (void)
+\begin{DoxyCompactList}\small\item\em Pause this timer, preventing any updates and making it so \doxylink{class_d_c_l_1_1_c_timer_accc8d2378a3e86ffe1c74dbc79c454b4}{get\+Seconds\+Past()} returns zero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_timer_ae748a6ffae05ad8f42e38728cb16a285}{resume}} (void)
+\begin{DoxyCompactList}\small\item\em If the timer was paused with a call to \doxylink{class_d_c_l_1_1_c_timer_a883c48b1ee400e150d4994b970cbb555}{pause()}, this resumes business as normal. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_timer_accc8d2378a3e86ffe1c74dbc79c454b4}{get\+Seconds\+Past}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns time passed in seconds since last call to \doxylink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update()} method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a536c37fa1bcd48ac1ed74faecd34d6f3}{sleep}} (unsigned int ui\+Milliseconds) const
+\begin{DoxyCompactList}\small\item\em Suspends execution of the calling thread for the parsed number of milliseconds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_timer_ab1e55329385452b5a1b604995353912b}{set\+Averaged\+FPSRate}} (float f\+Seconds\+Between\+Updates)
+\begin{DoxyCompactList}\small\item\em Sets the delay in seconds at which the \doxylink{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228}{get\+FPSAveraged()} method\textquotesingle{}s return value will be updated. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a5108a66e6cbb48da0edc3d4e65b0b3a9}{get\+Averaged\+FPSRate}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the currently set rate at which the \doxylink{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228}{get\+FPSAveraged()} method\textquotesingle{}s return value will be updated per second. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a9a06de522d2c363ea7d046d423cedb50}{get\+FPS}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns computed Frames Per Second current value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228}{get\+FPSAveraged}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns computed Frames Per Second averaged value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a870ebc959aa7b290aa59823d82637e04}{get\+FPSAveraged\+Time\+Until\+Next\+Update}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the number of seconds until the next time the FPSAveraged value is updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a9adc43ebbe892eed4bb2dfed176fe11b}{reset}} (void)
+\begin{DoxyCompactList}\small\item\em Resets all values to sane values, including the member set by \doxylink{class_d_c_l_1_1_c_timer_ab1e55329385452b5a1b604995353912b}{set\+Averaged\+FPSRate()} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a603011ab25a0fa23c976e8eb5640ea8e}{get\+Runtime\+Seconds}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns amount of seconds that we\textquotesingle{}ve been calling \doxylink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update()} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a03ea9e97cde374fb2d575850cef4682a}{get\+Clock}} (float \&f\+Seconds, int \&i\+Minutes, int \&i\+Hours, int \&i\+Days, int \&i\+Weeks) const
+\begin{DoxyCompactList}\small\item\em Based on current runtime, sets parsed values to seconds, minutes, hours, days and weeks. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_d_c_l_1_1_c_timer_a5ce7073369ddf605d30c43a305f6dc48}{get\+Clock}} (void) const
+\begin{DoxyCompactList}\small\item\em Based on current runtime, returns current runtime as a string holding seconds, minutes, hours, days and weeks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Deals with time related concepts with additional features compared to \doxylink{class_d_c_l_1_1_c_timer_minimal}{CTimer\+Minimal}. 
+
+Create an object of this class, keep it around and call \doxylink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update()} between the code which you wish to measure the time difference. Then call \doxylink{class_d_c_l_1_1_c_timer_accc8d2378a3e86ffe1c74dbc79c454b4}{get\+Seconds\+Past()} to obtain the time passed since the two calls to \doxylink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update()} There are also two framerate methods which return what the framerate is, based on the time passed between the last two calls to \doxylink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update()}. There\textquotesingle{}s \doxylink{class_d_c_l_1_1_c_timer_a9a06de522d2c363ea7d046d423cedb50}{get\+FPS()} which simply returns the current frames per second and then there\textquotesingle{}s... \doxylink{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228}{get\+FPSAveraged()} which returns the frames per second which have been averaged over a certain amount of time. This "{}certain amount of time"{} is, by default, set to be 1 update per second, but can be changed with a call to \doxylink{class_d_c_l_1_1_c_timer_ab1e55329385452b5a1b604995353912b}{set\+Averaged\+FPSRate()} 
+
+Definition at line \mbox{\hyperlink{_timer_8h_source_l00022}{22}} of file \mbox{\hyperlink{_timer_8h_source}{Timer.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_timer_a3fc9269f2e2fc2e0b453f23fd8926e4a}\index{DCL::CTimer@{DCL::CTimer}!CTimer@{CTimer}}
+\index{CTimer@{CTimer}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{CTimer()}{CTimer()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a3fc9269f2e2fc2e0b453f23fd8926e4a} 
+DCL\+::\+CTimer\+::\+CTimer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_timer_a5108a66e6cbb48da0edc3d4e65b0b3a9}\index{DCL::CTimer@{DCL::CTimer}!getAveragedFPSRate@{getAveragedFPSRate}}
+\index{getAveragedFPSRate@{getAveragedFPSRate}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{getAveragedFPSRate()}{getAveragedFPSRate()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a5108a66e6cbb48da0edc3d4e65b0b3a9} 
+float DCL\+::\+CTimer\+::get\+Averaged\+FPSRate (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the currently set rate at which the \doxylink{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228}{get\+FPSAveraged()} method\textquotesingle{}s return value will be updated per second. 
+
+\begin{DoxyReturn}{Returns}
+The currently set rate at which the \doxylink{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228}{get\+FPSAveraged()} method\textquotesingle{}s return value will be updated per second. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_a03ea9e97cde374fb2d575850cef4682a}\index{DCL::CTimer@{DCL::CTimer}!getClock@{getClock}}
+\index{getClock@{getClock}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{getClock()}{getClock()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a03ea9e97cde374fb2d575850cef4682a} 
+void DCL\+::\+CTimer\+::get\+Clock (\begin{DoxyParamCaption}\item[{float \&}]{f\+Seconds}{, }\item[{int \&}]{i\+Minutes}{, }\item[{int \&}]{i\+Hours}{, }\item[{int \&}]{i\+Days}{, }\item[{int \&}]{i\+Weeks}{}\end{DoxyParamCaption}) const}
+
+
+
+Based on current runtime, sets parsed values to seconds, minutes, hours, days and weeks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Seconds} & Will hold the runtime\textquotesingle{}s seconds past \\
+\hline
+{\em i\+Minutes} & Will hold the runtime\textquotesingle{}s minutes past \\
+\hline
+{\em i\+Hours} & Will hold the runtime\textquotesingle{}s hours past \\
+\hline
+{\em i\+Days} & Will hold the runtime\textquotesingle{}s days past \\
+\hline
+{\em i\+Weeks} & Will hold the runtime\textquotesingle{}s weeks past \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_a5ce7073369ddf605d30c43a305f6dc48}\index{DCL::CTimer@{DCL::CTimer}!getClock@{getClock}}
+\index{getClock@{getClock}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{getClock()}{getClock()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a5ce7073369ddf605d30c43a305f6dc48} 
+std\+::string DCL\+::\+CTimer\+::get\+Clock (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Based on current runtime, returns current runtime as a string holding seconds, minutes, hours, days and weeks. 
+
+\begin{DoxyReturn}{Returns}
+The current runtime as a string holding seconds, minutes, hours, days and weeks 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_a9a06de522d2c363ea7d046d423cedb50}\index{DCL::CTimer@{DCL::CTimer}!getFPS@{getFPS}}
+\index{getFPS@{getFPS}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{getFPS()}{getFPS()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a9a06de522d2c363ea7d046d423cedb50} 
+float DCL\+::\+CTimer\+::get\+FPS (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns computed Frames Per Second current value. 
+
+\begin{DoxyReturn}{Returns}
+The computed Frames Per Second current value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228}\index{DCL::CTimer@{DCL::CTimer}!getFPSAveraged@{getFPSAveraged}}
+\index{getFPSAveraged@{getFPSAveraged}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{getFPSAveraged()}{getFPSAveraged()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228} 
+float DCL\+::\+CTimer\+::get\+FPSAveraged (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns computed Frames Per Second averaged value. 
+
+\begin{DoxyReturn}{Returns}
+Computed Frames Per Second averaged value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_a870ebc959aa7b290aa59823d82637e04}\index{DCL::CTimer@{DCL::CTimer}!getFPSAveragedTimeUntilNextUpdate@{getFPSAveragedTimeUntilNextUpdate}}
+\index{getFPSAveragedTimeUntilNextUpdate@{getFPSAveragedTimeUntilNextUpdate}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{getFPSAveragedTimeUntilNextUpdate()}{getFPSAveragedTimeUntilNextUpdate()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a870ebc959aa7b290aa59823d82637e04} 
+float DCL\+::\+CTimer\+::get\+FPSAveraged\+Time\+Until\+Next\+Update (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of seconds until the next time the FPSAveraged value is updated. 
+
+\begin{DoxyReturn}{Returns}
+The number of seconds until the next time the FPSAveraged value is updated. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_a603011ab25a0fa23c976e8eb5640ea8e}\index{DCL::CTimer@{DCL::CTimer}!getRuntimeSeconds@{getRuntimeSeconds}}
+\index{getRuntimeSeconds@{getRuntimeSeconds}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{getRuntimeSeconds()}{getRuntimeSeconds()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a603011ab25a0fa23c976e8eb5640ea8e} 
+float DCL\+::\+CTimer\+::get\+Runtime\+Seconds (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns amount of seconds that we\textquotesingle{}ve been calling \doxylink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update()} 
+
+\begin{DoxyReturn}{Returns}
+The amount of seconds that we\textquotesingle{}ve been calling \doxylink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update()} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_accc8d2378a3e86ffe1c74dbc79c454b4}\index{DCL::CTimer@{DCL::CTimer}!getSecondsPast@{getSecondsPast}}
+\index{getSecondsPast@{getSecondsPast}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{getSecondsPast()}{getSecondsPast()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_accc8d2378a3e86ffe1c74dbc79c454b4} 
+float DCL\+::\+CTimer\+::get\+Seconds\+Past (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns time passed in seconds since last call to \doxylink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update()} method. 
+
+\begin{DoxyReturn}{Returns}
+Time passed in seconds since last call to \doxylink{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}{update()} method. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_a883c48b1ee400e150d4994b970cbb555}\index{DCL::CTimer@{DCL::CTimer}!pause@{pause}}
+\index{pause@{pause}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a883c48b1ee400e150d4994b970cbb555} 
+void DCL\+::\+CTimer\+::pause (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Pause this timer, preventing any updates and making it so \doxylink{class_d_c_l_1_1_c_timer_accc8d2378a3e86ffe1c74dbc79c454b4}{get\+Seconds\+Past()} returns zero. 
+
+Call Resume() to unpause. Only get\+Seconds\+Past is affected, all other methods still return normal values. 
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_a9adc43ebbe892eed4bb2dfed176fe11b}\index{DCL::CTimer@{DCL::CTimer}!reset@{reset}}
+\index{reset@{reset}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a9adc43ebbe892eed4bb2dfed176fe11b} 
+void DCL\+::\+CTimer\+::reset (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Resets all values to sane values, including the member set by \doxylink{class_d_c_l_1_1_c_timer_ab1e55329385452b5a1b604995353912b}{set\+Averaged\+FPSRate()} 
+
+Also, if this timer has been paused, it is unpaused. 
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_ae748a6ffae05ad8f42e38728cb16a285}\index{DCL::CTimer@{DCL::CTimer}!resume@{resume}}
+\index{resume@{resume}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{resume()}{resume()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_ae748a6ffae05ad8f42e38728cb16a285} 
+void DCL\+::\+CTimer\+::resume (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+If the timer was paused with a call to \doxylink{class_d_c_l_1_1_c_timer_a883c48b1ee400e150d4994b970cbb555}{pause()}, this resumes business as normal. 
+
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_ab1e55329385452b5a1b604995353912b}\index{DCL::CTimer@{DCL::CTimer}!setAveragedFPSRate@{setAveragedFPSRate}}
+\index{setAveragedFPSRate@{setAveragedFPSRate}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{setAveragedFPSRate()}{setAveragedFPSRate()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_ab1e55329385452b5a1b604995353912b} 
+void DCL\+::\+CTimer\+::set\+Averaged\+FPSRate (\begin{DoxyParamCaption}\item[{float}]{f\+Seconds\+Between\+Updates}{}\end{DoxyParamCaption})}
+
+
+
+Sets the delay in seconds at which the \doxylink{class_d_c_l_1_1_c_timer_abda1c0dcff3b3a9877320da1b6241228}{get\+FPSAveraged()} method\textquotesingle{}s return value will be updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Seconds\+Between\+Updates} & How much time in seconds before the FPSS value is updated.\\
+\hline
+\end{DoxyParams}
+For example, parsing a value of 3.\+0 for f\+Seconds\+Between\+Updates will update once every 3 seconds which is the default 
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_a536c37fa1bcd48ac1ed74faecd34d6f3}\index{DCL::CTimer@{DCL::CTimer}!sleep@{sleep}}
+\index{sleep@{sleep}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a536c37fa1bcd48ac1ed74faecd34d6f3} 
+void DCL\+::\+CTimer\+::sleep (\begin{DoxyParamCaption}\item[{unsigned int}]{ui\+Milliseconds}{}\end{DoxyParamCaption}) const}
+
+
+
+Suspends execution of the calling thread for the parsed number of milliseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\+Milliseconds} & The number of milliseconds to sleep for.\\
+\hline
+\end{DoxyParams}
+The sleep may be lengthened slightly by any system activity or by the time spent processing the call or by the granularity of system timers. ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39}\index{DCL::CTimer@{DCL::CTimer}!update@{update}}
+\index{update@{update}!DCL::CTimer@{DCL::CTimer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_timer_a1c746ac5f8bf4032562a785dda02eb39} 
+void DCL\+::\+CTimer\+::update (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Call this to compute time difference between last call to this method. 
+
+
+
+Definition at line \mbox{\hyperlink{_timer_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_timer_8cpp_source}{Timer.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/\mbox{\hyperlink{_timer_8h}{Timer.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/Timer.\+cpp\end{DoxyCompactItemize}

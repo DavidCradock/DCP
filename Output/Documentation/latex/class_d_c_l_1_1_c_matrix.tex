@@ -1,0 +1,725 @@
+\doxysection{DCL\+::CMatrix Class Reference}
+\hypertarget{class_d_c_l_1_1_c_matrix}{}\label{class_d_c_l_1_1_c_matrix}\index{DCL::CMatrix@{DCL::CMatrix}}
+
+
+Matrix class.  
+
+
+
+
+{\ttfamily \#include $<$Matrix.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix_ae819ba5e60c87c77acea125d422babbb}{CMatrix}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, sets to identity matrix. \end{DoxyCompactList}\item 
+const void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a28372a2562a55dbb77b98b2c040a9c7d}{operator=}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&matrix)
+\begin{DoxyCompactList}\small\item\em Sets this matrix to the one on the right. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a94f362a14f5c47033102a6af3637d7ee}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&matrix) const
+\begin{DoxyCompactList}\small\item\em Multiply this matrix by another and return the result. \end{DoxyCompactList}\item 
+const void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_ae06cf31175d1106f567ab93a124a7422}{operator\texorpdfstring{$\ast$}{*}=}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&matrix)
+\begin{DoxyCompactList}\small\item\em Multiply this matrix by another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a9d77e6f44ad0af264892f1c8759f6bac}{operator==}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&matrix) const
+\begin{DoxyCompactList}\small\item\em Compares whether this matrix and the one to the right of the == operator are equal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a82eededc7f9e9bd766466a03622371e2}{operator!=}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&matrix) const
+\begin{DoxyCompactList}\small\item\em Compares whether this matrix and the one to the right of the != operator are equal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a582d9775a2c82a73134fc4ba7e52b61f}{set\+Identity}} (void)
+\begin{DoxyCompactList}\small\item\em Sets matrix to identity matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a5bb0c63340dd0eff27a31986a52d34bb}{set\+Zero}} (void)
+\begin{DoxyCompactList}\small\item\em Fills the matrix with zeros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a4376d4fcf81beaddc12dae2ed9f1d246}{set}} (const float src\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em Sets this matrix from the given array of floats. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_aa3f6e5ecd479e5419496195dcc7965b2}{set}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&src)
+\begin{DoxyCompactList}\small\item\em Sets the matrix from the one given. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a83cbaa6a12da74ecabe05ed01406c191}{get}} (void) const
+\begin{DoxyCompactList}\small\item\em Sets the matrix from the one given. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a59a37d724658e639f10e6fff407bba4c}{set\+Translation}} (float fX, float fY, float fZ)
+\begin{DoxyCompactList}\small\item\em Returns a glm matrix constructed from this one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a0fd29235ef6eb0163bf1703c4bf8ff19}{set\+Translation}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Trans)
+\begin{DoxyCompactList}\small\item\em Set the matrix to hold a translation transformation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a990390f1c681ecad46d9cb17a9aa952d}{set\+Scale}} (float fX, float fY, float fZ)
+\begin{DoxyCompactList}\small\item\em Set the matrix to hold a scale transformation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_ae7b863fe7ed7372e85a6ceccd3538d17}{set\+Scale}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Trans)
+\begin{DoxyCompactList}\small\item\em Set the matrix to hold a scale transformation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a987470be1cee8da3bdb14abebde50d3c}{set\+From\+Axis\+Angle\+Degrees}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Axis, float f\+Angle\+Degrees)
+\begin{DoxyCompactList}\small\item\em Sets the matrix to hold a rotation transformation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_ac5039c16748e1a1fb1af686513b82368}{set\+From\+Axis\+Angle\+Radians}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Axis, float f\+Angle\+Radians)
+\begin{DoxyCompactList}\small\item\em Sets the matrix to hold a rotation transformation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a07af512d159d8f8c77694910cf0f1fd5}{set\+From\+Quaternion}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_quaternion}{CQuaternion}} \&quaternion)
+\begin{DoxyCompactList}\small\item\em Sets the matrix to hold a rotation transformation from a quaternion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a9c9687c45c3206e6fddf27e36e28d23a}{get\+Right\+Vector}} (\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Vec) const
+\begin{DoxyCompactList}\small\item\em Sets the given vector to hold this matrix\textquotesingle{}s right vector/axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a3d7bfd6669f821d56bcca5af512c2c75}{get\+Up\+Vector}} (\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Vec) const
+\begin{DoxyCompactList}\small\item\em Sets the given vector to hold this matrix\textquotesingle{}s up vector/axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_abf16f5e325247b3b92238692c9b36e7f}{get\+Forward\+Vector}} (\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Vec) const
+\begin{DoxyCompactList}\small\item\em Sets the given vector to hold this matrix\textquotesingle{}s forward vector/axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a5a13f5a10c08f0b0d48d55e1d17d7dbe}{transpose}} (void)
+\begin{DoxyCompactList}\small\item\em Returns a matrix which is the transpose of this matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_ac47a5054497182d2c5a5f951f879b5c8}{inverse}} (void)
+\begin{DoxyCompactList}\small\item\em Returns a matrix which is the inverse of this matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a52c04431713b90d58c5877ec1037a481}{multiply}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&matrix)
+\begin{DoxyCompactList}\small\item\em Multiplies this matrix by the one given and returns the resulting matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a85543a60685a3a5f3287f3db702dd45f}{multiply}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&vector)
+\begin{DoxyCompactList}\small\item\em Multiplies the given vector by this matrix and returns the resulting vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a58e52dd69d10c3b7255586fe9e972ced}{multiply}} (const float f\+Scalar)
+\begin{DoxyCompactList}\small\item\em Multiplies each value in the matrix by the given scalar and returns the resulting matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a48c99c783cd6e0ad4259dfe707638e02}{set\+Projection\+Perspective}} (float f\+Width=320.\+0f, float f\+Height=240.\+0f, float f\+Field\+Of\+View\+In\+Degrees=55.\+0f, float f\+Near\+Clipping\+Plane\+Distance=1.\+0f, float f\+Far\+Clipping\+Plane\+Distance=1000.\+0f, float f\+Aspect\+Ratio=-\/1.\+0f)
+\begin{DoxyCompactList}\small\item\em Sets the matrix to represent a perspective projection matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a0ccac333f095016afe3d82f55bb13d7a}{set\+Projection\+Orthographic}} (float f\+Width=320.\+0f, float f\+Height=240.\+0f, float f\+Left=0.\+0f, float f\+Right=-\/1.\+0f, float f\+Top=0.\+0f, float f\+Bottom=-\/1.\+0f, float f\+Near=-\/1.\+0f, float f\+Far=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Sets the matrix to represent an orthographic prjection matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a17cf09c435243462ad0bff8b79b8502a}{set\+View\+Lookat}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Eye\+Pos, const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Target, const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&v\+Up=\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}(0.\+0f, 1.\+0f, 0.\+0f))
+\begin{DoxyCompactList}\small\item\em Sets the matrix to represent a view matrix based upon gl\+Lookat. \end{DoxyCompactList}\item 
+const float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_acfc5ecbdd69a629a6134c8c9e80f91d0}{get\+Float}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the float array containing the matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_a025ef86e6e416f90c7507c8c48add4b8}{get\+Translation}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the current translation stored in the matrix as a \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_d_c_l_1_1_c_matrix_ac18f454f2a604c14e3c44951ff9dc4f4}{CQuaternion}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Matrix class. 
+
+Here\textquotesingle{}s the matrix class used for applying transformations to vectors in 3D space and projecting points to 2D. This is a column-\/major matrix, compatible with Open\+GL. So the elements of the matrix are stored like this.. \mbox{[} 0 4 8 12 \mbox{]} \mbox{[} 1 5 9 13 \mbox{]} \mbox{[} 2 6 10 14 \mbox{]} \mbox{[} 3 7 11 15 \mbox{]}
+
+A matrix is a rectangular array of numbers layed out in rows and columns, like this... \mbox{[}1 0 0 0\mbox{]} \mbox{[}0 1 0 0\mbox{]} \mbox{[}0 0 1 0\mbox{]} \mbox{[}0 0 0 1\mbox{]}
+
+The above is a special case of a matrix, known as an identity matrix where if multiplying a point/vector by it, will produce no translation, rotation or scale.
+
+A translation in a matrix for x, y and z are stored in these values... \mbox{[}1 0 0 x\mbox{]} \mbox{[}0 1 0 y\mbox{]} \mbox{[}0 0 1 z\mbox{]} \mbox{[}0 0 0 1\mbox{]}
+
+The scaling values are along the diagonal(scaling of x, y and z)... \mbox{[}x 0 0 0\mbox{]} \mbox{[}0 y 0 0\mbox{]} \mbox{[}0 0 z 0\mbox{]} \mbox{[}0 0 0 1\mbox{]}
+
+The rotation part is more complicated since it uses cosine and sine functions and it changes depending on the axis... X -\/ Axis Rotation Y -\/ Axis Rotation Z -\/ Axis Rotation \mbox{[}1 0 0 0\mbox{]} \mbox{[}cos(θ) 0 -\/sin(θ) 0\mbox{]} \mbox{[}cos(θ) sin(θ) 0 0\mbox{]} \mbox{[}0 cos(θ) sin(θ) 0\mbox{]} \mbox{[}0 1 0 0\mbox{]} \mbox{[}-\/sin(θ) cos(θ) 0 0\mbox{]} \mbox{[}0 -\/sin(θ) cos(θ) 0\mbox{]} \mbox{[}sin(θ) 0 cos(θ) 0\mbox{]} \mbox{[}0 0 1 0\mbox{]} \mbox{[}0 0 0 1\mbox{]} \mbox{[}0 0 0 1\mbox{]} \mbox{[}0 0 0 1\mbox{]}
+
+The rotation matrices can be combined with the scale and translation matrix to create the final matrix.
+
+Here\textquotesingle{}s what a poor vertex has to go through to get to the screen... Vertex object coordinates x model matrix = world coordinates World coordinates x view matrix = eye coordinates Eye coordinates x projection matrix = clipping space coordinates Clipping space coordinates x perspective division = normalized device coordinates Normalized device coordinates x viewport transformation = screen coordinates
+
+Vertex object coordinates are the vertex positions usually created in 3D modelling apps such as Blender. Model matrix is what translates, rotates and scales a vertex into the correct world position. View matrix is the camera position and created by the inverse of the camera position. We use the lookat() method to create a view matrix. Projection matrix is created using set\+Projection\+Ortho() and \doxylink{class_d_c_l_1_1_c_matrix_a48c99c783cd6e0ad4259dfe707638e02}{set\+Projection\+Perspective()} depending upon how we wish the vertices to be transformed. The other stuff is performed in the vertex/fragment shaders.
+
+Remember that the order of matrix multiplication is important and we go from right to left, like this in a shader... gl\+\_\+\+Position = projection\+Matrix \texorpdfstring{$\ast$}{*} view\+Matrix \texorpdfstring{$\ast$}{*} model\+Matrix \texorpdfstring{$\ast$}{*} in\+\_\+\+Position; 
+
+Definition at line \mbox{\hyperlink{_matrix_8h_source_l00073}{73}} of file \mbox{\hyperlink{_matrix_8h_source}{Matrix.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_matrix_ae819ba5e60c87c77acea125d422babbb}\index{DCL::CMatrix@{DCL::CMatrix}!CMatrix@{CMatrix}}
+\index{CMatrix@{CMatrix}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{CMatrix()}{CMatrix()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_ae819ba5e60c87c77acea125d422babbb} 
+DCL\+::\+CMatrix\+::\+CMatrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor, sets to identity matrix. 
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_matrix_a83cbaa6a12da74ecabe05ed01406c191}\index{DCL::CMatrix@{DCL::CMatrix}!get@{get}}
+\index{get@{get}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a83cbaa6a12da74ecabe05ed01406c191} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} DCL\+::\+CMatrix\+::get (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets the matrix from the one given. 
+
+Returns a matrix containing the contents of this matrix
+
+\begin{DoxyReturn}{Returns}
+A matrix which holds this matrix\textquotesingle{}s data 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00117}{117}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_acfc5ecbdd69a629a6134c8c9e80f91d0}\index{DCL::CMatrix@{DCL::CMatrix}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{getFloat()}{getFloat()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_acfc5ecbdd69a629a6134c8c9e80f91d0} 
+const float \texorpdfstring{$\ast$}{*} DCL\+::\+CMatrix\+::get\+Float (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the float array containing the matrix. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the float array containing the matrix values 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00425}{425}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_abf16f5e325247b3b92238692c9b36e7f}\index{DCL::CMatrix@{DCL::CMatrix}!getForwardVector@{getForwardVector}}
+\index{getForwardVector@{getForwardVector}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{getForwardVector()}{getForwardVector()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_abf16f5e325247b3b92238692c9b36e7f} 
+void DCL\+::\+CMatrix\+::get\+Forward\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Vec}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets the given vector to hold this matrix\textquotesingle{}s forward vector/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Vec} & A \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} which will hold this matrix\textquotesingle{}s forward vector/axis\\
+\hline
+\end{DoxyParams}
+This is used to obtain the orientation of the current state of the matrix 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00247}{247}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a9c9687c45c3206e6fddf27e36e28d23a}\index{DCL::CMatrix@{DCL::CMatrix}!getRightVector@{getRightVector}}
+\index{getRightVector@{getRightVector}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{getRightVector()}{getRightVector()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a9c9687c45c3206e6fddf27e36e28d23a} 
+void DCL\+::\+CMatrix\+::get\+Right\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Vec}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets the given vector to hold this matrix\textquotesingle{}s right vector/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Vec} & A \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} which will hold this matrix\textquotesingle{}s right vector/axis\\
+\hline
+\end{DoxyParams}
+This is used to obtain the orientation of the current state of the matrix 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00233}{233}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a025ef86e6e416f90c7507c8c48add4b8}\index{DCL::CMatrix@{DCL::CMatrix}!getTranslation@{getTranslation}}
+\index{getTranslation@{getTranslation}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{getTranslation()}{getTranslation()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a025ef86e6e416f90c7507c8c48add4b8} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} DCL\+::\+CMatrix\+::get\+Translation (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the current translation stored in the matrix as a \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f}. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} holding the translation this matrix contains 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00488}{488}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a3d7bfd6669f821d56bcca5af512c2c75}\index{DCL::CMatrix@{DCL::CMatrix}!getUpVector@{getUpVector}}
+\index{getUpVector@{getUpVector}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{getUpVector()}{getUpVector()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a3d7bfd6669f821d56bcca5af512c2c75} 
+void DCL\+::\+CMatrix\+::get\+Up\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Vec}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets the given vector to hold this matrix\textquotesingle{}s up vector/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Vec} & A \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} which will hold this matrix\textquotesingle{}s up vector/axis\\
+\hline
+\end{DoxyParams}
+This is used to obtain the orientation of the current state of the matrix 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_ac47a5054497182d2c5a5f951f879b5c8}\index{DCL::CMatrix@{DCL::CMatrix}!inverse@{inverse}}
+\index{inverse@{inverse}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_ac47a5054497182d2c5a5f951f879b5c8} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} DCL\+::\+CMatrix\+::inverse (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a matrix which is the inverse of this matrix. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_d_c_l_1_1_c_matrix}{CMatrix} which is the inverse of this matrix
+\end{DoxyReturn}
+The inverse of a matrix is a matrix that, when multiplied by the original matrix, gives the identity matrix. 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00430}{430}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a52c04431713b90d58c5877ec1037a481}\index{DCL::CMatrix@{DCL::CMatrix}!multiply@{multiply}}
+\index{multiply@{multiply}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a52c04431713b90d58c5877ec1037a481} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} DCL\+::\+CMatrix\+::multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&}]{matrix}{}\end{DoxyParamCaption})}
+
+
+
+Multiplies this matrix by the one given and returns the resulting matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & A matrix to multiply this one by \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_d_c_l_1_1_c_matrix}{CMatrix} holding the result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00264}{264}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a85543a60685a3a5f3287f3db702dd45f}\index{DCL::CMatrix@{DCL::CMatrix}!multiply@{multiply}}
+\index{multiply@{multiply}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a85543a60685a3a5f3287f3db702dd45f} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} DCL\+::\+CMatrix\+::multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{vector}{}\end{DoxyParamCaption})}
+
+
+
+Multiplies the given vector by this matrix and returns the resulting vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & A \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} to multiply by this matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} holding the result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00289}{289}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a58e52dd69d10c3b7255586fe9e972ced}\index{DCL::CMatrix@{DCL::CMatrix}!multiply@{multiply}}
+\index{multiply@{multiply}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a58e52dd69d10c3b7255586fe9e972ced} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} DCL\+::\+CMatrix\+::multiply (\begin{DoxyParamCaption}\item[{const float}]{f\+Scalar}{}\end{DoxyParamCaption})}
+
+
+
+Multiplies each value in the matrix by the given scalar and returns the resulting matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Scalar} & The scalar value to multiply this matrix by \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting matrix 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00298}{298}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a82eededc7f9e9bd766466a03622371e2}\index{DCL::CMatrix@{DCL::CMatrix}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a82eededc7f9e9bd766466a03622371e2} 
+bool DCL\+::\+CMatrix\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&}]{matrix}{}\end{DoxyParamCaption}) const}
+
+
+
+Compares whether this matrix and the one to the right of the != operator are equal. 
+
+This is an exact compare, no teeny epsilon value. 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a94f362a14f5c47033102a6af3637d7ee}\index{DCL::CMatrix@{DCL::CMatrix}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a94f362a14f5c47033102a6af3637d7ee} 
+const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} DCL\+::\+CMatrix\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&}]{matrix}{}\end{DoxyParamCaption}) const}
+
+
+
+Multiply this matrix by another and return the result. 
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_ae06cf31175d1106f567ab93a124a7422}\index{DCL::CMatrix@{DCL::CMatrix}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_ae06cf31175d1106f567ab93a124a7422} 
+const void DCL\+::\+CMatrix\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&}]{matrix}{}\end{DoxyParamCaption})}
+
+
+
+Multiply this matrix by another. 
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a28372a2562a55dbb77b98b2c040a9c7d}\index{DCL::CMatrix@{DCL::CMatrix}!operator=@{operator=}}
+\index{operator=@{operator=}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a28372a2562a55dbb77b98b2c040a9c7d} 
+const void DCL\+::\+CMatrix\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&}]{matrix}{}\end{DoxyParamCaption})}
+
+
+
+Sets this matrix to the one on the right. 
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a9d77e6f44ad0af264892f1c8759f6bac}\index{DCL::CMatrix@{DCL::CMatrix}!operator==@{operator==}}
+\index{operator==@{operator==}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a9d77e6f44ad0af264892f1c8759f6bac} 
+bool DCL\+::\+CMatrix\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&}]{matrix}{}\end{DoxyParamCaption}) const}
+
+
+
+Compares whether this matrix and the one to the right of the == operator are equal. 
+
+This is an exact compare, no teeny epsilon value. 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_aa3f6e5ecd479e5419496195dcc7965b2}\index{DCL::CMatrix@{DCL::CMatrix}!set@{set}}
+\index{set@{set}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_aa3f6e5ecd479e5419496195dcc7965b2} 
+void DCL\+::\+CMatrix\+::set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} \&}]{src}{}\end{DoxyParamCaption})}
+
+
+
+Sets the matrix from the one given. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Matrix holding the values to set this matrix to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a4376d4fcf81beaddc12dae2ed9f1d246}\index{DCL::CMatrix@{DCL::CMatrix}!set@{set}}
+\index{set@{set}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a4376d4fcf81beaddc12dae2ed9f1d246} 
+void DCL\+::\+CMatrix\+::set (\begin{DoxyParamCaption}\item[{const float}]{src}{\mbox{[}16\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Sets this matrix from the given array of floats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Array holding the values to set this matrix to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a987470be1cee8da3bdb14abebde50d3c}\index{DCL::CMatrix@{DCL::CMatrix}!setFromAxisAngleDegrees@{setFromAxisAngleDegrees}}
+\index{setFromAxisAngleDegrees@{setFromAxisAngleDegrees}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setFromAxisAngleDegrees()}{setFromAxisAngleDegrees()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a987470be1cee8da3bdb14abebde50d3c} 
+void DCL\+::\+CMatrix\+::set\+From\+Axis\+Angle\+Degrees (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Axis}{, }\item[{float}]{f\+Angle\+Degrees}{}\end{DoxyParamCaption})}
+
+
+
+Sets the matrix to hold a rotation transformation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Axis} & The axis with which to rotate around \\
+\hline
+{\em f\+Angle\+Degrees} & The amount in degrees in which to rotate around the given axis\\
+\hline
+\end{DoxyParams}
+The rotation is specified from the give amount of rotation in degrees around the given axis. Working with degrees is slightly slower than working in radians as when using degrees, \doxylink{namespace_d_c_l_a15a7aa8e42259e9e285ce41ae175b19f}{deg2rad()} is called. 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00179}{179}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_ac5039c16748e1a1fb1af686513b82368}\index{DCL::CMatrix@{DCL::CMatrix}!setFromAxisAngleRadians@{setFromAxisAngleRadians}}
+\index{setFromAxisAngleRadians@{setFromAxisAngleRadians}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setFromAxisAngleRadians()}{setFromAxisAngleRadians()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_ac5039c16748e1a1fb1af686513b82368} 
+void DCL\+::\+CMatrix\+::set\+From\+Axis\+Angle\+Radians (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Axis}{, }\item[{float}]{f\+Angle\+Radians}{}\end{DoxyParamCaption})}
+
+
+
+Sets the matrix to hold a rotation transformation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Axis} & The axis with which to rotate around \\
+\hline
+{\em f\+Angle\+Radians} & The amount in radians in which to rotate around the given axis\\
+\hline
+\end{DoxyParams}
+The rotation is specified from the give amount of rotation in radians around the given axis. Working with radians is slightly faster than working in degress as when using degrees, \doxylink{namespace_d_c_l_a15a7aa8e42259e9e285ce41ae175b19f}{deg2rad()} is called. 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a07af512d159d8f8c77694910cf0f1fd5}\index{DCL::CMatrix@{DCL::CMatrix}!setFromQuaternion@{setFromQuaternion}}
+\index{setFromQuaternion@{setFromQuaternion}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setFromQuaternion()}{setFromQuaternion()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a07af512d159d8f8c77694910cf0f1fd5} 
+void DCL\+::\+CMatrix\+::set\+From\+Quaternion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_quaternion}{CQuaternion}} \&}]{quaternion}{}\end{DoxyParamCaption})}
+
+
+
+Sets the matrix to hold a rotation transformation from a quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quaternion} & The quaternion holding a rotation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00216}{216}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a582d9775a2c82a73134fc4ba7e52b61f}\index{DCL::CMatrix@{DCL::CMatrix}!setIdentity@{setIdentity}}
+\index{setIdentity@{setIdentity}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setIdentity()}{setIdentity()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a582d9775a2c82a73134fc4ba7e52b61f} 
+void DCL\+::\+CMatrix\+::set\+Identity (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Sets matrix to identity matrix. 
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a0ccac333f095016afe3d82f55bb13d7a}\index{DCL::CMatrix@{DCL::CMatrix}!setProjectionOrthographic@{setProjectionOrthographic}}
+\index{setProjectionOrthographic@{setProjectionOrthographic}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setProjectionOrthographic()}{setProjectionOrthographic()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a0ccac333f095016afe3d82f55bb13d7a} 
+void DCL\+::\+CMatrix\+::set\+Projection\+Orthographic (\begin{DoxyParamCaption}\item[{float}]{f\+Width}{ = {\ttfamily 320.0f}, }\item[{float}]{f\+Height}{ = {\ttfamily 240.0f}, }\item[{float}]{f\+Left}{ = {\ttfamily 0.0f}, }\item[{float}]{f\+Right}{ = {\ttfamily -\/1.0f}, }\item[{float}]{f\+Top}{ = {\ttfamily 0.0f}, }\item[{float}]{f\+Bottom}{ = {\ttfamily -\/1.0f}, }\item[{float}]{f\+Near}{ = {\ttfamily -\/1.0f}, }\item[{float}]{f\+Far}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})}
+
+
+
+Sets the matrix to represent an orthographic prjection matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Width} & If f\+Right or f\+Bottom are given values \texorpdfstring{$<$}{<} 0.\+0f, this is used for f\+Right \\
+\hline
+{\em f\+Height} & If f\+Right or f\+Bottom are given values \texorpdfstring{$<$}{<} 0.\+0f, this is used for f\+Bottom \\
+\hline
+{\em f\+Left} & Typically 0.\+0f \\
+\hline
+{\em f\+Right} & Typically -\/1.\+0f \\
+\hline
+{\em f\+Top} & Typically 0.\+0f \\
+\hline
+{\em f\+Bottom} & Typically -\/1.\+0f \\
+\hline
+{\em f\+Near} & Typically -\/1.\+0f \\
+\hline
+{\em f\+Far} & Typically 1.\+0f\\
+\hline
+\end{DoxyParams}
+Passing in a value of 0.\+0f or less for f\+Right or f\+Bottom will use values from f\+Width and f\+Height 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00352}{352}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a48c99c783cd6e0ad4259dfe707638e02}\index{DCL::CMatrix@{DCL::CMatrix}!setProjectionPerspective@{setProjectionPerspective}}
+\index{setProjectionPerspective@{setProjectionPerspective}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setProjectionPerspective()}{setProjectionPerspective()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a48c99c783cd6e0ad4259dfe707638e02} 
+void DCL\+::\+CMatrix\+::set\+Projection\+Perspective (\begin{DoxyParamCaption}\item[{float}]{f\+Width}{ = {\ttfamily 320.0f}, }\item[{float}]{f\+Height}{ = {\ttfamily 240.0f}, }\item[{float}]{f\+Field\+Of\+View\+In\+Degrees}{ = {\ttfamily 55.0f}, }\item[{float}]{f\+Near\+Clipping\+Plane\+Distance}{ = {\ttfamily 1.0f}, }\item[{float}]{f\+Far\+Clipping\+Plane\+Distance}{ = {\ttfamily 1000.0f}, }\item[{float}]{f\+Aspect\+Ratio}{ = {\ttfamily -\/1.0f}}\end{DoxyParamCaption})}
+
+
+
+Sets the matrix to represent a perspective projection matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Width} & The width of the backbuffer/screen to use when calculating the aspect ration if f\+Aspect\+Ratio is given a value of \texorpdfstring{$<$}{<} 0.\+0 \\
+\hline
+{\em f\+Height} & The height of the backbuffer/screen to use when calculating the aspect ration if f\+Aspect\+Ratio is given a value of \texorpdfstring{$<$}{<} 0.\+0 \\
+\hline
+{\em f\+Field\+Of\+View\+In\+Degrees} & The desired field of view, in degrees \\
+\hline
+{\em f\+Near\+Clipping\+Plane\+Distance} & The near clipping plane distance \\
+\hline
+{\em f\+Far\+Clipping\+Plane\+Distance} & The far clipping plane distance \\
+\hline
+{\em f\+Aspect\+Ratio} & The aspect ratio, which if given a value \texorpdfstring{$<$}{<} 0, will be computed from f\+Width and f\+Height\\
+\hline
+\end{DoxyParams}
+Passing in a value of 0.\+0f or less for f\+Aspect\+Ratio will compute this value for us from the given (width / height) parameters 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00308}{308}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_ae7b863fe7ed7372e85a6ceccd3538d17}\index{DCL::CMatrix@{DCL::CMatrix}!setScale@{setScale}}
+\index{setScale@{setScale}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_ae7b863fe7ed7372e85a6ceccd3538d17} 
+void DCL\+::\+CMatrix\+::set\+Scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Trans}{}\end{DoxyParamCaption})}
+
+
+
+Set the matrix to hold a scale transformation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Trans} & A \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} holding the scaling amounts \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00172}{172}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a990390f1c681ecad46d9cb17a9aa952d}\index{DCL::CMatrix@{DCL::CMatrix}!setScale@{setScale}}
+\index{setScale@{setScale}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a990390f1c681ecad46d9cb17a9aa952d} 
+void DCL\+::\+CMatrix\+::set\+Scale (\begin{DoxyParamCaption}\item[{float}]{fX}{, }\item[{float}]{fY}{, }\item[{float}]{fZ}{}\end{DoxyParamCaption})}
+
+
+
+Set the matrix to hold a scale transformation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fX} & The amount to scale along X \\
+\hline
+{\em fY} & The amount to scale along Y \\
+\hline
+{\em fZ} & The amount to scale along Z \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00165}{165}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a0fd29235ef6eb0163bf1703c4bf8ff19}\index{DCL::CMatrix@{DCL::CMatrix}!setTranslation@{setTranslation}}
+\index{setTranslation@{setTranslation}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setTranslation()}{setTranslation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a0fd29235ef6eb0163bf1703c4bf8ff19} 
+void DCL\+::\+CMatrix\+::set\+Translation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Trans}{}\end{DoxyParamCaption})}
+
+
+
+Set the matrix to hold a translation transformation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Trans} & A \doxylink{class_d_c_l_1_1_c_vector3f}{CVector3f} holding the translation to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a59a37d724658e639f10e6fff407bba4c}\index{DCL::CMatrix@{DCL::CMatrix}!setTranslation@{setTranslation}}
+\index{setTranslation@{setTranslation}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setTranslation()}{setTranslation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a59a37d724658e639f10e6fff407bba4c} 
+void DCL\+::\+CMatrix\+::set\+Translation (\begin{DoxyParamCaption}\item[{float}]{fX}{, }\item[{float}]{fY}{, }\item[{float}]{fZ}{}\end{DoxyParamCaption})}
+
+
+
+Returns a glm matrix constructed from this one. 
+
+Set the matrix to hold a translation transformation
+
+
+\begin{DoxyParams}{Parameters}
+{\em fX} & X translation amount \\
+\hline
+{\em fY} & Y translation amount \\
+\hline
+{\em fZ} & Z translation amount \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a17cf09c435243462ad0bff8b79b8502a}\index{DCL::CMatrix@{DCL::CMatrix}!setViewLookat@{setViewLookat}}
+\index{setViewLookat@{setViewLookat}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setViewLookat()}{setViewLookat()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a17cf09c435243462ad0bff8b79b8502a} 
+void DCL\+::\+CMatrix\+::set\+View\+Lookat (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Eye\+Pos}{, }\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Target}{, }\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}} \&}]{v\+Up}{ = {\ttfamily \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}(0.0f,~1.0f,~0.0f)}}\end{DoxyParamCaption})}
+
+
+
+Sets the matrix to represent a view matrix based upon gl\+Lookat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v\+Eye\+Pos} & The eye position \\
+\hline
+{\em v\+Target} & The target position \\
+\hline
+{\em v\+Up} & The up vector\\
+\hline
+\end{DoxyParams}
+v\+Up should be normalised 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00394}{394}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a5bb0c63340dd0eff27a31986a52d34bb}\index{DCL::CMatrix@{DCL::CMatrix}!setZero@{setZero}}
+\index{setZero@{setZero}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{setZero()}{setZero()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a5bb0c63340dd0eff27a31986a52d34bb} 
+void DCL\+::\+CMatrix\+::set\+Zero (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Fills the matrix with zeros. 
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_matrix_a5a13f5a10c08f0b0d48d55e1d17d7dbe}\index{DCL::CMatrix@{DCL::CMatrix}!transpose@{transpose}}
+\index{transpose@{transpose}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_a5a13f5a10c08f0b0d48d55e1d17d7dbe} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_matrix}{CMatrix}} DCL\+::\+CMatrix\+::transpose (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a matrix which is the transpose of this matrix. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_d_c_l_1_1_c_matrix}{CMatrix} which is the transpose of this matrix
+\end{DoxyReturn}
+The transpose of a matrix is obtained by flipping the matrix over its diagonal. Which means the rows become columns and the columns become rows. The transpose of a matrix has some useful properties such as reversing the order of multiplication, preserving the trace and determinant, changing the orientation of vectors and converting matrixs between column major and row major. 
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00254}{254}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_d_c_l_1_1_c_matrix_ac18f454f2a604c14e3c44951ff9dc4f4}\index{DCL::CMatrix@{DCL::CMatrix}!CQuaternion@{CQuaternion}}
+\index{CQuaternion@{CQuaternion}!DCL::CMatrix@{DCL::CMatrix}}
+\doxysubsubsection{\texorpdfstring{CQuaternion}{CQuaternion}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_matrix_ac18f454f2a604c14e3c44951ff9dc4f4} 
+friend class \mbox{\hyperlink{class_d_c_l_1_1_c_quaternion}{CQuaternion}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8h_source_l00076}{76}} of file \mbox{\hyperlink{_matrix_8h_source}{Matrix.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Math/\mbox{\hyperlink{_matrix_8h}{Matrix.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Math/Matrix.\+cpp\end{DoxyCompactItemize}

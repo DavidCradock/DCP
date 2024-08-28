@@ -1,0 +1,139 @@
+/** \page 92_DirectoryLayout Directory Layout.
+
+<h2>Directory layout.</h2>
+<pre>
+Here's some information of DCP's directory layout.
+</pre>
+
+<h3>/</h3>
+<pre>
+The root directory containing a Microsoft Visual Studio solution file "DCP.sln" containing all projects found in /ProjectFiles/.
+Load this solution file to build all libraries, documentation and executables.
+</pre>
+
+<h3>/BuildTemp/</h3>
+<pre>
+Where the temporary build files such as .obj, .log, .lastbuildstate, get placed.
+It's just nice and tidy to have all the temporary files placed here for easy deletion.
+The folder has four subfolders for each of the project types and those are...
+/BuildTemp/Documentation Files related to Doxygen generated documentation
+/BuildTemp/DynamicLibs Files related to dynamic libraries used by DCP
+/BuildTemp/Executables Files related to executable projects of DCP
+/BuildTemp/StaticLibs Files related to static library projects of DCP
+Each of the projects located inside the /ProjectFiles directory use the above folders when they are being built.
+</pre>
+
+<h3>/Other/</h3>
+<pre>
+Contains a few sub directories...
+/Other/Reference/ Reference material is located such as articles, books etc which I read and use whilst learning new stuff to add to DCP.
+/Other/SDKs/ Software development kit installers such as the VulkanSDK
+/Other/Support/ Contains support files, for things like Blender project files for creating images etc.
+</pre>
+
+<h3>/Output/</h3>
+<pre>
+Contains four subfolders for each of the project types and those are...
+</pre>
+
+<h4>/Output/Documentation/</h4>
+<pre>
+Contains the documentation which is generated from the comments inside the sourcecode for DCL, as well as several files which are located inside /ProjectFiles/Documentation/BuildDoxygenDocs/pages/
+See \ref 03_DoxygenDocumentation page for more information of why I chose to use Doxygen.
+</pre>
+
+<h4>/Output/DynamicLibs</h4>
+<pre>
+Where dynamic libraries are output to once built.
+</pre>
+
+<h4>/Output/Executables</h4>
+<pre>
+Where executables are output to once built.
+</pre>
+
+<h4>/Output/Executables/Data</h4>
+<pre>
+Data required by the various executables at their runtime are stored here. Files such as .mp3/.ogg/.wav/.png/.jpg etc.
+</pre>
+
+<h4>/Output/StaticLibs</h4>
+<pre>
+Where static libraries are output to once built.
+</pre>
+
+<h3>/ProjectFiles/</h3>
+<pre>
+Contains each project file used to compile either documentation, dlls, executables or static libraries.
+Each project folder contains each project's source files and the project file itself.
+They are placed inside one of the four folder types depending upon what type of project they are. These four sub folders are...
+/ProjectFiles/Documentation Files related to Doxygen generated documentation
+/ProjectFiles/DynamicLibs Files related to dynamic libraries used by DCP
+/ProjectFiles/Executables Files related to executable projects of DCP
+/ProjectFiles/StaticLibs Files related to static library projects of DCP
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>/ProjectFiles/GLFW</h3>
+<pre>
+GLFW is an Open Source, multi-platform library for OpenGL, OpenGL ES and Vulkan development on the desktop. It provides a simple API for creating windows, contexts and surfaces, receiving input and events.
+GLFW is written in C and supports Windows, macOS, Wayland and X11.
+
+</pre>
+
+<h3>/ProjectFiles/OpenGL</h3>
+<pre>
+OpenGL (Open Graphics Library) is a cross-platform application programming interface (API) used for rendering 2D and 3D vector graphics.
+Essentially, it's a set of tools that allows programmers to communicate with a computer's graphics hardware (like a GPU) to create visual content.
+
+</pre>
+
+<h3>/ProjectFiles/SDL2-2.30.6</h3>
+<pre>
+About SDL
+
+Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and
+graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games including Valve's award winning catalog and many Humble Bundle games. 
+
+</pre>
+
+<h3>/external_libs/VulkanSDK</h3>
+<pre>
+The Vulkan SDK is a collection of essential tools used by developers to assist in development and debugging of Vulkan applications.
+</pre>
+
+<h3>/projects/DCL/</h3>
+<pre>
+Dave's Code Library.
+A static library containing the bulk of all my code which the other executable projects link to.
+</pre>
+
+<h3>/projects/ExampleCLog/</h3>
+<pre>
+An executable to show usage and test the DCL lib's CLog class used for logging.
+</pre>
+
+<h3>/projects/DCLDevApp/</h3>
+<pre>
+An executable project used whilst developing the static library project DCL.
+</pre>
+
+
+*/

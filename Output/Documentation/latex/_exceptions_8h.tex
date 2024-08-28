@@ -1,0 +1,127 @@
+\doxysection{X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/\+Exceptions.h File Reference}
+\hypertarget{_exceptions_8h}{}\label{_exceptions_8h}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Exceptions.h@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Exceptions.h}}
+
+
+Contains error handling code and macros to deal with errors, warnings and logging of information to a log file.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_d_c_l_1_1_c_exception}{DCL\+::\+CException}}
+\begin{DoxyCompactList}\small\item\em An exception containing information about what went wrong. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_d_c_l}{DCL}}
+\begin{DoxyCompactList}\small\item\em The namespace in which everything within Dave\textquotesingle{}s Code Library is stored inside. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{Throw\+If\+False}}(x,  y)
+\begin{DoxyCompactList}\small\item\em Macro to check a bool and if false, throw an exception which adds filename, line number and the given text. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{Throw\+If\+True}}(x,  y)
+\begin{DoxyCompactList}\small\item\em Macro to check a bool and is true, throw an exception which adds filename, line number and the given text. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_exceptions_8h_a9bd86a9c7b41cef1ebad126eb6f9806c}{Throw\+If\+Memory\+Not\+Allocated}}(x)
+\begin{DoxyCompactList}\small\item\em Macro to check a pointer and if 0, throw an exception stating that the memory was not allocated with filename and line number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains error handling code and macros to deal with errors, warnings and logging of information to a log file. 
+
+How we deal with error handling in Dave\textquotesingle{}s Code Library.
+
+We use exceptions. Although they introduce a slight performance penalty, they greatly simplify error handling. We use various macros found in this file which are used throughout the codebase to log the status of things happening to a log file, and deal with unrecoverable, exceptional errors The macros in here log information using the CLog class found in \doxylink{_logging_8h}{Core/\+Logging.\+h}
+
+The macros reduce the amount of code we have to write everywhere and do stuff such as checking for critical errors, automatically shutting down the process and writing information to a log file.
+
+Within our main program loop somewhere, we\textquotesingle{}d do the following... 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{try}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Main\ loop\ would\ go\ here}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{catch}\ (CException\ \&exception)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Deal\ with\ the\ exception\ somehow...}}
+\DoxyCodeLine{\ \ \ \ x-\/>pLog-\/>add(exception.mstrException,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\ \ \ \ std::wstring\ strw\ =\ StringUtils::stringToWide(exception.mstrException);}
+\DoxyCodeLine{\ \ \ \ MessageBox(x-\/>pWindow-\/>getWindowHandle(),\ strw.c\_str(),\ L\textcolor{stringliteral}{"{}Sorry,\ an\ exception\ has\ been\ thrown..."{}},\ MB\_OK);}
+\DoxyCodeLine{\ \ \ \ \_\_debugbreak();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Definition in file \mbox{\hyperlink{_exceptions_8h_source}{Exceptions.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}\index{Exceptions.h@{Exceptions.h}!ThrowIfFalse@{ThrowIfFalse}}
+\index{ThrowIfFalse@{ThrowIfFalse}!Exceptions.h@{Exceptions.h}}
+\doxysubsubsection{\texorpdfstring{ThrowIfFalse}{ThrowIfFalse}}
+{\footnotesize\ttfamily \label{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e} 
+\#define Throw\+If\+False(\begin{DoxyParamCaption}\item[{}]{x}{, }\item[{}]{y}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(!x)\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ CException(y,\ \_\_FILE\_\_,\ \_\_LINE\_\_);\}\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Macro to check a bool and if false, throw an exception which adds filename, line number and the given text. 
+
+
+
+Definition at line \mbox{\hyperlink{_exceptions_8h_source_l00061}{61}} of file \mbox{\hyperlink{_exceptions_8h_source}{Exceptions.\+h}}.
+
+\Hypertarget{_exceptions_8h_a9bd86a9c7b41cef1ebad126eb6f9806c}\index{Exceptions.h@{Exceptions.h}!ThrowIfMemoryNotAllocated@{ThrowIfMemoryNotAllocated}}
+\index{ThrowIfMemoryNotAllocated@{ThrowIfMemoryNotAllocated}!Exceptions.h@{Exceptions.h}}
+\doxysubsubsection{\texorpdfstring{ThrowIfMemoryNotAllocated}{ThrowIfMemoryNotAllocated}}
+{\footnotesize\ttfamily \label{_exceptions_8h_a9bd86a9c7b41cef1ebad126eb6f9806c} 
+\#define Throw\+If\+Memory\+Not\+Allocated(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ if(!x)\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ CException(\textcolor{stringliteral}{"{}Memory\ allocation\ error."{}},\ \_\_FILE\_\_,\ \_\_LINE\_\_);\}\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Macro to check a pointer and if 0, throw an exception stating that the memory was not allocated with filename and line number. 
+
+
+
+Definition at line \mbox{\hyperlink{_exceptions_8h_source_l00079}{79}} of file \mbox{\hyperlink{_exceptions_8h_source}{Exceptions.\+h}}.
+
+\Hypertarget{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}\index{Exceptions.h@{Exceptions.h}!ThrowIfTrue@{ThrowIfTrue}}
+\index{ThrowIfTrue@{ThrowIfTrue}!Exceptions.h@{Exceptions.h}}
+\doxysubsubsection{\texorpdfstring{ThrowIfTrue}{ThrowIfTrue}}
+{\footnotesize\ttfamily \label{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef} 
+\#define Throw\+If\+True(\begin{DoxyParamCaption}\item[{}]{x}{, }\item[{}]{y}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(x)\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ CException(y,\ \_\_FILE\_\_,\ \_\_LINE\_\_);\}\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Macro to check a bool and is true, throw an exception which adds filename, line number and the given text. 
+
+
+
+Definition at line \mbox{\hyperlink{_exceptions_8h_source_l00070}{70}} of file \mbox{\hyperlink{_exceptions_8h_source}{Exceptions.\+h}}.
+

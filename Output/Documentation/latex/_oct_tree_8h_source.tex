@@ -1,0 +1,89 @@
+\doxysection{Oct\+Tree.\+h}
+\hypertarget{_oct_tree_8h_source}{}\label{_oct_tree_8h_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/SpatialPartitioning/OctTree.h@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/SpatialPartitioning/OctTree.h}}
+\mbox{\hyperlink{_oct_tree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ OCTTREE\_H}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ OCTTREE\_H}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_oct_tree_node_8h}{OctTreeNode.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00010}00010\ \textcolor{comment}{//\#include\ "{}SMCamera.h"{}}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_frustum_8h}{../Math/Frustum.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00013}00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00044}\mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree}{00044}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree}{COctTree}}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_node}{COctTreeNode}};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_entity}{COctTreeEntity}};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a79e4f6d05e80805452c40cde536ab8e3}{COctTree}}(\textcolor{keywordtype}{int}\ iMaxEntitiesPerNode\ =\ 10,\ \textcolor{keywordtype}{float}\ fSizeIncreaseMultiplier\ =\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_aedf2b29944d85ad2a7e9bb583b78edd2}{\string~COctTree}}();}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a10b1942b258b8c1868625a1e649f82b7}{init}}(\textcolor{keywordtype}{int}\ iMaxEntitiesPerNode\ =\ 10,\ \textcolor{keywordtype}{float}\ fSizeIncreaseMultiplier\ =\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_abe06c4c330f0bb0eaf3ceeb2d45a84c5}{free}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00088}00088\ \textcolor{comment}{\ \ \ \ \ \ \ \ //\ Debug\ rendering\ of\ the\ oct\ tree's\ nodes}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00089}00089\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ debugRender(CSMCamera\&\ camera)\ const;}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00090}00090\ \textcolor{comment}{\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00091}00091\ \textcolor{comment}{\ \ \ \ \ \ \ \ //\ For\ debug\ rendering,\ sets\ the\ named\ entity's\ rendered\ colour}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00092}00092\ \textcolor{comment}{\ \ \ \ \ \ \ \ //\ If\ the\ named\ entity\ doesn't\ exist,\ an\ exception\ occurs.}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00093}00093\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ debugSetEntityColour(const\ std::string\&\ strName,\ CColour\&\ colour);}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00094}00094\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00095}00095\ \textcolor{comment}{\ \ \ \ \ \ \ \ //\ For\ debug\ rendering,\ sets\ all\ entities'\ rendered\ colour\ to\ the\ one\ given}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00096}00096\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ debugSetAllEntitiesColour(CColour\&\ colour);}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00097}00097\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a2948772e21f9310653136883cd92399f}{addEntity}}(\textcolor{keyword}{const}\ std::string\&\ strName,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}\&\ vPosition,\ \textcolor{keywordtype}{int}\ iUserData\ =\ 0,\ \textcolor{keywordtype}{void}*\ pUserData\ =\ 0);}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_adebcbd5a9cda64f91b49731ed5913c60}{removeEntity}}(\textcolor{keyword}{const}\ std::string\&\ strName);}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_acf0e29bf49823dc2c20e3d704e9a1265}{getEntityExists}}(\textcolor{keyword}{const}\ std::string\&\ strName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a991d8430b2c0a0a18a8e22bdb911c079}{removeAllEntities}}(\textcolor{keywordtype}{bool}\ bResetTree\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a6a68cbc48c96b05b9ce4ca8e3289c9f1}{setEntityPosition}}(\textcolor{keyword}{const}\ std::string\&\ strName,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}\&\ vNewPosition);}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a52e65031d68ab1d104132a51813ddd98}{getEntityPosition}}(\textcolor{keyword}{const}\ std::string\&\ strName,\ \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}\ \&vPosition)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ std::vector<COctTreeNode*>\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_acf0f4c925af320cf4550f9b7cec10469}{getNodesWithEntities}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ std::vector<COctTreeNode*>\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_afc7668878cd0c2250940d84f5e13967e}{getNodesWithEntitiesWhichIntersect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_a_a_b_b}{CAABB}}\&\ aabb)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00154}00154\ \ \ \ \ \ \ \ \ std::vector<COctTreeNode*>\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_afc7668878cd0c2250940d84f5e13967e}{getNodesWithEntitiesWhichIntersect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum}{CFrustum}}\&\ frustum)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00164}00164\ \ \ \ \ \ \ \ \ std::vector<COctTreeEntity*>\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_ae8b74523e7bcc2555c37d12b6b5b41f3}{getEntitiesWithinRange}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}\&\ vPosition,\ \textcolor{keywordtype}{float}\ fRange)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00173}00173\ \ \ \ \ \ \ \ \ std::vector<COctTreeEntity*>\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a8f35a4a5d92dfc74c1b81e91612f91da}{getEntitiesWithinAABB}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_a_a_b_b}{CAABB}}\&\ aabb)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00180}00180\ \ \ \ \ \ \ \ \ std::vector<COctTreeEntity*>\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a673d30946a9719b6e5df9bbb3041d287}{getEntitiesWithinFrustum}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_frustum}{CFrustum}}\&\ frustum)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_a2e9dd3609e8147a128c5f373497ac134}{getNodeDepthCurrent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_ac68dab7339f8c8a2c7159fc081f89648}{getNodeDepthMax}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00207}00207\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_oct_tree_node}{COctTreeNode}}*\ \_mpRootNode;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_miMaxEntitiesPerNode;}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_mfSizeIncreaseMultiplier;}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::map<std::string,\ COctTreeEntity*>\ \_mmapEntities;}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_muiCurrentMaxNodeDepth;}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_muiMaxNodeDepth;}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00249}00249\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_computeMaxNodeDepth(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00250}00250\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00252}00252\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{_oct_tree_8h_source_l00254}00254\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \#ifndef\ FILENAME\_H}}
+
+\end{DoxyCode}

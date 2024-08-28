@@ -1,0 +1,126 @@
+\doxysection{Finite\+State\+Machine.\+cpp}
+\hypertarget{_finite_state_machine_8cpp_source}{}\label{_finite_state_machine_8cpp_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/ArtificialIntelligence/FiniteStateMachine.cpp@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/ArtificialIntelligence/FiniteStateMachine.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_finite_state_machine_8h}{finiteStateMachine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_exceptions_8h}{../Core/Exceptions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00004}\mbox{\hyperlink{namespace_d_c_l}{00004}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00006}\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_ae3bafc65ec1749647dcebef8ff5ea2b3}{00006}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_ae3bafc65ec1749647dcebef8ff5ea2b3}{CFiniteStateMachine::\string~CFiniteStateMachine}}()}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00007}00007\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_aedf1950e28e2d34dd9ae59eb1478e7dd}{removeAllStates}}();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00009}00009\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00011}\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_ad5b9c75d0f791a00704a0a6e19031b9b}{00011}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_ad5b9c75d0f791a00704a0a6e19031b9b}{CFiniteStateMachine::update}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ currently\ set\ state}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ std::map<std::string,\ CFiniteStateBase*>::iterator\ it\ =\ \_mmapStates.find(\_mstrCurrentState);}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \_mstrCurrentState\ might\ not\ be\ set,\ aka\ empty}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \_mmapStates.end())}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>second-\/>onActive(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00020}\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a09a913f7925bf6e3a847e4e331a4b1d2}{00020}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a09a913f7925bf6e3a847e4e331a4b1d2}{CFiniteStateMachine::switchToState}}(\textcolor{keyword}{const}\ std::string\&\ strStateName)}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ named\ state}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ std::map<std::string,\ CFiniteStateBase*>::iterator\ it\ =\ \_mmapStates.find(strStateName);}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(it\ ==\ \_mmapStates.end(),\ \textcolor{stringliteral}{"{}CFiniteStateMachine::switchToState(\(\backslash\)"{}"{}}\ +\ strStateName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{})\ failed.\ State\ name\ doesn't\ exist."{}});}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ currently\ set\ state}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ std::map<std::string,\ CFiniteStateBase*>::iterator\ itCurrentState\ =\ \_mmapStates.find(\_mstrCurrentState);}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ states\ are\ the\ same,\ do\ nothing.}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ itCurrentState)}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \_mstrCurrentState\ might\ not\ be\ set,\ aka\ empty}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (itCurrentState\ !=\ \_mmapStates.end())}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ itCurrentState-\/>second-\/>onExit();\ \ \ \textcolor{comment}{//\ Exit\ current\ state}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Enter\ new\ state}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ it-\/>second-\/>onEnter();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ new\ state\ to\ currently\ set\ state}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \_mstrCurrentState\ =\ strStateName;}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00046}\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a07f07c429b9732de9bc1e2f9fd289f50}{00046}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a07f07c429b9732de9bc1e2f9fd289f50}{CFiniteStateMachine::addState}}(\textcolor{keyword}{const}\ std::string\&\ strStateName,\ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_base}{CFiniteStateBase}}*\ pState)}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ std::map<std::string,\ CFiniteStateBase*>::iterator\ it\ =\ \_mmapStates.find(strStateName);}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(it\ !=\ \_mmapStates.end(),\ \textcolor{stringliteral}{"{}CFiniteStateMachine::addState(\(\backslash\)"{}"{}}\ +\ strStateName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{})\ failed.\ State\ name\ already\ exists."{}});}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(pState,\ \textcolor{stringliteral}{"{}CFiniteStateMachine::addState(\(\backslash\)"{}"{}}\ +\ strStateName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{})\ failed.\ The\ given\ state\ pointer\ was\ 0."{}});}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \_mmapStates[strStateName]\ =\ pState;}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00054}\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a1bdf5a8bd791806e5374b422a1ffb742}{00054}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a1bdf5a8bd791806e5374b422a1ffb742}{CFiniteStateMachine::removeState}}(\textcolor{keyword}{const}\ std::string\&\ strStateName)}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ std::map<std::string,\ CFiniteStateBase*>::iterator\ it\ =\ \_mmapStates.find(strStateName);}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(it\ ==\ \_mmapStates.end(),\ \textcolor{stringliteral}{"{}CFiniteStateMachine::removeState(\(\backslash\)"{}"{}}\ +\ strStateName\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{})\ failed.\ State\ name\ doesn't\ exist."{}});}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ this\ is\ the\ currently\ set\ state,\ call\ it's\ onExit\ method}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mstrCurrentState\ ==\ it-\/>first)}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>second-\/>onExit();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \_mstrCurrentState.clear();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \_mmapStates.erase(it);}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00070}\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a586d7a3bf74b802e0f680b43796fbab4}{00070}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a586d7a3bf74b802e0f680b43796fbab4}{CFiniteStateMachine::getStateExists}}(\textcolor{keyword}{const}\ std::string\&\ strStateName)}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ std::map<std::string,\ CFiniteStateBase*>::iterator\ it\ =\ \_mmapStates.find(strStateName);}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (it\ !=\ \_mmapStates.end());}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00076}\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_aedf1950e28e2d34dd9ae59eb1478e7dd}{00076}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_aedf1950e28e2d34dd9ae59eb1478e7dd}{CFiniteStateMachine::removeAllStates}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ std::map<std::string,\ CFiniteStateBase*>::iterator\ it\ =\ \_mmapStates.begin();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ !=\ \_mmapStates.end())}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ this\ is\ the\ currently\ set\ state,\ call\ it's\ onExit\ method}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mstrCurrentState\ ==\ it-\/>first)}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>second-\/>onExit();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mstrCurrentState.clear();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \_mmapStates.erase(it);}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ \_mmapStates.begin();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \_mmapStates.clear();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00095}\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a6c389e01544f687b047696c18c72aef6}{00095}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a6c389e01544f687b047696c18c72aef6}{CFiniteStateMachine::getNumberStates}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00096}00096\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})\_mmapStates.size();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00100}\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a20f7752a025cc2848d99c01a7d52ba9b}{00100}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_base}{CFiniteStateBase}}*\ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a20f7752a025cc2848d99c01a7d52ba9b}{CFiniteStateMachine::getState}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiIndex)}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00101}00101\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(uiIndex\ >=\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int})\_mmapStates.size(),\ \textcolor{stringliteral}{"{}CFiniteStateMachine::getState()\ failed.\ Given\ invalid\ index."{}});}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ std::map<std::string,\ CFiniteStateBase*>::iterator\ it\ =\ \_mmapStates.begin();}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (uiCount\ <\ uiIndex)}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ uiCount++;}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ it++;}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00113}\mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_ad388532ce547168d9bec97320fa87334}{00113}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_base}{CFiniteStateBase}}*\ \mbox{\hyperlink{class_d_c_l_1_1_c_finite_state_machine_a20f7752a025cc2848d99c01a7d52ba9b}{CFiniteStateMachine::getState}}(\textcolor{keyword}{const}\ std::string\ strStateName)}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00114}00114\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ std::map<std::string,\ CFiniteStateBase*>::iterator\ it\ =\ \_mmapStates.find(strStateName);}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(it\ ==\ \_mmapStates.end(),\ \textcolor{stringliteral}{"{}CFiniteStateMachine::getState()\ failed.\ "{}}\ +\ strStateName\ +\ \textcolor{stringliteral}{"{}\ couldn't\ be\ found."{}});}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_finite_state_machine_8cpp_source_l00120}00120\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+
+\end{DoxyCode}

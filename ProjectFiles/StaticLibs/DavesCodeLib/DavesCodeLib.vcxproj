@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e49fc452-5602-47fb-8a24-20dae1921ce5}</ProjectGuid>
+    <RootNamespace>DavesCodeLib</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Output\StaticLibs\</OutDir>
+    <IntDir>$(SolutionDir)BuildTemp\StaticLibs\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_DEBUG</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Output\StaticLibs\</OutDir>
+    <IntDir>$(SolutionDir)BuildTemp\StaticLibs\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProjectFiles\DynamicLibs\SDL3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(SolutionDir)ProjectFiles\DynamicLibs\SDL3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ArtificialIntelligence\FiniteStateMachine.h" />
+    <ClInclude Include="ArtificialIntelligence\GeneticAlgorithm.h" />
+    <ClInclude Include="ArtificialIntelligence\NeuralNetFeedForward.h" />
+    <ClInclude Include="Audio\AudioManager.h" />
+    <ClInclude Include="Audio\AudioSample.h" />
+    <ClInclude Include="Core\Colourf.h" />
+    <ClInclude Include="Core\Colouruc.h" />
+    <ClInclude Include="Core\Exceptions.h" />
+    <ClInclude Include="Core\Logging.h" />
+    <ClInclude Include="Core\Multithreading.h" />
+    <ClInclude Include="Core\Profiler.h" />
+    <ClInclude Include="Core\Singleton.h" />
+    <ClInclude Include="Core\StringUtils.h" />
+    <ClInclude Include="Core\Timer.h" />
+    <ClInclude Include="Core\TimerMinimal.h" />
+    <ClInclude Include="Core\Utilities.h" />
+    <ClInclude Include="DavesCodeLibrary.h" />
+    <ClInclude Include="Files\FileManager.h" />
+    <ClInclude Include="Files\FileMemory.h" />
+    <ClInclude Include="Image\Image.h" />
+    <ClInclude Include="Image\ImageAtlas.h" />
+    <ClInclude Include="Image\stb_image.h" />
+    <ClInclude Include="Image\stb_image_write.h" />
+    <ClInclude Include="Math\AABB.h" />
+    <ClInclude Include="Math\Frustum.h" />
+    <ClInclude Include="Math\Matrix.h" />
+    <ClInclude Include="Math\Plane.h" />
+    <ClInclude Include="Math\Quaternion.h" />
+    <ClInclude Include="Math\Rect.h" />
+    <ClInclude Include="Math\Vector2f.h" />
+    <ClInclude Include="Math\Vector3f.h" />
+    <ClInclude Include="Math\Vector4f.h" />
+    <ClInclude Include="NewFileTemplate.h" />
+    <ClInclude Include="RayTracer\Ray.h" />
+    <ClInclude Include="SpatialPartitioning\OctTree.h" />
+    <ClInclude Include="SpatialPartitioning\OctTreeEntity.h" />
+    <ClInclude Include="SpatialPartitioning\OctTreeNode.h" />
+    <ClInclude Include="SpatialPartitioning\QuadTree.h" />
+    <ClInclude Include="SpatialPartitioning\QuadTreeEntity.h" />
+    <ClInclude Include="SpatialPartitioning\QuadTreeNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ArtificialIntelligence\FiniteStateMachine.cpp" />
+    <ClCompile Include="ArtificialIntelligence\GeneticAlgorithm.cpp" />
+    <ClCompile Include="ArtificialIntelligence\NeuralNetFeedForward.cpp" />
+    <ClCompile Include="Audio\AudioManager.cpp" />
+    <ClCompile Include="Audio\AudioSample.cpp" />
+    <ClCompile Include="Core\Colourf.cpp" />
+    <ClCompile Include="Core\Colouruc.cpp" />
+    <ClCompile Include="Core\Exceptions.cpp" />
+    <ClCompile Include="Core\Logging.cpp" />
+    <ClCompile Include="Core\Multithreading.cpp" />
+    <ClCompile Include="Core\Profiler.cpp" />
+    <ClCompile Include="Core\StringUtils.cpp" />
+    <ClCompile Include="Core\Timer.cpp" />
+    <ClCompile Include="Core\TimerMinimal.cpp" />
+    <ClCompile Include="Core\Utilities.cpp" />
+    <ClCompile Include="DavesCodeLibrary.cpp" />
+    <ClCompile Include="Files\FileManager.cpp" />
+    <ClCompile Include="Files\FileMemory.cpp" />
+    <ClCompile Include="Image\Image.cpp" />
+    <ClCompile Include="Image\ImageAtlas.cpp" />
+    <ClCompile Include="Math\AABB.cpp" />
+    <ClCompile Include="Math\Frustum.cpp" />
+    <ClCompile Include="Math\Matrix.cpp" />
+    <ClCompile Include="Math\Plane.cpp" />
+    <ClCompile Include="Math\Quaternion.cpp" />
+    <ClCompile Include="Math\Rect.cpp" />
+    <ClCompile Include="Math\Vector2f.cpp" />
+    <ClCompile Include="Math\Vector3f.cpp" />
+    <ClCompile Include="Math\Vector4f.cpp" />
+    <ClCompile Include="NewFileTemplate.cpp" />
+    <ClCompile Include="RayTracer\Ray.cpp" />
+    <ClCompile Include="SpatialPartitioning\OctTree.cpp" />
+    <ClCompile Include="SpatialPartitioning\OctTreeEntity.cpp" />
+    <ClCompile Include="SpatialPartitioning\OctTreeNode.cpp" />
+    <ClCompile Include="SpatialPartitioning\QuadTree.cpp" />
+    <ClCompile Include="SpatialPartitioning\QuadTreeEntity.cpp" />
+    <ClCompile Include="SpatialPartitioning\QuadTreeNode.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

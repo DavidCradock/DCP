@@ -1,0 +1,91 @@
+\doxysection{DCL\+::CNeuron Class Reference}
+\hypertarget{class_d_c_l_1_1_c_neuron}{}\label{class_d_c_l_1_1_c_neuron}\index{DCL::CNeuron@{DCL::CNeuron}}
+
+
+A neuron of a neural network.  
+
+
+
+
+{\ttfamily \#include $<$Neural\+Net\+Feed\+Forward.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_neuron_a517f3727fbdfadac0062ec1e937cfd5f}{CNeuron}} (int i\+Num\+Inputs)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_d_c_l_1_1_c_neuron_a905939ded9054f11259d9113582444b5}{mvec\+Input\+Weights}}
+\begin{DoxyCompactList}\small\item\em Holds the weight values for each of the inputs this neuron has and also holds the bias of the neuron at the end of the vector. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_d_c_l_1_1_c_neuron_a495aac50c87698881ac92010bafab3a6}{mi\+Num\+Inputs}}
+\begin{DoxyCompactList}\small\item\em This holds the number of inputs and weights this neuron has. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A neuron of a neural network. 
+
+It represents a single neuron and holds the weights for each input into the neuron as well as the neuron\textquotesingle{}s bias. 
+
+Definition at line \mbox{\hyperlink{_neural_net_feed_forward_8h_source_l00017}{17}} of file \mbox{\hyperlink{_neural_net_feed_forward_8h_source}{Neural\+Net\+Feed\+Forward.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_neuron_a517f3727fbdfadac0062ec1e937cfd5f}\index{DCL::CNeuron@{DCL::CNeuron}!CNeuron@{CNeuron}}
+\index{CNeuron@{CNeuron}!DCL::CNeuron@{DCL::CNeuron}}
+\doxysubsubsection{\texorpdfstring{CNeuron()}{CNeuron()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_neuron_a517f3727fbdfadac0062ec1e937cfd5f} 
+DCL\+::\+CNeuron\+::\+CNeuron (\begin{DoxyParamCaption}\item[{int}]{i\+Num\+Inputs}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Num\+Inputs} & The number of inputs this neuron has.\\
+\hline
+\end{DoxyParams}
+Sets the number of inputs this neuron has, creates each neuron and bias value for the neuron and sets them all to have random values between -\/1 and 1 
+
+Definition at line \mbox{\hyperlink{_neural_net_feed_forward_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_neural_net_feed_forward_8cpp_source}{Neural\+Net\+Feed\+Forward.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_d_c_l_1_1_c_neuron_a495aac50c87698881ac92010bafab3a6}\index{DCL::CNeuron@{DCL::CNeuron}!miNumInputs@{miNumInputs}}
+\index{miNumInputs@{miNumInputs}!DCL::CNeuron@{DCL::CNeuron}}
+\doxysubsubsection{\texorpdfstring{miNumInputs}{miNumInputs}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_neuron_a495aac50c87698881ac92010bafab3a6} 
+int DCL\+::\+CNeuron\+::mi\+Num\+Inputs}
+
+
+
+This holds the number of inputs and weights this neuron has. 
+
+It actually has the number of inputs + 1, as we need an additional weight for the bias of the neuron. We could just call vec\+Inputs\+Weights.\+size(), but for speed purposes, we store the value here. 
+
+Definition at line \mbox{\hyperlink{_neural_net_feed_forward_8h_source_l00037}{37}} of file \mbox{\hyperlink{_neural_net_feed_forward_8h_source}{Neural\+Net\+Feed\+Forward.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_neuron_a905939ded9054f11259d9113582444b5}\index{DCL::CNeuron@{DCL::CNeuron}!mvecInputWeights@{mvecInputWeights}}
+\index{mvecInputWeights@{mvecInputWeights}!DCL::CNeuron@{DCL::CNeuron}}
+\doxysubsubsection{\texorpdfstring{mvecInputWeights}{mvecInputWeights}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_neuron_a905939ded9054f11259d9113582444b5} 
+std\+::vector$<$double$>$ DCL\+::\+CNeuron\+::mvec\+Input\+Weights}
+
+
+
+Holds the weight values for each of the inputs this neuron has and also holds the bias of the neuron at the end of the vector. 
+
+
+
+Definition at line \mbox{\hyperlink{_neural_net_feed_forward_8h_source_l00029}{29}} of file \mbox{\hyperlink{_neural_net_feed_forward_8h_source}{Neural\+Net\+Feed\+Forward.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Artificial\+Intelligence/\mbox{\hyperlink{_neural_net_feed_forward_8h}{Neural\+Net\+Feed\+Forward.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Artificial\+Intelligence/Neural\+Net\+Feed\+Forward.\+cpp\end{DoxyCompactItemize}

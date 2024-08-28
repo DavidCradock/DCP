@@ -1,0 +1,390 @@
+\doxysection{DCL\+::CRenderer\+Open\+GL Class Reference}
+\hypertarget{class_d_c_l_1_1_c_renderer_open_g_l}{}\label{class_d_c_l_1_1_c_renderer_open_g_l}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+Inheritance diagram for DCL\+::CRenderer\+Open\+GL\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_c_l_1_1_c_renderer_open_g_l}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_a3e3f846fd219eb247415cc9c35ac3510}{initialise}} (unsigned int i\+Window\+Width, unsigned int i\+Window\+Height, const std\+::string \&str\+Window\+Title, bool b\+Fullscreen)
+\begin{DoxyCompactList}\small\item\em Initialise a window with the graphics API all hooked up and ready to go. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_ae1828a8d508247e108a3f7f9974677df}{shutdown}} (void)
+\begin{DoxyCompactList}\small\item\em Shutdown and close the API and window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_a35981db80f547354c04c16f0760fb632}{blend\+Disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable blending. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_aa47da12293337e84d14b5de061a20b98}{blend\+Enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable blending. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_a0e8fe2eaef37728b4e07d25f2fd98419}{blend\+Function\+\_\+\+Src\+Alpha\+\_\+\+One}} (void)
+\begin{DoxyCompactList}\small\item\em Set blending mode to Source\+Alpha, One. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_a9add205852f7ac439845f9bc65e3692b}{blend\+Function\+\_\+\+Src\+Alpha\+\_\+\+One\+Minus\+Src\+Alpha}} (void)
+\begin{DoxyCompactList}\small\item\em Set blending mode to Source\+Alpha, One\+Minus\+Src\+Alpha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_ab3cdbe766bfdbfcec06ca982acf8d78a}{cull\+Face\+Anti\+Clockwise}} (void)
+\begin{DoxyCompactList}\small\item\em Set culling of anti clockwise faces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_ae73a77142868efc05ca34068a0714589}{cull\+Face\+Clockwise}} (void)
+\begin{DoxyCompactList}\small\item\em Set culling of clockwise faces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_a4acf31ce95adf3712f530da0f38b62b8}{cull\+Face\+Disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable culling of faces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_a69b583f64e9e8901ef16be16306fb85c}{cull\+Face\+Enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable culling of faces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_af1e08828cbbb7bbbd080aa8a6da422ee}{depth\+Test\+Disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable depth testing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_aa84dcffcf74203422740ab335e0e9f83}{depth\+Test\+Enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable depth testing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_af80ad2855c386808a9a50b20ead4225c}{pixels\+Read}} (int i\+PositionX, int i\+PositionY, int i\+Width, int i\+Height, void \texorpdfstring{$\ast$}{*}pixels)
+\begin{DoxyCompactList}\small\item\em Read pixels from the currently set "{}back buffer"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_a46fb7f058228a1ea8a8a356f7685bbc7}{pixels\+Write}} (int i\+PositionX, int i\+PositionY, int i\+Width, int i\+Height, void \texorpdfstring{$\ast$}{*}pixels)
+\begin{DoxyCompactList}\small\item\em Write pixels from the currently set "{}back buffer"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_adf4820583634d65fa16879c05495a2aa}{scissor\+Test}} (int i\+PositionX, int i\+PositionY, int i\+Width, int i\+Height)
+\begin{DoxyCompactList}\small\item\em Set parameters for scissor test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_a42ed48867e9db85e26cd9cc13e1904fb}{scissor\+Test\+Disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable scissor testing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_open_g_l_a3a67e49bf7e8b6468a0522247e6b6ec2}{scissor\+Test\+Enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable scissor testing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8h_source_l00013}{13}} of file \mbox{\hyperlink{_renderer_open_g_l_8h_source}{Renderer\+Open\+GL.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a65d802358d32943398b2f14cd4eee20f}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!CRendererOpenGL@{CRendererOpenGL}}
+\index{CRendererOpenGL@{CRendererOpenGL}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{CRendererOpenGL()}{CRendererOpenGL()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a65d802358d32943398b2f14cd4eee20f} 
+DCL\+::\+CRenderer\+Open\+GL\+::\+CRenderer\+Open\+GL (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a3d332280f481dc2ba7f040d6d258ad59}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!````~CRendererOpenGL@{\texorpdfstring{$\sim$}{\string~}CRendererOpenGL}}
+\index{````~CRendererOpenGL@{\texorpdfstring{$\sim$}{\string~}CRendererOpenGL}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CRendererOpenGL()}{\string~CRendererOpenGL()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a3d332280f481dc2ba7f040d6d258ad59} 
+DCL\+::\+CRenderer\+Open\+GL\+::\texorpdfstring{$\sim$}{\string~}\+CRenderer\+Open\+GL (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a35981db80f547354c04c16f0760fb632}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!blendDisable@{blendDisable}}
+\index{blendDisable@{blendDisable}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{blendDisable()}{blendDisable()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a35981db80f547354c04c16f0760fb632} 
+void DCL\+::\+CRenderer\+Open\+GL\+::blend\+Disable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Disable blending. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_ac197ea66bdebc261bc124c73877da8ab}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_aa47da12293337e84d14b5de061a20b98}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!blendEnable@{blendEnable}}
+\index{blendEnable@{blendEnable}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{blendEnable()}{blendEnable()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_aa47da12293337e84d14b5de061a20b98} 
+void DCL\+::\+CRenderer\+Open\+GL\+::blend\+Enable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enable blending. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_a33ef0c3b07953a2987eb1544149df01c}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a0e8fe2eaef37728b4e07d25f2fd98419}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!blendFunction\_SrcAlpha\_One@{blendFunction\_SrcAlpha\_One}}
+\index{blendFunction\_SrcAlpha\_One@{blendFunction\_SrcAlpha\_One}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{blendFunction\_SrcAlpha\_One()}{blendFunction\_SrcAlpha\_One()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a0e8fe2eaef37728b4e07d25f2fd98419} 
+void DCL\+::\+CRenderer\+Open\+GL\+::blend\+Function\+\_\+\+Src\+Alpha\+\_\+\+One (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set blending mode to Source\+Alpha, One. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_a6869bd41a54311b78f6bc7ff6aaa5361}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a9add205852f7ac439845f9bc65e3692b}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!blendFunction\_SrcAlpha\_OneMinusSrcAlpha@{blendFunction\_SrcAlpha\_OneMinusSrcAlpha}}
+\index{blendFunction\_SrcAlpha\_OneMinusSrcAlpha@{blendFunction\_SrcAlpha\_OneMinusSrcAlpha}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{blendFunction\_SrcAlpha\_OneMinusSrcAlpha()}{blendFunction\_SrcAlpha\_OneMinusSrcAlpha()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a9add205852f7ac439845f9bc65e3692b} 
+void DCL\+::\+CRenderer\+Open\+GL\+::blend\+Function\+\_\+\+Src\+Alpha\+\_\+\+One\+Minus\+Src\+Alpha (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set blending mode to Source\+Alpha, One\+Minus\+Src\+Alpha. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_a723ce86b6f889f90f19e328c88328b4e}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_ab3cdbe766bfdbfcec06ca982acf8d78a}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!cullFaceAntiClockwise@{cullFaceAntiClockwise}}
+\index{cullFaceAntiClockwise@{cullFaceAntiClockwise}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{cullFaceAntiClockwise()}{cullFaceAntiClockwise()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_ab3cdbe766bfdbfcec06ca982acf8d78a} 
+void DCL\+::\+CRenderer\+Open\+GL\+::cull\+Face\+Anti\+Clockwise (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set culling of anti clockwise faces. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_a110a43c0d454516e13fac37df7c773a2}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_ae73a77142868efc05ca34068a0714589}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!cullFaceClockwise@{cullFaceClockwise}}
+\index{cullFaceClockwise@{cullFaceClockwise}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{cullFaceClockwise()}{cullFaceClockwise()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_ae73a77142868efc05ca34068a0714589} 
+void DCL\+::\+CRenderer\+Open\+GL\+::cull\+Face\+Clockwise (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set culling of clockwise faces. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_aa6baffb9aab7025857c5bb0fb984a310}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a4acf31ce95adf3712f530da0f38b62b8}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!cullFaceDisable@{cullFaceDisable}}
+\index{cullFaceDisable@{cullFaceDisable}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{cullFaceDisable()}{cullFaceDisable()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a4acf31ce95adf3712f530da0f38b62b8} 
+void DCL\+::\+CRenderer\+Open\+GL\+::cull\+Face\+Disable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Disable culling of faces. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_a962b6702de917488c6fd06d3f3c53cc2}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a69b583f64e9e8901ef16be16306fb85c}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!cullFaceEnable@{cullFaceEnable}}
+\index{cullFaceEnable@{cullFaceEnable}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{cullFaceEnable()}{cullFaceEnable()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a69b583f64e9e8901ef16be16306fb85c} 
+void DCL\+::\+CRenderer\+Open\+GL\+::cull\+Face\+Enable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enable culling of faces. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_a35b91887520610fa2219abb49d89609a}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_af1e08828cbbb7bbbd080aa8a6da422ee}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!depthTestDisable@{depthTestDisable}}
+\index{depthTestDisable@{depthTestDisable}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{depthTestDisable()}{depthTestDisable()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_af1e08828cbbb7bbbd080aa8a6da422ee} 
+void DCL\+::\+CRenderer\+Open\+GL\+::depth\+Test\+Disable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Disable depth testing. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_ab2ea3dc3da57f6cd625566489fac781f}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_aa84dcffcf74203422740ab335e0e9f83}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!depthTestEnable@{depthTestEnable}}
+\index{depthTestEnable@{depthTestEnable}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{depthTestEnable()}{depthTestEnable()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_aa84dcffcf74203422740ab335e0e9f83} 
+void DCL\+::\+CRenderer\+Open\+GL\+::depth\+Test\+Enable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enable depth testing. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_a0a76cd7f928d673154162a7de3b9ae88}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a3e3f846fd219eb247415cc9c35ac3510}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!initialise@{initialise}}
+\index{initialise@{initialise}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{initialise()}{initialise()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a3e3f846fd219eb247415cc9c35ac3510} 
+void DCL\+::\+CRenderer\+Open\+GL\+::initialise (\begin{DoxyParamCaption}\item[{unsigned int}]{i\+Window\+Width}{, }\item[{unsigned int}]{i\+Window\+Height}{, }\item[{const std\+::string \&}]{str\+Window\+Title}{, }\item[{bool}]{b\+Fullscreen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialise a window with the graphics API all hooked up and ready to go. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_a01fe427ef3f3394ec90e2e8eebac62a4}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_af80ad2855c386808a9a50b20ead4225c}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!pixelsRead@{pixelsRead}}
+\index{pixelsRead@{pixelsRead}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{pixelsRead()}{pixelsRead()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_af80ad2855c386808a9a50b20ead4225c} 
+void DCL\+::\+CRenderer\+Open\+GL\+::pixels\+Read (\begin{DoxyParamCaption}\item[{int}]{i\+PositionX}{, }\item[{int}]{i\+PositionY}{, }\item[{int}]{i\+Width}{, }\item[{int}]{i\+Height}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{pixels}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read pixels from the currently set "{}back buffer"{}. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_ae8113f9d7beeb6986c3fb11c8d87560a}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a46fb7f058228a1ea8a8a356f7685bbc7}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!pixelsWrite@{pixelsWrite}}
+\index{pixelsWrite@{pixelsWrite}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{pixelsWrite()}{pixelsWrite()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a46fb7f058228a1ea8a8a356f7685bbc7} 
+void DCL\+::\+CRenderer\+Open\+GL\+::pixels\+Write (\begin{DoxyParamCaption}\item[{int}]{i\+PositionX}{, }\item[{int}]{i\+PositionY}{, }\item[{int}]{i\+Width}{, }\item[{int}]{i\+Height}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{pixels}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write pixels from the currently set "{}back buffer"{}. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_a9906eb01e39177291133e6200cb2a52b}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_adf4820583634d65fa16879c05495a2aa}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!scissorTest@{scissorTest}}
+\index{scissorTest@{scissorTest}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{scissorTest()}{scissorTest()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_adf4820583634d65fa16879c05495a2aa} 
+void DCL\+::\+CRenderer\+Open\+GL\+::scissor\+Test (\begin{DoxyParamCaption}\item[{int}]{i\+PositionX}{, }\item[{int}]{i\+PositionY}{, }\item[{int}]{i\+Width}{, }\item[{int}]{i\+Height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set parameters for scissor test. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_ac36e2a50e6c242ec7e56148d1ee9456a}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a42ed48867e9db85e26cd9cc13e1904fb}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!scissorTestDisable@{scissorTestDisable}}
+\index{scissorTestDisable@{scissorTestDisable}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{scissorTestDisable()}{scissorTestDisable()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a42ed48867e9db85e26cd9cc13e1904fb} 
+void DCL\+::\+CRenderer\+Open\+GL\+::scissor\+Test\+Disable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Disable scissor testing. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_ae000a09f081e4415caf1a29a84db3a7d}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_a3a67e49bf7e8b6468a0522247e6b6ec2}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!scissorTestEnable@{scissorTestEnable}}
+\index{scissorTestEnable@{scissorTestEnable}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{scissorTestEnable()}{scissorTestEnable()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_a3a67e49bf7e8b6468a0522247e6b6ec2} 
+void DCL\+::\+CRenderer\+Open\+GL\+::scissor\+Test\+Enable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enable scissor testing. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_aadba47cb5a237ae02a4b1bd6bde53666}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_renderer_open_g_l_ae1828a8d508247e108a3f7f9974677df}\index{DCL::CRendererOpenGL@{DCL::CRendererOpenGL}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!DCL::CRendererOpenGL@{DCL::CRendererOpenGL}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_renderer_open_g_l_ae1828a8d508247e108a3f7f9974677df} 
+void DCL\+::\+CRenderer\+Open\+GL\+::shutdown (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Shutdown and close the API and window. 
+
+
+
+Implements \mbox{\hyperlink{class_d_c_l_1_1_c_renderer_base_a6c831232b08d7c06b2dc9ba94d7ec5f4}{DCL\+::\+CRenderer\+Base}}.
+
+
+
+Definition at line \mbox{\hyperlink{_renderer_open_g_l_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_renderer_open_g_l_8cpp_source}{Renderer\+Open\+GL.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Renderers/\mbox{\hyperlink{_renderer_open_g_l_8h}{Renderer\+Open\+GL.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Renderers/Renderer\+Open\+GL.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,66 @@
+\doxysection{Daves\+Code\+Library.\+h}
+\hypertarget{_daves_code_library_8h_source}{}\label{_daves_code_library_8h_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/DavesCodeLibrary.h@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/DavesCodeLibrary.h}}
+\mbox{\hyperlink{_daves_code_library_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00012}00012\ \textcolor{preprocessor}{\#ifndef\ DAVESCODELIBRARY\_H}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00013}00013\ \textcolor{preprocessor}{\#define\ DAVESCODELIBRARY\_H}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00015}00015\ \textcolor{comment}{//\ Using\ Visual\ Studio\ library\ linking\ preprocessor\ to\ link\ some\ static\ libs...}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00016}00016\ \textcolor{comment}{//\#pragma\ comment(lib,\ "{}OpenGL32.lib"{})}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00017}00017\ \textcolor{comment}{//\#pragma\ comment(lib,\ "{}GLu32.lib"{})}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00018}00018\ \textcolor{comment}{//\#pragma\ comment(lib,\ "{}dinput8.lib"{})}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00019}00019\ \textcolor{comment}{//\#pragma\ comment(lib,\ "{}dxguid.lib"{})}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00020}00020\ \textcolor{comment}{//\#pragma\ comment(lib,\ "{}psapi.lib"{})}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00022}00022\ \textcolor{comment}{//\ SDL2\ and\ SDL\_Mixer}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00023}00023\ \textcolor{preprocessor}{\#pragma\ comment(lib,\ "{}../../../Output/DynamicLibs/SDL3/x64/SDL2-\/2.30.6/Debug/SDL3.lib"{})}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00024}00024\ \textcolor{preprocessor}{\#pragma\ comment(lib,\ "{}../../external\_libs/SDL2-\/2.30.6/lib/x64/SDL2\_mixer.lib"{})}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00025}00025\ \textcolor{preprocessor}{\#pragma\ comment(lib,\ "{}../../external\_libs/SDL2-\/2.30.6/lib/x64/SDL2main.lib"{})}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_finite_state_machine_8h}{ArtificialIntelligence/FiniteStateMachine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_genetic_algorithm_8h}{ArtificialIntelligence/GeneticAlgorithm.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_neural_net_feed_forward_8h}{ArtificialIntelligence/NeuralNetFeedForward.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_audio_manager_8h}{Audio/AudioManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_audio_sample_8h}{Audio/AudioSample.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_colourf_8h}{Core/Colourf.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_colouruc_8h}{Core/Colouruc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_exceptions_8h}{Core/Exceptions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logging_8h}{Core/Logging.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00042}00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_multithreading_8h}{Core/Multithreading.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00043}00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_profiler_8h}{Core/Profiler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00044}00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_singleton_8h}{Core/Singleton.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00045}00045\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_string_utils_8h}{Core/StringUtils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00046}00046\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_timer_8h}{Core/Timer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00047}00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_timer_minimal_8h}{Core/TimerMinimal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00048}00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_utilities_8h}{Core/Utilities.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00049}00049\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_manager_8h}{Files/FileManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00050}00050\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_memory_8h}{Files/FileMemory.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00051}00051\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_8h}{Image/Image.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00052}00052\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_image_atlas_8h}{Image/ImageAtlas.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00053}00053\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_a_a_b_b_8h}{Math/AABB.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00054}00054\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_frustum_8h}{Math/Frustum.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00055}00055\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_matrix_8h}{Math/Matrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00056}00056\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plane_8h}{Math/Plane.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00057}00057\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_quaternion_8h}{Math/Quaternion.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00058}00058\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_rect_8h}{Math/Rect.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00059}00059\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector2f_8h}{Math/Vector2f.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00060}00060\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector3f_8h}{Math/Vector3f.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00061}00061\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector4f_8h}{Math/Vector4f.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00062}00062\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ray_8h}{RayTracer/Ray.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00063}00063\ \textcolor{comment}{//\#include\ "{}Renderers/RendererBase.h"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00064}00064\ \textcolor{comment}{//\#include\ "{}Renderers/RendererManager.h"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00065}00065\ \textcolor{comment}{//\#include\ "{}Renderers/RendererOpenGL.h"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00066}00066\ \textcolor{comment}{//\#include\ "{}Renderers/RendererVulkan.h"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00067}00067\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_oct_tree_8h}{SpatialPartitioning/octTree.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00068}00068\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_oct_tree_entity_8h}{SpatialPartitioning/octTreeEntity.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00069}00069\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_oct_tree_node_8h}{SpatialPartitioning/octTreeNode.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00070}00070\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_quad_tree_8h}{SpatialPartitioning/quadTree.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00071}00071\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_quad_tree_entity_8h}{SpatialPartitioning/quadTreeEntity.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00072}00072\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_quad_tree_node_8h}{SpatialPartitioning/quadTreeNode.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_daves_code_library_8h_source_l00074}00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ FILENAME\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\doxysection{Plane.\+cpp}
+\hypertarget{_plane_8cpp_source}{}\label{_plane_8cpp_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Math/Plane.cpp@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Math/Plane.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plane_8h}{Plane.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00005}\mbox{\hyperlink{class_d_c_l_1_1_c_plane_a5a5664868ba12dd6ec1cc2abd592a232}{00005}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_plane_a5a5664868ba12dd6ec1cc2abd592a232}{CPlane::CPlane}}()}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00006}00006\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ \_mvNormal.\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f_abddb79cd08075a1d377598d918410e73}{set}}(0.0f,\ 1.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \_mfDistanceToOrigin\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00009}00009\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00011}\mbox{\hyperlink{class_d_c_l_1_1_c_plane_a15cc3cbaa4b263e16fe1f3d37175df97}{00011}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_plane_a5a5664868ba12dd6ec1cc2abd592a232}{CPlane::CPlane}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}\&\ vNormal,\ \textcolor{keywordtype}{float}\ fDistanceToOrigin)}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \_mvNormal\ =\ vNormal;}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \_mfDistanceToOrigin\ =\ fDistanceToOrigin;}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00017}\mbox{\hyperlink{class_d_c_l_1_1_c_plane_a9acb651f1d3d5b5883b6d62c18ff8c5f}{00017}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_plane_a9acb651f1d3d5b5883b6d62c18ff8c5f}{CPlane::set}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}\&\ vNormal,\ \textcolor{keywordtype}{float}\ fDistanceToOrigin)}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \_mvNormal\ =\ vNormal;}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \_mfDistanceToOrigin\ =\ fDistanceToOrigin;}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00023}\mbox{\hyperlink{class_d_c_l_1_1_c_plane_a6a648f820551008099332ae1b9a6fb15}{00023}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}\ \mbox{\hyperlink{class_d_c_l_1_1_c_plane_a6a648f820551008099332ae1b9a6fb15}{CPlane::getNormal}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00024}00024\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mvNormal;}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00028}\mbox{\hyperlink{class_d_c_l_1_1_c_plane_a87849d5e5dbdbeb7200eb81650780ee3}{00028}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_c_l_1_1_c_plane_a87849d5e5dbdbeb7200eb81650780ee3}{CPlane::getDistanceToOrigin}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00029}00029\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mfDistanceToOrigin;}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00033}\mbox{\hyperlink{class_d_c_l_1_1_c_plane_a989b7027b02e87b52e594415d4a6a1b1}{00033}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_d_c_l_1_1_c_plane_a989b7027b02e87b52e594415d4a6a1b1}{CPlane::getDistanceFromPlane}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_c_l_1_1_c_vector3f}{CVector3f}}\&\ vPoint)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00034}00034\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ returned\ dot\ product\ is...}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ >\ 0\ \ \ \ \ \ vectors\ are\ pointing\ roughly\ in\ same\ direction\ (upto\ 90\ degrees\ apart)}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =\ 0\ \ \ \ \ \ vectors\ are\ perpendicular\ to\ one\ another\ (90\ degrees)}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ <\ 0\ \ \ \ \ \ vectors\ are\ pointing\ in\ opposite\ directions\ (+90\ degrees\ to\ 180\ degrees)}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mvNormal.\mbox{\hyperlink{class_d_c_l_1_1_c_vector3f_a663869ff31b6f3911861f8d2ecb7e3c4}{getDot}}(vPoint)\ -\/\ \_mfDistanceToOrigin;}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plane_8cpp_source_l00041}00041\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+
+\end{DoxyCode}

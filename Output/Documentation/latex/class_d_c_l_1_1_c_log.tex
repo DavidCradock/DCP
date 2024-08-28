@@ -1,0 +1,275 @@
+\doxysection{DCL\+::CLog Class Reference}
+\hypertarget{class_d_c_l_1_1_c_log}{}\label{class_d_c_l_1_1_c_log}\index{DCL::CLog@{DCL::CLog}}
+
+
+Logging of text to a text file.  
+
+
+
+
+{\ttfamily \#include $<$Logging.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_log_a01564a0f3ccde4df91ac46065bf77615}{CLog}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_log_a80598d56065645c31b629abb58222a36}{add}} (const std\+::string \&string)
+\begin{DoxyCompactList}\small\item\em Add text to the log file and entries in memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_log_a1d2d3914007154c46d7c154297ff7e39}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear the log file and all log entries in memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_log_a3653540972d38fdc601920d9f19e4dd4}{delete\+Log\+File}} (void)
+\begin{DoxyCompactList}\small\item\em Deletes the current log file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_log_a4ff6c01be34d498694b20112980f6d6b}{set\+Log\+File\+Name}} (const std\+::string \&str\+Filename="{}log.\+txt"{})
+\begin{DoxyCompactList}\small\item\em Sets the log file name of the log file. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_d_c_l_1_1_c_log_aec810fa6176e0ef2a27f7aa3281e0fbf}{get\+Num\+Entries}} (void) const
+\begin{DoxyCompactList}\small\item\em Return number of entries added via \doxylink{class_d_c_l_1_1_c_log_a80598d56065645c31b629abb58222a36}{add()} \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_d_c_l_1_1_c_log_aab3211186ea1a191333d54b34a6cc463}{get\+Entry\+Text}} (size\+\_\+t entry\+Index) const
+\begin{DoxyCompactList}\small\item\em Returns a log entry\textquotesingle{}s text string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_d_c_l_1_1_c_log_acfdc36c83c257b05e234124ff65a1e6a}{get\+Entry\+Time}} (size\+\_\+t entry\+Index) const
+\begin{DoxyCompactList}\small\item\em Returns a log entry\textquotesingle{}s time it was added since the log file was created as a formatted string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_log_a63db6883a75bbd242279df668a538798}{get\+Entry\+Times}} (size\+\_\+t entry\+Index, float \&f\+Seconds\+Out, int \&i\+Minutes\+Out, int \&i\+Hours\+Out, int \&i\+Days\+Out, int \&i\+Weeks\+Out) const
+\begin{DoxyCompactList}\small\item\em Stores a log entry\textquotesingle{}s time it was added since the log file was created to the passed variables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry}{CLog\+Entry}} \mbox{\hyperlink{class_d_c_l_1_1_c_log_ae4a23a7eb5136c4530c6b9b1b0cbda71}{get\+Entry}} (size\+\_\+t entry\+Index) const
+\begin{DoxyCompactList}\small\item\em Returns a log entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Logging of text to a text file. 
+
+Logging of information to a text file and storage of each added log entry into memory. The default filename used for the log file is "{}log.\+txt"{} but can be changed with \doxylink{class_d_c_l_1_1_c_log_a4ff6c01be34d498694b20112980f6d6b}{set\+Log\+File\+Name()} Example... 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_d_c_l_1_1_c_log_a01564a0f3ccde4df91ac46065bf77615}{CLog}}\ myLog;\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ logging\ object.\ It'll\ create\ an\ empty\ "{}log.txt"{}\ file\ ready\ for\ use.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ If\ we\ wish\ to\ use\ a\ different\ name\ for\ this\ log\ file,\ then...}}
+\DoxyCodeLine{myLog.setLogFileName(\textcolor{stringliteral}{"{}MyNewLogFile.txt"{}});}
+\DoxyCodeLine{\textcolor{comment}{//\ The\ above\ will\ delete\ the\ old\ "{}log.txt"{}\ file\ and\ then\ create\ a\ new\ file\ named\ "{}MyNewLogFile.txt"{},\ ready\ for\ use.}}
+\DoxyCodeLine{\textcolor{comment}{//\ This\ is\ usefull\ if\ we\ wish\ to\ have\ different\ log\ files,\ say\ perhaps\ one\ for\ audio,\ one\ for\ graphics,\ one\ for\ AI\ etc.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Add\ an\ entry\ to\ the\ log\ file...}}
+\DoxyCodeLine{myLog.add(\textcolor{stringliteral}{"{}Some\ text"{}});\ \textcolor{comment}{//\ Text\ to\ be\ added\ to\ the\ log\ entry\ in\ the\ file\ and\ in\ memory}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ All\ previously\ added\ entries\ with\ add()\ are\ stored\ in\ memory\ and\ can\ be\ accessed.}}
+\DoxyCodeLine{\textcolor{comment}{//\ Only\ the\ text\ is\ stored,\ not\ whether\ a\ new\ line\ was\ added,\ nor\ the\ time\ it\ was\ added.}}
+\DoxyCodeLine{\textcolor{comment}{//\ Example\ looping\ through\ these...}}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ iEntry\ =\ 0;\ iEntry\ <\ myLog.getNumEntries();\ iEntry++)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Get\ the\ text\ for\ the\ indexed\ entry}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ If\ iEntry\ is\ out\ of\ bounds,\ an\ exception\ occurs.}}
+\DoxyCodeLine{\ \ \ \ std::string\ strEntryText\ =\ myLog.getEntry(iEntry);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Do\ something\ with\ the\ log\ entry\ text\ here.}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{_logging_8h_source_l00066}{66}} of file \mbox{\hyperlink{_logging_8h_source}{Logging.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_log_a01564a0f3ccde4df91ac46065bf77615}\index{DCL::CLog@{DCL::CLog}!CLog@{CLog}}
+\index{CLog@{CLog}!DCL::CLog@{DCL::CLog}}
+\doxysubsubsection{\texorpdfstring{CLog()}{CLog()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_log_a01564a0f3ccde4df91ac46065bf77615} 
+DCL\+::\+CLog\+::\+CLog (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Sets the log file name to "{}log.\+txt"{} and clears the file. 
+
+Definition at line \mbox{\hyperlink{_logging_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_logging_8cpp_source}{Logging.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_log_a80598d56065645c31b629abb58222a36}\index{DCL::CLog@{DCL::CLog}!add@{add}}
+\index{add@{add}!DCL::CLog@{DCL::CLog}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_log_a80598d56065645c31b629abb58222a36} 
+void DCL\+::\+CLog\+::add (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Add text to the log file and entries in memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Holds the text for this new log entry. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_logging_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_logging_8cpp_source}{Logging.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_log_a1d2d3914007154c46d7c154297ff7e39}\index{DCL::CLog@{DCL::CLog}!clear@{clear}}
+\index{clear@{clear}!DCL::CLog@{DCL::CLog}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_log_a1d2d3914007154c46d7c154297ff7e39} 
+void DCL\+::\+CLog\+::clear (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Clear the log file and all log entries in memory. 
+
+
+
+Definition at line \mbox{\hyperlink{_logging_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{_logging_8cpp_source}{Logging.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_log_a3653540972d38fdc601920d9f19e4dd4}\index{DCL::CLog@{DCL::CLog}!deleteLogFile@{deleteLogFile}}
+\index{deleteLogFile@{deleteLogFile}!DCL::CLog@{DCL::CLog}}
+\doxysubsubsection{\texorpdfstring{deleteLogFile()}{deleteLogFile()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_log_a3653540972d38fdc601920d9f19e4dd4} 
+bool DCL\+::\+CLog\+::delete\+Log\+File (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Deletes the current log file. 
+
+\begin{DoxyReturn}{Returns}
+Whether deletion was successfull.
+\end{DoxyReturn}
+Whatever the currently set log file name is set to, attempts to delete that file. Returns true if the deletion was successfull, else false. 
+
+Definition at line \mbox{\hyperlink{_logging_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{_logging_8cpp_source}{Logging.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_log_ae4a23a7eb5136c4530c6b9b1b0cbda71}\index{DCL::CLog@{DCL::CLog}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!DCL::CLog@{DCL::CLog}}
+\doxysubsubsection{\texorpdfstring{getEntry()}{getEntry()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_log_ae4a23a7eb5136c4530c6b9b1b0cbda71} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_log_entry}{CLog\+Entry}} DCL\+::\+CLog\+::get\+Entry (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{entry\+Index}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a log entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry\+Index} & The index of the entry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The found log entry.
+\end{DoxyReturn}
+If entry\+Index is out of bounds, an exception occurs 
+
+Definition at line \mbox{\hyperlink{_logging_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{_logging_8cpp_source}{Logging.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_log_aab3211186ea1a191333d54b34a6cc463}\index{DCL::CLog@{DCL::CLog}!getEntryText@{getEntryText}}
+\index{getEntryText@{getEntryText}!DCL::CLog@{DCL::CLog}}
+\doxysubsubsection{\texorpdfstring{getEntryText()}{getEntryText()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_log_aab3211186ea1a191333d54b34a6cc463} 
+std\+::string DCL\+::\+CLog\+::get\+Entry\+Text (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{entry\+Index}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a log entry\textquotesingle{}s text string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry\+Index} & The index of the entry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string holding the entry\textquotesingle{}s text.
+\end{DoxyReturn}
+If entry\+Index is out of bounds, an exception occurs 
+
+Definition at line \mbox{\hyperlink{_logging_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_logging_8cpp_source}{Logging.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_log_acfdc36c83c257b05e234124ff65a1e6a}\index{DCL::CLog@{DCL::CLog}!getEntryTime@{getEntryTime}}
+\index{getEntryTime@{getEntryTime}!DCL::CLog@{DCL::CLog}}
+\doxysubsubsection{\texorpdfstring{getEntryTime()}{getEntryTime()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_log_acfdc36c83c257b05e234124ff65a1e6a} 
+std\+::string DCL\+::\+CLog\+::get\+Entry\+Time (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{entry\+Index}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a log entry\textquotesingle{}s time it was added since the log file was created as a formatted string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry\+Index} & The index of the entry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string which represents the time since the log file was created, which the entry was added.
+\end{DoxyReturn}
+If entry\+Index is out of bounds, an exception occurs 
+
+Definition at line \mbox{\hyperlink{_logging_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{_logging_8cpp_source}{Logging.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_log_a63db6883a75bbd242279df668a538798}\index{DCL::CLog@{DCL::CLog}!getEntryTimes@{getEntryTimes}}
+\index{getEntryTimes@{getEntryTimes}!DCL::CLog@{DCL::CLog}}
+\doxysubsubsection{\texorpdfstring{getEntryTimes()}{getEntryTimes()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_log_a63db6883a75bbd242279df668a538798} 
+void DCL\+::\+CLog\+::get\+Entry\+Times (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{entry\+Index}{, }\item[{float \&}]{f\+Seconds\+Out}{, }\item[{int \&}]{i\+Minutes\+Out}{, }\item[{int \&}]{i\+Hours\+Out}{, }\item[{int \&}]{i\+Days\+Out}{, }\item[{int \&}]{i\+Weeks\+Out}{}\end{DoxyParamCaption}) const}
+
+
+
+Stores a log entry\textquotesingle{}s time it was added since the log file was created to the passed variables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em entry\+Index} & \\
+\hline
+\mbox{\texttt{ out}}  & {\em f\+Seconds\+Out} & Holds the number of seconds. \\
+\hline
+\mbox{\texttt{ out}}  & {\em i\+Minutes\+Out} & Holds the number of minutes. \\
+\hline
+\mbox{\texttt{ out}}  & {\em i\+Hours\+Out} & Holds the number of hours. \\
+\hline
+\mbox{\texttt{ out}}  & {\em i\+Days\+Out} & Holds the number of days. \\
+\hline
+\mbox{\texttt{ out}}  & {\em i\+Weeks\+Out} & Holds the number of weeks.\\
+\hline
+\end{DoxyParams}
+If entry\+Index is out of bounds, an exception occurs 
+
+Definition at line \mbox{\hyperlink{_logging_8cpp_source_l00118}{118}} of file \mbox{\hyperlink{_logging_8cpp_source}{Logging.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_log_aec810fa6176e0ef2a27f7aa3281e0fbf}\index{DCL::CLog@{DCL::CLog}!getNumEntries@{getNumEntries}}
+\index{getNumEntries@{getNumEntries}!DCL::CLog@{DCL::CLog}}
+\doxysubsubsection{\texorpdfstring{getNumEntries()}{getNumEntries()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_log_aec810fa6176e0ef2a27f7aa3281e0fbf} 
+size\+\_\+t DCL\+::\+CLog\+::get\+Num\+Entries (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return number of entries added via \doxylink{class_d_c_l_1_1_c_log_a80598d56065645c31b629abb58222a36}{add()} 
+
+\begin{DoxyReturn}{Returns}
+The current number of entries added via \doxylink{class_d_c_l_1_1_c_log_a80598d56065645c31b629abb58222a36}{add()} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_logging_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{_logging_8cpp_source}{Logging.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_log_a4ff6c01be34d498694b20112980f6d6b}\index{DCL::CLog@{DCL::CLog}!setLogFileName@{setLogFileName}}
+\index{setLogFileName@{setLogFileName}!DCL::CLog@{DCL::CLog}}
+\doxysubsubsection{\texorpdfstring{setLogFileName()}{setLogFileName()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_log_a4ff6c01be34d498694b20112980f6d6b} 
+void DCL\+::\+CLog\+::set\+Log\+File\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+Filename}{ = {\ttfamily "{}log.txt"{}}}\end{DoxyParamCaption})}
+
+
+
+Sets the log file name of the log file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Filename} & The filename to use for the log file.\\
+\hline
+\end{DoxyParams}
+Will attempt to delete the current log file by calling \doxylink{class_d_c_l_1_1_c_log_a3653540972d38fdc601920d9f19e4dd4}{delete\+Log\+File()} before creating the newly named one. Also clears the newly named file. 
+
+Definition at line \mbox{\hyperlink{_logging_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{_logging_8cpp_source}{Logging.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/\mbox{\hyperlink{_logging_8h}{Logging.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/Logging.\+cpp\end{DoxyCompactItemize}

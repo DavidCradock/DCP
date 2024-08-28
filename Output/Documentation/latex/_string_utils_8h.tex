@@ -1,0 +1,66 @@
+\doxysection{X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/\+String\+Utils.h File Reference}
+\hypertarget{_string_utils_8h}{}\label{_string_utils_8h}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/StringUtils.h@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/StringUtils.h}}
+
+
+Contains various string utility functions.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_d_c_l}{DCL}}
+\begin{DoxyCompactList}\small\item\em The namespace in which everything within Dave\textquotesingle{}s Code Library is stored inside. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils}{DCL\+::\+String\+Utils}}
+\begin{DoxyCompactList}\small\item\em Contains various functions for messing around with strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wstring \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a7ac150fc723206dac77e136c3e0d8947}{DCL\+::\+String\+Utils\+::string\+To\+Wide}} (const std\+::string \&string)
+\begin{DoxyCompactList}\small\item\em Converts a string to wide string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a735f2e39e4c6ac7b407455934aca20f2}{DCL\+::\+String\+Utils\+::wide\+To\+String}} (const std\+::wstring \&wstring)
+\begin{DoxyCompactList}\small\item\em Converts a wide string to a string. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_af36b57cc542867678af151407667ad0f}{DCL\+::\+String\+Utils\+::get\+Files\+In\+Dir}} (const std\+::string \&str\+Directory, bool b\+Recursive\+Dirs=false)
+\begin{DoxyCompactList}\small\item\em Returns a vector of strings holding each filename stored within the given directory. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a61a75202f694b4c7eb642861a9defac8}{DCL\+::\+String\+Utils\+::get\+Files\+In\+Dir}} (const std\+::string \&str\+Directory, const std\+::string \&ext, bool b\+Recursive\+Dirs=false)
+\begin{DoxyCompactList}\small\item\em Returns a vector of strings holding each filename stored within the given directory which have the given filename extension. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a57f1f9830b219f881224d7dcda91bd32}{DCL\+::\+String\+Utils\+::get\+Dirs\+In\+Dir}} (const std\+::string \&str\+Directory, bool b\+Recursive\+Dirs=false)
+\begin{DoxyCompactList}\small\item\em Returns a vector of strings holding each directory stored within the given directory. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a960d50b591fd1063327d4ef70d68535f}{DCL\+::\+String\+Utils\+::get\+Current\+Directory}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the current directory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aca44d0ea45da9975f46c89d634567163}{DCL\+::\+String\+Utils\+::string\+To\+Lowercase}} (std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Converts the given string to lowercase. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a6486775e1a8eefa2eccd5aa7e7500dd7}{DCL\+::\+String\+Utils\+::add\+Filename\+Extension}} (const std\+::string \&str\+Filename\+Extension, const std\+::string \&str\+Filename)
+\begin{DoxyCompactList}\small\item\em Takes the given filename and filename extension and adds the given filename extension to the end of the given filename and returns the result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a6162f48fbbd42687547b5b2d14b8c0c8}{DCL\+::\+String\+Utils\+::append\+Int}} (std\+::string \&string, int i\+Int)
+\begin{DoxyCompactList}\small\item\em Append an integer to given string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a586a536579a2c7a429778cd8357039e2}{DCL\+::\+String\+Utils\+::append\+UInt}} (std\+::string \&string, unsigned int ui\+Int)
+\begin{DoxyCompactList}\small\item\em Append an integer to given string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_ad61c6262044d65bde479d207b1a23833}{DCL\+::\+String\+Utils\+::append\+Float}} (std\+::string \&string, float f\+Value, unsigned int ui\+Num\+Decimal\+Points=2)
+\begin{DoxyCompactList}\small\item\em Append float to given string with the given number of decimals. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aa9a87126773e76e56baf0f5583b9aaaf}{DCL\+::\+String\+Utils\+::append\+Double}} (std\+::string \&string, double d\+Value, unsigned int ui\+Num\+Decimal\+Points=2)
+\begin{DoxyCompactList}\small\item\em Append double to given string with the given number of decimals. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_af8ee29ad5b8f15a48b8fe4fa7c6a3774}{DCL\+::\+String\+Utils\+::split\+String}} (const std\+::string \&string, const std\+::string \&str\+Split\+Chars="{}\textbackslash{}n"{})
+\begin{DoxyCompactList}\small\item\em Given a string, finds each occurrence of str\+Split\+Chars and returns a vector of strings which contains strings that are either side of the str\+Split\+Chars, with the str\+Split\+Chars removed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aad219e6030fefb779d29e47e5de8cecd}{DCL\+::\+String\+Utils\+::represents\+Number}} (const std\+::string \&string)
+\begin{DoxyCompactList}\small\item\em Returns true if the given string has nothing but digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_ab03bcf3477ad1abe6cc54ef28e4282e0}{DCL\+::\+String\+Utils\+::string\+Write}} (const std\+::string \&str\+String, std\+::ofstream \&file)
+\begin{DoxyCompactList}\small\item\em Writes out a string to an already opened ofstream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a9fdcf957f02524143839348c2d6751a2}{DCL\+::\+String\+Utils\+::string\+Read}} (std\+::string \&str\+String, std\+::ifstream \&file)
+\item 
+std\+::string \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_abba86030f3fdbd94e5d9d24e9c9ea61d}{DCL\+::\+String\+Utils\+::blender\+Anim\+Filename}} (const std\+::string \&str\+Basename="{}image"{}, const std\+::string \&str\+Extension="{}.png"{}, int i\+Frame\+Number=0)
+\begin{DoxyCompactList}\small\item\em Blender animation frame filename helper. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aa0b0f2836534ac187680870ba1295d22}{DCL\+::\+String\+Utils\+::string\+To\+Float}} (const std\+::string \&string)
+\begin{DoxyCompactList}\small\item\em Converts the given string to a float. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a65acb5e82182a51525d69a0212665b3f}{DCL\+::\+String\+Utils\+::string\+To\+Int}} (const std\+::string \&string)
+\begin{DoxyCompactList}\small\item\em Converts the given string to an int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains various string utility functions. 
+
+
+
+Definition in file \mbox{\hyperlink{_string_utils_8h_source}{String\+Utils.\+h}}.
+

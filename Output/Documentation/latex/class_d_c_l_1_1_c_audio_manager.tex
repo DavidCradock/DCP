@@ -1,0 +1,93 @@
+\doxysection{DCL\+::CAudio\+Manager Class Reference}
+\hypertarget{class_d_c_l_1_1_c_audio_manager}{}\label{class_d_c_l_1_1_c_audio_manager}\index{DCL::CAudioManager@{DCL::CAudioManager}}
+
+
+Brief description text goes here.  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_audio_manager_abb671fc01e02dabb5c7a4de28dcf30b0}{CAudio\+Manager}} (int i\+Frequency=44100, int i\+Number\+Of\+Channels=2, int i\+Chunk\+Size\+In\+Samples=2048)
+\begin{DoxyCompactList}\small\item\em Constructor, initializes the audio sub system using given params as options. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_audio_manager_a81ce60190bc6566074b7957a01b1fef3}{\texorpdfstring{$\sim$}{\string~}\+CAudio\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor, cleans up SDL audio subsystem. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_audio_manager_aa7109c455f6a2f05fdd28faf39301037}{is\+Audio\+Playing}} (void)
+\begin{DoxyCompactList}\small\item\em Checks to see if audio is playing on any channels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Brief description text goes here. 
+
+Detailed description goes here 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ iSomeCode\ =\ 0;}
+
+\end{DoxyCode}
+ \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]Lots to add and check here. \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{_audio_manager_8h_source_l00021}{21}} of file \mbox{\hyperlink{_audio_manager_8h_source}{Audio\+Manager.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_audio_manager_abb671fc01e02dabb5c7a4de28dcf30b0}\index{DCL::CAudioManager@{DCL::CAudioManager}!CAudioManager@{CAudioManager}}
+\index{CAudioManager@{CAudioManager}!DCL::CAudioManager@{DCL::CAudioManager}}
+\doxysubsubsection{\texorpdfstring{CAudioManager()}{CAudioManager()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_audio_manager_abb671fc01e02dabb5c7a4de28dcf30b0} 
+DCL\+::\+CAudio\+Manager\+::\+CAudio\+Manager (\begin{DoxyParamCaption}\item[{int}]{i\+Frequency}{ = {\ttfamily 44100}, }\item[{int}]{i\+Number\+Of\+Channels}{ = {\ttfamily 2}, }\item[{int}]{i\+Chunk\+Size\+In\+Samples}{ = {\ttfamily 2048}}\end{DoxyParamCaption})}
+
+
+
+Constructor, initializes the audio sub system using given params as options. 
+
+If initialization failed, an exception occurs 
+
+Definition at line \mbox{\hyperlink{_audio_manager_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_audio_manager_8cpp_source}{Audio\+Manager.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_audio_manager_a81ce60190bc6566074b7957a01b1fef3}\index{DCL::CAudioManager@{DCL::CAudioManager}!````~CAudioManager@{\texorpdfstring{$\sim$}{\string~}CAudioManager}}
+\index{````~CAudioManager@{\texorpdfstring{$\sim$}{\string~}CAudioManager}!DCL::CAudioManager@{DCL::CAudioManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CAudioManager()}{\string~CAudioManager()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_audio_manager_a81ce60190bc6566074b7957a01b1fef3} 
+DCL\+::\+CAudio\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+CAudio\+Manager (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor, cleans up SDL audio subsystem. 
+
+
+
+Definition at line \mbox{\hyperlink{_audio_manager_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_audio_manager_8cpp_source}{Audio\+Manager.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_audio_manager_aa7109c455f6a2f05fdd28faf39301037}\index{DCL::CAudioManager@{DCL::CAudioManager}!isAudioPlaying@{isAudioPlaying}}
+\index{isAudioPlaying@{isAudioPlaying}!DCL::CAudioManager@{DCL::CAudioManager}}
+\doxysubsubsection{\texorpdfstring{isAudioPlaying()}{isAudioPlaying()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_audio_manager_aa7109c455f6a2f05fdd28faf39301037} 
+bool DCL\+::\+CAudio\+Manager\+::is\+Audio\+Playing (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Checks to see if audio is playing on any channels. 
+
+\begin{DoxyReturn}{Returns}
+True is anything on any channels is currently playing, else false.
+\end{DoxyReturn}
+Please note, that even if a channel is paused, it is still considered being played. 
+
+Definition at line \mbox{\hyperlink{_audio_manager_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_audio_manager_8cpp_source}{Audio\+Manager.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Audio/\mbox{\hyperlink{_audio_manager_8h}{Audio\+Manager.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Audio/Audio\+Manager.\+cpp\end{DoxyCompactItemize}

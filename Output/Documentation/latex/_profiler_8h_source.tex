@@ -1,0 +1,66 @@
+\doxysection{Profiler.\+h}
+\hypertarget{_profiler_8h_source}{}\label{_profiler_8h_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Profiler.h@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Profiler.h}}
+\mbox{\hyperlink{_profiler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ PROFILER\_H}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ PROFILER\_H}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_timer_minimal_8h}{TimerMinimal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00014}00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00017}\mbox{\hyperlink{struct_d_c_l_1_1_s_profiler_results}{00017}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_d_c_l_1_1_s_profiler_results}{SProfilerResults}}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00019}\mbox{\hyperlink{struct_d_c_l_1_1_s_profiler_results_a91b00142453f956edf89c028c8990708}{00019}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_d_c_l_1_1_s_profiler_results_a91b00142453f956edf89c028c8990708}{strSectionName}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00020}\mbox{\hyperlink{struct_d_c_l_1_1_s_profiler_results_a185db659b070dfda9814e0417fac73fb}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_d_c_l_1_1_s_profiler_results_a185db659b070dfda9814e0417fac73fb}{dAccumulatedTimeSeconds}};\ \ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00021}\mbox{\hyperlink{struct_d_c_l_1_1_s_profiler_results_aac11af4c919b08819fa3a0e716d51130}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_d_c_l_1_1_s_profiler_results_aac11af4c919b08819fa3a0e716d51130}{fPercentageOfMain}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00022}00022\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00048}\mbox{\hyperlink{class_d_c_l_1_1_c_profiler}{00048}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_c_l_1_1_c_profiler}{CProfiler}}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_profiler}{CProfiler}}();}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_ae8b4248911462316c1dfaa5a7dbf6538}{begin}}(\textcolor{keyword}{const}\ std::string\&\ strSectionName\ =\ \textcolor{stringliteral}{"{}main"{}});}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_a22d0077a6cd932e29fc9cd1a6cd3b28d}{end}}(\textcolor{keyword}{const}\ std::string\&\ strSectionName\ =\ \textcolor{stringliteral}{"{}main"{}});}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_a8788dc4796e316c4fc880bf3b7be4133}{reset}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_aca5b504535e8b625a504cdd4c7de042e}{getSectionTime}}(\textcolor{keyword}{const}\ std::string\&\ strSectionName\ =\ \textcolor{stringliteral}{"{}main"{}});}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_aa8b8978b4c23e8ade38a4313da984c4c}{getSectionNumber}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ std::vector<SProfilerResults>\ \mbox{\hyperlink{class_d_c_l_1_1_c_profiler_a477233528dd872388fba5682b6379e05}{getResults}}(\textcolor{keywordtype}{bool}\ bReturnCachedResults\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ void\ printResults(void);}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00101}\mbox{\hyperlink{struct_d_c_l_1_1_c_profiler_1_1_s_section}{00101}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_d_c_l_1_1_c_profiler_1_1_s_section}{SSection}}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00103}\mbox{\hyperlink{struct_d_c_l_1_1_c_profiler_1_1_s_section_a2451312553ae254d92d1b02e576ecd47}{00103}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_minimal}{CTimerMinimal}}\ \mbox{\hyperlink{struct_d_c_l_1_1_c_profiler_1_1_s_section_a2451312553ae254d92d1b02e576ecd47}{timer}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00104}\mbox{\hyperlink{struct_d_c_l_1_1_c_profiler_1_1_s_section_a28ce8bb73a6fbc6ae1f86990c0c61ccb}{00104}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_d_c_l_1_1_c_profiler_1_1_s_section_a28ce8bb73a6fbc6ae1f86990c0c61ccb}{dAccumulatedTimeInSeconds}};\ \ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00105}\mbox{\hyperlink{struct_d_c_l_1_1_c_profiler_1_1_s_section_a5dc5ebb4fbed43aa855ce9a8e818d6e0}{00105}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_c_l_1_1_c_profiler_1_1_s_section_a5dc5ebb4fbed43aa855ce9a8e818d6e0}{iBeginCalledCount}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00109}00109\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ std::map<std::string,\ SSection>\ \_mmapSections;\ \ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \_mfUpdateResultsText;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ std::vector<std::string>\ \_mvecstrResultsText;\ \ \ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_minimal}{CTimerMinimal}}\ \_mTimerMinimal;}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00117}00117\ \ \ \ \ \ \ \ \ std::vector<SProfilerResults>\ \_mvResultsCached;}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00118}00118\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00119}00119\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_profiler_8h_source_l00121}00121\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \#ifndef\ FILENAME\_H}}
+
+\end{DoxyCode}

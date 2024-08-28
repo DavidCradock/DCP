@@ -1,0 +1,294 @@
+\doxysection{DCL\+::CColourf Class Reference}
+\hypertarget{class_d_c_l_1_1_c_colourf}{}\label{class_d_c_l_1_1_c_colourf}\index{DCL::CColourf@{DCL::CColourf}}
+
+
+Used to represent a colour using a float for each colour component RGBA, totalling 16 bytes (4 bytes per float \texorpdfstring{$\ast$}{*} 4 components)  
+
+
+
+
+{\ttfamily \#include $<$Colourf.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a03d4c733d843d0b024c1ccf4e0d46f49}{CColourf}} ()
+\begin{DoxyCompactList}\small\item\em Constructor, sets to default values (white with full alpha) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colourf_ad1a1cce7d7334c65e071108d64384647}{CColourf}} (float f\+Red, float f\+Green, float f\+Blue, float f\+Alpha)
+\begin{DoxyCompactList}\small\item\em Constructor, sets to parsed values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_colourf_af4c3232e5c169f7ccc5e9f57c145b2c9}{set}} (float f\+Red, float f\+Green, float f\+Blue, float f\+Alpha)
+\begin{DoxyCompactList}\small\item\em Sets the colour to the given values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a14e4ee68bc94160051feac508cd55205}{set\+From\+HSB}} (float f\+Hue\+Amount, float f\+Saturation=1.\+0f, float f\+Brightness=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Sets this colour to RGB using the given the HSB (Hue, Saturation and Brightness) values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a8f674d4151e29a01dfcc2589e792d839}{get\+HSB}} (float \&f\+Hue, float \&f\+Saturation, float \&f\+Brightness) const
+\begin{DoxyCompactList}\small\item\em From this colour in RGBA format, computes and sets the passed variables to hold the HSB (Hue, saturation and brightness values) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}} \mbox{\hyperlink{class_d_c_l_1_1_c_colourf_ac741ab6cb77e31e7047bae0d70e25ecb}{interpolate}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}} other, float f\+Value) const
+\begin{DoxyCompactList}\small\item\em Interpolates between this colour and the one given by the given float and returns the new colour. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_c_l_1_1_c_colourf_aea3596f16833d2cab3d5048ed0b54890}{operator==}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}} \&col)
+\begin{DoxyCompactList}\small\item\em Overload the == operator to compare colours. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}} \mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a21ae6c0a7fa0563dcfea77addc3a3ef4}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}} \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \texorpdfstring{$\ast$}{*} operator to multiply two colours together. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_colourf_abe5256069d7e891ba8b964af01085ca4}{red}}
+\begin{DoxyCompactList}\small\item\em Red colour between 0.\+0f and 1.\+0f. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_colourf_adbf46ba7b6ec02249d8e75b07e6b58f7}{green}}
+\begin{DoxyCompactList}\small\item\em Green colour between 0.\+0f and 1.\+0f. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_colourf_a0a313d7ac9f6e86e5eaa30f773ab014e}{blue}}
+\begin{DoxyCompactList}\small\item\em Blue colour between 0.\+0f and 1.\+0f. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_d_c_l_1_1_c_colourf_aad116c6b016a38f1ebc0c288a9f255e4}{alpha}}
+\begin{DoxyCompactList}\small\item\em Alpha colour between 0.\+0f and 1.\+0f. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to represent a colour using a float for each colour component RGBA, totalling 16 bytes (4 bytes per float \texorpdfstring{$\ast$}{*} 4 components) 
+
+Definition at line \mbox{\hyperlink{_colourf_8h_source_l00012}{12}} of file \mbox{\hyperlink{_colourf_8h_source}{Colourf.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_d_c_l_1_1_c_colourf_a03d4c733d843d0b024c1ccf4e0d46f49}\index{DCL::CColourf@{DCL::CColourf}!CColourf@{CColourf}}
+\index{CColourf@{CColourf}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{CColourf()}{CColourf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_a03d4c733d843d0b024c1ccf4e0d46f49} 
+DCL\+::\+CColourf\+::\+CColourf (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor, sets to default values (white with full alpha) 
+
+
+
+Definition at line \mbox{\hyperlink{_colourf_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_colourf_8cpp_source}{Colourf.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colourf_ad1a1cce7d7334c65e071108d64384647}\index{DCL::CColourf@{DCL::CColourf}!CColourf@{CColourf}}
+\index{CColourf@{CColourf}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{CColourf()}{CColourf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_ad1a1cce7d7334c65e071108d64384647} 
+DCL\+::\+CColourf\+::\+CColourf (\begin{DoxyParamCaption}\item[{float}]{f\+Red}{, }\item[{float}]{f\+Green}{, }\item[{float}]{f\+Blue}{, }\item[{float}]{f\+Alpha}{}\end{DoxyParamCaption})}
+
+
+
+Constructor, sets to parsed values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Red} & A value between 0.\+0f and 1.\+0f representing the intensity of the red component of this colour. \\
+\hline
+{\em f\+Green} & A value between 0.\+0f and 1.\+0f representing the intensity of the green component of this colour. \\
+\hline
+{\em f\+Blue} & A value between 0.\+0f and 1.\+0f representing the intensity of the blue component of this colour. \\
+\hline
+{\em f\+Alpha} & A value between 0.\+0f and 1.\+0f representing the intensity of the alpha component of this colour. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_colourf_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_colourf_8cpp_source}{Colourf.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_c_l_1_1_c_colourf_a8f674d4151e29a01dfcc2589e792d839}\index{DCL::CColourf@{DCL::CColourf}!getHSB@{getHSB}}
+\index{getHSB@{getHSB}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{getHSB()}{getHSB()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_a8f674d4151e29a01dfcc2589e792d839} 
+void DCL\+::\+CColourf\+::get\+HSB (\begin{DoxyParamCaption}\item[{float \&}]{f\+Hue}{, }\item[{float \&}]{f\+Saturation}{, }\item[{float \&}]{f\+Brightness}{}\end{DoxyParamCaption}) const}
+
+
+
+From this colour in RGBA format, computes and sets the passed variables to hold the HSB (Hue, saturation and brightness values) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Hue} & A value between 0.\+0f and 1.\+0f representing the hue. \\
+\hline
+{\em f\+Saturation} & A value between 0.\+0f and 1.\+0f representing the saturation. \\
+\hline
+{\em f\+Brightness} & A value between 0.\+0f and 1.\+0f representing the brightness. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_colourf_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{_colourf_8cpp_source}{Colourf.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colourf_ac741ab6cb77e31e7047bae0d70e25ecb}\index{DCL::CColourf@{DCL::CColourf}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_ac741ab6cb77e31e7047bae0d70e25ecb} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}} DCL\+::\+CColourf\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}}}]{other}{, }\item[{float}]{f\+Value}{}\end{DoxyParamCaption}) const}
+
+
+
+Interpolates between this colour and the one given by the given float and returns the new colour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other colour to interpolate between this one. \\
+\hline
+{\em f\+Value} & The interpolation value between this and the other colour. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting colours interpolated between.
+\end{DoxyReturn}
+If the float is 0.\+0f, the returned colour will be this colour. If the float is 0.\+5f, the returned colour will be half way between this colour and the one given. If the float is 1.\+0f, the returned colour will be the one given. 
+
+Definition at line \mbox{\hyperlink{_colourf_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{_colourf_8cpp_source}{Colourf.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colourf_a21ae6c0a7fa0563dcfea77addc3a3ef4}\index{DCL::CColourf@{DCL::CColourf}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_a21ae6c0a7fa0563dcfea77addc3a3ef4} 
+\mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}} DCL\+::\+CColourf\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload the \texorpdfstring{$\ast$}{*} operator to multiply two colours together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other colour which is multiplied with this one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_d_c_l_1_1_c_colourf}{CColourf} object holding the resulting colour. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_colourf_8h_source_l00080}{80}} of file \mbox{\hyperlink{_colourf_8h_source}{Colourf.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colourf_aea3596f16833d2cab3d5048ed0b54890}\index{DCL::CColourf@{DCL::CColourf}!operator==@{operator==}}
+\index{operator==@{operator==}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_aea3596f16833d2cab3d5048ed0b54890} 
+bool DCL\+::\+CColourf\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_c_l_1_1_c_colourf}{CColourf}} \&}]{col}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload the == operator to compare colours. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & The other colour to compare with this one. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_colourf_8h_source_l00069}{69}} of file \mbox{\hyperlink{_colourf_8h_source}{Colourf.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colourf_af4c3232e5c169f7ccc5e9f57c145b2c9}\index{DCL::CColourf@{DCL::CColourf}!set@{set}}
+\index{set@{set}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_af4c3232e5c169f7ccc5e9f57c145b2c9} 
+void DCL\+::\+CColourf\+::set (\begin{DoxyParamCaption}\item[{float}]{f\+Red}{, }\item[{float}]{f\+Green}{, }\item[{float}]{f\+Blue}{, }\item[{float}]{f\+Alpha}{}\end{DoxyParamCaption})}
+
+
+
+Sets the colour to the given values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Red} & A value between 0.\+0f and 1.\+0f representing the intensity of the red component of this colour. \\
+\hline
+{\em f\+Green} & A value between 0.\+0f and 1.\+0f representing the intensity of the green component of this colour. \\
+\hline
+{\em f\+Blue} & A value between 0.\+0f and 1.\+0f representing the intensity of the blue component of this colour. \\
+\hline
+{\em f\+Alpha} & A value between 0.\+0f and 1.\+0f representing the intensity of the alpha component of this colour.\\
+\hline
+\end{DoxyParams}
+Clamps the values in the range of 0.\+0f and 1.\+0f 
+
+Definition at line \mbox{\hyperlink{_colourf_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_colourf_8cpp_source}{Colourf.\+cpp}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colourf_a14e4ee68bc94160051feac508cd55205}\index{DCL::CColourf@{DCL::CColourf}!setFromHSB@{setFromHSB}}
+\index{setFromHSB@{setFromHSB}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{setFromHSB()}{setFromHSB()}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_a14e4ee68bc94160051feac508cd55205} 
+void DCL\+::\+CColourf\+::set\+From\+HSB (\begin{DoxyParamCaption}\item[{float}]{f\+Hue\+Amount}{, }\item[{float}]{f\+Saturation}{ = {\ttfamily 1.0f}, }\item[{float}]{f\+Brightness}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})}
+
+
+
+Sets this colour to RGB using the given the HSB (Hue, Saturation and Brightness) values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Hue\+Amount} & A value between 0.\+0f and 1.\+0f representing the hue. \\
+\hline
+{\em f\+Saturation} & A value between 0.\+0f and 1.\+0f representing the saturation. \\
+\hline
+{\em f\+Brightness} & A value between 0.\+0f and 1.\+0f representing the brightness.\\
+\hline
+\end{DoxyParams}
+Leaves the alpha value alone Hue value should be between 0 and 1 (Although it is clamped) Saturation value should be between 0 and 1 (Although it is clamped) Brightness value should be between 0 and 1 (Although it is clamped) 
+
+Definition at line \mbox{\hyperlink{_colourf_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_colourf_8cpp_source}{Colourf.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_d_c_l_1_1_c_colourf_aad116c6b016a38f1ebc0c288a9f255e4}\index{DCL::CColourf@{DCL::CColourf}!alpha@{alpha}}
+\index{alpha@{alpha}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_aad116c6b016a38f1ebc0c288a9f255e4} 
+float DCL\+::\+CColourf\+::alpha}
+
+
+
+Alpha colour between 0.\+0f and 1.\+0f. 
+
+
+
+Definition at line \mbox{\hyperlink{_colourf_8h_source_l00088}{88}} of file \mbox{\hyperlink{_colourf_8h_source}{Colourf.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colourf_a0a313d7ac9f6e86e5eaa30f773ab014e}\index{DCL::CColourf@{DCL::CColourf}!blue@{blue}}
+\index{blue@{blue}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{blue}{blue}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_a0a313d7ac9f6e86e5eaa30f773ab014e} 
+float DCL\+::\+CColourf\+::blue}
+
+
+
+Blue colour between 0.\+0f and 1.\+0f. 
+
+
+
+Definition at line \mbox{\hyperlink{_colourf_8h_source_l00087}{87}} of file \mbox{\hyperlink{_colourf_8h_source}{Colourf.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colourf_adbf46ba7b6ec02249d8e75b07e6b58f7}\index{DCL::CColourf@{DCL::CColourf}!green@{green}}
+\index{green@{green}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{green}{green}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_adbf46ba7b6ec02249d8e75b07e6b58f7} 
+float DCL\+::\+CColourf\+::green}
+
+
+
+Green colour between 0.\+0f and 1.\+0f. 
+
+
+
+Definition at line \mbox{\hyperlink{_colourf_8h_source_l00086}{86}} of file \mbox{\hyperlink{_colourf_8h_source}{Colourf.\+h}}.
+
+\Hypertarget{class_d_c_l_1_1_c_colourf_abe5256069d7e891ba8b964af01085ca4}\index{DCL::CColourf@{DCL::CColourf}!red@{red}}
+\index{red@{red}!DCL::CColourf@{DCL::CColourf}}
+\doxysubsubsection{\texorpdfstring{red}{red}}
+{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_colourf_abe5256069d7e891ba8b964af01085ca4} 
+float DCL\+::\+CColourf\+::red}
+
+
+
+Red colour between 0.\+0f and 1.\+0f. 
+
+
+
+Definition at line \mbox{\hyperlink{_colourf_8h_source_l00085}{85}} of file \mbox{\hyperlink{_colourf_8h_source}{Colourf.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/\mbox{\hyperlink{_colourf_8h}{Colourf.\+h}}\item 
+X\+:/\+Projects/c++/2024/\+DCP/\+Project\+Files/\+Static\+Libs/\+Daves\+Code\+Lib/\+Core/Colourf.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{75560A69-8DD0-423C-84AE-5236A585EB98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicLibs", "DynamicLibs", "{C9A017DD-F628-4E0B-B211-14B1E19E4371}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Executables", "Executables", "{301FC9A7-42AD-4484-BB32-B7DEEA08AF4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StaticLibs", "StaticLibs", "{E7687987-5EBC-43CB-A5A7-6AA62DA816C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pages", "Pages", "{F8ADD9DC-A511-4D03-9B2A-7CDA44E0743C}"
+	ProjectSection(SolutionItems) = preProject
+		ProjectFiles\Documentation\BuildDoxygenDocs\pages\00_Introduction.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\00_Introduction.txt
+		ProjectFiles\Documentation\BuildDoxygenDocs\pages\01_GettingStarted.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\01_GettingStarted.txt
+		ProjectFiles\Documentation\BuildDoxygenDocs\pages\02_DirectoryLayout.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\02_DirectoryLayout.txt
+		ProjectFiles\Documentation\BuildDoxygenDocs\pages\03_DoxygenDocumentation.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\03_DoxygenDocumentation.txt
+		ProjectFiles\Documentation\BuildDoxygenDocs\pages\04_AddingNewProjects.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\04_AddingNewProjects.txt
+		ProjectFiles\Documentation\BuildDoxygenDocs\pages\05_SDL.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\05_SDL.txt
+		ProjectFiles\Documentation\BuildDoxygenDocs\pages\06_DavesThoughts.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\06_DavesThoughts.txt
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DavesCodeLib", "ProjectFiles\StaticLibs\DavesCodeLib\DavesCodeLib.vcxproj", "{E49FC452-5602-47FB-8A24-20DAE1921CE5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DevApp", "ProjectFiles\Executables\DevApp\DevApp.vcxproj", "{813929D8-452A-4CE0-AA00-07652182E7E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E49FC452-5602-47FB-8A24-20DAE1921CE5} = {E49FC452-5602-47FB-8A24-20DAE1921CE5}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BuildDoxygenDocs", "ProjectFiles\Documentation\BuildDoxygenDocs\BuildDoxygenDocs.vcxproj", "{17AA19FF-4710-49A6-8AC7-207052007151}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{59B32DE6-E4CD-4018-A2E8-73112AF1B92F}"
+	ProjectSection(SolutionItems) = preProject
+		ProjectFiles\Documentation\BuildDoxygenDocs\images\cimage_edgedetect_after.png = ProjectFiles\Documentation\BuildDoxygenDocs\images\cimage_edgedetect_after.png
+		ProjectFiles\Documentation\BuildDoxygenDocs\images\cimage_edgedetect_before.png = ProjectFiles\Documentation\BuildDoxygenDocs\images\cimage_edgedetect_before.png
+		ProjectFiles\Documentation\BuildDoxygenDocs\images\DCP_icon.PNG = ProjectFiles\Documentation\BuildDoxygenDocs\images\DCP_icon.PNG
+		ProjectFiles\Documentation\BuildDoxygenDocs\images\DCP_logo.PNG = ProjectFiles\Documentation\BuildDoxygenDocs\images\DCP_logo.PNG
+		ProjectFiles\Documentation\BuildDoxygenDocs\images\ray_01.png = ProjectFiles\Documentation\BuildDoxygenDocs\images\ray_01.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Debug|x64.ActiveCfg = Debug|x64
+		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Debug|x64.Build.0 = Debug|x64
+		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Debug|x86.ActiveCfg = Debug|x64
+		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Debug|x86.Build.0 = Debug|x64
+		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Release|x64.ActiveCfg = Release|x64
+		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Release|x64.Build.0 = Release|x64
+		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Release|x86.ActiveCfg = Release|x64
+		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Release|x86.Build.0 = Release|x64
+		{813929D8-452A-4CE0-AA00-07652182E7E9}.Debug|x64.ActiveCfg = Debug|x64
+		{813929D8-452A-4CE0-AA00-07652182E7E9}.Debug|x64.Build.0 = Debug|x64
+		{813929D8-452A-4CE0-AA00-07652182E7E9}.Debug|x86.ActiveCfg = Debug|x64
+		{813929D8-452A-4CE0-AA00-07652182E7E9}.Debug|x86.Build.0 = Debug|x64
+		{813929D8-452A-4CE0-AA00-07652182E7E9}.Release|x64.ActiveCfg = Release|x64
+		{813929D8-452A-4CE0-AA00-07652182E7E9}.Release|x64.Build.0 = Release|x64
+		{813929D8-452A-4CE0-AA00-07652182E7E9}.Release|x86.ActiveCfg = Release|x64
+		{813929D8-452A-4CE0-AA00-07652182E7E9}.Release|x86.Build.0 = Release|x64
+		{17AA19FF-4710-49A6-8AC7-207052007151}.Debug|x64.ActiveCfg = Debug|x64
+		{17AA19FF-4710-49A6-8AC7-207052007151}.Debug|x64.Build.0 = Debug|x64
+		{17AA19FF-4710-49A6-8AC7-207052007151}.Debug|x86.ActiveCfg = Debug|Win32
+		{17AA19FF-4710-49A6-8AC7-207052007151}.Debug|x86.Build.0 = Debug|Win32
+		{17AA19FF-4710-49A6-8AC7-207052007151}.Release|x64.ActiveCfg = Release|x64
+		{17AA19FF-4710-49A6-8AC7-207052007151}.Release|x64.Build.0 = Release|x64
+		{17AA19FF-4710-49A6-8AC7-207052007151}.Release|x86.ActiveCfg = Release|Win32
+		{17AA19FF-4710-49A6-8AC7-207052007151}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F8ADD9DC-A511-4D03-9B2A-7CDA44E0743C} = {75560A69-8DD0-423C-84AE-5236A585EB98}
+		{E49FC452-5602-47FB-8A24-20DAE1921CE5} = {E7687987-5EBC-43CB-A5A7-6AA62DA816C8}
+		{813929D8-452A-4CE0-AA00-07652182E7E9} = {301FC9A7-42AD-4484-BB32-B7DEEA08AF4E}
+		{17AA19FF-4710-49A6-8AC7-207052007151} = {75560A69-8DD0-423C-84AE-5236A585EB98}
+		{59B32DE6-E4CD-4018-A2E8-73112AF1B92F} = {75560A69-8DD0-423C-84AE-5236A585EB98}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B2B13FD-28D5-447F-8270-B04C1B5CE741}
+	EndGlobalSection
+EndGlobal

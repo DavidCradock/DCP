@@ -1,0 +1,42 @@
+\doxysection{Audio\+Manager.\+cpp}
+\hypertarget{_audio_manager_8cpp_source}{}\label{_audio_manager_8cpp_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Audio/AudioManager.cpp@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Audio/AudioManager.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_audio_manager_8h}{AudioManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_exceptions_8h}{../Core/Exceptions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00006}\mbox{\hyperlink{class_d_c_l_1_1_c_audio_manager_abb671fc01e02dabb5c7a4de28dcf30b0}{00006}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_audio_manager_abb671fc01e02dabb5c7a4de28dcf30b0}{CAudioManager::CAudioManager}}(\textcolor{keywordtype}{int}\ iFrequency,\ \textcolor{keywordtype}{int}\ iNumberOfChannels,\ \textcolor{keywordtype}{int}\ iChunkSizeInSamples)}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00007}00007\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SDL\_Init(SDL\_INIT\_AUDIO)\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strError(\textcolor{stringliteral}{"{}SDL\ could\ not\ initialize:\ "{}});}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ strError.append(SDL\_GetError());}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(1,\ strError);}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00015}00015\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (Mix\_OpenAudio(iFrequency,\ MIX\_DEFAULT\_FORMAT,\ iNumberOfChannels,\ iChunkSizeInSamples)\ <\ 0)}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00016}00016\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00017}00017\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ std::string\ strError("{}SDL\_mixer\ could\ not\ initialize:\ "{});}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00018}00018\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ strError.append(Mix\_GetError());}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00019}00019\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ ThrowIfTrue(1,\ strError);}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00020}00020\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00021}00021\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00024}\mbox{\hyperlink{class_d_c_l_1_1_c_audio_manager_a81ce60190bc6566074b7957a01b1fef3}{00024}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_audio_manager_a81ce60190bc6566074b7957a01b1fef3}{CAudioManager::\string~CAudioManager}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ Mix\_CloseAudio();}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ SDL\_QuitSubSystem(SDL\_INIT\_AUDIO);}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00030}\mbox{\hyperlink{class_d_c_l_1_1_c_audio_manager_aa7109c455f6a2f05fdd28faf39301037}{00030}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_d_c_l_1_1_c_audio_manager_aa7109c455f6a2f05fdd28faf39301037}{CAudioManager::isAudioPlaying}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Mix\_Playing(-\/1)\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_manager_8cpp_source_l00036}00036\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+
+\end{DoxyCode}

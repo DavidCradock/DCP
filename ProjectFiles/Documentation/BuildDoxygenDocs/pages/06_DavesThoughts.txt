@@ -1,0 +1,264 @@
+/** \page 06_DavesThoughts Dave's Thoughts.
+
+<h2>Notes for myself to help development</h2>
+<pre>
+This text file is here for me to write down random thoughts about anything and everything.
+It's just here for me to think out aloud as I find typing thoughts down helps me to think about things in more detail.
+You can safely ignore this page, it's really just for myself, but you never know, something in here might be interesting, who knows!?
+</pre>
+
+<h3>Cleaning everything after building stuff.</h3>
+<pre>
+We can delete the /BuildTemp dir as they're no longer needed.
+We can delete the everything in the /Output/ folder EXCEPT the /Output/Executables/Data/ directory as that folder contains all the external data files such as images used by the various executables.
+There should be no files generated inside the /ProjectFiles/ directory if I've set each project's output/intermediate settings up properly.
+</pre>
+
+<h3>Changes to coding style</h3>
+<pre>
+Use _m for members as it makes it obvious that the member is a member.
+Use pre-pended type (for example fSomeFloat) as although the IDE shows the type of a member/variable, it's great to have the info in the variable name
+Use _ underscore for private members as although the IDE shows that a member is private, it's nice to have the info in the var itself.
+Use a descriptive, non abbreviated name for a variable/member/method/function. Abbreviation makes things less clear and although generally longer, autocomplete makes adding names easy with less typing.
+Add "C" to beginning of class declarations, it's a class, it's obvious, but again, nice to have the info and makes everything more clear without having to depend upon the IDE telling us things.
+With any singleton classes, add "SC" to the beginning of class declarations.
+Camel style casing, someFileWhichDoesSomething. It's easy to read and quite sparse.
+</pre>
+
+<h3>Error handling</h3>
+<pre>
+Use exceptions. They greatly simplify error handling
+In DavesCodeLib/Core/Exceptions.h, there's a few usefull macros in there which simplify using exceptions and reduces the amount of text we have to type, namely...
+ThrowIfMemoryNotAllocated() and
+ThrowIfTrue() / ThrowIfFalse()
+</pre>
+
+<h3>Precompiled headers</h3>
+<pre>
+The main advantage of using PCHs is obviously the reduced compile times.
+Disadvantages of using PCHs is that each header file doesn't include the required header files there, instead they'ye in the PCH and that is included instead and this gives us less information.
+I like the required header files being included where needed, instead of in some single global precompiled header file.
+Sure there's a speed increase, but this lack of information in each header file is kinda annoying.
+I could add a comment to each header file telling us which headers are used, but these comments could become outdated or wrong and would add more work to keep things updated correctly.
+Instead, we simply include the required header files to each of the files.
+This gives us more control of where things are included, allows us to include certain headers inside the .c/cpp file instead and when combined with the private implementation (pimple/Cheshire cat),
+can keep compilation times down and prevent unnecessary header inclusion into other files which include a header file.
+</pre>
+
+<h3>Singleton pattern.</h3>
+<pre>
+Do not use unless appropriate.
+Singletons are great for allowing quick access to a "global" object, but as their name implies, prevents creation of multiple instances.
+Their initialisation order can be messy.
+Use globals instead, or pass pointers/references to objects.
+</pre>
+
+<h3>Strings.</h3>
+<pre>
+Use wide strings as it's the default setting, they are recommended for many positive reasons (IE some user with a weird character is now supported)
+and it's easier to work with than multibyte.
+Sure, the L"bloody L!" is kinda annoying having to add Ls everywhere, but calm down, it's only a single character to add. Relax! :D
+</pre>
+
+<h3>Source code file naming and location.</h3>
+<pre>
+Uppercase for the first character, then camel.
+Use sub directories, using them gives orgainisation into groups which is nice, but orgainising groups can be troublesome as some things can be shared, however, if this is
+the case, then it might be a sign that the shared files/code should be placed elsewhere, perhaps inside it's own folder or another.
+It does mean more typing and knowing where files are, but the orgainization is totally worth it.
+</pre>
+
+<h3>Filenames, paths and whether to use forward or backward slashes.</h3>
+<pre>
+Windows supports both types, but for possible future crossplatformedness, use forward slashes.
+</pre>
+
+<h3>Windows and crossplatformedness</h3>
+<pre>
+I have always tried to make my code as crossplatform as possible whilst developing the stuff on Windows using Visual studio,
+using practices such as using cross platform libraries such as OpenGL and avoiding Microsoft specific code such as preprocessor directives such as pragma comment(lib, "somelib.lib") etc.
+This has always been done with the intention of me being able to make minimal changes to get the stuff running on Linux in the future.
+The problem is, I hardly ever actually use Linux and never develop my stuff on both OSes at the same time and the whole project ends up being Windows only and converting a project over would be alot of work.
+Also, making a project compile on both OSs ends up making a huge mess, lots of complexity and adds lots of extra work.
+In the unlikely event that Microsoft somehow messes up Windows which forces me to make the switch, then and only then, write a new Linux only project taking code from my Windows only code.
+This allows me to focus on the project, without half arsingly adding semi-crossplatformedness which probably wouldn't work anyway.
+</pre>
+
+<h3>Multithreading</h3>
+<pre>
+I've only briefly played with threading when I got my first dual core CPU around about in the year 2000 and haven't really explored further.
+As CPUS have continued to have more and more cores and are now pretty much commonplace, I really need to up my game!!
+I mean, on an eight core CPU, being able to potentially increase performance of something by eight times is pretty darn cool!
+Below contains comments to help explain threading and possibly helper code.
+</pre>
+
+<h4>Benefits of threading</h4>
+<pre>
+Improved performance : Leverage your hardware's capabilities by running tasks concurrently.
+Responsiveness : Maintain UI responsiveness while performing CPU - intensive tasks in the background.
+Simplified code : Modern C++ threading tools have a cleaner and more expressive syntax compared to older approaches.
+Portable applications : Write thread - safe code once and run it on different platforms without modification if using the modern C++ 11 or above stuff.
+
+Use modern C++ features such as...
+std::thread which makes it so we no longer have to use platform specific API calls such as pthreads, Boost.threads or the Windows API.
+Lookup Tasks: C++20 introduces tasks, providing a higher-level abstraction for scheduling and managing work units.
+Lookup Parallel algorithms: The standard library offers parallel algorithms like std::async and std::parallel_for for efficient use of multicore processors.
+</pre>
+
+<h4>Creating threads</h4>
+<pre>
+Example 1 using function pointers...
+
+void someFunction(const std::vector<int> &v, int someVar)
+{
+	// Do stuff here
+}
+ 
+// Create a vector and fill it with stuff (omitted)
+std::vector<int> v;
+ 
+// Create the thread
+std::thread t1(someFunction, std::ref(v), 7);
+
+// Wait for the thread to finish 
+t1.join();
+
+All parameters are passed by value, unless we wrap them in std::ref(theVariable)
+Threads created this way, do not have return values.
+If we wish to return something, we need to store it in one of the function's parameters passed by reference.
+
+Example 2 using functors (Function objects)...
+
+First, what is a functor?
+A functor is a class or struct which acts like a function.
+Overloads the function call operator (): This allows you to invoke the functor as if it were a function.
+Can hold member variables: Functors can store data internally, giving them capabilities beyond simple functions.
+Here's an example of a functor...
+
+struct Multiplier
+{
+	int factor;
+	int operator()(int x)
+	{
+		return x * factor;  // Apply the multiplication using the stored factor
+	}
+};
+
+int main()
+{
+	Multiplier triple{ 3 };  // Create a functor that multiplies by 3
+	int result = triple(5);  // Call the functor like a function
+	// result will be 15
+}
+
+Now we know what a functor is, let's see how to create a thread using one...
+
+class CSomeClassFunctor
+{
+public:
+	void operator()(const std::vector<int>& v,	unsigned int beginIndex, unsigned int endIndex)
+	{
+		_acm = 0;
+		for (unsigned int i = beginIndex; i < endIndex; ++i)
+		{
+			_acm += v[i];
+		}
+	}
+	unsigned long long _acm;
+};
+
+{
+	CAccumulatorFunctor3 accumulator1 = CAccumulatorFunctor3();
+	CAccumulatorFunctor3 accumulator2 = CAccumulatorFunctor3();
+	std::thread t1(std::ref(accumulator1), std::ref(v), 0, v.size() / 2);
+	std::thread t2(std::ref(accumulator2), std::ref(v), v.size() / 2, v.size());
+	t1.join();
+	t2.join();
+	std::cout << "acm1: " << accumulator1._acm << endl;
+	std::cout << "acm2: " << accumulator2._acm << endl;
+	std::cout << "accumulator1._acm + accumulator2._acm : " << accumulator1._acm + accumulator2._acm << endl;
+}
+
+To get the maximum number of cores you can call: std::thread::hardware_concurrency()
+</pre>
+
+<h4>Mutexes (Syncronization primitive)</h4>
+<pre>
+These help prevent corruption of data when being accessed by multiple threads.
+The idea is to lock a mutex inside a thread, then access/modify the data, then unlock the mutex when done.
+This guarantees that the data is only being read/written to by one thread at a time.
+
+Here's an example using a mutex, manually using lock and unlock...
+
+std::mutex g_display_mutex;
+thread_function()
+{
+	g_display_mutex.lock();
+	std::thread::id this_id = std::this_thread::get_id();
+	std::cout << "My thread id is: " << this_id << endl;
+	g_display_mutex.unlock();
+}
+
+This is not recommended as we have to remember to call unlock and if we forget, can cause issues.
+Instead use...
+Here's an example using lock guards
+
+std::mutex g_display_mutex;
+thread_function()
+{
+	std::lock_guard<std::mutex> guard(g_display_mutex);
+	std::thread::id this_id = std::this_thread::get_id();
+	std::cout << "From thread " << this_id << endl;
+}
+
+This way, lock and unlock are automatically called for us when the function exits.
+There's no need to remember to call unlock.
+</pre>
+
+<h4>Vulkan</h4>
+<pre>
+Why use Vulkan?
+It's very verbose and gives lots of options to set, which could be seen as a negative as it's a lot of effort to work with.
+However, try to think of this as a good thing, as it gives us lots of "dials and knobs" to play with.
+Instead of "Argh! Too much to setup!", think of the options as a good thing instead.
+Instead of "Argh! I'm gonna make something really buggy!", concentrate and get it stable and working.
+The main reason is that the new features of GPUs are only supported with either Vulkan or DirectX12.
+These features are really cool, namely Raytracing but also upscaling and frame generation.
+I've always hated how shadows are rendered. Stencil buffer shadows were accurate, but looked too sharp and were really CPU heavy.
+Texture based shadows always felt hacky, mainly because of their very nature of using textures with their limited resolution and having to determine where the depth
+buffer/shadow texture is rendered from, always adds artifacts. Even in modern games such as Gran Turismo 7, I still look at the shadows and see the artifacts.
+I also really don't like how screen based reflections are rendered either. As soon as something, such as the top of a mountain goes offscreen, it's no longer rendered and
+if there's reflective water, the top of the mountain dissapears and it breaks the illusion and again, I see this in all modern games, it's nasty.
+So then, ray tracing to the rescue! With it, we can get decent shadows, reflections, refractions and the awesome, awesome global illumination.
+The only downside to raytracing is that it's really demanding on current GPUs as of 2024. My current machine has an AMD 6800xt GPU and, I know it's raytracing performance
+is inferiour compared to the top of the line NVidia 4090 cards, which cost stupid amounts of money (£1500!!!), enabling full ray tracing in games such as Cyberpunk 2077, drop
+framerates from +100 to around 10-15. Which is totally unplayable, near non-interactive. But with time, I'm hoping NVidia, AMD and Intel continue to crank up the performance of
+their future cards and games/graphics apps can finally have real time global illumination with lovely shadows and reflections.
+I don't want to tie my code to Windows, so DX12 is off the table. Also, DirectX versions keep increasing and their APIs change! The last time I used DirectX was when it was version 9.
+OpenGL, with some really hacky shaders and code can kinda do ray tracing, but it's not perfect and as already mentioned, the other features of modern GPUs can't be done either (Such as frame generation/ AI upscaling).
+So this all leaves us with our API option, Vulkan.
+Another reason to not use OpenGL has become a teeny bit messy what with the deprecation of so much stuff (Which is slow anyway) and it's core profile features and extensions.
+Vulkan is cleaner in this regard.
+However, saying this, I have chosen to write an OpenGL renderer too, as it'd be great to be able to compare the speed differences between the two APIs and as Vulkan is difficult for me to use,
+what with all those syncronization fences and such, I feel that an OpenGL renderer will be like a sanity check for stability and having an OpenGL renderer option will be great if I ever decide
+to release some software to the world, the OpenGL renderer will be a great way of saying to people, who experience crashes "Try the OpenGL renderer, it's probably more stable"
+</pre>
+
+<h4>Using external libraries</h4>
+<pre>
+We use external libraries for the following reasons...
+
+1. Gain cool features which are either too time consuming to learn how to code ourselves and aren't really interested in learning such as jpeg image loading/saving
+2. To use already existing, efficient and easy to use code for dealing with labourious/boring stuff such as creating windows for various OSes.
+	I mean, do I really want to delve into the X window system for input/window creation and write the Windows code and deal with messages myself? Not really.
+
+How do we handle these in our project then?
+We could download the source and add it directly into the DavesCodeLibrary static library, which on one hand would be nice as it's all compiled in by our compiler.
+But this might not be ideal as some external libraries, due to their licenses, require us to dynamically link to their dlls.
+Also, these libs can have warnings such as sprintf etc as they use unsafe deprecated code which makes a mess of things with us having to modify their code ourselves to
+remove these warnings.
+So instead, we create additional projects where needed for each library and within those, compile the libraries, ignoring all the warnings. The mess is contained within that lib's project.
+
+Their source code will be kept in /ProjectFiles/DynamicLibs/SOME_LIB so that we get a nice single location so we can see which libs are using.
+</pre>
+*/

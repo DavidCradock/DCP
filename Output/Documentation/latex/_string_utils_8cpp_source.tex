@@ -1,0 +1,339 @@
+\doxysection{String\+Utils.\+cpp}
+\hypertarget{_string_utils_8cpp_source}{}\label{_string_utils_8cpp_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/StringUtils.cpp@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/StringUtils.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_string_utils_8h}{StringUtils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_exceptions_8h}{Exceptions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logging_8h}{Logging.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#define\ NOMINMAX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Set\ this\ before\ including\ windows.h\ so\ that\ the\ min/max\ macros\ located\ in\ algorithm\ header\ take\ precedence}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#define\ WIN32\_LEAN\_AND\_MEAN\ \ \ \ \ }\textcolor{comment}{//\ Exclude\ rarely\ used\ stuff\ from\ Windows\ headers}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <Windows.h>}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00013}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils}{00013}}\ \ \ \ \ \textcolor{keyword}{namespace\ }StringUtils}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00016}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a7ac150fc723206dac77e136c3e0d8947}{00016}}\ \ \ \ \ \ \ \ \ std::wstring\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a7ac150fc723206dac77e136c3e0d8947}{stringToWide}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{string})}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.empty())}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::wstring();}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iSize\ =\ MultiByteToWideChar(CP\_UTF8,\ 0,\ \&\textcolor{keywordtype}{string}[0],\ (\textcolor{keywordtype}{int})\textcolor{keywordtype}{string}.size(),\ NULL,\ 0);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ std::wstring\ wstrOut(iSize,\ 0);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ MultiByteToWideChar(CP\_UTF8,\ 0,\ \&\textcolor{keywordtype}{string}[0],\ (\textcolor{keywordtype}{int})\textcolor{keywordtype}{string}.size(),\ \&wstrOut[0],\ iSize);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ wstrOut;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00026}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a735f2e39e4c6ac7b407455934aca20f2}{00026}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a735f2e39e4c6ac7b407455934aca20f2}{wideToString}}(\textcolor{keyword}{const}\ std::wstring\&\ wstring)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wstring.empty())}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string();}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iSize\ =\ WideCharToMultiByte(CP\_UTF8,\ 0,\ \&wstring[0],\ (\textcolor{keywordtype}{int})wstring.size(),\ NULL,\ 0,\ NULL,\ NULL);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strOut(iSize,\ 0);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ WideCharToMultiByte(CP\_UTF8,\ 0,\ \&wstring[0],\ (\textcolor{keywordtype}{int})wstring.size(),\ \&strOut[0],\ iSize,\ NULL,\ NULL);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ strOut;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00036}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_af36b57cc542867678af151407667ad0f}{00036}}\ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_af36b57cc542867678af151407667ad0f}{getFilesInDir}}(\textcolor{keyword}{const}\ std::string\&\ strDirectory,\ \textcolor{keywordtype}{bool}\ bRecursiveDirs)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ filenames;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bRecursiveDirs)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ filename\ :\ std::filesystem::recursive\_directory\_iterator(strDirectory))}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (filename.is\_regular\_file())}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filenames.push\_back(filename.path().string());}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ filename\ :\ std::filesystem::directory\_iterator(strDirectory))}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (filename.is\_regular\_file())}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filenames.push\_back(filename.path().string());}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ filenames;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00058}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a61a75202f694b4c7eb642861a9defac8}{00058}}\ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_af36b57cc542867678af151407667ad0f}{getFilesInDir}}(\textcolor{keyword}{const}\ std::string\&\ strDirectory,\ \textcolor{keyword}{const}\ std::string\&\ ext,\ \textcolor{keywordtype}{bool}\ bRecursiveDirs)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ sure\ the\ given\ extension\ has\ the\ "{}."{}\ character}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(0\ ==\ ext.length(),\ \textcolor{stringliteral}{"{}CStringHelper::getFilesInDir()\ extension\ has\ length\ of\ zero."{}});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strExt;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ext.c\_str()[0]\ !=\ \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strExt.append(\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ strExt.append(ext);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ filenames;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bRecursiveDirs)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ filename\ :\ std::filesystem::recursive\_directory\_iterator(strDirectory))}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (filename.is\_regular\_file())}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (filename.path().extension()\ ==\ strExt)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filenames.push\_back(filename.path().string());}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ filename\ :\ std::filesystem::directory\_iterator(strDirectory))}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (filename.is\_regular\_file())}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (filename.path().extension()\ ==\ strExt)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filenames.push\_back(filename.path().string());}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ filenames;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00093}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a57f1f9830b219f881224d7dcda91bd32}{00093}}\ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a57f1f9830b219f881224d7dcda91bd32}{getDirsInDir}}(\textcolor{keyword}{const}\ std::string\&\ strDirectory,\ \textcolor{keywordtype}{bool}\ bRecursiveDirs)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ dirnames;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bRecursiveDirs)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ dirname\ :\ std::filesystem::recursive\_directory\_iterator(strDirectory))}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dirname.is\_directory())}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dirnames.push\_back(dirname.path().string());}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ dirname\ :\ std::filesystem::directory\_iterator(strDirectory))}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dirname.is\_directory())}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dirnames.push\_back(dirname.path().string());}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dirnames;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00115}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a960d50b591fd1063327d4ef70d68535f}{00115}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a960d50b591fd1063327d4ef70d68535f}{getCurrentDirectory}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::filesystem::current\_path().string();}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00120}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aca44d0ea45da9975f46c89d634567163}{00120}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aca44d0ea45da9975f46c89d634567163}{stringToLowercase}}(std::string\&\ str)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ std::transform(str.begin(),\ str.end(),\ str.begin(),\ [](\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ c)\ \{\ return\ std::tolower(c);\ \});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00125}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a6486775e1a8eefa2eccd5aa7e7500dd7}{00125}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a6486775e1a8eefa2eccd5aa7e7500dd7}{addFilenameExtension}}(\textcolor{keyword}{const}\ std::string\&\ strFilenameExtension,\ \textcolor{keyword}{const}\ std::string\&\ strFilename)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ sure\ valid\ values\ given.}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(0\ ==\ strFilenameExtension.length(),\ \textcolor{stringliteral}{"{}CStringHelper::addFilenameExtension()\ failed.\ Given\ extension\ name\ of\ zero\ length."{}});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(0\ ==\ strFilename.length(),\ \textcolor{stringliteral}{"{}CStringHelper::addFilenameExtension()\ failed.\ Given\ file\ name\ of\ zero\ length."{}});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Append\ "{}."{}\ to\ extension\ if\ needed}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strExt\ =\ strFilenameExtension;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strExt.c\_str()[0]\ !=\ \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string::iterator\ itBegin\ =\ strExt.begin();}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strExt.insert(itBegin,\ \textcolor{charliteral}{'.'});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strFile\ =\ strFilename;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ last\ position\ of\ "{}."{}\ in\ given\ file\ name\ and\ remove\ everything\ after\ it}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \textcolor{keyword}{const}\ pos\ =\ strFile.find\_last\_of(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ !=\ std::string::npos)\ \ \ \textcolor{comment}{//\ If\ "{}."{}\ found}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ "{}."{}\ and\ all\ following\ text}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strFile.erase(pos,\ strFile.length()\ -\/\ pos);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Append\ extension\ to\ filename}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ strFile.append(strExt);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ all\ lowercase}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aca44d0ea45da9975f46c89d634567163}{stringToLowercase}}(strFile);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ strFile;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00154}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a6162f48fbbd42687547b5b2d14b8c0c8}{00154}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a6162f48fbbd42687547b5b2d14b8c0c8}{appendInt}}(std::string\&\ \textcolor{keywordtype}{string},\ \textcolor{keywordtype}{int}\ iInt)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ +=\ std::to\_string(iInt);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00159}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a586a536579a2c7a429778cd8357039e2}{00159}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a586a536579a2c7a429778cd8357039e2}{appendUInt}}(std::string\&\ \textcolor{keywordtype}{string},\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiInt)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ +=\ std::to\_string(uiInt);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00164}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_ad61c6262044d65bde479d207b1a23833}{00164}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_ad61c6262044d65bde479d207b1a23833}{appendFloat}}(std::string\&\ \textcolor{keywordtype}{string},\ \textcolor{keywordtype}{float}\ fValue,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiNumDecimalPoints)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (uiNumDecimalPoints)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.0f\}"{}},\ fValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.1f\}"{}},\ fValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.2f\}"{}},\ fValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.3f\}"{}},\ fValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.4f\}"{}},\ fValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.5f\}"{}},\ fValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.6f\}"{}},\ fValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 7:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.7f\}"{}},\ fValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 8:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.8f\}"{}},\ fValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 9:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.9f\}"{}},\ fValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.2f\}"{}},\ fValue);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00182}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aa9a87126773e76e56baf0f5583b9aaaf}{00182}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aa9a87126773e76e56baf0f5583b9aaaf}{appendDouble}}(std::string\&\ \textcolor{keywordtype}{string},\ \textcolor{keywordtype}{double}\ dValue,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uiNumDecimalPoints)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (uiNumDecimalPoints)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.0f\}"{}},\ dValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.1f\}"{}},\ dValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.2f\}"{}},\ dValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.3f\}"{}},\ dValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.4f\}"{}},\ dValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.5f\}"{}},\ dValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.6f\}"{}},\ dValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 7:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.7f\}"{}},\ dValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 8:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.8f\}"{}},\ dValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 9:\ \textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.9f\}"{}},\ dValue);\ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\textcolor{keywordtype}{string}\ +=\ std::format(\textcolor{stringliteral}{"{}\{:.2f\}"{}},\ dValue);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00199}00199\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00200}00200\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ appendCVector3f(std::string\&\ string,\ const\ CVector3f\&\ vector,\ unsigned\ int\ uiNumDecimalPoints,\ const\ std::string\&\ strSeperatorText)}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00201}00201\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00202}00202\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ std::string\ strTmp;}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00203}00203\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ appendFloat(strTmp,\ vector.x,\ uiNumDecimalPoints);}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00204}00204\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ +=\ strTmp;}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00205}00205\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ +=\ strSeperatorText;}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00206}00206\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00207}00207\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ strTmp.clear();}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00208}00208\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ appendFloat(strTmp,\ vector.y,\ uiNumDecimalPoints);}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00209}00209\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ +=\ strTmp;}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00210}00210\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ +=\ strSeperatorText;}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00211}00211\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00212}00212\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ strTmp.clear();}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00213}00213\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ appendFloat(strTmp,\ vector.z,\ uiNumDecimalPoints);}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00214}00214\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ string\ +=\ strTmp;}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00215}00215\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00216}00216\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00217}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_af8ee29ad5b8f15a48b8fe4fa7c6a3774}{00217}}\ \ \ \ \ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_af8ee29ad5b8f15a48b8fe4fa7c6a3774}{splitString}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{string},\ \textcolor{keyword}{const}\ std::string\&\ strSplitChars)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ out;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ no\ strSplitChars\ found,\ simply\ add\ the\ entire\ string\ and\ return\ the\ result}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ \textcolor{keywordtype}{string}.find(strSplitChars,\ 0);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string::npos\ ==\ pos)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ we\ get\ here,\ strSplitChars\ has\ been\ found\ in\ the\ string}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strLine;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strAll\ =\ string;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::string::npos\ !=\ pos)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Copy\ character\ upto\ the\ position\ of\ the\ found\ strSplitChars\ into\ strLine}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strLine.assign(strAll,\ 0,\ pos);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ the\ line\ to\ the\ output}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(strLine);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ strLine}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strLine.clear();}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ all\ characters\ including\ the\ strSplitChars\ from\ strAll}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strAll.erase(0,\ pos\ +\ strSplitChars.length());}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ next\ position\ of\ strSplitChars\ in\ strAll}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ strAll.find(strSplitChars,\ 0);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ strAll\ still\ contains\ characters,\ add\ them\ to\ the\ vector}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strAll.length())}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(strAll);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00258}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aad219e6030fefb779d29e47e5de8cecd}{00258}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aad219e6030fefb779d29e47e5de8cecd}{representsNumber}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{string})}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (std::all\_of(\textcolor{keywordtype}{string}.begin(),\ \textcolor{keywordtype}{string}.end(),\ ::isdigit));}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00263}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_ab03bcf3477ad1abe6cc54ef28e4282e0}{00263}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_ab03bcf3477ad1abe6cc54ef28e4282e0}{stringWrite}}(\textcolor{keyword}{const}\ std::string\&\ strString,\ std::ofstream\&\ file)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(file.is\_open(),\ \textcolor{stringliteral}{"{}StringUtils::stringWrite()\ failed.\ The\ given\ ofstream\ is\ not\ open."{}});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ strString.size();}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ file.write((\textcolor{keywordtype}{char}*)\&size,\ \textcolor{keyword}{sizeof}(size));}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ file.write(strString.c\_str(),\ size);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(file.good(),\ \textcolor{stringliteral}{"{}StringUtils::stringWrite()\ failed.\ The\ ofstream\ is\ not\ good."{}});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00272}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a9fdcf957f02524143839348c2d6751a2}{00272}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a9fdcf957f02524143839348c2d6751a2}{stringRead}}(std::string\&\ strString,\ std::ifstream\&\ file)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(file.is\_open(),\ \textcolor{stringliteral}{"{}StringUtils::stringRead()\ failed.\ The\ given\ ofstream\ is\ not\ open."{}});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ strString.clear();}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)\&size,\ \textcolor{keyword}{sizeof}(size));}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ strString.resize(size);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//file.read(\&strString[0],\ size);}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ file.read((\textcolor{keywordtype}{char}*)strString.c\_str(),\ size);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_a747cd8461381c72a38e98ac599d09a3e}{ThrowIfFalse}}(file.good(),\ \textcolor{stringliteral}{"{}StringUtils::stringRead()\ failed.\ The\ ifstream\ is\ not\ good."{}});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00284}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_abba86030f3fdbd94e5d9d24e9c9ea61d}{00284}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_abba86030f3fdbd94e5d9d24e9c9ea61d}{blenderAnimFilename}}(\textcolor{keyword}{const}\ std::string\&\ strBasename,\ \textcolor{keyword}{const}\ std::string\&\ strExtension,\ \textcolor{keywordtype}{int}\ iFrameNumber)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(iFrameNumber\ <\ 0\ ||\ iFrameNumber\ >\ 9999,\ \textcolor{stringliteral}{"{}StringUtils::blenderAnimFilename()\ given\ invalid\ iFrameNumber."{}});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ output;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ output\ =\ strBasename;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (iFrameNumber\ <\ 10)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ \textcolor{stringliteral}{"{}000"{}};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ std::to\_string(iFrameNumber);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (iFrameNumber\ <\ 100)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ \textcolor{stringliteral}{"{}00"{}};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ std::to\_string(iFrameNumber);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (iFrameNumber\ <\ 1000)}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ \textcolor{stringliteral}{"{}0"{}};}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ std::to\_string(iFrameNumber);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ std::to\_string(iFrameNumber);}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Append\ "{}."{}\ to\ extension\ if\ needed}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strExt\ =\ strExtension;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strExt.c\_str()[0]\ !=\ \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string::iterator\ itBegin\ =\ strExt.begin();}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strExt.insert(itBegin,\ \textcolor{charliteral}{'.'});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ output\ +=\ strExt;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00320}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aa0b0f2836534ac187680870ba1295d22}{00320}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_aa0b0f2836534ac187680870ba1295d22}{stringToFloat}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{string})}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ strfloat\ =\ std::stof(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ strfloat;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00326}\mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a65acb5e82182a51525d69a0212665b3f}{00326}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_d_c_l_1_1_string_utils_a65acb5e82182a51525d69a0212665b3f}{stringToInt}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{string})}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ strInt\ =\ std::stoi(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ strInt;}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00331}00331\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{_string_utils_8cpp_source_l00333}00333\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+
+\end{DoxyCode}

@@ -1,0 +1,35 @@
+\doxysection{Timer\+Minimal.\+h}
+\hypertarget{_timer_minimal_8h_source}{}\label{_timer_minimal_8h_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/TimerMinimal.h@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/TimerMinimal.h}}
+\mbox{\hyperlink{_timer_minimal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ TIMERMINIMAL\_H}}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ TIMERMINIMAL\_H}}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00020}\mbox{\hyperlink{class_d_c_l_1_1_c_timer_minimal}{00020}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_c_l_1_1_c_timer_minimal}{CTimerMinimal}}}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_minimal_a19901aa3de7a98c00e2a96913cbce23a}{CTimerMinimal}}();}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_minimal_a456ee8e96851304a935a60bbd1e1f175}{update}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_minimal_ac90e8e8d0853009cda8dd832587e7da6}{getSecondsPast}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_timer_minimal_a8f9376a5171d0d6af624d7838d6bbd4a}{reset}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ std::chrono::duration<double>\ \_mdTimeDeltaSec;}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ std::chrono::time\_point<std::chrono::steady\_clock>\ \_mdTimePointOld,\ \_mdTimePointNew;}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_mdDeltaSec;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00040}00040\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00042}00042\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_timer_minimal_8h_source_l00044}00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ FILENAME\_H}}
+
+\end{DoxyCode}

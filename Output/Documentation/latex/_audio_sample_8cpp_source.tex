@@ -1,0 +1,52 @@
+\doxysection{Audio\+Sample.\+cpp}
+\hypertarget{_audio_sample_8cpp_source}{}\label{_audio_sample_8cpp_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Audio/AudioSample.cpp@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Audio/AudioSample.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_audio_sample_8h}{AudioSample.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_exceptions_8h}{../Core/Exceptions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00007}\mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_ae72806d24a04c3a110fd461aad60e53b}{00007}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_ae72806d24a04c3a110fd461aad60e53b}{CAudioSample::CAudioSample}}()}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \_mpSampleChunk\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00010}00010\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00012}\mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_ac6bb35f1d86f3a198a1ab9dabc0b6816}{00012}}\ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_ac6bb35f1d86f3a198a1ab9dabc0b6816}{CAudioSample::\string~CAudioSample}}()}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_a5be296bcea3706a5a848642182ef8385}{free}}();}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00017}\mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_a86ac4fafca081e64747b8db08c87b768}{00017}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_a86ac4fafca081e64747b8db08c87b768}{CAudioSample::load}}(\textcolor{keyword}{const}\ std::string\&\ sampleFilename)}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \_mpSampleChunk\ =\ Mix\_LoadWAV(sampleFilename.c\_str());}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_mpSampleChunk)}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ strError(\textcolor{stringliteral}{"{}CAudioSample::load(\(\backslash\)"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ strError.append(sampleFilename);}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ strError.append(\textcolor{stringliteral}{"{}\(\backslash\)"{})\ failed.\ SDL::Mix\_LoadWav()\ failed:\ "{}});}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ strError.append(Mix\_GetError());}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_exceptions_8h_ab9e7f7e7cd2de375f24b023fd38908ef}{ThrowIfTrue}}(1,\ strError);}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00030}\mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_ad27a820aa024937f7992a04be1c3f887}{00030}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_ad27a820aa024937f7992a04be1c3f887}{CAudioSample::play}}(\textcolor{keywordtype}{int}\ iWhichChannel,\ \textcolor{keywordtype}{int}\ iNumberOfLoops)}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_mpSampleChunk)}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ Mix\_PlayChannel(iWhichChannel,\ \_mpSampleChunk,\ iNumberOfLoops);}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00037}\mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_a5be296bcea3706a5a848642182ef8385}{00037}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_a5be296bcea3706a5a848642182ef8385}{CAudioSample::free}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_mpSampleChunk)}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ Mix\_FreeChunk(\_mpSampleChunk);}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \_mpSampleChunk\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_audio_sample_8cpp_source_l00046}00046\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+
+\end{DoxyCode}

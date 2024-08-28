@@ -1,0 +1,43 @@
+\doxysection{Singleton.\+h}
+\hypertarget{_singleton_8h_source}{}\label{_singleton_8h_source}\index{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Singleton.h@{X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Core/Singleton.h}}
+\mbox{\hyperlink{_singleton_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ SINGLETON\_H}}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ SINGLETON\_H}}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_d_c_l}{DCL}}}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00029}\mbox{\hyperlink{class_d_c_l_1_1_c_singleton}{00029}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_c_l_1_1_c_singleton}{CSingleton}}}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_d_c_l_1_1_c_singleton}{\string~CSingleton}}()}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee}{pInstance}})}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee}{pInstance}};}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee}{pInstance}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00046}\mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a6b6cca79e720a235a3c40bef3ef70fc0}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ T*\ \mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a6b6cca79e720a235a3c40bef3ef70fc0}{getPointer}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee}{pInstance}})}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee}{pInstance}}\ =\ \textcolor{keyword}{new}\ T();}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee}{pInstance}};}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00056}\mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee}{00056}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ T*\ \mbox{\hyperlink{class_d_c_l_1_1_c_singleton_a118b4814152d0325f50d7697649b7eee}{pInstance}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00057}00057\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ T*\ \mbox{\hyperlink{class_d_c_l_1_1_c_singleton}{CSingleton<T>::pInstance}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00060}00060\ \}\ \ \ \textcolor{comment}{//\ namespace\ DCL}}
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_singleton_8h_source_l00062}00062\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \#ifndef\ FILENAME\_H}}
+
+\end{DoxyCode}
