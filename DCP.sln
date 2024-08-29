@@ -40,38 +40,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{59B32D
 		ProjectFiles\Documentation\BuildDoxygenDocs\images\ray_01.png = ProjectFiles\Documentation\BuildDoxygenDocs\images\ray_01.png
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2", "ProjectFiles\DynamicLibs\SDL-release-2.30.6\VisualC\SDL\SDL.vcxproj", "{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Debug|x64.ActiveCfg = Debug|x64
 		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Debug|x64.Build.0 = Debug|x64
-		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Debug|x86.ActiveCfg = Debug|x64
-		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Debug|x86.Build.0 = Debug|x64
 		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Release|x64.ActiveCfg = Release|x64
 		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Release|x64.Build.0 = Release|x64
-		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Release|x86.ActiveCfg = Release|x64
-		{E49FC452-5602-47FB-8A24-20DAE1921CE5}.Release|x86.Build.0 = Release|x64
 		{813929D8-452A-4CE0-AA00-07652182E7E9}.Debug|x64.ActiveCfg = Debug|x64
 		{813929D8-452A-4CE0-AA00-07652182E7E9}.Debug|x64.Build.0 = Debug|x64
-		{813929D8-452A-4CE0-AA00-07652182E7E9}.Debug|x86.ActiveCfg = Debug|x64
-		{813929D8-452A-4CE0-AA00-07652182E7E9}.Debug|x86.Build.0 = Debug|x64
 		{813929D8-452A-4CE0-AA00-07652182E7E9}.Release|x64.ActiveCfg = Release|x64
 		{813929D8-452A-4CE0-AA00-07652182E7E9}.Release|x64.Build.0 = Release|x64
-		{813929D8-452A-4CE0-AA00-07652182E7E9}.Release|x86.ActiveCfg = Release|x64
-		{813929D8-452A-4CE0-AA00-07652182E7E9}.Release|x86.Build.0 = Release|x64
 		{17AA19FF-4710-49A6-8AC7-207052007151}.Debug|x64.ActiveCfg = Debug|x64
 		{17AA19FF-4710-49A6-8AC7-207052007151}.Debug|x64.Build.0 = Debug|x64
-		{17AA19FF-4710-49A6-8AC7-207052007151}.Debug|x86.ActiveCfg = Debug|Win32
-		{17AA19FF-4710-49A6-8AC7-207052007151}.Debug|x86.Build.0 = Debug|Win32
 		{17AA19FF-4710-49A6-8AC7-207052007151}.Release|x64.ActiveCfg = Release|x64
 		{17AA19FF-4710-49A6-8AC7-207052007151}.Release|x64.Build.0 = Release|x64
-		{17AA19FF-4710-49A6-8AC7-207052007151}.Release|x86.ActiveCfg = Release|Win32
-		{17AA19FF-4710-49A6-8AC7-207052007151}.Release|x86.Build.0 = Release|Win32
+		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}.Debug|x64.ActiveCfg = Debug|x64
+		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}.Debug|x64.Build.0 = Debug|x64
+		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}.Release|x64.ActiveCfg = Release|x64
+		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +74,7 @@ Global
 		{813929D8-452A-4CE0-AA00-07652182E7E9} = {301FC9A7-42AD-4484-BB32-B7DEEA08AF4E}
 		{17AA19FF-4710-49A6-8AC7-207052007151} = {75560A69-8DD0-423C-84AE-5236A585EB98}
 		{59B32DE6-E4CD-4018-A2E8-73112AF1B92F} = {75560A69-8DD0-423C-84AE-5236A585EB98}
+		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68} = {C9A017DD-F628-4E0B-B211-14B1E19E4371}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B2B13FD-28D5-447F-8270-B04C1B5CE741}

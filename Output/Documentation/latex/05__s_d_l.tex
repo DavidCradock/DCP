@@ -35,4 +35,24 @@ The downloaded source folder actually has precompiled .lib and .dll files which 
 \end{DoxyPre}
 
 
-For our applications to run, the SDL2.\+dll needs to be located next to the compiled executables. We tell Visual studio to copy that dll file found in /\+Output/\+Dynamic\+Libs/\+SDL3/\+SDL2.dll to the executable directory by adding the dll file inside the resources filter in the solution explorer of the DCLDev\+App project, right clicking and setting the "{}item type"{} to Copy file. 
+\doxysubsubsection*{Automatic copying of compiled dlls to executable folder}
+
+
+\begin{DoxyPre}
+For our applications to run, the SDL2.dll needs to be located next to the compiled executables. We tell Visual studio to copy that dll file found in /Output/DynamicLibs/SDL3/SDL2.dll to the
+executable directory by adding the dll file inside the resources filter in the solution explorer of the DCLDevApp project, right clicking and setting the "{}item type"{} to Copy file.
+\end{DoxyPre}
+
+
+\doxysubsubsection*{Additional SDL libs}
+
+
+\begin{DoxyPre}
+We also use several other SDL "{}support"{} libraries. These are...
+SDL\_image-\/release-\/2.8.2 = Image file format loading/saving
+SDL\_mixer-\/release-\/2.8.0 = Audio mixer playback
+SDL\_net-\/release-\/2.2.0 = TCP/IP network code
+SDL\_ttf-\/release-\/2.22.0 = True type font
+SDL\_rtf-\/main = Rich Text Format file rendering
+\end{DoxyPre}
+ 
