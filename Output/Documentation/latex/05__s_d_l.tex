@@ -40,8 +40,12 @@ The downloaded source folder actually has precompiled .lib and .dll files which 
 
 
 \begin{DoxyPre}
-For our applications to run, the SDL2.dll needs to be located next to the compiled executables. We tell Visual studio to copy that dll file found in /Output/DynamicLibs/SDL3/SDL2.dll to the
-executable directory by adding the dll file inside the resources filter in the solution explorer of the DCLDevApp project, right clicking and setting the "{}item type"{} to Copy file.
+For our applications to run, the SDL2.dll needs to be located next to the compiled executables. We tell Visual studio to copy that dll file found in /Output/DynamicLibs/SDL2.dll to the
+executable directory by adding the dll file inside the resources filter in the solution explorer of a project, right clicking and setting the "{}item type"{} to Custum Build Tool and setting the following
+settings in the custom build tool settings...
+Command line = copy \%(FullPath) Output\(\backslash\)Executables\textbackslash{}
+Description = Copying \%(FullPath) to Output\(\backslash\)Executables\textbackslash{}
+Outputs = Output\(\backslash\)Executables\%(Filename)\%(Extension)
 \end{DoxyPre}
 
 

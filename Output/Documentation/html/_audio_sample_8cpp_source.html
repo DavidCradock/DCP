@@ -111,60 +111,21 @@ $(function(){initNavTree('_audio_sample_8cpp_source.html',''); initResizable(tru
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_audio_sample.html#ae72806d24a04c3a110fd461aad60e53b">    7</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_audio_sample.html#ae72806d24a04c3a110fd461aad60e53b">CAudioSample::CAudioSample</a>()</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        _mpSampleChunk = 0;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    }</div>
 </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_audio_sample.html#ac6bb35f1d86f3a198a1ab9dabc0b6816">   12</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_audio_sample.html#ac6bb35f1d86f3a198a1ab9dabc0b6816">CAudioSample::~CAudioSample</a>()</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_audio_sample.html#a5be296bcea3706a5a848642182ef8385">free</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
 </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_audio_sample.html#a86ac4fafca081e64747b8db08c87b768">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_audio_sample.html#a86ac4fafca081e64747b8db08c87b768">CAudioSample::load</a>(<span class="keyword">const</span> std::string&amp; sampleFilename)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        _mpSampleChunk = Mix_LoadWAV(sampleFilename.c_str());</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">if</span> (!_mpSampleChunk)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            std::string strError(<span class="stringliteral">&quot;CAudioSample::load(\&quot;&quot;</span>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            strError.append(sampleFilename);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            strError.append(<span class="stringliteral">&quot;\&quot;) failed. SDL::Mix_LoadWav() failed: &quot;</span>);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            strError.append(Mix_GetError());</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <a class="code hl_define" href="_exceptions_8h.html#ab9e7f7e7cd2de375f24b023fd38908ef">ThrowIfTrue</a>(1, strError);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_audio_sample.html#ad27a820aa024937f7992a04be1c3f887">   30</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_audio_sample.html#ad27a820aa024937f7992a04be1c3f887">CAudioSample::play</a>(<span class="keywordtype">int</span> iWhichChannel, <span class="keywordtype">int</span> iNumberOfLoops)</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">if</span> (!_mpSampleChunk)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        Mix_PlayChannel(iWhichChannel, _mpSampleChunk, iNumberOfLoops);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
-</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_audio_sample.html#a5be296bcea3706a5a848642182ef8385">   37</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_audio_sample.html#a5be296bcea3706a5a848642182ef8385">CAudioSample::free</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span> (_mpSampleChunk)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            Mix_FreeChunk(_mpSampleChunk);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            _mpSampleChunk = 0;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}   <span class="comment">// namespace DCL</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}   <span class="comment">// namespace DCL</span></div>
 <div class="ttc" id="a_audio_sample_8h_html"><div class="ttname"><a href="_audio_sample_8h.html">AudioSample.h</a></div><div class="ttdoc">Brief description for the file goes here.</div></div>
 <div class="ttc" id="a_exceptions_8h_html"><div class="ttname"><a href="_exceptions_8h.html">Exceptions.h</a></div><div class="ttdoc">Contains error handling code and macros to deal with errors, warnings and logging of information to a...</div></div>
-<div class="ttc" id="a_exceptions_8h_html_ab9e7f7e7cd2de375f24b023fd38908ef"><div class="ttname"><a href="_exceptions_8h.html#ab9e7f7e7cd2de375f24b023fd38908ef">ThrowIfTrue</a></div><div class="ttdeci">#define ThrowIfTrue(x, y)</div><div class="ttdoc">Macro to check a bool and is true, throw an exception which adds filename, line number and the given ...</div><div class="ttdef"><b>Definition</b> <a href="_exceptions_8h_source.html#l00070">Exceptions.h:70</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_audio_sample_html_a5be296bcea3706a5a848642182ef8385"><div class="ttname"><a href="class_d_c_l_1_1_c_audio_sample.html#a5be296bcea3706a5a848642182ef8385">DCL::CAudioSample::free</a></div><div class="ttdeci">void free(void)</div><div class="ttdoc">Frees the audio sample data.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">AudioSample.cpp:37</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_audio_sample_html_a86ac4fafca081e64747b8db08c87b768"><div class="ttname"><a href="class_d_c_l_1_1_c_audio_sample.html#a86ac4fafca081e64747b8db08c87b768">DCL::CAudioSample::load</a></div><div class="ttdeci">void load(const std::string &amp;sampleFilename)</div><div class="ttdoc">Attempts to load the audio sample's audio data from a file on storage device.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">AudioSample.cpp:17</a></div></div>
 <div class="ttc" id="aclass_d_c_l_1_1_c_audio_sample_html_ac6bb35f1d86f3a198a1ab9dabc0b6816"><div class="ttname"><a href="class_d_c_l_1_1_c_audio_sample.html#ac6bb35f1d86f3a198a1ab9dabc0b6816">DCL::CAudioSample::~CAudioSample</a></div><div class="ttdeci">~CAudioSample()</div><div class="ttdoc">Destructor, frees any memory.</div><div class="ttdef"><b>Definition</b> <a href="#l00012">AudioSample.cpp:12</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_audio_sample_html_ad27a820aa024937f7992a04be1c3f887"><div class="ttname"><a href="class_d_c_l_1_1_c_audio_sample.html#ad27a820aa024937f7992a04be1c3f887">DCL::CAudioSample::play</a></div><div class="ttdeci">void play(int iWhichChannel=-1, int iNumberOfLoops=-1)</div><div class="ttdoc">Plays the audio sample.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">AudioSample.cpp:30</a></div></div>
 <div class="ttc" id="aclass_d_c_l_1_1_c_audio_sample_html_ae72806d24a04c3a110fd461aad60e53b"><div class="ttname"><a href="class_d_c_l_1_1_c_audio_sample.html#ae72806d24a04c3a110fd461aad60e53b">DCL::CAudioSample::CAudioSample</a></div><div class="ttdeci">CAudioSample()</div><div class="ttdoc">Constructor, audio sample is intially empty.</div><div class="ttdef"><b>Definition</b> <a href="#l00007">AudioSample.cpp:7</a></div></div>
 <div class="ttc" id="anamespace_d_c_l_html"><div class="ttname"><a href="namespace_d_c_l.html">DCL</a></div><div class="ttdoc">The namespace in which everything within Dave's Code Library is stored inside.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8cpp_source.html#l00004">FiniteStateMachine.cpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -15,13 +15,7 @@ Audio sample for playback with the \doxylink{class_d_c_l_1_1_c_audio_manager}{CA
 \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_ae72806d24a04c3a110fd461aad60e53b}{CAudio\+Sample}} ()
 \begin{DoxyCompactList}\small\item\em Constructor, audio sample is intially empty. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_ac6bb35f1d86f3a198a1ab9dabc0b6816}{\texorpdfstring{$\sim$}{\string~}\+CAudio\+Sample}} ()
-\begin{DoxyCompactList}\small\item\em Destructor, frees any memory. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_a86ac4fafca081e64747b8db08c87b768}{load}} (const std\+::string \&sample\+Filename)
-\begin{DoxyCompactList}\small\item\em Attempts to load the audio sample\textquotesingle{}s audio data from a file on storage device. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_ad27a820aa024937f7992a04be1c3f887}{play}} (int i\+Which\+Channel=-\/1, int i\+Number\+Of\+Loops=-\/1)
-\begin{DoxyCompactList}\small\item\em Plays the audio sample. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_d_c_l_1_1_c_audio_sample_a5be296bcea3706a5a848642182ef8385}{free}} (void)
-\begin{DoxyCompactList}\small\item\em Frees the audio sample data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor, frees any memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -29,7 +23,7 @@ Audio sample for playback with the \doxylink{class_d_c_l_1_1_c_audio_manager}{CA
 
 These are meant for short audio sample playback for sound effects such as explosions and such. For longer audio, intended to be played as music, see CAudio\+Music 
 
-Definition at line \mbox{\hyperlink{_audio_sample_8h_source_l00020}{20}} of file \mbox{\hyperlink{_audio_sample_8h_source}{Audio\+Sample.\+h}}.
+Definition at line \mbox{\hyperlink{_audio_sample_8h_source_l00017}{17}} of file \mbox{\hyperlink{_audio_sample_8h_source}{Audio\+Sample.\+h}}.
 
 
 
@@ -61,63 +55,6 @@ Destructor, frees any memory.
 
 
 Definition at line \mbox{\hyperlink{_audio_sample_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_audio_sample_8cpp_source}{Audio\+Sample.\+cpp}}.
-
-
-
-\doxysubsection{Member Function Documentation}
-\Hypertarget{class_d_c_l_1_1_c_audio_sample_a5be296bcea3706a5a848642182ef8385}\index{DCL::CAudioSample@{DCL::CAudioSample}!free@{free}}
-\index{free@{free}!DCL::CAudioSample@{DCL::CAudioSample}}
-\doxysubsubsection{\texorpdfstring{free()}{free()}}
-{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_audio_sample_a5be296bcea3706a5a848642182ef8385} 
-void DCL\+::\+CAudio\+Sample\+::free (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
-
-
-
-Frees the audio sample data. 
-
-If the audio sample is currently playing on any channels they will be stopped. 
-
-Definition at line \mbox{\hyperlink{_audio_sample_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{_audio_sample_8cpp_source}{Audio\+Sample.\+cpp}}.
-
-\Hypertarget{class_d_c_l_1_1_c_audio_sample_a86ac4fafca081e64747b8db08c87b768}\index{DCL::CAudioSample@{DCL::CAudioSample}!load@{load}}
-\index{load@{load}!DCL::CAudioSample@{DCL::CAudioSample}}
-\doxysubsubsection{\texorpdfstring{load()}{load()}}
-{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_audio_sample_a86ac4fafca081e64747b8db08c87b768} 
-void DCL\+::\+CAudio\+Sample\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sample\+Filename}{}\end{DoxyParamCaption})}
-
-
-
-Attempts to load the audio sample\textquotesingle{}s audio data from a file on storage device. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sample\+Filename} & The filename of the sample\textquotesingle{}s audio data. Can be .wav, .mp3 and .ogg\\
-\hline
-\end{DoxyParams}
-If an error occured, an exception occurs 
-
-Definition at line \mbox{\hyperlink{_audio_sample_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_audio_sample_8cpp_source}{Audio\+Sample.\+cpp}}.
-
-\Hypertarget{class_d_c_l_1_1_c_audio_sample_ad27a820aa024937f7992a04be1c3f887}\index{DCL::CAudioSample@{DCL::CAudioSample}!play@{play}}
-\index{play@{play}!DCL::CAudioSample@{DCL::CAudioSample}}
-\doxysubsubsection{\texorpdfstring{play()}{play()}}
-{\footnotesize\ttfamily \label{class_d_c_l_1_1_c_audio_sample_ad27a820aa024937f7992a04be1c3f887} 
-void DCL\+::\+CAudio\+Sample\+::play (\begin{DoxyParamCaption}\item[{int}]{i\+Which\+Channel}{ = {\ttfamily -\/1}, }\item[{int}]{i\+Number\+Of\+Loops}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
-
-
-
-Plays the audio sample. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em i\+Which\+Channel} & Which channel to play the sample on. If the specified channel is -\/1, play on the first free channel. If a specific channel was requested, and there is a sample already playing there, that sample will be halted and the new sample will take its place. \\
-\hline
-{\em i\+Number\+Of\+Loops} & If this is greater than zero, loop the sound that many times. If this is -\/ 1, loop "{}infinitely"{} (\texorpdfstring{$\sim$}{\string~}65000 times) \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_audio_sample_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_audio_sample_8cpp_source}{Audio\+Sample.\+cpp}}.
 
 
 

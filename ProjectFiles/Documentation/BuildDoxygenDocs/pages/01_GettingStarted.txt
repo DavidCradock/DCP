@@ -37,7 +37,6 @@ otherwise things might get a little messy!
 Anyways, run the installer and...
 Click next, next, next, next, accept the license, next and finally Install button.
 Once that's done, close the window.
-NOTE: Due to github's 100MB file limit, the installer is not included.
 
 We install the Vulkan SDK so that the various debug layers work. Without installation, they will not.
 

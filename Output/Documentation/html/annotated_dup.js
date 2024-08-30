@@ -2,7 +2,7 @@ var annotated_dup =
 [
     [ "DCL", "namespace_d_c_l.html", [
       [ "CAABB", "class_d_c_l_1_1_c_a_a_b_b.html", "class_d_c_l_1_1_c_a_a_b_b" ],
-      [ "CAudioManager", "class_d_c_l_1_1_c_audio_manager.html", "class_d_c_l_1_1_c_audio_manager" ],
+      [ "CAudioManager", "class_d_c_l_1_1_c_audio_manager.html", null ],
       [ "CAudioSample", "class_d_c_l_1_1_c_audio_sample.html", "class_d_c_l_1_1_c_audio_sample" ],
       [ "CColourf", "class_d_c_l_1_1_c_colourf.html", "class_d_c_l_1_1_c_colourf" ],
       [ "CColouruc", "class_d_c_l_1_1_c_colouruc.html", "class_d_c_l_1_1_c_colouruc" ],

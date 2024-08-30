@@ -127,9 +127,13 @@ At the time of this being typed, you can goto <a href="https://visualstudio.micr
 Now we have to install the Vulkan SDK onto our system.
 Go goto <a href="https://vulkan.lunarg.com/">https://vulkan.lunarg.com/</a> and download the latest Vulkan SDK for Windows.
 Or you can use the pre-downloaded file located in /Other/SDKs/VulkanSDK-1.3.290.0-Installer.exe
+If using the file stored in /Other/SDKs/VulkanSDK/ you'll notice that it's an executable with several other files. This is a self extracting 7zip archive, split into 10MB files.
+This was done to get around the github website's 100MB file size limit.
+Maybe in the future, I'll mess around with the various methods to overcome this size limitation, but for now, this will suffice just fine. I just hope I don't need files larger than 100MB elsewhere,
+otherwise things might get a little messy!
+Anyways, run the installer and...
 Click next, next, next, next, accept the license, next and finally Install button.
 Once that's done, close the window.
-NOTE: Due to github's 100MB file limit, the installer is not included.
 
 We install the Vulkan SDK so that the various debug layers work. Without installation, they will not.
 

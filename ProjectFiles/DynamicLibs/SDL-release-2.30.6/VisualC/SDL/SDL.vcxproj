@@ -83,6 +83,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d $(SolutionDir)Output\DynamicLibs\SDL2_DEBUG.dll $(SolutionDir)Output\Executables\</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying SDL2_DEBUG.dll</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
@@ -113,6 +119,18 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
     </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>xcopy /y /d $(SolutionDir)Output\DynamicLibs\SDL2.dll $(SolutionDir)Output\Executables\</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying SDL2.dll</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\begin_code.h" />

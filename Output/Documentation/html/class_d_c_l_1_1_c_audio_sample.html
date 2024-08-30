@@ -119,21 +119,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac6bb35f1d86f3a198a1ab9dabc0b6816" id="r_ac6bb35f1d86f3a198a1ab9dabc0b6816"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6bb35f1d86f3a198a1ab9dabc0b6816">~CAudioSample</a> ()</td></tr>
 <tr class="memdesc:ac6bb35f1d86f3a198a1ab9dabc0b6816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor, frees any memory.  <br /></td></tr>
 <tr class="separator:ac6bb35f1d86f3a198a1ab9dabc0b6816"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86ac4fafca081e64747b8db08c87b768" id="r_a86ac4fafca081e64747b8db08c87b768"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86ac4fafca081e64747b8db08c87b768">load</a> (const std::string &amp;sampleFilename)</td></tr>
-<tr class="memdesc:a86ac4fafca081e64747b8db08c87b768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to load the audio sample's audio data from a file on storage device.  <br /></td></tr>
-<tr class="separator:a86ac4fafca081e64747b8db08c87b768"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad27a820aa024937f7992a04be1c3f887" id="r_ad27a820aa024937f7992a04be1c3f887"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad27a820aa024937f7992a04be1c3f887">play</a> (int iWhichChannel=-1, int iNumberOfLoops=-1)</td></tr>
-<tr class="memdesc:ad27a820aa024937f7992a04be1c3f887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the audio sample.  <br /></td></tr>
-<tr class="separator:ad27a820aa024937f7992a04be1c3f887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5be296bcea3706a5a848642182ef8385" id="r_a5be296bcea3706a5a848642182ef8385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5be296bcea3706a5a848642182ef8385">free</a> (void)</td></tr>
-<tr class="memdesc:a5be296bcea3706a5a848642182ef8385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the audio sample data.  <br /></td></tr>
-<tr class="separator:a5be296bcea3706a5a848642182ef8385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Audio sample for playback with the <a class="el" href="class_d_c_l_1_1_c_audio_manager.html" title="Brief description text goes here.">CAudioManager</a> class. </p>
 <p>These are meant for short audio sample playback for sound effects such as explosions and such. For longer audio, intended to be played as music, see CAudioMusic </p>
 
-<p class="definition">Definition at line <a class="el" href="_audio_sample_8h_source.html#l00020">20</a> of file <a class="el" href="_audio_sample_8h_source.html">AudioSample.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_audio_sample_8h_source.html#l00017">17</a> of file <a class="el" href="_audio_sample_8h_source.html">AudioSample.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae72806d24a04c3a110fd461aad60e53b" name="ae72806d24a04c3a110fd461aad60e53b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae72806d24a04c3a110fd461aad60e53b">&#9670;&#160;</a></span>CAudioSample()</h2>
@@ -174,89 +165,6 @@ Public Member Functions</h2></td></tr>
 <p>Destructor, frees any memory. </p>
 
 <p class="definition">Definition at line <a class="el" href="_audio_sample_8cpp_source.html#l00012">12</a> of file <a class="el" href="_audio_sample_8cpp_source.html">AudioSample.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5be296bcea3706a5a848642182ef8385" name="a5be296bcea3706a5a848642182ef8385"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5be296bcea3706a5a848642182ef8385">&#9670;&#160;</a></span>free()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DCL::CAudioSample::free </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Frees the audio sample data. </p>
-<p>If the audio sample is currently playing on any channels they will be stopped. </p>
-
-<p class="definition">Definition at line <a class="el" href="_audio_sample_8cpp_source.html#l00037">37</a> of file <a class="el" href="_audio_sample_8cpp_source.html">AudioSample.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a86ac4fafca081e64747b8db08c87b768" name="a86ac4fafca081e64747b8db08c87b768"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86ac4fafca081e64747b8db08c87b768">&#9670;&#160;</a></span>load()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DCL::CAudioSample::load </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>sampleFilename</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Attempts to load the audio sample's audio data from a file on storage device. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sampleFilename</td><td>The filename of the sample's audio data. Can be .wav, .mp3 and .ogg</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>If an error occured, an exception occurs </p>
-
-<p class="definition">Definition at line <a class="el" href="_audio_sample_8cpp_source.html#l00017">17</a> of file <a class="el" href="_audio_sample_8cpp_source.html">AudioSample.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ad27a820aa024937f7992a04be1c3f887" name="ad27a820aa024937f7992a04be1c3f887"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad27a820aa024937f7992a04be1c3f887">&#9670;&#160;</a></span>play()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DCL::CAudioSample::play </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>iWhichChannel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>iNumberOfLoops</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Plays the audio sample. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">iWhichChannel</td><td>Which channel to play the sample on. If the specified channel is -1, play on the first free channel. If a specific channel was requested, and there is a sample already playing there, that sample will be halted and the new sample will take its place. </td></tr>
-    <tr><td class="paramname">iNumberOfLoops</td><td>If this is greater than zero, loop the sound that many times. If this is - 1, loop "infinitely" (~65000 times) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_audio_sample_8cpp_source.html#l00030">30</a> of file <a class="el" href="_audio_sample_8cpp_source.html">AudioSample.cpp</a>.</p>
 
 </div>
 </div>
