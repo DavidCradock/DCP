@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "Daves Coding Paradise", "index.html", [
-    [ "00_Introduction Introduction", "index.html", null ],
+    [ "00_Introduction", "index.html", null ],
     [ "Getting Started.", "01__getting_started.html", null ],
     [ "Directory Layout.", "92__directory_layout.html", null ],
     [ "Doxygen Documentation.", "03__doxygen_documentation.html", null ],

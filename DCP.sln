@@ -23,6 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pages", "Pages", "{F8ADD9DC
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DavesCodeLib", "ProjectFiles\StaticLibs\DavesCodeLib\DavesCodeLib.vcxproj", "{E49FC452-5602-47FB-8A24-20DAE1921CE5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68} = {81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DevApp", "ProjectFiles\Executables\DevApp\DevApp.vcxproj", "{813929D8-452A-4CE0-AA00-07652182E7E9}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -30,15 +33,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DevApp", "ProjectFiles\Exec
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BuildDoxygenDocs", "ProjectFiles\Documentation\BuildDoxygenDocs\BuildDoxygenDocs.vcxproj", "{17AA19FF-4710-49A6-8AC7-207052007151}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{59B32DE6-E4CD-4018-A2E8-73112AF1B92F}"
-	ProjectSection(SolutionItems) = preProject
-		ProjectFiles\Documentation\BuildDoxygenDocs\images\cimage_edgedetect_after.png = ProjectFiles\Documentation\BuildDoxygenDocs\images\cimage_edgedetect_after.png
-		ProjectFiles\Documentation\BuildDoxygenDocs\images\cimage_edgedetect_before.png = ProjectFiles\Documentation\BuildDoxygenDocs\images\cimage_edgedetect_before.png
-		ProjectFiles\Documentation\BuildDoxygenDocs\images\DCP_icon.PNG = ProjectFiles\Documentation\BuildDoxygenDocs\images\DCP_icon.PNG
-		ProjectFiles\Documentation\BuildDoxygenDocs\images\DCP_logo.PNG = ProjectFiles\Documentation\BuildDoxygenDocs\images\DCP_logo.PNG
-		ProjectFiles\Documentation\BuildDoxygenDocs\images\ray_01.png = ProjectFiles\Documentation\BuildDoxygenDocs\images\ray_01.png
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2", "ProjectFiles\DynamicLibs\SDL-release-2.30.6\VisualC\SDL\SDL.vcxproj", "{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}"
 EndProject
@@ -73,7 +67,6 @@ Global
 		{E49FC452-5602-47FB-8A24-20DAE1921CE5} = {E7687987-5EBC-43CB-A5A7-6AA62DA816C8}
 		{813929D8-452A-4CE0-AA00-07652182E7E9} = {301FC9A7-42AD-4484-BB32-B7DEEA08AF4E}
 		{17AA19FF-4710-49A6-8AC7-207052007151} = {75560A69-8DD0-423C-84AE-5236A585EB98}
-		{59B32DE6-E4CD-4018-A2E8-73112AF1B92F} = {75560A69-8DD0-423C-84AE-5236A585EB98}
 		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68} = {C9A017DD-F628-4E0B-B211-14B1E19E4371}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

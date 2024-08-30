@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['00_5fintroduction_20introduction_0',['00_Introduction Introduction',['../index.html',1,'']]]
+  ['00_5fintroduction_0',['00_Introduction',['../index.html',1,'']]]
 ];

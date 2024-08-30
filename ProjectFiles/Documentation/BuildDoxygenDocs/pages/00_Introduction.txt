@@ -1,4 +1,4 @@
-/** \mainpage 00_Introduction Introduction
+/** \mainpage 00_Introduction
 
 <h2>Welcome to DCP's documentation!</h2>
 <h3>What is it?</h3>
