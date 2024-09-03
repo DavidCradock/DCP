@@ -19,10 +19,12 @@
 //#pragma comment(lib, "dxguid.lib")
 //#pragma comment(lib, "psapi.lib")
 
-// SDL2 and SDL_Mixer
-#pragma comment(lib, "../../../Output/DynamicLibs/SDL3/x64/SDL2-2.30.6/Debug/SDL3.lib")
-#pragma comment(lib, "../../external_libs/SDL2-2.30.6/lib/x64/SDL2_mixer.lib")
-#pragma comment(lib, "../../external_libs/SDL2-2.30.6/lib/x64/SDL2main.lib")
+// SDL2
+#ifdef _DEBUG
+#pragma comment(lib, "../../../Output/DynamicLibs/external_libs/SDL2_DEBUG.dll")
+#else
+#pragma comment(lib, "../../../Output/DynamicLibs/external_libs/SDL2.dll")
+#endif
 
 
 /// \namespace DCL

@@ -104,20 +104,17 @@ $(function(){initNavTree('01__getting_started.html',''); initResizable(true); })
 <div class="contents">
 <div class="textblock"><pre>
 To get started, I recommend building everything by following the instructions below which will enable you to run the various executables which can be found in the /Output/Executables directory to get to see
-the whole thing running in action!
-Then with the solution still loaded inside Visual studio, look at the various example projects which show how to do various stuff such as simple things, like opening a window.
+the whole thing running in action and see what's doable.
+Then with the solution still loaded inside Visual studio, look at the various example projects inside the Executables filter/folder which show how to do stuff.
 One you've messed around a bit, come back to this documentation and look at <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a> for more details.
 </pre><h2>Getting DCP</h2>
 <pre>
-Download or obtain the project and uncompress somewhere, a nice fast SSD would be a lovely location, or a RAM disk would be awesome :)
+Download or obtain the project and uncompress somewhere. I like creating a Windows X drive, because X is the coolest letter and storing the project there :)
 <div class="image">
 <img src="getting_started_download.jpg" alt=""/>
 <div class="caption">
  Download the project from Github</div></div>
 
-</pre><h2>Building DCP</h2>
-<pre>
-Here, I explain how to setup your system to build everything.
 </pre><h2>Install Microsoft's Visual Studio</h2>
 <pre>
 Install Microsoft's free community edition of Visual Studio, or a more expensive version if you prefer ;p
@@ -126,11 +123,9 @@ At the time of this being typed, you can goto <a href="https://visualstudio.micr
 <pre>
 Now we have to install the Vulkan SDK onto our system.
 Go goto <a href="https://vulkan.lunarg.com/">https://vulkan.lunarg.com/</a> and download the latest Vulkan SDK for Windows.
-Or you can use the pre-downloaded file located in /Other/SDKs/VulkanSDK-1.3.290.0-Installer.exe
+Or you can use the pre-downloaded file located in /Other/SDKs/VulkanSDK/
 If using the file stored in /Other/SDKs/VulkanSDK/ you'll notice that it's an executable with several other files. This is a self extracting 7zip archive, split into 10MB files.
 This was done to get around the github website's 100MB file size limit.
-Maybe in the future, I'll mess around with the various methods to overcome this size limitation, but for now, this will suffice just fine. I just hope I don't need files larger than 100MB elsewhere,
-otherwise things might get a little messy!
 Anyways, run the installer and...
 Click next, next, next, next, accept the license, next and finally Install button.
 Once that's done, close the window.
@@ -138,16 +133,16 @@ Once that's done, close the window.
 We install the Vulkan SDK so that the various debug layers work. Without installation, they will not.
 
 It would be nice to not have to do this because I like all my libraries offline and the installer isn't.
-However, get over it David! If the internet goes down for some reason, then I think there's more to worry about than "My project can't download files". Problems such as
+However, get over it David! If the internet goes down for some reason, then I think there's more to worry about than "I can't download files needed by my project". Problems such as
 "Holy crap! The internet has gone down! What has happened to the world!?"
 I really need to adjust my way of thinking, hating online requirements. I think it's because I grew up in an offline world. Don't be an old fuddy duddy!
 
-The installer adds a system path called "VK_SDK_PATH" Which points to where ever the SDK was installed. Looking at my system right now, that is "C://VulkanSDK//1.3.290.0". We could 
-use C:\VulkanSDK\1.3.290.0 in the various project settings pages to reference this directory when adding include files and libs.
+The installer adds a system path called "VK_SDK_PATH" Which points to where ever the SDK was installed. Looking at my system right now, that is "C:/VulkanSDK/1.3.290.0/". We  
+use R"($(VK_SDK_PATH))"  in the various project settings pages to reference this directory when adding include files and libs.
 The installer also enables usage of the Vulkan debug layers which is usefull indeed. Please remember that this stuff isn't available on end-users' machines unless they also install the SDK,
 which should NOT be a requirement for them to use my software. Therefore the SDK installation is required for the debug stuff to work, that's why we install it.
 
-Now you just have to click on the menu item of Visual studio "Build" and select "Batch Build...", "Select All" and hit "Build".
+Now we just have to click on the menu item of Visual studio "Build" and select "Batch Build...", "Select All" and hit "Build".
 After that's done (It'll take a while, longer than expected probably because I chose to NOT use precompiled headers (I have my reasons!)), you can go to your file browser, navigate into
 the /Output/Executables directory and run all those little things :)
 Done!

@@ -1,14 +1,37 @@
 #include "RendererOpenGL.h"
 
+#include "../Core/Exceptions.h"
+
+#include "RendererOpenGLPrivate.h"
+
+// OpenGL
+#include <Windows.h>
+#include <gl\gl.h>                                // Header File For The OpenGL32 Library
+#include <gl\glu.h>                               // Header File For The GLu32 Library
+#include "OpenGL/glcorearb.h"
+#include "OpenGL/glext.h"
+#include "OpenGL/khrplatform.h"
+#include "OpenGL/wgl.h"
+#include "OpenGL/wglext.h"
+#pragma comment(lib, "OpenGL32.lib")
+#pragma comment(lib, "GLu32.lib")
+
+
 namespace DCL
 {
 	CRendererOpenGL::CRendererOpenGL()
 	{
+		_mpPrivate = new CPimpl;
+		ThrowIfMemoryNotAllocated(_mpPrivate);
 	}
 
 	CRendererOpenGL::~CRendererOpenGL()
 	{
-
+		if (_mpPrivate)
+		{
+			delete _mpPrivate;
+			_mpPrivate = 0;
+		}
 	}
 
 	void CRendererOpenGL::initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen)

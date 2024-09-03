@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pages", "Pages", "{F8ADD9DC
 		ProjectFiles\Documentation\BuildDoxygenDocs\pages\04_AddingNewProjects.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\04_AddingNewProjects.txt
 		ProjectFiles\Documentation\BuildDoxygenDocs\pages\05_SDL.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\05_SDL.txt
 		ProjectFiles\Documentation\BuildDoxygenDocs\pages\06_DavesThoughts.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\06_DavesThoughts.txt
+		ProjectFiles\Documentation\BuildDoxygenDocs\pages\07_PrivateImplementations.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\07_PrivateImplementations.txt
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DavesCodeLib", "ProjectFiles\StaticLibs\DavesCodeLib\DavesCodeLib.vcxproj", "{E49FC452-5602-47FB-8A24-20DAE1921CE5}"

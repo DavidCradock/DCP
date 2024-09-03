@@ -47,5 +47,6 @@ var annotated_dup =
       [ "CVector4f", "class_d_c_l_1_1_c_vector4f.html", "class_d_c_l_1_1_c_vector4f" ],
       [ "SMemInfo", "struct_d_c_l_1_1_s_mem_info.html", "struct_d_c_l_1_1_s_mem_info" ],
       [ "SProfilerResults", "struct_d_c_l_1_1_s_profiler_results.html", "struct_d_c_l_1_1_s_profiler_results" ]
-    ] ]
+    ] ],
+    [ "_GPU_DEVICE", "struct___g_p_u___d_e_v_i_c_e.html", null ]
 ];

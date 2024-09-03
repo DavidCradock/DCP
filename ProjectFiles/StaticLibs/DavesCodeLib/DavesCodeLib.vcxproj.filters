@@ -32,6 +32,9 @@
     <Filter Include="RayTracer">
       <UniqueIdentifier>{5bdd64a9-e9bd-4e3d-9780-26017b9abef9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Renderers\OpenGL">
+      <UniqueIdentifier>{f483d3fe-ce54-4d0b-ba30-68c950805d8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArtificialIntelligence\FiniteStateMachine.h">
@@ -150,6 +153,36 @@
     </ClInclude>
     <ClInclude Include="DavesCodeLibrary.h" />
     <ClInclude Include="NewFileTemplate.h" />
+    <ClInclude Include="Renderers\RendererBase.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\RendererManager.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\RendererOpenGL.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\RendererVulkan.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\OpenGL\glcorearb.h">
+      <Filter>Renderers\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\OpenGL\glext.h">
+      <Filter>Renderers\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\OpenGL\khrplatform.h">
+      <Filter>Renderers\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\OpenGL\wgl.h">
+      <Filter>Renderers\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\OpenGL\wglext.h">
+      <Filter>Renderers\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\RendererOpenGLPrivate.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArtificialIntelligence\GeneticAlgorithm.cpp">
@@ -258,6 +291,21 @@
     <ClCompile Include="NewFileTemplate.cpp" />
     <ClCompile Include="ArtificialIntelligence\FiniteStateMachine.cpp">
       <Filter>ArtificialIntelligence</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\RendererBase.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\RendererManager.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\RendererOpenGL.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\RendererVulkan.cpp">
+      <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\RendererOpenGLPrivate.cpp">
+      <Filter>Renderers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

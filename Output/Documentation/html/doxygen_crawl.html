@@ -71,12 +71,19 @@
 <a href="_new_file_template_8h_source.html"/>
 <a href="_ray_8cpp_source.html"/>
 <a href="_ray_8h_source.html"/>
+<a href="glcorearb_8h_source.html"/>
+<a href="glext_8h_source.html"/>
+<a href="khrplatform_8h_source.html"/>
+<a href="wgl_8h_source.html"/>
+<a href="wglext_8h_source.html"/>
 <a href="_renderer_base_8cpp_source.html"/>
 <a href="_renderer_base_8h_source.html"/>
 <a href="_renderer_manager_8cpp_source.html"/>
 <a href="_renderer_manager_8h_source.html"/>
 <a href="_renderer_open_g_l_8cpp_source.html"/>
 <a href="_renderer_open_g_l_8h_source.html"/>
+<a href="_renderer_open_g_l_private_8cpp_source.html"/>
+<a href="_renderer_open_g_l_private_8h_source.html"/>
 <a href="_renderer_vulkan_8cpp_source.html"/>
 <a href="_renderer_vulkan_8h_source.html"/>
 <a href="_oct_tree_8cpp_source.html"/>
@@ -126,6 +133,7 @@
 <a href="_renderer_base_8h.html"/>
 <a href="_renderer_manager_8h.html"/>
 <a href="_renderer_open_g_l_8h.html"/>
+<a href="_renderer_open_g_l_private_8h.html"/>
 <a href="_renderer_vulkan_8h.html"/>
 <a href="_oct_tree_8h.html"/>
 <a href="_oct_tree_entity_8h.html"/>
@@ -139,7 +147,10 @@
 <a href="04__adding_new_projects.html"/>
 <a href="05__s_d_l.html"/>
 <a href="06__daves_thoughts.html"/>
+<a href="07__private_implementations.html"/>
 <a href="todo.html"/>
+<a href="struct___g_p_u___d_e_v_i_c_e.html"/>
+<a href="struct___g_p_u___d_e_v_i_c_e-members.html"/>
 <a href="namespace_d_c_l.html"/>
 <a href="class_d_c_l_1_1_c_a_a_b_b.html"/>
 <a href="class_d_c_l_1_1_c_a_a_b_b-members.html"/>
@@ -218,6 +229,7 @@
 <a href="class_d_c_l_1_1_c_renderer_manager-members.html"/>
 <a href="class_d_c_l_1_1_c_renderer_open_g_l.html"/>
 <a href="class_d_c_l_1_1_c_renderer_open_g_l-members.html"/>
+<a href="class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_pimpl.html"/>
 <a href="class_d_c_l_1_1_c_renderer_vulkan.html"/>
 <a href="class_d_c_l_1_1_c_renderer_vulkan-members.html"/>
 <a href="class_d_c_l_1_1_c_singleton.html"/>
@@ -248,6 +260,7 @@
 <a href="dir_951186a178b16dd99f6ec0e61c0d6dde.html"/>
 <a href="dir_98c5141ec6684c64699c32fae3a11406.html"/>
 <a href="dir_90a324cbf4217d4f82e5101eb916faad.html"/>
+<a href="dir_3f2fead74cf6fa3d0510032fdb0b5ddb.html"/>
 <a href="dir_08a40b8f1680163792be36e4fd10688a.html"/>
 <a href="dir_69bcbfcfb7552b492b275e66ece1bbca.html"/>
 <a href="dir_3814ea6d3a046cd1bef0d6e8ad81a068.html"/>
@@ -357,6 +370,7 @@
 <a href="04__adding_new_projects.html"/>
 <a href="05__s_d_l.html"/>
 <a href="06__daves_thoughts.html"/>
+<a href="07__private_implementations.html"/>
 <a href="92__directory_layout.html"/>
 <a href="_a_a_b_b_8cpp_source.html"/>
 <a href="_a_a_b_b_8h.html"/>
@@ -427,6 +441,8 @@
 <a href="_renderer_manager_8h.html"/>
 <a href="_renderer_open_g_l_8cpp_source.html"/>
 <a href="_renderer_open_g_l_8h.html"/>
+<a href="_renderer_open_g_l_private_8cpp_source.html"/>
+<a href="_renderer_open_g_l_private_8h.html"/>
 <a href="_renderer_vulkan_8cpp_source.html"/>
 <a href="_renderer_vulkan_8h.html"/>
 <a href="_singleton_8h.html"/>
@@ -948,6 +964,7 @@
 <a href="class_d_c_l_1_1_c_renderer_open_g_l.html#ae73a77142868efc05ca34068a0714589"/>
 <a href="class_d_c_l_1_1_c_renderer_open_g_l.html#af1e08828cbbb7bbbd080aa8a6da422ee"/>
 <a href="class_d_c_l_1_1_c_renderer_open_g_l.html#af80ad2855c386808a9a50b20ead4225c"/>
+<a href="class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_pimpl.html"/>
 <a href="class_d_c_l_1_1_c_renderer_vulkan.html"/>
 <a href="class_d_c_l_1_1_c_renderer_vulkan.html#a2c8bd6b906ddd002e787736d5643b60b"/>
 <a href="class_d_c_l_1_1_c_renderer_vulkan.html#a34012be76591983c586f182881e32d08"/>
@@ -1080,6 +1097,7 @@
 <a href="classes.html"/>
 <a href="dir_2159916bb131d91b494df0bfeb1944ef.html"/>
 <a href="dir_3814ea6d3a046cd1bef0d6e8ad81a068.html"/>
+<a href="dir_3f2fead74cf6fa3d0510032fdb0b5ddb.html"/>
 <a href="dir_600e8f99f1033eae74d0e97b9434e282.html"/>
 <a href="dir_69bcbfcfb7552b492b275e66ece1bbca.html"/>
 <a href="dir_78c8479350f772ad5d1f2656044d25d1.html"/>
@@ -1139,10 +1157,13 @@
 <a href="functions_y.html"/>
 <a href="functions_z.html"/>
 <a href="functions_~.html"/>
+<a href="glcorearb_8h_source.html"/>
+<a href="glext_8h_source.html"/>
 <a href="globals.html"/>
 <a href="globals_defs.html"/>
 <a href="hierarchy.html"/>
 <a href="index.html"/>
+<a href="khrplatform_8h_source.html"/>
 <a href="namespace_d_c_l.html"/>
 <a href="namespace_d_c_l.html#a0248083dfc6e219d9e86b6d66cd07707"/>
 <a href="namespace_d_c_l.html#a0c3a1fc3ad79bf9e1389f2a9d0af1e69"/>
@@ -1208,6 +1229,7 @@
 <a href="namespacemembers_func.html"/>
 <a href="namespacemembers_vars.html"/>
 <a href="namespaces.html"/>
+<a href="struct___g_p_u___d_e_v_i_c_e.html"/>
 <a href="struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords.html"/>
 <a href="struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords.html#a0a60ad113a1214ff9366ca10a1f5fd4e"/>
 <a href="struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords.html#aceab5f2a86dd51cdb530a6124f3e8924"/>
@@ -1250,5 +1272,7 @@
 <a href="struct_d_c_l_1_1_s_profiler_results.html#a91b00142453f956edf89c028c8990708"/>
 <a href="struct_d_c_l_1_1_s_profiler_results.html#aac11af4c919b08819fa3a0e716d51130"/>
 <a href="todo.html"/>
+<a href="wgl_8h_source.html"/>
+<a href="wglext_8h_source.html"/>
 </body>
 </html>

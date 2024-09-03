@@ -1,0 +1,82 @@
+/** \page 07_PrivateImplementations Private Implemtations details
+
+<h2>Pimple, private implementation</h2>
+<pre>
+In several places throughout the code we use what's called a "private implementation".
+This page explains what it is, why we use it and how I implement the thing.
+</pre>
+
+<h2>What is it?</h2>
+<pre>
+The private implementation design pattern, also known as the Pimpl idiom or Opaque pointer pattern,
+is a C++ programming technique that hides the implementation details of a class from its clients.
+This pattern is often used to improve encapsulation, modularity, and maintainability of code.
+</pre>
+
+<h2>Why I use it</h2>
+<pre>
+One example usage is with the various renderer classes, such as the OpenGL and Vulkan ones.
+We want to enforce usage of the various renderer methods, instead of suggesting that calling the APIs directly is OK.
+We do NOT wish to expose the APIs to any of our code which includes the header files for the renderers, because this would allow us to call those APIs directly, instead of using the renderer classes and
+potentially causing issues. If for example we called OpenGL to change a state, then god knows what's going to happen when we start rendering.
+Keeping the APIs' header files included inside the .cpp files, using the Pimpl idoim, we suggest to the user of our code (and ourselves) to not mess around with the APIs directly and
+it keeps things such as the global namespace nice and tidy.
+For example, if I'm writing the user interface classes, which is quite a lot of code, I do not want to be calling any OpenGL functions inside there, otherwise, that UI code will NOT be API independent and if
+we were to then switch renderers from OpenGL to Vulkan, we'd have to make a huge mess inside the UI code. Rule of thumb is, if we NEED the functionality of some OpenGL function call, we have to implement it
+in each of the renderer classes and hide away the API calls inside their private implementations.
+</pre>
+
+<h2>How I use it</h2>
+<pre>
+In the following example, we will be creating a class named "CMyClassWithPrivateStuff" which we will use to show how we write the class so that it has a private implementation.
+Create a pair of .cpp/.h files for the class private implementation and the class itself.
+
+The header file...
+@code
+// MyClassWithPrivateStuff.h
+
+class CMyClassWithPrivateStuff
+{
+	public:
+
+	private:
+	class CPimp;	// Class declaration which tells the compiler that there is a class which holds the private API stuff
+	CPimp *pimp;	// A pointer to the above class. As it's a pointer, it does not need to have the implementation, thereby allowing us to NOT include the header file in this header file, instead
+					// the actual implementation will be stored inside a .cpp file and then within that file, all the API headers are included, which prevents them from being included any where which
+					// includes this header file.
+};
+@endcode
+
+Next up, the source file...
+@code
+// MyClassWithPrivateStuff.cpp
+
+#include "MyClassWithPrivateStuff_PRIVATE_IMP.h"	// Include the header file which declares all the private stuff
+#include "../Core/exceptions.h"						// Include the exception header to allow us to use the ThrowIfMemoryNotAllocated() macro
+
+// Class constructor
+CMyClassWithPrivateStuff::CMyClassWithPrivateStuff()
+{
+	// Allocate the private implementation
+	pimp = new CPimp;
+	// Check it was allocated below here
+	ThrowIfMemoryNotAllocated(pimp);
+}
+
+// Class destructor
+CMyClassWithPrivateStuff::~CMyClassWithPrivateStuff()
+{
+	if (pimp)
+	{
+		delete pimp;
+		pimp = 0;
+	}
+}
+@endcode
+
+Now we create the .cpp/.h file pair which hold the private stuff
+
+
+</pre>
+
+*/

@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "_GPU_DEVICE", "struct___g_p_u___d_e_v_i_c_e.html", null ],
     [ "DCL::CAABB", "class_d_c_l_1_1_c_a_a_b_b.html", null ],
     [ "DCL::CAudioManager", "class_d_c_l_1_1_c_audio_manager.html", null ],
     [ "DCL::CAudioSample", "class_d_c_l_1_1_c_audio_sample.html", null ],
@@ -26,6 +27,7 @@ var hierarchy =
     [ "DCL::COctTree", "class_d_c_l_1_1_c_oct_tree.html", null ],
     [ "DCL::COctTreeEntity", "class_d_c_l_1_1_c_oct_tree_entity.html", null ],
     [ "DCL::COctTreeNode", "class_d_c_l_1_1_c_oct_tree_node.html", null ],
+    [ "DCL::CRendererOpenGL::CPimpl", "class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_pimpl.html", null ],
     [ "DCL::CPlane", "class_d_c_l_1_1_c_plane.html", null ],
     [ "DCL::CProfiler", "class_d_c_l_1_1_c_profiler.html", null ],
     [ "DCL::CQuadTree", "class_d_c_l_1_1_c_quad_tree.html", null ],

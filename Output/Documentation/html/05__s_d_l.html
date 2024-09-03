@@ -126,11 +126,9 @@ The downloaded source folder actually has precompiled .lib and .dll files which 
 </pre><h3>Automatic copying of compiled dlls to executable folder</h3>
 <pre>
 For our applications to run, the SDL2.dll needs to be located next to the compiled executables. We tell Visual studio to copy that dll file found in /Output/DynamicLibs/SDL2.dll to the
-executable directory by adding the dll file inside the resources filter in the solution explorer of a project, right clicking and setting the "item type" to Custum Build Tool and setting the following
-settings in the custom build tool settings...
-Command line = copy %(FullPath) Output\Executables\
-Description = Copying %(FullPath) to Output\Executables\
-Outputs = Output\Executables%(Filename)%(Extension)
+executable directory by right clicking upon the SDL project, properties, Build events, Post-build event, and setting the command line to...
+xcopy /y /d Output\DynamicLibs\SDL2.dll Output\Executables\ for the release build and
+xcopy /y /d Output\DynamicLibs\SDL2_DEBUG.dll Output\Executables\ for the debug build
 </pre><h3>Additional SDL libs</h3>
 <pre>
 We also use several other SDL "support" libraries. These are...

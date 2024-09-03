@@ -514,15 +514,15 @@ $(function(){initNavTree('_image_8cpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        <span class="keywordflow">while</span> (i &lt; _muiDataSize)</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        {</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>            iCol = (int)_mpData[i] + iAmount;</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>            <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(iCol, 0, 255);</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>            clamp(iCol, 0, 255);</div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>            _mpData[i] = <span class="keywordtype">unsigned</span> char(iCol);</div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span> </div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>            iCol = (int)_mpData[i + 1] + iAmount;</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>            <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(iCol, 0, 255);</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>            clamp(iCol, 0, 255);</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>            _mpData[i + 1] = <span class="keywordtype">unsigned</span> char(iCol);</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span> </div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>            iCol = (int)_mpData[i + 2] + iAmount;</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>            <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(iCol, 0, 255);</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>            clamp(iCol, 0, 255);</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>            _mpData[i + 2] = <span class="keywordtype">unsigned</span> char(iCol);</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>            i += _miNumChannels;</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>        }</div>
@@ -534,7 +534,7 @@ $(function(){initNavTree('_image_8cpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>    {</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>        <a class="code hl_define" href="_exceptions_8h.html#ab9e7f7e7cd2de375f24b023fd38908ef">ThrowIfTrue</a>(!_mpData, <span class="stringliteral">&quot;CImage::adjustContrast() failed. Image not yet created.&quot;</span>);</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(iAmount, -100, 100);</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        clamp(iAmount, -100, 100);</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        <span class="keywordtype">double</span> dPixel;</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        <span class="keywordtype">double</span> d1Over255 = 1.0 / 255.0;</div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        <span class="keywordtype">double</span> dContrast = (100.0 + double(iAmount)) * 0.01; <span class="comment">// 0 and 2</span></div>
@@ -549,7 +549,7 @@ $(function(){initNavTree('_image_8cpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>            dPixel *= dContrast;</div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>            dPixel += 0.5;</div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>            dPixel *= 255;</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>            <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(dPixel, 0.0, 255.0);</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>            clamp(dPixel, 0.0, 255.0);</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>            _mpData[iIndex] = <span class="keywordtype">unsigned</span> char(dPixel);</div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>            ++iIndex;</div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
@@ -558,7 +558,7 @@ $(function(){initNavTree('_image_8cpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>            dPixel *= dContrast;</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>            dPixel += 0.5;</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>            dPixel *= 255;</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>            <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(dPixel, 0.0, 255.0);</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>            clamp(dPixel, 0.0, 255.0);</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>            _mpData[iIndex] = <span class="keywordtype">unsigned</span> char(dPixel);</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>            ++iIndex;</div>
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span> </div>
@@ -567,7 +567,7 @@ $(function(){initNavTree('_image_8cpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>            dPixel *= dContrast;</div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>            dPixel += 0.5;</div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>            dPixel *= 255;</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>            <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(dPixel, 0.0, 255.0);</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>            clamp(dPixel, 0.0, 255.0);</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>            _mpData[iIndex] = <span class="keywordtype">unsigned</span> char(dPixel);</div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>            i += _miNumChannels;</div>
@@ -619,10 +619,10 @@ $(function(){initNavTree('_image_8cpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>        <span class="keywordflow">if</span> (iDstBot &gt;= destImage._miHeight)</div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>        <span class="comment">// Clamp right and top to edges of their respective images</span></div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>        <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(iSrcRight, iSrcLeft, _miWidth);</div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>        <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(iSrcTop, iSrcBot, _miHeight);</div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>        <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(iDstRight, iDstLeft, destImage._miWidth);</div>
-<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>        <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(iDstTop, iDstBot, destImage._miHeight);</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>        clamp(iSrcRight, iSrcLeft, _miWidth);</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>        clamp(iSrcTop, iSrcBot, _miHeight);</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>        clamp(iDstRight, iDstLeft, destImage._miWidth);</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>        clamp(iDstTop, iDstBot, destImage._miHeight);</div>
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>        <span class="comment">// Compute rect dims for both images</span></div>
 <div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iSrcRectWidth = iSrcRight - iSrcLeft;</div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iSrcRectHeight = iSrcTop - iSrcBot;</div>
@@ -804,7 +804,7 @@ $(function(){initNavTree('_image_8cpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span><span class="keyword">    </span>{</div>
 <div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>        <a class="code hl_define" href="_exceptions_8h.html#ab9e7f7e7cd2de375f24b023fd38908ef">ThrowIfTrue</a>(!_mpData, <span class="stringliteral">&quot;CImage::normalmap() failed. Image data doesn&#39;t exist.&quot;</span>);</div>
 <div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span> </div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>        <a class="code hl_function" href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">clamp</a>(fScale, 0.0f, 1.0f);</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>        clamp(fScale, 0.0f, 1.0f);</div>
 <div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span> </div>
 <div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>        <span class="comment">// Copy this image into a new one so this is left unaffected.</span></div>
 <div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>        <span class="comment">// This uses the copyToAddBorder() method which adds a border and copies the edge pixels to the new pixels in the border.</span></div>
@@ -1096,7 +1096,6 @@ $(function(){initNavTree('_image_8cpp_source.html',''); initResizable(true); });
 <div class="ttc" id="aclass_d_c_l_1_1_c_vector3f_html_a882373a4e02b56ee799943dd46115f2e"><div class="ttname"><a href="class_d_c_l_1_1_c_vector3f.html#a882373a4e02b56ee799943dd46115f2e">DCL::CVector3f::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">The y component of the vector.</div><div class="ttdef"><b>Definition</b> <a href="_vector3f_8h_source.html#l00234">Vector3f.h:234</a></div></div>
 <div class="ttc" id="anamespace_d_c_l_html"><div class="ttname"><a href="namespace_d_c_l.html">DCL</a></div><div class="ttdoc">The namespace in which everything within Dave's Code Library is stored inside.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8cpp_source.html#l00004">FiniteStateMachine.cpp:5</a></div></div>
 <div class="ttc" id="anamespace_d_c_l_html_a29e5b7565323f2387653d8ac9fe7217c"><div class="ttname"><a href="namespace_d_c_l.html#a29e5b7565323f2387653d8ac9fe7217c">DCL::areFloatsEqual</a></div><div class="ttdeci">bool areFloatsEqual(const float &amp;A, const float &amp;B)</div><div class="ttdoc">Returns true if parsed values have a difference of less than kfEpsilon.</div><div class="ttdef"><b>Definition</b> <a href="_utilities_8h_source.html#l00021">Utilities.h:21</a></div></div>
-<div class="ttc" id="anamespace_d_c_l_html_a83b188c4c4d0efafc04c87b4d94a0c13"><div class="ttname"><a href="namespace_d_c_l.html#a83b188c4c4d0efafc04c87b4d94a0c13">DCL::clamp</a></div><div class="ttdeci">void clamp(type &amp;valueToClamp, type valueA, type valueB)</div><div class="ttdoc">Clamps a value within given range.</div><div class="ttdef"><b>Definition</b> <a href="_utilities_8h_source.html#l00174">Utilities.h:174</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

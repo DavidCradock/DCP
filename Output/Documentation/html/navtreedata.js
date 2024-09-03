@@ -32,6 +32,7 @@ var NAVTREE =
     [ "Adding New Projects.", "04__adding_new_projects.html", null ],
     [ "SDL library.", "05__s_d_l.html", null ],
     [ "Dave's Thoughts.", "06__daves_thoughts.html", null ],
+    [ "Private Implemtations details", "07__private_implementations.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -67,12 +68,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__getting_started.html",
-"class_d_c_l_1_1_c_colourf.html#adbf46ba7b6ec02249d8e75b07e6b58f7",
-"class_d_c_l_1_1_c_image.html#ae5aab91e9fa803530f5dbc2b8be98c83",
-"class_d_c_l_1_1_c_oct_tree_node.html#a060245035fb5eb30d8e3393ff49de70e",
-"class_d_c_l_1_1_c_rect.html#ae13954e94873f3080296e480d8fc5758",
-"class_d_c_l_1_1_c_vector3f.html#a4c1c48a42e179fd123e549376bcc6ec8",
-"struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a026840270f0fe8e3052e01ed86bb7b89"
+"class_d_c_l_1_1_c_colourf.html#ac741ab6cb77e31e7047bae0d70e25ecb",
+"class_d_c_l_1_1_c_image.html#ae373c6e34527fd88bb4a9f7d6da844ff",
+"class_d_c_l_1_1_c_oct_tree_entity.html#aedfdc9b234821e91422d514d73d4adfd",
+"class_d_c_l_1_1_c_rect.html#ab68b4697ca5b5dd5e1a9289ae6f35832",
+"class_d_c_l_1_1_c_vector3f.html#a3f6b7c5f52e5327922ac379ba17cffeb",
+"struct_d_c_l_1_1_c_profiler_1_1_s_section.html#a5dc5ebb4fbed43aa855ce9a8e818d6e0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

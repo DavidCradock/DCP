@@ -1,5 +1,6 @@
 var class_d_c_l_1_1_c_renderer_open_g_l =
 [
+    [ "CPimpl", "class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_pimpl.html", null ],
     [ "blendDisable", "class_d_c_l_1_1_c_renderer_open_g_l.html#a35981db80f547354c04c16f0760fb632", null ],
     [ "blendEnable", "class_d_c_l_1_1_c_renderer_open_g_l.html#aa47da12293337e84d14b5de061a20b98", null ],
     [ "blendFunction_SrcAlpha_One", "class_d_c_l_1_1_c_renderer_open_g_l.html#a0e8fe2eaef37728b4e07d25f2fd98419", null ],
