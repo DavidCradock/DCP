@@ -180,9 +180,6 @@
     <ClInclude Include="Renderers\OpenGL\wglext.h">
       <Filter>Renderers\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\RendererOpenGLPrivate.h">
-      <Filter>Renderers</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArtificialIntelligence\GeneticAlgorithm.cpp">
@@ -302,9 +299,6 @@
       <Filter>Renderers</Filter>
     </ClCompile>
     <ClCompile Include="Renderers\RendererVulkan.cpp">
-      <Filter>Renderers</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderers\RendererOpenGLPrivate.cpp">
       <Filter>Renderers</Filter>
     </ClCompile>
   </ItemGroup>

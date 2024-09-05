@@ -2,8 +2,6 @@
 
 #include "../Core/Exceptions.h"
 
-#include "RendererOpenGLPrivate.h"
-
 // OpenGL
 #include <Windows.h>
 #include <gl\gl.h>                                // Header File For The OpenGL32 Library
@@ -19,18 +17,32 @@
 
 namespace DCL
 {
+
+	/// \brief Private implementation for CRendererOpenGL class
+	///
+	/// Detailed description goes here
+	class CRendererOpenGL::CPimpl
+	{
+	public:
+
+
+	private:
+
+	};
+
+
 	CRendererOpenGL::CRendererOpenGL()
 	{
-		_mpPrivate = new CPimpl;
-		ThrowIfMemoryNotAllocated(_mpPrivate);
+		_mpPimpl = new CPimpl;
+		ThrowIfMemoryNotAllocated(_mpPimpl);
 	}
 
 	CRendererOpenGL::~CRendererOpenGL()
 	{
-		if (_mpPrivate)
+		if (_mpPimpl)
 		{
-			delete _mpPrivate;
-			_mpPrivate = 0;
+			delete _mpPimpl;
+			_mpPimpl = 0;
 		}
 	}
 

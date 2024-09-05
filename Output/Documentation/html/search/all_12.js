@@ -21,14 +21,13 @@ var searchData=
   ['rendererbase_2eh_18',['RendererBase.h',['../_renderer_base_8h.html',1,'']]],
   ['renderermanager_2eh_19',['RendererManager.h',['../_renderer_manager_8h.html',1,'']]],
   ['rendereropengl_2eh_20',['RendererOpenGL.h',['../_renderer_open_g_l_8h.html',1,'']]],
-  ['rendereropenglprivate_2eh_21',['RendererOpenGLPrivate.h',['../_renderer_open_g_l_private_8h.html',1,'']]],
-  ['renderervulkan_2eh_22',['RendererVulkan.h',['../_renderer_vulkan_8h.html',1,'']]],
-  ['replaceweights_23',['replaceWeights',['../class_d_c_l_1_1_c_neural_network_feed_forward.html#a5c907e87498ba77d90844fce32e4375d',1,'DCL::CNeuralNetworkFeedForward']]],
-  ['representsnumber_24',['representsNumber',['../namespace_d_c_l_1_1_string_utils.html#aad219e6030fefb779d29e47e5de8cecd',1,'DCL::StringUtils']]],
-  ['reset_25',['reset',['../class_d_c_l_1_1_c_profiler.html#a8788dc4796e316c4fc880bf3b7be4133',1,'DCL::CProfiler::reset()'],['../class_d_c_l_1_1_c_timer.html#a9adc43ebbe892eed4bb2dfed176fe11b',1,'DCL::CTimer::reset()'],['../class_d_c_l_1_1_c_timer_minimal.html#a8f9376a5171d0d6af624d7838d6bbd4a',1,'DCL::CTimerMinimal::reset()'],['../class_d_c_l_1_1_c_file_memory.html#afe1933259ccebd50c67b41bc06f6531c',1,'DCL::CFileMemory::reset()'],['../class_d_c_l_1_1_c_image_atlas_packer.html#aa1f6904623a24e7e7e93a243cf188c6f',1,'DCL::CImageAtlasPacker::reset()']]],
-  ['resizearea_26',['resizeArea',['../class_d_c_l_1_1_c_a_a_b_b.html#aa29257d72c836033ae6da2801f460042',1,'DCL::CAABB::resizeArea()'],['../class_d_c_l_1_1_c_rect.html#a7152979dcf5f0996351ebc34f49cc2d8',1,'DCL::CRect::resizeArea()']]],
-  ['resume_27',['resume',['../class_d_c_l_1_1_c_timer.html#ae748a6ffae05ad8f42e38728cb16a285',1,'DCL::CTimer']]],
-  ['rotate_28',['rotate',['../class_d_c_l_1_1_c_quaternion.html#a49a00c442941db8996d2643d4af12520',1,'DCL::CQuaternion::rotate()'],['../class_d_c_l_1_1_c_vector2f.html#a72b34151e51e5c67c6bc37f0e8c6e5f7',1,'DCL::CVector2f::rotate()']]],
-  ['rotateclockwise_29',['rotateClockwise',['../class_d_c_l_1_1_c_image.html#af2e8752a55675711c66735be9851a965',1,'DCL::CImage']]],
-  ['roulettewheelselection_30',['rouletteWheelSelection',['../class_d_c_l_1_1_c_genetics_training.html#aaa71e55bb08e663caee2df9d78879dc2',1,'DCL::CGeneticsTraining']]]
+  ['renderervulkan_2eh_21',['RendererVulkan.h',['../_renderer_vulkan_8h.html',1,'']]],
+  ['replaceweights_22',['replaceWeights',['../class_d_c_l_1_1_c_neural_network_feed_forward.html#a5c907e87498ba77d90844fce32e4375d',1,'DCL::CNeuralNetworkFeedForward']]],
+  ['representsnumber_23',['representsNumber',['../namespace_d_c_l_1_1_string_utils.html#aad219e6030fefb779d29e47e5de8cecd',1,'DCL::StringUtils']]],
+  ['reset_24',['reset',['../class_d_c_l_1_1_c_profiler.html#a8788dc4796e316c4fc880bf3b7be4133',1,'DCL::CProfiler::reset()'],['../class_d_c_l_1_1_c_timer.html#a9adc43ebbe892eed4bb2dfed176fe11b',1,'DCL::CTimer::reset()'],['../class_d_c_l_1_1_c_timer_minimal.html#a8f9376a5171d0d6af624d7838d6bbd4a',1,'DCL::CTimerMinimal::reset()'],['../class_d_c_l_1_1_c_file_memory.html#afe1933259ccebd50c67b41bc06f6531c',1,'DCL::CFileMemory::reset()'],['../class_d_c_l_1_1_c_image_atlas_packer.html#aa1f6904623a24e7e7e93a243cf188c6f',1,'DCL::CImageAtlasPacker::reset()']]],
+  ['resizearea_25',['resizeArea',['../class_d_c_l_1_1_c_a_a_b_b.html#aa29257d72c836033ae6da2801f460042',1,'DCL::CAABB::resizeArea()'],['../class_d_c_l_1_1_c_rect.html#a7152979dcf5f0996351ebc34f49cc2d8',1,'DCL::CRect::resizeArea()']]],
+  ['resume_26',['resume',['../class_d_c_l_1_1_c_timer.html#ae748a6ffae05ad8f42e38728cb16a285',1,'DCL::CTimer']]],
+  ['rotate_27',['rotate',['../class_d_c_l_1_1_c_quaternion.html#a49a00c442941db8996d2643d4af12520',1,'DCL::CQuaternion::rotate()'],['../class_d_c_l_1_1_c_vector2f.html#a72b34151e51e5c67c6bc37f0e8c6e5f7',1,'DCL::CVector2f::rotate()']]],
+  ['rotateclockwise_28',['rotateClockwise',['../class_d_c_l_1_1_c_image.html#af2e8752a55675711c66735be9851a965',1,'DCL::CImage']]],
+  ['roulettewheelselection_29',['rouletteWheelSelection',['../class_d_c_l_1_1_c_genetics_training.html#aaa71e55bb08e663caee2df9d78879dc2',1,'DCL::CGeneticsTraining']]]
 ];

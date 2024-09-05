@@ -18,8 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pages", "Pages", "{F8ADD9DC
 		ProjectFiles\Documentation\BuildDoxygenDocs\pages\02_DirectoryLayout.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\02_DirectoryLayout.txt
 		ProjectFiles\Documentation\BuildDoxygenDocs\pages\03_DoxygenDocumentation.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\03_DoxygenDocumentation.txt
 		ProjectFiles\Documentation\BuildDoxygenDocs\pages\04_AddingNewProjects.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\04_AddingNewProjects.txt
-		ProjectFiles\Documentation\BuildDoxygenDocs\pages\05_SDL.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\05_SDL.txt
 		ProjectFiles\Documentation\BuildDoxygenDocs\pages\06_DavesThoughts.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\06_DavesThoughts.txt
+		ProjectFiles\Documentation\BuildDoxygenDocs\pages\05_SDL_GLFW.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\05_SDL_GLFW.txt
 		ProjectFiles\Documentation\BuildDoxygenDocs\pages\07_PrivateImplementations.txt = ProjectFiles\Documentation\BuildDoxygenDocs\pages\07_PrivateImplementations.txt
 	EndProjectSection
 EndProject

@@ -125,7 +125,7 @@ in each of the renderer classes and hide away the API calls inside their private
 </pre><h2>How I use it</h2>
 <pre>
 In the following example, we will be creating a class named "CMyClassWithPrivateStuff" which we will use to show how we write the class so that it has a private implementation.
-Create a pair of .cpp/.h files for the class private implementation and the class itself.
+Create a pair of .cpp/.h files...
 
 The header file...
 <div class="fragment"><div class="line"><span class="comment">// MyClassWithPrivateStuff.h</span></div>
@@ -135,8 +135,8 @@ The header file...
 <div class="line">    <span class="keyword">public</span>:</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">class </span>CPimp;    <span class="comment">// Class declaration which tells the compiler that there is a class which holds the private API stuff</span></div>
-<div class="line">    CPimp *pimp;    <span class="comment">// A pointer to the above class. As it&#39;s a pointer, it does not need to have the implementation, thereby allowing us to NOT include the header file in this header file, instead</span></div>
+<div class="line">    <span class="keyword">class </span>CPimpl;   <span class="comment">// Class declaration which tells the compiler that there is a class which holds the private API stuff</span></div>
+<div class="line">    CPimpl *pimpl;  <span class="comment">// A pointer to the above class. As it&#39;s a pointer, it does not need to have the implementation, thereby allowing us to NOT include the header file in this header file, instead</span></div>
 <div class="line">                    <span class="comment">// the actual implementation will be stored inside a .cpp file and then within that file, all the API headers are included, which prevents them from being included any where which</span></div>
 <div class="line">                    <span class="comment">// includes this header file.</span></div>
 <div class="line">};</div>
@@ -145,33 +145,44 @@ The header file...
 Next up, the source file...
 <div class="fragment"><div class="line"><span class="comment">// MyClassWithPrivateStuff.cpp</span></div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &quot;MyClassWithPrivateStuff_PRIVATE_IMP.h&quot;</span>    <span class="comment">// Include the header file which declares all the private stuff</span></div>
 <div class="line"><span class="preprocessor">#include &quot;../Core/exceptions.h&quot;</span>                     <span class="comment">// Include the exception header to allow us to use the ThrowIfMemoryNotAllocated() macro</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// As we&#39;re in a source file, we can include all the stuff required by the private implementation without worries of it being included when including this class&#39;s header file.</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>CRendererOpenGL::CPimpl</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">        <span class="keywordtype">int</span> iSomeInt;</div>
+<div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Class constructor</span></div>
 <div class="line">CMyClassWithPrivateStuff::CMyClassWithPrivateStuff()</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// Allocate the private implementation</span></div>
-<div class="line">    pimp = <span class="keyword">new</span> CPimp;</div>
+<div class="line">    pimpl = <span class="keyword">new</span> CPimpl;</div>
 <div class="line">    <span class="comment">// Check it was allocated below here</span></div>
-<div class="line">    <a class="code hl_define" href="_exceptions_8h.html#a9bd86a9c7b41cef1ebad126eb6f9806c">ThrowIfMemoryNotAllocated</a>(pimp);</div>
+<div class="line">    <a class="code hl_define" href="_exceptions_8h.html#a9bd86a9c7b41cef1ebad126eb6f9806c">ThrowIfMemoryNotAllocated</a>(pimpl);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Class destructor</span></div>
 <div class="line">CMyClassWithPrivateStuff::~CMyClassWithPrivateStuff()</div>
 <div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (pimp)</div>
+<div class="line">    <span class="comment">// Free everything for the private implementation</span></div>
+<div class="line">    <span class="keywordflow">if</span> (pimpl)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keyword">delete</span> pimp;</div>
-<div class="line">        pimp = 0;</div>
+<div class="line">        <span class="keyword">delete</span> pimpl;</div>
+<div class="line">        pimpl = 0;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="a_exceptions_8h_html_a9bd86a9c7b41cef1ebad126eb6f9806c"><div class="ttname"><a href="_exceptions_8h.html#a9bd86a9c7b41cef1ebad126eb6f9806c">ThrowIfMemoryNotAllocated</a></div><div class="ttdeci">#define ThrowIfMemoryNotAllocated(x)</div><div class="ttdoc">Macro to check a pointer and if 0, throw an exception stating that the memory was not allocated with ...</div><div class="ttdef"><b>Definition</b> <a href="_exceptions_8h_source.html#l00079">Exceptions.h:79</a></div></div>
 </div><!-- fragment -->
 
-Now we create the .cpp/.h file pair which hold the private stuff
-
-
+Then in our CMyClassWithPrivateStuff, we simply access the private implementation, by accessing the pimpl pointer.
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> CMyClassWithPrivateStuff::someMethod(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    pimpl-&gt;iSomeInt = 2;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </pre> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

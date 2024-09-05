@@ -61,6 +61,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(SolutionDir)ProjectFiles\DynamicLibs\SDL3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -78,6 +79,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(SolutionDir)ProjectFiles\DynamicLibs\SDL3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,7 +131,6 @@
     <ClInclude Include="Renderers\RendererBase.h" />
     <ClInclude Include="Renderers\RendererManager.h" />
     <ClInclude Include="Renderers\RendererOpenGL.h" />
-    <ClInclude Include="Renderers\RendererOpenGLPrivate.h" />
     <ClInclude Include="Renderers\RendererVulkan.h" />
     <ClInclude Include="SpatialPartitioning\OctTree.h" />
     <ClInclude Include="SpatialPartitioning\OctTreeEntity.h" />
@@ -173,7 +174,6 @@
     <ClCompile Include="Renderers\RendererBase.cpp" />
     <ClCompile Include="Renderers\RendererManager.cpp" />
     <ClCompile Include="Renderers\RendererOpenGL.cpp" />
-    <ClCompile Include="Renderers\RendererOpenGLPrivate.cpp" />
     <ClCompile Include="Renderers\RendererVulkan.cpp" />
     <ClCompile Include="SpatialPartitioning\OctTree.cpp" />
     <ClCompile Include="SpatialPartitioning\OctTreeEntity.cpp" />

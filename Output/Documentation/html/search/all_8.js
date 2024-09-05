@@ -96,7 +96,8 @@ var searchData=
   ['getupvector_93',['getUpVector',['../class_d_c_l_1_1_c_matrix.html#a3d7bfd6669f821d56bcca5af512c2c75',1,'DCL::CMatrix']]],
   ['getwidth_94',['getWidth',['../class_d_c_l_1_1_c_image.html#a8559b8c3afd2614ac4721ddc09ca9afd',1,'DCL::CImage']]],
   ['gfilemanager_95',['gFileManager',['../namespace_d_c_l.html#a59a6d9b5f42275453df6434b51689c63',1,'DCL']]],
-  ['green_96',['green',['../class_d_c_l_1_1_c_colourf.html#adbf46ba7b6ec02249d8e75b07e6b58f7',1,'DCL::CColourf::green'],['../class_d_c_l_1_1_c_colouruc.html#a75cfd3830cc4bdfe90d68013baec609a',1,'DCL::CColouruc::green']]],
-  ['greyscale_97',['greyscale',['../class_d_c_l_1_1_c_image.html#ab86c42477271bcc981e19dccfb62e880',1,'DCL::CImage']]],
-  ['greyscalesimple_98',['greyscaleSimple',['../class_d_c_l_1_1_c_image.html#ae373c6e34527fd88bb4a9f7d6da844ff',1,'DCL::CImage']]]
+  ['glfw_20libraries_96',['SDL and GLFW libraries.',['../05__s_d_l__g_l_f_w.html',1,'']]],
+  ['green_97',['green',['../class_d_c_l_1_1_c_colourf.html#adbf46ba7b6ec02249d8e75b07e6b58f7',1,'DCL::CColourf::green'],['../class_d_c_l_1_1_c_colouruc.html#a75cfd3830cc4bdfe90d68013baec609a',1,'DCL::CColouruc::green']]],
+  ['greyscale_98',['greyscale',['../class_d_c_l_1_1_c_image.html#ab86c42477271bcc981e19dccfb62e880',1,'DCL::CImage']]],
+  ['greyscalesimple_99',['greyscaleSimple',['../class_d_c_l_1_1_c_image.html#ae373c6e34527fd88bb4a9f7d6da844ff',1,'DCL::CImage']]]
 ];

@@ -29,7 +29,7 @@ in each of the renderer classes and hide away the API calls inside their private
 <h2>How I use it</h2>
 <pre>
 In the following example, we will be creating a class named "CMyClassWithPrivateStuff" which we will use to show how we write the class so that it has a private implementation.
-Create a pair of .cpp/.h files for the class private implementation and the class itself.
+Create a pair of .cpp/.h files...
 
 The header file...
 @code
@@ -40,8 +40,8 @@ class CMyClassWithPrivateStuff
 	public:
 
 	private:
-	class CPimp;	// Class declaration which tells the compiler that there is a class which holds the private API stuff
-	CPimp *pimp;	// A pointer to the above class. As it's a pointer, it does not need to have the implementation, thereby allowing us to NOT include the header file in this header file, instead
+	class CPimpl;	// Class declaration which tells the compiler that there is a class which holds the private API stuff
+	CPimpl *pimpl;	// A pointer to the above class. As it's a pointer, it does not need to have the implementation, thereby allowing us to NOT include the header file in this header file, instead
 					// the actual implementation will be stored inside a .cpp file and then within that file, all the API headers are included, which prevents them from being included any where which
 					// includes this header file.
 };
@@ -51,32 +51,45 @@ Next up, the source file...
 @code
 // MyClassWithPrivateStuff.cpp
 
-#include "MyClassWithPrivateStuff_PRIVATE_IMP.h"	// Include the header file which declares all the private stuff
 #include "../Core/exceptions.h"						// Include the exception header to allow us to use the ThrowIfMemoryNotAllocated() macro
+
+// As we're in a source file, we can include all the stuff required by the private implementation without worries of it being included when including this class's header file.
+
+/// \brief The private implementation class for the CMyClassWithPrivateStuff class.
+class CRendererOpenGL::CPimpl
+{
+	public:
+		int iSomeInt;
+};
 
 // Class constructor
 CMyClassWithPrivateStuff::CMyClassWithPrivateStuff()
 {
 	// Allocate the private implementation
-	pimp = new CPimp;
+	pimpl = new CPimpl;
 	// Check it was allocated below here
-	ThrowIfMemoryNotAllocated(pimp);
+	ThrowIfMemoryNotAllocated(pimpl);
 }
 
 // Class destructor
 CMyClassWithPrivateStuff::~CMyClassWithPrivateStuff()
 {
-	if (pimp)
+	// Free everything for the private implementation
+	if (pimpl)
 	{
-		delete pimp;
-		pimp = 0;
+		delete pimpl;
+		pimpl = 0;
 	}
 }
 @endcode
 
-Now we create the .cpp/.h file pair which hold the private stuff
-
-
+Then in our CMyClassWithPrivateStuff, we simply access the private implementation, by accessing the pimpl pointer.
+@code
+void CMyClassWithPrivateStuff::someMethod(void)
+{
+	pimpl->iSomeInt = 2;
+}
+@endcode
 </pre>
 
 */

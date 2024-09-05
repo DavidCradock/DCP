@@ -30,7 +30,7 @@ var NAVTREE =
     [ "Directory Layout.", "92__directory_layout.html", null ],
     [ "Doxygen Documentation.", "03__doxygen_documentation.html", null ],
     [ "Adding New Projects.", "04__adding_new_projects.html", null ],
-    [ "SDL library.", "05__s_d_l.html", null ],
+    [ "SDL and GLFW libraries.", "05__s_d_l__g_l_f_w.html", null ],
     [ "Dave's Thoughts.", "06__daves_thoughts.html", null ],
     [ "Private Implemtations details", "07__private_implementations.html", null ],
     [ "Todo List", "todo.html", null ],
@@ -68,12 +68,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "01__getting_started.html",
-"class_d_c_l_1_1_c_colourf.html#ac741ab6cb77e31e7047bae0d70e25ecb",
-"class_d_c_l_1_1_c_image.html#ae373c6e34527fd88bb4a9f7d6da844ff",
-"class_d_c_l_1_1_c_oct_tree_entity.html#aedfdc9b234821e91422d514d73d4adfd",
-"class_d_c_l_1_1_c_rect.html#ab68b4697ca5b5dd5e1a9289ae6f35832",
-"class_d_c_l_1_1_c_vector3f.html#a3f6b7c5f52e5327922ac379ba17cffeb",
-"struct_d_c_l_1_1_c_profiler_1_1_s_section.html#a5dc5ebb4fbed43aa855ce9a8e818d6e0"
+"class_d_c_l_1_1_c_colourf.html#ad1a1cce7d7334c65e071108d64384647",
+"class_d_c_l_1_1_c_image.html#ae450d95c59a0cbd74fb2b80620ad9e53",
+"class_d_c_l_1_1_c_oct_tree_node.html",
+"class_d_c_l_1_1_c_rect.html#addaeefa30f2acd114745b8e345c1067e",
+"class_d_c_l_1_1_c_vector3f.html#a4350081add5cd0de2d5701482c635aa9",
+"struct_d_c_l_1_1_s_mem_info.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,8 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"struct_d_c_l_1_1_c_profiler_1_1_s_section.html#a5dc5ebb4fbed43aa855ce9a8e818d6e0":[9,0,0,28,0,1],
-"struct_d_c_l_1_1_c_profiler_1_1_s_section.html#a5dc5ebb4fbed43aa855ce9a8e818d6e0":[10,0,0,27,0,1],
-"struct_d_c_l_1_1_s_mem_info.html":[9,0,0,45],
 "struct_d_c_l_1_1_s_mem_info.html":[10,0,0,44],
 "struct_d_c_l_1_1_s_mem_info.html#a02efb032d175914ec8665e0a94a076f6":[9,0,0,45,2],
 "struct_d_c_l_1_1_s_mem_info.html#a02efb032d175914ec8665e0a94a076f6":[10,0,0,44,2],
