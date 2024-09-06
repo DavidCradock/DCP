@@ -18,13 +18,17 @@ All the SDL libraries' source code, including the main one itself was downloaded
 We clicked upon the project, then releases and downloaded the source.zip file for the project.
 We chose to use the source code instead of the pre-compiled libraries as, although it is more effort to compile the things ourselves, gives us more control over the configuration of the library and
 makes sure that in the future, if we update our compiler/linker/etc, the source will recompile specifically for those tools.
+Also, if SDL was compiled with Visual studio using newer C++ standards version and our application uses an older version, weird stuff could happen.
+So building SDL ourselves with the same C++ standards version as our executable projects, all is good and well :)
 </pre>
 
 <h3>SDL Source code setup</h3>
 <pre>
-We download the sourcecode for the library, extract and place in /ProjectFiles/DynamicLibs/SDL2-2.30.6/ (Or similar depending upon version)
+We download the sourcecode for the library, extract and place in /ProjectFiles/DynamicLibs/SDL2-2.30.6/ (Or similar depending upon version).
+We then temporarily copy the sourcecode dir to the desktop, use CMake to create Visual studio sln file and load this up and see what settings are used by them.
+This helps us when creating our own empty SDL project file so that we set correct settings such as libs to be included etc.
 The same is done for the other various SDL libs such as SDL_Mixer and friends.
-The downloaded source folder actually has precompiled .lib and .dll files which we could use, but 
+The downloaded source folder actually has precompiled .lib and .dll files which we could use, but as mentioned above, due to possible problems, we don't use these.
 </pre>
 
 <h3>SDL automatic copying of compiled dlls to executable folder</h3>

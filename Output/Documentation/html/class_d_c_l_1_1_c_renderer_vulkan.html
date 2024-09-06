@@ -117,12 +117,15 @@ Inheritance diagram for DCL::CRendererVulkan:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aaa04bb18912e42ca45b5401d4a8ed645" id="r_aaa04bb18912e42ca45b5401d4a8ed645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa04bb18912e42ca45b5401d4a8ed645">initialise</a> (unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string &amp;strWindowTitle, bool bFullscreen, bool bVSyncEnabled)</td></tr>
-<tr class="memdesc:aaa04bb18912e42ca45b5401d4a8ed645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a window with the graphics API all hooked up and ready to go.  <br /></td></tr>
-<tr class="separator:aaa04bb18912e42ca45b5401d4a8ed645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab3798bbb15a830a307b866d6bee05e2" id="r_aab3798bbb15a830a307b866d6bee05e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab3798bbb15a830a307b866d6bee05e2">initialise</a> (unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string &amp;strWindowTitle, bool bFullscreen, bool bVSyncEnabled, <a class="el" href="class_d_c_l_1_1_c_colourf.html">CColourf</a> clearColour)</td></tr>
+<tr class="memdesc:aab3798bbb15a830a307b866d6bee05e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a window with the graphics API all hooked up and ready to go.  <br /></td></tr>
+<tr class="separator:aab3798bbb15a830a307b866d6bee05e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58b8aeb96ea35bb8eaa33b50ec4177c9" id="r_a58b8aeb96ea35bb8eaa33b50ec4177c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58b8aeb96ea35bb8eaa33b50ec4177c9">shutdown</a> (void)</td></tr>
 <tr class="memdesc:a58b8aeb96ea35bb8eaa33b50ec4177c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown and close the API and window.  <br /></td></tr>
 <tr class="separator:a58b8aeb96ea35bb8eaa33b50ec4177c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8737796d7cd4c44017ad4d38f92bcba" id="r_ae8737796d7cd4c44017ad4d38f92bcba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8737796d7cd4c44017ad4d38f92bcba">updateWindow</a> (bool &amp;bWindowResized, bool &amp;bWindowMinimized, bool &amp;bWindowHasBeenAskedToClose)</td></tr>
+<tr class="memdesc:ae8737796d7cd4c44017ad4d38f92bcba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be called regularly, IE, each program loop to check any messages sent to the rendering window.  <br /></td></tr>
+<tr class="separator:ae8737796d7cd4c44017ad4d38f92bcba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1b5449e19a4558a547ad2a1c6a4f51e" id="r_ac1b5449e19a4558a547ad2a1c6a4f51e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1b5449e19a4558a547ad2a1c6a4f51e">blendDisable</a> (void)</td></tr>
 <tr class="memdesc:ac1b5449e19a4558a547ad2a1c6a4f51e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable blending.  <br /></td></tr>
 <tr class="separator:ac1b5449e19a4558a547ad2a1c6a4f51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,7 +242,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#ac197ea66bdebc261bc124c73877da8ab">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00024">24</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00029">29</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -270,7 +273,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#a33ef0c3b07953a2987eb1544149df01c">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00029">29</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00034">34</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -301,7 +304,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#a6869bd41a54311b78f6bc7ff6aaa5361">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00034">34</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00039">39</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -332,7 +335,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#a723ce86b6f889f90f19e328c88328b4e">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00039">39</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00044">44</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -363,7 +366,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#a110a43c0d454516e13fac37df7c773a2">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00044">44</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00049">49</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -394,7 +397,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#aa6baffb9aab7025857c5bb0fb984a310">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00049">49</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00054">54</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -425,7 +428,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#a962b6702de917488c6fd06d3f3c53cc2">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00054">54</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00059">59</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +459,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#a35b91887520610fa2219abb49d89609a">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00059">59</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00064">64</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -487,7 +490,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#ab2ea3dc3da57f6cd625566489fac781f">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00064">64</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00069">69</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -518,12 +521,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#a0a76cd7f928d673154162a7de3b9ae88">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00069">69</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00074">74</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aaa04bb18912e42ca45b5401d4a8ed645" name="aaa04bb18912e42ca45b5401d4a8ed645"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa04bb18912e42ca45b5401d4a8ed645">&#9670;&#160;</a></span>initialise()</h2>
+<a id="aab3798bbb15a830a307b866d6bee05e2" name="aab3798bbb15a830a307b866d6bee05e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3798bbb15a830a307b866d6bee05e2">&#9670;&#160;</a></span>initialise()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -554,7 +557,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>bVSyncEnabled</em></span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>bVSyncEnabled</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_d_c_l_1_1_c_colourf.html">CColourf</a></td>          <td class="paramname"><span class="paramname"><em>clearColour</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -566,7 +574,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Initialise a window with the graphics API all hooked up and ready to go. </p>
 
-<p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#aefcacfef7377ee11fee1ce3a19d6fc78">DCL::CRendererBase</a>.</p>
+<p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#a01874e3fa1adaab73c7957b46bbfb90a">DCL::CRendererBase</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00014">14</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
@@ -618,7 +626,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#ae8113f9d7beeb6986c3fb11c8d87560a">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00074">74</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00079">79</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -668,7 +676,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#a9906eb01e39177291133e6200cb2a52b">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00079">79</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00084">84</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -713,7 +721,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#ac36e2a50e6c242ec7e56148d1ee9456a">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00084">84</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00089">89</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -744,7 +752,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#ae000a09f081e4415caf1a29a84db3a7d">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00094">94</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00099">99</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -775,7 +783,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#aadba47cb5a237ae02a4b1bd6bde53666">DCL::CRendererBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00089">89</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00094">94</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>
@@ -807,6 +815,54 @@ Public Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#a6c831232b08d7c06b2dc9ba94d7ec5f4">DCL::CRendererBase</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00019">19</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae8737796d7cd4c44017ad4d38f92bcba" name="ae8737796d7cd4c44017ad4d38f92bcba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8737796d7cd4c44017ad4d38f92bcba">&#9670;&#160;</a></span>updateWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DCL::CRendererVulkan::updateWindow </td>
+          <td>(</td>
+          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>bWindowResized</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>bWindowMinimized</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>bWindowHasBeenAskedToClose</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Should be called regularly, IE, each program loop to check any messages sent to the rendering window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bWindowResized</td><td>Will be true if the window has been resized The framebuffer should be resized within this method.</td></tr>
+    <tr><td class="paramname">bWindowMinimized</td><td>Will be true if the window has been minimized </td></tr>
+    <tr><td class="paramname">bWindowHasBeenAskedToClose</td><td>Will be true if the window/application has been asked to be closed by the OS. We should check this value and end program execution if true Windows created by the operating system have messages sent to them when certain events happen to the window. For example, when the window is minimized, resized, the close button has been pressed or the application has been asked to be closed. Within this method, we check for these messages and handle resizing(resize the framebuffer), minimizing (Maybe pause the app?) and closing </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_d_c_l_1_1_c_renderer_base.html#aa3ef3e8c45f29c8ecc5a94d77646b893">DCL::CRendererBase</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_renderer_vulkan_8cpp_source.html#l00024">24</a> of file <a class="el" href="_renderer_vulkan_8cpp_source.html">RendererVulkan.cpp</a>.</p>
 
 </div>
 </div>

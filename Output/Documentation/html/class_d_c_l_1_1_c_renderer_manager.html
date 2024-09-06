@@ -113,12 +113,9 @@ $(function(){initNavTree('class_d_c_l_1_1_c_renderer_manager.html',''); initResi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af49a7cbc1f8a4c72ec843270b60b31e6" id="r_af49a7cbc1f8a4c72ec843270b60b31e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_c_l_1_1_c_renderer_base.html">CRendererBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af49a7cbc1f8a4c72ec843270b60b31e6">initOpenGL</a> (void)</td></tr>
-<tr class="memdesc:af49a7cbc1f8a4c72ec843270b60b31e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the renderer by creating a window and hooking up the correct graphics API such as OpenGL or Vulkan, ready for use.  <br /></td></tr>
-<tr class="separator:af49a7cbc1f8a4c72ec843270b60b31e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c7352e81f0ee1db74380daa055e3c5d" id="r_a2c7352e81f0ee1db74380daa055e3c5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_c_l_1_1_c_renderer_base.html">CRendererBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c7352e81f0ee1db74380daa055e3c5d">initVulkan</a> (void)</td></tr>
-<tr class="memdesc:a2c7352e81f0ee1db74380daa055e3c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the renderer by creating a window and hooking up the Vulkan API ready for use.  <br /></td></tr>
-<tr class="separator:a2c7352e81f0ee1db74380daa055e3c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af074f976c28cd282a0467e7fa7e52169" id="r_af074f976c28cd282a0467e7fa7e52169"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_c_l_1_1_c_renderer_base.html">CRendererBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af074f976c28cd282a0467e7fa7e52169">init</a> (const std::string &amp;strRendererName=&quot;OpenGL&quot;)</td></tr>
+<tr class="memdesc:af074f976c28cd282a0467e7fa7e52169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the renderer by creating a window and hooking up the correct graphics API such as OpenGL or Vulkan, ready for use.  <br /></td></tr>
+<tr class="separator:af074f976c28cd282a0467e7fa7e52169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c84fd6f3c7369bc3465c323d6e20f8b" id="r_a0c84fd6f3c7369bc3465c323d6e20f8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_c_l_1_1_c_renderer_base.html">CRendererBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c84fd6f3c7369bc3465c323d6e20f8b">get</a> (void)</td></tr>
 <tr class="memdesc:a0c84fd6f3c7369bc3465c323d6e20f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer the a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object if a call to one of the initAPINAME methods have previously been called.  <br /></td></tr>
 <tr class="separator:a0c84fd6f3c7369bc3465c323d6e20f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,7 +140,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00006">6</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00007">7</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -162,7 +159,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00011">11</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00012">12</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,22 +180,22 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a pointer the a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object if a call to one of the initAPINAME methods have previously been called. </p>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object which we use to perform all the rendering operations if it has been initialised, otherwise, an exception will occur. A call to either <a class="el" href="#af49a7cbc1f8a4c72ec843270b60b31e6" title="Initialises the renderer by creating a window and hooking up the correct graphics API such as OpenGL ...">initOpenGL()</a> or <a class="el" href="#a2c7352e81f0ee1db74380daa055e3c5d" title="Initialises the renderer by creating a window and hooking up the Vulkan API ready for use.">initVulkan()</a> or any of the other init methods will fix this exception from occurring. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object which we use to perform all the rendering operations if it has been initialised, otherwise, an exception will occur. A call to either initOpenGL() or initVulkan() or any of the other init methods will fix this exception from occurring. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00031">31</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00035">35</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
 
 </div>
 </div>
-<a id="af49a7cbc1f8a4c72ec843270b60b31e6" name="af49a7cbc1f8a4c72ec843270b60b31e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af49a7cbc1f8a4c72ec843270b60b31e6">&#9670;&#160;</a></span>initOpenGL()</h2>
+<a id="af074f976c28cd282a0467e7fa7e52169" name="af074f976c28cd282a0467e7fa7e52169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af074f976c28cd282a0467e7fa7e52169">&#9670;&#160;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_d_c_l_1_1_c_renderer_base.html">CRendererBase</a> * DCL::CRendererManager::initOpenGL </td>
+          <td class="memname"><a class="el" href="class_d_c_l_1_1_c_renderer_base.html">CRendererBase</a> * DCL::CRendererManager::init </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strRendererName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;OpenGL&quot;</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -207,36 +204,14 @@ Public Member Functions</h2></td></tr>
 <p>Initialises the renderer by creating a window and hooking up the correct graphics API such as OpenGL or Vulkan, ready for use. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">strRendererName</td><td>The name of the renderer we wish to use. Can be OpenGL, Vulkan and maybe more in the future. Next line <br  />
-</td></tr>
+    <tr><td class="paramname">strRendererName</td><td>The name of the renderer we wish to use. Can be OpenGL, Vulkan and maybe more in the future. The given string can be uppercase, lowercase or a mixture, as long as it is either opengl or vulkan If the given string holding the renderer name is not recognised, an exception occurs.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object which we use to perform all the rendering operations. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object which we use to perform all the rendering operations.</dd></dl>
+<p>If the renderer is already initialised, an exception occurs </p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00016">16</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a2c7352e81f0ee1db74380daa055e3c5d" name="a2c7352e81f0ee1db74380daa055e3c5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c7352e81f0ee1db74380daa055e3c5d">&#9670;&#160;</a></span>initVulkan()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_d_c_l_1_1_c_renderer_base.html">CRendererBase</a> * DCL::CRendererManager::initVulkan </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initialises the renderer by creating a window and hooking up the Vulkan API ready for use. </p>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object which we use to perform all the rendering operations. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00024">24</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00017">17</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
 
 </div>
 </div>

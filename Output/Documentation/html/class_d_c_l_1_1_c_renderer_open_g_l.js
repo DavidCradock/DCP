@@ -11,11 +11,12 @@ var class_d_c_l_1_1_c_renderer_open_g_l =
     [ "cullFaceEnable", "class_d_c_l_1_1_c_renderer_open_g_l.html#a69b583f64e9e8901ef16be16306fb85c", null ],
     [ "depthTestDisable", "class_d_c_l_1_1_c_renderer_open_g_l.html#af1e08828cbbb7bbbd080aa8a6da422ee", null ],
     [ "depthTestEnable", "class_d_c_l_1_1_c_renderer_open_g_l.html#aa84dcffcf74203422740ab335e0e9f83", null ],
-    [ "initialise", "class_d_c_l_1_1_c_renderer_open_g_l.html#ac9b7d6a89e3668ccae2e0eecb1b32b81", null ],
+    [ "initialise", "class_d_c_l_1_1_c_renderer_open_g_l.html#ac5bbfb5c2d73e5a7dc613a6d5308bc14", null ],
     [ "pixelsRead", "class_d_c_l_1_1_c_renderer_open_g_l.html#af80ad2855c386808a9a50b20ead4225c", null ],
     [ "pixelsWrite", "class_d_c_l_1_1_c_renderer_open_g_l.html#a46fb7f058228a1ea8a8a356f7685bbc7", null ],
     [ "scissorTest", "class_d_c_l_1_1_c_renderer_open_g_l.html#adf4820583634d65fa16879c05495a2aa", null ],
     [ "scissorTestDisable", "class_d_c_l_1_1_c_renderer_open_g_l.html#a42ed48867e9db85e26cd9cc13e1904fb", null ],
     [ "scissorTestEnable", "class_d_c_l_1_1_c_renderer_open_g_l.html#a3a67e49bf7e8b6468a0522247e6b6ec2", null ],
-    [ "shutdown", "class_d_c_l_1_1_c_renderer_open_g_l.html#ae1828a8d508247e108a3f7f9974677df", null ]
+    [ "shutdown", "class_d_c_l_1_1_c_renderer_open_g_l.html#ae1828a8d508247e108a3f7f9974677df", null ],
+    [ "updateWindow", "class_d_c_l_1_1_c_renderer_open_g_l.html#a046646b61f4a28ea59f7b316e9ce6482", null ]
 ];

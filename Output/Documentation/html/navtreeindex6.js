@@ -1,9 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"namespacemembers_func.html":[9,1,1],
-"namespacemembers_vars.html":[9,1,2],
-"namespaces.html":[9,0],
-"pages.html":[],
 "struct___g_p_u___d_e_v_i_c_e.html":[10,0,1],
 "struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords.html":[9,0,0,15,0],
 "struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords.html":[10,0,0,14,0],

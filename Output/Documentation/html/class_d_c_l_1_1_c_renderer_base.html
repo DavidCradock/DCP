@@ -123,12 +123,15 @@ Inheritance diagram for DCL::CRendererBase:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aefcacfef7377ee11fee1ce3a19d6fc78" id="r_aefcacfef7377ee11fee1ce3a19d6fc78"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefcacfef7377ee11fee1ce3a19d6fc78">initialise</a> (unsigned int iWindowWidth=320, unsigned int iWindowHeight=240, const std::string &amp;strWindowTitle=&quot;DCP Dev App&quot;, bool bFullscreen=false, bool bVSyncEnabled=true)=0</td></tr>
-<tr class="memdesc:aefcacfef7377ee11fee1ce3a19d6fc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a window with the graphics API all hooked up and ready to go.  <br /></td></tr>
-<tr class="separator:aefcacfef7377ee11fee1ce3a19d6fc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01874e3fa1adaab73c7957b46bbfb90a" id="r_a01874e3fa1adaab73c7957b46bbfb90a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01874e3fa1adaab73c7957b46bbfb90a">initialise</a> (unsigned int iWindowWidth=320, unsigned int iWindowHeight=240, const std::string &amp;strWindowTitle=&quot;DCP Dev App&quot;, bool bFullscreen=false, bool bVSyncEnabled=true, <a class="el" href="class_d_c_l_1_1_c_colourf.html">CColourf</a> clearColour=<a class="el" href="class_d_c_l_1_1_c_colourf.html">CColourf</a>(0.2f, 0.2f, 0.2f, 1.0f))=0</td></tr>
+<tr class="memdesc:a01874e3fa1adaab73c7957b46bbfb90a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a window with the graphics API all hooked up and ready to go.  <br /></td></tr>
+<tr class="separator:a01874e3fa1adaab73c7957b46bbfb90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c831232b08d7c06b2dc9ba94d7ec5f4" id="r_a6c831232b08d7c06b2dc9ba94d7ec5f4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c831232b08d7c06b2dc9ba94d7ec5f4">shutdown</a> (void)=0</td></tr>
 <tr class="memdesc:a6c831232b08d7c06b2dc9ba94d7ec5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown and close the API and window.  <br /></td></tr>
 <tr class="separator:a6c831232b08d7c06b2dc9ba94d7ec5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3ef3e8c45f29c8ecc5a94d77646b893" id="r_aa3ef3e8c45f29c8ecc5a94d77646b893"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3ef3e8c45f29c8ecc5a94d77646b893">updateWindow</a> (bool &amp;bWindowResized, bool &amp;bWindowMinimized, bool &amp;bWindowHasBeenAskedToClose)=0</td></tr>
+<tr class="memdesc:aa3ef3e8c45f29c8ecc5a94d77646b893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be called regularly, IE, each program loop to check any messages sent to the rendering window.  <br /></td></tr>
+<tr class="separator:aa3ef3e8c45f29c8ecc5a94d77646b893"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac197ea66bdebc261bc124c73877da8ab" id="r_ac197ea66bdebc261bc124c73877da8ab"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac197ea66bdebc261bc124c73877da8ab">blendDisable</a> (void)=0</td></tr>
 <tr class="memdesc:ac197ea66bdebc261bc124c73877da8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable blending.  <br /></td></tr>
 <tr class="separator:ac197ea66bdebc261bc124c73877da8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,7 +184,7 @@ Public Member Functions</h2></td></tr>
 <p>We use Pimpl for the derived renderer classes as we do not wish to expose/make the APIs visible to any code, otherwise we might be tempted to call the APIs and that'd make a huge mess! So all objects needed by the renderer classes go inside the private implementation instead of their header files.</p>
 <p>Although a renderer, regardless of API can render to a buffer without a window, we do not include such functionality here. Meaning, a window is required. This class is responsible for creating/checking messages/closing this window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_base_8h_source.html#l00033">33</a> of file <a class="el" href="_renderer_base_8h_source.html">RendererBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_base_8h_source.html#l00034">34</a> of file <a class="el" href="_renderer_base_8h_source.html">RendererBase.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac197ea66bdebc261bc124c73877da8ab" name="ac197ea66bdebc261bc124c73877da8ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac197ea66bdebc261bc124c73877da8ab">&#9670;&#160;</a></span>blendDisable()</h2>
@@ -473,8 +476,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aefcacfef7377ee11fee1ce3a19d6fc78" name="aefcacfef7377ee11fee1ce3a19d6fc78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefcacfef7377ee11fee1ce3a19d6fc78">&#9670;&#160;</a></span>initialise()</h2>
+<a id="a01874e3fa1adaab73c7957b46bbfb90a" name="a01874e3fa1adaab73c7957b46bbfb90a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01874e3fa1adaab73c7957b46bbfb90a">&#9670;&#160;</a></span>initialise()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -505,7 +508,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>bVSyncEnabled</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>bVSyncEnabled</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_d_c_l_1_1_c_colourf.html">CColourf</a></td>          <td class="paramname"><span class="paramname"><em>clearColour</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="class_d_c_l_1_1_c_colourf.html">CColourf</a>(0.2f,&#160;0.2f,&#160;0.2f,&#160;1.0f)</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -517,7 +525,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Initialise a window with the graphics API all hooked up and ready to go. </p>
 
-<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#ac9b7d6a89e3668ccae2e0eecb1b32b81">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#aaa04bb18912e42ca45b5401d4a8ed645">DCL::CRendererVulkan</a>.</p>
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#ac5bbfb5c2d73e5a7dc613a6d5308bc14">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#aab3798bbb15a830a307b866d6bee05e2">DCL::CRendererVulkan</a>.</p>
 
 </div>
 </div>
@@ -744,6 +752,52 @@ Public Member Functions</h2></td></tr>
 <p>Shutdown and close the API and window. </p>
 
 <p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#ae1828a8d508247e108a3f7f9974677df">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a58b8aeb96ea35bb8eaa33b50ec4177c9">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="aa3ef3e8c45f29c8ecc5a94d77646b893" name="aa3ef3e8c45f29c8ecc5a94d77646b893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3ef3e8c45f29c8ecc5a94d77646b893">&#9670;&#160;</a></span>updateWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DCL::CRendererBase::updateWindow </td>
+          <td>(</td>
+          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>bWindowResized</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>bWindowMinimized</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>bWindowHasBeenAskedToClose</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Should be called regularly, IE, each program loop to check any messages sent to the rendering window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bWindowResized</td><td>Will be true if the window has been resized The framebuffer should be resized within this method.</td></tr>
+    <tr><td class="paramname">bWindowMinimized</td><td>Will be true if the window has been minimized </td></tr>
+    <tr><td class="paramname">bWindowHasBeenAskedToClose</td><td>Will be true if the window/application has been asked to be closed by the OS. We should check this value and end program execution if true Windows created by the operating system have messages sent to them when certain events happen to the window. For example, when the window is minimized, resized, the close button has been pressed or the application has been asked to be closed. Within this method, we check for these messages and handle resizing(resize the framebuffer), minimizing (Maybe pause the app?) and closing </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a046646b61f4a28ea59f7b316e9ce6482">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#ae8737796d7cd4c44017ad4d38f92bcba">DCL::CRendererVulkan</a>.</p>
 
 </div>
 </div>
