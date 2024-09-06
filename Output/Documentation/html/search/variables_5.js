@@ -1,31 +1,5 @@
 var searchData=
 [
-  ['ibegincalledcount_0',['iBeginCalledCount',['../struct_d_c_l_1_1_c_profiler_1_1_s_section.html#a5dc5ebb4fbed43aa855ce9a8e818d6e0',1,'DCL::CProfiler::SSection']]],
-  ['icommitlimit_1',['iCommitLimit',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#aba19ed5eec99c7f91c29946678664502',1,'DCL::SMemInfo::SMemOS']]],
-  ['icommitpeak_2',['iCommitPeak',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a1c7553c520f056cf02df37ee68e5736f',1,'DCL::SMemInfo::SMemOS']]],
-  ['icommittotal_3',['iCommitTotal',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a58fdbd13ba0b4b36a91c4755244fb45c',1,'DCL::SMemInfo::SMemOS']]],
-  ['ihandlecount_4',['iHandleCount',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a026840270f0fe8e3052e01ed86bb7b89',1,'DCL::SMemInfo::SMemOS']]],
-  ['ikernelnonpaged_5',['iKernelNonpaged',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a8a92a89c34919e5389e1e8808bb18866',1,'DCL::SMemInfo::SMemOS']]],
-  ['ikernelpaged_6',['iKernelPaged',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#af8a96423ef208b11be33a77ae5690f65',1,'DCL::SMemInfo::SMemOS']]],
-  ['ikerneltotal_7',['iKernelTotal',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a53629d4ea62027f11f1e7af533d0bd5e',1,'DCL::SMemInfo::SMemOS']]],
-  ['ipagefaultcount_8',['iPageFaultCount',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#a57588b73cf5ad8b4c2fbad8784df9e77',1,'DCL::SMemInfo::SMemProcess']]],
-  ['ipagefileusage_9',['iPagefileUsage',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#a1ef0e0290f83d094869fc844cce1f516',1,'DCL::SMemInfo::SMemProcess']]],
-  ['ipagesize_10',['iPageSize',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a62bd5b175771bc4a1d461352b61aaee3',1,'DCL::SMemInfo::SMemOS']]],
-  ['ipeakpagefileusage_11',['iPeakPagefileUsage',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#a48ab588d1cf66396825561f029a46849',1,'DCL::SMemInfo::SMemProcess']]],
-  ['ipeakworkingsetsize_12',['iPeakWorkingSetSize',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#a50d56fa5fd7c32696ec9092f3287bf0b',1,'DCL::SMemInfo::SMemProcess']]],
-  ['iphysicalavailable_13',['iPhysicalAvailable',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a18ab0b59b6266494c24163e4c3e33472',1,'DCL::SMemInfo::SMemOS']]],
-  ['iphysicaltotal_14',['iPhysicalTotal',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#aa2172ca84f190a794614fbcba6d841ba',1,'DCL::SMemInfo::SMemOS']]],
-  ['iprivateusage_15',['iPrivateUsage',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#a2761047a43ee5d9f3e5259c366ce61ba',1,'DCL::SMemInfo::SMemProcess']]],
-  ['iprocesscount_16',['iProcessCount',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a8039d5f16971169464508756a190ee5f',1,'DCL::SMemInfo::SMemOS']]],
-  ['iquotanonpagedpoolusage_17',['iQuotaNonPagedPoolUsage',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#a59b1afdef918896d195db8e71bc62bc2',1,'DCL::SMemInfo::SMemProcess']]],
-  ['iquotapagedpoolusage_18',['iQuotaPagedPoolUsage',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#a02c6a406f2983c405b989552f13e6f67',1,'DCL::SMemInfo::SMemProcess']]],
-  ['iquotapeaknonpagedpoolusage_19',['iQuotaPeakNonPagedPoolUsage',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#aacb6a037dd9a4c077732f70f8d1b1ec4',1,'DCL::SMemInfo::SMemProcess']]],
-  ['iquotapeakpagedpoolusage_20',['iQuotaPeakPagedPoolUsage',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#ab2e8f1b6009831a26cb9c8c702973e8a',1,'DCL::SMemInfo::SMemProcess']]],
-  ['isystemcache_21',['iSystemCache',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a52cb3dd1dab8fab8e1538152ebd0c35b',1,'DCL::SMemInfo::SMemOS']]],
-  ['ithreadcount_22',['iThreadCount',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_o_s.html#a30f199aed283c9cab82d94647a8227c4',1,'DCL::SMemInfo::SMemOS']]],
-  ['itimedays_23',['iTimeDays',['../class_d_c_l_1_1_c_log_entry.html#aafff27b488dca7885410181cd0df9ef3',1,'DCL::CLogEntry']]],
-  ['itimehours_24',['iTimeHours',['../class_d_c_l_1_1_c_log_entry.html#a6bab9fe7185a9cc52f74e91fd1acdbf9',1,'DCL::CLogEntry']]],
-  ['itimemin_25',['iTimeMin',['../class_d_c_l_1_1_c_log_entry.html#a6971b9c22d2a855dd498ab70128cb73b',1,'DCL::CLogEntry']]],
-  ['itimeweeks_26',['iTimeWeeks',['../class_d_c_l_1_1_c_log_entry.html#a5f3473a654e2443e11338e486e755de4',1,'DCL::CLogEntry']]],
-  ['iworkingsetsize_27',['iWorkingSetSize',['../struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#aa2b88598b79aeb6e9c85fad5a36d0aa9',1,'DCL::SMemInfo::SMemProcess']]]
+  ['gfilemanager_0',['gFileManager',['../namespace_d_c_l.html#a59a6d9b5f42275453df6434b51689c63',1,'DCL']]],
+  ['green_1',['green',['../class_d_c_l_1_1_c_colourf.html#adbf46ba7b6ec02249d8e75b07e6b58f7',1,'DCL::CColourf::green'],['../class_d_c_l_1_1_c_colouruc.html#a75cfd3830cc4bdfe90d68013baec609a',1,'DCL::CColouruc::green']]]
 ];

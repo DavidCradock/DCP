@@ -1,5 +1,6 @@
 #include "RendererManager.h"
 #include "../Core/Exceptions.h"
+#include "../Core/StringUtils.h"
 
 namespace DCL
 {
@@ -13,21 +14,24 @@ namespace DCL
 
 	}
 
-	CRendererBase* CRendererManager::initOpenGL(void)
+	CRendererBase* CRendererManager::init(const std::string& strRendererName)
 	{
-		ThrowIfTrue(_mpRenderer, "CRendererManager::initOpenGL() failed. Renderer already initialised.");
-		_mpRenderer = new CRendererOpenGL;
+		std::string strRendererNameLowercase = strRendererName;
+		StringUtils::stringToLowercase(strRendererNameLowercase);
+
+		ThrowIfTrue(_mpRenderer, "CRendererManager::init() failed. Renderer already initialised.");
+
+		if ("opengl" == strRendererName)
+			_mpRenderer = new CRendererOpenGL;
+		else if ("vulkan" == strRendererName)
+			_mpRenderer = new CRendererVulkan;
+		else
+			ThrowIfTrue(1, "CRendererManager::init() failed. The given renderer name of " + strRendererName + " was not recognised. Please use either opengl or vulkan.");
+
 		ThrowIfMemoryNotAllocated(_mpRenderer);
 		return _mpRenderer;
 	}
 
-	CRendererBase* CRendererManager::initVulkan(void)
-	{
-		ThrowIfTrue(_mpRenderer, "CRendererManager::initVulkan() failed. Renderer already initialised.");
-		_mpRenderer = new CRendererVulkan;
-		ThrowIfMemoryNotAllocated(_mpRenderer);
-		return _mpRenderer;
-	}
 	CRendererBase* CRendererManager::get(void)
 	{
 		ThrowIfFalse(_mpRenderer, "CRendererManager::get() failed. Renderer is not initialised.");

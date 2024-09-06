@@ -12,7 +12,7 @@ var searchData=
   ['imageatlas_2eh_9',['ImageAtlas.h',['../_image_atlas_8h.html',1,'']]],
   ['implemtations_20details_10',['Private Implemtations details',['../07__private_implementations.html',1,'']]],
   ['init_11',['init',['../class_d_c_l_1_1_c_oct_tree.html#a10b1942b258b8c1868625a1e649f82b7',1,'DCL::COctTree::init()'],['../class_d_c_l_1_1_c_quad_tree.html#a918f72656ab8a4987f02935e4b00e2e7',1,'DCL::CQuadTree::init()']]],
-  ['initialise_12',['initialise',['../class_d_c_l_1_1_c_renderer_base.html#a01fe427ef3f3394ec90e2e8eebac62a4',1,'DCL::CRendererBase::initialise()'],['../class_d_c_l_1_1_c_renderer_open_g_l.html#a3e3f846fd219eb247415cc9c35ac3510',1,'DCL::CRendererOpenGL::initialise()'],['../class_d_c_l_1_1_c_renderer_vulkan.html#a9a416551edb0ba5a569f36a72e6806ab',1,'DCL::CRendererVulkan::initialise()']]],
+  ['initialise_12',['initialise',['../class_d_c_l_1_1_c_renderer_base.html#aefcacfef7377ee11fee1ce3a19d6fc78',1,'DCL::CRendererBase::initialise()'],['../class_d_c_l_1_1_c_renderer_open_g_l.html#ac9b7d6a89e3668ccae2e0eecb1b32b81',1,'DCL::CRendererOpenGL::initialise()'],['../class_d_c_l_1_1_c_renderer_vulkan.html#aaa04bb18912e42ca45b5401d4a8ed645',1,'DCL::CRendererVulkan::initialise()']]],
   ['initopengl_13',['initOpenGL',['../class_d_c_l_1_1_c_renderer_manager.html#af49a7cbc1f8a4c72ec843270b60b31e6',1,'DCL::CRendererManager']]],
   ['initvulkan_14',['initVulkan',['../class_d_c_l_1_1_c_renderer_manager.html#a2c7352e81f0ee1db74380daa055e3c5d',1,'DCL::CRendererManager']]],
   ['insertelite_15',['insertElite',['../class_d_c_l_1_1_c_genetics_training.html#ad1f199db4716f1402a67413a9cdd8f87',1,'DCL::CGeneticsTraining']]],

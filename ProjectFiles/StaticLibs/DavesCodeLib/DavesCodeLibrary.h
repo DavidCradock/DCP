@@ -21,9 +21,9 @@
 
 // SDL2
 #ifdef _DEBUG
-#pragma comment(lib, "../../../Output/DynamicLibs/external_libs/SDL2_DEBUG.dll")
+#pragma comment(lib, "../../../Output/DynamicLibs/SDL2_DEBUG.lib")
 #else
-#pragma comment(lib, "../../../Output/DynamicLibs/external_libs/SDL2.dll")
+#pragma comment(lib, "../../../Output/DynamicLibs/SDL2.lib")
 #endif
 
 
@@ -62,10 +62,10 @@
 #include "Math/Vector3f.h"
 #include "Math/Vector4f.h"
 #include "RayTracer/Ray.h"
-//#include "Renderers/RendererBase.h"
-//#include "Renderers/RendererManager.h"
-//#include "Renderers/RendererOpenGL.h"
-//#include "Renderers/RendererVulkan.h"
+#include "Renderers/RendererBase.h"
+#include "Renderers/RendererManager.h"
+#include "Renderers/RendererOpenGL.h"
+#include "Renderers/RendererVulkan.h"
 #include "SpatialPartitioning/octTree.h"
 #include "SpatialPartitioning/octTreeEntity.h"
 #include "SpatialPartitioning/octTreeNode.h"

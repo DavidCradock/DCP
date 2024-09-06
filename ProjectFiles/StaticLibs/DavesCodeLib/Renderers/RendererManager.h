@@ -18,15 +18,16 @@ namespace DCL
 		CRendererManager();
 		~CRendererManager();
 
-		/// \brief Initialises the renderer by creating a window and hooking up the OpenGL API ready for use.
+		/// \brief Initialises the renderer by creating a window and hooking up the correct graphics API such as OpenGL or Vulkan, ready for use.
 		///
+		/// \param strRendererName The name of the renderer we wish to use. Can be OpenGL, Vulkan and maybe more in the future.
+		///	The given string can be uppercase, lowercase or a mixture, as long as it is either opengl or vulkan
+		/// If the given string holding the renderer name is not recognised, an exception occurs.
+		/// 
 		/// \return A pointer to a CRendererBase object which we use to perform all the rendering operations.
-		CRendererBase* initOpenGL(void);
-
-		/// \brief Initialises the renderer by creating a window and hooking up the Vulkan API ready for use.
-		///
-		/// \return A pointer to a CRendererBase object which we use to perform all the rendering operations.
-		CRendererBase* initVulkan(void);
+		/// 
+		/// If the renderer is already initialised, an exception occurs
+		CRendererBase* init(const std::string& strRendererName = "OpenGL");
 
 		/// \brief Returns a pointer the a CRendererBase object if a call to one of the initAPINAME methods have previously been called.
 		///

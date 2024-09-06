@@ -27,7 +27,7 @@ Make sure "Configuration" in the top left of the window is set to "All configura
 	Configuration Properties/Debugging/ "Working Directory" set to $(SolutionDir)Output\Executables\
 	Configuration Properties/Linker/System" set "SubSystem" from console to Windows
 	Configuration Properties/C++/General" set "Multi-processor Compilation" to Yes. This is optional, but for me reduced build times from 1min 20sec to just 21sec.
-
+	Configuration Properties/Manifest Tool/Input and Output/" set "DPI Awareness" to High DPI Aware
 Make sure "Configuration" in the top left of the window is set to "Debug" and set...
 	Configuration Properties/General/ "Target Name" set to $(ProjectName)_DEBUG this is so that when performing a batch build and building both debug and release builds,
 	the debug executable doesn't overwrite the release build and both are available.

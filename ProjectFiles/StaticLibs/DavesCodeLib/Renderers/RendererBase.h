@@ -6,6 +6,7 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
+#include "../Core/Colourf.h"
 #include <string>
 
 namespace DCL
@@ -16,7 +17,7 @@ namespace DCL
 	/// No implementation here.
 	/// Every method in here is pure virtual (The virtual keyword and the "= 0" at the end)
 	/// All the various rendering classes (such as the user interface class for example) use the methods declared here to render stuff in a generic way.
-	/// This allows us, to write all the rendering code in an API independent way, so if we wish to use a different API, we don't have to re-write all the rendering code.
+	/// This allows us to write all the rendering code in an API independent way, so if we wish to use a different API, we don't have to re-write all the code which uses a renderer.
 	/// We implement multiple renderer classes which are based upon this class, then create a pointer to one of those classes and store that
 	/// in a CRenderer pointer depending upon which renderer we wish to use (OpenGL, Vulkan, maybe software (at a later date)).
 	/// The only disadvantage I can think of is more work.
@@ -25,17 +26,33 @@ namespace DCL
 	/// with Vulkan and it gives me a nice user support feature :)
 	/// It'll also be fun to compare performance between the different APIs.
 	/// 
-	/// We use Cheshire cat/pimpl for the derived renderer classes as we do not wish to expose/make the APIs visible to any code, otherwise we might be tempted to call the APIs and that'd make a huge mess!
+	/// We use Pimpl for the derived renderer classes as we do not wish to expose/make the APIs visible to any code, otherwise we might be tempted to call the APIs and that'd make a huge mess!
 	/// So all objects needed by the renderer classes go inside the private implementation instead of their header files.
+	/// 
+	/// Although a renderer, regardless of API can render to a buffer without a window, we do not include such functionality here.
+	/// Meaning, a window is required. This class is responsible for creating/checking messages/closing this window.
 	class CRendererBase
 	{
 	public:
 		/// \brief Initialise a window with the graphics API all hooked up and ready to go
-		virtual void initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen) = 0;
+		virtual void initialise(unsigned int iWindowWidth = 320, unsigned int iWindowHeight = 240, const std::string& strWindowTitle = "DCP Dev App", bool bFullscreen = false, bool bVSyncEnabled = true, CColourf clearColour = CColourf(0.2f, 0.2f, 0.2f, 1.0f)) = 0;
 
 		/// \brief Shutdown and close the API and window
 		virtual void shutdown(void) = 0;
 	
+		/// \brief Should be called regularly, IE, each program loop to check any messages sent to the rendering window.
+		/// 
+		/// \param bWindowResized Will be true if the window has been resized
+		/// The framebuffer should be resized within this method.
+		/// 
+		/// \param bWindowMinimized Will be true if the window has been minimized
+		/// \param bWindowHasBeenAskedToClose Will be true if the window/application has been asked to be closed by the OS.
+		/// We should check this value and end program execution if true
+		/// Windows created by the operating system have messages sent to them when certain events happen to the window.
+		/// For example, when the window is minimized, resized, the close button has been pressed or the application has been asked to be closed.
+		/// Within this method, we check for these messages and handle resizing(resize the framebuffer), minimizing (Maybe pause the app?) and closing
+		virtual void updateWindow(bool& bWindowResized, bool& bWindowMinimized, bool& bWindowHasBeenAskedToClose) = 0;
+		
 		/// \brief 
 		//virtual void beginFrame() = 0;
 		//virtual void endFrame() = 0;

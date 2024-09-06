@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fpercentageofmain_0',['fPercentageOfMain',['../struct_d_c_l_1_1_s_profiler_results.html#aac11af4c919b08819fa3a0e716d51130',1,'DCL::SProfilerResults']]],
-  ['fsomemember_1',['fSomeMember',['../class_d_c_l_1_1_c_new_class_template.html#a293c760a5f99fb30bec1a08b71581951',1,'DCL::CNewClassTemplate']]],
-  ['ftimeseconds_2',['fTimeSeconds',['../class_d_c_l_1_1_c_log_entry.html#ab10c00c447814d37997677d6f48fd6db',1,'DCL::CLogEntry']]]
+  ['daccumulatedtimeinseconds_0',['dAccumulatedTimeInSeconds',['../struct_d_c_l_1_1_c_profiler_1_1_s_section.html#a28ce8bb73a6fbc6ae1f86990c0c61ccb',1,'DCL::CProfiler::SSection']]],
+  ['daccumulatedtimeseconds_1',['dAccumulatedTimeSeconds',['../struct_d_c_l_1_1_s_profiler_results.html#a185db659b070dfda9814e0417fac73fb',1,'DCL::SProfilerResults']]],
+  ['dfitness_2',['dFitness',['../class_d_c_l_1_1_c_genome.html#acb2b53ac2b45b1fd4e07629e6966480f',1,'DCL::CGenome']]]
 ];

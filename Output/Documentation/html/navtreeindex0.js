@@ -3,7 +3,7 @@ var NAVTREEINDEX0 =
 "01__getting_started.html":[1],
 "03__doxygen_documentation.html":[3],
 "04__adding_new_projects.html":[4],
-"05__s_d_l__g_l_f_w.html":[5],
+"05__s_d_l.html":[5],
 "06__daves_thoughts.html":[6],
 "07__private_implementations.html":[7],
 "92__directory_layout.html":[2],

@@ -30,7 +30,7 @@ var NAVTREE =
     [ "Directory Layout.", "92__directory_layout.html", null ],
     [ "Doxygen Documentation.", "03__doxygen_documentation.html", null ],
     [ "Adding New Projects.", "04__adding_new_projects.html", null ],
-    [ "SDL and GLFW libraries.", "05__s_d_l__g_l_f_w.html", null ],
+    [ "SDL library.", "05__s_d_l.html", null ],
     [ "Dave's Thoughts.", "06__daves_thoughts.html", null ],
     [ "Private Implemtations details", "07__private_implementations.html", null ],
     [ "Todo List", "todo.html", null ],
@@ -72,8 +72,8 @@ var NAVTREEINDEX =
 "class_d_c_l_1_1_c_image.html#ae450d95c59a0cbd74fb2b80620ad9e53",
 "class_d_c_l_1_1_c_oct_tree_node.html",
 "class_d_c_l_1_1_c_rect.html#addaeefa30f2acd114745b8e345c1067e",
-"class_d_c_l_1_1_c_vector3f.html#a4350081add5cd0de2d5701482c635aa9",
-"struct_d_c_l_1_1_s_mem_info.html"
+"class_d_c_l_1_1_c_vector2f.html#aca4f48c865c1aa9d3b7eb74becdab731",
+"namespacemembers_func.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

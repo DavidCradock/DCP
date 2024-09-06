@@ -10,7 +10,7 @@ var class_d_c_l_1_1_c_renderer_vulkan =
     [ "cullFaceEnable", "class_d_c_l_1_1_c_renderer_vulkan.html#a34012be76591983c586f182881e32d08", null ],
     [ "depthTestDisable", "class_d_c_l_1_1_c_renderer_vulkan.html#ab55bb1d23b1ae2b40de72fc8476f7cdc", null ],
     [ "depthTestEnable", "class_d_c_l_1_1_c_renderer_vulkan.html#afb739e7056329e1c990f1bca351d5d52", null ],
-    [ "initialise", "class_d_c_l_1_1_c_renderer_vulkan.html#a9a416551edb0ba5a569f36a72e6806ab", null ],
+    [ "initialise", "class_d_c_l_1_1_c_renderer_vulkan.html#aaa04bb18912e42ca45b5401d4a8ed645", null ],
     [ "pixelsRead", "class_d_c_l_1_1_c_renderer_vulkan.html#a6a634e04b6a2f99ebdfacfb7431fda4d", null ],
     [ "pixelsWrite", "class_d_c_l_1_1_c_renderer_vulkan.html#a7b1a663e9fd1a5ff2d63e48bc8619ae8", null ],
     [ "scissorTest", "class_d_c_l_1_1_c_renderer_vulkan.html#a2c8bd6b906ddd002e787736d5643b60b", null ],

@@ -9,5 +9,7 @@ var searchData=
   ['blendfunction_5fsrcalpha_5foneminussrcalpha_6',['blendFunction_SrcAlpha_OneMinusSrcAlpha',['../class_d_c_l_1_1_c_renderer_base.html#a723ce86b6f889f90f19e328c88328b4e',1,'DCL::CRendererBase::blendFunction_SrcAlpha_OneMinusSrcAlpha()'],['../class_d_c_l_1_1_c_renderer_open_g_l.html#a9add205852f7ac439845f9bc65e3692b',1,'DCL::CRendererOpenGL::blendFunction_SrcAlpha_OneMinusSrcAlpha()'],['../class_d_c_l_1_1_c_renderer_vulkan.html#aac27440a5ce3d3267d77974d122dde90',1,'DCL::CRendererVulkan::blendFunction_SrcAlpha_OneMinusSrcAlpha()']]],
   ['blue_7',['blue',['../class_d_c_l_1_1_c_colourf.html#a0a313d7ac9f6e86e5eaa30f773ab014e',1,'DCL::CColourf::blue'],['../class_d_c_l_1_1_c_colouruc.html#ab2296924a13b6b286ceefb8f941fc01b',1,'DCL::CColouruc::blue']]],
   ['br_8',['BR',['../class_d_c_l_1_1_c_quad_tree_node.html#a9e26268f6f4e36661f1e2bdc94c4f8a9af3dab5420ed28f3f65c3cb2c8ecf38b2',1,'DCL::CQuadTreeNode']]],
-  ['brotated_9',['bRotated',['../class_d_c_l_1_1_c_image_atlas_details.html#a64a172aecb584690f38847b63ba24cd2',1,'DCL::CImageAtlasDetails']]]
+  ['brotated_9',['bRotated',['../class_d_c_l_1_1_c_image_atlas_details.html#a64a172aecb584690f38847b63ba24cd2',1,'DCL::CImageAtlasDetails']]],
+  ['bvsyncenabled_10',['bVsyncEnabled',['../class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_pimpl.html#ab33b8734b4d839d66997352f263e4967',1,'DCL::CRendererOpenGL::CPimpl']]],
+  ['bwindowfullscreen_11',['bWindowFullscreen',['../class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_pimpl.html#ac846fd80c4c8109b10b7dc84480adda6',1,'DCL::CRendererOpenGL::CPimpl']]]
 ];

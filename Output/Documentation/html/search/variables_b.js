@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['red_0',['red',['../class_d_c_l_1_1_c_colourf.html#abe5256069d7e891ba8b964af01085ca4',1,'DCL::CColourf::red'],['../class_d_c_l_1_1_c_colouruc.html#a73651277b667562fa83762b62653991c',1,'DCL::CColouruc::red']]]
+  ['pinstance_0',['pInstance',['../class_d_c_l_1_1_c_singleton.html#a118b4814152d0325f50d7697649b7eee',1,'DCL::CSingleton']]],
+  ['proc_1',['proc',['../struct_d_c_l_1_1_s_mem_info.html#a3511eef8d46e10be6e75f0bde8a070f3',1,'DCL::SMemInfo']]]
 ];

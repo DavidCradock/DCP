@@ -1,5 +1,5 @@
 #include "RendererOpenGL.h"
-
+#include "../Core/Colourf.h"
 #include "../Core/Exceptions.h"
 
 // OpenGL
@@ -20,16 +20,29 @@ namespace DCL
 
 	/// \brief Private implementation for CRendererOpenGL class
 	///
-	/// Detailed description goes here
+	/// Holds all the members and methods which are private and which we do not wish to expose to any files including CRenderer's header file
 	class CRendererOpenGL::CPimpl
 	{
 	public:
+		/// \brief Constructor for private members. Sets to initial values
+		CPimpl();
 
+		bool bVsyncEnabled;			///< Vsync enabled or not
+		bool bWindowFullscreen;		///< Fullscreen or windowed
+		CColourf clearColour;		///< The clear colour
+		HINSTANCE hInstance;		///< Application instance handle
+		std::string strWindowTitle;	///< Window's title text
+		unsigned int uiWindowWidth;	///< Width of window
+		unsigned int uiWindowHeight;///< Height of window
 
 	private:
 
 	};
 
+	CRendererOpenGL::CPimpl::CPimpl()
+	{
+		
+	}
 
 	CRendererOpenGL::CRendererOpenGL()
 	{
@@ -46,14 +59,30 @@ namespace DCL
 		}
 	}
 
-	void CRendererOpenGL::initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen)
+	void CRendererOpenGL::initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen, bool bVSyncEnabled, CColourf clearColour)
 	{
+		_mpPimpl->bVsyncEnabled = bVSyncEnabled;
+		_mpPimpl->bWindowFullscreen = bFullscreen;
+		_mpPimpl->clearColour = clearColour;
+		_mpPimpl->hInstance = NULL;
+		_mpPimpl->strWindowTitle = strWindowTitle;
+		_mpPimpl->uiWindowHeight = iWindowHeight;
+		_mpPimpl->uiWindowWidth = iWindowWidth;
+
 
 	}
 
 	void CRendererOpenGL::shutdown(void)
 	{
 
+	}
+
+	void CRendererOpenGL::updateWindow(bool& bWindowResized, bool& bWindowMinimized, bool& bWindowHasBeenAskedToClose)
+	{
+		bWindowResized = false;
+		bWindowMinimized = false;
+		bWindowHasBeenAskedToClose = true;
+		ThrowIfTrue(1, "This is a test exception. Nothing actually went wrong, this is just a test :)");
 	}
 
 	void CRendererOpenGL::blendDisable(void)

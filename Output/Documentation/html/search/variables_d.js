@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['timer_0',['timer',['../struct_d_c_l_1_1_c_profiler_1_1_s_section.html#a2451312553ae254d92d1b02e576ecd47',1,'DCL::CProfiler::SSection']]]
+  ['red_0',['red',['../class_d_c_l_1_1_c_colourf.html#abe5256069d7e891ba8b964af01085ca4',1,'DCL::CColourf::red'],['../class_d_c_l_1_1_c_colouruc.html#a73651277b667562fa83762b62653991c',1,'DCL::CColouruc::red']]]
 ];

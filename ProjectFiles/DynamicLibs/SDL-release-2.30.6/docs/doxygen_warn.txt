@@ -1,0 +1,60 @@
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:501: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:514: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:642: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:655: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:668: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:681: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:694: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:707: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:720: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:733: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:1151: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:1164: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:1186: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:1199: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:1212: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:1722: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hints.h:1735: warning: the name 'in' supplied as the argument in the \file statement is not an input file
+warning: Included by graph for 'begin_code.h' not generated, too many nodes (60), threshold is 60. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'close_code.h' not generated, too many nodes (60), threshold is 60. Consider increasing DOT_GRAPH_MAX_NODES.
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_events.h:730: warning: explicit link request to 'action' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_hidapi.h:232: warning: The following parameter of SDL_hid_open_path(const char *path, int bExclusive) is not documented:
+  parameter 'bExclusive'
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_render.h:1734: warning: Found unknown command '\threadsafety'
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/include/SDL_stdinc.h:140: warning: explicit link request to 'define' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:7: warning: unable to resolve reference to 'filing-a-github-issue' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:8: warning: unable to resolve reference to 'reporting-a-bug' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:9: warning: unable to resolve reference to 'suggesting-enhancements' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:10: warning: unable to resolve reference to 'contributing-code' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:11: warning: unable to resolve reference to 'forking-the-project' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:12: warning: unable to resolve reference to 'following-the-style-guide' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:13: warning: unable to resolve reference to 'running-the-tests' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:14: warning: unable to resolve reference to 'opening-a-pull-request' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:15: warning: unable to resolve reference to 'contributing-to-the-documentation' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:16: warning: unable to resolve reference to 'editing-a-function-documentation' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/CONTRIBUTING.md:17: warning: unable to resolve reference to 'editing-the-wiki' for \ref command
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-dynapi.md:132: warning: explicit link request to 'define' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-gdk.md:167: warning: Unexpected subsubsection command found inside section!
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:26: warning: explicit link request to 'include' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:207: warning: explicit link request to 'ifndef' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:208: warning: explicit link request to 'ifdef' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:209: warning: explicit link request to 'undef' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:210: warning: explicit link request to 'endif' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:217: warning: explicit link request to 'endif' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:217: warning: found </em> tag without matching <em>
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:221: warning: explicit link request to 'include' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:222: warning: explicit link request to 'include' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:223: warning: explicit link request to 'include' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:251: warning: Unsupported xml/html tag <key> found
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:251: warning: Unsupported xml/html tag </key> found
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:252: warning: Unsupported xml/html tag <string> found
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-ios.md:252: warning: Unsupported xml/html tag </string> found
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-os2.md:46: warning: Found unknown command '\ecs'
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-os2.md:46: warning: Found unknown command '\dll'
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-os2.md:47: warning: Found unknown command '\ecs'
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-os2.md:47: warning: Found unknown command '\dll'
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-winrt.md:35: warning: explicit link request to 'define' could not be resolved
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-winrt.md:102: warning: Unexpected subsubsection command found inside section!
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-winrt.md:291: warning: Unsupported xml/html tag <Win32Resource> found
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-winrt.md:292: warning: Unsupported xml/html tag <PropertyGroup> found
+X:/Projects/c++/2024/DCP/ProjectFiles/DynamicLibs/SDL-release-2.30.6/docs/README-winrt.md:446: warning: Unexpected subsubsection command found inside section!

@@ -16,8 +16,9 @@ namespace DCL
 		CRendererOpenGL();
 		~CRendererOpenGL();
 
-		void initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen);
+		void initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen, bool bVSyncEnabled, CColourf clearColour);
 		void shutdown(void);
+		void updateWindow(bool& bWindowResized, bool& bWindowMinimized, bool& bWindowHasBeenAskedToClose);
 
 		void blendDisable(void);
 		void blendEnable(void);

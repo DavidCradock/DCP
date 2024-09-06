@@ -11,12 +11,17 @@ namespace DCL
 
 	}
 
-	void CRendererVulkan::initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen)
+	void CRendererVulkan::initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen, bool bVSyncEnabled, CColourf clearColour)
 	{
 
 	}
 
 	void CRendererVulkan::shutdown(void)
+	{
+
+	}
+
+	void CRendererVulkan::updateWindow(bool& bWindowResized, bool& bWindowMinimized, bool& bWindowHasBeenAskedToClose)
 	{
 
 	}
