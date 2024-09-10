@@ -97,6 +97,7 @@
     <ClInclude Include="Core\Colourf.h" />
     <ClInclude Include="Core\Colouruc.h" />
     <ClInclude Include="Core\Exceptions.h" />
+    <ClInclude Include="Core\Globals.h" />
     <ClInclude Include="Core\Logging.h" />
     <ClInclude Include="Core\Multithreading.h" />
     <ClInclude Include="Core\Profiler.h" />
@@ -148,6 +149,7 @@
     <ClCompile Include="Core\Colourf.cpp" />
     <ClCompile Include="Core\Colouruc.cpp" />
     <ClCompile Include="Core\Exceptions.cpp" />
+    <ClCompile Include="Core\Globals.cpp" />
     <ClCompile Include="Core\Logging.cpp" />
     <ClCompile Include="Core\Multithreading.cpp" />
     <ClCompile Include="Core\Profiler.cpp" />

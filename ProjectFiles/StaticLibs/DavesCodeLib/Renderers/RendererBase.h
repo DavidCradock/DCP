@@ -19,7 +19,7 @@ namespace DCL
 	/// All the various rendering classes (such as the user interface class for example) use the methods declared here to render stuff in a generic way.
 	/// This allows us to write all the rendering code in an API independent way, so if we wish to use a different API, we don't have to re-write all the code which uses a renderer.
 	/// We implement multiple renderer classes which are based upon this class, then create a pointer to one of those classes and store that
-	/// in a CRenderer pointer depending upon which renderer we wish to use (OpenGL, Vulkan, maybe software (at a later date)).
+	/// in a CRendererBase pointer depending upon which renderer we wish to use (OpenGL, Vulkan, maybe software (at a later date)).
 	/// The only disadvantage I can think of is more work.
 	/// The advantages are plentiful! Being able to switch APIs is fun and good for a few reasons...
 	/// If some end user piece of software is buggy and crashing when using the Vulkan API, I can just say "Try the more stable OpenGL renderer" as I'm a little uncertain what I'm doing
@@ -48,6 +48,7 @@ namespace DCL
 		/// \param bWindowMinimized Will be true if the window has been minimized
 		/// \param bWindowHasBeenAskedToClose Will be true if the window/application has been asked to be closed by the OS.
 		/// We should check this value and end program execution if true
+		/// 
 		/// Windows created by the operating system have messages sent to them when certain events happen to the window.
 		/// For example, when the window is minimized, resized, the close button has been pressed or the application has been asked to be closed.
 		/// Within this method, we check for these messages and handle resizing(resize the framebuffer), minimizing (Maybe pause the app?) and closing

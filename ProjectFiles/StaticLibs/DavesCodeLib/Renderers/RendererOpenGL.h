@@ -1,5 +1,5 @@
 /// \file RendererOpenGL.h
-/// \brief Brief description for the file goes here.
+/// \brief Renderer class derived from CRenderBase class which uses OpenGL for the render API
 ///
 /// Detailed description text goes here.
 

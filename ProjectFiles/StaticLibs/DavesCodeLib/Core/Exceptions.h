@@ -28,6 +28,7 @@
 #ifndef EXCEPTIONS_H
 #define EXCEPTIONS_H
 
+#include "Globals.h"
 #include <string>
 
 namespace DCL
@@ -47,14 +48,25 @@ namespace DCL
 		/// \param iLineNumber An int holding the line number in the source code in which the exception was constructed
 		CException(std::string strExceptionText, std::string strFilename, int iLineNumber)
 		{
-			mstrException = "File: " + strFilename + "\n";
-			mstrException += "Line: " + std::to_string(iLineNumber) + "\n";
-			mstrException += "Desc: " + strExceptionText + "\n";
+			mstrException = "Description: " + strExceptionText + "\n";
+			mstrException += "Source Filename: " + strFilename + "\n";
+			mstrException += "Line number: " + std::to_string(iLineNumber) + "\n";
+
+			// Log the exception to the global log file
+			std::string strLog("Exception Thrown!\n");
+			strLog += mstrException;
+			gGlobals.mainLog.add(strLog);
 		}
 		std::string mstrException;	///< String holding the complete text of the exception.
 	};
 
 #ifndef _DEBUG
+
+#ifndef Throw
+/// \brief Macro to throw an exception which adds filename, line number and the given text.
+#define Throw(y)					\
+		throw CException(y, __FILE__, __LINE__);
+#endif
 
 #ifndef ThrowIfFalse
 /// \brief Macro to check a bool and if false, throw an exception which adds filename, line number and the given text.
@@ -84,6 +96,13 @@ namespace DCL
 #endif
 
 #else
+#ifndef Throw
+/// \brief Macro to throw an exception which adds filename, line number and the given text.
+#define Throw(y)					\
+		__debugbreak();								\
+		throw CException(y, __FILE__, __LINE__);
+#endif
+
 #ifndef ThrowIfFalse
 /// \brief Macro to check a bool and if false, throw an exception which adds filename, line number and the given text.
 #define ThrowIfFalse(x, y)					\

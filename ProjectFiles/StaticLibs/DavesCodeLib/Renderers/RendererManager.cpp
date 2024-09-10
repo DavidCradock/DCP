@@ -26,7 +26,7 @@ namespace DCL
 		else if ("vulkan" == strRendererName)
 			_mpRenderer = new CRendererVulkan;
 		else
-			ThrowIfTrue(1, "CRendererManager::init() failed. The given renderer name of " + strRendererName + " was not recognised. Please use either opengl or vulkan.");
+			Throw("CRendererManager::init() failed. The given renderer name of " + strRendererName + " was not recognised. Please use either opengl or vulkan.");
 
 		ThrowIfMemoryNotAllocated(_mpRenderer);
 		return _mpRenderer;

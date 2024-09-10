@@ -1,5 +1,5 @@
 /// \file RendererVulkan.h
-/// \brief Brief description for the file goes here.
+/// \brief Renderer class derived from CRenderBase class which uses Vulkan for the render API
 ///
 /// Detailed description text goes here.
 

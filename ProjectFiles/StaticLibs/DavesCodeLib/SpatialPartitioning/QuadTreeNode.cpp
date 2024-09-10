@@ -188,7 +188,7 @@ namespace DCL
 			childNodeRegion.miMaxY = _mRectRegion.miMaxY;
 			break;
 		default:
-			ThrowIfTrue(1, "CQuadTreeNode::computeChildNodeRegion() given invalid ChildNode to compute it's region.");
+			Throw("CQuadTreeNode::computeChildNodeRegion() given invalid ChildNode to compute it's region.");
 		}
 		return childNodeRegion;
 	}

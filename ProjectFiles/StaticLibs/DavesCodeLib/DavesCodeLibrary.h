@@ -40,6 +40,7 @@
 #include "Core/Colourf.h"
 #include "Core/Colouruc.h"
 #include "Core/Exceptions.h"
+#include "Core/Globals.h"
 #include "Core/Logging.h"
 #include "Core/Multithreading.h"
 #include "Core/Profiler.h"

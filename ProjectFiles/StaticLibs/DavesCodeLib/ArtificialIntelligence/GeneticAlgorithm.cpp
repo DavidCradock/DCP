@@ -125,7 +125,7 @@ namespace DCL
 	{
 		// Error checking to make sure vector sizes are equal
 		if (vecMumWeights.size() != vecDadWeights.size())
-			ThrowIfTrue(1, "CGeneticsTraining::crossover() failed. The passed parent vectors are not the same size.");
+			Throw("CGeneticsTraining::crossover() failed. The passed parent vectors are not the same size.");
 
 		// Determine whether we should perform the crossover...
 		// First by calculating a random value an determining whether it is below the given crossover rate.
@@ -176,7 +176,7 @@ namespace DCL
 	{
 		// Error checking to make sure vector sizes are equal
 		if (vecMumWeights.size() != vecDadWeights.size())
-			ThrowIfTrue(1, "CGeneticsTraining::crossoverBetweenNeurons() failed. The passed parent vectors are not the same size.");
+			Throw("CGeneticsTraining::crossoverBetweenNeurons() failed. The passed parent vectors are not the same size.");
 		// Error checking to make sure the given split points vector is of adequate size
 		ThrowIfTrue(vecSplitPoints.size() < 2, "CGeneticsTraining::crossoverBetweenNeurons() failed. The passed vecSplitPoints vector's size is too small. Must be at least 2.");
 

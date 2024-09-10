@@ -76,7 +76,7 @@ namespace DCL
 //				strTxt += "The first image dims: " + std::to_string(vImages[0]->getWidth()) + "x" + std::to_string(vImages[0]->getHeight());
 //				strTxt += " The current image dims: " + std::to_string(vImages[ui]->getWidth()) + "x" + std::to_string(vImages[ui]->getHeight());
 //				strTxt += ".";
-//				ThrowIfTrue(1, strTxt);
+//				Throw(strTxt);
 //			}
 		}
 

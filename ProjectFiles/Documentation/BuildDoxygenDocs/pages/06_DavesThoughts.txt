@@ -29,8 +29,7 @@ Camel style casing, someFileWhichDoesSomething. It's easy to read and quite spar
 <pre>
 Use exceptions. They greatly simplify error handling
 In DavesCodeLib/Core/Exceptions.h, there's a few usefull macros in there which simplify using exceptions and reduces the amount of text we have to type, namely...
-ThrowIfMemoryNotAllocated() and
-ThrowIfTrue() / ThrowIfFalse()
+ThrowIfMemoryNotAllocated(), ThrowIfTrue(), ThrowIfFalse() and Throw()
 </pre>
 
 <h3>Precompiled headers</h3>
@@ -41,7 +40,7 @@ I like the required header files being included where needed, instead of in some
 Sure there's a speed increase, but this lack of information in each header file is kinda annoying.
 I could add a comment to each header file telling us which headers are used, but these comments could become outdated or wrong and would add more work to keep things updated correctly.
 Instead, we simply include the required header files to each of the files.
-This gives us more control of where things are included, allows us to include certain headers inside the .c/cpp file instead and when combined with the private implementation (pimple/Cheshire cat),
+This gives us more control of where things are included, allows us to include certain headers inside the .c/cpp file instead and when combined with the private implementation (pimple),
 can keep compilation times down and prevent unnecessary header inclusion into other files which include a header file.
 </pre>
 
@@ -260,5 +259,56 @@ remove these warnings.
 So instead, we create additional projects where needed for each library and within those, compile the libraries, ignoring all the warnings. The mess is contained within that lib's project.
 
 Their source code will be kept in /ProjectFiles/DynamicLibs/SOME_LIB so that we get a nice single location so we can see which libs are using.
+</pre>
+
+<h4>OpenGL Core context versions</h4>
+<pre>
+Which version to use? Use the oldest for maximum support, but if we need a feature unavailable in that version, then increment the version we use.
+OpenGL Core Contexts have evolved over time, introducing new features and capabilities. Here's a brief overview of some of the major versions:
+OpenGL 3.0
+    Major release: Introduced core contexts for the first time.
+    Key features: Removed deprecated fixed-function pipeline, introduced programmable shaders, and added support for advanced features like geometry shaders and transform feedback.
+
+OpenGL 3.1
+    Minor release: Refined existing features and added new functionality.
+    Key features: Enhanced shader capabilities, improved performance, and introduced features like uniform buffer objects (UBOs) for efficient data transfer.
+
+OpenGL 3.2
+    Minor release: Continued to build upon previous versions.
+    Key features: Added support for asynchronous queries, texture compression formats, and additional shader features.
+
+OpenGL 3.3
+    Minor release: Introduced significant enhancements.
+    Key features: Added support for vertex array objects (VAOs) for efficient state management, occlusion queries for performance optimization, and advanced texture features.
+
+OpenGL 4.0
+    Major release: Marked a significant leap forward.
+    Key features: Introduced compute shaders for general-purpose computing on the GPU, tessellation shaders for creating complex geometric shapes, and advanced shading techniques.
+
+OpenGL 4.1
+    Minor release: Refined existing features and added new capabilities.
+    Key features: Improved performance, added support for indirect rendering, and introduced additional shader features.
+
+OpenGL 4.2
+    Minor release: Continued to enhance the API.
+    Key features: Added support for geometry shader input/output classes, improved texture compression formats, and additional shader features.
+
+OpenGL 4.3
+    Minor release: Introduced new features and optimizations.
+    Key features: Added support for asynchronous texture updates, improved performance, and additional shader features.
+
+OpenGL 4.4
+    Minor release: Focused on performance and feature enhancements.
+    Key features: Improved performance, added support for buffer storage, and additional shader features.
+
+OpenGL 4.5
+    Minor release: Continued to refine the API.
+    Key features: Added support for direct state access, improved performance, and additional shader features.
+
+OpenGL 4.6
+    Minor release: Focused on performance and feature enhancements.
+    Key features: Improved performance, added support for shader subroutines, and additional shader features.
+
+Note: This is a simplified overview. Each version introduced numerous smaller changes and improvements. The specific features and capabilities available in a particular version may depend on the hardware and drivers being used.
 </pre>
 */

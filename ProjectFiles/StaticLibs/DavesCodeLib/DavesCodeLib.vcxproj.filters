@@ -180,6 +180,9 @@
     <ClInclude Include="Renderers\OpenGL\wglext.h">
       <Filter>Renderers\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Globals.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArtificialIntelligence\GeneticAlgorithm.cpp">
@@ -300,6 +303,9 @@
     </ClCompile>
     <ClCompile Include="Renderers\RendererVulkan.cpp">
       <Filter>Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Globals.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

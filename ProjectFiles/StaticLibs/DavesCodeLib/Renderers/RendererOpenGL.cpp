@@ -1,6 +1,7 @@
 #include "RendererOpenGL.h"
 #include "../Core/Colourf.h"
 #include "../Core/Exceptions.h"
+#include "../Core/Globals.h"	// Access to gGlobals for logging to main log file
 
 // OpenGL
 #include <Windows.h>
@@ -14,6 +15,8 @@
 #pragma comment(lib, "OpenGL32.lib")
 #pragma comment(lib, "GLu32.lib")
 
+// SDL
+#include "../../../DynamicLibs/SDL-release-2.30.6/include/SDL.h"
 
 namespace DCL
 {
@@ -27,13 +30,13 @@ namespace DCL
 		/// \brief Constructor for private members. Sets to initial values
 		CPimpl();
 
-		bool bVsyncEnabled;			///< Vsync enabled or not
-		bool bWindowFullscreen;		///< Fullscreen or windowed
-		CColourf clearColour;		///< The clear colour
-		HINSTANCE hInstance;		///< Application instance handle
-		std::string strWindowTitle;	///< Window's title text
-		unsigned int uiWindowWidth;	///< Width of window
-		unsigned int uiWindowHeight;///< Height of window
+		bool bVsyncEnabled;			///< Vsync enabled or not. Set during call to initialise()
+		bool bWindowFullscreen;		///< Fullscreen or windowed. Set during call to initialise()
+		CColourf clearColour;		///< The clear colour. Set during call to initialise()
+		HINSTANCE hInstance;		///< Application instance handle. Set during call to initialise()
+		std::string strWindowTitle;	///< Window's title text. Set during call to initialise()
+		unsigned int uiWindowWidth;	///< Width of window. Set during call to initialise()
+		unsigned int uiWindowHeight;///< Height of window. Set during call to initialise()
 
 	private:
 
@@ -69,7 +72,14 @@ namespace DCL
 		_mpPimpl->uiWindowHeight = iWindowHeight;
 		_mpPimpl->uiWindowWidth = iWindowWidth;
 
-
+		if (0 != SDL_Init(SDL_INIT_VIDEO))
+		{
+			std::string strError("CRendererOpenGL::initialise() failed during call to SDL_Init(SDL_INIT_VIDEO)\n");
+			strError += "SDL_GetError() string: ";
+			strError += SDL_GetError();
+			gGlobals.mainLog.add(strError);
+			Throw(strError);
+		}
 	}
 
 	void CRendererOpenGL::shutdown(void)
@@ -82,7 +92,6 @@ namespace DCL
 		bWindowResized = false;
 		bWindowMinimized = false;
 		bWindowHasBeenAskedToClose = true;
-		ThrowIfTrue(1, "This is a test exception. Nothing actually went wrong, this is just a test :)");
 	}
 
 	void CRendererOpenGL::blendDisable(void)
