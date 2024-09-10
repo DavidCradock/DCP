@@ -84,7 +84,7 @@ namespace DCL
 
 	void CRendererOpenGL::shutdown(void)
 	{
-
+		SDL_QuitSubSystem(SDL_INIT_VIDEO);
 	}
 
 	void CRendererOpenGL::updateWindow(bool& bWindowResized, bool& bWindowMinimized, bool& bWindowHasBeenAskedToClose)

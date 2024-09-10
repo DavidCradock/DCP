@@ -64,13 +64,15 @@ namespace DCL
 
 #ifndef Throw
 /// \brief Macro to throw an exception which adds filename, line number and the given text.
-#define Throw(y)					\
-		throw CException(y, __FILE__, __LINE__);
+#define Throw(y)									\
+		{											\
+		throw CException(y, __FILE__, __LINE__);	\
+		}
 #endif
 
 #ifndef ThrowIfFalse
 /// \brief Macro to check a bool and if false, throw an exception which adds filename, line number and the given text.
-#define ThrowIfFalse(x, y)					\
+#define ThrowIfFalse(x, y)							\
 		{											\
 		if(!x){										\
 		throw CException(y, __FILE__, __LINE__);}	\
@@ -79,7 +81,7 @@ namespace DCL
 
 #ifndef ThrowIfTrue
 /// \brief Macro to check a bool and is true, throw an exception which adds filename, line number and the given text.
-#define ThrowIfTrue(x, y)					\
+#define ThrowIfTrue(x, y)							\
 		{											\
 		if(x){										\
 		throw CException(y, __FILE__, __LINE__);}	\
@@ -88,9 +90,9 @@ namespace DCL
 
 #ifndef ThrowIfMemoryNotAllocated
 /// \brief Macro to check a pointer and if 0, throw an exception stating that the memory was not allocated with filename and line number.
-#define ThrowIfMemoryNotAllocated(x)				\
-			{											\
-			if(!x){										\
+#define ThrowIfMemoryNotAllocated(x)											\
+			{																	\
+			if(!x){																\
 			throw CException("Memory allocation error.", __FILE__, __LINE__);}	\
 			}
 #endif
@@ -98,14 +100,16 @@ namespace DCL
 #else
 #ifndef Throw
 /// \brief Macro to throw an exception which adds filename, line number and the given text.
-#define Throw(y)					\
+#define Throw(y)									\
+		{											\
 		__debugbreak();								\
-		throw CException(y, __FILE__, __LINE__);
+		throw CException(y, __FILE__, __LINE__);	\
+		}
 #endif
 
 #ifndef ThrowIfFalse
 /// \brief Macro to check a bool and if false, throw an exception which adds filename, line number and the given text.
-#define ThrowIfFalse(x, y)					\
+#define ThrowIfFalse(x, y)							\
 		{											\
 		if(!x){										\
  		__debugbreak();								\
@@ -115,7 +119,7 @@ namespace DCL
 
 #ifndef ThrowIfTrue
 /// \brief Macro to check a bool and is true, throw an exception which adds filename, line number and the given text.
-#define ThrowIfTrue(x, y)					\
+#define ThrowIfTrue(x, y)							\
 		{											\
 		if(x){										\
  		__debugbreak();								\
@@ -125,10 +129,10 @@ namespace DCL
 
 #ifndef ThrowIfMemoryNotAllocated
 /// \brief Macro to check a pointer and if 0, throw an exception stating that the memory was not allocated with filename and line number.
-#define ThrowIfMemoryNotAllocated(x)				\
-			{											\
-			if(!x){										\
- 			__debugbreak();								\
+#define ThrowIfMemoryNotAllocated(x)											\
+			{																	\
+			if(!x){																\
+ 			__debugbreak();														\
 			throw CException("Memory allocation error.", __FILE__, __LINE__);}	\
 			}
 #endif
