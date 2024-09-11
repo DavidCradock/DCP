@@ -12,7 +12,6 @@
 
 namespace DCL
 {
-
 	/// \brief Class holding all globals used by DCL
 	class CGlobals
 	{
@@ -25,6 +24,7 @@ namespace DCL
 
 	/// \brief Globals object of CGlobals class which holds all global objects used by DCL.
 	extern CGlobals gGlobals;	
+
 
 }	// namespace DCL
 

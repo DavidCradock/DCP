@@ -1,5 +1,6 @@
 #include "RendererManager.h"
 #include "../Core/Exceptions.h"
+#include "../Core/Globals.h"
 #include "../Core/StringUtils.h"
 
 namespace DCL
@@ -16,6 +17,7 @@ namespace DCL
 
 	CRendererBase* CRendererManager::init(const std::string& strRendererName)
 	{
+		gGlobals.mainLog.add("CRendererManager::init() called.");
 		std::string strRendererNameLowercase = strRendererName;
 		StringUtils::stringToLowercase(strRendererNameLowercase);
 

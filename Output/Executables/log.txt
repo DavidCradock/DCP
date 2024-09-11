@@ -1,1 +1,3 @@
+0w:0d:0h:0m:00s : CLog::CLog("log.txt") called.
 0w:0d:0h:0m:00s : CGlobals::CGlobals() called.
+0w:0d:0h:0m:00s : CRendererManager::init() called.

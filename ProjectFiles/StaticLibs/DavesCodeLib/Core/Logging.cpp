@@ -11,6 +11,125 @@ namespace DCL
 		iTimeHours = 0;
 		iTimeDays = 0;
 		iTimeWeeks = 0;
+	}
+
+	CLog::CLog(const std::string& strFilename)
+	{
+		_mstrFilename = strFilename;
+		_mStop = false;
+		std::string strEntryText = "CLog::CLog(\"";
+		strEntryText += strFilename;
+		strEntryText += "\") called.";
+
+		// Clear file
+		std::fstream fs;
+		fs.open(_mstrFilename, std::ios::out | std::ios::trunc);
+		fs.close();
+
+		add(strEntryText);
+		_mMainThread = std::thread(&CLog::_mainThreadLoop, this);
+	}
+
+	CLog::~CLog()
+	{
+		_mStop = true;
+		_mMainThread.join();
+	}
+
+	void CLog::add(const std::string& strText)
+	{
+		_mQueueMutex.lock();
+
+		CLogEntry entry;
+		entry.strText = strText;
+
+		// Compute time related stuff
+		_timer.update();
+		_timer.getClock(entry.fTimeSeconds, entry.iTimeMin, entry.iTimeHours, entry.iTimeDays, entry.iTimeWeeks);
+
+		// Create the current runtime as a string in the log entry
+		entry.strTime += std::to_string(entry.iTimeWeeks) + "w:";
+		entry.strTime += std::to_string(entry.iTimeDays) + "d:";
+		entry.strTime += std::to_string(entry.iTimeHours) + "h:";
+		entry.strTime += std::to_string(entry.iTimeMin) + "m:";
+		if (entry.fTimeSeconds < 10.0f)
+			entry.strTime += "0";
+		entry.strTime += std::to_string(int(entry.fTimeSeconds)) + "s : ";
+
+		// Add entry to the queue
+		_mQueueEntriesToAdd.push(entry);
+
+		_mQueueMutex.unlock();
+	}
+
+	void CLog::_mainThreadLoop(void)
+	{
+		while (!_mStop)
+		{
+			_mQueueMutex.lock();
+
+			while (!_mQueueEntriesToAdd.empty())
+			{
+				std::ofstream file(_mstrFilename, std::ios::app);
+				if (file.is_open())
+				{
+					// Output time string to file
+					file << _mQueueEntriesToAdd.front().strTime.c_str();
+					// Output the log entry's text to the file
+					file << _mQueueEntriesToAdd.front().strText.c_str() << std::endl;
+					_mQueueEntriesToAdd.pop();
+				}
+				else
+				{
+				}
+			}
+
+			_mQueueMutex.unlock();
+			std::this_thread::sleep_for(std::chrono::milliseconds(10));
+		}
+	}
+
+	void CLog::run_test(void)
+	{
+		CLog logger("log_run_test.txt");
+		std::thread t1([&logger]()
+			{
+			for (int i = 0; i < 100; ++i) {
+				logger.add("Thread 1: Message " + std::to_string(i));
+				std::this_thread::sleep_for(std::chrono::milliseconds(10));
+			}
+			});
+
+		std::thread t2([&logger]() {
+			for (int i = 0; i < 100; ++i) {
+				logger.add("Thread 2: Message " + std::to_string(i));
+				std::this_thread::sleep_for(std::chrono::milliseconds(15));
+			}
+			});
+
+		t1.join();
+		t2.join();
+	}
+
+}	// namespace DCL
+
+
+
+
+
+
+
+
+
+
+/* old
+	CLogEntry::CLogEntry()
+	{
+		fTimeSeconds = 0.0f;
+		iTimeMin = 0;
+		iTimeHours = 0;
+		iTimeDays = 0;
+		iTimeWeeks = 0;
 
 	}
 
@@ -23,7 +142,7 @@ namespace DCL
 	void CLog::add(const std::string& string)
 	{
 		CLogEntry logEntry;
-	
+
 		std::fstream fs;
 		fs.open(_mstrLogFilename, std::ios::out | std::ios::app);
 
@@ -130,5 +249,4 @@ namespace DCL
 		ThrowIfTrue(entryIndex >= _mlogEntries.size(), "CLog::getEntry() with given index of " + std::to_string(entryIndex) + " failed as given index is invalid.");
 		return _mlogEntries[entryIndex];
 	}
-
-}	// namespace DCL
+	*/

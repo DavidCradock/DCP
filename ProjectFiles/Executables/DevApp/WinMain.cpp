@@ -35,6 +35,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
         // Shutdown the renderer, cleaning up the API and closing the window.
         pRenderer->shutdown();
+
+        // Test the log class
+        CLog logTest("logTest.txt");
+        logTest.run_test();
+        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     }
     // Here we catch any thrown exceptions and deal with them.
     catch (CException &exception)
