@@ -54,7 +54,7 @@ namespace DCL
 		entry.strTime += std::to_string(entry.iTimeMin) + "m:";
 		if (entry.fTimeSeconds < 10.0f)
 			entry.strTime += "0";
-		entry.strTime += std::to_string(int(entry.fTimeSeconds)) + "s : ";
+		entry.strTime += std::to_string(float(entry.fTimeSeconds)) + "s : ";
 
 		// Add entry to the queue
 		_mQueueEntriesToAdd.push(entry);
@@ -64,28 +64,46 @@ namespace DCL
 
 	void CLog::_mainThreadLoop(void)
 	{
-		while (!_mStop)
-		{
-			_mQueueMutex.lock();
+		bool bLogToSave = false;
+		CLogEntry logToSave;
 
-			while (!_mQueueEntriesToAdd.empty())
+		while (!_mStop)	// This gets set to true in the destructor
+		{
+			// Determine whether there's at least one log entry in the queue
+			// If so, copy it ready to save to file.
+			// We perform the minimal of stuff here to help prevent locking the mutex which could slow down calls to add()
+			bLogToSave = false;
+			_mQueueMutex.lock();
+			if (!_mQueueEntriesToAdd.empty())
+			{
+				bLogToSave = true;
+				logToSave = _mQueueEntriesToAdd.front();
+				_mQueueEntriesToAdd.pop();
+			}
+			_mQueueMutex.unlock();
+
+			// If there is a log entry, save it to file
+			if (bLogToSave)
 			{
 				std::ofstream file(_mstrFilename, std::ios::app);
 				if (file.is_open())
 				{
 					// Output time string to file
-					file << _mQueueEntriesToAdd.front().strTime.c_str();
+					file << logToSave.strTime.c_str();
 					// Output the log entry's text to the file
-					file << _mQueueEntriesToAdd.front().strText.c_str() << std::endl;
-					_mQueueEntriesToAdd.pop();
+					file << logToSave.strText.c_str() << std::endl;
 				}
 				else
 				{
 				}
 			}
-
-			_mQueueMutex.unlock();
-			std::this_thread::sleep_for(std::chrono::milliseconds(10));
+			else
+			{
+				// If there wasn't a log entry to save, let's sleep for a bit.
+				// Not sleeping due to there being a log entry makes it so that on the next
+				// loop is fast and allows us to prevent entries from queueing up.
+				std::this_thread::sleep_for(std::chrono::milliseconds(100));
+			}			
 		}
 	}
 

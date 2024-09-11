@@ -54,6 +54,8 @@ namespace DCL
 	{
 	public:
 		/// \brief Constructor
+		///
+		/// Upon construction, the passed filename is deleted.
 		CLog(const std::string& strFilename = "log.txt");
 
 		/// \brief Destructor
@@ -80,7 +82,6 @@ namespace DCL
 		void _mainThreadLoop(void);
 	};
 	
-
 }	// namespace DCL
 
 #endif // #ifndef FILENAME_H
