@@ -1,7 +1,6 @@
 #include "RendererOpenGL.h"
 #include "../Core/Colourf.h"
 #include "../Core/Exceptions.h"
-#include "../Core/Globals.h"	// Access to gGlobals for logging to main log file
 
 // OpenGL
 #include <Windows.h>
@@ -77,7 +76,6 @@ namespace DCL
 			std::string strError("CRendererOpenGL::initialise() failed during call to SDL_Init(SDL_INIT_VIDEO)\n");
 			strError += "SDL_GetError() string: ";
 			strError += SDL_GetError();
-			gGlobals.mainLog.add(strError);
 			Throw(strError);
 		}
 	}

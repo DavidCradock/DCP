@@ -1,1 +1,0 @@
-0w:0d:0h:0m:00.000145s : CLog::CLog("logTest.txt") called.

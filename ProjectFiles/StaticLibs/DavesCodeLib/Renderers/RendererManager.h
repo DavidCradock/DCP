@@ -29,7 +29,7 @@ namespace DCL
 		/// If the renderer is already initialised, an exception occurs
 		CRendererBase* init(const std::string& strRendererName = "OpenGL");
 
-		/// \brief Returns a pointer the a CRendererBase object if a call to one of the initAPINAME methods have previously been called.
+		/// \brief Returns a pointer the a CRendererBase object if a call to the init method has previously been called.
 		///
 		/// \return A pointer to a CRendererBase object which we use to perform all the rendering operations if it has been initialised,
 		///		otherwise, an exception will occur. A call to either initOpenGL() or initVulkan() or any of the other init methods will fix this exception from occurring.

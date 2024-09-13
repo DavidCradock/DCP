@@ -49,7 +49,7 @@ namespace DCL
 	/// // Add an entry to the log file...
 	/// myLog.add("Some text");	// Text to be added to the log entry in the file.
 	/// \endcode
-	/// \todo Check while (!_mQueueEntriesToAdd.empty()) in _mainThreadLoop(). Maybe change to if?
+	/// \todo Add html output
 	class CLog
 	{
 	public:
@@ -82,6 +82,28 @@ namespace DCL
 		void _mainThreadLoop(void);
 	};
 	
+	extern CLog gLogMain;	/// \brief Main logging file for DCL
+
+	/// \brief Macro to call gGlobals.mainLog.add() passing in __FUNCTION__, __FILE__ and __LINE__
+///
+/// Usage:
+/// \code
+/// LOG("Some log info text");
+/// // Will add "Some log info text 
+/// \endcode
+#ifndef	LOG
+#define LOG(x) {								\
+		std::string strLogText = x;				\
+		strLogText += " Func: ";				\
+		strLogText += __FUNCTION__;				\
+		strLogText += " at line: ";				\
+		strLogText += std::to_string(__LINE__);	\
+		strLogText += " in file: ";				\
+		strLogText += __FILE__;					\
+		gLogMain.add(strLogText);				\
+	}
+#endif
+
 }	// namespace DCL
 
 #endif // #ifndef FILENAME_H

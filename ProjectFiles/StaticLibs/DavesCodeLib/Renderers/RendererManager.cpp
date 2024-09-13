@@ -1,6 +1,5 @@
 #include "RendererManager.h"
 #include "../Core/Exceptions.h"
-#include "../Core/Globals.h"
 #include "../Core/StringUtils.h"
 
 namespace DCL
@@ -17,16 +16,21 @@ namespace DCL
 
 	CRendererBase* CRendererManager::init(const std::string& strRendererName)
 	{
-		gGlobals.mainLog.add("CRendererManager::init() called.");
+		gLogMain.add("CRendererManager::init() called.");
 		std::string strRendererNameLowercase = strRendererName;
 		StringUtils::stringToLowercase(strRendererNameLowercase);
 
 		ThrowIfTrue(_mpRenderer, "CRendererManager::init() failed. Renderer already initialised.");
 
 		if ("opengl" == strRendererName)
+		{
 			_mpRenderer = new CRendererOpenGL;
+			LOG("OpenGL renderer selected.");
+		}
 		else if ("vulkan" == strRendererName)
+		{
 			_mpRenderer = new CRendererVulkan;
+		}
 		else
 			Throw("CRendererManager::init() failed. The given renderer name of " + strRendererName + " was not recognised. Please use either opengl or vulkan.");
 

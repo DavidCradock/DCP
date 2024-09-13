@@ -28,8 +28,7 @@
 #ifndef EXCEPTIONS_H
 #define EXCEPTIONS_H
 
-#include "Globals.h"
-#include <string>
+#include "Logging.h"
 
 namespace DCL
 {
@@ -55,7 +54,7 @@ namespace DCL
 			// Log the exception to the global log file
 			std::string strLog("Exception Thrown!\n");
 			strLog += mstrException;
-			gGlobals.mainLog.add(strLog);
+			gLogMain.add(strLog);
 		}
 		std::string mstrException;	///< String holding the complete text of the exception.
 	};
@@ -136,6 +135,7 @@ namespace DCL
 			throw CException("Memory allocation error.", __FILE__, __LINE__);}	\
 			}
 #endif
+
 #endif	// #ifndef _DEBUG
 
 
