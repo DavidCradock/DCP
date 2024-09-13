@@ -24,9 +24,22 @@ namespace DCL
 
 		// Clear file and add header
 		std::ofstream file(_mstrFilename, std::ios::trunc);
+		file << "<html>\n<head>\n<style>\n";
+		file << "tr:nth-child(even) {background-color: rgba(100, 100, 100, 0.5);}\n";
+		file << "tr:nth-child(odd) {background-color: rgba(255, 192, 0, 0.75);}\n";
+		file << "</style>\n</head>\n<body>";
 		file << "<table width=\"100%\" border=\"0\">\n";
 
 		_mMainThread = std::thread(&CLog::_mainThreadLoop, this);
+
+		//add("Description", "Function Name", "Line Number", "Source Filename");
+		file << "<tr><td width=\"1%\"><div align=\"center\">TIME";
+		file << "</div></td><td width=\"20%\"><div align=\"center\">DESCRIPTION";
+		file << "</div></td><td width=\"20%\"><div align=\"center\">NAMESPACE:CLASS:METHOD";
+		file << "</div></td><td width=\"1%\"><div align=\"center\">LINE NUMBER";
+		file << "</div></td><td width=\"20%\"><div align=\"center\">SOURCE FILENAME";
+		file << "</div></td></tr>\n";
+
 		LOG(strEntryText);
 		
 	}
@@ -38,6 +51,7 @@ namespace DCL
 
 		std::ofstream file(_mstrFilename, std::ios::app);
 		file << "</table>\n";
+		file << "</body>\n</html>\n";
 		file.close();
 	}
 
@@ -62,7 +76,7 @@ namespace DCL
 		entry.strTime += std::to_string(entry.iTimeMin) + "m:";
 		if (entry.fTimeSeconds < 10.0f)
 			entry.strTime += "0";
-		entry.strTime += std::to_string(float(entry.fTimeSeconds)) + "s : ";
+		entry.strTime += std::to_string(float(entry.fTimeSeconds)) + "s";
 
 		// Add entry to the queue
 		_mQueueEntriesToAdd.push(entry);
@@ -98,13 +112,13 @@ namespace DCL
 				if (file.is_open())
 				{
 					str.clear();
-					str.append("<tr><td width=\"20%\"><div align=\"center\">");
+					str.append("<tr><td width=\"1%\"><div align=\"center\">");
 					str.append(logToSave.strTime);
 					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
 					str.append(logToSave.strText);
 					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
 					str.append(logToSave.strFunctionName);
-					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
+					str.append("</div></td><td width=\"1%\"><div align=\"center\">");
 					str.append(logToSave.strSourceLineNumber);
 					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
 					str.append(logToSave.strSourceFilename);
