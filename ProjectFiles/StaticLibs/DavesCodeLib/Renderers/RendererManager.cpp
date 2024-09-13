@@ -16,7 +16,7 @@ namespace DCL
 
 	CRendererBase* CRendererManager::init(const std::string& strRendererName)
 	{
-		gLogMain.add("CRendererManager::init() called.");
+		LOG("CRendererManager::init() called.");
 		std::string strRendererNameLowercase = strRendererName;
 		StringUtils::stringToLowercase(strRendererNameLowercase);
 

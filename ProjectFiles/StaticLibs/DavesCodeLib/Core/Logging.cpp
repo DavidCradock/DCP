@@ -1,5 +1,6 @@
 #include "Logging.h"
 #include "Exceptions.h"
+#include "StringUtils.h"
 #include <filesystem>
 
 namespace DCL
@@ -21,27 +22,34 @@ namespace DCL
 		strEntryText += strFilename;
 		strEntryText += "\") called.";
 
-		// Clear file
-		std::fstream fs;
-		fs.open(_mstrFilename, std::ios::out | std::ios::trunc);
-		fs.close();
+		// Clear file and add header
+		std::ofstream file(_mstrFilename, std::ios::trunc);
+		file << "<table width=\"100%\" border=\"0\">\n";
 
-		add(strEntryText);
 		_mMainThread = std::thread(&CLog::_mainThreadLoop, this);
+		LOG(strEntryText);
+		
 	}
 
 	CLog::~CLog()
 	{
 		_mStop = true;
 		_mMainThread.join();
+
+		std::ofstream file(_mstrFilename, std::ios::app);
+		file << "</table>\n";
+		file.close();
 	}
 
-	void CLog::add(const std::string& strText)
+	void CLog::add(const std::string& strText, const std::string& strFunctionName, const std::string& strLineNumber, const std::string& strSourceFilename)
 	{
 		_mQueueMutex.lock();
 
 		CLogEntry entry;
 		entry.strText = strText;
+		entry.strFunctionName = strFunctionName;
+		entry.strSourceFilename = strSourceFilename;
+		entry.strSourceLineNumber = strLineNumber;
 
 		// Compute time related stuff
 		_timer.update();
@@ -66,6 +74,7 @@ namespace DCL
 	{
 		bool bLogToSave = false;
 		CLogEntry logToSave;
+		std::string str;
 
 		while (!_mStop)	// This gets set to true in the destructor
 		{
@@ -88,10 +97,19 @@ namespace DCL
 				std::ofstream file(_mstrFilename, std::ios::app);
 				if (file.is_open())
 				{
-					// Output time string to file
-					file << logToSave.strTime.c_str();
-					// Output the log entry's text to the file
-					file << logToSave.strText.c_str() << std::endl;
+					str.clear();
+					str.append("<tr><td width=\"20%\"><div align=\"center\">");
+					str.append(logToSave.strTime);
+					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
+					str.append(logToSave.strText);
+					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
+					str.append(logToSave.strFunctionName);
+					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
+					str.append(logToSave.strSourceLineNumber);
+					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
+					str.append(logToSave.strSourceFilename);
+					str.append("</div></td></tr>\n");
+					file << str;
 				}
 				else
 				{
@@ -105,6 +123,7 @@ namespace DCL
 				std::this_thread::sleep_for(std::chrono::milliseconds(100));
 			}			
 		}
+		
 	}
 
 	void CLog::run_test(void)
@@ -113,14 +132,14 @@ namespace DCL
 		std::thread t1([&logger]()
 			{
 			for (int i = 0; i < 100; ++i) {
-				logger.add("Thread 1: Message " + std::to_string(i));
+				logger.add("Thread 1: Message " + std::to_string(i), __FUNCTION__, std::to_string(__LINE__), __FILE__);
 				std::this_thread::sleep_for(std::chrono::milliseconds(10));
 			}
 			});
 
 		std::thread t2([&logger]() {
 			for (int i = 0; i < 100; ++i) {
-				logger.add("Thread 2: Message " + std::to_string(i));
+				logger.add("Thread 2: Message " + std::to_string(i), __FUNCTION__, std::to_string(__LINE__), __FILE__);
 				std::this_thread::sleep_for(std::chrono::milliseconds(15));
 			}
 			});

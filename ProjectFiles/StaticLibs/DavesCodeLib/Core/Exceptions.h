@@ -45,16 +45,17 @@ namespace DCL
 		/// \param strExceptionText A string describing the exceptional circumstance why the unrecoverable error occurred.
 		/// \param strFilename A string holding the filename in which the exception was constructed
 		/// \param iLineNumber An int holding the line number in the source code in which the exception was constructed
-		CException(std::string strExceptionText, std::string strFilename, int iLineNumber)
+		CException(const std::string& strText, const std::string& strFunctionName, const std::string& strLineNumber, const std::string& strSourceFilename)
 		{
-			mstrException = "Description: " + strExceptionText + "\n";
-			mstrException += "Source Filename: " + strFilename + "\n";
-			mstrException += "Line number: " + std::to_string(iLineNumber) + "\n";
+			mstrException = "Description: " + strText + "\n";
+			mstrException += "Function: " + strFunctionName + "\n";
+			mstrException += "Line number: " + strLineNumber + "\n";
+			mstrException += "Source Filename: " + strSourceFilename + "\n";
 
 			// Log the exception to the global log file
-			std::string strLog("Exception Thrown!\n");
-			strLog += mstrException;
-			gLogMain.add(strLog);
+			std::string strLog("Exception Thrown! ");
+			strLog += strText;
+			gLogMain.add(strLog, strFunctionName, strLineNumber, strSourceFilename);
 		}
 		std::string mstrException;	///< String holding the complete text of the exception.
 	};
@@ -65,7 +66,7 @@ namespace DCL
 /// \brief Macro to throw an exception which adds filename, line number and the given text.
 #define Throw(y)									\
 		{											\
-		throw CException(y, __FILE__, __LINE__);	\
+		throw CException(y, __FUNCTION__, std::to_string(__LINE__), __FILE__);	\
 		}
 #endif
 
@@ -74,7 +75,7 @@ namespace DCL
 #define ThrowIfFalse(x, y)							\
 		{											\
 		if(!x){										\
-		throw CException(y, __FILE__, __LINE__);}	\
+		throw CException(y, __FUNCTION__, std::to_string(__LINE__), __FILE__);}	\
 		}
 #endif
 
@@ -83,7 +84,7 @@ namespace DCL
 #define ThrowIfTrue(x, y)							\
 		{											\
 		if(x){										\
-		throw CException(y, __FILE__, __LINE__);}	\
+		throw CException(y, __FUNCTION__, std::to_string(__LINE__), __FILE__);}	\
 		}
 #endif
 
@@ -92,7 +93,7 @@ namespace DCL
 #define ThrowIfMemoryNotAllocated(x)											\
 			{																	\
 			if(!x){																\
-			throw CException("Memory allocation error.", __FILE__, __LINE__);}	\
+			throw CException("Memory allocation error.", __FUNCTION__, std::to_string(__LINE__), __FILE__);}	\
 			}
 #endif
 
@@ -102,7 +103,7 @@ namespace DCL
 #define Throw(y)									\
 		{											\
 		__debugbreak();								\
-		throw CException(y, __FILE__, __LINE__);	\
+		throw CException(y, __FUNCTION__, std::to_string(__LINE__), __FILE__);	\
 		}
 #endif
 
@@ -112,7 +113,7 @@ namespace DCL
 		{											\
 		if(!x){										\
  		__debugbreak();								\
-		throw CException(y, __FILE__, __LINE__);}	\
+		throw CException(y, __FUNCTION__, std::to_string(__LINE__), __FILE__);}	\
 		}
 #endif
 
@@ -122,7 +123,7 @@ namespace DCL
 		{											\
 		if(x){										\
  		__debugbreak();								\
-		throw CException(y, __FILE__, __LINE__);}	\
+		throw CException(y, __FUNCTION__, std::to_string(__LINE__), __FILE__);}	\
 		}
 #endif
 
@@ -132,7 +133,7 @@ namespace DCL
 			{																	\
 			if(!x){																\
  			__debugbreak();														\
-			throw CException("Memory allocation error.", __FILE__, __LINE__);}	\
+			throw CException("Memory allocation error.", __FUNCTION__, std::to_string(__LINE__), __FILE__);}	\
 			}
 #endif
 

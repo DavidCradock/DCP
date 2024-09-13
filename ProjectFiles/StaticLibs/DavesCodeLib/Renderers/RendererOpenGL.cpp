@@ -48,12 +48,14 @@ namespace DCL
 
 	CRendererOpenGL::CRendererOpenGL()
 	{
+		LOG("Constructor called.");
 		_mpPimpl = new CPimpl;
 		ThrowIfMemoryNotAllocated(_mpPimpl);
 	}
 
 	CRendererOpenGL::~CRendererOpenGL()
 	{
+		LOG("Destructor called.");
 		if (_mpPimpl)
 		{
 			delete _mpPimpl;
@@ -63,6 +65,8 @@ namespace DCL
 
 	void CRendererOpenGL::initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen, bool bVSyncEnabled, CColourf clearColour)
 	{
+		
+
 		_mpPimpl->bVsyncEnabled = bVSyncEnabled;
 		_mpPimpl->bWindowFullscreen = bFullscreen;
 		_mpPimpl->clearColour = clearColour;
