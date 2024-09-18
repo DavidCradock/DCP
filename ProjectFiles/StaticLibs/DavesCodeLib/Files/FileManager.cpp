@@ -12,6 +12,7 @@ namespace DCL
 
 	CFileManager::CFileManager()
 	{
+		LOG("Constructor called.");
 	}
 
 	void CFileManager::writeString(std::ofstream& file, std::string& strString) const

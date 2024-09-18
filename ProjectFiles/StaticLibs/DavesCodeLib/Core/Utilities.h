@@ -269,7 +269,7 @@ namespace DCL
 		{
 			unsigned int iPageFaultCount;				///< The number of page faults.
 			unsigned int iPeakWorkingSetSize;			///< The peak working set size. 
-			unsigned int iWorkingSetSize;				///< The current working set size. 
+			unsigned int iWorkingSetSize;				///< The current working set size. This is the total memory used by the current process. To convert to MB, use... (workingsetsize / (1024 * 1024))
 			unsigned int iQuotaPeakPagedPoolUsage;		///< The peak paged pool usage. 
 			unsigned int iQuotaPagedPoolUsage;			///< The current paged pool usage. 
 			unsigned int iQuotaPeakNonPagedPoolUsage;	///< The peak nonpaged pool usage. 

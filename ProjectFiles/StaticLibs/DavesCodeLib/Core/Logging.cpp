@@ -2,6 +2,7 @@
 #include "Exceptions.h"
 #include "StringUtils.h"
 #include <filesystem>
+#include "Utilities.h"
 
 namespace DCL
 {
@@ -18,30 +19,23 @@ namespace DCL
 	{
 		_mstrFilename = strFilename;
 		_mStop = false;
-		std::string strEntryText = "CLog::CLog(\"";
-		strEntryText += strFilename;
-		strEntryText += "\") called.";
 
-		// Clear file and add header
-		std::ofstream file(_mstrFilename, std::ios::trunc);
-		file << "<html>\n<head>\n<style>\n";
-		file << "tr:nth-child(even) {background-color: rgba(100, 100, 100, 0.5);}\n";
-		file << "tr:nth-child(odd) {background-color: rgba(255, 192, 0, 0.75);}\n";
-		file << "</style>\n</head>\n<body>";
-		file << "<table width=\"100%\" border=\"0\">\n";
+		// Set private html code used when writing each column of each row in the table to the html file.
+		// The contents of each cell in the table is written to the file after each one of these strings.
+		_strTableColumnText[0] = "<tr><td width=\"1%\"><div align=\"center\">";
+		_strTableColumnText[1] = "</div></td><td width=\"20%\"><div align=\"center\">";
+		_strTableColumnText[2] = "</div></td><td width=\"20%\"><div align=\"center\">";
+		_strTableColumnText[3] = "</div></td><td width=\"1%\"><div align=\"center\">";
+		_strTableColumnText[4] = "</div></td><td width=\"20%\"><div align=\"center\">";
+
+		_writeLogHeader();
 
 		_mMainThread = std::thread(&CLog::_mainThreadLoop, this);
 
-		//add("Description", "Function Name", "Line Number", "Source Filename");
-		file << "<tr><td width=\"1%\"><div align=\"center\">TIME";
-		file << "</div></td><td width=\"20%\"><div align=\"center\">DESCRIPTION";
-		file << "</div></td><td width=\"20%\"><div align=\"center\">NAMESPACE:CLASS:METHOD";
-		file << "</div></td><td width=\"1%\"><div align=\"center\">LINE NUMBER";
-		file << "</div></td><td width=\"20%\"><div align=\"center\">SOURCE FILENAME";
-		file << "</div></td></tr>\n";
-
+		std::string strEntryText = "CLog::CLog(\"";
+		strEntryText += strFilename;
+		strEntryText += "\") called.";
 		LOG(strEntryText);
-		
 	}
 
 	CLog::~CLog()
@@ -49,10 +43,7 @@ namespace DCL
 		_mStop = true;
 		_mMainThread.join();
 
-		std::ofstream file(_mstrFilename, std::ios::app);
-		file << "</table>\n";
-		file << "</body>\n</html>\n";
-		file.close();
+		_writeLogFooter();
 	}
 
 	void CLog::add(const std::string& strText, const std::string& strFunctionName, const std::string& strLineNumber, const std::string& strSourceFilename)
@@ -88,7 +79,6 @@ namespace DCL
 	{
 		bool bLogToSave = false;
 		CLogEntry logToSave;
-		std::string str;
 
 		while (!_mStop)	// This gets set to true in the destructor
 		{
@@ -111,19 +101,12 @@ namespace DCL
 				std::ofstream file(_mstrFilename, std::ios::app);
 				if (file.is_open())
 				{
-					str.clear();
-					str.append("<tr><td width=\"1%\"><div align=\"center\">");
-					str.append(logToSave.strTime);
-					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
-					str.append(logToSave.strText);
-					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
-					str.append(logToSave.strFunctionName);
-					str.append("</div></td><td width=\"1%\"><div align=\"center\">");
-					str.append(logToSave.strSourceLineNumber);
-					str.append("</div></td><td width=\"20%\"><div align=\"center\">");
-					str.append(logToSave.strSourceFilename);
-					str.append("</div></td></tr>\n");
-					file << str;
+					file << _strTableColumnText[0] << logToSave.strTime;
+					file << _strTableColumnText[1] << logToSave.strText;
+					file << _strTableColumnText[2] << logToSave.strFunctionName;
+					file << _strTableColumnText[3] << logToSave.strSourceLineNumber;
+					file << _strTableColumnText[4] << logToSave.strSourceFilename;
+					file << "</div></td></tr>\n";
 				}
 				else
 				{
@@ -135,9 +118,9 @@ namespace DCL
 				// Not sleeping due to there being a log entry makes it so that on the next
 				// loop is fast and allows us to prevent entries from queueing up.
 				std::this_thread::sleep_for(std::chrono::milliseconds(100));
-			}			
+			}
 		}
-		
+
 	}
 
 	void CLog::run_test(void)
@@ -145,10 +128,10 @@ namespace DCL
 		CLog logger("log_run_test.txt");
 		std::thread t1([&logger]()
 			{
-			for (int i = 0; i < 100; ++i) {
-				logger.add("Thread 1: Message " + std::to_string(i), __FUNCTION__, std::to_string(__LINE__), __FILE__);
-				std::this_thread::sleep_for(std::chrono::milliseconds(10));
-			}
+				for (int i = 0; i < 100; ++i) {
+					logger.add("Thread 1: Message " + std::to_string(i), __FUNCTION__, std::to_string(__LINE__), __FILE__);
+					std::this_thread::sleep_for(std::chrono::milliseconds(10));
+				}
 			});
 
 		std::thread t2([&logger]() {
@@ -160,6 +143,52 @@ namespace DCL
 
 		t1.join();
 		t2.join();
+	}
+
+	void CLog::_writeLogHeader(void)
+	{
+		// Clear file and add header
+		std::ofstream file(_mstrFilename, std::ios::trunc);
+		// Write styles and start body
+		file << "<html>\n<head>\n<style>\n";
+		file << "body {	background-color: rgba(50, 50, 50, 1.0); color: rgba(255, 255, 255, 1.0); }\n";
+		file << "tr:nth-child(even) { background-color: rgba(100, 100, 100, 0.8); color: rgba(250, 250, 250, 1.0); }\n";
+		file << "tr:nth-child(odd) { background-color: rgba(150, 150, 150, 0.8); color: rgba(250, 250, 250, 1.0); }\n";
+		file << "</style>\n</head>\n<body>";
+		
+		// Write heading
+		file << "<h1 style = \"text-align:center\">" << _mstrFilename << "</h1>\n";
+
+		// Write system information after the heading, but before the main table begins
+		// RAM usage of process
+		SMemInfo memInfo;
+		getMemInfo(memInfo);
+		double dMBUsedByProcess = memInfo.proc.iWorkingSetSize / (1024.0 * 1024.0);
+		file << "RAM used by process: " << std::to_string(dMBUsedByProcess) << "MB\n";
+
+		file << "<br>\n";
+
+		// Number of CPU logical cores
+		file << "Number of logical CPU cores: " << std::to_string(getCPULogicalCores()) << "\n";
+
+		// Write begin table and write first row with headings for each column
+		file << "<table width=\"100%\" border=\"0\">\n";
+		file << _strTableColumnText[0] << "TIME";
+		file << _strTableColumnText[1] << "DESCRIPTION";
+		file << _strTableColumnText[2] << "NAMESPACE:CLASS:METHOD";
+		file << _strTableColumnText[3] << "LINE NUMBER";
+		file << _strTableColumnText[4] << "SOURCE FILENAME";
+		file << "</div></td></tr>\n";
+
+		
+	}
+
+	void CLog::_writeLogFooter(void)
+	{
+		std::ofstream file(_mstrFilename, std::ios::app);
+		// End table, body and html tags
+		file << "</table>\n</body>\n</html>\n";
+		file.close();
 	}
 
 	CLog gLogMain;	/// \brief Main logging file for DCL

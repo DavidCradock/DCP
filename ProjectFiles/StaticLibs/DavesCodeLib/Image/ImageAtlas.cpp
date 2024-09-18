@@ -38,10 +38,12 @@ namespace DCL
 
 	CImageAtlasPacker::CImageAtlasPacker()
 	{
+		LOG("Constructor called.");
 	}
 
 	CImageAtlasPacker::~CImageAtlasPacker()
 	{
+		LOG("Destructor called.");
 		reset();
 	}
 

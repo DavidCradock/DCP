@@ -31,6 +31,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         while (!bWindowHasBeenAskedToClose)
         {
             pRenderer->updateWindow(bWindowResized, bWindowMinimized, bWindowHasBeenAskedToClose);
+            pRenderer->beginFrame();
+            pRenderer->endFrame();
         }
 
         // Shutdown the renderer, cleaning up the API and closing the window.

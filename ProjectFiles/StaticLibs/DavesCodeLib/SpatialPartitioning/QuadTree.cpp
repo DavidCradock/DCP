@@ -5,6 +5,7 @@ namespace DCL
 {
 	CQuadTree::CQuadTree(int iMaxEntitiesPerNode, int iRectSizeIncreaseMultiplier)
 	{
+		LOG("Constructor called.");
 		_mpRootNode = 0;
 
 		init(iMaxEntitiesPerNode, iRectSizeIncreaseMultiplier);
@@ -37,6 +38,7 @@ namespace DCL
 
 	CQuadTree::~CQuadTree()
 	{
+		LOG("Destructor called.");
 		free();
 	}
 

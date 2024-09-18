@@ -35,7 +35,7 @@ namespace DCL
 	{
 	public:
 		/// \brief Initialise a window with the graphics API all hooked up and ready to go
-		virtual void initialise(unsigned int iWindowWidth = 320, unsigned int iWindowHeight = 240, const std::string& strWindowTitle = "DCP Dev App", bool bFullscreen = false, bool bVSyncEnabled = true, CColourf clearColour = CColourf(0.2f, 0.2f, 0.2f, 1.0f)) = 0;
+		virtual void initialise(unsigned int iWindowWidth = 320, unsigned int iWindowHeight = 240, const std::string& strWindowTitle = "DCP Dev App", bool bFullscreen = false, bool bVSyncEnabled = true, CColourf clearColour = CColourf(0.2f, 0.2f, 0.4f, 1.0f)) = 0;
 
 		/// \brief Shutdown and close the API and window
 		virtual void shutdown(void) = 0;
@@ -54,10 +54,14 @@ namespace DCL
 		/// Within this method, we check for these messages and handle resizing(resize the framebuffer), minimizing (Maybe pause the app?) and closing
 		virtual void updateWindow(bool& bWindowResized, bool& bWindowMinimized, bool& bWindowHasBeenAskedToClose) = 0;
 		
-		/// \brief 
-		//virtual void beginFrame() = 0;
-		//virtual void endFrame() = 0;
-		//virtual void clear(const float r, const float g, const float b, const float a) = 0;
+		/// \brief Begin frame, clearing back buffer, ready for rendering
+		virtual void beginFrame(void) = 0;
+		 
+		/// \brief End frame, flip back buffer to front
+		virtual void endFrame(void) = 0;
+	
+		/// \brief Set the colour which the back buffer of the window is cleared to during the call to beginFrame()
+		virtual void setBackbufferClearColour(float fRed, float fGreen, float fBlue, float fAlpha) = 0;
 
 		// Primitive drawing
 		//virtual void drawTriangles(const void* vertexData, size_t vertexCount, const void* indexData, size_t indexCount) = 0;

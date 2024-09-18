@@ -20,6 +20,11 @@ namespace DCL
 		void shutdown(void);
 		void updateWindow(bool& bWindowResized, bool& bWindowMinimized, bool& bWindowHasBeenAskedToClose);
 
+		void beginFrame(void);
+		void endFrame(void);
+
+		void setBackbufferClearColour(float fRed, float fGreen, float fBlue, float fAlpha);
+
 		void blendDisable(void);
 		void blendEnable(void);
 		void blendFunction_SrcAlpha_One(void);

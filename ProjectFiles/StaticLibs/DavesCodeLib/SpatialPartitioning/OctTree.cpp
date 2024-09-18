@@ -5,6 +5,7 @@ namespace DCL
 {
 	COctTree::COctTree(int iMaxEntitiesPerNode, float fSizeIncreaseMultiplier)
 	{
+		LOG("Constructor called.");
 		_mpRootNode = 0;
 		init(iMaxEntitiesPerNode, fSizeIncreaseMultiplier);
 	}
@@ -36,6 +37,7 @@ namespace DCL
 
 	COctTree::~COctTree()
 	{
+		LOG("Destructor called.");
 		free();
 	}
 

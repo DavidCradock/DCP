@@ -5,6 +5,7 @@ namespace DCL
 {
 	CFiniteStateMachine::~CFiniteStateMachine()
 	{
+		LOG("Destructor called.");;
 		removeAllStates();
 	}
 

@@ -6,12 +6,12 @@ namespace DCL
 {
 	CAudioSample::CAudioSample()
 	{
-
+		LOG("Constructor called.");;
 	}
 
 	CAudioSample::~CAudioSample()
 	{
-
+		LOG("Destructor called.");;
 	}
 
 }	// namespace DCL

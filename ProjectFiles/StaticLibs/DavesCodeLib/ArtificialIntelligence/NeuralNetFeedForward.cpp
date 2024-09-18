@@ -26,6 +26,7 @@ namespace DCL
 
 	CNeuralNetworkFeedForward::CNeuralNetworkFeedForward()
 	{
+		LOG("Constructor called.");;
 		create(1, 1, 0, 0);
 	}
 

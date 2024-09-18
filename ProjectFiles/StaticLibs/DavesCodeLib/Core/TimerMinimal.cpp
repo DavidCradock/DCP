@@ -1,9 +1,11 @@
 #include "TimerMinimal.h"
+#include "Logging.h"
 
 namespace DCL
 {
     CTimerMinimal::CTimerMinimal()
     {
+        LOG("Constructor called.");;
         reset();
     }
 

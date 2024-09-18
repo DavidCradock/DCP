@@ -20,6 +20,11 @@ namespace DCL
 		void shutdown(void);
 		void updateWindow(bool& bWindowResized, bool& bWindowMinimized, bool& bWindowHasBeenAskedToClose);
 
+		void beginFrame(void);
+		void endFrame(void);
+
+		void setBackbufferClearColour(float fRed, float fGreen, float fBlue, float fAlpha);
+
 		void blendDisable(void);
 		void blendEnable(void);
 		void blendFunction_SrcAlpha_One(void);
@@ -41,7 +46,9 @@ namespace DCL
 		void scissorTestEnable(void);
 
 	private:
-
+		class CPimpl;		///< Declaration of this class's private implementation holding things which we do not wish to expose when including this header file.
+							///< We put this here so we can create the pointer below, without having to include the header file containing the actual code.
+		CPimpl* _mpPimpl;	///< Pointer holding private implementation, new'd and delete'd in con/des tructors of this class.
 	};
 }	// namespace DCL
 

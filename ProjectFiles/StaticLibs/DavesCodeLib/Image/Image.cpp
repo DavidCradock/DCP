@@ -13,6 +13,7 @@ namespace DCL
 {
 	CImage::CImage()
 	{
+		LOG("Constructor called.");
 		_mpData = 0;
 		_muiDataSize = 0;
 		free();
@@ -20,6 +21,7 @@ namespace DCL
 
 	CImage::~CImage()
 	{
+		LOG("Destructor called.");
 		free();
 	}
 

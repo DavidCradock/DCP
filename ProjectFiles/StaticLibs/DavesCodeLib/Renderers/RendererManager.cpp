@@ -6,12 +6,13 @@ namespace DCL
 {
 	CRendererManager::CRendererManager()
 	{
+		LOG("Constructor called.");
 		_mpRenderer = 0;
 	}
 
 	CRendererManager::~CRendererManager()
 	{
-
+		LOG("Destructor called.");
 	}
 
 	CRendererBase* CRendererManager::init(const std::string& strRendererName)

@@ -5,6 +5,7 @@ namespace DCL
 {
 	CFileMemory::CFileMemory()
 	{
+		LOG("Constructor called.");
 		_mpchDataStart = 0;
 		_mstDataSizeBytes = 0;
 		_mpchSeekData = 0;
@@ -14,6 +15,7 @@ namespace DCL
 
 	CFileMemory::~CFileMemory()
 	{
+		LOG("Destructor called.");
 		free();
 	}
 

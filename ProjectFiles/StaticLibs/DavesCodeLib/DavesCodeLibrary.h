@@ -9,6 +9,7 @@
 /// \todo Add Renderers from DCP_old
 /// \todo Add SDL2 and SDL2_Mixer
 /// \todo Check Doxygen build system is working WITHOUT having to have the thing installed.
+/// \todo Add memory tracking class which is threaded like the CLog class and tracks peak system memory usuage .
 #ifndef DAVESCODELIBRARY_H
 #define DAVESCODELIBRARY_H
 

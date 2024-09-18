@@ -103,11 +103,27 @@ namespace DCL
 
 		/// \brief Main loop which pops log entries from the queue and writes them to a file.
 		void _mainThreadLoop(void);
+
+		/// \brief Writes header to the log file
+		///
+		/// Also opens the log file with the std::ios::trunc flag so that the file is cleared
+		void _writeLogHeader(void);
+
+		/// \brief Writes out the end of the html file, closing body and html tags etc
+		void _writeLogFooter(void);
+
+		/// \brief Each element of this array holds the html text to add before adding the table cell's contents (text)
+		///
+		/// For example, element 0 holds the following html... 
+		/// <tr><td width=\"1%\"><div align=\"center\">" and then the text would be added to the file after this to be contained within the first column of the table
+		/// We have the html code stored in these so that when they are added from various methods, the width settings remain consistant and we only have to change them
+		/// where these strings are setup (In the constructor of CLog)
+		std::string _strTableColumnText[5];
 	};
 	
 	extern CLog gLogMain;	/// \brief Main logging file for DCL
 
-	/// \brief Macro to call gGlobals.mainLog.add() passing in __FUNCTION__, __FILE__ and __LINE__
+/// \brief Macro to call gGlobals.mainLog.add() passing in __FUNCTION__, __FILE__ and __LINE__
 ///
 /// Usage:
 /// \code

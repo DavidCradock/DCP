@@ -1,4 +1,5 @@
 #include "Timer.h"
+#include "Logging.h"
 
 #include <thread>
 
@@ -6,6 +7,7 @@ namespace DCL
 {
     CTimer::CTimer()
     {
+        LOG("Constructor called.");;
         reset();
     }
 
