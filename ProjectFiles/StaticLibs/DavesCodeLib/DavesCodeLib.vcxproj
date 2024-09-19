@@ -131,6 +131,7 @@
     <ClInclude Include="Renderers\RendererBase.h" />
     <ClInclude Include="Renderers\RendererManager.h" />
     <ClInclude Include="Renderers\RendererOpenGL.h" />
+    <ClInclude Include="Renderers\RendererOpenGLExtensions.h" />
     <ClInclude Include="Renderers\RendererVulkan.h" />
     <ClInclude Include="SpatialPartitioning\OctTree.h" />
     <ClInclude Include="SpatialPartitioning\OctTreeEntity.h" />
@@ -174,6 +175,7 @@
     <ClCompile Include="Renderers\RendererBase.cpp" />
     <ClCompile Include="Renderers\RendererManager.cpp" />
     <ClCompile Include="Renderers\RendererOpenGL.cpp" />
+    <ClCompile Include="Renderers\RendererOpenGLExtensions.cpp" />
     <ClCompile Include="Renderers\RendererVulkan.cpp" />
     <ClCompile Include="SpatialPartitioning\OctTree.cpp" />
     <ClCompile Include="SpatialPartitioning\OctTreeEntity.cpp" />

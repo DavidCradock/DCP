@@ -1,19 +1,7 @@
 #include "RendererOpenGL.h"
 #include "../Core/Colourf.h"
-#include "../Core/Exceptions.h"
 
-#include <Windows.h>
-
-// OpenGL
-#include <gl\gl.h>                                // Header File For The OpenGL32 Library
-#include <gl\glu.h>                               // Header File For The GLu32 Library
-#include "OpenGL/glcorearb.h"
-#include "OpenGL/glext.h"
-#include "OpenGL/khrplatform.h"
-#include "OpenGL/wgl.h"
-#include "OpenGL/wglext.h"
-#pragma comment(lib, "OpenGL32.lib")
-#pragma comment(lib, "GLu32.lib")
+#include "RendererOpenGLExtensions.h"
 
 // SDL
 #include "../../../DynamicLibs/SDL-release-2.30.6/include/SDL.h"
@@ -25,11 +13,11 @@ namespace DCL
 	/// \brief Private implementation for CRendererOpenGL class
 	///
 	/// Holds all the members and methods which are private and which we do not wish to expose to any files including CRenderer's header file
-	class CRendererOpenGL::CPimpl
+	class CRendererOpenGL::CPrim
 	{
 	public:
 		/// \brief Constructor for private members. Sets to initial values
-		CPimpl();
+		CPrim();
 
 		bool bVsyncEnabled;				///< Vsync enabled or not. Set during call to initialise()
 		bool bWindowFullscreen;			///< Fullscreen or windowed. Set during call to initialise()
@@ -45,7 +33,7 @@ namespace DCL
 
 	};
 
-	CRendererOpenGL::CPimpl::CPimpl()
+	CRendererOpenGL::CPrim::CPrim()
 	{
 		pSDLWindow = NULL;
 	}
@@ -53,29 +41,29 @@ namespace DCL
 	CRendererOpenGL::CRendererOpenGL()
 	{
 		LOG("Constructor called.");
-		_mpPimpl = new CPimpl;
-		ThrowIfMemoryNotAllocated(_mpPimpl);
+		prim = new CPrim;
+		ThrowIfMemoryNotAllocated(prim);
 	}
 
 	CRendererOpenGL::~CRendererOpenGL()
 	{
 		LOG("Destructor called.");
-		if (_mpPimpl)
+		if (prim)
 		{
-			delete _mpPimpl;
-			_mpPimpl = 0;
+			delete prim;
+			prim = 0;
 		}
 	}
 
 	void CRendererOpenGL::initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen, bool bVSyncEnabled, CColourf clearColour)
 	{
-		_mpPimpl->bVsyncEnabled = bVSyncEnabled;
-		_mpPimpl->bWindowFullscreen = bFullscreen;
-		_mpPimpl->clearColour = clearColour;
-		_mpPimpl->hInstance = NULL;
-		_mpPimpl->strWindowTitle = strWindowTitle;
-		_mpPimpl->uiWindowHeight = iWindowHeight;
-		_mpPimpl->uiWindowWidth = iWindowWidth;
+		prim->bVsyncEnabled = bVSyncEnabled;
+		prim->bWindowFullscreen = bFullscreen;
+		prim->clearColour = clearColour;
+		prim->hInstance = NULL;
+		prim->strWindowTitle = strWindowTitle;
+		prim->uiWindowHeight = iWindowHeight;
+		prim->uiWindowWidth = iWindowWidth;
 
 		if (0 != SDL_Init(SDL_INIT_VIDEO))
 		{
@@ -107,7 +95,7 @@ namespace DCL
 		else
 			iWindowFlags = SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE;
 
-		_mpPimpl->pSDLWindow = SDL_CreateWindow(
+		prim->pSDLWindow = SDL_CreateWindow(
 			strWindowTitle.c_str(),		// Window title text
 			SDL_WINDOWPOS_UNDEFINED,	// X position of window. Can be either SDL_WINDOWPOS_CENTERED or SDL_WINDOWPOS_UNDEFINED
 			SDL_WINDOWPOS_UNDEFINED,	// Y position of window. Can be either SDL_WINDOWPOS_CENTERED or SDL_WINDOWPOS_UNDEFINED
@@ -127,7 +115,7 @@ namespace DCL
 													// SDL_WINDOW_INPUT_GRABBED : window has grabbed input focus
 													// SDL_WINDOW_ALLOW_HIGHDPI : window should be created in high - DPI mode if supported(>= SDL 2.0.1)
 
-		if (NULL == _mpPimpl->pSDLWindow)
+		if (NULL == prim->pSDLWindow)
 		{
 			std::string strError("CRendererOpenGL::initialise() failed during call to SDL_CreateWindow()\n");
 			strError += "SDL_GetError() string: ";
@@ -135,8 +123,8 @@ namespace DCL
 			Throw(strError);
 		}
 
-		_mpPimpl->SDLOpenGLContext = SDL_GL_CreateContext(_mpPimpl->pSDLWindow);
-		if (NULL == _mpPimpl->SDLOpenGLContext)
+		prim->SDLOpenGLContext = SDL_GL_CreateContext(prim->pSDLWindow);
+		if (NULL == prim->SDLOpenGLContext)
 		{
 			std::string strError("CRendererOpenGL::initialise() failed during call to SDL_GL_CreateContext()\n");
 			strError += "SDL_GetError() string: ";
@@ -151,6 +139,9 @@ namespace DCL
 			strError += SDL_GetError();
 			Throw(strError);
 		}
+
+		// Detect OpenGL extensions and obtain function pointers
+		setupOpenGLExtensions(true);
 	}
 
 	void CRendererOpenGL::shutdown(void)
@@ -196,18 +187,26 @@ namespace DCL
 
 	void CRendererOpenGL::beginFrame(void)
 	{
-		glClearColor(_mpPimpl->clearColour.red, _mpPimpl->clearColour.green, _mpPimpl->clearColour.blue, _mpPimpl->clearColour.alpha);
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClearColor(prim->clearColour.red, prim->clearColour.green, prim->clearColour.blue, prim->clearColour.alpha);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
 	void CRendererOpenGL::endFrame(void)
 	{
-		SDL_GL_SwapWindow(_mpPimpl->pSDLWindow);
+		SDL_GL_SwapWindow(prim->pSDLWindow);
 	}
 
 	void CRendererOpenGL::setBackbufferClearColour(float fRed, float fGreen, float fBlue, float fAlpha)
 	{
-		_mpPimpl->clearColour.set(fRed, fGreen, fBlue, fAlpha);
+		prim->clearColour.set(fRed, fGreen, fBlue, fAlpha);
+	}
+
+	void CRendererOpenGL::setVSync(bool bVSyncOn)
+	{
+		if (NULL != prim->pSDLWindow)
+		{
+			SDL_GL_SetSwapInterval(int(bVSyncOn));
+		}
 	}
 
 	void CRendererOpenGL::blendDisable(void)

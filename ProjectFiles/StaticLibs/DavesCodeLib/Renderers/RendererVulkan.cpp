@@ -13,11 +13,11 @@ namespace DCL
 	/// \brief Private implementation for CRendererVulkan class
 	///
 	/// Holds all the members and methods which are private and which we do not wish to expose to any files including CRenderer's header file
-	class CRendererVulkan::CPimpl
+	class CRendererVulkan::CPrim
 	{
 	public:
 		/// \brief Constructor for private members. Sets to initial values
-		CPimpl();
+		CPrim();
 
 		bool bVsyncEnabled;				///< Vsync enabled or not. Set during call to initialise()
 		bool bWindowFullscreen;			///< Fullscreen or windowed. Set during call to initialise()
@@ -33,7 +33,7 @@ namespace DCL
 
 	};
 
-	CRendererVulkan::CPimpl::CPimpl()
+	CRendererVulkan::CPrim::CPrim()
 	{
 		pSDLWindow = NULL;
 	}
@@ -41,29 +41,29 @@ namespace DCL
 	CRendererVulkan::CRendererVulkan()
 	{
 		LOG("Constructor called.");
-		_mpPimpl = new CPimpl;
-		ThrowIfMemoryNotAllocated(_mpPimpl);
+		prim = new CPrim;
+		ThrowIfMemoryNotAllocated(prim);
 	}
 
 	CRendererVulkan::~CRendererVulkan()
 	{
 		LOG("Destructor called.");
-		if (_mpPimpl)
+		if (prim)
 		{
-			delete _mpPimpl;
-			_mpPimpl = 0;
+			delete prim;
+			prim = 0;
 		}
 	}
 
 	void CRendererVulkan::initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string& strWindowTitle, bool bFullscreen, bool bVSyncEnabled, CColourf clearColour)
 	{
-		_mpPimpl->bVsyncEnabled = bVSyncEnabled;
-		_mpPimpl->bWindowFullscreen = bFullscreen;
-		_mpPimpl->clearColour = clearColour;
-		_mpPimpl->hInstance = NULL;
-		_mpPimpl->strWindowTitle = strWindowTitle;
-		_mpPimpl->uiWindowHeight = iWindowHeight;
-		_mpPimpl->uiWindowWidth = iWindowWidth;
+		prim->bVsyncEnabled = bVSyncEnabled;
+		prim->bWindowFullscreen = bFullscreen;
+		prim->clearColour = clearColour;
+		prim->hInstance = NULL;
+		prim->strWindowTitle = strWindowTitle;
+		prim->uiWindowHeight = iWindowHeight;
+		prim->uiWindowWidth = iWindowWidth;
 	}
 
 	void CRendererVulkan::shutdown(void)
@@ -89,6 +89,14 @@ namespace DCL
 	void CRendererVulkan::setBackbufferClearColour(float fRed, float fGreen, float fBlue, float fAlpha)
 	{
 
+	}
+
+	void CRendererVulkan::setVSync(bool bVSyncOn)
+	{
+		if (NULL != prim->pSDLWindow)
+		{
+			SDL_GL_SetSwapInterval(int(bVSyncOn));
+		}
 	}
 
 	void CRendererVulkan::blendDisable(void)

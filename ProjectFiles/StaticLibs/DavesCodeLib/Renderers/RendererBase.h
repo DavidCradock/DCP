@@ -63,6 +63,13 @@ namespace DCL
 		/// \brief Set the colour which the back buffer of the window is cleared to during the call to beginFrame()
 		virtual void setBackbufferClearColour(float fRed, float fGreen, float fBlue, float fAlpha) = 0;
 
+		/// \brief Toggles vertical syncronisation of flipping of the back buffer to the windows' front with the display device's refresh rate
+		///
+		/// Should be called after the window has been created, otherwise nothing will happen.
+		/// 
+		/// \param bVSyncOn Whether vsync should be on or off.
+		virtual void setVSync(bool bVSyncOn) = 0;
+
 		// Primitive drawing
 		//virtual void drawTriangles(const void* vertexData, size_t vertexCount, const void* indexData, size_t indexCount) = 0;
 		//virtual void drawLines(const void* vertexData, size_t vertexCount) = 0;
