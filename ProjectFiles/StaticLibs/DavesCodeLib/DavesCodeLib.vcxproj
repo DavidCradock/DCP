@@ -111,6 +111,7 @@
     <ClInclude Include="Files\FileMemory.h" />
     <ClInclude Include="Image\Image.h" />
     <ClInclude Include="Image\ImageAtlas.h" />
+    <ClInclude Include="Image\Mandelbrot.h" />
     <ClInclude Include="Image\stb_image.h" />
     <ClInclude Include="Image\stb_image_write.h" />
     <ClInclude Include="Math\AABB.h" />
@@ -134,6 +135,8 @@
     <ClInclude Include="Renderers\RendererBase.h" />
     <ClInclude Include="Renderers\RendererManager.h" />
     <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileBase.h" />
+    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileOpenGL.h" />
+    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileVulkan.h" />
     <ClInclude Include="Renderers\Vulkan\RendererVulkan.h" />
     <ClInclude Include="SpatialPartitioning\OctTree.h" />
     <ClInclude Include="SpatialPartitioning\OctTreeEntity.h" />
@@ -164,6 +167,7 @@
     <ClCompile Include="Files\FileMemory.cpp" />
     <ClCompile Include="Image\Image.cpp" />
     <ClCompile Include="Image\ImageAtlas.cpp" />
+    <ClCompile Include="Image\Mandelbrot.cpp" />
     <ClCompile Include="Math\AABB.cpp" />
     <ClCompile Include="Math\Frustum.cpp" />
     <ClCompile Include="Math\Matrix.cpp" />
@@ -177,9 +181,9 @@
     <ClCompile Include="RayTracer\Ray.cpp" />
     <ClCompile Include="Renderers\OpenGL\RendererOpenGL.cpp" />
     <ClCompile Include="Renderers\OpenGL\RendererOpenGLExtensions.cpp" />
-    <ClCompile Include="Renderers\RendererBase.cpp" />
     <ClCompile Include="Renderers\RendererManager.cpp" />
-    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileBase.cpp" />
+    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileOpenGL.cpp" />
+    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileVulkan.cpp" />
     <ClCompile Include="Renderers\Vulkan\RendererVulkan.cpp" />
     <ClCompile Include="SpatialPartitioning\OctTree.cpp" />
     <ClCompile Include="SpatialPartitioning\OctTreeEntity.cpp" />

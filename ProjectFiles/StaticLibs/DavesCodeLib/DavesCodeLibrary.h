@@ -54,6 +54,7 @@
 #include "Files/FileMemory.h"
 #include "Image/Image.h"
 #include "Image/ImageAtlas.h"
+#include "Image/Mandelbrot.h"
 #include "Math/AABB.h"
 #include "Math/Frustum.h"
 #include "Math/Matrix.h"

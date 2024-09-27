@@ -1,8 +1,7 @@
-#ifndef RESOURCE_TEXTURE2D_FROM_FILE_H
-#define RESOURCE_TEXTURE2D_FROM_FILE_H
+#ifndef RESOURCE_TEXTURE2D_FROM_FILE_BASE_H
+#define RESOURCE_TEXTURE2D_FROM_FILE_BASE_H
 
 #include "../../Core/Dimensions.h"
-
 #include <string>
 
 namespace DCL
@@ -12,6 +11,7 @@ namespace DCL
 	/// We derive resource classes from this base class for each renderer type such as OpenGL and Vulkan.
 	/// These classes are to be located within the Resources sub folder of the Renderers folder.
 	/// Within DCL, all code uses only a pointer to the base class and the implementation for each of the methods are implemented inside the derived classes and are insulated via private implementations.
+	/// Each of the API's CRenderer classes which are derived from the CRendererBase class, are responsible for creating, accessing and freeing this resource type.
 	class CResourceTexture2DFromFileBase
 	{
 	public:
@@ -46,24 +46,6 @@ namespace DCL
 		///
 		/// Will return the correct dimensions once setImageFilename() has been called.
 		virtual CDimension2D getDimension(void) = 0;
-	};
-
-	/// \brief OpenGL class for resource of type texture 2D created from a file
-	///
-	/// Within DCL, all code uses only a pointer to the base class and the implementation for each of the methods are insulated via private implementations
-	class CResourceTexture2DFromFileOpenGL : public CResourceTexture2DFromFileBase
-	{
-	public:
-		
-	};
-
-	/// \brief Vulkan class for resource of type texture 2D created from a file
-	///
-	/// Within DCL, all code uses only a pointer to the base class and the implementation for each of the methods are insulated via private implementations
-	class CResourceTexture2DFromFileVulkan : public CResourceTexture2DFromFileBase
-	{
-	public:
-
 	};
 
 }	// namespace DCL

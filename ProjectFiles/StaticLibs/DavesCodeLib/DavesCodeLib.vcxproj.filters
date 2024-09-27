@@ -198,6 +198,15 @@
     <ClInclude Include="Core\Dimensions.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileOpenGL.h">
+      <Filter>Renderers\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileVulkan.h">
+      <Filter>Renderers\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Image\Mandelbrot.h">
+      <Filter>Image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArtificialIntelligence\GeneticAlgorithm.cpp">
@@ -307,9 +316,6 @@
     <ClCompile Include="ArtificialIntelligence\FiniteStateMachine.cpp">
       <Filter>ArtificialIntelligence</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\RendererBase.cpp">
-      <Filter>Renderers</Filter>
-    </ClCompile>
     <ClCompile Include="Renderers\RendererManager.cpp">
       <Filter>Renderers</Filter>
     </ClCompile>
@@ -322,11 +328,17 @@
     <ClCompile Include="Renderers\Vulkan\RendererVulkan.cpp">
       <Filter>Renderers\Vulkan</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileBase.cpp">
-      <Filter>Renderers\Resources</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Dimensions.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileOpenGL.cpp">
+      <Filter>Renderers\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileVulkan.cpp">
+      <Filter>Renderers\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Image\Mandelbrot.cpp">
+      <Filter>Image</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

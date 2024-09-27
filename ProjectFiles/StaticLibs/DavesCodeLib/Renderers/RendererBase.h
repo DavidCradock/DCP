@@ -1,14 +1,14 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
+#include "Resources/ResourceTexture2DFromFileBase.h"
 #include "../Core/Colourf.h"
-#include <string>
 
 namespace DCL
 {
 	/// \brief Base class for the various renderers
 	///
-	/// Base class which declares which methods need to be in a renderer class.
+	/// Base class which declares which methods need to be in a renderer class for each graphics API.
 	/// No implementation here.
 	/// Every method in here is pure virtual (The virtual keyword and the "= 0" at the end)
 	/// All the various rendering classes (such as the user interface class for example) use the methods declared here to render stuff in a generic way.
@@ -26,6 +26,22 @@ namespace DCL
 	/// 
 	/// Although a renderer, regardless of API can render to a buffer without a window, we do not include such functionality here.
 	/// Meaning, a window is required. This class is responsible for creating/checking messages/closing this window.
+	/// 
+	/// The derived classes have sets of methods which are responsible for creating/freeing/accessing various resources such as textures, vertex buffers/programs, etc.
+	/// These methods, for each resource type are...
+	/// addResourceType()			// Adds a new resource. Allocates an object of the derived class into a pointer of the base class for the resource type.
+	/// getResourceType()			// Returns a pointer to the base class of the resource type
+	/// getResourceTypeExists()		// Returns true if the named resource already exists in the numbered resource group
+	/// removeResourceType()		// Removes, or reduces the reference count of the named resource.
+	/// removeAllResourceType()		// Removes all resources in a group.
+	/// 
+	/// Each resource should have a unique name and they are held within a speccified resource group number.
+	/// These resource group numbers are used so we can seperate resources into groups and allow more flexibility when calling the removeAllResourceType() method, for example.
+	/// There are 8 resource groups, so valid group numbers are from 0 to 7.
+	/// Group 0 is supposed to be reserved for resources which are used within DCL such as default textures, vertex/fragment programs etc.
+	/// I say "supposed" as there's nothing preventing us from messing around with group 0.
+	/// All methods accept a group number, which defaults to group 1.
+	/// We decided to use group numbers instead of names for performance reasons. (Faster access to an array via index rather than using a hashmap lookup for a named group)
 	class CRendererBase
 	{
 	public:
@@ -71,6 +87,45 @@ namespace DCL
 		//virtual void drawPoints(const void* vertexData, size_t vertexCount) = 0;
 
 		// Texture management
+		
+		/// \brief Adds a new texture2DFromFile object to be managed.
+		///
+		/// \param strResourceName The name of the new resource which we can use to refer to it with other methods.
+		/// \param strImageFilename The name of the file which holds the image data for the texture.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned.
+		/// When the OpenGL context is destroyed and then recreated, the image data is reloaded from the stored filename.
+		virtual CResourceTexture2DFromFileBase* addTexture2DFromFile(const std::string& strResourceName, const std::string& strImageFilename, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns a pointer to an existing resource
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource couldn't be found, an exception is thrown
+		virtual CResourceTexture2DFromFileBase* getTexture2DFromFile(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns whether a named resource exists
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual bool getTexture2DFromFileExists(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes a previously added resource from this manager
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource doesn't exist, this silently fails.
+		/// If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains.
+		virtual void removeTexture2DFromFile(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+
+
+
+
+
 		//virtual Texture* createTexture(const void* data, int width, int height, TextureFormat format) = 0;
 		//virtual void destroyTexture(Texture* texture) = 0;
 		// Generate mipmaps : Generate mipmap levels for textures.
