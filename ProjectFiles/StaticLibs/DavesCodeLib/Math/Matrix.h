@@ -1,9 +1,4 @@
-﻿/// \file Matrix.h
-/// \brief 3D Matrix class
-///
-/// Detailed description text goes here.
-
-#ifndef MATRIX_H
+﻿#ifndef MATRIX_H
 #define MATRIX_H
 
 #include "Quaternion.h"

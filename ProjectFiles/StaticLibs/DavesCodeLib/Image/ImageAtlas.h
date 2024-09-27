@@ -1,8 +1,3 @@
-/// \file ImageAtlas.h
-/// \brief Packing of images into larger images.
-///
-/// Detailed description text goes here.
-
 #ifndef IMAGEATLAS_H
 #define IMAGEATLAS_H
 

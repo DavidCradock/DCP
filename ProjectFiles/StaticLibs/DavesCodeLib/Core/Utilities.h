@@ -1,8 +1,3 @@
-/// \file Utilities.h
-/// \brief Contains various utility functions.
-/// 
-/// 
-
 #ifndef UTILITIES_H
 #define UTILITIES_H
 

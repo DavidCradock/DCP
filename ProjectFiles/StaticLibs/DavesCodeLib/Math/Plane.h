@@ -1,8 +1,3 @@
-/// \file Plane.h
-/// \brief Plane
-///
-/// Detailed description text goes here.
-
 #ifndef PLANE_H
 #define PLANE_H
 

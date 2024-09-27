@@ -1,30 +1,3 @@
-/// \file Exceptions.h
-/// \brief Contains error handling code and macros to deal with errors, warnings and logging of information to a log file.
-/// 
-/// How we deal with error handling in Dave's Code Library.
-/// 
-/// We use exceptions. Although they introduce a slight performance penalty, they greatly simplify error handling.
-/// We use various macros found in this file which are used throughout the codebase to log the status of things happening to a log file, and deal with unrecoverable, exceptional errors 
-/// The macros in here log information using the CLog class found in Core/Logging.h
-/// 
-/// The macros reduce the amount of code we have to write everywhere and do stuff such as checking for critical errors, automatically shutting down the process and writing information to a log file.
-///
-/// Within our main program loop somewhere, we'd do the following...
-/// \code
-/// try
-/// {
-///		// Main loop would go here
-/// }
-/// catch (CException &exception)
-/// {
-///		// Deal with the exception somehow...
-///		x->pLog->add(exception.mstrException, true);
-///		std::wstring strw = StringUtils::stringToWide(exception.mstrException);
-///		MessageBox(x->pWindow->getWindowHandle(), strw.c_str(), L"Sorry, an exception has been thrown...", MB_OK);
-///		__debugbreak();
-/// }
-/// \endcode
-
 #ifndef EXCEPTIONS_H
 #define EXCEPTIONS_H
 
@@ -35,6 +8,29 @@ namespace DCL
 	/// \brief An exception containing information about what went wrong.
 	///
 	/// Gets thrown via the ThrowIfFalse/True/ThrowIfMemoryNotAllocated macros below
+	/// How we deal with error handling in Dave's Code Library.
+	/// 
+	/// We use exceptions. Although they introduce a slight performance penalty, they greatly simplify error handling.
+	/// We use various macros found in this file which are used throughout the codebase to log the status of things happening to a log file, and deal with unrecoverable, exceptional errors 
+	/// The macros in here log information using the CLog class found in Core/Logging.h
+	/// 
+	/// The macros reduce the amount of code we have to write everywhere and do stuff such as checking for critical errors, automatically shutting down the process and writing information to a log file.
+	///
+	/// Within our main program loop somewhere, we'd do the following...
+	/// \code
+	/// try
+	/// {
+	///		// Main loop would go here
+	/// }
+	/// catch (CException &exception)
+	/// {
+	///		// Deal with the exception somehow...
+	///		x->pLog->add(exception.mstrException, true);
+	///		std::wstring strw = StringUtils::stringToWide(exception.mstrException);
+	///		MessageBox(x->pWindow->getWindowHandle(), strw.c_str(), L"Sorry, an exception has been thrown...", MB_OK);
+	///		__debugbreak();
+	/// }
+	/// \endcode
 	class CException
 	{
 	public:

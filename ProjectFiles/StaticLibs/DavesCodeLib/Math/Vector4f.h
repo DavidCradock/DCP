@@ -1,8 +1,3 @@
-/// \file Vector4f.h
-/// \brief A four component floating point vector
-///
-/// Detailed description text goes here.
-
 #ifndef VECTOR4F_H
 #define VECTOR4F_H
 

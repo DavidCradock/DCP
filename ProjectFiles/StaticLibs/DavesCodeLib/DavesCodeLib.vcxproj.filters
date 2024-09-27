@@ -35,6 +35,15 @@
     <Filter Include="Renderers\OpenGL">
       <UniqueIdentifier>{f483d3fe-ce54-4d0b-ba30-68c950805d8c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Renderers\Vulkan">
+      <UniqueIdentifier>{be9d447d-8415-4e08-9647-75296878a529}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderers\OpenGL\extern">
+      <UniqueIdentifier>{710ee81f-0c81-4488-97c3-6dca8cba8c26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderers\Resources">
+      <UniqueIdentifier>{f040d352-a1de-49e0-b941-a462f0c50ae3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArtificialIntelligence\FiniteStateMachine.h">
@@ -159,29 +168,35 @@
     <ClInclude Include="Renderers\RendererManager.h">
       <Filter>Renderers</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\RendererOpenGL.h">
-      <Filter>Renderers</Filter>
+    <ClInclude Include="Renderers\OpenGL\extern\glcorearb.h">
+      <Filter>Renderers\OpenGL\extern</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\RendererVulkan.h">
-      <Filter>Renderers</Filter>
+    <ClInclude Include="Renderers\OpenGL\extern\glext.h">
+      <Filter>Renderers\OpenGL\extern</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\OpenGL\glcorearb.h">
+    <ClInclude Include="Renderers\OpenGL\extern\khrplatform.h">
+      <Filter>Renderers\OpenGL\extern</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\OpenGL\extern\wgl.h">
+      <Filter>Renderers\OpenGL\extern</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\OpenGL\extern\wglext.h">
+      <Filter>Renderers\OpenGL\extern</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\OpenGL\RendererOpenGL.h">
       <Filter>Renderers\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\OpenGL\glext.h">
+    <ClInclude Include="Renderers\OpenGL\RendererOpenGLExtensions.h">
       <Filter>Renderers\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\OpenGL\khrplatform.h">
-      <Filter>Renderers\OpenGL</Filter>
+    <ClInclude Include="Renderers\Vulkan\RendererVulkan.h">
+      <Filter>Renderers\Vulkan</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\OpenGL\wgl.h">
-      <Filter>Renderers\OpenGL</Filter>
+    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileBase.h">
+      <Filter>Renderers\Resources</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\OpenGL\wglext.h">
-      <Filter>Renderers\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderers\RendererOpenGLExtensions.h">
-      <Filter>Renderers</Filter>
+    <ClInclude Include="Core\Dimensions.h">
+      <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -298,14 +313,20 @@
     <ClCompile Include="Renderers\RendererManager.cpp">
       <Filter>Renderers</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\RendererOpenGL.cpp">
-      <Filter>Renderers</Filter>
+    <ClCompile Include="Renderers\OpenGL\RendererOpenGL.cpp">
+      <Filter>Renderers\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\RendererVulkan.cpp">
-      <Filter>Renderers</Filter>
+    <ClCompile Include="Renderers\OpenGL\RendererOpenGLExtensions.cpp">
+      <Filter>Renderers\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\RendererOpenGLExtensions.cpp">
-      <Filter>Renderers</Filter>
+    <ClCompile Include="Renderers\Vulkan\RendererVulkan.cpp">
+      <Filter>Renderers\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileBase.cpp">
+      <Filter>Renderers\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Dimensions.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

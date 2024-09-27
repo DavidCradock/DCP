@@ -1,8 +1,3 @@
-/// \file Vector2f.h
-/// \brief 2D Vector
-///
-/// Detailed description text goes here.
-
 #ifndef VECTOR2F_H
 #define VECTOR2F_H
 

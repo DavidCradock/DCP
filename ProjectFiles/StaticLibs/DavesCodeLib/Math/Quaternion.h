@@ -1,8 +1,3 @@
-/// \file Quaternion.h
-/// \brief Quaternions
-///
-/// Detailed description text goes here.
-
 #ifndef QUATERNION_H
 #define QUATERNION_H
 

@@ -1,8 +1,3 @@
-/// \file Ray.h
-/// \brief Holds a ray class for ray tracing
-///
-/// Detailed description text goes here.
-
 #ifndef RAY_H
 #define RAY_H
 

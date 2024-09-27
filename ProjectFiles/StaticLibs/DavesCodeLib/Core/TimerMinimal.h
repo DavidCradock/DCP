@@ -1,8 +1,3 @@
-/// \file TimerMinimal.h
-/// \brief Contains the CTimerMinimal class
-/// 
-/// 
-
 #ifndef TIMERMINIMAL_H
 #define TIMERMINIMAL_H
 

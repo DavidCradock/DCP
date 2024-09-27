@@ -1,8 +1,3 @@
-/// \file GeneticAlgorithm.h
-/// \brief Genetic algorithm training for neural networks
-/// 
-/// 
-
 #ifndef GENETICALGORITHM_H
 #define GENETICALGORITHM_H
 

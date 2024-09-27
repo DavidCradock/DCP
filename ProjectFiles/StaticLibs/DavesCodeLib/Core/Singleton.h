@@ -1,8 +1,3 @@
-/// \file Singleton.h
-/// \brief Contains the template class CSingleton which to derive any classes we wish to act as singletons.
-/// 
-/// 
-
 #ifndef SINGLETON_H
 #define SINGLETON_H
 

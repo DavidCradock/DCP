@@ -1,8 +1,3 @@
-/// \file StringUtils.h
-/// \brief Contains various string utility functions.
-/// 
-/// 
-
 #ifndef STRINGUTILS_H
 #define STRINGUTILS_H
 

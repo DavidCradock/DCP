@@ -1,8 +1,3 @@
-/// \file AudioSample.h
-/// \brief Brief description for the file goes here.
-///
-/// Detailed description text goes here.
-
 #ifndef AUDIOSAMPLE_H
 #define AUDIOSAMPLE_H
 

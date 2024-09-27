@@ -6,6 +6,8 @@
 
 namespace DCL
 {
+	CLog gLogMain;	/// \brief Main logging file for DCL
+
 	CLogEntry::CLogEntry()
 	{
 		fTimeSeconds = 0.0f;
@@ -191,6 +193,6 @@ namespace DCL
 		file.close();
 	}
 
-	CLog gLogMain;	/// \brief Main logging file for DCL
+	
 
 }	// namespace DCL

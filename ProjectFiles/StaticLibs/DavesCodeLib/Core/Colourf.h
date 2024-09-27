@@ -1,8 +1,3 @@
-/// \file Colourf.h
-/// \brief Contains the CColourf class for representing a colour using a float for each colour component RGBA, totalling 16 bytes (4 bytes per float * 4 components)
-///
-/// Gives more range for the colour at the expense of memory usage
-
 #ifndef COLOURF_H
 #define COLOURF_H
 

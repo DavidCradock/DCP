@@ -1,8 +1,3 @@
-/// \file NeuralNetFeedForward.h
-/// \brief Feed forward neural network
-/// 
-/// 
-
 #ifndef NEURALNETFEEDFORWARD_H
 #define NEURALNETFEEDFORWARD_H
 

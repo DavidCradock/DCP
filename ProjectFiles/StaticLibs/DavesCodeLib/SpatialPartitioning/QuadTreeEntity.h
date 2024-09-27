@@ -1,8 +1,3 @@
-/// \file QuadTreeEntity.h
-/// \brief Brief description for the file goes here.
-///
-/// Detailed description text goes here.
-
 #ifndef QUADTREEENTITY_H
 #define QUADTREEENTITY_H
 

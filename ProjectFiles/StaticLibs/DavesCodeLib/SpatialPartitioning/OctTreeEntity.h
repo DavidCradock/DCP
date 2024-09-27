@@ -1,8 +1,3 @@
-/// \file OctTreeEntity.h
-/// \brief Brief description for the file goes here.
-///
-/// Detailed description text goes here.
-
 #ifndef OCTTREEENTITY_H
 #define OCTTREEENTITY_H
 

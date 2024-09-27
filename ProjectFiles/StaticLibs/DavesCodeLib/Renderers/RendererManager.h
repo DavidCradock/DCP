@@ -1,13 +1,8 @@
-/// \file RendererManager.h
-/// \brief Brief description for the file goes here.
-///
-/// Detailed description text goes here.
-
 #ifndef RENDERERMANAGER_H
 #define RENDERERMANAGER_H
 
-#include "rendererOpenGL.h"
-#include "rendererVulkan.h"
+#include "OpenGL/rendererOpenGL.h"
+#include "Vulkan/rendererVulkan.h"
 
 namespace DCL
 {

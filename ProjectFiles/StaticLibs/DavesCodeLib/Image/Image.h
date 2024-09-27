@@ -1,8 +1,3 @@
-/// \file Image.h
-/// \brief 2D Image loading/saving
-///
-/// 2D image loading and saving.
-
 #ifndef DOXYGENDOCEXAMPLE_H
 #define DOXYGENDOCEXAMPLE_H
 

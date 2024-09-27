@@ -1,8 +1,3 @@
-/// \file AudioManager.h
-/// \brief Audio manager
-///
-/// Detailed description text goes here.
-
 #ifndef AUDIOMANAGER_H
 #define AUDIOMANAGER_H
 

@@ -1,8 +1,3 @@
-/// \file Frustum.h
-/// \brief Frustum
-///
-/// Detailed description text goes here.
-
 #ifndef FRUSTUM_H
 #define FRUSTUM_H
 

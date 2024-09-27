@@ -1,8 +1,3 @@
-/// \file FiniteStateMachine.h
-/// \brief Contains finite state machine stuff
-/// 
-/// 
-
 #ifndef FINITESTATEMACHINE_H
 #define FINITESTATEMACHINE_H
 

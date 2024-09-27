@@ -1,8 +1,3 @@
-/// \file FileManager.h
-/// \brief Brief description for the file goes here.
-///
-/// Detailed description text goes here.
-
 #ifndef FILEMANAGER_H
 #define FILEMANAGER_H
 

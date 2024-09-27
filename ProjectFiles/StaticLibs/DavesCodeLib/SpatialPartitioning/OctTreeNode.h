@@ -1,8 +1,3 @@
-/// \file OctTreeNode.h
-/// \brief Brief description for the file goes here.
-///
-/// Detailed description text goes here.
-
 #ifndef OCTTREENODE_H
 #define OCTTREENODE_H
 

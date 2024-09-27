@@ -1,8 +1,3 @@
-/// \file Profiler.h
-/// \brief Contains a simple profiler for timing various sections of code.
-/// 
-/// 
-
 #ifndef PROFILER_H
 #define PROFILER_H
 

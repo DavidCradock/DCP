@@ -1,8 +1,3 @@
-/// \file OctTree.h
-/// \brief 3D space partitioning
-///
-/// Detailed description text goes here.
-
 #ifndef OCTTREE_H
 #define OCTTREE_H
 

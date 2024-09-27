@@ -1,8 +1,3 @@
-/// \file AABB.h
-/// \brief An Axis Aligned Bounding Box
-///
-/// Detailed description text goes here.
-
 #ifndef AABB_H
 #define AABB_H
 

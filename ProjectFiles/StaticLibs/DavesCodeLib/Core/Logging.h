@@ -1,8 +1,3 @@
-/// \file Logging.h
-/// \brief Contains various logging code
-/// 
-/// 
-
 #ifndef LOGGING_H
 #define LOGGING_H
 

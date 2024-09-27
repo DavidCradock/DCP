@@ -1,8 +1,3 @@
-/// \file Colouruc.h
-/// \brief Contains the CColouruc class for representing a colour using an unsigned char for each colour component RGBA, totalling 4 bytes (1 byte per unsigned char * 4 components)
-///
-/// Gives less range for the colour with less memory usage
-
 #ifndef COLOURUC_H
 #define COLOURUC_H
 

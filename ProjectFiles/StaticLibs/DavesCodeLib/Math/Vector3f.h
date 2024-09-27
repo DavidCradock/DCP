@@ -1,8 +1,3 @@
-/// \file Vector3f.h
-/// \brief A three component floating point vector
-///
-/// Detailed description text goes here.
-
 #ifndef VECTOR3F_H
 #define VECTOR3F_H
 

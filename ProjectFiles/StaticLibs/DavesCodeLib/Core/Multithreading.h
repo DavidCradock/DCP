@@ -1,8 +1,3 @@
-/// \file Multithreading.h
-/// \brief Contains multithreaded related code
-/// 
-/// 
-
 #ifndef MULTITHREADING_H
 #define MULTITHREADING_H
 

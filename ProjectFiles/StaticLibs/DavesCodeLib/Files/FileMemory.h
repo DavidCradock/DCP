@@ -1,8 +1,3 @@
-/// \file FileMemory.h
-/// \brief Brief description for the file goes here.
-///
-/// Detailed description text goes here.
-
 #ifndef FILEMEMORY_H
 #define FILEMEMORY_H
 
