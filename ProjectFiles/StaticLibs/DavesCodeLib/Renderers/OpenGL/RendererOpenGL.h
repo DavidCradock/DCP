@@ -43,6 +43,23 @@ namespace DCL
 		void scissorTestDisable(void);
 		void scissorTestEnable(void);
 
+		
+		CResourceTexture2DFromCImageBase* addTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber);
+		CResourceTexture2DFromCImageBase* getTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber);
+		bool getTexture2DFromCImageExists(const std::string& strResourceName, unsigned int uiGroupNumber);
+		void removeTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber);
+		void removeAllTexture2DFromCImage(unsigned int uiGroupNumber);
+	private:
+		/// \brief Struct to hold a resource for the Texture2DFromCImage type.
+		struct SResourceTexture2DFromCImage
+		{
+			CResourceTexture2DFromCImageBase* pResource;	///< Pointer to the resource
+			unsigned int uiCount;							///< Number of times the resource has been added
+		};
+		std::map<std::string, SResourceTexture2DFromCImage> _mmapResTexture2DFromCImageGroups[8];	///< Each of the 8 groups holding resources for the Texture2DFromCImage type.
+	public:
+		
+
 	private:
 		class CPrim;		///< Declaration of this class's private implementation holding things which we do not wish to expose when including this header file.
 							///< We put this here so we can create the pointer below, without having to include the header file containing the actual code.

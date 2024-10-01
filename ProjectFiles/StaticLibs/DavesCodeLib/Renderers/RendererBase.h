@@ -1,8 +1,12 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
-#include "Resources/ResourceTexture2DFromFileBase.h"
+// Resources
+#include "Resources/ResourceTexture2DFromCImage.h"
+
+
 #include "../Core/Colourf.h"
+#include <map>
 
 namespace DCL
 {
@@ -81,72 +85,6 @@ namespace DCL
 		/// \param bVSyncOn Whether vsync should be on or off.
 		virtual void setVSync(bool bVSyncOn) = 0;
 
-		// Primitive drawing
-		//virtual void drawTriangles(const void* vertexData, size_t vertexCount, const void* indexData, size_t indexCount) = 0;
-		//virtual void drawLines(const void* vertexData, size_t vertexCount) = 0;
-		//virtual void drawPoints(const void* vertexData, size_t vertexCount) = 0;
-
-		// Texture management
-		
-		/// \brief Adds a new texture2DFromFile object to be managed.
-		///
-		/// \param strResourceName The name of the new resource which we can use to refer to it with other methods.
-		/// \param strImageFilename The name of the file which holds the image data for the texture.
-		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
-		/// 
-		/// If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned.
-		/// When the OpenGL context is destroyed and then recreated, the image data is reloaded from the stored filename.
-		virtual CResourceTexture2DFromFileBase* addTexture2DFromFile(const std::string& strResourceName, const std::string& strImageFilename, unsigned int uiGroupNumber = 1) = 0;
-
-		/// \brief Returns a pointer to an existing resource
-		///
-		/// \param strResourceName The name of the resource.
-		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
-		/// 
-		/// If the resource couldn't be found, an exception is thrown
-		virtual CResourceTexture2DFromFileBase* getTexture2DFromFile(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
-
-		/// \brief Returns whether a named resource exists
-		///
-		/// \param strResourceName The name of the resource.
-		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
-		virtual bool getTexture2DFromFileExists(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
-
-		/// \brief Removes a previously added resource from this manager
-		///
-		/// \param strResourceName The name of the resource.
-		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
-		/// 
-		/// If the resource doesn't exist, this silently fails.
-		/// If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains.
-		virtual void removeTexture2DFromFile(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
-
-
-
-
-
-
-		//virtual Texture* createTexture(const void* data, int width, int height, TextureFormat format) = 0;
-		//virtual void destroyTexture(Texture* texture) = 0;
-		// Generate mipmaps : Generate mipmap levels for textures.
-		// Set texture parameters : Set texture wrapping, filtering, and anisotropy.
-		// Bind texture : Bind textures to texture units.
-
-		// Shader management
-		//virtual Shader* createShader(const char* vertexShaderSource, const char* fragmentShaderSource) = 0;
-		//virtual void destroyShader(Shader* shader) = 0;
-
-		// Material management (optional)
-		//virtual Material* createMaterial(Shader* shader) = 0;
-		//virtual void setMaterial(Material* material) = 0;
-		//virtual void destroyMaterial(Material* material) = 0;
-
-		// Other potential methods:
-	// - Set viewport dimensions and position
-
-
-
-
 		/// \brief Disable blending
 		virtual void blendDisable(void) = 0;
 
@@ -192,7 +130,61 @@ namespace DCL
 		/// \brief Enable scissor testing
 		virtual void scissorTestEnable(void) = 0;
 
+		/// \brief Adds a new RecourceTexture2DFromCImage object to be managed.
+		///
+		/// \param strResourceName The name of the new resource which we can use to refer to it with other methods.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned.
+		/// When the API context is destroyed and then recreated, the image data is reloaded from the stored filename.
+		virtual CResourceTexture2DFromCImageBase* addTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
 
+		/// \brief Returns a pointer to an existing resource
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource couldn't be found, an exception is thrown.
+		virtual CResourceTexture2DFromCImageBase* getTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns whether a named resource exists
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual bool getTexture2DFromCImageExists(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes a previously added resource from this manager
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource doesn't exist, this silently fails.
+		/// If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains.
+		virtual void removeTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes all previously added resources from the given numbered group
+		///
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual void removeAllTexture2DFromCImage(unsigned int uiGroupNumber = 1) = 0;
+
+
+
+		// Primitive drawing
+		//virtual void drawTriangles(const void* vertexData, size_t vertexCount, const void* indexData, size_t indexCount) = 0;
+		//virtual void drawLines(const void* vertexData, size_t vertexCount) = 0;
+		//virtual void drawPoints(const void* vertexData, size_t vertexCount) = 0;
+
+		// Shader management
+		//virtual Shader* createShader(const char* vertexShaderSource, const char* fragmentShaderSource) = 0;
+		//virtual void destroyShader(Shader* shader) = 0;
+
+		// Material management (optional)
+		//virtual Material* createMaterial(Shader* shader) = 0;
+		//virtual void setMaterial(Material* material) = 0;
+		//virtual void destroyMaterial(Material* material) = 0;
+
+		// Other potential methods:
+	// - Set viewport dimensions and position
 	};
 
 }	// namespace DCL

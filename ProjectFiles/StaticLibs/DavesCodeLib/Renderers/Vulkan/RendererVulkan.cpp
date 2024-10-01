@@ -174,4 +174,29 @@ namespace DCL
 
 	}
 
+	CResourceTexture2DFromCImageBase* CRendererVulkan::addTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return 0;
+	}
+
+	CResourceTexture2DFromCImageBase* CRendererVulkan::getTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return 0;
+	}
+
+	bool CRendererVulkan::getTexture2DFromCImageExists(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return false;
+	}
+
+	void CRendererVulkan::removeTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+
+	}
+
+	void CRendererVulkan::removeAllTexture2DFromCImage(unsigned int uiGroupNumber)
+	{
+
+	}
+
 }	// namespace DCL

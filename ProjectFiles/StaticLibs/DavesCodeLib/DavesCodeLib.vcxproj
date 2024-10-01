@@ -134,9 +134,7 @@
     <ClInclude Include="Renderers\OpenGL\RendererOpenGLExtensions.h" />
     <ClInclude Include="Renderers\RendererBase.h" />
     <ClInclude Include="Renderers\RendererManager.h" />
-    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileBase.h" />
-    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileOpenGL.h" />
-    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileVulkan.h" />
+    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromCImage.h" />
     <ClInclude Include="Renderers\Vulkan\RendererVulkan.h" />
     <ClInclude Include="SpatialPartitioning\OctTree.h" />
     <ClInclude Include="SpatialPartitioning\OctTreeEntity.h" />
@@ -182,8 +180,7 @@
     <ClCompile Include="Renderers\OpenGL\RendererOpenGL.cpp" />
     <ClCompile Include="Renderers\OpenGL\RendererOpenGLExtensions.cpp" />
     <ClCompile Include="Renderers\RendererManager.cpp" />
-    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileOpenGL.cpp" />
-    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileVulkan.cpp" />
+    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromCImage.cpp" />
     <ClCompile Include="Renderers\Vulkan\RendererVulkan.cpp" />
     <ClCompile Include="SpatialPartitioning\OctTree.cpp" />
     <ClCompile Include="SpatialPartitioning\OctTreeEntity.cpp" />

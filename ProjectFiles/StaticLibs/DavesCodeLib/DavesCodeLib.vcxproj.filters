@@ -192,20 +192,14 @@
     <ClInclude Include="Renderers\Vulkan\RendererVulkan.h">
       <Filter>Renderers\Vulkan</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileBase.h">
-      <Filter>Renderers\Resources</Filter>
-    </ClInclude>
     <ClInclude Include="Core\Dimensions.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileOpenGL.h">
-      <Filter>Renderers\Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromFileVulkan.h">
-      <Filter>Renderers\Resources</Filter>
-    </ClInclude>
     <ClInclude Include="Image\Mandelbrot.h">
       <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromCImage.h">
+      <Filter>Renderers\Resources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -331,14 +325,11 @@
     <ClCompile Include="Core\Dimensions.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileOpenGL.cpp">
-      <Filter>Renderers\Resources</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromFileVulkan.cpp">
-      <Filter>Renderers\Resources</Filter>
-    </ClCompile>
     <ClCompile Include="Image\Mandelbrot.cpp">
       <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromCImage.cpp">
+      <Filter>Renderers\Resources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
