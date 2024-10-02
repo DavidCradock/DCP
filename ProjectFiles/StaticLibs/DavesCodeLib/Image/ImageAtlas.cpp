@@ -108,7 +108,7 @@ namespace DCL
 			imageDetail.bRotated = false;
 			imageDetail.strImageFilename = vStrImageFilenames[ui];
 			imageDetail.uiAtlasImage = 0;
-			imageDetail.vDims = vImages[ui]->getDimensions();
+			imageDetail.vDims = vImages[ui]->getDimensionsAsVector2f();
 			if (bAllowRotationOfImages)
 			{
 				// Rotate image so that it's height is greatest
@@ -116,7 +116,7 @@ namespace DCL
 				{
 					imageDetail.bRotated = true;
 					vImages[ui]->rotateClockwise();
-					imageDetail.vDims = vImages[ui]->getDimensions();
+					imageDetail.vDims = vImages[ui]->getDimensionsAsVector2f();
 				}
 			}
 			_mvImageDetails.push_back(imageDetail);
@@ -200,7 +200,7 @@ namespace DCL
 		for (unsigned int ui = 0; ui < vImages.size(); ui++)
 		{
 			// Compute position of current image in atlas
-			CVector2f vImageDims = vImages[ui]->getDimensions();
+			CVector2f vImageDims = vImages[ui]->getDimensionsAsVector2f();
 			_mvImageDetails[ui].sTexCoords.vTL.x = fSpacing + v2fCurrentPositionInAtlas.x;
 			_mvImageDetails[ui].sTexCoords.vTL.y = fSpacing + v2fCurrentPositionInAtlas.y;
 			_mvImageDetails[ui].sTexCoords.vBR.x = fSpacingTimesTwo + v2fCurrentPositionInAtlas.x + vImageDims.x;
@@ -316,7 +316,7 @@ namespace DCL
 				(int)_mvImageDetails[ui].sTexCoords.vTL.y);
 
 			// Now compute texture coordinates
-			CVector2f vAtlasDims = _mvAtlasImages[_mvImageDetails[ui].uiAtlasImage]->getDimensions();
+			CVector2f vAtlasDims = _mvAtlasImages[_mvImageDetails[ui].uiAtlasImage]->getDimensionsAsVector2f();
 			// Prevent divide by zero
 			ThrowIfTrue(vAtlasDims.x < 1.0f, "CImageAtlasPacker::createAtlasImages() failed. Atlas width less than 1.");
 			ThrowIfTrue(vAtlasDims.y < 1.0f, "CImageAtlasPacker::createAtlasImages() failed. Atlas height less than 1.");

@@ -2,6 +2,7 @@
 #define IMAGEATLAS_H
 
 #include "Image.h"
+#include "../Math/Vector2f.h"
 #include <map>
 #include <fstream>
 #include <vector>

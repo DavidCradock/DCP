@@ -35,7 +35,7 @@ namespace DCL
 	public:
 		/// \brief Copies the image data from the given CImage object into this object.
 		/// 
-		/// \param imageData A CImage object which contains existing image data to be used by this object.
+		/// \param imageDataSource A CImage object which contains existing image data to be used by this object.
 		/// 
 		/// Once this method is called, the CImage object is no longer required and can be freed.
 		/// If the given CImage object doesn't have any image data, an exception occurs.
@@ -71,12 +71,17 @@ namespace DCL
 	{
 	public:
 		CResourceTexture2DOpenGL();
+		~CResourceTexture2DOpenGL();
 
 		void upload(void);
 		void free(void);
 		void bind(unsigned int uiTextureUnit = 0) const;
 		void unbind(unsigned int uiTextureUnit = 0) const;
 		void unbindAll(void) const;
+	private:
+		class CPrim;		///< Declaration of this class's private implementation holding things which we do not wish to expose when including this header file.
+							///< We put this here so we can create the pointer below, without having to include the header file containing the actual code.
+		CPrim* prim;		///< Pointer holding private implementation, new'd and delete'd in con/des tructors of this class.
 	};
 
 	/// \brief Vulkan class for resource of type texture 2D created from a CImage
@@ -86,12 +91,17 @@ namespace DCL
 	{
 	public:
 		CResourceTexture2DVulkan();
+		~CResourceTexture2DVulkan();
 
 		void upload(void);
 		void free(void);
 		void bind(unsigned int uiTextureUnit = 0) const;
 		void unbind(unsigned int uiTextureUnit = 0) const;
 		void unbindAll(void) const;
+	private:
+		class CPrim;		///< Declaration of this class's private implementation holding things which we do not wish to expose when including this header file.
+		///< We put this here so we can create the pointer below, without having to include the header file containing the actual code.
+		CPrim* prim;		///< Pointer holding private implementation, new'd and delete'd in con/des tructors of this class.
 	};
 
 

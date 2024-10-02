@@ -49,7 +49,7 @@ namespace DCL
 		void removeTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
 		void removeTexture2DAll(unsigned int uiGroupNumber);
 	private:
-		/// \brief Struct to hold a resource for the Texture2DFromCImage type.
+		/// \brief Struct to hold a resource for the Texture2D type.
 		struct SResourceTexture2D
 		{
 			CResourceTexture2DBase* pResource;	///< Pointer to the resource

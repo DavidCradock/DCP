@@ -1,6 +1,7 @@
 #include "Image.h"
 #include "../Core/Exceptions.h"
 #include "../Core/Utilities.h"
+
 #include "../Math/Vector3f.h"
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -208,10 +209,15 @@ namespace DCL
 		return _miHeight;
 	}
 
-	CVector2f CImage::getDimensions(void) const
+	CDimension2D CImage::getDimensions(void) const
 	{
-		CVector2f dims;
-		dims.set(float(_miWidth), float(_miHeight));
+		CDimension2D dims(_miWidth, _miHeight);
+		return dims;
+	}
+
+	CVector2f CImage::getDimensionsAsVector2f(void) const
+	{
+		CVector2f dims(_miWidth, _miHeight);
 		return dims;
 	}
 

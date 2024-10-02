@@ -2,6 +2,7 @@
 #define DOXYGENDOCEXAMPLE_H
 
 #include "../Core/Colourf.h"
+#include "../Core/Dimensions.h"
 #include "../Math/Vector2f.h"
 
 #include <string>
@@ -145,10 +146,15 @@ namespace DCL
 		/// \return The height of the image in pixels
 		unsigned int getHeight(void) const;
 
+		/// \brief Returns the dimensions of the image as a CDimension2D
+		/// 
+		/// \return The dimensions of the image as a CDimension2D
+		CDimension2D getDimensions(void) const;
+
 		/// \brief Returns the dimensions of the image as a CVector2f
 		/// 
 		/// \return The dimensions of the image as a CVector2f
-		CVector2f getDimensions(void) const;
+		CVector2f getDimensionsAsVector2f(void) const;
 
 		/// \brief Get number of channels
 		///
