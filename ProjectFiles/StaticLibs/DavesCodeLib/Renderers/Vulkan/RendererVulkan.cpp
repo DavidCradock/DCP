@@ -194,7 +194,7 @@ namespace DCL
 
 	}
 
-	void CRendererVulkan::removeAllTexture2D(unsigned int uiGroupNumber)
+	void CRendererVulkan::removeTexture2DAll(unsigned int uiGroupNumber)
 	{
 
 	}

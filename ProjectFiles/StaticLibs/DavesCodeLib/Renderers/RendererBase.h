@@ -37,7 +37,7 @@ namespace DCL
 	/// getResourceType()			// Returns a pointer to the base class of the resource type
 	/// getResourceTypeExists()		// Returns true if the named resource already exists in the numbered resource group
 	/// removeResourceType()		// Removes, or reduces the reference count of the named resource.
-	/// removeAllResourceType()		// Removes all resources in a group.
+	/// removeResourceTypeAll()		// Removes all resources in a group.
 	/// 
 	/// Each resource should have a unique name and they are held within a speccified resource group number.
 	/// These resource group numbers are used so we can seperate resources into groups and allow more flexibility when calling the removeAllResourceType() method, for example.
@@ -45,7 +45,7 @@ namespace DCL
 	/// Group 0 is supposed to be reserved for resources which are used within DCL such as default textures, vertex/fragment programs etc.
 	/// I say "supposed" as there's nothing preventing us from messing around with group 0.
 	/// All methods accept a group number, which defaults to group 1.
-	/// We decided to use group numbers instead of names for performance reasons. (Faster access to an array via index rather than using a hashmap lookup for a named group)
+	/// I decided to use group numbers instead of names for performance reasons. (Faster access to an array via index rather than using a hashmap lookup for a named group)
 	class CRendererBase
 	{
 	public:
@@ -164,7 +164,7 @@ namespace DCL
 		/// \brief Removes all previously added resources from the given numbered group
 		///
 		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
-		virtual void removeAllTexture2D(unsigned int uiGroupNumber = 1) = 0;
+		virtual void removeTexture2DAll(unsigned int uiGroupNumber = 1) = 0;
 
 
 

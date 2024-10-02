@@ -46,7 +46,7 @@ namespace DCL
 		CResourceTexture2DBase* getTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
 		bool getTexture2DExists(const std::string& strResourceName, unsigned int uiGroupNumber);
 		void removeTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
-		void removeAllTexture2D(unsigned int uiGroupNumber);
+		void removeTexture2DAll(unsigned int uiGroupNumber);
 
 	private:
 		class CPrim;		///< Declaration of this class's private implementation holding things which we do not wish to expose when including this header file.

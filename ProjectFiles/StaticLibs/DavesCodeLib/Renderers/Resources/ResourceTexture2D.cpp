@@ -2,10 +2,10 @@
 #include "../../Core/Exceptions.h"
 namespace DCL
 {
-	void CResourceTexture2DBase::setImageData(const CImage& imageData)
+	void CResourceTexture2DBase::setImageData(const CImage& imageDataSource)
 	{
-		ThrowIfTrue(0 == imageData.getDataSize(), "Given CImage object has zero data.");
-		imageData.copyTo(_mImageData);
+		ThrowIfTrue(0 == imageDataSource.getDataSize(), "Given CImage object has zero data.");
+		imageDataSource.copyTo(imageData);
 	}
 
 	CResourceTexture2DOpenGL::CResourceTexture2DOpenGL()
@@ -38,12 +38,6 @@ namespace DCL
 
 	}
 
-	CDimension2D CResourceTexture2DOpenGL::getDimension(void) const
-	{
-		CDimension2D r;
-		return r;
-	}
-
 	CResourceTexture2DVulkan::CResourceTexture2DVulkan()
 	{
 
@@ -72,12 +66,6 @@ namespace DCL
 	void CResourceTexture2DVulkan::unbindAll(void) const
 	{
 
-	}
-
-	CDimension2D CResourceTexture2DVulkan::getDimension(void) const
-	{
-		CDimension2D r;
-		return r;
 	}
 
 }	// namespace DCL

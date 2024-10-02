@@ -342,10 +342,10 @@ namespace DCL
 		_mmapResTexture2DGroups[uiGroupNumber].erase(itResource);
 	}
 
-	void CRendererOpenGL::removeAllTexture2D(unsigned int uiGroupNumber)
+	void CRendererOpenGL::removeTexture2DAll(unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeAllTexture2D() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeTexture2DAll() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
 		auto itResource = _mmapResTexture2DGroups[uiGroupNumber].begin();
 		while (itResource != _mmapResTexture2DGroups[uiGroupNumber].end())
