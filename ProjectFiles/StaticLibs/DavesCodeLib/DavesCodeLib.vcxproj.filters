@@ -201,6 +201,9 @@
     <ClInclude Include="Renderers\Resources\ResourceTexture2D.h">
       <Filter>Renderers\Resources</Filter>
     </ClInclude>
+    <ClInclude Include="Renderers\Resources\ResourceVertexBuffer.h">
+      <Filter>Renderers\Resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArtificialIntelligence\GeneticAlgorithm.cpp">
@@ -329,6 +332,9 @@
       <Filter>Image</Filter>
     </ClCompile>
     <ClCompile Include="Renderers\Resources\ResourceTexture2D.cpp">
+      <Filter>Renderers\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\Resources\ResourceVertexBuffer.cpp">
       <Filter>Renderers\Resources</Filter>
     </ClCompile>
   </ItemGroup>
