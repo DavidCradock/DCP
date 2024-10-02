@@ -102,226 +102,225 @@ $(function(){initNavTree('_file_memory_8cpp_source.html',''); initResizable(true
   <div class="headertitle"><div class="title">FileMemory.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_file_memory_8h.html">FileMemory.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_file_manager_8h.html">FileManager.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;FileMemory.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;FileManager.h&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a101e7b9748657556aa868bcd9143d27a">    6</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a101e7b9748657556aa868bcd9143d27a">CFileMemory::CFileMemory</a>()</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        _mpchDataStart = 0;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        _mstDataSizeBytes = 0;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        _mpchSeekData = 0;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        _mstSeekPos = 0;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        _mbIsOK = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        LOG(<span class="stringliteral">&quot;Constructor called.&quot;</span>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        _mpchDataStart = 0;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        _mstDataSizeBytes = 0;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        _mpchSeekData = 0;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        _mstSeekPos = 0;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        _mbIsOK = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#aaaadbe30cfb91673599dfc0a864841c9">   15</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#aaaadbe30cfb91673599dfc0a864841c9">CFileMemory::~CFileMemory</a>()</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">free</a>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#aaaadbe30cfb91673599dfc0a864841c9">   16</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#aaaadbe30cfb91673599dfc0a864841c9">CFileMemory::~CFileMemory</a>()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        LOG(<span class="stringliteral">&quot;Destructor called.&quot;</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">free</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">   20</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">CFileMemory::free</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span> (_mpchDataStart)</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keyword">delete</span> _mpchDataStart;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            _mpchDataStart = 0;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            _mstDataSizeBytes = 0;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            _mpchSeekData = 0;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            _mstSeekPos = 0;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        _mbIsOK = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">   22</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">CFileMemory::free</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span> (_mpchDataStart)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keyword">delete</span> _mpchDataStart;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            _mpchDataStart = 0;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            _mstDataSizeBytes = 0;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            _mpchSeekData = 0;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            _mstSeekPos = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        _mbIsOK = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
 </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a2c86929c17cbd5ccddfb4470be7fd77f">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a2c86929c17cbd5ccddfb4470be7fd77f">CFileMemory::setFromFile</a>(<span class="keyword">const</span> std::string&amp; strFilename)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(<a class="code hl_variable" href="namespace_d_c_l.html#a59a6d9b5f42275453df6434b51689c63">gFileManager</a>.<a class="code hl_function" href="class_d_c_l_1_1_c_file_manager.html#a458622fce6faf686836671e304b4b7ca">getFileExists</a>(strFilename), <span class="stringliteral">&quot;CFileMemory::setFromFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Given filename could not be found.&quot;</span>);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">// Free CFileMemory object incase it&#39;s been used before</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">free</a>();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="comment">// Get file size</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        std::ifstream ifstream(strFilename, std::ios::binary | std::ios::ate);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(ifstream.is_open(), <span class="stringliteral">&quot;CFileMemory::setFromFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Given filename could not be opened.&quot;</span>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        _mstDataSizeBytes = ifstream.tellg();</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        ifstream.seekg(std::ios::beg);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="comment">// Set members of CFileMemory object and attempt to read in the data from file into it</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        _mpchDataStart = <span class="keyword">new</span> <span class="keywordtype">char</span>[_mstDataSizeBytes];</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        _mpchSeekData = _mpchDataStart;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(_mpchDataStart, <span class="stringliteral">&quot;CFileMemory::setFromFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Unable to allocate memory for data from file.&quot;</span>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        ifstream.read(_mpchDataStart, _mstDataSizeBytes);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(ifstream.good(), <span class="stringliteral">&quot;CFileMemory::setFromFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Error whilst reading in data from file.&quot;</span>);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ifstream.close();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a2c86929c17cbd5ccddfb4470be7fd77f">   35</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a2c86929c17cbd5ccddfb4470be7fd77f">CFileMemory::setFromFile</a>(<span class="keyword">const</span> std::string&amp; strFilename)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        ThrowIfFalse(<a class="code hl_variable" href="namespace_d_c_l.html#a59a6d9b5f42275453df6434b51689c63">gFileManager</a>.<a class="code hl_function" href="class_d_c_l_1_1_c_file_manager.html#a458622fce6faf686836671e304b4b7ca">getFileExists</a>(strFilename), <span class="stringliteral">&quot;CFileMemory::setFromFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Given filename could not be found.&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="comment">// Free CFileMemory object incase it&#39;s been used before</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">free</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="comment">// Get file size</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        std::ifstream ifstream(strFilename, std::ios::binary | std::ios::ate);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        ThrowIfFalse(ifstream.is_open(), <span class="stringliteral">&quot;CFileMemory::setFromFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Given filename could not be opened.&quot;</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        _mstDataSizeBytes = ifstream.tellg();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        ifstream.seekg(std::ios::beg);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="comment">// Set members of CFileMemory object and attempt to read in the data from file into it</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        _mpchDataStart = <span class="keyword">new</span> <span class="keywordtype">char</span>[_mstDataSizeBytes];</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        _mpchSeekData = _mpchDataStart;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        ThrowIfFalse(_mpchDataStart, <span class="stringliteral">&quot;CFileMemory::setFromFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Unable to allocate memory for data from file.&quot;</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ifstream.read(_mpchDataStart, _mstDataSizeBytes);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        ThrowIfFalse(ifstream.good(), <span class="stringliteral">&quot;CFileMemory::setFromFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Error whilst reading in data from file.&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        ifstream.close();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
 </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a7630db0133f3cd18a3150d284221165c">   55</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a7630db0133f3cd18a3150d284221165c">CFileMemory::setFromMem</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pData, <span class="keywordtype">size_t</span> stDataLength)</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="comment">// Make sure given values are valid</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(stDataLength, <span class="stringliteral">&quot;CFileMemory::setFromMem() failed. Data length given is zero.&quot;</span>);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(pData, <span class="stringliteral">&quot;CFileMemory::setFromMem() failed. Given memory address is zero.&quot;</span>);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="comment">// Free CFileMemory object incase it&#39;s been used before</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">free</a>();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        _mstDataSizeBytes = stDataLength;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        _mpchDataStart = <span class="keyword">new</span> <span class="keywordtype">char</span>[stDataLength];</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(_mpchDataStart, <span class="stringliteral">&quot;CFileMemory::setFromMem() failed. Unable to allocate memory for storing data.&quot;</span>);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        _mpchSeekData = _mpchDataStart;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        memcpy(_mpchDataStart, pData, stDataLength);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a7630db0133f3cd18a3150d284221165c">   57</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a7630db0133f3cd18a3150d284221165c">CFileMemory::setFromMem</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pData, <span class="keywordtype">size_t</span> stDataLength)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="comment">// Make sure given values are valid</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        ThrowIfFalse(stDataLength, <span class="stringliteral">&quot;CFileMemory::setFromMem() failed. Data length given is zero.&quot;</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        ThrowIfFalse(pData, <span class="stringliteral">&quot;CFileMemory::setFromMem() failed. Given memory address is zero.&quot;</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="comment">// Free CFileMemory object incase it&#39;s been used before</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">free</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        _mstDataSizeBytes = stDataLength;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        _mpchDataStart = <span class="keyword">new</span> <span class="keywordtype">char</span>[stDataLength];</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        ThrowIfFalse(_mpchDataStart, <span class="stringliteral">&quot;CFileMemory::setFromMem() failed. Unable to allocate memory for storing data.&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        _mpchSeekData = _mpchDataStart;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        memcpy(_mpchDataStart, pData, stDataLength);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a394867fde2484e2fbd992803b4babb50">   71</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a394867fde2484e2fbd992803b4babb50">CFileMemory::saveToFile</a>(<span class="keyword">const</span> std::string&amp; strFilename)</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="comment">// Make sure we&#39;ve got data to save</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(_mpchDataStart, <span class="stringliteral">&quot;CFileMemory::saveToFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. There is no data to save to file.&quot;</span>);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="comment">// Attempt to open for writing</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        std::ofstream file(strFilename, std::ios::binary | std::ios::trunc);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(file.is_open(), <span class="stringliteral">&quot;CFileMemory::saveToFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Unable to open file for writing.&quot;</span>);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="comment">// Attempt to write data to file</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        file.write(_mpchDataStart, _mstDataSizeBytes);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(file.good(), <span class="stringliteral">&quot;CFileMemory::saveToFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Error occurred whilst writing data to file.&quot;</span>);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        file.close();</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a394867fde2484e2fbd992803b4babb50">   73</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a394867fde2484e2fbd992803b4babb50">CFileMemory::saveToFile</a>(<span class="keyword">const</span> std::string&amp; strFilename)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="comment">// Make sure we&#39;ve got data to save</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        ThrowIfFalse(_mpchDataStart, <span class="stringliteral">&quot;CFileMemory::saveToFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. There is no data to save to file.&quot;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="comment">// Attempt to open for writing</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        std::ofstream file(strFilename, std::ios::binary | std::ios::trunc);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        ThrowIfFalse(file.is_open(), <span class="stringliteral">&quot;CFileMemory::saveToFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Unable to open file for writing.&quot;</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="comment">// Attempt to write data to file</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        file.write(_mpchDataStart, _mstDataSizeBytes);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        ThrowIfFalse(file.good(), <span class="stringliteral">&quot;CFileMemory::saveToFile(\&quot;&quot;</span> + strFilename + <span class="stringliteral">&quot;\&quot;) failed. Error occurred whilst writing data to file.&quot;</span>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        file.close();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
 </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a8414372571bb780182153ec395e10e26">   86</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a8414372571bb780182153ec395e10e26">CFileMemory::appendToFile</a>(std::ofstream&amp; file)</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="comment">// Make sure we&#39;ve got data to save</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(_mpchDataStart, <span class="stringliteral">&quot;CFileMemory::appendToFile() failed. There is no data to append to file.&quot;</span>);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="comment">// Make sure given file is both good and open</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(file.is_open(), <span class="stringliteral">&quot;CFileMemory::appendToFile() failed. Given file is not open for writing.&quot;</span>);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(file.good(), <span class="stringliteral">&quot;CFileMemory::appendToFile() failed. Given file is not good.&quot;</span>);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="comment">// Attempt to append data to file</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        file.write(_mpchDataStart, _mstDataSizeBytes);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_define" href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a>(file.good(), <span class="stringliteral">&quot;CFileMemory::appendToFile() failed. Error occurred whilst appending data to given file.&quot;</span>);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a8414372571bb780182153ec395e10e26">   88</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a8414372571bb780182153ec395e10e26">CFileMemory::appendToFile</a>(std::ofstream&amp; file)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="comment">// Make sure we&#39;ve got data to save</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        ThrowIfFalse(_mpchDataStart, <span class="stringliteral">&quot;CFileMemory::appendToFile() failed. There is no data to append to file.&quot;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="comment">// Make sure given file is both good and open</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        ThrowIfFalse(file.is_open(), <span class="stringliteral">&quot;CFileMemory::appendToFile() failed. Given file is not open for writing.&quot;</span>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        ThrowIfFalse(file.good(), <span class="stringliteral">&quot;CFileMemory::appendToFile() failed. Given file is not good.&quot;</span>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="comment">// Attempt to append data to file</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        file.write(_mpchDataStart, _mstDataSizeBytes);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        ThrowIfFalse(file.good(), <span class="stringliteral">&quot;CFileMemory::appendToFile() failed. Error occurred whilst appending data to given file.&quot;</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
 </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a9f0f0df43e5cad319b4e481b4cc3d2a6">  100</a></span>    <span class="keywordtype">char</span>* <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a9f0f0df43e5cad319b4e481b4cc3d2a6">CFileMemory::getData</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">return</span> _mpchDataStart;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a9f0f0df43e5cad319b4e481b4cc3d2a6">  102</a></span>    <span class="keywordtype">char</span>* <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a9f0f0df43e5cad319b4e481b4cc3d2a6">CFileMemory::getData</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">return</span> _mpchDataStart;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#ac961ce76bb7ab4e186aee76bf8be3421">  105</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#ac961ce76bb7ab4e186aee76bf8be3421">CFileMemory::getDataSize</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> _mstDataSizeBytes;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#ac961ce76bb7ab4e186aee76bf8be3421">  107</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#ac961ce76bb7ab4e186aee76bf8be3421">CFileMemory::getDataSize</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">return</span> _mstDataSizeBytes;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
 </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a0811428a6935f47394997811e48a56c4">  110</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a0811428a6935f47394997811e48a56c4">CFileMemory::seekBegin</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        _mpchSeekData = _mpchDataStart;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        _mstSeekPos = 0;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a0811428a6935f47394997811e48a56c4">  112</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a0811428a6935f47394997811e48a56c4">CFileMemory::seekBegin</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        _mpchSeekData = _mpchDataStart;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        _mstSeekPos = 0;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
 </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a83281cf43082dd853b9654b4d3d07bc5">  116</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a83281cf43082dd853b9654b4d3d07bc5">CFileMemory::seekEnd</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        _mpchSeekData = _mpchDataStart;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        _mpchSeekData += _mstDataSizeBytes - 1;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        _mstSeekPos = _mstDataSizeBytes - 1;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
-</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a83281cf43082dd853b9654b4d3d07bc5">  118</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a83281cf43082dd853b9654b4d3d07bc5">CFileMemory::seekEnd</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        _mpchSeekData = _mpchDataStart;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        _mpchSeekData += _mstDataSizeBytes - 1;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        _mstSeekPos = _mstDataSizeBytes - 1;</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a9b59651c40a8655ee14a0129f7d870b1">  124</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a9b59651c40a8655ee14a0129f7d870b1">CFileMemory::seekToPos</a>(<span class="keywordtype">size_t</span> stOffsetBytesFromStart)</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">if</span> (stOffsetBytesFromStart &gt;= _mstDataSizeBytes)</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            _mbIsOK = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        _mpchSeekData = _mpchDataStart;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        _mstSeekPos = 0;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        _mpchSeekData += stOffsetBytesFromStart;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        _mstSeekPos += stOffsetBytesFromStart;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
 </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="foldopen" id="foldopen00140" data-start="{" data-end="}">
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a6a4aac13933f3a4e7ff0771b8dbf4517">  140</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a6a4aac13933f3a4e7ff0771b8dbf4517">CFileMemory::seekOffset</a>(<span class="keywordtype">size_t</span> stOffsetBytes)</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    {</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordflow">if</span> (_mstSeekPos + stOffsetBytes &gt;= _mstDataSizeBytes)</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            _mbIsOK = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        _mpchSeekData += stOffsetBytes;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        _mstSeekPos += stOffsetBytes;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a9b59651c40a8655ee14a0129f7d870b1">  126</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a9b59651c40a8655ee14a0129f7d870b1">CFileMemory::seekToPos</a>(<span class="keywordtype">size_t</span> stOffsetBytesFromStart)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">if</span> (stOffsetBytesFromStart &gt;= _mstDataSizeBytes)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            _mbIsOK = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        _mpchSeekData = _mpchDataStart;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        _mstSeekPos = 0;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        _mpchSeekData += stOffsetBytesFromStart;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        _mstSeekPos += stOffsetBytesFromStart;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
 </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="foldopen" id="foldopen00153" data-start="{" data-end="}">
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a762721ad197f11c4d50251278ecbe423">  153</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a762721ad197f11c4d50251278ecbe423">CFileMemory::seekGetPos</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordflow">return</span> _mstSeekPos;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a6a4aac13933f3a4e7ff0771b8dbf4517">  142</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a6a4aac13933f3a4e7ff0771b8dbf4517">CFileMemory::seekOffset</a>(<span class="keywordtype">size_t</span> stOffsetBytes)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">if</span> (_mstSeekPos + stOffsetBytes &gt;= _mstDataSizeBytes)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            _mbIsOK = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        _mpchSeekData += stOffsetBytes;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        _mstSeekPos += stOffsetBytes;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
 </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#aae00ce4ef2c36c60c6aa8f2b2c818181">  158</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#aae00ce4ef2c36c60c6aa8f2b2c818181">CFileMemory::isOK</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    {</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">return</span> _mbIsOK;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#a762721ad197f11c4d50251278ecbe423">  155</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a762721ad197f11c4d50251278ecbe423">CFileMemory::seekGetPos</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">return</span> _mstSeekPos;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
 </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#afe1933259ccebd50c67b41bc06f6531c">  163</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#afe1933259ccebd50c67b41bc06f6531c">CFileMemory::reset</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        _mbIsOK = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a0811428a6935f47394997811e48a56c4">seekBegin</a>();</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#aae00ce4ef2c36c60c6aa8f2b2c818181">  160</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#aae00ce4ef2c36c60c6aa8f2b2c818181">CFileMemory::isOK</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordflow">return</span> _mbIsOK;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    }</div>
 </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}   <span class="comment">// namespace DCL</span></div>
-<div class="ttc" id="a_exceptions_8h_html_a747cd8461381c72a38e98ac599d09a3e"><div class="ttname"><a href="_exceptions_8h.html#a747cd8461381c72a38e98ac599d09a3e">ThrowIfFalse</a></div><div class="ttdeci">#define ThrowIfFalse(x, y)</div><div class="ttdoc">Macro to check a bool and if false, throw an exception which adds filename, line number and the given...</div><div class="ttdef"><b>Definition</b> <a href="_exceptions_8h_source.html#l00061">Exceptions.h:61</a></div></div>
-<div class="ttc" id="a_file_manager_8h_html"><div class="ttname"><a href="_file_manager_8h.html">FileManager.h</a></div><div class="ttdoc">Brief description for the file goes here.</div></div>
-<div class="ttc" id="a_file_memory_8h_html"><div class="ttname"><a href="_file_memory_8h.html">FileMemory.h</a></div><div class="ttdoc">Brief description for the file goes here.</div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_manager_html_a458622fce6faf686836671e304b4b7ca"><div class="ttname"><a href="class_d_c_l_1_1_c_file_manager.html#a458622fce6faf686836671e304b4b7ca">DCL::CFileManager::getFileExists</a></div><div class="ttdeci">bool getFileExists(const std::string &amp;strFilename) const</div><div class="ttdoc">Helper method. Returns true if the given filename exists on storage device.</div><div class="ttdef"><b>Definition</b> <a href="_file_manager_8cpp_source.html#l00052">FileManager.cpp:52</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a0811428a6935f47394997811e48a56c4"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a0811428a6935f47394997811e48a56c4">DCL::CFileMemory::seekBegin</a></div><div class="ttdeci">void seekBegin(void)</div><div class="ttdoc">Set seek position to the start of the data stored in this object.</div><div class="ttdef"><b>Definition</b> <a href="#l00110">FileMemory.cpp:110</a></div></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_file_memory.html#afe1933259ccebd50c67b41bc06f6531c">  165</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#afe1933259ccebd50c67b41bc06f6531c">CFileMemory::reset</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        _mbIsOK = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_file_memory.html#a0811428a6935f47394997811e48a56c4">seekBegin</a>();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    }</div>
+</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>}   <span class="comment">// namespace DCL</span></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_manager_html_a458622fce6faf686836671e304b4b7ca"><div class="ttname"><a href="class_d_c_l_1_1_c_file_manager.html#a458622fce6faf686836671e304b4b7ca">DCL::CFileManager::getFileExists</a></div><div class="ttdeci">bool getFileExists(const std::string &amp;strFilename) const</div><div class="ttdoc">Helper method. Returns true if the given filename exists on storage device.</div><div class="ttdef"><b>Definition</b> <a href="_file_manager_8cpp_source.html#l00053">FileManager.cpp:53</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a0811428a6935f47394997811e48a56c4"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a0811428a6935f47394997811e48a56c4">DCL::CFileMemory::seekBegin</a></div><div class="ttdeci">void seekBegin(void)</div><div class="ttdoc">Set seek position to the start of the data stored in this object.</div><div class="ttdef"><b>Definition</b> <a href="#l00112">FileMemory.cpp:112</a></div></div>
 <div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a101e7b9748657556aa868bcd9143d27a"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a101e7b9748657556aa868bcd9143d27a">DCL::CFileMemory::CFileMemory</a></div><div class="ttdeci">CFileMemory()</div><div class="ttdoc">Constructor. Sets data to 0.</div><div class="ttdef"><b>Definition</b> <a href="#l00006">FileMemory.cpp:6</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a2c86929c17cbd5ccddfb4470be7fd77f"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a2c86929c17cbd5ccddfb4470be7fd77f">DCL::CFileMemory::setFromFile</a></div><div class="ttdeci">void setFromFile(const std::string &amp;strFilename)</div><div class="ttdoc">Loads data from a file stored on storage device into this object.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">FileMemory.cpp:33</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a394867fde2484e2fbd992803b4babb50"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a394867fde2484e2fbd992803b4babb50">DCL::CFileMemory::saveToFile</a></div><div class="ttdeci">void saveToFile(const std::string &amp;strFilename)</div><div class="ttdoc">Attempts to save the contents of this object to a file on storage device.</div><div class="ttdef"><b>Definition</b> <a href="#l00071">FileMemory.cpp:71</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a6a4aac13933f3a4e7ff0771b8dbf4517"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a6a4aac13933f3a4e7ff0771b8dbf4517">DCL::CFileMemory::seekOffset</a></div><div class="ttdeci">bool seekOffset(size_t stOffsetBytes)</div><div class="ttdoc">Offsets the current seek position from the current position by the specified amount in bytes.</div><div class="ttdef"><b>Definition</b> <a href="#l00140">FileMemory.cpp:140</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a762721ad197f11c4d50251278ecbe423"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a762721ad197f11c4d50251278ecbe423">DCL::CFileMemory::seekGetPos</a></div><div class="ttdeci">size_t seekGetPos(void)</div><div class="ttdoc">Returns the current seek position in bytes.</div><div class="ttdef"><b>Definition</b> <a href="#l00153">FileMemory.cpp:153</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a7630db0133f3cd18a3150d284221165c"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a7630db0133f3cd18a3150d284221165c">DCL::CFileMemory::setFromMem</a></div><div class="ttdeci">void setFromMem(const char *pData, size_t stDataLength)</div><div class="ttdoc">Sets data from given pointer and size.</div><div class="ttdef"><b>Definition</b> <a href="#l00055">FileMemory.cpp:55</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a83281cf43082dd853b9654b4d3d07bc5"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a83281cf43082dd853b9654b4d3d07bc5">DCL::CFileMemory::seekEnd</a></div><div class="ttdeci">void seekEnd(void)</div><div class="ttdoc">Set seek position to the end of the data stored in this object, the last byte.</div><div class="ttdef"><b>Definition</b> <a href="#l00116">FileMemory.cpp:116</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a8414372571bb780182153ec395e10e26"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a8414372571bb780182153ec395e10e26">DCL::CFileMemory::appendToFile</a></div><div class="ttdeci">void appendToFile(std::ofstream &amp;file)</div><div class="ttdoc">Attempts to append the contents of this object to an already opened file on storage device.</div><div class="ttdef"><b>Definition</b> <a href="#l00086">FileMemory.cpp:86</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a9b59651c40a8655ee14a0129f7d870b1"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a9b59651c40a8655ee14a0129f7d870b1">DCL::CFileMemory::seekToPos</a></div><div class="ttdeci">bool seekToPos(size_t stOffsetBytesFromStart)</div><div class="ttdoc">Sets seek position by the given offset from the start of this object's data.</div><div class="ttdef"><b>Definition</b> <a href="#l00124">FileMemory.cpp:124</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a9f0f0df43e5cad319b4e481b4cc3d2a6"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a9f0f0df43e5cad319b4e481b4cc3d2a6">DCL::CFileMemory::getData</a></div><div class="ttdeci">char * getData(void)</div><div class="ttdoc">Gets a pointer to the beginning of the file data stored in memory.</div><div class="ttdef"><b>Definition</b> <a href="#l00100">FileMemory.cpp:100</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_aaaadbe30cfb91673599dfc0a864841c9"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#aaaadbe30cfb91673599dfc0a864841c9">DCL::CFileMemory::~CFileMemory</a></div><div class="ttdeci">~CFileMemory()</div><div class="ttdoc">Destructor. Deletes data if there is any.</div><div class="ttdef"><b>Definition</b> <a href="#l00015">FileMemory.cpp:15</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_aae00ce4ef2c36c60c6aa8f2b2c818181"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#aae00ce4ef2c36c60c6aa8f2b2c818181">DCL::CFileMemory::isOK</a></div><div class="ttdeci">bool isOK(void)</div><div class="ttdoc">Returns whether an error occurred either due to seeking to an invalid position or read() failing.</div><div class="ttdef"><b>Definition</b> <a href="#l00158">FileMemory.cpp:158</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_ac961ce76bb7ab4e186aee76bf8be3421"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#ac961ce76bb7ab4e186aee76bf8be3421">DCL::CFileMemory::getDataSize</a></div><div class="ttdeci">size_t getDataSize(void)</div><div class="ttdoc">Returns the size of the data stored in memory in bytes.</div><div class="ttdef"><b>Definition</b> <a href="#l00105">FileMemory.cpp:105</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_afb4d4c9475a6d26081ca2df96a4f8cca"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">DCL::CFileMemory::free</a></div><div class="ttdeci">void free(void)</div><div class="ttdoc">Frees all data and resets everything.</div><div class="ttdef"><b>Definition</b> <a href="#l00020">FileMemory.cpp:20</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_afe1933259ccebd50c67b41bc06f6531c"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#afe1933259ccebd50c67b41bc06f6531c">DCL::CFileMemory::reset</a></div><div class="ttdeci">void reset(void)</div><div class="ttdoc">Resets any errors so isOK() will return true again and resets seek position to beginning by calling s...</div><div class="ttdef"><b>Definition</b> <a href="#l00163">FileMemory.cpp:163</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a2c86929c17cbd5ccddfb4470be7fd77f"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a2c86929c17cbd5ccddfb4470be7fd77f">DCL::CFileMemory::setFromFile</a></div><div class="ttdeci">void setFromFile(const std::string &amp;strFilename)</div><div class="ttdoc">Loads data from a file stored on storage device into this object.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">FileMemory.cpp:35</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a394867fde2484e2fbd992803b4babb50"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a394867fde2484e2fbd992803b4babb50">DCL::CFileMemory::saveToFile</a></div><div class="ttdeci">void saveToFile(const std::string &amp;strFilename)</div><div class="ttdoc">Attempts to save the contents of this object to a file on storage device.</div><div class="ttdef"><b>Definition</b> <a href="#l00073">FileMemory.cpp:73</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a6a4aac13933f3a4e7ff0771b8dbf4517"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a6a4aac13933f3a4e7ff0771b8dbf4517">DCL::CFileMemory::seekOffset</a></div><div class="ttdeci">bool seekOffset(size_t stOffsetBytes)</div><div class="ttdoc">Offsets the current seek position from the current position by the specified amount in bytes.</div><div class="ttdef"><b>Definition</b> <a href="#l00142">FileMemory.cpp:142</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a762721ad197f11c4d50251278ecbe423"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a762721ad197f11c4d50251278ecbe423">DCL::CFileMemory::seekGetPos</a></div><div class="ttdeci">size_t seekGetPos(void)</div><div class="ttdoc">Returns the current seek position in bytes.</div><div class="ttdef"><b>Definition</b> <a href="#l00155">FileMemory.cpp:155</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a7630db0133f3cd18a3150d284221165c"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a7630db0133f3cd18a3150d284221165c">DCL::CFileMemory::setFromMem</a></div><div class="ttdeci">void setFromMem(const char *pData, size_t stDataLength)</div><div class="ttdoc">Sets data from given pointer and size.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">FileMemory.cpp:57</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a83281cf43082dd853b9654b4d3d07bc5"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a83281cf43082dd853b9654b4d3d07bc5">DCL::CFileMemory::seekEnd</a></div><div class="ttdeci">void seekEnd(void)</div><div class="ttdoc">Set seek position to the end of the data stored in this object, the last byte.</div><div class="ttdef"><b>Definition</b> <a href="#l00118">FileMemory.cpp:118</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a8414372571bb780182153ec395e10e26"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a8414372571bb780182153ec395e10e26">DCL::CFileMemory::appendToFile</a></div><div class="ttdeci">void appendToFile(std::ofstream &amp;file)</div><div class="ttdoc">Attempts to append the contents of this object to an already opened file on storage device.</div><div class="ttdef"><b>Definition</b> <a href="#l00088">FileMemory.cpp:88</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a9b59651c40a8655ee14a0129f7d870b1"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a9b59651c40a8655ee14a0129f7d870b1">DCL::CFileMemory::seekToPos</a></div><div class="ttdeci">bool seekToPos(size_t stOffsetBytesFromStart)</div><div class="ttdoc">Sets seek position by the given offset from the start of this object's data.</div><div class="ttdef"><b>Definition</b> <a href="#l00126">FileMemory.cpp:126</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_a9f0f0df43e5cad319b4e481b4cc3d2a6"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#a9f0f0df43e5cad319b4e481b4cc3d2a6">DCL::CFileMemory::getData</a></div><div class="ttdeci">char * getData(void)</div><div class="ttdoc">Gets a pointer to the beginning of the file data stored in memory.</div><div class="ttdef"><b>Definition</b> <a href="#l00102">FileMemory.cpp:102</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_aaaadbe30cfb91673599dfc0a864841c9"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#aaaadbe30cfb91673599dfc0a864841c9">DCL::CFileMemory::~CFileMemory</a></div><div class="ttdeci">~CFileMemory()</div><div class="ttdoc">Destructor. Deletes data if there is any.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">FileMemory.cpp:16</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_aae00ce4ef2c36c60c6aa8f2b2c818181"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#aae00ce4ef2c36c60c6aa8f2b2c818181">DCL::CFileMemory::isOK</a></div><div class="ttdeci">bool isOK(void)</div><div class="ttdoc">Returns whether an error occurred either due to seeking to an invalid position or read() failing.</div><div class="ttdef"><b>Definition</b> <a href="#l00160">FileMemory.cpp:160</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_ac961ce76bb7ab4e186aee76bf8be3421"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#ac961ce76bb7ab4e186aee76bf8be3421">DCL::CFileMemory::getDataSize</a></div><div class="ttdeci">size_t getDataSize(void)</div><div class="ttdoc">Returns the size of the data stored in memory in bytes.</div><div class="ttdef"><b>Definition</b> <a href="#l00107">FileMemory.cpp:107</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_afb4d4c9475a6d26081ca2df96a4f8cca"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#afb4d4c9475a6d26081ca2df96a4f8cca">DCL::CFileMemory::free</a></div><div class="ttdeci">void free(void)</div><div class="ttdoc">Frees all data and resets everything.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">FileMemory.cpp:22</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_file_memory_html_afe1933259ccebd50c67b41bc06f6531c"><div class="ttname"><a href="class_d_c_l_1_1_c_file_memory.html#afe1933259ccebd50c67b41bc06f6531c">DCL::CFileMemory::reset</a></div><div class="ttdeci">void reset(void)</div><div class="ttdoc">Resets any errors so isOK() will return true again and resets seek position to beginning by calling s...</div><div class="ttdef"><b>Definition</b> <a href="#l00165">FileMemory.cpp:165</a></div></div>
 <div class="ttc" id="anamespace_d_c_l_html"><div class="ttname"><a href="namespace_d_c_l.html">DCL</a></div><div class="ttdoc">The namespace in which everything within Dave's Code Library is stored inside.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8cpp_source.html#l00004">FiniteStateMachine.cpp:5</a></div></div>
 <div class="ttc" id="anamespace_d_c_l_html_a59a6d9b5f42275453df6434b51689c63"><div class="ttname"><a href="namespace_d_c_l.html#a59a6d9b5f42275453df6434b51689c63">DCL::gFileManager</a></div><div class="ttdeci">CFileManager gFileManager</div><div class="ttdoc">Global instance of CFileManager.</div><div class="ttdef"><b>Definition</b> <a href="_file_manager_8cpp_source.html#l00011">FileManager.cpp:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

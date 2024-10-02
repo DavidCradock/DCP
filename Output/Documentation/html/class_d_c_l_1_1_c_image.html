@@ -235,7 +235,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>A class for creating/loading/saving/modifying 2D images. </p>
 <p>Can read the following formats... JPEG baseline &amp; progressive (12 bpc/arithmetic not supported, same as stock IJG lib) PNG 1 / 2 / 4 / 8 / 16 - bit - per - channel TGA(not sure what subset, if a subset) BMP non - 1bpp, non - RLE PSD(composited view only, no extra channels, 8 / 16 bit - per - channel) GIF(*comp always reports as 4 - channel) HDR(radiance rgbE format) PIC(Softimage PIC) PNM(PPM and PGM binary only) Image pixels are stored in row first, then column. unsigned int iPixelIndex = iPixelPosX + (iPixelPosY * _miWidth); </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8h_source.html#l00029">29</a> of file <a class="el" href="_image_8h_source.html">Image.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8h_source.html#l00024">24</a> of file <a class="el" href="_image_8h_source.html">Image.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a47aa28278f5952544f7ea78f3e90e9d8" name="a47aa28278f5952544f7ea78f3e90e9d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a47aa28278f5952544f7ea78f3e90e9d8">&#9670;&#160;</a></span>CImage()</h2>
@@ -273,7 +273,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00021">21</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00022">22</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -302,7 +302,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>Accepted range for iAmount can be between -255 to +255 which would make entire image totally black or white. If this image contains no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00357">357</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00359">359</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -330,7 +330,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>Accepted range for iAmount is between -100 and +100 If this image contains no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00380">380</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00382">382</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -352,7 +352,7 @@ Public Member Functions</h2></td></tr>
 <p>Copies the alpha channel to each of the RGB components. </p>
 <p>If this image contains no data, or doesn't have 4 channels, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00619">619</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00621">621</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -415,7 +415,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>Automatic clipping is done so that if the source region doesn't fit into destination, it will be clipped. The destination image can be this image itself IE img.copyRectTo(img) destImage The destination image to copy the rectangular region of this object into iSrcPosX The bottom left position within the source image to copy from (a value of 0 would be left edge) iSrcPosY The bottom left position within the source image to copy from (a value of 0 would be bottom edge) iSrcWidth The width of the region to copy from the source image iSrcHeight The height of the region to copy from the source image iDestPosX The bottom left position within the destination image to copy to iDestPosY The bottom left position within the destination image to copy to If this image or the destination image contain no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00437">437</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00439">439</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -444,7 +444,7 @@ Public Member Functions</h2></td></tr>
 <p>Silently fails if both this image and the one parsed are actually the same objects, or there is no image data to copy. If this image contains no data, an exception occurs. The destinationImage is totally replaced. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00424">424</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00426">426</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -472,7 +472,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>Copies the contents of this image into the outputImage and gives the output image a border and sets the pixels around that border to be the same as the ones in this image's edge pixels, thereby making the output image have dimensions which are +2 of this one. This is typically used to simply calculating of stuff without having to take into consideration, edge cases. If this image contains no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00504">504</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00506">506</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -511,7 +511,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>If already created, the previous image is freed Each channel contains black Acceptable number of channels may be 3 or 4 Both dimensions must be at least 1 iWidth The width of the image. iHeight The height of the image. Memory consumption examples... Each pixel is either RGB or RGBA and each is a byte, so and RGBA image is 4 bytes per pixel. An image of dimensions 512x512x4 is 1,048,576 bytes or 1024 KBytes or 1 MByte An image of dimensions 1024x1024x4 is 4,194,304 bytes or 4096 KB or 4 MB An image of dimensions 4096x4096x4 is 64MB An image of dimensions 16384x16384x4 is 1024MB AKA 1GB Throws exceptions if invalid params given. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00048">48</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00050">50</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -549,7 +549,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00818">818</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00820">820</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -581,7 +581,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00698">698</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00700">700</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -631,7 +631,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00771">771</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00773">773</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -685,7 +685,7 @@ Original Image</div></div>
 With edgeDetect()</div></div>
 <p> Edges are detected by using the given colour value which should represent the colour of the image's background If this image contains no data, or doesn't have at least 3 channels, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00571">571</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00573">573</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -730,7 +730,7 @@ With edgeDetect()</div></div>
 </dl>
 <p>If the image only contains 3 colour channels, the alpha component is ignored. Throws exception if image hasn't been created yet </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00157">157</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00159">159</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -752,7 +752,7 @@ With edgeDetect()</div></div>
 <p>Flip the image vertically. </p>
 <p>If this image contains no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00251">251</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00253">253</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -773,7 +773,7 @@ With edgeDetect()</div></div>
 
 <p>Free image and memory so that the image is empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00037">37</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00039">39</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -819,7 +819,7 @@ With edgeDetect()</div></div>
 <dl class="section return"><dt>Returns</dt><dd>A CColour value which would represent the colour of the colour wheel at those X and Y coordinates.</dd></dl>
 <p>No checking of incorrect position values. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00745">745</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00747">747</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -843,7 +843,7 @@ With edgeDetect()</div></div>
 <p>Please, BE CAREFULL if you're using this method to directly access the image data. returns The pointer to the image's data. <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00189">189</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00191">191</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -865,7 +865,7 @@ With edgeDetect()</div></div>
 <p>Get size of image data in bytes. </p>
 <dl class="section return"><dt>Returns</dt><dd>The size of the image data in bytes </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00194">194</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00196">196</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -887,7 +887,7 @@ With edgeDetect()</div></div>
 <p>Returns the dimensions of the image as a <a class="el" href="class_d_c_l_1_1_c_vector2f.html" title="Vector class, using 2 floats.">CVector2f</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The dimensions of the image as a <a class="el" href="class_d_c_l_1_1_c_vector2f.html" title="Vector class, using 2 floats.">CVector2f</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00209">209</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00211">211</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -910,7 +910,7 @@ With edgeDetect()</div></div>
 <dl class="section return"><dt>Returns</dt><dd>True if the image's dimensions are to the power or 2, IE 2x2, 4x4, 8x8, 16x16, or 256x64 etc.</dd></dl>
 <p>Width and height dimensions although both have to be to the power of 2, do not have to be the same values as each other for this to return true. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00221">221</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00223">223</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -932,7 +932,7 @@ With edgeDetect()</div></div>
 <p>Get height of image. </p>
 <dl class="section return"><dt>Returns</dt><dd>The height of the image in pixels </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00204">204</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00206">206</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -955,7 +955,7 @@ With edgeDetect()</div></div>
 <dl class="section return"><dt>Returns</dt><dd>The number of channels of the image. <br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00216">216</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00218">218</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1021,7 +1021,7 @@ With edgeDetect()</div></div>
 <p>Due to additional overhead of this method due to function calling and bounds checking, if you're wanting to modify many pixels, it's best to use the "unsafe" <a class="el" href="#a73e72184c5c254d430d713eb0ab39917" title="Return pointer to image data for manual modification.">getData()</a> method. iX The X position of the pixel. Where a value of 0 = left edge of image. iY The Y position of the pixel. Where a value of 0 = bottom edge of image. r The colour will be held in here (Red). g The colour will be held in here (Green). b The colour will be held in here (Blue). a The colour will be held in here (Alpha). <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8h_source.html#l00425">425</a> of file <a class="el" href="_image_8h_source.html">Image.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8h_source.html#l00420">420</a> of file <a class="el" href="_image_8h_source.html">Image.h</a>.</p>
 
 </div>
 </div>
@@ -1043,7 +1043,7 @@ With edgeDetect()</div></div>
 <p>Get width of image. </p>
 <dl class="section return"><dt>Returns</dt><dd>The width of the image in pixels </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00199">199</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00201">201</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1072,7 +1072,7 @@ With edgeDetect()</div></div>
 </div><div class="memdoc">
 
 <p>Converts the image's RGB components to greyscale, taking into consideration the average human's eye sensitivity to the individual RGB components. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo</a></b></dt><dd>Isn't working properly. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo</a></b></dt><dd>Isn't working properly. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fRedSensitivity</td><td>Value between 0.0 and 1.0 to be used for the sensitivity of red </td></tr>
@@ -1083,7 +1083,7 @@ With edgeDetect()</div></div>
 </dl>
 <p>If default params are not used (They approximate the average human's eye sensitivity), they should be of unit length. If this image contains no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00334">334</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00336">336</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1105,7 +1105,7 @@ With edgeDetect()</div></div>
 <p>Converts the image's RGB components to greyscale, simply finding mean average of RGB components. </p>
 <p>For example. if R = 0, G = 30 and B = 90, then each of the RGB colours will be set to (0+30+90)/3 = 40 If this image contains no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00311">311</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00313">313</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1138,7 +1138,7 @@ With edgeDetect()</div></div>
 </dl>
 <p>If this image contains no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00282">282</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00284">284</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1172,7 +1172,7 @@ With edgeDetect()</div></div>
 <dl class="section return"><dt>Returns</dt><dd>false if the image couldn't be loaded.</dd></dl>
 <p>Depending upon the file name extension, determines the file type and loads it in. If the image couldn't be loaded, false is returned, else true The image is freed at the start of this method Loads image from file using the stb_image library </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00070">70</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00072">72</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1217,7 +1217,7 @@ With edgeDetect()</div></div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the image's values were loaded or not </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00117">117</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00119">119</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1250,7 +1250,7 @@ With edgeDetect()</div></div>
 </dl>
 <p>This image should be a heightmap, where each pixel represents the height of a surface. White being max height, black being the lowest. However, this image first creates a copy of itself in memory, then calls <a class="el" href="#ae373c6e34527fd88bb4a9f7d6da844ff" title="Converts the image&#39;s RGB components to greyscale, simply finding mean average of RGB components.">greyscaleSimple()</a> on that to ensure proper computation of the normals. fScale should be between 0.0f and 1.0f and affects how "intense" the normals are generated. This value is clamped internally. Lower values increase the effect If this image contains no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00634">634</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00636">636</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1271,7 +1271,7 @@ With edgeDetect()</div></div>
 
 <p>Sets this image to the one on the right. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00026">26</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00028">28</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1293,7 +1293,7 @@ With edgeDetect()</div></div>
 <p>Removes the alpha channel of the image, leaving the RGB components. </p>
 <p>If this image contains no data, or doesn't have 4 channels, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00594">594</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00596">596</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1315,7 +1315,7 @@ With edgeDetect()</div></div>
 <p>Rotates the image 90 degrees clockwise. </p>
 <p>If this image contains no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00544">544</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00546">546</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1347,7 +1347,7 @@ With edgeDetect()</div></div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00129">129</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00131">131</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1385,7 +1385,7 @@ With edgeDetect()</div></div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00136">136</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00138">138</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1417,7 +1417,7 @@ With edgeDetect()</div></div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00143">143</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00145">145</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1449,7 +1449,7 @@ With edgeDetect()</div></div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00150">150</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00152">152</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>
@@ -1515,7 +1515,7 @@ With edgeDetect()</div></div>
 <p>Due to additional overhead of this method due to function calling and bounds checking, if you're wanting to modify many pixels, it's best to use the "unsafe" <a class="el" href="#a73e72184c5c254d430d713eb0ab39917" title="Return pointer to image data for manual modification.">getData()</a> method. iX The X position of the pixel. Where a value of 0 = left edge of image. iY The Y position of the pixel. Where a value of 0 = bottom edge of image. r The colour to set the pixel to (Red). g The colour to set the pixel to (Green). b The colour to set the pixel to (Blue). a The colour to set the pixel to (Alpha). <br  />
  </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8h_source.html#l00397">397</a> of file <a class="el" href="_image_8h_source.html">Image.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8h_source.html#l00392">392</a> of file <a class="el" href="_image_8h_source.html">Image.h</a>.</p>
 
 </div>
 </div>
@@ -1537,7 +1537,7 @@ With edgeDetect()</div></div>
 <p>Swap red and blue colour components around. </p>
 <p>If this image contains no data, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00234">234</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00236">236</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
 
 </div>
 </div>

@@ -104,7 +104,7 @@ $(function(){initNavTree('todo.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><dl class="reflist">
 <dt>File <a class="el" href="_daves_code_library_8h.html">DavesCodeLibrary.h</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000004"></a>Go through ALL code and modify the comments so that duplicate "returns this or that" and mentioning of parameters in either \brief or main stuff too. </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000005"></a>Go through ALL code and modify the comments so that duplicate "returns this or that" and mentioning of parameters in either \brief or main stuff too. </p>
 <p class="interdd"></p>
 <p class="interdd">Add to and check FileManager from X code project </p>
 <p class="interdd"></p>
@@ -112,32 +112,38 @@ $(function(){initNavTree('todo.html',''); initResizable(true); });
 <p class="interdd"></p>
 <p class="interdd">Add SDL2 and SDL2_Mixer </p>
 <p class="interdd"></p>
-<p class="enddd">Check Doxygen build system is working WITHOUT having to have the thing installed.  </p>
+<p class="interdd">Check Doxygen build system is working WITHOUT having to have the thing installed. </p>
+<p class="interdd"></p>
+<p class="enddd">Add memory tracking class which is threaded like the CLog class and tracks peak system memory usuage .  </p>
 </dd>
 <dt>Member <a class="el" href="class_d_c_l_1_1_c_a_a_b_b.html#adf471db9b9b4619a081a4a24890da4fa">DCL::CAABB::getAABBintersects</a>  (const <a class="el" href="class_d_c_l_1_1_c_a_a_b_b.html" title="An Axis Aligned Bounding Box.">CAABB</a> &amp;aabb) const</dt>
-<dd><a class="anchor" id="_todo000007"></a>test this  </dd>
+<dd><a class="anchor" id="_todo000009"></a>test this  </dd>
 <dt>Member <a class="el" href="class_d_c_l_1_1_c_a_a_b_b.html#aa29257d72c836033ae6da2801f460042">DCL::CAABB::resizeArea</a>  (float fMultiplier)</dt>
-<dd><a class="anchor" id="_todo000008"></a>Test this </dd>
+<dd><a class="anchor" id="_todo000010"></a>Test this </dd>
 <dt>Class <a class="el" href="class_d_c_l_1_1_c_audio_manager.html">DCL::CAudioManager</a>  </dt>
 <dd><a class="anchor" id="_todo000003"></a>Lots to add and check here.  </dd>
 <dt>Class <a class="el" href="class_d_c_l_1_1_c_file_manager.html">DCL::CFileManager</a>  </dt>
-<dd><a class="anchor" id="_todo000005"></a>Check and modify, lots to add here!  </dd>
+<dd><a class="anchor" id="_todo000006"></a>Check and modify, lots to add here!  </dd>
 <dt>Member <a class="el" href="class_d_c_l_1_1_c_frustum.html#af5f03f2e4eaed3447b7aeb19c2e26e51">DCL::CFrustum::computeFromViewProjection</a>  (const <a class="el" href="class_d_c_l_1_1_c_matrix.html" title="Matrix class.">CMatrix</a> &amp;cameraViewMatrix, const <a class="el" href="class_d_c_l_1_1_c_matrix.html" title="Matrix class.">CMatrix</a> &amp;cameraProjectionMatrix)</dt>
-<dd><a class="anchor" id="_todo000009"></a>Check this  </dd>
-<dt>Member <a class="el" href="class_d_c_l_1_1_c_frustum.html#a2f7123cd1cc6439dfa2d79060ca5dc5e">DCL::CFrustum::isAABBIntersecting</a>  (const <a class="el" href="class_d_c_l_1_1_c_a_a_b_b.html" title="An Axis Aligned Bounding Box.">CAABB</a> &amp;aabb) const</dt>
 <dd><a class="anchor" id="_todo000011"></a>Check this  </dd>
+<dt>Member <a class="el" href="class_d_c_l_1_1_c_frustum.html#a2f7123cd1cc6439dfa2d79060ca5dc5e">DCL::CFrustum::isAABBIntersecting</a>  (const <a class="el" href="class_d_c_l_1_1_c_a_a_b_b.html" title="An Axis Aligned Bounding Box.">CAABB</a> &amp;aabb) const</dt>
+<dd><a class="anchor" id="_todo000013"></a>Check this  </dd>
 <dt>Member <a class="el" href="class_d_c_l_1_1_c_frustum.html#a3c827a97cf9db0ef176880246745ff42">DCL::CFrustum::isPointInside</a>  (const <a class="el" href="class_d_c_l_1_1_c_vector3f.html" title="Vector class, using 3 floats.">CVector3f</a> &amp;vPosition) const</dt>
-<dd><a class="anchor" id="_todo000010"></a>Check this  </dd>
+<dd><a class="anchor" id="_todo000012"></a>Check this  </dd>
 <dt>Class <a class="el" href="class_d_c_l_1_1_c_genetics_training.html">DCL::CGeneticsTraining</a>  </dt>
 <dd><a class="anchor" id="_todo000002"></a>Re-read chapter five (Building a better genetic algorithm) of the "AI techniques for game programming" book to get some better methods  </dd>
 <dt>Class <a class="el" href="class_d_c_l_1_1_c_genome.html">DCL::CGenome</a>  </dt>
 <dd><a class="anchor" id="_todo000001"></a>Check constness. I was concentrating on the code and forgot about it!  </dd>
 <dt>Member <a class="el" href="class_d_c_l_1_1_c_image.html#ab86c42477271bcc981e19dccfb62e880">DCL::CImage::greyscale</a>  (float fRedSensitivity=0.299f, float fGreenSensitivity=0.587f, float fBlueSensitivity=0.144f)</dt>
-<dd><a class="anchor" id="_todo000006"></a>Isn't working properly.  </dd>
+<dd><a class="anchor" id="_todo000007"></a>Isn't working properly.  </dd>
+<dt>Class <a class="el" href="class_d_c_l_1_1_c_log.html">DCL::CLog</a>  </dt>
+<dd><a class="anchor" id="_todo000004"></a>Add html output  </dd>
+<dt>Class <a class="el" href="class_d_c_l_1_1_c_mandelbrot_generator.html">DCL::CMandelbrotGenerator</a>  </dt>
+<dd><a class="anchor" id="_todo000008"></a>Implement when I want some fun :)  </dd>
 <dt>Member <a class="el" href="class_d_c_l_1_1_c_oct_tree.html#a673d30946a9719b6e5df9bbb3041d287">DCL::COctTree::getEntitiesWithinFrustum</a>  (const <a class="el" href="class_d_c_l_1_1_c_frustum.html" title="A frustum which is defined by six planes.">CFrustum</a> &amp;frustum) const</dt>
-<dd><a class="anchor" id="_todo000012"></a>check this  </dd>
+<dd><a class="anchor" id="_todo000014"></a>check this  </dd>
 <dt>Page <a class="el" href="03__doxygen_documentation.html">Doxygen Documentation.</a>  </dt>
-<dd><a class="anchor" id="_todo000013"></a>Whatever we need to fix</dd>
+<dd><a class="anchor" id="_todo000015"></a>Whatever we need to fix</dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

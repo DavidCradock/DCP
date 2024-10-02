@@ -102,184 +102,239 @@ $(function(){initNavTree('_logging_8cpp_source.html',''); initResizable(true); }
   <div class="headertitle"><div class="title">Logging.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_logging_8h.html">Logging.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_exceptions_8h.html">Exceptions.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    CLogEntry::CLogEntry()</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#ab10c00c447814d37997677d6f48fd6db">fTimeSeconds</a> = 0.0f;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a6971b9c22d2a855dd498ab70128cb73b">iTimeMin</a> = 0;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a6bab9fe7185a9cc52f74e91fd1acdbf9">iTimeHours</a> = 0;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#aafff27b488dca7885410181cd0df9ef3">iTimeDays</a> = 0;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a5f3473a654e2443e11338e486e755de4">iTimeWeeks</a> = 0;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#a01564a0f3ccde4df91ac46065bf77615">   17</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a01564a0f3ccde4df91ac46065bf77615">CLog::CLog</a>()</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        _mstrLogFilename = <span class="stringliteral">&quot;log.txt&quot;</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a1d2d3914007154c46d7c154297ff7e39">clear</a>();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;Logging.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Exceptions.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;StringUtils.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Utilities.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    CLog gLogMain;  </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log_entry.html#ab377d2fba010943771ecdb1b2f26877f">   11</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_log_entry.html#ab377d2fba010943771ecdb1b2f26877f">CLogEntry::CLogEntry</a>()</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#ab10c00c447814d37997677d6f48fd6db">fTimeSeconds</a> = 0.0f;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a6971b9c22d2a855dd498ab70128cb73b">iTimeMin</a> = 0;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a6bab9fe7185a9cc52f74e91fd1acdbf9">iTimeHours</a> = 0;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#aafff27b488dca7885410181cd0df9ef3">iTimeDays</a> = 0;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a5f3473a654e2443e11338e486e755de4">iTimeWeeks</a> = 0;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#a80598d56065645c31b629abb58222a36">   23</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a80598d56065645c31b629abb58222a36">CLog::add</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">string</span>)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_class" href="class_d_c_l_1_1_c_log_entry.html">CLogEntry</a> logEntry;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        std::fstream fs;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        fs.open(_mstrLogFilename, std::ios::out | std::ios::app);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="comment">// Store the given string in the log entry</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a8038010ff8efc37a30d7305271afeba9">strText</a> = string;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#a525ac4b37b68ab5bf0674fc0a55c1bf8">   20</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a525ac4b37b68ab5bf0674fc0a55c1bf8">CLog::CLog</a>(<span class="keyword">const</span> std::string&amp; strFilename)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        _mstrFilename = strFilename;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        _mStop = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="comment">// Set private html code used when writing each column of each row in the table to the html file.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">// The contents of each cell in the table is written to the file after each one of these strings.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        _strTableColumnText[0] = <span class="stringliteral">&quot;&lt;tr&gt;&lt;td width=\&quot;1%\&quot;&gt;&lt;div align=\&quot;center\&quot;&gt;&quot;</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        _strTableColumnText[1] = <span class="stringliteral">&quot;&lt;/div&gt;&lt;/td&gt;&lt;td width=\&quot;20%\&quot;&gt;&lt;div align=\&quot;center\&quot;&gt;&quot;</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        _strTableColumnText[2] = <span class="stringliteral">&quot;&lt;/div&gt;&lt;/td&gt;&lt;td width=\&quot;20%\&quot;&gt;&lt;div align=\&quot;center\&quot;&gt;&quot;</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        _strTableColumnText[3] = <span class="stringliteral">&quot;&lt;/div&gt;&lt;/td&gt;&lt;td width=\&quot;1%\&quot;&gt;&lt;div align=\&quot;center\&quot;&gt;&quot;</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        _strTableColumnText[4] = <span class="stringliteral">&quot;&lt;/div&gt;&lt;/td&gt;&lt;td width=\&quot;20%\&quot;&gt;&lt;div align=\&quot;center\&quot;&gt;&quot;</span>;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="comment">// Store current runtime in the log entry</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        _timer.<a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a1c746ac5f8bf4032562a785dda02eb39">update</a>();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        _timer.<a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a03ea9e97cde374fb2d575850cef4682a">getClock</a>(logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#ab10c00c447814d37997677d6f48fd6db">fTimeSeconds</a>, logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a6971b9c22d2a855dd498ab70128cb73b">iTimeMin</a>, logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a6bab9fe7185a9cc52f74e91fd1acdbf9">iTimeHours</a>, logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#aafff27b488dca7885410181cd0df9ef3">iTimeDays</a>, logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a5f3473a654e2443e11338e486e755de4">iTimeWeeks</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        _writeLogHeader();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        _mMainThread = std::thread(&amp;CLog::_mainThreadLoop, <span class="keyword">this</span>);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">// Create the current runtime as a string in the log entry</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a79829a4aeb88d73ec9cfc0f366525e2e">strTime</a> += std::to_string(logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a5f3473a654e2443e11338e486e755de4">iTimeWeeks</a>) + <span class="stringliteral">&quot;w:&quot;</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a79829a4aeb88d73ec9cfc0f366525e2e">strTime</a> += std::to_string(logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#aafff27b488dca7885410181cd0df9ef3">iTimeDays</a>) + <span class="stringliteral">&quot;d:&quot;</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a79829a4aeb88d73ec9cfc0f366525e2e">strTime</a> += std::to_string(logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a6bab9fe7185a9cc52f74e91fd1acdbf9">iTimeHours</a>) + <span class="stringliteral">&quot;h:&quot;</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a79829a4aeb88d73ec9cfc0f366525e2e">strTime</a> += std::to_string(logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a6971b9c22d2a855dd498ab70128cb73b">iTimeMin</a>) + <span class="stringliteral">&quot;m:&quot;</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span> (logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#ab10c00c447814d37997677d6f48fd6db">fTimeSeconds</a> &lt; 10.0f)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a79829a4aeb88d73ec9cfc0f366525e2e">strTime</a> += <span class="stringliteral">&quot;0&quot;</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a79829a4aeb88d73ec9cfc0f366525e2e">strTime</a> += std::to_string(<span class="keywordtype">int</span>(logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#ab10c00c447814d37997677d6f48fd6db">fTimeSeconds</a>)) + <span class="stringliteral">&quot;s : &quot;</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="comment">// Output time string to file</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        fs &lt;&lt; logEntry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a79829a4aeb88d73ec9cfc0f366525e2e">strTime</a>.c_str();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="comment">// Output the log entry&#39;s text to the file</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        fs &lt;&lt; <span class="keywordtype">string</span>.c_str();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        fs &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        fs.close();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="comment">// Store the log entry in memory for future access.</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        _mlogEntries.push_back(logEntry);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        std::string strEntryText = <span class="stringliteral">&quot;CLog::CLog(\&quot;&quot;</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        strEntryText += strFilename;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        strEntryText += <span class="stringliteral">&quot;\&quot;) called.&quot;</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        LOG(strEntryText);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#a1d2d3914007154c46d7c154297ff7e39">   58</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a1d2d3914007154c46d7c154297ff7e39">CLog::clear</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        std::fstream fs;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        fs.open(_mstrLogFilename, std::ios::out | std::ios::trunc);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        fs.close();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        _mlogEntries.clear();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#a2fcf10b1cd58d18eaefac08011a7e98f">   43</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a2fcf10b1cd58d18eaefac08011a7e98f">CLog::~CLog</a>()</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        _mStop = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        _mMainThread.join();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        _writeLogFooter();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#a3653540972d38fdc601920d9f19e4dd4">   66</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a3653540972d38fdc601920d9f19e4dd4">CLog::deleteLogFile</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">const</span> std::filesystem::path file_path(_mstrLogFilename);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">if</span> (std::filesystem::exists(file_path))</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                std::filesystem::remove(file_path);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="comment">//std::cout &lt;&lt; &quot;File deleted successfully.&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="comment">//std::cerr &lt;&lt; &quot;File does not exist.&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e)</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="comment">//std::cerr &lt;&lt; &quot;Error deleting file: &quot; &lt;&lt; e.what() &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            std::string strError = <span class="stringliteral">&quot;Error deleting file: &quot;</span>;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            strError += e.what();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a80598d56065645c31b629abb58222a36">add</a>(strError);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#a1fde7118bd92c0f684188d90adfa03bc">   51</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a1fde7118bd92c0f684188d90adfa03bc">CLog::add</a>(<span class="keyword">const</span> std::string&amp; strText, <span class="keyword">const</span> std::string&amp; strFunctionName, <span class="keyword">const</span> std::string&amp; strLineNumber, <span class="keyword">const</span> std::string&amp; strSourceFilename)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        _mQueueMutex.lock();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <a class="code hl_class" href="class_d_c_l_1_1_c_log_entry.html">CLogEntry</a> entry;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        entry.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a8038010ff8efc37a30d7305271afeba9">strText</a> = strText;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        entry.strFunctionName = strFunctionName;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        entry.strSourceFilename = strSourceFilename;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        entry.strSourceLineNumber = strLineNumber;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="comment">// Compute time related stuff</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        _timer.<a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a1c746ac5f8bf4032562a785dda02eb39">update</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        _timer.<a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a03ea9e97cde374fb2d575850cef4682a">getClock</a>(entry.fTimeSeconds, entry.iTimeMin, entry.iTimeHours, entry.iTimeDays, entry.iTimeWeeks);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="comment">// Create the current runtime as a string in the log entry</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        entry.strTime += std::to_string(entry.iTimeWeeks) + <span class="stringliteral">&quot;w:&quot;</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        entry.strTime += std::to_string(entry.iTimeDays) + <span class="stringliteral">&quot;d:&quot;</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        entry.strTime += std::to_string(entry.iTimeHours) + <span class="stringliteral">&quot;h:&quot;</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        entry.strTime += std::to_string(entry.iTimeMin) + <span class="stringliteral">&quot;m:&quot;</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">if</span> (entry.fTimeSeconds &lt; 10.0f)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            entry.strTime += <span class="stringliteral">&quot;0&quot;</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        entry.strTime += std::to_string(<span class="keywordtype">float</span>(entry.fTimeSeconds)) + <span class="stringliteral">&quot;s&quot;</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="comment">// Add entry to the queue</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        _mQueueEntriesToAdd.push(entry);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        _mQueueMutex.unlock();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
 </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#a4ff6c01be34d498694b20112980f6d6b">   93</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a4ff6c01be34d498694b20112980f6d6b">CLog::setLogFileName</a>(<span class="keyword">const</span> std::string&amp; strLogFileName)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a3653540972d38fdc601920d9f19e4dd4">deleteLogFile</a>();</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        _mstrLogFilename = strLogFileName;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a1d2d3914007154c46d7c154297ff7e39">clear</a>();</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
-</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#aec810fa6176e0ef2a27f7aa3281e0fbf">  101</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#aec810fa6176e0ef2a27f7aa3281e0fbf">CLog::getNumEntries</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">return</span> _mlogEntries.size();</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
-</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#aab3211186ea1a191333d54b34a6cc463">  106</a></span>    std::string <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#aab3211186ea1a191333d54b34a6cc463">CLog::getEntryText</a>(<span class="keywordtype">size_t</span> entryIndex)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_define" href="_exceptions_8h.html#ab9e7f7e7cd2de375f24b023fd38908ef">ThrowIfTrue</a>(entryIndex &gt;= _mlogEntries.size(), <span class="stringliteral">&quot;CLog::getEntryText() with given index of &quot;</span> + std::to_string(entryIndex) + <span class="stringliteral">&quot; failed as given index is invalid.&quot;</span>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">return</span> _mlogEntries[entryIndex].strText;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
-</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#acfdc36c83c257b05e234124ff65a1e6a">  112</a></span>    std::string <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#acfdc36c83c257b05e234124ff65a1e6a">CLog::getEntryTime</a>(<span class="keywordtype">size_t</span> entryIndex)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <a class="code hl_define" href="_exceptions_8h.html#ab9e7f7e7cd2de375f24b023fd38908ef">ThrowIfTrue</a>(entryIndex &gt;= _mlogEntries.size(), <span class="stringliteral">&quot;CLog::getEntryTime() with given index of &quot;</span> + std::to_string(entryIndex) + <span class="stringliteral">&quot; failed as given index is invalid.&quot;</span>);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span> _mlogEntries[entryIndex].strTime;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
-</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#a63db6883a75bbd242279df668a538798">  118</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a63db6883a75bbd242279df668a538798">CLog::getEntryTimes</a>(<span class="keywordtype">size_t</span> entryIndex, <span class="keywordtype">float</span>&amp; fSecondsOut, <span class="keywordtype">int</span>&amp; iMinutesOut, <span class="keywordtype">int</span>&amp; iHoursOut, <span class="keywordtype">int</span>&amp; iDaysOut, <span class="keywordtype">int</span>&amp; iWeeksOut)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <a class="code hl_define" href="_exceptions_8h.html#ab9e7f7e7cd2de375f24b023fd38908ef">ThrowIfTrue</a>(entryIndex &gt;= _mlogEntries.size(), <span class="stringliteral">&quot;CLog::getEntryTimes() with given index of &quot;</span> + std::to_string(entryIndex) + <span class="stringliteral">&quot; failed as given index is invalid.&quot;</span>);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        fSecondsOut = _mlogEntries[entryIndex].fTimeSeconds;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        iMinutesOut = _mlogEntries[entryIndex].iTimeMin;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        iHoursOut = _mlogEntries[entryIndex].iTimeHours;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        iDaysOut = _mlogEntries[entryIndex].iTimeDays;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        iWeeksOut = _mlogEntries[entryIndex].iTimeWeeks;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> CLog::_mainThreadLoop(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordtype">bool</span> bLogToSave = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_class" href="class_d_c_l_1_1_c_log_entry.html">CLogEntry</a> logToSave;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">while</span> (!_mStop) <span class="comment">// This gets set to true in the destructor</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="comment">// Determine whether there&#39;s at least one log entry in the queue</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="comment">// If so, copy it ready to save to file.</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="comment">// We perform the minimal of stuff here to help prevent locking the mutex which could slow down calls to add()</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            bLogToSave = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            _mQueueMutex.lock();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">if</span> (!_mQueueEntriesToAdd.empty())</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                bLogToSave = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                logToSave = _mQueueEntriesToAdd.front();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                _mQueueEntriesToAdd.pop();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            _mQueueMutex.unlock();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="comment">// If there is a log entry, save it to file</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">if</span> (bLogToSave)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                std::ofstream file(_mstrFilename, std::ios::app);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                <span class="keywordflow">if</span> (file.is_open())</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                    file &lt;&lt; _strTableColumnText[0] &lt;&lt; logToSave.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a79829a4aeb88d73ec9cfc0f366525e2e">strTime</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                    file &lt;&lt; _strTableColumnText[1] &lt;&lt; logToSave.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a8038010ff8efc37a30d7305271afeba9">strText</a>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                    file &lt;&lt; _strTableColumnText[2] &lt;&lt; logToSave.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a5bdc28aeaf9db1c439db70392cb8b200">strFunctionName</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                    file &lt;&lt; _strTableColumnText[3] &lt;&lt; logToSave.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a77e7da07e888d534d63a1c495421b775">strSourceLineNumber</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                    file &lt;&lt; _strTableColumnText[4] &lt;&lt; logToSave.<a class="code hl_variable" href="class_d_c_l_1_1_c_log_entry.html#a958493c4b632e902f05519079e7ffb9d">strSourceFilename</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                    file &lt;&lt; <span class="stringliteral">&quot;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;\n&quot;</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                <span class="comment">// If there wasn&#39;t a log entry to save, let&#39;s sleep for a bit.</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                <span class="comment">// Not sleeping due to there being a log entry makes it so that on the next</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                <span class="comment">// loop is fast and allows us to prevent entries from queueing up.</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    }</div>
-</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
 <div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#ae4a23a7eb5136c4530c6b9b1b0cbda71">  128</a></span>    <a class="code hl_class" href="class_d_c_l_1_1_c_log_entry.html">CLogEntry</a> <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#ae4a23a7eb5136c4530c6b9b1b0cbda71">CLog::getEntry</a>(<span class="keywordtype">size_t</span> entryIndex)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_define" href="_exceptions_8h.html#ab9e7f7e7cd2de375f24b023fd38908ef">ThrowIfTrue</a>(entryIndex &gt;= _mlogEntries.size(), <span class="stringliteral">&quot;CLog::getEntry() with given index of &quot;</span> + std::to_string(entryIndex) + <span class="stringliteral">&quot; failed as given index is invalid.&quot;</span>);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">return</span> _mlogEntries[entryIndex];</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_log.html#a5fe12a8f0d7215ea75d99df41ee5fe93">  128</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a5fe12a8f0d7215ea75d99df41ee5fe93">CLog::run_test</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_class" href="class_d_c_l_1_1_c_log.html">CLog</a> logger(<span class="stringliteral">&quot;log_run_test.txt&quot;</span>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        std::thread t1([&amp;logger]()</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 100; ++i) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                    logger.<a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a1fde7118bd92c0f684188d90adfa03bc">add</a>(<span class="stringliteral">&quot;Thread 1: Message &quot;</span> + std::to_string(i), __FUNCTION__, std::to_string(__LINE__), __FILE__);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                    std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            });</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        std::thread t2([&amp;logger]() {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 100; ++i) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                logger.<a class="code hl_function" href="class_d_c_l_1_1_c_log.html#a1fde7118bd92c0f684188d90adfa03bc">add</a>(<span class="stringliteral">&quot;Thread 2: Message &quot;</span> + std::to_string(i), __FUNCTION__, std::to_string(__LINE__), __FILE__);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                std::this_thread::sleep_for(std::chrono::milliseconds(15));</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            });</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        t1.join();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        t2.join();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
 </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}   <span class="comment">// namespace DCL</span></div>
-<div class="ttc" id="a_exceptions_8h_html"><div class="ttname"><a href="_exceptions_8h.html">Exceptions.h</a></div><div class="ttdoc">Contains error handling code and macros to deal with errors, warnings and logging of information to a...</div></div>
-<div class="ttc" id="a_exceptions_8h_html_ab9e7f7e7cd2de375f24b023fd38908ef"><div class="ttname"><a href="_exceptions_8h.html#ab9e7f7e7cd2de375f24b023fd38908ef">ThrowIfTrue</a></div><div class="ttdeci">#define ThrowIfTrue(x, y)</div><div class="ttdoc">Macro to check a bool and is true, throw an exception which adds filename, line number and the given ...</div><div class="ttdef"><b>Definition</b> <a href="_exceptions_8h_source.html#l00070">Exceptions.h:70</a></div></div>
-<div class="ttc" id="a_logging_8h_html"><div class="ttname"><a href="_logging_8h.html">Logging.h</a></div><div class="ttdoc">Contains various logging code.</div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html">DCL::CLogEntry</a></div><div class="ttdoc">A Log entry object which holds information about a single log entry. Used by the CLog class.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00023">Logging.h:24</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a5f3473a654e2443e11338e486e755de4"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a5f3473a654e2443e11338e486e755de4">DCL::CLogEntry::iTimeWeeks</a></div><div class="ttdeci">int iTimeWeeks</div><div class="ttdoc">Time since start of log file creation that log entry was added (Weeks as clock)</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00033">Logging.h:33</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a6971b9c22d2a855dd498ab70128cb73b"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a6971b9c22d2a855dd498ab70128cb73b">DCL::CLogEntry::iTimeMin</a></div><div class="ttdeci">int iTimeMin</div><div class="ttdoc">Time since start of log file creation that log entry was added (Minutes as clock)</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00030">Logging.h:30</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a6bab9fe7185a9cc52f74e91fd1acdbf9"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a6bab9fe7185a9cc52f74e91fd1acdbf9">DCL::CLogEntry::iTimeHours</a></div><div class="ttdeci">int iTimeHours</div><div class="ttdoc">Time since start of log file creation that log entry was added (Hours as clock)</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00031">Logging.h:31</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a79829a4aeb88d73ec9cfc0f366525e2e"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a79829a4aeb88d73ec9cfc0f366525e2e">DCL::CLogEntry::strTime</a></div><div class="ttdeci">std::string strTime</div><div class="ttdoc">Time since start of log file creation that log entry was added, formatted to a string.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00034">Logging.h:34</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a8038010ff8efc37a30d7305271afeba9"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a8038010ff8efc37a30d7305271afeba9">DCL::CLogEntry::strText</a></div><div class="ttdeci">std::string strText</div><div class="ttdoc">A string holding the text for this log entry.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00028">Logging.h:28</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_aafff27b488dca7885410181cd0df9ef3"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#aafff27b488dca7885410181cd0df9ef3">DCL::CLogEntry::iTimeDays</a></div><div class="ttdeci">int iTimeDays</div><div class="ttdoc">Time since start of log file creation that log entry was added (Days as clock)</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00032">Logging.h:32</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_ab10c00c447814d37997677d6f48fd6db"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#ab10c00c447814d37997677d6f48fd6db">DCL::CLogEntry::fTimeSeconds</a></div><div class="ttdeci">float fTimeSeconds</div><div class="ttdoc">Time since start of log file creation that log entry was added (Seconds as clock)</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00029">Logging.h:29</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a01564a0f3ccde4df91ac46065bf77615"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#a01564a0f3ccde4df91ac46065bf77615">DCL::CLog::CLog</a></div><div class="ttdeci">CLog()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">Logging.cpp:17</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a1d2d3914007154c46d7c154297ff7e39"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#a1d2d3914007154c46d7c154297ff7e39">DCL::CLog::clear</a></div><div class="ttdeci">void clear(void)</div><div class="ttdoc">Clear the log file and all log entries in memory.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">Logging.cpp:58</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a3653540972d38fdc601920d9f19e4dd4"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#a3653540972d38fdc601920d9f19e4dd4">DCL::CLog::deleteLogFile</a></div><div class="ttdeci">bool deleteLogFile(void)</div><div class="ttdoc">Deletes the current log file.</div><div class="ttdef"><b>Definition</b> <a href="#l00066">Logging.cpp:66</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a4ff6c01be34d498694b20112980f6d6b"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#a4ff6c01be34d498694b20112980f6d6b">DCL::CLog::setLogFileName</a></div><div class="ttdeci">void setLogFileName(const std::string &amp;strFilename=&quot;log.txt&quot;)</div><div class="ttdoc">Sets the log file name of the log file.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">Logging.cpp:93</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a63db6883a75bbd242279df668a538798"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#a63db6883a75bbd242279df668a538798">DCL::CLog::getEntryTimes</a></div><div class="ttdeci">void getEntryTimes(size_t entryIndex, float &amp;fSecondsOut, int &amp;iMinutesOut, int &amp;iHoursOut, int &amp;iDaysOut, int &amp;iWeeksOut) const</div><div class="ttdoc">Stores a log entry's time it was added since the log file was created to the passed variables.</div><div class="ttdef"><b>Definition</b> <a href="#l00118">Logging.cpp:118</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a80598d56065645c31b629abb58222a36"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#a80598d56065645c31b629abb58222a36">DCL::CLog::add</a></div><div class="ttdeci">void add(const std::string &amp;string)</div><div class="ttdoc">Add text to the log file and entries in memory.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">Logging.cpp:23</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_aab3211186ea1a191333d54b34a6cc463"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#aab3211186ea1a191333d54b34a6cc463">DCL::CLog::getEntryText</a></div><div class="ttdeci">std::string getEntryText(size_t entryIndex) const</div><div class="ttdoc">Returns a log entry's text string.</div><div class="ttdef"><b>Definition</b> <a href="#l00106">Logging.cpp:106</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_acfdc36c83c257b05e234124ff65a1e6a"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#acfdc36c83c257b05e234124ff65a1e6a">DCL::CLog::getEntryTime</a></div><div class="ttdeci">std::string getEntryTime(size_t entryIndex) const</div><div class="ttdoc">Returns a log entry's time it was added since the log file was created as a formatted string.</div><div class="ttdef"><b>Definition</b> <a href="#l00112">Logging.cpp:112</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_ae4a23a7eb5136c4530c6b9b1b0cbda71"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#ae4a23a7eb5136c4530c6b9b1b0cbda71">DCL::CLog::getEntry</a></div><div class="ttdeci">CLogEntry getEntry(size_t entryIndex) const</div><div class="ttdoc">Returns a log entry.</div><div class="ttdef"><b>Definition</b> <a href="#l00128">Logging.cpp:128</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_aec810fa6176e0ef2a27f7aa3281e0fbf"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#aec810fa6176e0ef2a27f7aa3281e0fbf">DCL::CLog::getNumEntries</a></div><div class="ttdeci">size_t getNumEntries(void) const</div><div class="ttdoc">Return number of entries added via add()</div><div class="ttdef"><b>Definition</b> <a href="#l00101">Logging.cpp:101</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a03ea9e97cde374fb2d575850cef4682a"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a03ea9e97cde374fb2d575850cef4682a">DCL::CTimer::getClock</a></div><div class="ttdeci">void getClock(float &amp;fSeconds, int &amp;iMinutes, int &amp;iHours, int &amp;iDays, int &amp;iWeeks) const</div><div class="ttdoc">Based on current runtime, sets parsed values to seconds, minutes, hours, days and weeks.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00127">Timer.cpp:127</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a1c746ac5f8bf4032562a785dda02eb39"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a1c746ac5f8bf4032562a785dda02eb39">DCL::CTimer::update</a></div><div class="ttdeci">void update(void)</div><div class="ttdoc">Call this to compute time difference between last call to this method.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00029">Timer.cpp:29</a></div></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordtype">void</span> CLog::_writeLogHeader(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="comment">// Clear file and add header</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        std::ofstream file(_mstrFilename, std::ios::trunc);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="comment">// Write styles and start body</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        file &lt;&lt; <span class="stringliteral">&quot;&lt;html&gt;\n&lt;head&gt;\n&lt;style&gt;\n&quot;</span>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        file &lt;&lt; <span class="stringliteral">&quot;body { background-color: rgba(50, 50, 50, 1.0); color: rgba(255, 255, 255, 1.0); }\n&quot;</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        file &lt;&lt; <span class="stringliteral">&quot;tr:nth-child(even) { background-color: rgba(100, 100, 100, 0.8); color: rgba(250, 250, 250, 1.0); }\n&quot;</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        file &lt;&lt; <span class="stringliteral">&quot;tr:nth-child(odd) { background-color: rgba(150, 150, 150, 0.8); color: rgba(250, 250, 250, 1.0); }\n&quot;</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        file &lt;&lt; <span class="stringliteral">&quot;&lt;/style&gt;\n&lt;/head&gt;\n&lt;body&gt;&quot;</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="comment">// Write heading</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        file &lt;&lt; <span class="stringliteral">&quot;&lt;h1 style = \&quot;text-align:center\&quot;&gt;&quot;</span> &lt;&lt; _mstrFilename &lt;&lt; <span class="stringliteral">&quot;&lt;/h1&gt;\n&quot;</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="comment">// Write system information after the heading, but before the main table begins</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="comment">// RAM usage of process</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_struct" href="struct_d_c_l_1_1_s_mem_info.html">SMemInfo</a> memInfo;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <a class="code hl_function" href="namespace_d_c_l.html#af77c548d302184b4036500dc42cba474">getMemInfo</a>(memInfo);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordtype">double</span> dMBUsedByProcess = memInfo.<a class="code hl_variable" href="struct_d_c_l_1_1_s_mem_info.html#a3511eef8d46e10be6e75f0bde8a070f3">proc</a>.<a class="code hl_variable" href="struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#aa2b88598b79aeb6e9c85fad5a36d0aa9">iWorkingSetSize</a> / (1024.0 * 1024.0);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        file &lt;&lt; <span class="stringliteral">&quot;RAM used by process: &quot;</span> &lt;&lt; std::to_string(dMBUsedByProcess) &lt;&lt; <span class="stringliteral">&quot;MB\n&quot;</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        file &lt;&lt; <span class="stringliteral">&quot;&lt;br&gt;\n&quot;</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="comment">// Number of CPU logical cores</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        file &lt;&lt; <span class="stringliteral">&quot;Number of logical CPU cores: &quot;</span> &lt;&lt; std::to_string(<a class="code hl_function" href="namespace_d_c_l.html#a0c3a1fc3ad79bf9e1389f2a9d0af1e69">getCPULogicalCores</a>()) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="comment">// Write begin table and write first row with headings for each column</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        file &lt;&lt; <span class="stringliteral">&quot;&lt;table width=\&quot;100%\&quot; border=\&quot;0\&quot;&gt;\n&quot;</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        file &lt;&lt; _strTableColumnText[0] &lt;&lt; <span class="stringliteral">&quot;TIME&quot;</span>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        file &lt;&lt; _strTableColumnText[1] &lt;&lt; <span class="stringliteral">&quot;DESCRIPTION&quot;</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        file &lt;&lt; _strTableColumnText[2] &lt;&lt; <span class="stringliteral">&quot;NAMESPACE:CLASS:METHOD&quot;</span>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        file &lt;&lt; _strTableColumnText[3] &lt;&lt; <span class="stringliteral">&quot;LINE NUMBER&quot;</span>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        file &lt;&lt; _strTableColumnText[4] &lt;&lt; <span class="stringliteral">&quot;SOURCE FILENAME&quot;</span>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        file &lt;&lt; <span class="stringliteral">&quot;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;\n&quot;</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">void</span> CLog::_writeLogFooter(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        std::ofstream file(_mstrFilename, std::ios::app);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="comment">// End table, body and html tags</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        file &lt;&lt; <span class="stringliteral">&quot;&lt;/table&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n&quot;</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        file.close();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}   <span class="comment">// namespace DCL</span></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html">DCL::CLogEntry</a></div><div class="ttdoc">A Log entry object which holds information about a single log entry. Used by the CLog class.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00022">Logging.h:23</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a5bdc28aeaf9db1c439db70392cb8b200"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a5bdc28aeaf9db1c439db70392cb8b200">DCL::CLogEntry::strFunctionName</a></div><div class="ttdeci">std::string strFunctionName</div><div class="ttdoc">A string holding the function name. Obtained from preprocessor predefined macro FUNCTION</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00028">Logging.h:28</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a5f3473a654e2443e11338e486e755de4"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a5f3473a654e2443e11338e486e755de4">DCL::CLogEntry::iTimeWeeks</a></div><div class="ttdeci">int iTimeWeeks</div><div class="ttdoc">Time since start of log file creation that log entry was added (Weeks as clock)</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00035">Logging.h:35</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a6971b9c22d2a855dd498ab70128cb73b"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a6971b9c22d2a855dd498ab70128cb73b">DCL::CLogEntry::iTimeMin</a></div><div class="ttdeci">int iTimeMin</div><div class="ttdoc">Time since start of log file creation that log entry was added (Minutes as clock)</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00032">Logging.h:32</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a6bab9fe7185a9cc52f74e91fd1acdbf9"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a6bab9fe7185a9cc52f74e91fd1acdbf9">DCL::CLogEntry::iTimeHours</a></div><div class="ttdeci">int iTimeHours</div><div class="ttdoc">Time since start of log file creation that log entry was added (Hours as clock)</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00033">Logging.h:33</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a77e7da07e888d534d63a1c495421b775"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a77e7da07e888d534d63a1c495421b775">DCL::CLogEntry::strSourceLineNumber</a></div><div class="ttdeci">std::string strSourceLineNumber</div><div class="ttdoc">A string holding the source code line number. Obtained from preprocessor predefined macro std::to_str...</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00030">Logging.h:30</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a79829a4aeb88d73ec9cfc0f366525e2e"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a79829a4aeb88d73ec9cfc0f366525e2e">DCL::CLogEntry::strTime</a></div><div class="ttdeci">std::string strTime</div><div class="ttdoc">Time since start of log file creation that log entry was added, formatted to a string.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00036">Logging.h:36</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a8038010ff8efc37a30d7305271afeba9"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a8038010ff8efc37a30d7305271afeba9">DCL::CLogEntry::strText</a></div><div class="ttdeci">std::string strText</div><div class="ttdoc">A string holding the text for this log entry.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00027">Logging.h:27</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_a958493c4b632e902f05519079e7ffb9d"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#a958493c4b632e902f05519079e7ffb9d">DCL::CLogEntry::strSourceFilename</a></div><div class="ttdeci">std::string strSourceFilename</div><div class="ttdoc">A string holding the source code filename. Obtained from preprocessor predefined macro FILE</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00029">Logging.h:29</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_aafff27b488dca7885410181cd0df9ef3"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#aafff27b488dca7885410181cd0df9ef3">DCL::CLogEntry::iTimeDays</a></div><div class="ttdeci">int iTimeDays</div><div class="ttdoc">Time since start of log file creation that log entry was added (Days as clock)</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00034">Logging.h:34</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_ab10c00c447814d37997677d6f48fd6db"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#ab10c00c447814d37997677d6f48fd6db">DCL::CLogEntry::fTimeSeconds</a></div><div class="ttdeci">float fTimeSeconds</div><div class="ttdoc">Time since start of log file creation that log entry was added (Seconds as clock)</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00031">Logging.h:31</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_entry_html_ab377d2fba010943771ecdb1b2f26877f"><div class="ttname"><a href="class_d_c_l_1_1_c_log_entry.html#ab377d2fba010943771ecdb1b2f26877f">DCL::CLogEntry::CLogEntry</a></div><div class="ttdeci">CLogEntry()</div><div class="ttdoc">Main logging file for DCL.</div><div class="ttdef"><b>Definition</b> <a href="#l00011">Logging.cpp:11</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_html"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html">DCL::CLog</a></div><div class="ttdoc">Logging of text to a text file.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00058">Logging.h:59</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a1fde7118bd92c0f684188d90adfa03bc"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#a1fde7118bd92c0f684188d90adfa03bc">DCL::CLog::add</a></div><div class="ttdeci">void add(const std::string &amp;strText, const std::string &amp;strFunctionName, const std::string &amp;strLineNumber, const std::string &amp;strSourceFilename)</div><div class="ttdoc">Add text to the log file.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">Logging.cpp:51</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a2fcf10b1cd58d18eaefac08011a7e98f"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#a2fcf10b1cd58d18eaefac08011a7e98f">DCL::CLog::~CLog</a></div><div class="ttdeci">~CLog()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">Logging.cpp:43</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a525ac4b37b68ab5bf0674fc0a55c1bf8"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#a525ac4b37b68ab5bf0674fc0a55c1bf8">DCL::CLog::CLog</a></div><div class="ttdeci">CLog(const std::string &amp;strFilename=&quot;log.html&quot;)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> <a href="#l00020">Logging.cpp:20</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a5fe12a8f0d7215ea75d99df41ee5fe93"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html#a5fe12a8f0d7215ea75d99df41ee5fe93">DCL::CLog::run_test</a></div><div class="ttdeci">void run_test(void)</div><div class="ttdoc">Test method to test logging.</div><div class="ttdef"><b>Definition</b> <a href="#l00128">Logging.cpp:128</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a03ea9e97cde374fb2d575850cef4682a"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a03ea9e97cde374fb2d575850cef4682a">DCL::CTimer::getClock</a></div><div class="ttdeci">void getClock(float &amp;fSeconds, int &amp;iMinutes, int &amp;iHours, int &amp;iDays, int &amp;iWeeks) const</div><div class="ttdoc">Based on current runtime, sets parsed values to seconds, minutes, hours, days and weeks.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00129">Timer.cpp:129</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a1c746ac5f8bf4032562a785dda02eb39"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a1c746ac5f8bf4032562a785dda02eb39">DCL::CTimer::update</a></div><div class="ttdeci">void update(void)</div><div class="ttdoc">Call this to compute time difference between last call to this method.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00031">Timer.cpp:31</a></div></div>
 <div class="ttc" id="anamespace_d_c_l_html"><div class="ttname"><a href="namespace_d_c_l.html">DCL</a></div><div class="ttdoc">The namespace in which everything within Dave's Code Library is stored inside.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8cpp_source.html#l00004">FiniteStateMachine.cpp:5</a></div></div>
+<div class="ttc" id="anamespace_d_c_l_html_a0c3a1fc3ad79bf9e1389f2a9d0af1e69"><div class="ttname"><a href="namespace_d_c_l.html#a0c3a1fc3ad79bf9e1389f2a9d0af1e69">DCL::getCPULogicalCores</a></div><div class="ttdeci">int getCPULogicalCores(void)</div><div class="ttdoc">Returns number of logical CPU cores.</div><div class="ttdef"><b>Definition</b> <a href="_utilities_8cpp_source.html#l00207">Utilities.cpp:207</a></div></div>
+<div class="ttc" id="anamespace_d_c_l_html_af77c548d302184b4036500dc42cba474"><div class="ttname"><a href="namespace_d_c_l.html#af77c548d302184b4036500dc42cba474">DCL::getMemInfo</a></div><div class="ttdeci">void getMemInfo(SMemInfo &amp;memInfo)</div><div class="ttdoc">Places memory information about the process and system into the given SMemInfo structure.</div><div class="ttdef"><b>Definition</b> <a href="_utilities_8cpp_source.html#l00164">Utilities.cpp:164</a></div></div>
+<div class="ttc" id="astruct_d_c_l_1_1_s_mem_info_1_1_s_mem_process_html_aa2b88598b79aeb6e9c85fad5a36d0aa9"><div class="ttname"><a href="struct_d_c_l_1_1_s_mem_info_1_1_s_mem_process.html#aa2b88598b79aeb6e9c85fad5a36d0aa9">DCL::SMemInfo::SMemProcess::iWorkingSetSize</a></div><div class="ttdeci">unsigned int iWorkingSetSize</div><div class="ttdoc">The current working set size. This is the total memory used by the current process....</div><div class="ttdef"><b>Definition</b> <a href="_utilities_8h_source.html#l00267">Utilities.h:267</a></div></div>
+<div class="ttc" id="astruct_d_c_l_1_1_s_mem_info_html"><div class="ttname"><a href="struct_d_c_l_1_1_s_mem_info.html">DCL::SMemInfo</a></div><div class="ttdoc">Holds system memory information which is set by getMemInfo()</div><div class="ttdef"><b>Definition</b> <a href="_utilities_8h_source.html#l00260">Utilities.h:261</a></div></div>
+<div class="ttc" id="astruct_d_c_l_1_1_s_mem_info_html_a3511eef8d46e10be6e75f0bde8a070f3"><div class="ttname"><a href="struct_d_c_l_1_1_s_mem_info.html#a3511eef8d46e10be6e75f0bde8a070f3">DCL::SMemInfo::proc</a></div><div class="ttdeci">SMemProcess proc</div><div class="ttdoc">Process information.</div><div class="ttdef"><b>Definition</b> <a href="_utilities_8h_source.html#l00295">Utilities.h:295</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

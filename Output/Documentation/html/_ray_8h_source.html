@@ -102,45 +102,42 @@ $(function(){initNavTree('_ray_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Ray.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_ray_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef RAY_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define RAY_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../Math/Vector3f.h&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef RAY_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define RAY_H</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_vector3f_8h.html">../Math/Vector3f.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_ray.html">   26</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_d_c_l_1_1_c_ray.html">CRay</a></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_ray.html#a90a6123ebf2e84e88ea68013fb9045de">CRay</a>();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_class" href="class_d_c_l_1_1_c_vector3f.html">CVector3f</a> <a class="code hl_function" href="class_d_c_l_1_1_c_ray.html#a47cec0c24873352a125fbcc795859e4d">at</a>(<span class="keywordtype">float</span> t) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_ray.html#aa6b02669c77e9984c7c60d140605baa6">   55</a></span>        <a class="code hl_class" href="class_d_c_l_1_1_c_vector3f.html">CVector3f</a> <a class="code hl_variable" href="class_d_c_l_1_1_c_ray.html#aa6b02669c77e9984c7c60d140605baa6">vOrigin</a>;          </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_ray.html#a7e1e7035a5c4672ded7826b5c8e537e1">   56</a></span>        <a class="code hl_class" href="class_d_c_l_1_1_c_vector3f.html">CVector3f</a> <a class="code hl_variable" href="class_d_c_l_1_1_c_ray.html#a7e1e7035a5c4672ded7826b5c8e537e1">vDirection</a>;       </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    };</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_ray.html">   21</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_d_c_l_1_1_c_ray.html">CRay</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_ray.html#a90a6123ebf2e84e88ea68013fb9045de">CRay</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_class" href="class_d_c_l_1_1_c_vector3f.html">CVector3f</a> <a class="code hl_function" href="class_d_c_l_1_1_c_ray.html#a47cec0c24873352a125fbcc795859e4d">at</a>(<span class="keywordtype">float</span> t) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_ray.html#aa6b02669c77e9984c7c60d140605baa6">   50</a></span>        <a class="code hl_class" href="class_d_c_l_1_1_c_vector3f.html">CVector3f</a> <a class="code hl_variable" href="class_d_c_l_1_1_c_ray.html#aa6b02669c77e9984c7c60d140605baa6">vOrigin</a>;          </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_ray.html#a7e1e7035a5c4672ded7826b5c8e537e1">   51</a></span>        <a class="code hl_class" href="class_d_c_l_1_1_c_vector3f.html">CVector3f</a> <a class="code hl_variable" href="class_d_c_l_1_1_c_ray.html#a7e1e7035a5c4672ded7826b5c8e537e1">vDirection</a>;       </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    };</div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}   <span class="comment">// namespace DCL</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif  </span><span class="comment">// #ifndef FILENAME_H</span></div>
-<div class="ttc" id="a_vector3f_8h_html"><div class="ttname"><a href="_vector3f_8h.html">Vector3f.h</a></div><div class="ttdoc">A three component floating point vector.</div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_ray_html"><div class="ttname"><a href="class_d_c_l_1_1_c_ray.html">DCL::CRay</a></div><div class="ttdoc">A ray class used to represent a ray.</div><div class="ttdef"><b>Definition</b> <a href="#l00026">Ray.h:27</a></div></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}   <span class="comment">// namespace DCL</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif  </span><span class="comment">// #ifndef FILENAME_H</span></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_ray_html"><div class="ttname"><a href="class_d_c_l_1_1_c_ray.html">DCL::CRay</a></div><div class="ttdoc">A ray class used to represent a ray.</div><div class="ttdef"><b>Definition</b> <a href="#l00021">Ray.h:22</a></div></div>
 <div class="ttc" id="aclass_d_c_l_1_1_c_ray_html_a47cec0c24873352a125fbcc795859e4d"><div class="ttname"><a href="class_d_c_l_1_1_c_ray.html#a47cec0c24873352a125fbcc795859e4d">DCL::CRay::at</a></div><div class="ttdeci">CVector3f at(float t) const</div><div class="ttdoc">Given the value t, returns a CVector3f which represents a point along a ray.</div><div class="ttdef"><b>Definition</b> <a href="_ray_8cpp_source.html#l00010">Ray.cpp:10</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_ray_html_a7e1e7035a5c4672ded7826b5c8e537e1"><div class="ttname"><a href="class_d_c_l_1_1_c_ray.html#a7e1e7035a5c4672ded7826b5c8e537e1">DCL::CRay::vDirection</a></div><div class="ttdeci">CVector3f vDirection</div><div class="ttdoc">The direction of the ray.</div><div class="ttdef"><b>Definition</b> <a href="#l00056">Ray.h:56</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_ray_html_a7e1e7035a5c4672ded7826b5c8e537e1"><div class="ttname"><a href="class_d_c_l_1_1_c_ray.html#a7e1e7035a5c4672ded7826b5c8e537e1">DCL::CRay::vDirection</a></div><div class="ttdeci">CVector3f vDirection</div><div class="ttdoc">The direction of the ray.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">Ray.h:51</a></div></div>
 <div class="ttc" id="aclass_d_c_l_1_1_c_ray_html_a90a6123ebf2e84e88ea68013fb9045de"><div class="ttname"><a href="class_d_c_l_1_1_c_ray.html#a90a6123ebf2e84e88ea68013fb9045de">DCL::CRay::CRay</a></div><div class="ttdeci">CRay()</div><div class="ttdoc">Constructor, does nothing.</div><div class="ttdef"><b>Definition</b> <a href="_ray_8cpp_source.html#l00005">Ray.cpp:5</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_ray_html_aa6b02669c77e9984c7c60d140605baa6"><div class="ttname"><a href="class_d_c_l_1_1_c_ray.html#aa6b02669c77e9984c7c60d140605baa6">DCL::CRay::vOrigin</a></div><div class="ttdeci">CVector3f vOrigin</div><div class="ttdoc">The origin position of the ray.</div><div class="ttdef"><b>Definition</b> <a href="#l00055">Ray.h:55</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_vector3f_html"><div class="ttname"><a href="class_d_c_l_1_1_c_vector3f.html">DCL::CVector3f</a></div><div class="ttdoc">Vector class, using 3 floats.</div><div class="ttdef"><b>Definition</b> <a href="_vector3f_8h_source.html#l00013">Vector3f.h:14</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_ray_html_aa6b02669c77e9984c7c60d140605baa6"><div class="ttname"><a href="class_d_c_l_1_1_c_ray.html#aa6b02669c77e9984c7c60d140605baa6">DCL::CRay::vOrigin</a></div><div class="ttdeci">CVector3f vOrigin</div><div class="ttdoc">The origin position of the ray.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Ray.h:50</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_vector3f_html"><div class="ttname"><a href="class_d_c_l_1_1_c_vector3f.html">DCL::CVector3f</a></div><div class="ttdoc">Vector class, using 3 floats.</div><div class="ttdef"><b>Definition</b> <a href="_vector3f_8h_source.html#l00008">Vector3f.h:9</a></div></div>
 <div class="ttc" id="anamespace_d_c_l_html"><div class="ttname"><a href="namespace_d_c_l.html">DCL</a></div><div class="ttdoc">The namespace in which everything within Dave's Code Library is stored inside.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8cpp_source.html#l00004">FiniteStateMachine.cpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ca631da8804920316b0d95ddc139151c.html">StaticLibs</a></li><li class="navelem"><a class="el" href="dir_f63e756ca357de737ba1ee25d099ed15.html">DavesCodeLib</a></li><li class="navelem"><a class="el" href="dir_69bcbfcfb7552b492b275e66ece1bbca.html">RayTracer</a></li><li class="navelem"><a class="el" href="_ray_8h.html">Ray.h</a></li>
+    <li class="navelem"><a class="el" href="dir_ca631da8804920316b0d95ddc139151c.html">StaticLibs</a></li><li class="navelem"><a class="el" href="dir_f63e756ca357de737ba1ee25d099ed15.html">DavesCodeLib</a></li><li class="navelem"><a class="el" href="dir_69bcbfcfb7552b492b275e66ece1bbca.html">RayTracer</a></li><li class="navelem"><b>Ray.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>

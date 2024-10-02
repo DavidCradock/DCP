@@ -42,11 +42,11 @@ namespace DCL
 		void scissorTestDisable(void);
 		void scissorTestEnable(void);
 
-		CResourceTexture2DFromCImageBase* addTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber);
-		CResourceTexture2DFromCImageBase* getTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber);
-		bool getTexture2DFromCImageExists(const std::string& strResourceName, unsigned int uiGroupNumber);
-		void removeTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber);
-		void removeAllTexture2DFromCImage(unsigned int uiGroupNumber);
+		CResourceTexture2DBase* addTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
+		CResourceTexture2DBase* getTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
+		bool getTexture2DExists(const std::string& strResourceName, unsigned int uiGroupNumber);
+		void removeTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
+		void removeAllTexture2D(unsigned int uiGroupNumber);
 
 	private:
 		class CPrim;		///< Declaration of this class's private implementation holding things which we do not wish to expose when including this header file.

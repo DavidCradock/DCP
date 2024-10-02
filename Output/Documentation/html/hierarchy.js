@@ -6,6 +6,8 @@ var hierarchy =
     [ "DCL::CAudioSample", "class_d_c_l_1_1_c_audio_sample.html", null ],
     [ "DCL::CColourf", "class_d_c_l_1_1_c_colourf.html", null ],
     [ "DCL::CColouruc", "class_d_c_l_1_1_c_colouruc.html", null ],
+    [ "DCL::CDimension2D", "class_d_c_l_1_1_c_dimension2_d.html", null ],
+    [ "DCL::CDimension3D", "class_d_c_l_1_1_c_dimension3_d.html", null ],
     [ "DCL::CException", "class_d_c_l_1_1_c_exception.html", null ],
     [ "DCL::CFileManager", "class_d_c_l_1_1_c_file_manager.html", null ],
     [ "DCL::CFileMemory", "class_d_c_l_1_1_c_file_memory.html", null ],
@@ -19,6 +21,7 @@ var hierarchy =
     [ "DCL::CImageAtlasPacker", "class_d_c_l_1_1_c_image_atlas_packer.html", null ],
     [ "DCL::CLog", "class_d_c_l_1_1_c_log.html", null ],
     [ "DCL::CLogEntry", "class_d_c_l_1_1_c_log_entry.html", null ],
+    [ "DCL::CMandelbrotGenerator", "class_d_c_l_1_1_c_mandelbrot_generator.html", null ],
     [ "DCL::CMatrix", "class_d_c_l_1_1_c_matrix.html", null ],
     [ "DCL::CNeuralNetworkFeedForward", "class_d_c_l_1_1_c_neural_network_feed_forward.html", null ],
     [ "DCL::CNeuron", "class_d_c_l_1_1_c_neuron.html", null ],
@@ -27,8 +30,9 @@ var hierarchy =
     [ "DCL::COctTree", "class_d_c_l_1_1_c_oct_tree.html", null ],
     [ "DCL::COctTreeEntity", "class_d_c_l_1_1_c_oct_tree_entity.html", null ],
     [ "DCL::COctTreeNode", "class_d_c_l_1_1_c_oct_tree_node.html", null ],
-    [ "DCL::CRendererOpenGL::CPimpl", "class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_pimpl.html", null ],
     [ "DCL::CPlane", "class_d_c_l_1_1_c_plane.html", null ],
+    [ "DCL::CRendererOpenGL::CPrim", "class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_prim.html", null ],
+    [ "DCL::CRendererVulkan::CPrim", "class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html", null ],
     [ "DCL::CProfiler", "class_d_c_l_1_1_c_profiler.html", null ],
     [ "DCL::CQuadTree", "class_d_c_l_1_1_c_quad_tree.html", null ],
     [ "DCL::CQuadTreeEntity", "class_d_c_l_1_1_c_quad_tree_entity.html", null ],
@@ -41,6 +45,10 @@ var hierarchy =
       [ "DCL::CRendererVulkan", "class_d_c_l_1_1_c_renderer_vulkan.html", null ]
     ] ],
     [ "DCL::CRendererManager", "class_d_c_l_1_1_c_renderer_manager.html", null ],
+    [ "DCL::CResourceTexture2DFromCImageBase", "class_d_c_l_1_1_c_resource_texture2_d_from_c_image_base.html", [
+      [ "DCL::CResourceTexture2DFromCImageOpenGL", "class_d_c_l_1_1_c_resource_texture2_d_from_c_image_open_g_l.html", null ],
+      [ "DCL::CResourceTexture2DFromCImageVulkan", "class_d_c_l_1_1_c_resource_texture2_d_from_c_image_vulkan.html", null ]
+    ] ],
     [ "DCL::CSingleton< T >", "class_d_c_l_1_1_c_singleton.html", null ],
     [ "DCL::CTimer", "class_d_c_l_1_1_c_timer.html", null ],
     [ "DCL::CTimerMinimal", "class_d_c_l_1_1_c_timer_minimal.html", null ],

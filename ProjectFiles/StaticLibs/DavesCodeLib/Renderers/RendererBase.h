@@ -2,7 +2,7 @@
 #define RENDERER_H
 
 // Resources
-#include "Resources/ResourceTexture2DFromCImage.h"
+#include "Resources/ResourceTexture2D.h"
 
 
 #include "../Core/Colourf.h"
@@ -130,14 +130,13 @@ namespace DCL
 		/// \brief Enable scissor testing
 		virtual void scissorTestEnable(void) = 0;
 
-		/// \brief Adds a new RecourceTexture2DFromCImage object to be managed.
+		/// \brief Adds a new RecourceTexture2D object to be managed.
 		///
 		/// \param strResourceName The name of the new resource which we can use to refer to it with other methods.
 		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
 		/// 
 		/// If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned.
-		/// When the API context is destroyed and then recreated, the image data is reloaded from the stored filename.
-		virtual CResourceTexture2DFromCImageBase* addTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+		virtual CResourceTexture2DBase* addTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
 
 		/// \brief Returns a pointer to an existing resource
 		///
@@ -145,13 +144,13 @@ namespace DCL
 		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
 		/// 
 		/// If the resource couldn't be found, an exception is thrown.
-		virtual CResourceTexture2DFromCImageBase* getTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+		virtual CResourceTexture2DBase* getTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
 
 		/// \brief Returns whether a named resource exists
 		///
 		/// \param strResourceName The name of the resource.
 		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
-		virtual bool getTexture2DFromCImageExists(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+		virtual bool getTexture2DExists(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
 
 		/// \brief Removes a previously added resource from this manager
 		///
@@ -160,12 +159,12 @@ namespace DCL
 		/// 
 		/// If the resource doesn't exist, this silently fails.
 		/// If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains.
-		virtual void removeTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+		virtual void removeTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
 
 		/// \brief Removes all previously added resources from the given numbered group
 		///
 		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
-		virtual void removeAllTexture2DFromCImage(unsigned int uiGroupNumber = 1) = 0;
+		virtual void removeAllTexture2D(unsigned int uiGroupNumber = 1) = 0;
 
 
 

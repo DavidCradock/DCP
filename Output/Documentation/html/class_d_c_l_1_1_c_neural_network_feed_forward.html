@@ -164,9 +164,9 @@ Public Member Functions</h2></td></tr>
 <p>Inputs should each be given, which are around the same scale, for example if a vector was given to a target and it wasn't normalized, and another input was given, perhaps say the entity's normalized direction vector, the vector with the larger magnitude would have a much greater impact on the neural network than the entity's direction vector and as a result, the network may have a really hard time trying to find a relationship between them. Another great tip is that sometimes, centering the inputs around zero give better results.</p>
 <p>What about the number of neurons and number of layers? What should we choose there? It's pretty much down to trial and error and getting a feel for how the network is behaving. Typically, one layer is enough. As for the number of neurons, yup, same again, trial and error. However, too few and the network won't stand a chance at giving good outputs and too many, well, it'll be OK, but it will be slower to compute.</p>
 <p>So with all that out of the way, how do we actually use them? We create a network, choosing the number of inputs we'll give it, the number of layers, the number of neurons in each layer and the number of outputs. We then use another class, to train the network. Then once the we've found networks which perform as we wish, we can then save those best performing networks to a file. Then in our game/program, we can create a network, for each entity in our program, load the networks weights and configuration from the file and then update it, passing it it's input we used during training and getting the outputs and applying those the same we did during training, nice.</p>
-<p>At the moment, the training class we use is in <a class="el" href="_genetic_algorithm_8h.html" title="Genetic algorithm training for neural networks.">geneticAlgorithm.h</a>/cpp, go there to see more detail on how we train the networks. </p>
+<p>At the moment, the training class we use is in <a class="el" href="_genetic_algorithm_8h_source.html">geneticAlgorithm.h</a>/cpp, go there to see more detail on how we train the networks. </p>
 
-<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8h_source.html#l00199">199</a> of file <a class="el" href="_neural_net_feed_forward_8h_source.html">NeuralNetFeedForward.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8h_source.html#l00194">194</a> of file <a class="el" href="_neural_net_feed_forward_8h_source.html">NeuralNetFeedForward.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7a637bc9b034c071daab0e917bbd18a2" name="a7a637bc9b034c071daab0e917bbd18a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a637bc9b034c071daab0e917bbd18a2">&#9670;&#160;</a></span>CNeuralNetworkFeedForward() <span class="overload">[1/2]</span></h2>
@@ -231,7 +231,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>Sets values to the ones given </p>
 
-<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00032">32</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00033">33</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
 
 </div>
 </div>
@@ -255,7 +255,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A vector of ints holding the split points between individual neurons.</dd></dl>
 <p>This returns points in the weights vector which are spaced out between each neuron. This makes it so that when we split the weights of the parents, when creating child networks, the splits are between neurons, rather than ANY position which could be between some of the weights of a single neuron. If this happened, that individual neuron when passed on to the child, could be considered "mutated", as we are not passing on a whole neuron, only a part of it. </p>
 
-<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00201">201</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00202">202</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
 
 </div>
 </div>
@@ -299,7 +299,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00037">37</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00038">38</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
 
 </div>
 </div>
@@ -321,7 +321,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns a vector holding all the weights of all the neurons in each of the layers, including the output layer. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector holding all the weights of this network. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00083">83</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00084">84</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
 
 </div>
 </div>
@@ -343,7 +343,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns the number of weights of all the neurons in each of the layers, including the output layer. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of weights in this network. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00103">103</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00104">104</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
 
 </div>
 </div>
@@ -370,7 +370,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00122">122</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00123">123</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
 
 </div>
 </div>
@@ -398,7 +398,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>Higher values, flatten the curve, lower ones tighten it. A default value of 1 is usually used. Do not set it to zero, this'll create a divide by zero error. (Actually, an exception occurs) </p>
 
-<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00195">195</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00196">196</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
 
 </div>
 </div>
@@ -426,7 +426,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>This is typically set to -1 and left alone. </p>
 
-<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00190">190</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00191">191</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
 
 </div>
 </div>
@@ -455,7 +455,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A vector of doubles holding the output values of the network.</dd></dl>
 <p>If invalid number of inputs is given, an exception occurs </p>
 
-<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00141">141</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_neural_net_feed_forward_8cpp_source.html#l00142">142</a> of file <a class="el" href="_neural_net_feed_forward_8cpp_source.html">NeuralNetFeedForward.cpp</a>.</p>
 
 </div>
 </div>

@@ -100,6 +100,7 @@ $(function(){initNavTree('class_d_c_l_1_1_c_log_entry.html',''); initResizable(t
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_d_c_l_1_1_c_log_entry-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">DCL::CLogEntry Class Reference</div></div>
@@ -111,11 +112,26 @@ $(function(){initNavTree('class_d_c_l_1_1_c_log_entry.html',''); initResizable(t
 
 <p><code>#include &lt;<a class="el" href="_logging_8h_source.html">Logging.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab377d2fba010943771ecdb1b2f26877f" id="r_ab377d2fba010943771ecdb1b2f26877f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab377d2fba010943771ecdb1b2f26877f">CLogEntry</a> ()</td></tr>
+<tr class="memdesc:ab377d2fba010943771ecdb1b2f26877f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main logging file for <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>.  <br /></td></tr>
+<tr class="separator:ab377d2fba010943771ecdb1b2f26877f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a8038010ff8efc37a30d7305271afeba9" id="r_a8038010ff8efc37a30d7305271afeba9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8038010ff8efc37a30d7305271afeba9">strText</a></td></tr>
 <tr class="memdesc:a8038010ff8efc37a30d7305271afeba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string holding the text for this log entry.  <br /></td></tr>
 <tr class="separator:a8038010ff8efc37a30d7305271afeba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bdc28aeaf9db1c439db70392cb8b200" id="r_a5bdc28aeaf9db1c439db70392cb8b200"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bdc28aeaf9db1c439db70392cb8b200">strFunctionName</a></td></tr>
+<tr class="memdesc:a5bdc28aeaf9db1c439db70392cb8b200"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string holding the function name. Obtained from preprocessor predefined macro <b>FUNCTION</b>  <br /></td></tr>
+<tr class="separator:a5bdc28aeaf9db1c439db70392cb8b200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a958493c4b632e902f05519079e7ffb9d" id="r_a958493c4b632e902f05519079e7ffb9d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a958493c4b632e902f05519079e7ffb9d">strSourceFilename</a></td></tr>
+<tr class="memdesc:a958493c4b632e902f05519079e7ffb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string holding the source code filename. Obtained from preprocessor predefined macro <b>FILE</b>  <br /></td></tr>
+<tr class="separator:a958493c4b632e902f05519079e7ffb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e7da07e888d534d63a1c495421b775" id="r_a77e7da07e888d534d63a1c495421b775"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77e7da07e888d534d63a1c495421b775">strSourceLineNumber</a></td></tr>
+<tr class="memdesc:a77e7da07e888d534d63a1c495421b775"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string holding the source code line number. Obtained from preprocessor predefined macro std::to_string(<b>LINE</b>)  <br /></td></tr>
+<tr class="separator:a77e7da07e888d534d63a1c495421b775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab10c00c447814d37997677d6f48fd6db" id="r_ab10c00c447814d37997677d6f48fd6db"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab10c00c447814d37997677d6f48fd6db">fTimeSeconds</a></td></tr>
 <tr class="memdesc:ab10c00c447814d37997677d6f48fd6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time since start of log file creation that log entry was added (Seconds as clock)  <br /></td></tr>
 <tr class="separator:ab10c00c447814d37997677d6f48fd6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,7 +155,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>A Log entry object which holds information about a single log entry. Used by the <a class="el" href="class_d_c_l_1_1_c_log.html" title="Logging of text to a text file.">CLog</a> class. </p>
 <p>See <a class="el" href="class_d_c_l_1_1_c_log.html" title="Logging of text to a text file.">CLog</a> class for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00023">23</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00022">22</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab377d2fba010943771ecdb1b2f26877f" name="ab377d2fba010943771ecdb1b2f26877f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab377d2fba010943771ecdb1b2f26877f">&#9670;&#160;</a></span>CLogEntry()</h2>
@@ -156,7 +172,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00007">7</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
+<p>Main logging file for <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00011">11</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
 
 </div>
 </div>
@@ -175,7 +193,7 @@ Public Attributes</h2></td></tr>
 
 <p>Time since start of log file creation that log entry was added (Seconds as clock) </p>
 
-<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00029">29</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00031">31</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
 
 </div>
 </div>
@@ -193,7 +211,7 @@ Public Attributes</h2></td></tr>
 
 <p>Time since start of log file creation that log entry was added (Days as clock) </p>
 
-<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00032">32</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00034">34</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
 
 </div>
 </div>
@@ -211,7 +229,7 @@ Public Attributes</h2></td></tr>
 
 <p>Time since start of log file creation that log entry was added (Hours as clock) </p>
 
-<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00031">31</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00033">33</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
 
 </div>
 </div>
@@ -229,7 +247,7 @@ Public Attributes</h2></td></tr>
 
 <p>Time since start of log file creation that log entry was added (Minutes as clock) </p>
 
-<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00030">30</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00032">32</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
 
 </div>
 </div>
@@ -247,7 +265,61 @@ Public Attributes</h2></td></tr>
 
 <p>Time since start of log file creation that log entry was added (Weeks as clock) </p>
 
-<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00033">33</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00035">35</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+
+</div>
+</div>
+<a id="a5bdc28aeaf9db1c439db70392cb8b200" name="a5bdc28aeaf9db1c439db70392cb8b200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bdc28aeaf9db1c439db70392cb8b200">&#9670;&#160;</a></span>strFunctionName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DCL::CLogEntry::strFunctionName</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A string holding the function name. Obtained from preprocessor predefined macro <b>FUNCTION</b> </p>
+
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00028">28</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+
+</div>
+</div>
+<a id="a958493c4b632e902f05519079e7ffb9d" name="a958493c4b632e902f05519079e7ffb9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a958493c4b632e902f05519079e7ffb9d">&#9670;&#160;</a></span>strSourceFilename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DCL::CLogEntry::strSourceFilename</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A string holding the source code filename. Obtained from preprocessor predefined macro <b>FILE</b> </p>
+
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00029">29</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+
+</div>
+</div>
+<a id="a77e7da07e888d534d63a1c495421b775" name="a77e7da07e888d534d63a1c495421b775"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77e7da07e888d534d63a1c495421b775">&#9670;&#160;</a></span>strSourceLineNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DCL::CLogEntry::strSourceLineNumber</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A string holding the source code line number. Obtained from preprocessor predefined macro std::to_string(<b>LINE</b>) </p>
+
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00030">30</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
 
 </div>
 </div>
@@ -265,7 +337,7 @@ Public Attributes</h2></td></tr>
 
 <p>A string holding the text for this log entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00028">28</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00027">27</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
 
 </div>
 </div>
@@ -283,7 +355,7 @@ Public Attributes</h2></td></tr>
 
 <p>Time since start of log file creation that log entry was added, formatted to a string. </p>
 
-<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00034">34</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00036">36</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
 
 </div>
 </div>

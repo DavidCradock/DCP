@@ -102,69 +102,65 @@ $(function(){initNavTree('_quad_tree_entity_8h_source.html',''); initResizable(t
   <div class="headertitle"><div class="title">QuadTreeEntity.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_quad_tree_entity_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef QUADTREEENTITY_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define QUADTREEENTITY_H</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef QUADTREEENTITY_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define QUADTREEENTITY_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../Math/Vector2f.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../Core/Colourf.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_vector2f_8h.html">../Math/Vector2f.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_colourf_8h.html">../Core/Colourf.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">class </span>CQuadTreeNode;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_quad_tree_entity.html">   21</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_d_c_l_1_1_c_quad_tree_entity.html">CQuadTreeEntity</a></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_d_c_l_1_1_c_quad_tree.html">CQuadTree</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_d_c_l_1_1_c_quad_tree_node.html">CQuadTreeNode</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_quad_tree_entity.html#aaafe3f9a1315651839bd3e5556539d6b">CQuadTreeEntity</a>(<span class="keyword">const</span> std::string&amp; strName, <span class="keywordtype">int</span> iPosX, <span class="keywordtype">int</span> iPosY, <a class="code hl_class" href="class_d_c_l_1_1_c_quad_tree_node.html">CQuadTreeNode</a>* pNodeOwner, <span class="keywordtype">int</span> iUserData = 0, <span class="keywordtype">void</span> *pUserData = 0);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">//      void debugSetColour(CColour&amp; colour);</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">class </span>CQuadTreeNode;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_quad_tree_entity.html">   16</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_d_c_l_1_1_c_quad_tree_entity.html">CQuadTreeEntity</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_d_c_l_1_1_c_quad_tree.html">CQuadTree</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_d_c_l_1_1_c_quad_tree_node.html">CQuadTreeNode</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_quad_tree_entity.html#aaafe3f9a1315651839bd3e5556539d6b">CQuadTreeEntity</a>(<span class="keyword">const</span> std::string&amp; strName, <span class="keywordtype">int</span> iPosX, <span class="keywordtype">int</span> iPosY, <a class="code hl_class" href="class_d_c_l_1_1_c_quad_tree_node.html">CQuadTreeNode</a>* pNodeOwner, <span class="keywordtype">int</span> iUserData = 0, <span class="keywordtype">void</span> *pUserData = 0);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//      void debugSetColour(CColour&amp; colour);</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_class" href="class_d_c_l_1_1_c_vector2f.html">CVector2f</a> <a class="code hl_function" href="class_d_c_l_1_1_c_quad_tree_entity.html#ada593f42a1a9095813c6e17349e0a150">getPosition</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_class" href="class_d_c_l_1_1_c_vector2f.html">CVector2f</a> <a class="code hl_function" href="class_d_c_l_1_1_c_quad_tree_entity.html#ada593f42a1a9095813c6e17349e0a150">getPosition</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        std::string <a class="code hl_function" href="class_d_c_l_1_1_c_quad_tree_entity.html#afc739826dc7c2ffddf2a182bb97dccd2">getName</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        std::string <a class="code hl_function" href="class_d_c_l_1_1_c_quad_tree_entity.html#afc739826dc7c2ffddf2a182bb97dccd2">getName</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="comment">// Below are members which may be set to store various information.</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="comment">// They have nothing to do with the quad tree itself.</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_quad_tree_entity.html#aae22e634fb10aba3d5889bbfcd2ae3d9">   46</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="class_d_c_l_1_1_c_quad_tree_entity.html#aae22e634fb10aba3d5889bbfcd2ae3d9">miUserData</a>;         </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_quad_tree_entity.html#a24c2e7f2e8d1ef3c67413b0a2124df29">   47</a></span>        <span class="keywordtype">void</span>* <a class="code hl_variable" href="class_d_c_l_1_1_c_quad_tree_entity.html#a24c2e7f2e8d1ef3c67413b0a2124df29">mpUserData</a>;       </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="comment">// Below are members which may be set to store various information.</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="comment">// They have nothing to do with the quad tree itself.</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_quad_tree_entity.html#aae22e634fb10aba3d5889bbfcd2ae3d9">   51</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="class_d_c_l_1_1_c_quad_tree_entity.html#aae22e634fb10aba3d5889bbfcd2ae3d9">miUserData</a>;         </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_quad_tree_entity.html#a24c2e7f2e8d1ef3c67413b0a2124df29">   52</a></span>        <span class="keywordtype">void</span>* <a class="code hl_variable" href="class_d_c_l_1_1_c_quad_tree_entity.html#a24c2e7f2e8d1ef3c67413b0a2124df29">mpUserData</a>;       </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        std::string _mstrName;          </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordtype">int</span> _miPosX;                    </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">int</span> _miPosY;                    </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_class" href="class_d_c_l_1_1_c_quad_tree_node.html">CQuadTreeNode</a>* _mpNodeOwner;    </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">//      CColour _mColDebug;             ///&lt; The colour used when debug rendering this entity</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    };</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        std::string _mstrName;          </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">int</span> _miPosX;                    </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">int</span> _miPosY;                    </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_class" href="class_d_c_l_1_1_c_quad_tree_node.html">CQuadTreeNode</a>* _mpNodeOwner;    </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">//      CColour _mColDebug;             ///&lt; The colour used when debug rendering this entity</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    };</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}   <span class="comment">// namespace DCL</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif  </span><span class="comment">// #ifndef FILENAME_H</span></div>
-<div class="ttc" id="a_colourf_8h_html"><div class="ttname"><a href="_colourf_8h.html">Colourf.h</a></div><div class="ttdoc">Contains the CColourf class for representing a colour using a float for each colour component RGBA,...</div></div>
-<div class="ttc" id="a_vector2f_8h_html"><div class="ttname"><a href="_vector2f_8h.html">Vector2f.h</a></div><div class="ttdoc">2D Vector</div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_entity_html"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_entity.html">DCL::CQuadTreeEntity</a></div><div class="ttdoc">An entity which is assigned into a CQuadTreeNode.</div><div class="ttdef"><b>Definition</b> <a href="#l00021">QuadTreeEntity.h:22</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_entity_html_a24c2e7f2e8d1ef3c67413b0a2124df29"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_entity.html#a24c2e7f2e8d1ef3c67413b0a2124df29">DCL::CQuadTreeEntity::mpUserData</a></div><div class="ttdeci">void * mpUserData</div><div class="ttdoc">Can store a void pointer for use by you for any required reason.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">QuadTreeEntity.h:52</a></div></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}   <span class="comment">// namespace DCL</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif  </span><span class="comment">// #ifndef FILENAME_H</span></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_entity_html"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_entity.html">DCL::CQuadTreeEntity</a></div><div class="ttdoc">An entity which is assigned into a CQuadTreeNode.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">QuadTreeEntity.h:17</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_entity_html_a24c2e7f2e8d1ef3c67413b0a2124df29"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_entity.html#a24c2e7f2e8d1ef3c67413b0a2124df29">DCL::CQuadTreeEntity::mpUserData</a></div><div class="ttdeci">void * mpUserData</div><div class="ttdoc">Can store a void pointer for use by you for any required reason.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">QuadTreeEntity.h:47</a></div></div>
 <div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_entity_html_aaafe3f9a1315651839bd3e5556539d6b"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_entity.html#aaafe3f9a1315651839bd3e5556539d6b">DCL::CQuadTreeEntity::CQuadTreeEntity</a></div><div class="ttdeci">CQuadTreeEntity(const std::string &amp;strName, int iPosX, int iPosY, CQuadTreeNode *pNodeOwner, int iUserData=0, void *pUserData=0)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> <a href="_quad_tree_entity_8cpp_source.html#l00006">QuadTreeEntity.cpp:6</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_entity_html_aae22e634fb10aba3d5889bbfcd2ae3d9"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_entity.html#aae22e634fb10aba3d5889bbfcd2ae3d9">DCL::CQuadTreeEntity::miUserData</a></div><div class="ttdeci">int miUserData</div><div class="ttdoc">Can store a value for use by you for any required reason.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">QuadTreeEntity.h:51</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_entity_html_aae22e634fb10aba3d5889bbfcd2ae3d9"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_entity.html#aae22e634fb10aba3d5889bbfcd2ae3d9">DCL::CQuadTreeEntity::miUserData</a></div><div class="ttdeci">int miUserData</div><div class="ttdoc">Can store a value for use by you for any required reason.</div><div class="ttdef"><b>Definition</b> <a href="#l00046">QuadTreeEntity.h:46</a></div></div>
 <div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_entity_html_ada593f42a1a9095813c6e17349e0a150"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_entity.html#ada593f42a1a9095813c6e17349e0a150">DCL::CQuadTreeEntity::getPosition</a></div><div class="ttdeci">CVector2f getPosition(void)</div><div class="ttdoc">Set the debug colour of the entity.</div><div class="ttdef"><b>Definition</b> <a href="_quad_tree_entity_8cpp_source.html#l00025">QuadTreeEntity.cpp:25</a></div></div>
 <div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_entity_html_afc739826dc7c2ffddf2a182bb97dccd2"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_entity.html#afc739826dc7c2ffddf2a182bb97dccd2">DCL::CQuadTreeEntity::getName</a></div><div class="ttdeci">std::string getName(void)</div><div class="ttdoc">Returns the name of the entity.</div><div class="ttdef"><b>Definition</b> <a href="_quad_tree_entity_8cpp_source.html#l00033">QuadTreeEntity.cpp:33</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_html"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree.html">DCL::CQuadTree</a></div><div class="ttdoc">This is a 2D spatial partitioning class.</div><div class="ttdef"><b>Definition</b> <a href="_quad_tree_8h_source.html#l00046">QuadTree.h:47</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_node_html"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_node.html">DCL::CQuadTreeNode</a></div><div class="ttdoc">A node used by the CQuadTree class.</div><div class="ttdef"><b>Definition</b> <a href="_quad_tree_node_8h_source.html#l00021">QuadTreeNode.h:22</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_vector2f_html"><div class="ttname"><a href="class_d_c_l_1_1_c_vector2f.html">DCL::CVector2f</a></div><div class="ttdoc">Vector class, using 2 floats.</div><div class="ttdef"><b>Definition</b> <a href="_vector2f_8h_source.html#l00012">Vector2f.h:13</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_html"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree.html">DCL::CQuadTree</a></div><div class="ttdoc">This is a 2D spatial partitioning class.</div><div class="ttdef"><b>Definition</b> <a href="_quad_tree_8h_source.html#l00041">QuadTree.h:42</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_quad_tree_node_html"><div class="ttname"><a href="class_d_c_l_1_1_c_quad_tree_node.html">DCL::CQuadTreeNode</a></div><div class="ttdoc">A node used by the CQuadTree class.</div><div class="ttdef"><b>Definition</b> <a href="_quad_tree_node_8h_source.html#l00016">QuadTreeNode.h:17</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_vector2f_html"><div class="ttname"><a href="class_d_c_l_1_1_c_vector2f.html">DCL::CVector2f</a></div><div class="ttdoc">Vector class, using 2 floats.</div><div class="ttdef"><b>Definition</b> <a href="_vector2f_8h_source.html#l00007">Vector2f.h:8</a></div></div>
 <div class="ttc" id="anamespace_d_c_l_html"><div class="ttname"><a href="namespace_d_c_l.html">DCL</a></div><div class="ttdoc">The namespace in which everything within Dave's Code Library is stored inside.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8cpp_source.html#l00004">FiniteStateMachine.cpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ca631da8804920316b0d95ddc139151c.html">StaticLibs</a></li><li class="navelem"><a class="el" href="dir_f63e756ca357de737ba1ee25d099ed15.html">DavesCodeLib</a></li><li class="navelem"><a class="el" href="dir_78c8479350f772ad5d1f2656044d25d1.html">SpatialPartitioning</a></li><li class="navelem"><a class="el" href="_quad_tree_entity_8h.html">QuadTreeEntity.h</a></li>
+    <li class="navelem"><a class="el" href="dir_ca631da8804920316b0d95ddc139151c.html">StaticLibs</a></li><li class="navelem"><a class="el" href="dir_f63e756ca357de737ba1ee25d099ed15.html">DavesCodeLib</a></li><li class="navelem"><a class="el" href="dir_78c8479350f772ad5d1f2656044d25d1.html">SpatialPartitioning</a></li><li class="navelem"><b>QuadTreeEntity.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>

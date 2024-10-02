@@ -170,11 +170,11 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="comment">// Note: There&#39;s no need to delete either of the states, as this is done for us</span></div>
 <div class="line"><span class="comment">// when the FSM is destroyed, or by calling either removeState() or removeAllStates() of the FSM object.</span></div>
 <div class="line"><span class="comment">// Now call fsm.update() to call the currently set state&#39;s onActive() method.</span></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_finite_state_base_html"><div class="ttname"><a href="class_d_c_l_1_1_c_finite_state_base.html">DCL::CFiniteStateBase</a></div><div class="ttdoc">Finite state base class with which to derive our FSM state classes from for use with the CFiniteState...</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8h_source.html#l00020">FiniteStateMachine.h:21</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_finite_state_machine_html"><div class="ttname"><a href="class_d_c_l_1_1_c_finite_state_machine.html">DCL::CFiniteStateMachine</a></div><div class="ttdoc">This is a generic finite state machine used alongside classes derived from CFiniteStateBase.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8h_source.html#l00076">FiniteStateMachine.h:77</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_finite_state_machine_html_a09a913f7925bf6e3a847e4e331a4b1d2"><div class="ttname"><a href="#a09a913f7925bf6e3a847e4e331a4b1d2">DCL::CFiniteStateMachine::switchToState</a></div><div class="ttdeci">void switchToState(const std::string &amp;strStateName)</div><div class="ttdoc">Switches to the named state.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8cpp_source.html#l00020">FiniteStateMachine.cpp:20</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_finite_state_base_html"><div class="ttname"><a href="class_d_c_l_1_1_c_finite_state_base.html">DCL::CFiniteStateBase</a></div><div class="ttdoc">Finite state base class with which to derive our FSM state classes from for use with the CFiniteState...</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8h_source.html#l00015">FiniteStateMachine.h:16</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_finite_state_machine_html"><div class="ttname"><a href="class_d_c_l_1_1_c_finite_state_machine.html">DCL::CFiniteStateMachine</a></div><div class="ttdoc">This is a generic finite state machine used alongside classes derived from CFiniteStateBase.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8h_source.html#l00071">FiniteStateMachine.h:72</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_finite_state_machine_html_a09a913f7925bf6e3a847e4e331a4b1d2"><div class="ttname"><a href="#a09a913f7925bf6e3a847e4e331a4b1d2">DCL::CFiniteStateMachine::switchToState</a></div><div class="ttdeci">void switchToState(const std::string &amp;strStateName)</div><div class="ttdoc">Switches to the named state.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8cpp_source.html#l00021">FiniteStateMachine.cpp:21</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8h_source.html#l00076">76</a> of file <a class="el" href="_finite_state_machine_8h_source.html">FiniteStateMachine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8h_source.html#l00071">71</a> of file <a class="el" href="_finite_state_machine_8h_source.html">FiniteStateMachine.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae3bafc65ec1749647dcebef8ff5ea2b3" name="ae3bafc65ec1749647dcebef8ff5ea2b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3bafc65ec1749647dcebef8ff5ea2b3">&#9670;&#160;</a></span>~CFiniteStateMachine()</h2>
@@ -228,7 +228,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>If the name already exists, an exception occurs. The <a class="el" href="class_d_c_l_1_1_c_finite_state_base.html" title="Finite state base class with which to derive our FSM state classes from for use with the CFiniteState...">CFiniteStateBase</a> object has to be allocated yourself prior to calling this method. Once the state object has been added here, there's no need to keep it around for deletion later, as this class's <a class="el" href="#a1bdf5a8bd791806e5374b422a1ffb742" title="Removes a previously added state.">removeState()</a>, <a class="el" href="#aedf1950e28e2d34dd9ae59eb1478e7dd" title="Removes all previously added states.">removeAllStates()</a> and destructor will delete them for us. Also note that this method checks to see if the given state pointer is NULL and throws an exception if so. </p>
 
-<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00046">46</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00047">47</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -250,7 +250,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the number of currently added states. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current number of added states. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00095">95</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00096">96</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -279,7 +279,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>a pointer to the found state.</dd></dl>
 <p>If the named state couldn't be found, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00113">113</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00114">114</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -308,7 +308,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>a pointer to the found state.</dd></dl>
 <p>If an invalid index is given, an exception occurs </p>
 
-<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00100">100</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00101">101</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -336,7 +336,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the named state exists (true) or not (false) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00070">70</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00071">71</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -358,7 +358,7 @@ Public Member Functions</h2></td></tr>
 <p>Removes all previously added states. </p>
 <p>The states given during calls to <a class="el" href="#a07f07c429b9732de9bc1e2f9fd289f50" title="Adds a new uniquely named state.">addState()</a> are deleted for us here, no need to delete them ourselves. </p>
 
-<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00076">76</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00077">77</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -386,7 +386,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>If the named state doesn't exist, an exception occurs The state given during a call to <a class="el" href="#a07f07c429b9732de9bc1e2f9fd289f50" title="Adds a new uniquely named state.">addState()</a> is deleted for us here, no need to delete it ourselves. </p>
 
-<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00054">54</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00055">55</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -414,7 +414,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>This usually calls the currently set state's onExit() method, followed by the new state's onEnter() method. But the first time this is called, the FSM has no currently set state, so the call to onExit() is not performed. If the named state doesn't exist, then an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00020">20</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00021">21</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
 
 </div>
 </div>
@@ -436,7 +436,7 @@ Public Member Functions</h2></td></tr>
 <p>Updates the state machine, calling the currently set state's onActive() method. </p>
 <p>Remember that initially, no current state is set, so this will initially do nothing until <a class="el" href="#a09a913f7925bf6e3a847e4e331a4b1d2" title="Switches to the named state.">switchToState()</a> is called. </p>
 
-<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00011">11</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_finite_state_machine_8cpp_source.html#l00012">12</a> of file <a class="el" href="_finite_state_machine_8cpp_source.html">FiniteStateMachine.cpp</a>.</p>
 
 </div>
 </div>

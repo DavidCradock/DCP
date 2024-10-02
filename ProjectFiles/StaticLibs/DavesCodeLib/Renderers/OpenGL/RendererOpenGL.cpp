@@ -286,52 +286,52 @@ namespace DCL
 		glDisable(GL_SCISSOR_TEST);
 	}
 
-	CResourceTexture2DFromCImageBase* CRendererOpenGL::addTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber)
+	CResourceTexture2DBase* CRendererOpenGL::addTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::addTexture2DFromCImage() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::addTexture2D() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
 		// If resource already exists
-		auto itResource = _mmapResTexture2DFromCImageGroups[uiGroupNumber].find(strResourceName);
-		if (itResource != _mmapResTexture2DFromCImageGroups[uiGroupNumber].end())
+		auto itResource = _mmapResTexture2DGroups[uiGroupNumber].find(strResourceName);
+		if (itResource != _mmapResTexture2DGroups[uiGroupNumber].end())
 		{
 			itResource->second.uiCount++;
 			return itResource->second.pResource;
 		}
 		// Resource doesn't exist, create it
-		SResourceTexture2DFromCImage newRes;
+		SResourceTexture2D newRes;
 		newRes.uiCount = 1;
-		newRes.pResource = new CResourceTexture2DFromCImageOpenGL;
-		ThrowIfFalse(newRes.pResource, "CRendererOpenGL::addTexture2DFromCImage(" + strResourceName + ") failed to allocate memory for new resource.");
-		_mmapResTexture2DFromCImageGroups[uiGroupNumber][strResourceName] = newRes;
+		newRes.pResource = new CResourceTexture2DOpenGL;
+		ThrowIfFalse(newRes.pResource, "CRendererOpenGL::addTexture2D(" + strResourceName + ") failed to allocate memory for new resource.");
+		_mmapResTexture2DGroups[uiGroupNumber][strResourceName] = newRes;
 		return newRes.pResource;
 	}
 
-	CResourceTexture2DFromCImageBase* CRendererOpenGL::getTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber)
+	CResourceTexture2DBase* CRendererOpenGL::getTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getTexture2DFromCImage() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getTexture2De() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
-		auto itResource = _mmapResTexture2DFromCImageGroups[uiGroupNumber].find(strResourceName);
-		ThrowIfTrue(itResource == _mmapResTexture2DFromCImageGroups[uiGroupNumber].end(), "CRendererOpenGL::getTexture2DFromCImage(" + strResourceName + ") failed. Named resource doesn't exist.");
+		auto itResource = _mmapResTexture2DGroups[uiGroupNumber].find(strResourceName);
+		ThrowIfTrue(itResource == _mmapResTexture2DGroups[uiGroupNumber].end(), "CRendererOpenGL::getTexture2D(" + strResourceName + ") failed. Named resource doesn't exist.");
 		return itResource->second.pResource;
 	}
 
-	bool CRendererOpenGL::getTexture2DFromCImageExists(const std::string& strResourceName, unsigned int uiGroupNumber)
+	bool CRendererOpenGL::getTexture2DExists(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getTexture2DFromCImageExists() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getTexture2DExists() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
-		return _mmapResTexture2DFromCImageGroups[uiGroupNumber].find(strResourceName) != _mmapResTexture2DFromCImageGroups[uiGroupNumber].end();
+		return _mmapResTexture2DGroups[uiGroupNumber].find(strResourceName) != _mmapResTexture2DGroups[uiGroupNumber].end();
 	}
 
-	void CRendererOpenGL::removeTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber)
+	void CRendererOpenGL::removeTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeTexture2DFromCImage() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeTexture2D() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
-		auto itResource = _mmapResTexture2DFromCImageGroups[uiGroupNumber].find(strResourceName);
-		if (itResource == _mmapResTexture2DFromCImageGroups[uiGroupNumber].end())
+		auto itResource = _mmapResTexture2DGroups[uiGroupNumber].find(strResourceName);
+		if (itResource == _mmapResTexture2DGroups[uiGroupNumber].end())
 			return;	// Doesn't exist.
 		if (itResource->second.uiCount > 1)
 		{
@@ -339,20 +339,20 @@ namespace DCL
 			return;
 		}
 		delete itResource->second.pResource;
-		_mmapResTexture2DFromCImageGroups[uiGroupNumber].erase(itResource);
+		_mmapResTexture2DGroups[uiGroupNumber].erase(itResource);
 	}
 
-	void CRendererOpenGL::removeAllTexture2DFromCImage(unsigned int uiGroupNumber)
+	void CRendererOpenGL::removeAllTexture2D(unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeAllTexture2DFromCImage() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeAllTexture2D() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
-		auto itResource = _mmapResTexture2DFromCImageGroups[uiGroupNumber].begin();
-		while (itResource != _mmapResTexture2DFromCImageGroups[uiGroupNumber].end())
+		auto itResource = _mmapResTexture2DGroups[uiGroupNumber].begin();
+		while (itResource != _mmapResTexture2DGroups[uiGroupNumber].end())
 		{
 			delete itResource->second.pResource;
-			_mmapResTexture2DFromCImageGroups[uiGroupNumber].erase(itResource);
-			itResource = _mmapResTexture2DFromCImageGroups[uiGroupNumber].begin();
+			_mmapResTexture2DGroups[uiGroupNumber].erase(itResource);
+			itResource = _mmapResTexture2DGroups[uiGroupNumber].begin();
 		}
 
 	}

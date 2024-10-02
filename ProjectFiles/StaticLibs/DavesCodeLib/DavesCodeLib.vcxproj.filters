@@ -198,7 +198,7 @@
     <ClInclude Include="Image\Mandelbrot.h">
       <Filter>Image</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\Resources\ResourceTexture2DFromCImage.h">
+    <ClInclude Include="Renderers\Resources\ResourceTexture2D.h">
       <Filter>Renderers\Resources</Filter>
     </ClInclude>
   </ItemGroup>
@@ -328,7 +328,7 @@
     <ClCompile Include="Image\Mandelbrot.cpp">
       <Filter>Image</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\Resources\ResourceTexture2DFromCImage.cpp">
+    <ClCompile Include="Renderers\Resources\ResourceTexture2D.cpp">
       <Filter>Renderers\Resources</Filter>
     </ClCompile>
   </ItemGroup>

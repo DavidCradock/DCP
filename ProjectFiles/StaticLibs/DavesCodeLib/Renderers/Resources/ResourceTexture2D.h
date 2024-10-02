@@ -1,5 +1,5 @@
-#ifndef RESOURCE_TEXTURE2D_FROM_CIMAGE_H
-#define RESOURCE_TEXTURE2D_FROM_CIMAGE_H
+#ifndef RESOURCE_TEXTURE2D_H
+#define RESOURCE_TEXTURE2D_H
 
 #include "../../Image/Image.h"
 #include "../../Core/Dimensions.h"
@@ -17,7 +17,7 @@ namespace DCL
 	/// Within DCL, all code uses only a pointer to the base class and the implementation for each of the methods are implemented inside the derived classes and are insulated via private implementations.
 	/// Each of the API's CRenderer classes which are derived from the CRendererBase class, are responsible for creating, accessing and freeing this resource type.
 	/// 
-	class CResourceTexture2DFromCImageBase
+	class CResourceTexture2DBase
 	{
 	public:
 		/// \brief Copies the image data from the given CImage object into this object.
@@ -51,7 +51,7 @@ namespace DCL
 		/// \brief Returns the dimensions of the image stored used by this texture
 		///
 		/// Will return the correct dimensions once setImageFilename() has been called.
-		virtual CDimension2D getDimension(void) = 0;
+		virtual CDimension2D getDimension(void) const = 0;
 
 	private:
 		CImage _mImageData;		///< CImage object which holds the image data this object uses.
@@ -60,33 +60,33 @@ namespace DCL
 	/// \brief OpenGL class for resource of type texture 2D created from a CImage object
 	///
 	///
-	class CResourceTexture2DFromCImageOpenGL : public CResourceTexture2DFromCImageBase
+	class CResourceTexture2DOpenGL : public CResourceTexture2DBase
 	{
 	public:
-		CResourceTexture2DFromCImageOpenGL();
+		CResourceTexture2DOpenGL();
 
 		void upload(void);
 		void free(void);
 		void bind(unsigned int uiTextureUnit = 0) const;
 		void unbind(unsigned int uiTextureUnit = 0) const;
 		void unbindAll(void) const;
-		CDimension2D getDimension(void);
+		CDimension2D getDimension(void) const;
 	};
 
 	/// \brief Vulkan class for resource of type texture 2D created from a CImage
 	///
 	///
-	class CResourceTexture2DFromCImageVulkan : public CResourceTexture2DFromCImageBase
+	class CResourceTexture2DVulkan : public CResourceTexture2DBase
 	{
 	public:
-		CResourceTexture2DFromCImageVulkan();
+		CResourceTexture2DVulkan();
 
 		void upload(void);
 		void free(void);
 		void bind(unsigned int uiTextureUnit = 0) const;
 		void unbind(unsigned int uiTextureUnit = 0) const;
 		void unbindAll(void) const;
-		CDimension2D getDimension(void);
+		CDimension2D getDimension(void) const;
 	};
 
 

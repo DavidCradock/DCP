@@ -178,7 +178,7 @@ Friends</h2></td></tr>
 <p>This is a recursive process, so smaller and smaller child nodes of child nodes and so on are created until a "max node depth" value is reached, then what happens is the child nodes no longer get any more child nodes and the entities inserted, ignore the maximum number of entities per node value. The max node depth is computed upon the tree's construction based upon it's dimensions and then again if the root node of the tree gets resized (due to insertion of an entity outside of the root node's region). The reason we have a max node depth is because, as the nodes get divided, their dimensions get smaller and smaller, until they reach a dimension of 1x1 and if they were to become zero dimensions, no entities would fit in them and the algorithm would enter an infinite recursive loop, forever creating useless zero sized child nodes and cause a stack overflow.</p>
 <p>The initial region covered by the root node has to be a multiple of 2, otherwise division of the child nodes may cause certain position to not be covered (For example, if the initial region was (3, 3) in dimensions, when creating the child nodes, their dims would be (1, 1) meaning half the region of the parent node would not be covered and make it so an entity within the uncovered area would not fit. The intial region is set to -1024, +1024 along each axis. </p>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8h_source.html#l00046">46</a> of file <a class="el" href="_quad_tree_8h_source.html">QuadTree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8h_source.html#l00041">41</a> of file <a class="el" href="_quad_tree_8h_source.html">QuadTree.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2ff788282e41b7112e9dca0eab9d799b" name="a2ff788282e41b7112e9dca0eab9d799b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ff788282e41b7112e9dca0eab9d799b">&#9670;&#160;</a></span>CQuadTree()</h2>
@@ -230,7 +230,7 @@ Friends</h2></td></tr>
 <p>Destructor. </p>
 <p>Deletes the root node, which will delete all children and their children and so on. </p>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00038">38</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00039">39</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -282,7 +282,7 @@ Friends</h2></td></tr>
 </dl>
 <p>Each entity needs a unique name, if the name given already exists, an exception occurs. If the specified position is outside of the tree's region, the tree is rebuilt </p>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00150">150</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00152">152</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -303,7 +303,7 @@ Friends</h2></td></tr>
 
 <p>Deletes the root node and in turn all of it's children and all entities. </p>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00043">43</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00045">45</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -343,7 +343,7 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A vector of CQuadTreeEntity* which are within range of the given position and range.</dd></dl>
 <p>This may return some entities which are outside of the range, as the test to see whether the entities aren't in range isn't 100% accurate. </p>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00362">362</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00364">364</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -372,7 +372,7 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A vector of CQuadTreeEntity* which are within the given <a class="el" href="class_d_c_l_1_1_c_rect.html" title="Represents a non-uniform cube aka a rectangle.">CRect</a></dd></dl>
 <p>This may return some entities which are outside of the range, as the test to see whether the entities aren't in range isn't 100% accurate. </p>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00387">387</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00389">389</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -400,7 +400,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the named entity exists, else false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00259">259</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00261">261</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -438,7 +438,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00322">322</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00324">324</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -461,7 +461,7 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The current node depth</dd></dl>
 <p>If there are no child nodes, this would be zero. It's used by the debug rendering code to colour the nodes accordingly. It's also used to determine if the tree has reached the maximum child division depth, in which case, additionally added entities no longer subdivide a node into children and instead simply add the new entity into the node, ignoring the _miMaxEntitiesPerNode value. </p>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00405">405</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00407">407</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -484,7 +484,7 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The max node depth stat</dd></dl>
 <p>If adding an entity into a node, that node's depth is equal to this value, then _miMaxEntitiesPerNode is ignored and the new entity is simply added to the node, instead of trying to sub-divide the node further. This is to prevent node dimensions of less than 1x1 which would cause infinite sub-division of nodes and cause a stack overflow. This value is computed upon construction and whenever the root node's dimensions are increased. </p>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00413">413</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00415">415</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -506,7 +506,7 @@ Friends</h2></td></tr>
 <p>Returns a vector of CQuadTreeNodes which holds all nodes which have entities in them. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector of <a class="el" href="class_d_c_l_1_1_c_quad_tree_node.html" title="A node used by the CQuadTree class.">CQuadTreeNode</a> which holds all nodes which have entities in them </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00348">348</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00350">350</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -534,7 +534,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a vector of CQuadTreeNode* which have entities in them and intersect with the given <a class="el" href="class_d_c_l_1_1_c_rect.html" title="Represents a non-uniform cube aka a rectangle.">CRect</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00355">355</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00357">357</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -567,7 +567,7 @@ Friends</h2></td></tr>
 </dl>
 <p>This will free the existing tree and any entities. </p>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00013">13</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00014">14</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -594,7 +594,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00266">266</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00268">268</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -621,7 +621,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00203">203</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00205">205</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -659,7 +659,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00298">298</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8cpp_source.html#l00300">300</a> of file <a class="el" href="_quad_tree_8cpp_source.html">QuadTree.cpp</a>.</p>
 
 </div>
 </div>
@@ -684,7 +684,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8h_source.html#l00049">49</a> of file <a class="el" href="_quad_tree_8h_source.html">QuadTree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8h_source.html#l00044">44</a> of file <a class="el" href="_quad_tree_8h_source.html">QuadTree.h</a>.</p>
 
 </div>
 </div>
@@ -708,7 +708,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_quad_tree_8h_source.html#l00048">48</a> of file <a class="el" href="_quad_tree_8h_source.html">QuadTree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_quad_tree_8h_source.html#l00043">43</a> of file <a class="el" href="_quad_tree_8h_source.html">QuadTree.h</a>.</p>
 
 </div>
 </div>

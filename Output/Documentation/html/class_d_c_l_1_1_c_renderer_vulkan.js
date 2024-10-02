@@ -1,5 +1,8 @@
 var class_d_c_l_1_1_c_renderer_vulkan =
 [
+    [ "CPrim", "class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html", "class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim" ],
+    [ "addTexture2DFromCImage", "class_d_c_l_1_1_c_renderer_vulkan.html#ae7fa885cfdb17ad430fea5883370683f", null ],
+    [ "beginFrame", "class_d_c_l_1_1_c_renderer_vulkan.html#a00faf2da61854f564513f79098d16123", null ],
     [ "blendDisable", "class_d_c_l_1_1_c_renderer_vulkan.html#ac1b5449e19a4558a547ad2a1c6a4f51e", null ],
     [ "blendEnable", "class_d_c_l_1_1_c_renderer_vulkan.html#aced3cff4ed1554a154ef549eb2698441", null ],
     [ "blendFunction_SrcAlpha_One", "class_d_c_l_1_1_c_renderer_vulkan.html#a774f7e246fb85a822ebab56d2a018e7e", null ],
@@ -10,12 +13,19 @@ var class_d_c_l_1_1_c_renderer_vulkan =
     [ "cullFaceEnable", "class_d_c_l_1_1_c_renderer_vulkan.html#a34012be76591983c586f182881e32d08", null ],
     [ "depthTestDisable", "class_d_c_l_1_1_c_renderer_vulkan.html#ab55bb1d23b1ae2b40de72fc8476f7cdc", null ],
     [ "depthTestEnable", "class_d_c_l_1_1_c_renderer_vulkan.html#afb739e7056329e1c990f1bca351d5d52", null ],
+    [ "endFrame", "class_d_c_l_1_1_c_renderer_vulkan.html#a322f313e50f645b7d1cd15e92f269849", null ],
+    [ "getTexture2DFromCImage", "class_d_c_l_1_1_c_renderer_vulkan.html#a6299a78ae9cb3c438e3201c20e99309c", null ],
+    [ "getTexture2DFromCImageExists", "class_d_c_l_1_1_c_renderer_vulkan.html#a75229dfb3519415888152bf495af7232", null ],
     [ "initialise", "class_d_c_l_1_1_c_renderer_vulkan.html#aab3798bbb15a830a307b866d6bee05e2", null ],
     [ "pixelsRead", "class_d_c_l_1_1_c_renderer_vulkan.html#a6a634e04b6a2f99ebdfacfb7431fda4d", null ],
     [ "pixelsWrite", "class_d_c_l_1_1_c_renderer_vulkan.html#a7b1a663e9fd1a5ff2d63e48bc8619ae8", null ],
+    [ "removeAllTexture2DFromCImage", "class_d_c_l_1_1_c_renderer_vulkan.html#ad83003486c88a860c464dee4638f8e46", null ],
+    [ "removeTexture2DFromCImage", "class_d_c_l_1_1_c_renderer_vulkan.html#a11e3d8807d9dc2c3e9b255a8afaf199a", null ],
     [ "scissorTest", "class_d_c_l_1_1_c_renderer_vulkan.html#a2c8bd6b906ddd002e787736d5643b60b", null ],
     [ "scissorTestDisable", "class_d_c_l_1_1_c_renderer_vulkan.html#ad2b08d56bef8a6f29b0dad95ebb60847", null ],
     [ "scissorTestEnable", "class_d_c_l_1_1_c_renderer_vulkan.html#aeff92dfb7982751a2df47bf9e18efd43", null ],
+    [ "setBackbufferClearColour", "class_d_c_l_1_1_c_renderer_vulkan.html#aaaf48d9a689c96f37be48567b951f477", null ],
+    [ "setVSync", "class_d_c_l_1_1_c_renderer_vulkan.html#a9bb10bc59e47a78c06772c7adf538baf", null ],
     [ "shutdown", "class_d_c_l_1_1_c_renderer_vulkan.html#a58b8aeb96ea35bb8eaa33b50ec4177c9", null ],
     [ "updateWindow", "class_d_c_l_1_1_c_renderer_vulkan.html#ae8737796d7cd4c44017ad4d38f92bcba", null ]
 ];

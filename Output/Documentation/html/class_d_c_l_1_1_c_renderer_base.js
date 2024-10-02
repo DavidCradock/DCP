@@ -1,5 +1,7 @@
 var class_d_c_l_1_1_c_renderer_base =
 [
+    [ "addTexture2DFromCImage", "class_d_c_l_1_1_c_renderer_base.html#ad676774152bd4054950446234cfb80f4", null ],
+    [ "beginFrame", "class_d_c_l_1_1_c_renderer_base.html#a8510cc11a0781db715b2ba2404eef00b", null ],
     [ "blendDisable", "class_d_c_l_1_1_c_renderer_base.html#ac197ea66bdebc261bc124c73877da8ab", null ],
     [ "blendEnable", "class_d_c_l_1_1_c_renderer_base.html#a33ef0c3b07953a2987eb1544149df01c", null ],
     [ "blendFunction_SrcAlpha_One", "class_d_c_l_1_1_c_renderer_base.html#a6869bd41a54311b78f6bc7ff6aaa5361", null ],
@@ -10,12 +12,19 @@ var class_d_c_l_1_1_c_renderer_base =
     [ "cullFaceEnable", "class_d_c_l_1_1_c_renderer_base.html#a35b91887520610fa2219abb49d89609a", null ],
     [ "depthTestDisable", "class_d_c_l_1_1_c_renderer_base.html#ab2ea3dc3da57f6cd625566489fac781f", null ],
     [ "depthTestEnable", "class_d_c_l_1_1_c_renderer_base.html#a0a76cd7f928d673154162a7de3b9ae88", null ],
-    [ "initialise", "class_d_c_l_1_1_c_renderer_base.html#a01874e3fa1adaab73c7957b46bbfb90a", null ],
+    [ "endFrame", "class_d_c_l_1_1_c_renderer_base.html#a5e2d28046ae8e3cf283414e018a2f839", null ],
+    [ "getTexture2DFromCImage", "class_d_c_l_1_1_c_renderer_base.html#a74c1918f5bc7534a583be6cc88ecf4f1", null ],
+    [ "getTexture2DFromCImageExists", "class_d_c_l_1_1_c_renderer_base.html#a7ae44964d1db560dcb2a264ae7a95230", null ],
+    [ "initialise", "class_d_c_l_1_1_c_renderer_base.html#a18f64cc47efff23b77b0a722b42e67f6", null ],
     [ "pixelsRead", "class_d_c_l_1_1_c_renderer_base.html#ae8113f9d7beeb6986c3fb11c8d87560a", null ],
     [ "pixelsWrite", "class_d_c_l_1_1_c_renderer_base.html#a9906eb01e39177291133e6200cb2a52b", null ],
+    [ "removeAllTexture2DFromCImage", "class_d_c_l_1_1_c_renderer_base.html#a98c13fc3bb8d4924eeaaa93d7fcee1f4", null ],
+    [ "removeTexture2DFromCImage", "class_d_c_l_1_1_c_renderer_base.html#a21be7430ace5bb2dae2c43541441d41f", null ],
     [ "scissorTest", "class_d_c_l_1_1_c_renderer_base.html#ac36e2a50e6c242ec7e56148d1ee9456a", null ],
     [ "scissorTestDisable", "class_d_c_l_1_1_c_renderer_base.html#ae000a09f081e4415caf1a29a84db3a7d", null ],
     [ "scissorTestEnable", "class_d_c_l_1_1_c_renderer_base.html#aadba47cb5a237ae02a4b1bd6bde53666", null ],
+    [ "setBackbufferClearColour", "class_d_c_l_1_1_c_renderer_base.html#a0a72d6e92cff71d1096908f9e2041b61", null ],
+    [ "setVSync", "class_d_c_l_1_1_c_renderer_base.html#a16eb42547c4e32591f77ab8c38686289", null ],
     [ "shutdown", "class_d_c_l_1_1_c_renderer_base.html#a6c831232b08d7c06b2dc9ba94d7ec5f4", null ],
     [ "updateWindow", "class_d_c_l_1_1_c_renderer_base.html#aa3ef3e8c45f29c8ecc5a94d77646b893", null ]
 ];

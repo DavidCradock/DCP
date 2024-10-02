@@ -153,7 +153,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Image atlas class used to pack many smaller images into as few as possible larger atlas images. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8h_source.html#l00058">58</a> of file <a class="el" href="_image_atlas_8h_source.html">ImageAtlas.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8h_source.html#l00053">53</a> of file <a class="el" href="_image_atlas_8h_source.html">ImageAtlas.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aaa64644f4f5d27fa8ee342023ebd3ac2" name="aaa64644f4f5d27fa8ee342023ebd3ac2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa64644f4f5d27fa8ee342023ebd3ac2">&#9670;&#160;</a></span>CImageAtlasPacker()</h2>
@@ -193,7 +193,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Destructor, calls <a class="el" href="#aa1f6904623a24e7e7e93a243cf188c6f" title="Resets everything, freeing computed data and atlas images.">reset()</a> to free all data. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00043">43</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00044">44</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,7 +245,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>We provide a vector of strings holding each individual image's filename. Each individual image can have different dimensions. We specify a maximum width and height that an individual atlas image may be. We specify whether to allow or disallow rotation of images to allow better fitting of the images. If rotation is enabled, the computed texture coordinates are rotated accordingly. After calling this, we can call the various other methods to get at the information If the vector of strings is empty, an exception occurs If an individual image's dimensions, including spacing is greater than the max atlas dimensions, an exception occurs. If all given images are the same dimensions, nothing is sorted. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00048">48</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00050">50</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>
@@ -268,7 +268,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A vector of <a class="el" href="class_d_c_l_1_1_c_image_atlas_details.html" title="Holds information about each packed image inside an atlas image.">CImageAtlasDetails</a> which contain each image's details.</dd></dl>
 <p>Call <a class="el" href="#a0f790e56f9a656343ee291217658fcdc" title="This creates texture atlas images.">createAtlasImages()</a> first. If no image data exists, an exception occurs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00385">385</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00387">387</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>
@@ -295,7 +295,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- fragment --><p> or </p><div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiAtlasNumber = pviad-&gt;operator[](uiLastImageIndex).uiAtlasImage;</div>
 </div><!-- fragment --><p> or </p><div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiAtlasNumber = pviad[0][uiLastImageIndex].uiAtlasImage;</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00391">391</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00393">393</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +324,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the <a class="el" href="class_d_c_l_1_1_c_image.html" title="A class for creating/loading/saving/modifying 2D images.">CImage</a> holding the atlas image.</dd></dl>
 <p>Call <a class="el" href="#a0f790e56f9a656343ee291217658fcdc" title="This creates texture atlas images.">createAtlasImages()</a> first. If an invalid index is given, or no atlases exist, an exception occurs </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00378">378</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00380">380</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +353,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_d_c_l_1_1_c_image_atlas_details.html" title="Holds information about each packed image inside an atlas image.">CImageAtlasDetails</a> holding the named image's details.</dd></dl>
 <p>Call <a class="el" href="#a0f790e56f9a656343ee291217658fcdc" title="This creates texture atlas images.">createAtlasImages()</a> first. If an invalid image name is given, an exception occurs </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00402">402</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00404">404</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>
@@ -382,7 +382,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_d_c_l_1_1_c_image_atlas_details.html" title="Holds information about each packed image inside an atlas image.">CImageAtlasDetails</a> A pointer to the image's details.</dd></dl>
 <p>Call <a class="el" href="#a0f790e56f9a656343ee291217658fcdc" title="This creates texture atlas images.">createAtlasImages()</a> first. If an invalid image name is given, an exception occurs </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00409">409</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00411">411</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>
@@ -410,7 +410,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the image exists, else false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00426">426</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00428">428</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>
@@ -433,7 +433,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The number of generated atlas images holding the individual images</dd></dl>
 <p>Call <a class="el" href="#a0f790e56f9a656343ee291217658fcdc" title="This creates texture atlas images.">createAtlasImages()</a> first. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00373">373</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00375">375</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +456,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The total number of individual images added to the atlases</dd></dl>
 <p>Call <a class="el" href="#a0f790e56f9a656343ee291217658fcdc" title="This creates texture atlas images.">createAtlasImages()</a> first. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00397">397</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00399">399</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>
@@ -477,7 +477,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Resets everything, freeing computed data and atlas images. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00416">416</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_atlas_8cpp_source.html#l00418">418</a> of file <a class="el" href="_image_atlas_8cpp_source.html">ImageAtlas.cpp</a>.</p>
 
 </div>
 </div>

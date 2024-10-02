@@ -169,7 +169,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A FileMemory object holds the entirety of a file in memory. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8h_source.html#l00017">17</a> of file <a class="el" href="_file_memory_8h_source.html">FileMemory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8h_source.html#l00012">12</a> of file <a class="el" href="_file_memory_8h_source.html">FileMemory.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a101e7b9748657556aa868bcd9143d27a" name="a101e7b9748657556aa868bcd9143d27a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a101e7b9748657556aa868bcd9143d27a">&#9670;&#160;</a></span>CFileMemory()</h2>
@@ -209,7 +209,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Destructor. Deletes data if there is any. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00015">15</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00016">16</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -237,7 +237,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00086">86</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00088">88</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -258,7 +258,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Frees all data and resets everything. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00020">20</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00022">22</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -281,7 +281,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the data in this object.</dd></dl>
 <p>May be 0 if no data exists in the object. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00100">100</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00102">102</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -304,7 +304,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The size of the data stored inside this object.</dd></dl>
 <p>May be 0 if no data exists in the object. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00105">105</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00107">107</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -326,7 +326,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns whether an error occurred either due to seeking to an invalid position or <a class="el" href="#ae14cb266063a5b1f6955b61018bef734" title="Read a type from this object&#39;s data and move the seek position forward.">read()</a> failing. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if everything has been OK since construction or since last call to <a class="el" href="#afe1933259ccebd50c67b41bc06f6531c" title="Resets any errors so isOK() will return true again and resets seek position to beginning by calling s...">reset()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00158">158</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00160">160</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -357,7 +357,7 @@ template&lt;class Type &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>False if the type could not be read.</dd></dl>
 <p>If error occurred, sets _mbIsOK to false which can be checked with <a class="el" href="#aae00ce4ef2c36c60c6aa8f2b2c818181" title="Returns whether an error occurred either due to seeking to an invalid position or read() failing.">isOK()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8h_source.html#l00129">129</a> of file <a class="el" href="_file_memory_8h_source.html">FileMemory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8h_source.html#l00124">124</a> of file <a class="el" href="_file_memory_8h_source.html">FileMemory.h</a>.</p>
 
 </div>
 </div>
@@ -378,7 +378,7 @@ template&lt;class Type &gt; </div>
 
 <p>Resets any errors so <a class="el" href="#aae00ce4ef2c36c60c6aa8f2b2c818181" title="Returns whether an error occurred either due to seeking to an invalid position or read() failing.">isOK()</a> will return true again and resets seek position to beginning by calling <a class="el" href="#a0811428a6935f47394997811e48a56c4" title="Set seek position to the start of the data stored in this object.">seekBegin()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00163">163</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00165">165</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -406,7 +406,7 @@ template&lt;class Type &gt; </div>
 </dl>
 <p>If something went wrong, an exception occurs. The named file is overwritten. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00071">71</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00073">73</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -427,7 +427,7 @@ template&lt;class Type &gt; </div>
 
 <p>Set seek position to the start of the data stored in this object. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00110">110</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00112">112</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -449,7 +449,7 @@ template&lt;class Type &gt; </div>
 <p>Set seek position to the end of the data stored in this object, the last byte. </p>
 <p>So calling this and then calling <a class="el" href="#a762721ad197f11c4d50251278ecbe423" title="Returns the current seek position in bytes.">seekGetPos()</a> would return the size of the data minus 1. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00116">116</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00118">118</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -471,7 +471,7 @@ template&lt;class Type &gt; </div>
 <p>Returns the current seek position in bytes. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current seek position in bytes </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00153">153</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00155">155</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -500,7 +500,7 @@ template&lt;class Type &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>False if the given offset would move the new position past the end of the data of the object.</dd></dl>
 <p>If error occurred, sets _mbIsOK to false which can be checked with <a class="el" href="#aae00ce4ef2c36c60c6aa8f2b2c818181" title="Returns whether an error occurred either due to seeking to an invalid position or read() failing.">isOK()</a> if the new seek position is invalid. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00140">140</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00142">142</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -529,7 +529,7 @@ template&lt;class Type &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>False if the given offset goes past the end, else true.</dd></dl>
 <p>If error occurred, sets _mbIsOK to false which can be checked with <a class="el" href="#aae00ce4ef2c36c60c6aa8f2b2c818181" title="Returns whether an error occurred either due to seeking to an invalid position or read() failing.">isOK()</a> if the new seek position is invalid. </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00124">124</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00126">126</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -557,7 +557,7 @@ template&lt;class Type &gt; </div>
 </dl>
 <p>If something went wrong, an exception occurs Use X::getFileExists() to determine whether the file exists prior to calling this </p>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00033">33</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00035">35</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>
@@ -589,7 +589,7 @@ template&lt;class Type &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00055">55</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_memory_8cpp_source.html#l00057">57</a> of file <a class="el" href="_file_memory_8cpp_source.html">FileMemory.cpp</a>.</p>
 
 </div>
 </div>

@@ -43,20 +43,19 @@ namespace DCL
 		void scissorTestDisable(void);
 		void scissorTestEnable(void);
 
-		
-		CResourceTexture2DFromCImageBase* addTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber);
-		CResourceTexture2DFromCImageBase* getTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber);
-		bool getTexture2DFromCImageExists(const std::string& strResourceName, unsigned int uiGroupNumber);
-		void removeTexture2DFromCImage(const std::string& strResourceName, unsigned int uiGroupNumber);
-		void removeAllTexture2DFromCImage(unsigned int uiGroupNumber);
+		CResourceTexture2DBase* addTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
+		CResourceTexture2DBase* getTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
+		bool getTexture2DExists(const std::string& strResourceName, unsigned int uiGroupNumber);
+		void removeTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
+		void removeAllTexture2D(unsigned int uiGroupNumber);
 	private:
 		/// \brief Struct to hold a resource for the Texture2DFromCImage type.
-		struct SResourceTexture2DFromCImage
+		struct SResourceTexture2D
 		{
-			CResourceTexture2DFromCImageBase* pResource;	///< Pointer to the resource
-			unsigned int uiCount;							///< Number of times the resource has been added
+			CResourceTexture2DBase* pResource;	///< Pointer to the resource
+			unsigned int uiCount;				///< Number of times the resource has been added
 		};
-		std::map<std::string, SResourceTexture2DFromCImage> _mmapResTexture2DFromCImageGroups[8];	///< Each of the 8 groups holding resources for the Texture2DFromCImage type.
+		std::map<std::string, SResourceTexture2D> _mmapResTexture2DGroups[8];	///< Each of the 8 groups holding resources for the Texture2D type.
 	public:
 		
 

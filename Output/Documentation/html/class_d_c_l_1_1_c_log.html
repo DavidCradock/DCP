@@ -113,70 +113,32 @@ $(function(){initNavTree('class_d_c_l_1_1_c_log.html',''); initResizable(true); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a01564a0f3ccde4df91ac46065bf77615" id="r_a01564a0f3ccde4df91ac46065bf77615"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01564a0f3ccde4df91ac46065bf77615">CLog</a> ()</td></tr>
-<tr class="memdesc:a01564a0f3ccde4df91ac46065bf77615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
-<tr class="separator:a01564a0f3ccde4df91ac46065bf77615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80598d56065645c31b629abb58222a36" id="r_a80598d56065645c31b629abb58222a36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80598d56065645c31b629abb58222a36">add</a> (const std::string &amp;string)</td></tr>
-<tr class="memdesc:a80598d56065645c31b629abb58222a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add text to the log file and entries in memory.  <br /></td></tr>
-<tr class="separator:a80598d56065645c31b629abb58222a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d2d3914007154c46d7c154297ff7e39" id="r_a1d2d3914007154c46d7c154297ff7e39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d2d3914007154c46d7c154297ff7e39">clear</a> (void)</td></tr>
-<tr class="memdesc:a1d2d3914007154c46d7c154297ff7e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the log file and all log entries in memory.  <br /></td></tr>
-<tr class="separator:a1d2d3914007154c46d7c154297ff7e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3653540972d38fdc601920d9f19e4dd4" id="r_a3653540972d38fdc601920d9f19e4dd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3653540972d38fdc601920d9f19e4dd4">deleteLogFile</a> (void)</td></tr>
-<tr class="memdesc:a3653540972d38fdc601920d9f19e4dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the current log file.  <br /></td></tr>
-<tr class="separator:a3653540972d38fdc601920d9f19e4dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff6c01be34d498694b20112980f6d6b" id="r_a4ff6c01be34d498694b20112980f6d6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ff6c01be34d498694b20112980f6d6b">setLogFileName</a> (const std::string &amp;strFilename=&quot;log.txt&quot;)</td></tr>
-<tr class="memdesc:a4ff6c01be34d498694b20112980f6d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the log file name of the log file.  <br /></td></tr>
-<tr class="separator:a4ff6c01be34d498694b20112980f6d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec810fa6176e0ef2a27f7aa3281e0fbf" id="r_aec810fa6176e0ef2a27f7aa3281e0fbf"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec810fa6176e0ef2a27f7aa3281e0fbf">getNumEntries</a> (void) const</td></tr>
-<tr class="memdesc:aec810fa6176e0ef2a27f7aa3281e0fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return number of entries added via <a class="el" href="#a80598d56065645c31b629abb58222a36" title="Add text to the log file and entries in memory.">add()</a>  <br /></td></tr>
-<tr class="separator:aec810fa6176e0ef2a27f7aa3281e0fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab3211186ea1a191333d54b34a6cc463" id="r_aab3211186ea1a191333d54b34a6cc463"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab3211186ea1a191333d54b34a6cc463">getEntryText</a> (size_t entryIndex) const</td></tr>
-<tr class="memdesc:aab3211186ea1a191333d54b34a6cc463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a log entry's text string.  <br /></td></tr>
-<tr class="separator:aab3211186ea1a191333d54b34a6cc463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfdc36c83c257b05e234124ff65a1e6a" id="r_acfdc36c83c257b05e234124ff65a1e6a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfdc36c83c257b05e234124ff65a1e6a">getEntryTime</a> (size_t entryIndex) const</td></tr>
-<tr class="memdesc:acfdc36c83c257b05e234124ff65a1e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a log entry's time it was added since the log file was created as a formatted string.  <br /></td></tr>
-<tr class="separator:acfdc36c83c257b05e234124ff65a1e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63db6883a75bbd242279df668a538798" id="r_a63db6883a75bbd242279df668a538798"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63db6883a75bbd242279df668a538798">getEntryTimes</a> (size_t entryIndex, float &amp;fSecondsOut, int &amp;iMinutesOut, int &amp;iHoursOut, int &amp;iDaysOut, int &amp;iWeeksOut) const</td></tr>
-<tr class="memdesc:a63db6883a75bbd242279df668a538798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a log entry's time it was added since the log file was created to the passed variables.  <br /></td></tr>
-<tr class="separator:a63db6883a75bbd242279df668a538798"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4a23a7eb5136c4530c6b9b1b0cbda71" id="r_ae4a23a7eb5136c4530c6b9b1b0cbda71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_c_l_1_1_c_log_entry.html">CLogEntry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4a23a7eb5136c4530c6b9b1b0cbda71">getEntry</a> (size_t entryIndex) const</td></tr>
-<tr class="memdesc:ae4a23a7eb5136c4530c6b9b1b0cbda71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a log entry.  <br /></td></tr>
-<tr class="separator:ae4a23a7eb5136c4530c6b9b1b0cbda71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525ac4b37b68ab5bf0674fc0a55c1bf8" id="r_a525ac4b37b68ab5bf0674fc0a55c1bf8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a525ac4b37b68ab5bf0674fc0a55c1bf8">CLog</a> (const std::string &amp;strFilename=&quot;log.html&quot;)</td></tr>
+<tr class="memdesc:a525ac4b37b68ab5bf0674fc0a55c1bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="separator:a525ac4b37b68ab5bf0674fc0a55c1bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fcf10b1cd58d18eaefac08011a7e98f" id="r_a2fcf10b1cd58d18eaefac08011a7e98f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fcf10b1cd58d18eaefac08011a7e98f">~CLog</a> ()</td></tr>
+<tr class="memdesc:a2fcf10b1cd58d18eaefac08011a7e98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
+<tr class="separator:a2fcf10b1cd58d18eaefac08011a7e98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fde7118bd92c0f684188d90adfa03bc" id="r_a1fde7118bd92c0f684188d90adfa03bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fde7118bd92c0f684188d90adfa03bc">add</a> (const std::string &amp;strText, const std::string &amp;strFunctionName, const std::string &amp;strLineNumber, const std::string &amp;strSourceFilename)</td></tr>
+<tr class="memdesc:a1fde7118bd92c0f684188d90adfa03bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add text to the log file.  <br /></td></tr>
+<tr class="separator:a1fde7118bd92c0f684188d90adfa03bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe12a8f0d7215ea75d99df41ee5fe93" id="r_a5fe12a8f0d7215ea75d99df41ee5fe93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fe12a8f0d7215ea75d99df41ee5fe93">run_test</a> (void)</td></tr>
+<tr class="memdesc:a5fe12a8f0d7215ea75d99df41ee5fe93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test method to test logging.  <br /></td></tr>
+<tr class="separator:a5fe12a8f0d7215ea75d99df41ee5fe93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Logging of text to a text file. </p>
-<p>Logging of information to a text file and storage of each added log entry into memory. The default filename used for the log file is "log.txt" but can be changed with <a class="el" href="#a4ff6c01be34d498694b20112980f6d6b" title="Sets the log file name of the log file.">setLogFileName()</a> Example... </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_d_c_l_1_1_c_log.html">CLog</a> myLog;     <span class="comment">// Create a logging object. It&#39;ll create an empty &quot;log.txt&quot; file ready for use.</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// If we wish to use a different name for this log file, then...</span></div>
-<div class="line">myLog.<a class="code hl_function" href="#a4ff6c01be34d498694b20112980f6d6b">setLogFileName</a>(<span class="stringliteral">&quot;MyNewLogFile.txt&quot;</span>);</div>
-<div class="line"><span class="comment">// The above will delete the old &quot;log.txt&quot; file and then create a new file named &quot;MyNewLogFile.txt&quot;, ready for use.</span></div>
-<div class="line"><span class="comment">// This is usefull if we wish to have different log files, say perhaps one for audio, one for graphics, one for AI etc.</span></div>
+<p>Logging of information to a text file The default filename used for the log file is "log.html" but can be changed with the constructor of this class, passing the filename we wish to use Example... </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_d_c_l_1_1_c_log.html">CLog</a> myLog(<span class="stringliteral">&quot;myLog.html&quot;</span>);       <span class="comment">// Create a logging object using the given filename.</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Add an entry to the log file...</span></div>
-<div class="line">myLog.<a class="code hl_function" href="#a80598d56065645c31b629abb58222a36">add</a>(<span class="stringliteral">&quot;Some text&quot;</span>); <span class="comment">// Text to be added to the log entry in the file and in memory</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// All previously added entries with add() are stored in memory and can be accessed.</span></div>
-<div class="line"><span class="comment">// Only the text is stored, not whether a new line was added, nor the time it was added.</span></div>
-<div class="line"><span class="comment">// Example looping through these...</span></div>
-<div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> iEntry = 0; iEntry &lt; myLog.<a class="code hl_function" href="#aec810fa6176e0ef2a27f7aa3281e0fbf">getNumEntries</a>(); iEntry++)</div>
-<div class="line">{</div>
-<div class="line">    <span class="comment">// Get the text for the indexed entry</span></div>
-<div class="line">    <span class="comment">// If iEntry is out of bounds, an exception occurs.</span></div>
-<div class="line">    std::string strEntryText = myLog.<a class="code hl_function" href="#ae4a23a7eb5136c4530c6b9b1b0cbda71">getEntry</a>(iEntry);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// Do something with the log entry text here.</span></div>
-<div class="line">}</div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html">DCL::CLog</a></div><div class="ttdoc">Logging of text to a text file.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00066">Logging.h:67</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a4ff6c01be34d498694b20112980f6d6b"><div class="ttname"><a href="#a4ff6c01be34d498694b20112980f6d6b">DCL::CLog::setLogFileName</a></div><div class="ttdeci">void setLogFileName(const std::string &amp;strFilename=&quot;log.txt&quot;)</div><div class="ttdoc">Sets the log file name of the log file.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8cpp_source.html#l00093">Logging.cpp:93</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_a80598d56065645c31b629abb58222a36"><div class="ttname"><a href="#a80598d56065645c31b629abb58222a36">DCL::CLog::add</a></div><div class="ttdeci">void add(const std::string &amp;string)</div><div class="ttdoc">Add text to the log file and entries in memory.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8cpp_source.html#l00023">Logging.cpp:23</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_ae4a23a7eb5136c4530c6b9b1b0cbda71"><div class="ttname"><a href="#ae4a23a7eb5136c4530c6b9b1b0cbda71">DCL::CLog::getEntry</a></div><div class="ttdeci">CLogEntry getEntry(size_t entryIndex) const</div><div class="ttdoc">Returns a log entry.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8cpp_source.html#l00128">Logging.cpp:128</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_log_html_aec810fa6176e0ef2a27f7aa3281e0fbf"><div class="ttname"><a href="#aec810fa6176e0ef2a27f7aa3281e0fbf">DCL::CLog::getNumEntries</a></div><div class="ttdeci">size_t getNumEntries(void) const</div><div class="ttdoc">Return number of entries added via add()</div><div class="ttdef"><b>Definition</b> <a href="_logging_8cpp_source.html#l00101">Logging.cpp:101</a></div></div>
-</div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00066">66</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
+<div class="line">myLog.add(<span class="stringliteral">&quot;Some text&quot;</span>); <span class="comment">// Text to be added to the log entry in the file.</span></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_log_html"><div class="ttname"><a href="class_d_c_l_1_1_c_log.html">DCL::CLog</a></div><div class="ttdoc">Logging of text to a text file.</div><div class="ttdef"><b>Definition</b> <a href="_logging_8h_source.html#l00058">Logging.h:59</a></div></div>
+</div><!-- fragment --><p>There is a macro declared below called LOG() which accepts a string which should hold some descriptive text for the log entry. This macro adds not only the text, but also the function the LOG() function is called from as well as the line number and the source code file's name. Throughout <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>, this LOG macro is called instead of calling the gLogMain object's <a class="el" href="#a1fde7118bd92c0f684188d90adfa03bc" title="Add text to the log file.">add()</a> method as it reduces the amount of stuff we need to type. When an exception is thrown, the macro LOG() is called to log the exception to the file. When <a class="el" href="#a1fde7118bd92c0f684188d90adfa03bc" title="Add text to the log file.">add()</a> is called, regardless of either directly or from the macro LOG, the actual log object is written with threading in mind, so that the call to <a class="el" href="#a1fde7118bd92c0f684188d90adfa03bc" title="Add text to the log file.">add()</a> has minimal overhead. The object has a main thread loop which periodically checks to see if <a class="el" href="#a1fde7118bd92c0f684188d90adfa03bc" title="Add text to the log file.">add()</a> has been called and writes those log entries to a file in the seperate thread. </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo</a></b></dt><dd>Add html output </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_logging_8h_source.html#l00058">58</a> of file <a class="el" href="_logging_8h_source.html">Logging.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a01564a0f3ccde4df91ac46065bf77615" name="a01564a0f3ccde4df91ac46065bf77615"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01564a0f3ccde4df91ac46065bf77615">&#9670;&#160;</a></span>CLog()</h2>
+<a id="a525ac4b37b68ab5bf0674fc0a55c1bf8" name="a525ac4b37b68ab5bf0674fc0a55c1bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a525ac4b37b68ab5bf0674fc0a55c1bf8">&#9670;&#160;</a></span>CLog()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,22 +146,43 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">DCL::CLog::CLog </td>
           <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strFilename</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;log.html&quot;</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<p>Upon construction, the passed filename is deleted. </p>
+
+<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00020">20</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2fcf10b1cd58d18eaefac08011a7e98f" name="a2fcf10b1cd58d18eaefac08011a7e98f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fcf10b1cd58d18eaefac08011a7e98f">&#9670;&#160;</a></span>~CLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DCL::CLog::~CLog </td>
+          <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Default constructor. </p>
-<p>Sets the log file name to "log.txt" and clears the file. </p>
+<p>Destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00017">17</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00043">43</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a80598d56065645c31b629abb58222a36" name="a80598d56065645c31b629abb58222a36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80598d56065645c31b629abb58222a36">&#9670;&#160;</a></span>add()</h2>
+<a id="a1fde7118bd92c0f684188d90adfa03bc" name="a1fde7118bd92c0f684188d90adfa03bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fde7118bd92c0f684188d90adfa03bc">&#9670;&#160;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,32 +190,52 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void DCL::CLog::add </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>string</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strText</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strFunctionName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strLineNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strSourceFilename</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Add text to the log file and entries in memory. </p>
+<p>Add text to the log file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">string</td><td>Holds the text for this new log entry. </td></tr>
+    <tr><td class="paramname">strText</td><td>String holding the text for this new log entry. </td></tr>
+    <tr><td class="paramname">strFunctionName</td><td>String holding the function name. Obtained from preprocessor predefined macro <b>FUNCTION</b> </td></tr>
+    <tr><td class="paramname">strLineNumber</td><td>String holding the source code line number. Obtained from preprocessor predefined macro std::to_string(<b>LINE</b>) </td></tr>
+    <tr><td class="paramname">strSourceFilename</td><td>String holding the source code filename. Obtained from preprocessor predefined macro <b>FILE</b></td></tr>
   </table>
   </dd>
 </dl>
+<p>Instead of having to manually call something like the following, which can get quite tedious... </p><div class="fragment"><div class="line">clogObject.add(<span class="stringliteral">&quot;DescriptiveText&quot;</span>, __FUNCTION__, std::to_string(__LINE__), __FILE__);</div>
+</div><!-- fragment --><p> We have a macro which accepts just the strText variable, so we can succinctly type... </p><div class="fragment"><div class="line">LOG(<span class="stringliteral">&quot;DescriptiveText&quot;</span>);</div>
+</div><!-- fragment --><p> Much easier :) Most of <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a> uses this macro. </p>
 
-<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00023">23</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00051">51</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a1d2d3914007154c46d7c154297ff7e39" name="a1d2d3914007154c46d7c154297ff7e39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d2d3914007154c46d7c154297ff7e39">&#9670;&#160;</a></span>clear()</h2>
+<a id="a5fe12a8f0d7215ea75d99df41ee5fe93" name="a5fe12a8f0d7215ea75d99df41ee5fe93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe12a8f0d7215ea75d99df41ee5fe93">&#9670;&#160;</a></span>run_test()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DCL::CLog::clear </td>
+          <td class="memname">void DCL::CLog::run_test </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -240,226 +243,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Clear the log file and all log entries in memory. </p>
-
-<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00058">58</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a3653540972d38fdc601920d9f19e4dd4" name="a3653540972d38fdc601920d9f19e4dd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3653540972d38fdc601920d9f19e4dd4">&#9670;&#160;</a></span>deleteLogFile()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool DCL::CLog::deleteLogFile </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deletes the current log file. </p>
-<dl class="section return"><dt>Returns</dt><dd>Whether deletion was successfull.</dd></dl>
-<p>Whatever the currently set log file name is set to, attempts to delete that file. Returns true if the deletion was successfull, else false. </p>
-
-<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00066">66</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ae4a23a7eb5136c4530c6b9b1b0cbda71" name="ae4a23a7eb5136c4530c6b9b1b0cbda71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4a23a7eb5136c4530c6b9b1b0cbda71">&#9670;&#160;</a></span>getEntry()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_d_c_l_1_1_c_log_entry.html">CLogEntry</a> DCL::CLog::getEntry </td>
-          <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>entryIndex</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a log entry. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">entryIndex</td><td>The index of the entry </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The found log entry.</dd></dl>
-<p>If entryIndex is out of bounds, an exception occurs </p>
+<p>Test method to test logging. </p>
+<p>Writes some text to the filename log_run_test.txt </p>
 
 <p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00128">128</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aab3211186ea1a191333d54b34a6cc463" name="aab3211186ea1a191333d54b34a6cc463"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab3211186ea1a191333d54b34a6cc463">&#9670;&#160;</a></span>getEntryText()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string DCL::CLog::getEntryText </td>
-          <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>entryIndex</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a log entry's text string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">entryIndex</td><td>The index of the entry </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A string holding the entry's text.</dd></dl>
-<p>If entryIndex is out of bounds, an exception occurs </p>
-
-<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00106">106</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
-
-</div>
-</div>
-<a id="acfdc36c83c257b05e234124ff65a1e6a" name="acfdc36c83c257b05e234124ff65a1e6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfdc36c83c257b05e234124ff65a1e6a">&#9670;&#160;</a></span>getEntryTime()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string DCL::CLog::getEntryTime </td>
-          <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>entryIndex</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a log entry's time it was added since the log file was created as a formatted string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">entryIndex</td><td>The index of the entry </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A string which represents the time since the log file was created, which the entry was added.</dd></dl>
-<p>If entryIndex is out of bounds, an exception occurs </p>
-
-<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00112">112</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a63db6883a75bbd242279df668a538798" name="a63db6883a75bbd242279df668a538798"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63db6883a75bbd242279df668a538798">&#9670;&#160;</a></span>getEntryTimes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DCL::CLog::getEntryTimes </td>
-          <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>entryIndex</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float &amp;</td>          <td class="paramname"><span class="paramname"><em>fSecondsOut</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>iMinutesOut</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>iHoursOut</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>iDaysOut</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>iWeeksOut</em></span>&#160;) const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stores a log entry's time it was added since the log file was created to the passed variables. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">entryIndex</td><td></td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">fSecondsOut</td><td>Holds the number of seconds. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">iMinutesOut</td><td>Holds the number of minutes. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">iHoursOut</td><td>Holds the number of hours. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">iDaysOut</td><td>Holds the number of days. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">iWeeksOut</td><td>Holds the number of weeks.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>If entryIndex is out of bounds, an exception occurs </p>
-
-<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00118">118</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aec810fa6176e0ef2a27f7aa3281e0fbf" name="aec810fa6176e0ef2a27f7aa3281e0fbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec810fa6176e0ef2a27f7aa3281e0fbf">&#9670;&#160;</a></span>getNumEntries()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t DCL::CLog::getNumEntries </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return number of entries added via <a class="el" href="#a80598d56065645c31b629abb58222a36" title="Add text to the log file and entries in memory.">add()</a> </p>
-<dl class="section return"><dt>Returns</dt><dd>The current number of entries added via <a class="el" href="#a80598d56065645c31b629abb58222a36" title="Add text to the log file and entries in memory.">add()</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00101">101</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a4ff6c01be34d498694b20112980f6d6b" name="a4ff6c01be34d498694b20112980f6d6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ff6c01be34d498694b20112980f6d6b">&#9670;&#160;</a></span>setLogFileName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DCL::CLog::setLogFileName </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strFilename</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;log.txt&quot;</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the log file name of the log file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">strFilename</td><td>The filename to use for the log file.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Will attempt to delete the current log file by calling <a class="el" href="#a3653540972d38fdc601920d9f19e4dd4" title="Deletes the current log file.">deleteLogFile()</a> before creating the newly named one. Also clears the newly named file. </p>
-
-<p class="definition">Definition at line <a class="el" href="_logging_8cpp_source.html#l00093">93</a> of file <a class="el" href="_logging_8cpp_source.html">Logging.cpp</a>.</p>
 
 </div>
 </div>

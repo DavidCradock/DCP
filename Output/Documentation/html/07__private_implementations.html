@@ -161,7 +161,7 @@ Next up, the source file...
 <div class="line">    <span class="comment">// Allocate the private implementation</span></div>
 <div class="line">    pimpl = <span class="keyword">new</span> CPimpl;</div>
 <div class="line">    <span class="comment">// Check it was allocated below here</span></div>
-<div class="line">    <a class="code hl_define" href="_exceptions_8h.html#a9bd86a9c7b41cef1ebad126eb6f9806c">ThrowIfMemoryNotAllocated</a>(pimpl);</div>
+<div class="line">    ThrowIfMemoryNotAllocated(pimpl);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Class destructor</span></div>
@@ -174,7 +174,6 @@ Next up, the source file...
 <div class="line">        pimpl = 0;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_exceptions_8h_html_a9bd86a9c7b41cef1ebad126eb6f9806c"><div class="ttname"><a href="_exceptions_8h.html#a9bd86a9c7b41cef1ebad126eb6f9806c">ThrowIfMemoryNotAllocated</a></div><div class="ttdeci">#define ThrowIfMemoryNotAllocated(x)</div><div class="ttdoc">Macro to check a pointer and if 0, throw an exception stating that the memory was not allocated with ...</div><div class="ttdef"><b>Definition</b> <a href="_exceptions_8h_source.html#l00079">Exceptions.h:79</a></div></div>
 </div><!-- fragment -->
 
 Then in our CMyClassWithPrivateStuff, we simply access the private implementation, by accessing the pimpl pointer.

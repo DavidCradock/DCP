@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Daves Coding Paradise: X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Renderers/RendererVulkan.cpp Source File</title>
+<title>Daves Coding Paradise: X:/Projects/c++/2024/DCP/ProjectFiles/StaticLibs/DavesCodeLib/Renderers/Vulkan/RendererVulkan.cpp Source File</title>
 <link rel="icon" href="DCP_icon.PNG" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -102,173 +102,309 @@ $(function(){initNavTree('_renderer_vulkan_8cpp_source.html',''); initResizable(
   <div class="headertitle"><div class="title">RendererVulkan.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_renderer_vulkan_8h.html">RendererVulkan.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    CRendererVulkan::CRendererVulkan()</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    }</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    CRendererVulkan::~CRendererVulkan()</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#aab3798bbb15a830a307b866d6bee05e2">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#aab3798bbb15a830a307b866d6bee05e2">CRendererVulkan::initialise</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iWindowWidth, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iWindowHeight, <span class="keyword">const</span> std::string&amp; strWindowTitle, <span class="keywordtype">bool</span> bFullscreen, <span class="keywordtype">bool</span> bVSyncEnabled, <a class="code hl_class" href="class_d_c_l_1_1_c_colourf.html">CColourf</a> clearColour)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
-</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a58b8aeb96ea35bb8eaa33b50ec4177c9">   19</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a58b8aeb96ea35bb8eaa33b50ec4177c9">CRendererVulkan::shutdown</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;RendererVulkan.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../../Core/Exceptions.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Windows.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// Vulkan</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// SDL</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../../../../DynamicLibs/SDL-release-2.30.6/include/SDL.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html">   16</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html">CRendererVulkan::CPrim</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#aa368b46ab85a70c4bff3b222a9f7bf00">CPrim</a>();</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
-</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#ae8737796d7cd4c44017ad4d38f92bcba">   24</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#ae8737796d7cd4c44017ad4d38f92bcba">CRendererVulkan::updateWindow</a>(<span class="keywordtype">bool</span>&amp; bWindowResized, <span class="keywordtype">bool</span>&amp; bWindowMinimized, <span class="keywordtype">bool</span>&amp; bWindowHasBeenAskedToClose)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
-</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#ac1b5449e19a4558a547ad2a1c6a4f51e">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#ac1b5449e19a4558a547ad2a1c6a4f51e">CRendererVulkan::blendDisable</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
-</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a2aaa1da737039c6ef465fd940dc7e467">   22</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a2aaa1da737039c6ef465fd940dc7e467">bVsyncEnabled</a>;             </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a5dcbec07b6938cc80495c7be0e040fea">   23</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a5dcbec07b6938cc80495c7be0e040fea">bWindowFullscreen</a>;         </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#ae51534f8fc67f137b21fa6d8dff4ef44">   24</a></span>        <a class="code hl_class" href="class_d_c_l_1_1_c_colourf.html">CColourf</a> <a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#ae51534f8fc67f137b21fa6d8dff4ef44">clearColour</a>;           </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a687320d256f0adb3980cf24ce491e71c">   25</a></span>        HINSTANCE <a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a687320d256f0adb3980cf24ce491e71c">hInstance</a>;            </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a7a59917085d0fa74e5bffb0a8d7f392e">   26</a></span>        std::string <a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a7a59917085d0fa74e5bffb0a8d7f392e">strWindowTitle</a>;     </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a4a4b87d6ef05dcb65426d6f82a33d03c">   27</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a4a4b87d6ef05dcb65426d6f82a33d03c">uiWindowWidth</a>;     </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a50c3ad64dc820f10a1340027733d689b">   28</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a50c3ad64dc820f10a1340027733d689b">uiWindowHeight</a>;    </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a0f0c4017a4e0dda11dd7965bdf8eceaa">   30</a></span>        SDL_Window* <a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a0f0c4017a4e0dda11dd7965bdf8eceaa">pSDLWindow</a>;         </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a3be0d5a49be9d1a504df0527eb84d59f">   31</a></span>        SDL_GLContext <a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a3be0d5a49be9d1a504df0527eb84d59f">SDLOpenGLContext</a>; </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#aced3cff4ed1554a154ef549eb2698441">   34</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#aced3cff4ed1554a154ef549eb2698441">CRendererVulkan::blendEnable</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    };</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a774f7e246fb85a822ebab56d2a018e7e">   39</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a774f7e246fb85a822ebab56d2a018e7e">CRendererVulkan::blendFunction_SrcAlpha_One</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#aa368b46ab85a70c4bff3b222a9f7bf00">   36</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#aa368b46ab85a70c4bff3b222a9f7bf00">CRendererVulkan::CPrim::CPrim</a>()</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a0f0c4017a4e0dda11dd7965bdf8eceaa">pSDLWindow</a> = NULL;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#aac27440a5ce3d3267d77974d122dde90">   44</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#aac27440a5ce3d3267d77974d122dde90">CRendererVulkan::blendFunction_SrcAlpha_OneMinusSrcAlpha</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a431fbd8e87a82af4363810e3f21fc07e">   49</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a431fbd8e87a82af4363810e3f21fc07e">CRendererVulkan::cullFaceAntiClockwise</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a572029c54a0717c4760ce0feec65cba5">   54</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a572029c54a0717c4760ce0feec65cba5">CRendererVulkan::cullFaceClockwise</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a9d4e3306372307d290d9f1791be8db4e">   59</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a9d4e3306372307d290d9f1791be8db4e">CRendererVulkan::cullFaceDisable</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
-</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a34012be76591983c586f182881e32d08">   64</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a34012be76591983c586f182881e32d08">CRendererVulkan::cullFaceEnable</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    CRendererVulkan::CRendererVulkan()</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        LOG(<span class="stringliteral">&quot;Constructor called.&quot;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        prim = <span class="keyword">new</span> <a class="code hl_class" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html">CPrim</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        ThrowIfMemoryNotAllocated(prim);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    CRendererVulkan::~CRendererVulkan()</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        LOG(<span class="stringliteral">&quot;Destructor called.&quot;</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">if</span> (prim)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keyword">delete</span> prim;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            prim = 0;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#aab3798bbb15a830a307b866d6bee05e2">   58</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#aab3798bbb15a830a307b866d6bee05e2">CRendererVulkan::initialise</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iWindowWidth, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> iWindowHeight, <span class="keyword">const</span> std::string&amp; strWindowTitle, <span class="keywordtype">bool</span> bFullscreen, <span class="keywordtype">bool</span> bVSyncEnabled, <a class="code hl_class" href="class_d_c_l_1_1_c_colourf.html">CColourf</a> clearColour)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        prim-&gt;<a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a2aaa1da737039c6ef465fd940dc7e467">bVsyncEnabled</a> = bVSyncEnabled;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        prim-&gt;<a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a5dcbec07b6938cc80495c7be0e040fea">bWindowFullscreen</a> = bFullscreen;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        prim-&gt;<a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#ae51534f8fc67f137b21fa6d8dff4ef44">clearColour</a> = clearColour;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        prim-&gt;<a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a687320d256f0adb3980cf24ce491e71c">hInstance</a> = NULL;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        prim-&gt;<a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a7a59917085d0fa74e5bffb0a8d7f392e">strWindowTitle</a> = strWindowTitle;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        prim-&gt;<a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a50c3ad64dc820f10a1340027733d689b">uiWindowHeight</a> = iWindowHeight;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        prim-&gt;<a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a4a4b87d6ef05dcb65426d6f82a33d03c">uiWindowWidth</a> = iWindowWidth;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
 </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#ab55bb1d23b1ae2b40de72fc8476f7cdc">   69</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#ab55bb1d23b1ae2b40de72fc8476f7cdc">CRendererVulkan::depthTestDisable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a58b8aeb96ea35bb8eaa33b50ec4177c9">   69</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a58b8aeb96ea35bb8eaa33b50ec4177c9">CRendererVulkan::shutdown</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
 </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#afb739e7056329e1c990f1bca351d5d52">   74</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#afb739e7056329e1c990f1bca351d5d52">CRendererVulkan::depthTestEnable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#ae8737796d7cd4c44017ad4d38f92bcba">   74</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#ae8737796d7cd4c44017ad4d38f92bcba">CRendererVulkan::updateWindow</a>(<span class="keywordtype">bool</span>&amp; bWindowResized, <span class="keywordtype">bool</span>&amp; bWindowMinimized, <span class="keywordtype">bool</span>&amp; bWindowHasBeenAskedToClose)</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
 </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
 <div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a6a634e04b6a2f99ebdfacfb7431fda4d">   79</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a6a634e04b6a2f99ebdfacfb7431fda4d">CRendererVulkan::pixelsRead</a>(<span class="keywordtype">int</span> iPositionX, <span class="keywordtype">int</span> iPositionY, <span class="keywordtype">int</span> iWidth, <span class="keywordtype">int</span> iHeight, <span class="keywordtype">void</span>* pixels)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a00faf2da61854f564513f79098d16123">   79</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a00faf2da61854f564513f79098d16123">CRendererVulkan::beginFrame</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
 </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a7b1a663e9fd1a5ff2d63e48bc8619ae8">   84</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a7b1a663e9fd1a5ff2d63e48bc8619ae8">CRendererVulkan::pixelsWrite</a>(<span class="keywordtype">int</span> iPositionX, <span class="keywordtype">int</span> iPositionY, <span class="keywordtype">int</span> iWidth, <span class="keywordtype">int</span> iHeight, <span class="keywordtype">void</span>* pixels)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a322f313e50f645b7d1cd15e92f269849">   84</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a322f313e50f645b7d1cd15e92f269849">CRendererVulkan::endFrame</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
 </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a2c8bd6b906ddd002e787736d5643b60b">   89</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a2c8bd6b906ddd002e787736d5643b60b">CRendererVulkan::scissorTest</a>(<span class="keywordtype">int</span> iPositionX, <span class="keywordtype">int</span> iPositionY, <span class="keywordtype">int</span> iWidth, <span class="keywordtype">int</span> iHeight)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#aaaf48d9a689c96f37be48567b951f477">   89</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#aaaf48d9a689c96f37be48567b951f477">CRendererVulkan::setBackbufferClearColour</a>(<span class="keywordtype">float</span> fRed, <span class="keywordtype">float</span> fGreen, <span class="keywordtype">float</span> fBlue, <span class="keywordtype">float</span> fAlpha)</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
 </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#aeff92dfb7982751a2df47bf9e18efd43">   94</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#aeff92dfb7982751a2df47bf9e18efd43">CRendererVulkan::scissorTestEnable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a9bb10bc59e47a78c06772c7adf538baf">   94</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a9bb10bc59e47a78c06772c7adf538baf">CRendererVulkan::setVSync</a>(<span class="keywordtype">bool</span> bVSyncOn)</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">if</span> (NULL != prim-&gt;<a class="code hl_variable" href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a0f0c4017a4e0dda11dd7965bdf8eceaa">pSDLWindow</a>)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            SDL_GL_SetSwapInterval(<span class="keywordtype">int</span>(bVSyncOn));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
 </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#ad2b08d56bef8a6f29b0dad95ebb60847">   99</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#ad2b08d56bef8a6f29b0dad95ebb60847">CRendererVulkan::scissorTestDisable</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#ac1b5449e19a4558a547ad2a1c6a4f51e">  102</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#ac1b5449e19a4558a547ad2a1c6a4f51e">CRendererVulkan::blendDisable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
 </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}   <span class="comment">// namespace DCL</span></div>
-<div class="ttc" id="a_renderer_vulkan_8h_html"><div class="ttname"><a href="_renderer_vulkan_8h.html">RendererVulkan.h</a></div><div class="ttdoc">Brief description for the file goes here.</div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_colourf_html"><div class="ttname"><a href="class_d_c_l_1_1_c_colourf.html">DCL::CColourf</a></div><div class="ttdoc">Used to represent a colour using a float for each colour component RGBA, totalling 16 bytes (4 bytes ...</div><div class="ttdef"><b>Definition</b> <a href="_colourf_8h_source.html#l00012">Colourf.h:13</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a2c8bd6b906ddd002e787736d5643b60b"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a2c8bd6b906ddd002e787736d5643b60b">DCL::CRendererVulkan::scissorTest</a></div><div class="ttdeci">void scissorTest(int iPositionX, int iPositionY, int iWidth, int iHeight)</div><div class="ttdoc">Set parameters for scissor test.</div><div class="ttdef"><b>Definition</b> <a href="#l00089">RendererVulkan.cpp:89</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a34012be76591983c586f182881e32d08"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a34012be76591983c586f182881e32d08">DCL::CRendererVulkan::cullFaceEnable</a></div><div class="ttdeci">void cullFaceEnable(void)</div><div class="ttdoc">Enable culling of faces.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">RendererVulkan.cpp:64</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a431fbd8e87a82af4363810e3f21fc07e"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a431fbd8e87a82af4363810e3f21fc07e">DCL::CRendererVulkan::cullFaceAntiClockwise</a></div><div class="ttdeci">void cullFaceAntiClockwise(void)</div><div class="ttdoc">Set culling of anti clockwise faces.</div><div class="ttdef"><b>Definition</b> <a href="#l00049">RendererVulkan.cpp:49</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a572029c54a0717c4760ce0feec65cba5"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a572029c54a0717c4760ce0feec65cba5">DCL::CRendererVulkan::cullFaceClockwise</a></div><div class="ttdeci">void cullFaceClockwise(void)</div><div class="ttdoc">Set culling of clockwise faces.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">RendererVulkan.cpp:54</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a58b8aeb96ea35bb8eaa33b50ec4177c9"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a58b8aeb96ea35bb8eaa33b50ec4177c9">DCL::CRendererVulkan::shutdown</a></div><div class="ttdeci">void shutdown(void)</div><div class="ttdoc">Shutdown and close the API and window.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">RendererVulkan.cpp:19</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a6a634e04b6a2f99ebdfacfb7431fda4d"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a6a634e04b6a2f99ebdfacfb7431fda4d">DCL::CRendererVulkan::pixelsRead</a></div><div class="ttdeci">void pixelsRead(int iPositionX, int iPositionY, int iWidth, int iHeight, void *pixels)</div><div class="ttdoc">Read pixels from the currently set &quot;back buffer&quot;.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">RendererVulkan.cpp:79</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a774f7e246fb85a822ebab56d2a018e7e"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a774f7e246fb85a822ebab56d2a018e7e">DCL::CRendererVulkan::blendFunction_SrcAlpha_One</a></div><div class="ttdeci">void blendFunction_SrcAlpha_One(void)</div><div class="ttdoc">Set blending mode to SourceAlpha, One.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">RendererVulkan.cpp:39</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a7b1a663e9fd1a5ff2d63e48bc8619ae8"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a7b1a663e9fd1a5ff2d63e48bc8619ae8">DCL::CRendererVulkan::pixelsWrite</a></div><div class="ttdeci">void pixelsWrite(int iPositionX, int iPositionY, int iWidth, int iHeight, void *pixels)</div><div class="ttdoc">Write pixels from the currently set &quot;back buffer&quot;.</div><div class="ttdef"><b>Definition</b> <a href="#l00084">RendererVulkan.cpp:84</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a9d4e3306372307d290d9f1791be8db4e"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a9d4e3306372307d290d9f1791be8db4e">DCL::CRendererVulkan::cullFaceDisable</a></div><div class="ttdeci">void cullFaceDisable(void)</div><div class="ttdoc">Disable culling of faces.</div><div class="ttdef"><b>Definition</b> <a href="#l00059">RendererVulkan.cpp:59</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_aab3798bbb15a830a307b866d6bee05e2"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#aab3798bbb15a830a307b866d6bee05e2">DCL::CRendererVulkan::initialise</a></div><div class="ttdeci">void initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string &amp;strWindowTitle, bool bFullscreen, bool bVSyncEnabled, CColourf clearColour)</div><div class="ttdoc">Initialise a window with the graphics API all hooked up and ready to go.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">RendererVulkan.cpp:14</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_aac27440a5ce3d3267d77974d122dde90"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#aac27440a5ce3d3267d77974d122dde90">DCL::CRendererVulkan::blendFunction_SrcAlpha_OneMinusSrcAlpha</a></div><div class="ttdeci">void blendFunction_SrcAlpha_OneMinusSrcAlpha(void)</div><div class="ttdoc">Set blending mode to SourceAlpha, OneMinusSrcAlpha.</div><div class="ttdef"><b>Definition</b> <a href="#l00044">RendererVulkan.cpp:44</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_ab55bb1d23b1ae2b40de72fc8476f7cdc"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#ab55bb1d23b1ae2b40de72fc8476f7cdc">DCL::CRendererVulkan::depthTestDisable</a></div><div class="ttdeci">void depthTestDisable(void)</div><div class="ttdoc">Disable depth testing.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">RendererVulkan.cpp:69</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_ac1b5449e19a4558a547ad2a1c6a4f51e"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#ac1b5449e19a4558a547ad2a1c6a4f51e">DCL::CRendererVulkan::blendDisable</a></div><div class="ttdeci">void blendDisable(void)</div><div class="ttdoc">Disable blending.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">RendererVulkan.cpp:29</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_aced3cff4ed1554a154ef549eb2698441"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#aced3cff4ed1554a154ef549eb2698441">DCL::CRendererVulkan::blendEnable</a></div><div class="ttdeci">void blendEnable(void)</div><div class="ttdoc">Enable blending.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">RendererVulkan.cpp:34</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_ad2b08d56bef8a6f29b0dad95ebb60847"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#ad2b08d56bef8a6f29b0dad95ebb60847">DCL::CRendererVulkan::scissorTestDisable</a></div><div class="ttdeci">void scissorTestDisable(void)</div><div class="ttdoc">Disable scissor testing.</div><div class="ttdef"><b>Definition</b> <a href="#l00099">RendererVulkan.cpp:99</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_ae8737796d7cd4c44017ad4d38f92bcba"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#ae8737796d7cd4c44017ad4d38f92bcba">DCL::CRendererVulkan::updateWindow</a></div><div class="ttdeci">void updateWindow(bool &amp;bWindowResized, bool &amp;bWindowMinimized, bool &amp;bWindowHasBeenAskedToClose)</div><div class="ttdoc">Should be called regularly, IE, each program loop to check any messages sent to the rendering window.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">RendererVulkan.cpp:24</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_aeff92dfb7982751a2df47bf9e18efd43"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#aeff92dfb7982751a2df47bf9e18efd43">DCL::CRendererVulkan::scissorTestEnable</a></div><div class="ttdeci">void scissorTestEnable(void)</div><div class="ttdoc">Enable scissor testing.</div><div class="ttdef"><b>Definition</b> <a href="#l00094">RendererVulkan.cpp:94</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_afb739e7056329e1c990f1bca351d5d52"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#afb739e7056329e1c990f1bca351d5d52">DCL::CRendererVulkan::depthTestEnable</a></div><div class="ttdeci">void depthTestEnable(void)</div><div class="ttdoc">Enable depth testing.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">RendererVulkan.cpp:74</a></div></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#aced3cff4ed1554a154ef549eb2698441">  107</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#aced3cff4ed1554a154ef549eb2698441">CRendererVulkan::blendEnable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a774f7e246fb85a822ebab56d2a018e7e">  112</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a774f7e246fb85a822ebab56d2a018e7e">CRendererVulkan::blendFunction_SrcAlpha_One</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#aac27440a5ce3d3267d77974d122dde90">  117</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#aac27440a5ce3d3267d77974d122dde90">CRendererVulkan::blendFunction_SrcAlpha_OneMinusSrcAlpha</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a431fbd8e87a82af4363810e3f21fc07e">  122</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a431fbd8e87a82af4363810e3f21fc07e">CRendererVulkan::cullFaceAntiClockwise</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a572029c54a0717c4760ce0feec65cba5">  127</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a572029c54a0717c4760ce0feec65cba5">CRendererVulkan::cullFaceClockwise</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a9d4e3306372307d290d9f1791be8db4e">  132</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a9d4e3306372307d290d9f1791be8db4e">CRendererVulkan::cullFaceDisable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a34012be76591983c586f182881e32d08">  137</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a34012be76591983c586f182881e32d08">CRendererVulkan::cullFaceEnable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#ab55bb1d23b1ae2b40de72fc8476f7cdc">  142</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#ab55bb1d23b1ae2b40de72fc8476f7cdc">CRendererVulkan::depthTestDisable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#afb739e7056329e1c990f1bca351d5d52">  147</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#afb739e7056329e1c990f1bca351d5d52">CRendererVulkan::depthTestEnable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
+</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a6a634e04b6a2f99ebdfacfb7431fda4d">  152</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a6a634e04b6a2f99ebdfacfb7431fda4d">CRendererVulkan::pixelsRead</a>(<span class="keywordtype">int</span> iPositionX, <span class="keywordtype">int</span> iPositionY, <span class="keywordtype">int</span> iWidth, <span class="keywordtype">int</span> iHeight, <span class="keywordtype">void</span>* pixels)</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
+</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="foldopen" id="foldopen00157" data-start="{" data-end="}">
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a7b1a663e9fd1a5ff2d63e48bc8619ae8">  157</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a7b1a663e9fd1a5ff2d63e48bc8619ae8">CRendererVulkan::pixelsWrite</a>(<span class="keywordtype">int</span> iPositionX, <span class="keywordtype">int</span> iPositionY, <span class="keywordtype">int</span> iWidth, <span class="keywordtype">int</span> iHeight, <span class="keywordtype">void</span>* pixels)</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a2c8bd6b906ddd002e787736d5643b60b">  162</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a2c8bd6b906ddd002e787736d5643b60b">CRendererVulkan::scissorTest</a>(<span class="keywordtype">int</span> iPositionX, <span class="keywordtype">int</span> iPositionY, <span class="keywordtype">int</span> iWidth, <span class="keywordtype">int</span> iHeight)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#aeff92dfb7982751a2df47bf9e18efd43">  167</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#aeff92dfb7982751a2df47bf9e18efd43">CRendererVulkan::scissorTestEnable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    }</div>
+</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="foldopen" id="foldopen00172" data-start="{" data-end="}">
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#ad2b08d56bef8a6f29b0dad95ebb60847">  172</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#ad2b08d56bef8a6f29b0dad95ebb60847">CRendererVulkan::scissorTestDisable</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
+</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#ae7fa885cfdb17ad430fea5883370683f">  177</a></span>    <a class="code hl_class" href="class_d_c_l_1_1_c_resource_texture2_d_from_c_image_base.html">CResourceTexture2DFromCImageBase</a>* <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#ae7fa885cfdb17ad430fea5883370683f">CRendererVulkan::addTexture2DFromCImage</a>(<span class="keyword">const</span> std::string&amp; strResourceName, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiGroupNumber)</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    }</div>
+</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="foldopen" id="foldopen00182" data-start="{" data-end="}">
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a6299a78ae9cb3c438e3201c20e99309c">  182</a></span>    <a class="code hl_class" href="class_d_c_l_1_1_c_resource_texture2_d_from_c_image_base.html">CResourceTexture2DFromCImageBase</a>* <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a6299a78ae9cb3c438e3201c20e99309c">CRendererVulkan::getTexture2DFromCImage</a>(<span class="keyword">const</span> std::string&amp; strResourceName, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiGroupNumber)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    }</div>
+</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a75229dfb3519415888152bf495af7232">  187</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a75229dfb3519415888152bf495af7232">CRendererVulkan::getTexture2DFromCImageExists</a>(<span class="keyword">const</span> std::string&amp; strResourceName, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiGroupNumber)</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#a11e3d8807d9dc2c3e9b255a8afaf199a">  192</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#a11e3d8807d9dc2c3e9b255a8afaf199a">CRendererVulkan::removeTexture2DFromCImage</a>(<span class="keyword">const</span> std::string&amp; strResourceName, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiGroupNumber)</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    }</div>
+</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="foldopen" id="foldopen00197" data-start="{" data-end="}">
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_renderer_vulkan.html#ad83003486c88a860c464dee4638f8e46">  197</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_renderer_vulkan.html#ad83003486c88a860c464dee4638f8e46">CRendererVulkan::removeAllTexture2DFromCImage</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiGroupNumber)</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    }</div>
+</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}   <span class="comment">// namespace DCL</span></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_colourf_html"><div class="ttname"><a href="class_d_c_l_1_1_c_colourf.html">DCL::CColourf</a></div><div class="ttdoc">Used to represent a colour using a float for each colour component RGBA, totalling 16 bytes (4 bytes ...</div><div class="ttdef"><b>Definition</b> <a href="_colourf_8h_source.html#l00007">Colourf.h:8</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html">DCL::CRendererVulkan::CPrim</a></div><div class="ttdoc">Private implementation for CRendererVulkan class.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">RendererVulkan.cpp:17</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html_a0f0c4017a4e0dda11dd7965bdf8eceaa"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a0f0c4017a4e0dda11dd7965bdf8eceaa">DCL::CRendererVulkan::CPrim::pSDLWindow</a></div><div class="ttdeci">SDL_Window * pSDLWindow</div><div class="ttdoc">SDL Window object pointer.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">RendererVulkan.cpp:30</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html_a2aaa1da737039c6ef465fd940dc7e467"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a2aaa1da737039c6ef465fd940dc7e467">DCL::CRendererVulkan::CPrim::bVsyncEnabled</a></div><div class="ttdeci">bool bVsyncEnabled</div><div class="ttdoc">Vsync enabled or not. Set during call to initialise()</div><div class="ttdef"><b>Definition</b> <a href="#l00022">RendererVulkan.cpp:22</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html_a3be0d5a49be9d1a504df0527eb84d59f"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a3be0d5a49be9d1a504df0527eb84d59f">DCL::CRendererVulkan::CPrim::SDLOpenGLContext</a></div><div class="ttdeci">SDL_GLContext SDLOpenGLContext</div><div class="ttdoc">SDL OpenGL context.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">RendererVulkan.cpp:31</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html_a4a4b87d6ef05dcb65426d6f82a33d03c"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a4a4b87d6ef05dcb65426d6f82a33d03c">DCL::CRendererVulkan::CPrim::uiWindowWidth</a></div><div class="ttdeci">unsigned int uiWindowWidth</div><div class="ttdoc">Width of window. Set during call to initialise()</div><div class="ttdef"><b>Definition</b> <a href="#l00027">RendererVulkan.cpp:27</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html_a50c3ad64dc820f10a1340027733d689b"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a50c3ad64dc820f10a1340027733d689b">DCL::CRendererVulkan::CPrim::uiWindowHeight</a></div><div class="ttdeci">unsigned int uiWindowHeight</div><div class="ttdoc">Height of window. Set during call to initialise()</div><div class="ttdef"><b>Definition</b> <a href="#l00028">RendererVulkan.cpp:28</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html_a5dcbec07b6938cc80495c7be0e040fea"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a5dcbec07b6938cc80495c7be0e040fea">DCL::CRendererVulkan::CPrim::bWindowFullscreen</a></div><div class="ttdeci">bool bWindowFullscreen</div><div class="ttdoc">Fullscreen or windowed. Set during call to initialise()</div><div class="ttdef"><b>Definition</b> <a href="#l00023">RendererVulkan.cpp:23</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html_a687320d256f0adb3980cf24ce491e71c"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a687320d256f0adb3980cf24ce491e71c">DCL::CRendererVulkan::CPrim::hInstance</a></div><div class="ttdeci">HINSTANCE hInstance</div><div class="ttdoc">Application instance handle. Set during call to initialise()</div><div class="ttdef"><b>Definition</b> <a href="#l00025">RendererVulkan.cpp:25</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html_a7a59917085d0fa74e5bffb0a8d7f392e"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a7a59917085d0fa74e5bffb0a8d7f392e">DCL::CRendererVulkan::CPrim::strWindowTitle</a></div><div class="ttdeci">std::string strWindowTitle</div><div class="ttdoc">Window's title text. Set during call to initialise()</div><div class="ttdef"><b>Definition</b> <a href="#l00026">RendererVulkan.cpp:26</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html_aa368b46ab85a70c4bff3b222a9f7bf00"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#aa368b46ab85a70c4bff3b222a9f7bf00">DCL::CRendererVulkan::CPrim::CPrim</a></div><div class="ttdeci">CPrim()</div><div class="ttdoc">Constructor for private members. Sets to initial values.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">RendererVulkan.cpp:36</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim_html_ae51534f8fc67f137b21fa6d8dff4ef44"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#ae51534f8fc67f137b21fa6d8dff4ef44">DCL::CRendererVulkan::CPrim::clearColour</a></div><div class="ttdeci">CColourf clearColour</div><div class="ttdoc">The clear colour. Set during call to initialise()</div><div class="ttdef"><b>Definition</b> <a href="#l00024">RendererVulkan.cpp:24</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a00faf2da61854f564513f79098d16123"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a00faf2da61854f564513f79098d16123">DCL::CRendererVulkan::beginFrame</a></div><div class="ttdeci">void beginFrame(void)</div><div class="ttdoc">Begin frame, clearing back buffer, ready for rendering.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">RendererVulkan.cpp:79</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a11e3d8807d9dc2c3e9b255a8afaf199a"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a11e3d8807d9dc2c3e9b255a8afaf199a">DCL::CRendererVulkan::removeTexture2DFromCImage</a></div><div class="ttdeci">void removeTexture2DFromCImage(const std::string &amp;strResourceName, unsigned int uiGroupNumber)</div><div class="ttdoc">Removes a previously added resource from this manager.</div><div class="ttdef"><b>Definition</b> <a href="#l00192">RendererVulkan.cpp:192</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a2c8bd6b906ddd002e787736d5643b60b"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a2c8bd6b906ddd002e787736d5643b60b">DCL::CRendererVulkan::scissorTest</a></div><div class="ttdeci">void scissorTest(int iPositionX, int iPositionY, int iWidth, int iHeight)</div><div class="ttdoc">Set parameters for scissor test.</div><div class="ttdef"><b>Definition</b> <a href="#l00162">RendererVulkan.cpp:162</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a322f313e50f645b7d1cd15e92f269849"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a322f313e50f645b7d1cd15e92f269849">DCL::CRendererVulkan::endFrame</a></div><div class="ttdeci">void endFrame(void)</div><div class="ttdoc">End frame, flip back buffer to front.</div><div class="ttdef"><b>Definition</b> <a href="#l00084">RendererVulkan.cpp:84</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a34012be76591983c586f182881e32d08"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a34012be76591983c586f182881e32d08">DCL::CRendererVulkan::cullFaceEnable</a></div><div class="ttdeci">void cullFaceEnable(void)</div><div class="ttdoc">Enable culling of faces.</div><div class="ttdef"><b>Definition</b> <a href="#l00137">RendererVulkan.cpp:137</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a431fbd8e87a82af4363810e3f21fc07e"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a431fbd8e87a82af4363810e3f21fc07e">DCL::CRendererVulkan::cullFaceAntiClockwise</a></div><div class="ttdeci">void cullFaceAntiClockwise(void)</div><div class="ttdoc">Set culling of anti clockwise faces.</div><div class="ttdef"><b>Definition</b> <a href="#l00122">RendererVulkan.cpp:122</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a572029c54a0717c4760ce0feec65cba5"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a572029c54a0717c4760ce0feec65cba5">DCL::CRendererVulkan::cullFaceClockwise</a></div><div class="ttdeci">void cullFaceClockwise(void)</div><div class="ttdoc">Set culling of clockwise faces.</div><div class="ttdef"><b>Definition</b> <a href="#l00127">RendererVulkan.cpp:127</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a58b8aeb96ea35bb8eaa33b50ec4177c9"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a58b8aeb96ea35bb8eaa33b50ec4177c9">DCL::CRendererVulkan::shutdown</a></div><div class="ttdeci">void shutdown(void)</div><div class="ttdoc">Shutdown and close the API and window.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">RendererVulkan.cpp:69</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a6299a78ae9cb3c438e3201c20e99309c"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a6299a78ae9cb3c438e3201c20e99309c">DCL::CRendererVulkan::getTexture2DFromCImage</a></div><div class="ttdeci">CResourceTexture2DFromCImageBase * getTexture2DFromCImage(const std::string &amp;strResourceName, unsigned int uiGroupNumber)</div><div class="ttdoc">Returns a pointer to an existing resource.</div><div class="ttdef"><b>Definition</b> <a href="#l00182">RendererVulkan.cpp:182</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a6a634e04b6a2f99ebdfacfb7431fda4d"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a6a634e04b6a2f99ebdfacfb7431fda4d">DCL::CRendererVulkan::pixelsRead</a></div><div class="ttdeci">void pixelsRead(int iPositionX, int iPositionY, int iWidth, int iHeight, void *pixels)</div><div class="ttdoc">Read pixels from the currently set &quot;back buffer&quot;.</div><div class="ttdef"><b>Definition</b> <a href="#l00152">RendererVulkan.cpp:152</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a75229dfb3519415888152bf495af7232"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a75229dfb3519415888152bf495af7232">DCL::CRendererVulkan::getTexture2DFromCImageExists</a></div><div class="ttdeci">bool getTexture2DFromCImageExists(const std::string &amp;strResourceName, unsigned int uiGroupNumber)</div><div class="ttdoc">Returns whether a named resource exists.</div><div class="ttdef"><b>Definition</b> <a href="#l00187">RendererVulkan.cpp:187</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a774f7e246fb85a822ebab56d2a018e7e"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a774f7e246fb85a822ebab56d2a018e7e">DCL::CRendererVulkan::blendFunction_SrcAlpha_One</a></div><div class="ttdeci">void blendFunction_SrcAlpha_One(void)</div><div class="ttdoc">Set blending mode to SourceAlpha, One.</div><div class="ttdef"><b>Definition</b> <a href="#l00112">RendererVulkan.cpp:112</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a7b1a663e9fd1a5ff2d63e48bc8619ae8"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a7b1a663e9fd1a5ff2d63e48bc8619ae8">DCL::CRendererVulkan::pixelsWrite</a></div><div class="ttdeci">void pixelsWrite(int iPositionX, int iPositionY, int iWidth, int iHeight, void *pixels)</div><div class="ttdoc">Write pixels from the currently set &quot;back buffer&quot;.</div><div class="ttdef"><b>Definition</b> <a href="#l00157">RendererVulkan.cpp:157</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a9bb10bc59e47a78c06772c7adf538baf"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a9bb10bc59e47a78c06772c7adf538baf">DCL::CRendererVulkan::setVSync</a></div><div class="ttdeci">void setVSync(bool bVSyncOn)</div><div class="ttdoc">Toggles vertical syncronisation of flipping of the back buffer to the windows' front with the display...</div><div class="ttdef"><b>Definition</b> <a href="#l00094">RendererVulkan.cpp:94</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_a9d4e3306372307d290d9f1791be8db4e"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#a9d4e3306372307d290d9f1791be8db4e">DCL::CRendererVulkan::cullFaceDisable</a></div><div class="ttdeci">void cullFaceDisable(void)</div><div class="ttdoc">Disable culling of faces.</div><div class="ttdef"><b>Definition</b> <a href="#l00132">RendererVulkan.cpp:132</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_aaaf48d9a689c96f37be48567b951f477"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#aaaf48d9a689c96f37be48567b951f477">DCL::CRendererVulkan::setBackbufferClearColour</a></div><div class="ttdeci">void setBackbufferClearColour(float fRed, float fGreen, float fBlue, float fAlpha)</div><div class="ttdoc">Set the colour which the back buffer of the window is cleared to during the call to beginFrame()</div><div class="ttdef"><b>Definition</b> <a href="#l00089">RendererVulkan.cpp:89</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_aab3798bbb15a830a307b866d6bee05e2"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#aab3798bbb15a830a307b866d6bee05e2">DCL::CRendererVulkan::initialise</a></div><div class="ttdeci">void initialise(unsigned int iWindowWidth, unsigned int iWindowHeight, const std::string &amp;strWindowTitle, bool bFullscreen, bool bVSyncEnabled, CColourf clearColour)</div><div class="ttdoc">Initialise a window with the graphics API all hooked up and ready to go.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">RendererVulkan.cpp:58</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_aac27440a5ce3d3267d77974d122dde90"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#aac27440a5ce3d3267d77974d122dde90">DCL::CRendererVulkan::blendFunction_SrcAlpha_OneMinusSrcAlpha</a></div><div class="ttdeci">void blendFunction_SrcAlpha_OneMinusSrcAlpha(void)</div><div class="ttdoc">Set blending mode to SourceAlpha, OneMinusSrcAlpha.</div><div class="ttdef"><b>Definition</b> <a href="#l00117">RendererVulkan.cpp:117</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_ab55bb1d23b1ae2b40de72fc8476f7cdc"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#ab55bb1d23b1ae2b40de72fc8476f7cdc">DCL::CRendererVulkan::depthTestDisable</a></div><div class="ttdeci">void depthTestDisable(void)</div><div class="ttdoc">Disable depth testing.</div><div class="ttdef"><b>Definition</b> <a href="#l00142">RendererVulkan.cpp:142</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_ac1b5449e19a4558a547ad2a1c6a4f51e"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#ac1b5449e19a4558a547ad2a1c6a4f51e">DCL::CRendererVulkan::blendDisable</a></div><div class="ttdeci">void blendDisable(void)</div><div class="ttdoc">Disable blending.</div><div class="ttdef"><b>Definition</b> <a href="#l00102">RendererVulkan.cpp:102</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_aced3cff4ed1554a154ef549eb2698441"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#aced3cff4ed1554a154ef549eb2698441">DCL::CRendererVulkan::blendEnable</a></div><div class="ttdeci">void blendEnable(void)</div><div class="ttdoc">Enable blending.</div><div class="ttdef"><b>Definition</b> <a href="#l00107">RendererVulkan.cpp:107</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_ad2b08d56bef8a6f29b0dad95ebb60847"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#ad2b08d56bef8a6f29b0dad95ebb60847">DCL::CRendererVulkan::scissorTestDisable</a></div><div class="ttdeci">void scissorTestDisable(void)</div><div class="ttdoc">Disable scissor testing.</div><div class="ttdef"><b>Definition</b> <a href="#l00172">RendererVulkan.cpp:172</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_ad83003486c88a860c464dee4638f8e46"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#ad83003486c88a860c464dee4638f8e46">DCL::CRendererVulkan::removeAllTexture2DFromCImage</a></div><div class="ttdeci">void removeAllTexture2DFromCImage(unsigned int uiGroupNumber)</div><div class="ttdoc">Removes all previously added resources from the given numbered group.</div><div class="ttdef"><b>Definition</b> <a href="#l00197">RendererVulkan.cpp:197</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_ae7fa885cfdb17ad430fea5883370683f"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#ae7fa885cfdb17ad430fea5883370683f">DCL::CRendererVulkan::addTexture2DFromCImage</a></div><div class="ttdeci">CResourceTexture2DFromCImageBase * addTexture2DFromCImage(const std::string &amp;strResourceName, unsigned int uiGroupNumber)</div><div class="ttdoc">Adds a new RecourceTexture2DFromCImage object to be managed.</div><div class="ttdef"><b>Definition</b> <a href="#l00177">RendererVulkan.cpp:177</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_ae8737796d7cd4c44017ad4d38f92bcba"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#ae8737796d7cd4c44017ad4d38f92bcba">DCL::CRendererVulkan::updateWindow</a></div><div class="ttdeci">void updateWindow(bool &amp;bWindowResized, bool &amp;bWindowMinimized, bool &amp;bWindowHasBeenAskedToClose)</div><div class="ttdoc">Should be called regularly, IE, each program loop to check any messages sent to the rendering window.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">RendererVulkan.cpp:74</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_aeff92dfb7982751a2df47bf9e18efd43"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#aeff92dfb7982751a2df47bf9e18efd43">DCL::CRendererVulkan::scissorTestEnable</a></div><div class="ttdeci">void scissorTestEnable(void)</div><div class="ttdoc">Enable scissor testing.</div><div class="ttdef"><b>Definition</b> <a href="#l00167">RendererVulkan.cpp:167</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_renderer_vulkan_html_afb739e7056329e1c990f1bca351d5d52"><div class="ttname"><a href="class_d_c_l_1_1_c_renderer_vulkan.html#afb739e7056329e1c990f1bca351d5d52">DCL::CRendererVulkan::depthTestEnable</a></div><div class="ttdeci">void depthTestEnable(void)</div><div class="ttdoc">Enable depth testing.</div><div class="ttdef"><b>Definition</b> <a href="#l00147">RendererVulkan.cpp:147</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_resource_texture2_d_from_c_image_base_html"><div class="ttname"><a href="class_d_c_l_1_1_c_resource_texture2_d_from_c_image_base.html">DCL::CResourceTexture2DFromCImageBase</a></div><div class="ttdoc">Base class for resource of type texture 2D created from a CImage object.</div><div class="ttdef"><b>Definition</b> <a href="_resource_texture2_d_from_c_image_8h_source.html#l00020">ResourceTexture2DFromCImage.h:21</a></div></div>
 <div class="ttc" id="anamespace_d_c_l_html"><div class="ttname"><a href="namespace_d_c_l.html">DCL</a></div><div class="ttdoc">The namespace in which everything within Dave's Code Library is stored inside.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8cpp_source.html#l00004">FiniteStateMachine.cpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ca631da8804920316b0d95ddc139151c.html">StaticLibs</a></li><li class="navelem"><a class="el" href="dir_f63e756ca357de737ba1ee25d099ed15.html">DavesCodeLib</a></li><li class="navelem"><a class="el" href="dir_3814ea6d3a046cd1bef0d6e8ad81a068.html">Renderers</a></li><li class="navelem"><b>RendererVulkan.cpp</b></li>
+    <li class="navelem"><a class="el" href="dir_ca631da8804920316b0d95ddc139151c.html">StaticLibs</a></li><li class="navelem"><a class="el" href="dir_f63e756ca357de737ba1ee25d099ed15.html">DavesCodeLib</a></li><li class="navelem"><a class="el" href="dir_3814ea6d3a046cd1bef0d6e8ad81a068.html">Renderers</a></li><li class="navelem"><a class="el" href="dir_f9b69b0cdd4b2715cc5f936bd8063b68.html">Vulkan</a></li><li class="navelem"><b>RendererVulkan.cpp</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>

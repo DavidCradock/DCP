@@ -117,13 +117,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af074f976c28cd282a0467e7fa7e52169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the renderer by creating a window and hooking up the correct graphics API such as OpenGL or Vulkan, ready for use.  <br /></td></tr>
 <tr class="separator:af074f976c28cd282a0467e7fa7e52169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c84fd6f3c7369bc3465c323d6e20f8b" id="r_a0c84fd6f3c7369bc3465c323d6e20f8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_c_l_1_1_c_renderer_base.html">CRendererBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c84fd6f3c7369bc3465c323d6e20f8b">get</a> (void)</td></tr>
-<tr class="memdesc:a0c84fd6f3c7369bc3465c323d6e20f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer the a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object if a call to one of the initAPINAME methods have previously been called.  <br /></td></tr>
+<tr class="memdesc:a0c84fd6f3c7369bc3465c323d6e20f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer the a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object if a call to the init method has previously been called.  <br /></td></tr>
 <tr class="separator:a0c84fd6f3c7369bc3465c323d6e20f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Renderer manager class for creating and holding a renderer. </p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_manager_8h_source.html#l00015">15</a> of file <a class="el" href="_renderer_manager_8h_source.html">RendererManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_manager_8h_source.html#l00010">10</a> of file <a class="el" href="_renderer_manager_8h_source.html">RendererManager.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abf7ec4095d71d28e954dfe9a58ac76a8" name="abf7ec4095d71d28e954dfe9a58ac76a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf7ec4095d71d28e954dfe9a58ac76a8">&#9670;&#160;</a></span>CRendererManager()</h2>
@@ -159,7 +159,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00012">12</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00013">13</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -179,10 +179,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns a pointer the a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object if a call to one of the initAPINAME methods have previously been called. </p>
+<p>Returns a pointer the a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object if a call to the init method has previously been called. </p>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object which we use to perform all the rendering operations if it has been initialised, otherwise, an exception will occur. A call to either initOpenGL() or initVulkan() or any of the other init methods will fix this exception from occurring. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00035">35</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00042">42</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -211,7 +211,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> object which we use to perform all the rendering operations.</dd></dl>
 <p>If the renderer is already initialised, an exception occurs </p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00017">17</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_manager_8cpp_source.html#l00018">18</a> of file <a class="el" href="_renderer_manager_8cpp_source.html">RendererManager.cpp</a>.</p>
 
 </div>
 </div>

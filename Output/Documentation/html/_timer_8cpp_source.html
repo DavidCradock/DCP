@@ -102,228 +102,229 @@ $(function(){initNavTree('_timer_8cpp_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Timer.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_timer_8h.html">Timer.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a3fc9269f2e2fc2e0b453f23fd8926e4a">    7</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a3fc9269f2e2fc2e0b453f23fd8926e4a">CTimer::CTimer</a>()</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a9adc43ebbe892eed4bb2dfed176fe11b">reset</a>();</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    }</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;Timer.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Logging.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_d_c_l.html">DCL</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a3fc9269f2e2fc2e0b453f23fd8926e4a">    8</a></span>    <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a3fc9269f2e2fc2e0b453f23fd8926e4a">CTimer::CTimer</a>()</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        LOG(<span class="stringliteral">&quot;Constructor called.&quot;</span>);;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a9adc43ebbe892eed4bb2dfed176fe11b">reset</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
 </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a883c48b1ee400e150d4994b970cbb555">   12</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a883c48b1ee400e150d4994b970cbb555">CTimer::pause</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        _mbPaused = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a883c48b1ee400e150d4994b970cbb555">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a883c48b1ee400e150d4994b970cbb555">CTimer::pause</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        _mbPaused = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
 </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#ae748a6ffae05ad8f42e38728cb16a285">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#ae748a6ffae05ad8f42e38728cb16a285">CTimer::resume</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        _mbPaused = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#ae748a6ffae05ad8f42e38728cb16a285">   19</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#ae748a6ffae05ad8f42e38728cb16a285">CTimer::resume</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        _mbPaused = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#accc8d2378a3e86ffe1c74dbc79c454b4">   22</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#accc8d2378a3e86ffe1c74dbc79c454b4">CTimer::getSecondsPast</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span> (_mbPaused)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">return</span> 0.0f;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)_mdDeltaSec;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#accc8d2378a3e86ffe1c74dbc79c454b4">   24</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#accc8d2378a3e86ffe1c74dbc79c454b4">CTimer::getSecondsPast</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span> (_mbPaused)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">return</span> 0.0f;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)_mdDeltaSec;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
 </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a1c746ac5f8bf4032562a785dda02eb39">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a1c746ac5f8bf4032562a785dda02eb39">CTimer::update</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        _mdTimePointNew = std::chrono::steady_clock::now();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        _mdTimeDeltaSec = _mdTimePointNew - _mdTimePointOld;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        _mdTimePointOld = _mdTimePointNew;<span class="comment">// std::chrono::steady_clock::now();</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        _mdDeltaSec = _mdTimeDeltaSec.count();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a1c746ac5f8bf4032562a785dda02eb39">   31</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a1c746ac5f8bf4032562a785dda02eb39">CTimer::update</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        _mdTimePointNew = std::chrono::steady_clock::now();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        _mdTimeDeltaSec = _mdTimePointNew - _mdTimePointOld;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        _mdTimePointOld = _mdTimePointNew;<span class="comment">// std::chrono::steady_clock::now();</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">// Compute FPS</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        ++_muiNumFrames;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        _mdFPSFrameTime += _mdDeltaSec * 1000.0;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">if</span> (_mdFPSFrameTime &gt; 0.0)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            _mdFPS = _muiNumFrames * (1000.0 / _mdFPSFrameTime);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            _muiNumFrames = 0;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            _mdFPSFrameTime = 0.0;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="comment">// Compute FPS smoothed</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        _mdFPSAveragedTimeCount += _mdDeltaSec;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        ++_miFPSAveragedNumCallsPerSec;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        _mdFPSAveragedAccum += _mdFPS;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">if</span> (_mdFPSAveragedTimeCount &gt; _mdFPSAveragedRate)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">if</span> (_miFPSAveragedNumCallsPerSec &lt; 1)</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                _miFPSAveragedNumCallsPerSec = 1;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            _mdFPSAveraged = _mdFPSAveragedAccum / _miFPSAveragedNumCallsPerSec;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            _mdFPSAveragedTimeCount = 0;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            _miFPSAveragedNumCallsPerSec = 0;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            _mdFPSAveragedAccum = 0;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="comment">// Runtime</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        _mdRuntimeInSeconds += _mdDeltaSec;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        _mdDeltaSec = _mdTimeDeltaSec.count();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="comment">// Compute FPS</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        ++_muiNumFrames;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        _mdFPSFrameTime += _mdDeltaSec * 1000.0;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span> (_mdFPSFrameTime &gt; 0.0)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            _mdFPS = _muiNumFrames * (1000.0 / _mdFPSFrameTime);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            _muiNumFrames = 0;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            _mdFPSFrameTime = 0.0;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="comment">// Compute FPS smoothed</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        _mdFPSAveragedTimeCount += _mdDeltaSec;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ++_miFPSAveragedNumCallsPerSec;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        _mdFPSAveragedAccum += _mdFPS;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">if</span> (_mdFPSAveragedTimeCount &gt; _mdFPSAveragedRate)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span> (_miFPSAveragedNumCallsPerSec &lt; 1)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                _miFPSAveragedNumCallsPerSec = 1;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            _mdFPSAveraged = _mdFPSAveragedAccum / _miFPSAveragedNumCallsPerSec;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            _mdFPSAveragedTimeCount = 0;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            _miFPSAveragedNumCallsPerSec = 0;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            _mdFPSAveragedAccum = 0;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="comment">// Runtime</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        _mdRuntimeInSeconds += _mdDeltaSec;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
 </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a536c37fa1bcd48ac1ed74faecd34d6f3">   66</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a536c37fa1bcd48ac1ed74faecd34d6f3">CTimer::sleep</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiMilliseconds)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="comment">//Sleep(uiMilliseconds); // Legacy Windows function. Use modern crossplatform method instead...</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        std::this_thread::sleep_for(std::chrono::milliseconds(uiMilliseconds));</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a536c37fa1bcd48ac1ed74faecd34d6f3">   68</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a536c37fa1bcd48ac1ed74faecd34d6f3">CTimer::sleep</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> uiMilliseconds)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="comment">//Sleep(uiMilliseconds); // Legacy Windows function. Use modern crossplatform method instead...</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        std::this_thread::sleep_for(std::chrono::milliseconds(uiMilliseconds));</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#ab1e55329385452b5a1b604995353912b">   72</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#ab1e55329385452b5a1b604995353912b">CTimer::setAveragedFPSRate</a>(<span class="keywordtype">float</span> fSecondsBetweenUpdates)</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        _mdFPSAveragedRate = (double)fSecondsBetweenUpdates;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">if</span> (_mdFPSAveragedRate &lt;= 0)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            _mdFPSAveragedRate = 0.001;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#ab1e55329385452b5a1b604995353912b">   74</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#ab1e55329385452b5a1b604995353912b">CTimer::setAveragedFPSRate</a>(<span class="keywordtype">float</span> fSecondsBetweenUpdates)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        _mdFPSAveragedRate = (double)fSecondsBetweenUpdates;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">if</span> (_mdFPSAveragedRate &lt;= 0)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            _mdFPSAveragedRate = 0.001;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
 </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a5108a66e6cbb48da0edc3d4e65b0b3a9">   79</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a5108a66e6cbb48da0edc3d4e65b0b3a9">CTimer::getAveragedFPSRate</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)_mdFPSAveragedRate;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a5108a66e6cbb48da0edc3d4e65b0b3a9">   81</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a5108a66e6cbb48da0edc3d4e65b0b3a9">CTimer::getAveragedFPSRate</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)_mdFPSAveragedRate;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
 </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a9a06de522d2c363ea7d046d423cedb50">   84</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a9a06de522d2c363ea7d046d423cedb50">CTimer::getFPS</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)_mdFPS;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a9a06de522d2c363ea7d046d423cedb50">   86</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a9a06de522d2c363ea7d046d423cedb50">CTimer::getFPS</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)_mdFPS;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
 </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#abda1c0dcff3b3a9877320da1b6241228">   89</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#abda1c0dcff3b3a9877320da1b6241228">CTimer::getFPSAveraged</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)_mdFPSAveraged;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#abda1c0dcff3b3a9877320da1b6241228">   91</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#abda1c0dcff3b3a9877320da1b6241228">CTimer::getFPSAveraged</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)_mdFPSAveraged;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
 </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a870ebc959aa7b290aa59823d82637e04">   94</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a870ebc959aa7b290aa59823d82637e04">CTimer::getFPSAveragedTimeUntilNextUpdate</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> float(_mdFPSAveragedRate - _mdFPSAveragedTimeCount);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a870ebc959aa7b290aa59823d82637e04">   96</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a870ebc959aa7b290aa59823d82637e04">CTimer::getFPSAveragedTimeUntilNextUpdate</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">return</span> float(_mdFPSAveragedRate - _mdFPSAveragedTimeCount);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
 </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a9adc43ebbe892eed4bb2dfed176fe11b">   99</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a9adc43ebbe892eed4bb2dfed176fe11b">CTimer::reset</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        _mbPaused = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        _mdTimePointNew = std::chrono::steady_clock::now();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        _mdTimePointOld = _mdTimePointNew;<span class="comment">// std::chrono::steady_clock::now();</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        _mdTimeDeltaSec = _mdTimePointNew - _mdTimePointOld;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        _mdDeltaSec = _mdTimeDeltaSec.count();</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="comment">// Stuff for FPS</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        _mdFPS = 1.0;                <span class="comment">// Holds computed current frames per second value</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        _muiNumFrames = 0;           <span class="comment">// Used to compute FPS stuff        </span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        _mdFPSFrameTime = 0;         <span class="comment">// Used to compute FPS stuff</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="comment">// Stuff for FPS averaged</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        _mdFPSAveraged = 1.0;                    <span class="comment">// Holds computed averaged frames per second value</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        _mdFPSAveragedRate = 3.0;                <span class="comment">// Number of seconds between updating the value returned by getFPSAveraged() method.</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        _mdFPSAveragedTimeCount = 0;             <span class="comment">// Used to compute FPSAveraged stuff</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        _miFPSAveragedNumCallsPerSec = 0;        <span class="comment">// Used to compute FPSAveraged stuff</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        _mdFPSAveragedAccum = 0;                 <span class="comment">// Used to compute FPSAveraged stuff</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        _mdRuntimeInSeconds = 0;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a9adc43ebbe892eed4bb2dfed176fe11b">  101</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a9adc43ebbe892eed4bb2dfed176fe11b">CTimer::reset</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        _mbPaused = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        _mdTimePointNew = std::chrono::steady_clock::now();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        _mdTimePointOld = _mdTimePointNew;<span class="comment">// std::chrono::steady_clock::now();</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        _mdTimeDeltaSec = _mdTimePointNew - _mdTimePointOld;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        _mdDeltaSec = _mdTimeDeltaSec.count();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="comment">// Stuff for FPS</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        _mdFPS = 1.0;                <span class="comment">// Holds computed current frames per second value</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        _muiNumFrames = 0;           <span class="comment">// Used to compute FPS stuff        </span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        _mdFPSFrameTime = 0;         <span class="comment">// Used to compute FPS stuff</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="comment">// Stuff for FPS averaged</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        _mdFPSAveraged = 1.0;                    <span class="comment">// Holds computed averaged frames per second value</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        _mdFPSAveragedRate = 3.0;                <span class="comment">// Number of seconds between updating the value returned by getFPSAveraged() method.</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        _mdFPSAveragedTimeCount = 0;             <span class="comment">// Used to compute FPSAveraged stuff</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        _miFPSAveragedNumCallsPerSec = 0;        <span class="comment">// Used to compute FPSAveraged stuff</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        _mdFPSAveragedAccum = 0;                 <span class="comment">// Used to compute FPSAveraged stuff</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        _mdRuntimeInSeconds = 0;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
 </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a603011ab25a0fa23c976e8eb5640ea8e">  122</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a603011ab25a0fa23c976e8eb5640ea8e">CTimer::getRuntimeSeconds</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)_mdRuntimeInSeconds;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a603011ab25a0fa23c976e8eb5640ea8e">  124</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a603011ab25a0fa23c976e8eb5640ea8e">CTimer::getRuntimeSeconds</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)_mdRuntimeInSeconds;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
 </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a03ea9e97cde374fb2d575850cef4682a">  127</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a5ce7073369ddf605d30c43a305f6dc48">CTimer::getClock</a>(<span class="keywordtype">float</span>&amp; fSeconds, <span class="keywordtype">int</span>&amp; iMinutes, <span class="keywordtype">int</span>&amp; iHours, <span class="keywordtype">int</span>&amp; iDays, <span class="keywordtype">int</span>&amp; iWeeks)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        fSeconds = 0.0f;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        iMinutes = 0;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        iHours = 0;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        iDays = 0;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        iWeeks = 0;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="comment">// How many seconds are in a week?</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="comment">// 60seconds in a minute, 60 minutes in an hour, 24 hours in a day and 7 days in a week.</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="comment">// 60 * 60 = 3600 seconds per hour</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="comment">// 3600 * 24 = 86400 seconds in a day</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="comment">// 86400 * 7 = 604800 seconds in a week</span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordtype">double</span> seconds = _mdRuntimeInSeconds;</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">while</span> (seconds &gt;= 604800)   <span class="comment">// Weeks</span></div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        {</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            seconds -= 604800;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            iWeeks++;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        }</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">while</span> (seconds &gt;= 86400)    <span class="comment">// Days</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        {</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            seconds -= 86400;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            iDays++;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        }</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">while</span> (seconds &gt;= 3600)     <span class="comment">// Hours</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            seconds -= 3600;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            iHours++;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        }</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">while</span> (seconds &gt;= 60)       <span class="comment">// Minutes</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        {</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            seconds -= 60;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            iMinutes++;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        fSeconds = (float)seconds;  <span class="comment">// Seconds</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a03ea9e97cde374fb2d575850cef4682a">  129</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a5ce7073369ddf605d30c43a305f6dc48">CTimer::getClock</a>(<span class="keywordtype">float</span>&amp; fSeconds, <span class="keywordtype">int</span>&amp; iMinutes, <span class="keywordtype">int</span>&amp; iHours, <span class="keywordtype">int</span>&amp; iDays, <span class="keywordtype">int</span>&amp; iWeeks)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        fSeconds = 0.0f;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        iMinutes = 0;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        iHours = 0;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        iDays = 0;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        iWeeks = 0;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="comment">// How many seconds are in a week?</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="comment">// 60seconds in a minute, 60 minutes in an hour, 24 hours in a day and 7 days in a week.</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="comment">// 60 * 60 = 3600 seconds per hour</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="comment">// 3600 * 24 = 86400 seconds in a day</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="comment">// 86400 * 7 = 604800 seconds in a week</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordtype">double</span> seconds = _mdRuntimeInSeconds;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">while</span> (seconds &gt;= 604800)   <span class="comment">// Weeks</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            seconds -= 604800;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            iWeeks++;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">while</span> (seconds &gt;= 86400)    <span class="comment">// Days</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            seconds -= 86400;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            iDays++;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">while</span> (seconds &gt;= 3600)     <span class="comment">// Hours</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            seconds -= 3600;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            iHours++;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">while</span> (seconds &gt;= 60)       <span class="comment">// Minutes</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            seconds -= 60;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            iMinutes++;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        fSeconds = (float)seconds;  <span class="comment">// Seconds</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
 </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a5ce7073369ddf605d30c43a305f6dc48">  164</a></span>    std::string <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a5ce7073369ddf605d30c43a305f6dc48">CTimer::getClock</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordtype">float</span> fSecs = 0.0f;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordtype">int</span> iMins, iHours, iDays, iWeeks = 0;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a5ce7073369ddf605d30c43a305f6dc48">getClock</a>(fSecs, iMins, iHours, iDays, iWeeks);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        std::string strRuntime = std::to_string((<span class="keywordtype">int</span>)fSecs) + <span class="stringliteral">&quot;sec &quot;</span>;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        strRuntime += std::to_string(iMins) + <span class="stringliteral">&quot;min &quot;</span>;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        strRuntime += std::to_string(iHours) + <span class="stringliteral">&quot;hr &quot;</span>;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        strRuntime += std::to_string(iDays) + <span class="stringliteral">&quot;days &quot;</span>;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        strRuntime += std::to_string(iWeeks) + <span class="stringliteral">&quot;weeks.&quot;</span>;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keywordflow">return</span> strRuntime;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="foldopen" id="foldopen00166" data-start="{" data-end="}">
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="class_d_c_l_1_1_c_timer.html#a5ce7073369ddf605d30c43a305f6dc48">  166</a></span>    std::string <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a5ce7073369ddf605d30c43a305f6dc48">CTimer::getClock</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordtype">float</span> fSecs = 0.0f;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keywordtype">int</span> iMins, iHours, iDays, iWeeks = 0;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_function" href="class_d_c_l_1_1_c_timer.html#a5ce7073369ddf605d30c43a305f6dc48">getClock</a>(fSecs, iMins, iHours, iDays, iWeeks);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        std::string strRuntime = std::to_string((<span class="keywordtype">int</span>)fSecs) + <span class="stringliteral">&quot;sec &quot;</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        strRuntime += std::to_string(iMins) + <span class="stringliteral">&quot;min &quot;</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        strRuntime += std::to_string(iHours) + <span class="stringliteral">&quot;hr &quot;</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        strRuntime += std::to_string(iDays) + <span class="stringliteral">&quot;days &quot;</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        strRuntime += std::to_string(iWeeks) + <span class="stringliteral">&quot;weeks.&quot;</span>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordflow">return</span> strRuntime;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    }</div>
 </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}   <span class="comment">// namespace DCL</span></div>
-<div class="ttc" id="a_timer_8h_html"><div class="ttname"><a href="_timer_8h.html">Timer.h</a></div><div class="ttdoc">Contains the CTimer class.</div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a1c746ac5f8bf4032562a785dda02eb39"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a1c746ac5f8bf4032562a785dda02eb39">DCL::CTimer::update</a></div><div class="ttdeci">void update(void)</div><div class="ttdoc">Call this to compute time difference between last call to this method.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">Timer.cpp:29</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a3fc9269f2e2fc2e0b453f23fd8926e4a"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a3fc9269f2e2fc2e0b453f23fd8926e4a">DCL::CTimer::CTimer</a></div><div class="ttdeci">CTimer()</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> <a href="#l00007">Timer.cpp:7</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a5108a66e6cbb48da0edc3d4e65b0b3a9"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a5108a66e6cbb48da0edc3d4e65b0b3a9">DCL::CTimer::getAveragedFPSRate</a></div><div class="ttdeci">float getAveragedFPSRate(void) const</div><div class="ttdoc">Returns the currently set rate at which the getFPSAveraged() method's return value will be updated pe...</div><div class="ttdef"><b>Definition</b> <a href="#l00079">Timer.cpp:79</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a536c37fa1bcd48ac1ed74faecd34d6f3"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a536c37fa1bcd48ac1ed74faecd34d6f3">DCL::CTimer::sleep</a></div><div class="ttdeci">void sleep(unsigned int uiMilliseconds) const</div><div class="ttdoc">Suspends execution of the calling thread for the parsed number of milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="#l00066">Timer.cpp:66</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a5ce7073369ddf605d30c43a305f6dc48"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a5ce7073369ddf605d30c43a305f6dc48">DCL::CTimer::getClock</a></div><div class="ttdeci">std::string getClock(void) const</div><div class="ttdoc">Based on current runtime, returns current runtime as a string holding seconds, minutes,...</div><div class="ttdef"><b>Definition</b> <a href="#l00164">Timer.cpp:164</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a603011ab25a0fa23c976e8eb5640ea8e"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a603011ab25a0fa23c976e8eb5640ea8e">DCL::CTimer::getRuntimeSeconds</a></div><div class="ttdeci">float getRuntimeSeconds(void) const</div><div class="ttdoc">Returns amount of seconds that we've been calling update()</div><div class="ttdef"><b>Definition</b> <a href="#l00122">Timer.cpp:122</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a870ebc959aa7b290aa59823d82637e04"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a870ebc959aa7b290aa59823d82637e04">DCL::CTimer::getFPSAveragedTimeUntilNextUpdate</a></div><div class="ttdeci">float getFPSAveragedTimeUntilNextUpdate(void) const</div><div class="ttdoc">Returns the number of seconds until the next time the FPSAveraged value is updated.</div><div class="ttdef"><b>Definition</b> <a href="#l00094">Timer.cpp:94</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a883c48b1ee400e150d4994b970cbb555"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a883c48b1ee400e150d4994b970cbb555">DCL::CTimer::pause</a></div><div class="ttdeci">void pause(void)</div><div class="ttdoc">Pause this timer, preventing any updates and making it so getSecondsPast() returns zero.</div><div class="ttdef"><b>Definition</b> <a href="#l00012">Timer.cpp:12</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a9a06de522d2c363ea7d046d423cedb50"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a9a06de522d2c363ea7d046d423cedb50">DCL::CTimer::getFPS</a></div><div class="ttdeci">float getFPS(void) const</div><div class="ttdoc">Returns computed Frames Per Second current value.</div><div class="ttdef"><b>Definition</b> <a href="#l00084">Timer.cpp:84</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a9adc43ebbe892eed4bb2dfed176fe11b"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a9adc43ebbe892eed4bb2dfed176fe11b">DCL::CTimer::reset</a></div><div class="ttdeci">void reset(void)</div><div class="ttdoc">Resets all values to sane values, including the member set by setAveragedFPSRate()</div><div class="ttdef"><b>Definition</b> <a href="#l00099">Timer.cpp:99</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_ab1e55329385452b5a1b604995353912b"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#ab1e55329385452b5a1b604995353912b">DCL::CTimer::setAveragedFPSRate</a></div><div class="ttdeci">void setAveragedFPSRate(float fSecondsBetweenUpdates)</div><div class="ttdoc">Sets the delay in seconds at which the getFPSAveraged() method's return value will be updated.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">Timer.cpp:72</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_abda1c0dcff3b3a9877320da1b6241228"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#abda1c0dcff3b3a9877320da1b6241228">DCL::CTimer::getFPSAveraged</a></div><div class="ttdeci">float getFPSAveraged(void) const</div><div class="ttdoc">Returns computed Frames Per Second averaged value.</div><div class="ttdef"><b>Definition</b> <a href="#l00089">Timer.cpp:89</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_accc8d2378a3e86ffe1c74dbc79c454b4"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#accc8d2378a3e86ffe1c74dbc79c454b4">DCL::CTimer::getSecondsPast</a></div><div class="ttdeci">float getSecondsPast(void) const</div><div class="ttdoc">Returns time passed in seconds since last call to update() method.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">Timer.cpp:22</a></div></div>
-<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_ae748a6ffae05ad8f42e38728cb16a285"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#ae748a6ffae05ad8f42e38728cb16a285">DCL::CTimer::resume</a></div><div class="ttdeci">void resume(void)</div><div class="ttdoc">If the timer was paused with a call to pause(), this resumes business as normal.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">Timer.cpp:17</a></div></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}   <span class="comment">// namespace DCL</span></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a1c746ac5f8bf4032562a785dda02eb39"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a1c746ac5f8bf4032562a785dda02eb39">DCL::CTimer::update</a></div><div class="ttdeci">void update(void)</div><div class="ttdoc">Call this to compute time difference between last call to this method.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">Timer.cpp:31</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a3fc9269f2e2fc2e0b453f23fd8926e4a"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a3fc9269f2e2fc2e0b453f23fd8926e4a">DCL::CTimer::CTimer</a></div><div class="ttdeci">CTimer()</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> <a href="#l00008">Timer.cpp:8</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a5108a66e6cbb48da0edc3d4e65b0b3a9"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a5108a66e6cbb48da0edc3d4e65b0b3a9">DCL::CTimer::getAveragedFPSRate</a></div><div class="ttdeci">float getAveragedFPSRate(void) const</div><div class="ttdoc">Returns the currently set rate at which the getFPSAveraged() method's return value will be updated pe...</div><div class="ttdef"><b>Definition</b> <a href="#l00081">Timer.cpp:81</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a536c37fa1bcd48ac1ed74faecd34d6f3"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a536c37fa1bcd48ac1ed74faecd34d6f3">DCL::CTimer::sleep</a></div><div class="ttdeci">void sleep(unsigned int uiMilliseconds) const</div><div class="ttdoc">Suspends execution of the calling thread for the parsed number of milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="#l00068">Timer.cpp:68</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a5ce7073369ddf605d30c43a305f6dc48"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a5ce7073369ddf605d30c43a305f6dc48">DCL::CTimer::getClock</a></div><div class="ttdeci">std::string getClock(void) const</div><div class="ttdoc">Based on current runtime, returns current runtime as a string holding seconds, minutes,...</div><div class="ttdef"><b>Definition</b> <a href="#l00166">Timer.cpp:166</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a603011ab25a0fa23c976e8eb5640ea8e"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a603011ab25a0fa23c976e8eb5640ea8e">DCL::CTimer::getRuntimeSeconds</a></div><div class="ttdeci">float getRuntimeSeconds(void) const</div><div class="ttdoc">Returns amount of seconds that we've been calling update()</div><div class="ttdef"><b>Definition</b> <a href="#l00124">Timer.cpp:124</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a870ebc959aa7b290aa59823d82637e04"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a870ebc959aa7b290aa59823d82637e04">DCL::CTimer::getFPSAveragedTimeUntilNextUpdate</a></div><div class="ttdeci">float getFPSAveragedTimeUntilNextUpdate(void) const</div><div class="ttdoc">Returns the number of seconds until the next time the FPSAveraged value is updated.</div><div class="ttdef"><b>Definition</b> <a href="#l00096">Timer.cpp:96</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a883c48b1ee400e150d4994b970cbb555"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a883c48b1ee400e150d4994b970cbb555">DCL::CTimer::pause</a></div><div class="ttdeci">void pause(void)</div><div class="ttdoc">Pause this timer, preventing any updates and making it so getSecondsPast() returns zero.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">Timer.cpp:14</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a9a06de522d2c363ea7d046d423cedb50"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a9a06de522d2c363ea7d046d423cedb50">DCL::CTimer::getFPS</a></div><div class="ttdeci">float getFPS(void) const</div><div class="ttdoc">Returns computed Frames Per Second current value.</div><div class="ttdef"><b>Definition</b> <a href="#l00086">Timer.cpp:86</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_a9adc43ebbe892eed4bb2dfed176fe11b"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#a9adc43ebbe892eed4bb2dfed176fe11b">DCL::CTimer::reset</a></div><div class="ttdeci">void reset(void)</div><div class="ttdoc">Resets all values to sane values, including the member set by setAveragedFPSRate()</div><div class="ttdef"><b>Definition</b> <a href="#l00101">Timer.cpp:101</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_ab1e55329385452b5a1b604995353912b"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#ab1e55329385452b5a1b604995353912b">DCL::CTimer::setAveragedFPSRate</a></div><div class="ttdeci">void setAveragedFPSRate(float fSecondsBetweenUpdates)</div><div class="ttdoc">Sets the delay in seconds at which the getFPSAveraged() method's return value will be updated.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">Timer.cpp:74</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_abda1c0dcff3b3a9877320da1b6241228"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#abda1c0dcff3b3a9877320da1b6241228">DCL::CTimer::getFPSAveraged</a></div><div class="ttdeci">float getFPSAveraged(void) const</div><div class="ttdoc">Returns computed Frames Per Second averaged value.</div><div class="ttdef"><b>Definition</b> <a href="#l00091">Timer.cpp:91</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_accc8d2378a3e86ffe1c74dbc79c454b4"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#accc8d2378a3e86ffe1c74dbc79c454b4">DCL::CTimer::getSecondsPast</a></div><div class="ttdeci">float getSecondsPast(void) const</div><div class="ttdoc">Returns time passed in seconds since last call to update() method.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">Timer.cpp:24</a></div></div>
+<div class="ttc" id="aclass_d_c_l_1_1_c_timer_html_ae748a6ffae05ad8f42e38728cb16a285"><div class="ttname"><a href="class_d_c_l_1_1_c_timer.html#ae748a6ffae05ad8f42e38728cb16a285">DCL::CTimer::resume</a></div><div class="ttdeci">void resume(void)</div><div class="ttdoc">If the timer was paused with a call to pause(), this resumes business as normal.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">Timer.cpp:19</a></div></div>
 <div class="ttc" id="anamespace_d_c_l_html"><div class="ttname"><a href="namespace_d_c_l.html">DCL</a></div><div class="ttdoc">The namespace in which everything within Dave's Code Library is stored inside.</div><div class="ttdef"><b>Definition</b> <a href="_finite_state_machine_8cpp_source.html#l00004">FiniteStateMachine.cpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
