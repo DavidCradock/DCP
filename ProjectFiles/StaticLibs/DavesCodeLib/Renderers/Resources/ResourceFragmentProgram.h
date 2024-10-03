@@ -21,7 +21,7 @@ namespace DCL
 	/// \brief OpenGL class for resource of type fragment program
 	///
 	///
-	class CResourceFragmentProgramOpenGL : public CResourceFragmentProgramOpenGL
+	class CResourceFragmentProgramOpenGL : public CResourceFragmentProgramBase
 	{
 	public:
 		CResourceFragmentProgramOpenGL();
@@ -36,7 +36,7 @@ namespace DCL
 	/// \brief Vulkan class for resource of type fragment program
 	///
 	///
-	class CResourceFragmentProgramVulkan : public CResourceFragmentProgramVulkan
+	class CResourceFragmentProgramVulkan : public CResourceFragmentProgramBase
 	{
 	public:
 		CResourceFragmentProgramVulkan();

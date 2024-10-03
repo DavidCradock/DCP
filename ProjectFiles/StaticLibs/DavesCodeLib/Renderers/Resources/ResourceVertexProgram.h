@@ -21,7 +21,7 @@ namespace DCL
 	/// \brief OpenGL class for resource of type vertex program
 	///
 	///
-	class CResourceVertexProgramOpenGL : public CResourceVertexProgramOpenGL
+	class CResourceVertexProgramOpenGL : public CResourceVertexProgramBase
 	{
 	public:
 		CResourceVertexProgramOpenGL();
@@ -36,7 +36,7 @@ namespace DCL
 	/// \brief Vulkan class for resource of type vertex program
 	///
 	///
-	class CResourceVertexProgramVulkan : public CResourceVertexProgramVulkan
+	class CResourceVertexProgramVulkan : public CResourceVertexProgramBase
 	{
 	public:
 		CResourceVertexProgramVulkan();

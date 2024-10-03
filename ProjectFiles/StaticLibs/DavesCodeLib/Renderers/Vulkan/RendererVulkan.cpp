@@ -174,6 +174,31 @@ namespace DCL
 
 	}
 
+	CResourceFragmentProgramBase* CRendererVulkan::addFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return 0;
+	}
+
+	CResourceFragmentProgramBase* CRendererVulkan::getFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return 0;
+	}
+
+	bool CRendererVulkan::getFragmentProgramExists(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return false;
+	}
+
+	void CRendererVulkan::removeFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+
+	}
+
+	void CRendererVulkan::removeFragmentProgramAll(unsigned int uiGroupNumber)
+	{
+
+	}
+
 	CResourceTexture2DBase* CRendererVulkan::addTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		return 0;
@@ -195,6 +220,56 @@ namespace DCL
 	}
 
 	void CRendererVulkan::removeTexture2DAll(unsigned int uiGroupNumber)
+	{
+
+	}
+
+	CResourceVertexBufferBase* CRendererVulkan::addVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return 0;
+	}
+
+	CResourceVertexBufferBase* CRendererVulkan::getVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return 0;
+	}
+
+	bool CRendererVulkan::getVertexBufferExists(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return false;
+	}
+
+	void CRendererVulkan::removeVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+
+	}
+
+	void CRendererVulkan::removeVertexBufferAll(unsigned int uiGroupNumber)
+	{
+
+	}
+
+	CResourceVertexProgramBase* CRendererVulkan::addVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return 0;
+	}
+
+	CResourceVertexProgramBase* CRendererVulkan::getVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return 0;
+	}
+
+	bool CRendererVulkan::getVertexProgramExists(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return false;
+	}
+
+	void CRendererVulkan::removeVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+
+	}
+
+	void CRendererVulkan::removeVertexProgramAll(unsigned int uiGroupNumber)
 	{
 
 	}

@@ -2,8 +2,10 @@
 #define RENDERER_H
 
 // Resources
+#include "Resources/ResourceFragmentProgram.h"
 #include "Resources/ResourceTexture2D.h"
-
+#include "Resources/ResourceVertexBuffer.h"
+#include "Resources/ResourceVertexProgram.h"
 
 #include "../Core/Colourf.h"
 #include <map>
@@ -130,7 +132,43 @@ namespace DCL
 		/// \brief Enable scissor testing
 		virtual void scissorTestEnable(void) = 0;
 
-		/// \brief Adds a new RecourceTexture2D object to be managed.
+		/// \brief Adds a new ResourceFragmentProgram object to be managed.
+		///
+		/// \param strResourceName The name of the new resource which we can use to refer to it with other methods.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned.
+		virtual CResourceFragmentProgramBase* addFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns a pointer to an existing resource
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource couldn't be found, an exception is thrown.
+		virtual CResourceFragmentProgramBase* getFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns whether a named resource exists
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual bool getFragmentProgramExists(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes a previously added resource from this manager
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource doesn't exist, this silently fails.
+		/// If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains.
+		virtual void removeFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes all previously added resources from the given numbered group
+		///
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual void removeFragmentProgramAll(unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Adds a new ResourceTexture2D object to be managed.
 		///
 		/// \param strResourceName The name of the new resource which we can use to refer to it with other methods.
 		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
@@ -165,6 +203,80 @@ namespace DCL
 		///
 		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
 		virtual void removeTexture2DAll(unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Adds a new ResourceVertexBuffer object to be managed.
+		///
+		/// \param strResourceName The name of the new resource which we can use to refer to it with other methods.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned.
+		virtual CResourceVertexBufferBase* addVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns a pointer to an existing resource
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource couldn't be found, an exception is thrown.
+		virtual CResourceVertexBufferBase* getVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns whether a named resource exists
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual bool getVertexBufferExists(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes a previously added resource from this manager
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource doesn't exist, this silently fails.
+		/// If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains.
+		virtual void removeVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes all previously added resources from the given numbered group
+		///
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual void removeVertexBufferAll(unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Adds a new ResourceVertexProgram object to be managed.
+		///
+		/// \param strResourceName The name of the new resource which we can use to refer to it with other methods.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned.
+		virtual CResourceVertexProgramBase* addVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns a pointer to an existing resource
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource couldn't be found, an exception is thrown.
+		virtual CResourceVertexProgramBase* getVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns whether a named resource exists
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual bool getVertexProgramExists(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes a previously added resource from this manager
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource doesn't exist, this silently fails.
+		/// If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains.
+		virtual void removeVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes all previously added resources from the given numbered group
+		///
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual void removeVertexProgramAll(unsigned int uiGroupNumber = 1) = 0;
+
+
 
 
 
