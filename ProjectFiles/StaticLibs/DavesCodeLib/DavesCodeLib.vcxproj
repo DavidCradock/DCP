@@ -134,8 +134,10 @@
     <ClInclude Include="Renderers\OpenGL\RendererOpenGLExtensions.h" />
     <ClInclude Include="Renderers\RendererBase.h" />
     <ClInclude Include="Renderers\RendererManager.h" />
+    <ClInclude Include="Renderers\Resources\ResourceFragmentProgram.h" />
     <ClInclude Include="Renderers\Resources\ResourceTexture2D.h" />
     <ClInclude Include="Renderers\Resources\ResourceVertexBuffer.h" />
+    <ClInclude Include="Renderers\Resources\ResourceVertexProgram.h" />
     <ClInclude Include="Renderers\Vulkan\RendererVulkan.h" />
     <ClInclude Include="SpatialPartitioning\OctTree.h" />
     <ClInclude Include="SpatialPartitioning\OctTreeEntity.h" />
@@ -181,8 +183,10 @@
     <ClCompile Include="Renderers\OpenGL\RendererOpenGL.cpp" />
     <ClCompile Include="Renderers\OpenGL\RendererOpenGLExtensions.cpp" />
     <ClCompile Include="Renderers\RendererManager.cpp" />
+    <ClCompile Include="Renderers\Resources\ResourceFragmentProgram.cpp" />
     <ClCompile Include="Renderers\Resources\ResourceTexture2D.cpp" />
     <ClCompile Include="Renderers\Resources\ResourceVertexBuffer.cpp" />
+    <ClCompile Include="Renderers\Resources\ResourceVertexProgram.cpp" />
     <ClCompile Include="Renderers\Vulkan\RendererVulkan.cpp" />
     <ClCompile Include="SpatialPartitioning\OctTree.cpp" />
     <ClCompile Include="SpatialPartitioning\OctTreeEntity.cpp" />
