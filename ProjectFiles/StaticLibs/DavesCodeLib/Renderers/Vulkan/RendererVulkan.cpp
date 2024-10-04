@@ -174,27 +174,27 @@ namespace DCL
 
 	}
 
-	CResourceFragmentProgramBase* CRendererVulkan::addFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	CResourceGPUProgramsBase* CRendererVulkan::addGPUPrograms(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		return 0;
 	}
 
-	CResourceFragmentProgramBase* CRendererVulkan::getFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	CResourceGPUProgramsBase* CRendererVulkan::getGPUPrograms(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		return 0;
 	}
 
-	bool CRendererVulkan::getFragmentProgramExists(const std::string& strResourceName, unsigned int uiGroupNumber)
+	bool CRendererVulkan::getGPUProgramsExists(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		return false;
 	}
 
-	void CRendererVulkan::removeFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	void CRendererVulkan::removeGPUPrograms(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 
 	}
 
-	void CRendererVulkan::removeFragmentProgramAll(unsigned int uiGroupNumber)
+	void CRendererVulkan::removeGPUProgramsAll(unsigned int uiGroupNumber)
 	{
 
 	}
@@ -248,30 +248,4 @@ namespace DCL
 	{
 
 	}
-
-	CResourceVertexProgramBase* CRendererVulkan::addVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
-	{
-		return 0;
-	}
-
-	CResourceVertexProgramBase* CRendererVulkan::getVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
-	{
-		return 0;
-	}
-
-	bool CRendererVulkan::getVertexProgramExists(const std::string& strResourceName, unsigned int uiGroupNumber)
-	{
-		return false;
-	}
-
-	void CRendererVulkan::removeVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
-	{
-
-	}
-
-	void CRendererVulkan::removeVertexProgramAll(unsigned int uiGroupNumber)
-	{
-
-	}
-
 }	// namespace DCL

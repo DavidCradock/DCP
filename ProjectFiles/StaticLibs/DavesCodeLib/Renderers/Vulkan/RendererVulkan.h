@@ -42,11 +42,11 @@ namespace DCL
 		void scissorTestDisable(void);
 		void scissorTestEnable(void);
 
-		CResourceFragmentProgramBase* addFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber);
-		CResourceFragmentProgramBase* getFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber);
-		bool getFragmentProgramExists(const std::string& strResourceName, unsigned int uiGroupNumber);
-		void removeFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber);
-		void removeFragmentProgramAll(unsigned int uiGroupNumber);
+		CResourceGPUProgramsBase* addGPUPrograms(const std::string& strResourceName, unsigned int uiGroupNumber);
+		CResourceGPUProgramsBase* getGPUPrograms(const std::string& strResourceName, unsigned int uiGroupNumber);
+		bool getGPUProgramsExists(const std::string& strResourceName, unsigned int uiGroupNumber);
+		void removeGPUPrograms(const std::string& strResourceName, unsigned int uiGroupNumber);
+		void removeGPUProgramsAll(unsigned int uiGroupNumber);
 
 		CResourceTexture2DBase* addTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
 		CResourceTexture2DBase* getTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
@@ -60,20 +60,14 @@ namespace DCL
 		void removeVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber);
 		void removeVertexBufferAll(unsigned int uiGroupNumber);
 
-		CResourceVertexProgramBase* addVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber);
-		CResourceVertexProgramBase* getVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber);
-		bool getVertexProgramExists(const std::string& strResourceName, unsigned int uiGroupNumber);
-		void removeVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber);
-		void removeVertexProgramAll(unsigned int uiGroupNumber);
-
 	private:
-		/// \brief Struct to hold a resource for the FragmentProgram type.
-		struct SResourceFragmentProgram
+		/// \brief Struct to hold a resource for the GPUPrograms type.
+		struct SResourceGPUPrograms
 		{
-			CResourceFragmentProgramBase* pResource;	///< Pointer to the resource
-			unsigned int uiCount;						///< Number of times the resource has been added
+			CResourceGPUProgramsBase* pResource;	///< Pointer to the resource
+			unsigned int uiCount;					///< Number of times the resource has been added
 		};
-		std::map<std::string, SResourceFragmentProgram> _mmapResFragmentProgramGroups[8];	///< Each of the 8 groups holding resources for the resource type.
+		std::map<std::string, SResourceGPUPrograms> _mmapResGPUProgramsGroups[8];	///< Each of the 8 groups holding resources for the resource type.
 
 		/// \brief Struct to hold a resource for the Texture2D type.
 		struct SResourceTexture2D
@@ -91,13 +85,6 @@ namespace DCL
 		};
 		std::map<std::string, SResourceVertexBuffer> _mmapResVertexBufferGroups[8];	///< Each of the 8 groups holding resources for the resource type.
 
-		/// \brief Struct to hold a resource for the VertexProgram type.
-		struct SResourceVertexProgram
-		{
-			CResourceVertexProgramBase* pResource;	///< Pointer to the resource
-			unsigned int uiCount;					///< Number of times the resource has been added
-		};
-		std::map<std::string, SResourceVertexProgram> _mmapResVertexProgramGroups[8];	///< Each of the 8 groups holding resources for the resource type.
 		class CPrim;		///< Declaration of this class's private implementation holding things which we do not wish to expose when including this header file.
 							///< We put this here so we can create the pointer below, without having to include the header file containing the actual code.
 		CPrim* prim;		///< Pointer holding private implementation, new'd and delete'd in con/des tructors of this class.

@@ -286,52 +286,52 @@ namespace DCL
 		glDisable(GL_SCISSOR_TEST);
 	}
 
-	CResourceFragmentProgramBase* CRendererOpenGL::addFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	CResourceGPUProgramsBase* CRendererOpenGL::addGPUPrograms(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::addFragmentProgram() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::addGPUPrograms() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
 		// If resource already exists
-		auto itResource = _mmapResFragmentProgramGroups[uiGroupNumber].find(strResourceName);
-		if (itResource != _mmapResFragmentProgramGroups[uiGroupNumber].end())
+		auto itResource = _mmapResGPUProgramsGroups[uiGroupNumber].find(strResourceName);
+		if (itResource != _mmapResGPUProgramsGroups[uiGroupNumber].end())
 		{
 			itResource->second.uiCount++;
 			return itResource->second.pResource;
 		}
 		// Resource doesn't exist, create it
-		SResourceFragmentProgram newRes;
+		SResourceGPUPrograms newRes;
 		newRes.uiCount = 1;
-		newRes.pResource = new CResourceFragmentProgramOpenGL;
-		ThrowIfFalse(newRes.pResource, "CRendererOpenGL::addFragmentProgram(" + strResourceName + ") failed to allocate memory for new resource.");
-		_mmapResFragmentProgramGroups[uiGroupNumber][strResourceName] = newRes;
+		newRes.pResource = new CResourceGPUProgramsOpenGL;
+		ThrowIfFalse(newRes.pResource, "CRendererOpenGL::addGPUPrograms(" + strResourceName + ") failed to allocate memory for new resource.");
+		_mmapResGPUProgramsGroups[uiGroupNumber][strResourceName] = newRes;
 		return newRes.pResource;
 	}
 
-	CResourceFragmentProgramBase* CRendererOpenGL::getFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	CResourceGPUProgramsBase* CRendererOpenGL::getGPUPrograms(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getFragmentProgram() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getGPUPrograms() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
-		auto itResource = _mmapResFragmentProgramGroups[uiGroupNumber].find(strResourceName);
-		ThrowIfTrue(itResource == _mmapResFragmentProgramGroups[uiGroupNumber].end(), "CRendererOpenGL::getFragmentProgram(" + strResourceName + ") failed. Named resource doesn't exist.");
+		auto itResource = _mmapResGPUProgramsGroups[uiGroupNumber].find(strResourceName);
+		ThrowIfTrue(itResource == _mmapResGPUProgramsGroups[uiGroupNumber].end(), "CRendererOpenGL::getGPUPrograms(" + strResourceName + ") failed. Named resource doesn't exist.");
 		return itResource->second.pResource;
 	}
 
-	bool CRendererOpenGL::getFragmentProgramExists(const std::string& strResourceName, unsigned int uiGroupNumber)
+	bool CRendererOpenGL::getGPUProgramsExists(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getFragmentProgramExists() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getGPUProgramsExists() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
-		return _mmapResFragmentProgramGroups[uiGroupNumber].find(strResourceName) != _mmapResFragmentProgramGroups[uiGroupNumber].end();
+		return _mmapResGPUProgramsGroups[uiGroupNumber].find(strResourceName) != _mmapResGPUProgramsGroups[uiGroupNumber].end();
 	}
 
-	void CRendererOpenGL::removeFragmentProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
+	void CRendererOpenGL::removeGPUPrograms(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeFragmentProgram() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeGPUPrograms() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
-		auto itResource = _mmapResFragmentProgramGroups[uiGroupNumber].find(strResourceName);
-		if (itResource == _mmapResFragmentProgramGroups[uiGroupNumber].end())
+		auto itResource = _mmapResGPUProgramsGroups[uiGroupNumber].find(strResourceName);
+		if (itResource == _mmapResGPUProgramsGroups[uiGroupNumber].end())
 			return;	// Doesn't exist.
 		if (itResource->second.uiCount > 1)
 		{
@@ -339,22 +339,21 @@ namespace DCL
 			return;
 		}
 		delete itResource->second.pResource;
-		_mmapResFragmentProgramGroups[uiGroupNumber].erase(itResource);
+		_mmapResGPUProgramsGroups[uiGroupNumber].erase(itResource);
 	}
 
-	void CRendererOpenGL::removeFragmentProgramAll(unsigned int uiGroupNumber)
+	void CRendererOpenGL::removeGPUProgramsAll(unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeFragmentProgramAll() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeGPUProgramsAll() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
-		auto itResource = _mmapResFragmentProgramGroups[uiGroupNumber].begin();
-		while (itResource != _mmapResFragmentProgramGroups[uiGroupNumber].end())
+		auto itResource = _mmapResGPUProgramsGroups[uiGroupNumber].begin();
+		while (itResource != _mmapResGPUProgramsGroups[uiGroupNumber].end())
 		{
 			delete itResource->second.pResource;
-			_mmapResFragmentProgramGroups[uiGroupNumber].erase(itResource);
-			itResource = _mmapResFragmentProgramGroups[uiGroupNumber].begin();
+			_mmapResGPUProgramsGroups[uiGroupNumber].erase(itResource);
+			itResource = _mmapResGPUProgramsGroups[uiGroupNumber].begin();
 		}
-
 	}
 
 	CResourceTexture2DBase* CRendererOpenGL::addTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber)
@@ -425,7 +424,6 @@ namespace DCL
 			_mmapResTexture2DGroups[uiGroupNumber].erase(itResource);
 			itResource = _mmapResTexture2DGroups[uiGroupNumber].begin();
 		}
-
 	}
 
 	CResourceVertexBufferBase* CRendererOpenGL::addVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
@@ -496,79 +494,5 @@ namespace DCL
 			_mmapResVertexBufferGroups[uiGroupNumber].erase(itResource);
 			itResource = _mmapResVertexBufferGroups[uiGroupNumber].begin();
 		}
-
 	}
-
-	CResourceVertexProgramBase* CRendererOpenGL::addVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
-	{
-		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::addVertexProgram() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
-
-		// If resource already exists
-		auto itResource = _mmapResVertexProgramGroups[uiGroupNumber].find(strResourceName);
-		if (itResource != _mmapResVertexProgramGroups[uiGroupNumber].end())
-		{
-			itResource->second.uiCount++;
-			return itResource->second.pResource;
-		}
-		// Resource doesn't exist, create it
-		SResourceVertexProgram newRes;
-		newRes.uiCount = 1;
-		newRes.pResource = new CResourceVertexProgramOpenGL;
-		ThrowIfFalse(newRes.pResource, "CRendererOpenGL::addVertexProgram(" + strResourceName + ") failed to allocate memory for new resource.");
-		_mmapResVertexProgramGroups[uiGroupNumber][strResourceName] = newRes;
-		return newRes.pResource;
-	}
-
-	CResourceVertexProgramBase* CRendererOpenGL::getVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
-	{
-		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getVertexProgram() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
-
-		auto itResource = _mmapResVertexProgramGroups[uiGroupNumber].find(strResourceName);
-		ThrowIfTrue(itResource == _mmapResVertexProgramGroups[uiGroupNumber].end(), "CRendererOpenGL::getVertexProgram(" + strResourceName + ") failed. Named resource doesn't exist.");
-		return itResource->second.pResource;
-	}
-
-	bool CRendererOpenGL::getVertexProgramExists(const std::string& strResourceName, unsigned int uiGroupNumber)
-	{
-		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getVertexProgramExists() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
-
-		return _mmapResVertexProgramGroups[uiGroupNumber].find(strResourceName) != _mmapResVertexProgramGroups[uiGroupNumber].end();
-	}
-
-	void CRendererOpenGL::removeVertexProgram(const std::string& strResourceName, unsigned int uiGroupNumber)
-	{
-		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeVertexProgram() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
-
-		auto itResource = _mmapResVertexProgramGroups[uiGroupNumber].find(strResourceName);
-		if (itResource == _mmapResVertexProgramGroups[uiGroupNumber].end())
-			return;	// Doesn't exist.
-		if (itResource->second.uiCount > 1)
-		{
-			itResource->second.uiCount--;
-			return;
-		}
-		delete itResource->second.pResource;
-		_mmapResVertexProgramGroups[uiGroupNumber].erase(itResource);
-	}
-
-	void CRendererOpenGL::removeVertexProgramAll(unsigned int uiGroupNumber)
-	{
-		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeVertexProgramAll() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
-
-		auto itResource = _mmapResVertexProgramGroups[uiGroupNumber].begin();
-		while (itResource != _mmapResVertexProgramGroups[uiGroupNumber].end())
-		{
-			delete itResource->second.pResource;
-			_mmapResVertexProgramGroups[uiGroupNumber].erase(itResource);
-			itResource = _mmapResVertexProgramGroups[uiGroupNumber].begin();
-		}
-
-	}
-
-
 }	// namespace DCL
