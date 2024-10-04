@@ -24,18 +24,32 @@ namespace DCL
 	public:
 		/// \brief Sets the GPU programs to use the source code found in the given filename.
 		///
-		/// \param strProgramSourceFilename The filename of the file holding the source code for this program
+		/// \param strVertexProgramSourceFilename The filename of the file holding the source code for this shader's vertex program
+		/// \param strFragmentProgramSourceFilename The filename of the file holding the source code for this shader's vertex program
+		/// 
+		/// If the data from the files couldn't be loaded, an exception should occur
 		virtual void setProgramSourceFromFile(const std::string& strVertexProgramSourceFilename, const std::string& strFragmentProgramSourceFilename) = 0;
 
-		/// \brief Compiles and uploads the programs using the source code set with setProgramSourceFromFile(), into GPU memory, ready for use.
+		/// \brief Sets the GPU programs to use the source code stored as a text string in the given strings.
 		///
-		/// If the source code hasn't been set with setProgramSourceFromFile(), an exception should occur.
+		/// \param strVertexProgramSourceCode The string holding the source code for this shader's vertex program
+		/// \param strFragmentProgramSourceCode The string holding the source code for this shader's fragment program
+		virtual void setProgramSourceFromMemory(const std::string& strVertexProgramSourceCode, const std::string& strFragmentProgramSourceCode) = 0;
+
+		/// \brief Compiles and uploads the programs using the source code set with setProgramSourceFromFile() or setProgramSourceFromMemory(), into GPU memory, ready for use.
+		///
+		/// If the source code hasn't been set with setProgramSourceFromFile() or setProgramSourceFromMemory(), an exception should occur.
+		/// The programs should be compiled here. If an error occurred, an exception should occur.
 		virtual void upload(void) = 0;
 
 		/// \brief Frees the programs from the GPU memory.
+		///
+		/// Does not remove source code from members which hold it after a call to setProgramSourceFromFile()
 		virtual void free(void) = 0;
 
-		/// \brief Binds the programs ready for use
+		/// \brief Binds the programs ready for use.
+		///
+		/// If the programs are not compiled and uploaded to the GPU, an exception should occur.
 		virtual void bind(void) const = 0;
 
 		/// \brief Unbinds the prograsm from the GPU
@@ -45,6 +59,8 @@ namespace DCL
 		///
 		/// \param strUniformName The name of the boolean uniform in the program source code
 		/// \param value The value to set the uniform to.
+		/// 
+		/// If the programs are not compiled and uploaded to the GPU, an exception should occur.
 		virtual void setUniformBool(const std::string& strUniformName, bool value) const = 0;
 
 		/// \brief Set int uniform. Call once the program is bound with bind().
@@ -57,42 +73,56 @@ namespace DCL
 		/// Tell GPU API, for each sampler, to which texture unit it belongs to
 		/// pShader->setInt("texture0", 0);
 		/// pShader->setInt("texture1", 1);
+		/// 
+		/// If the programs are not compiled and uploaded to the GPU, an exception should occur.
 		virtual void setUniformInt(const std::string& strUniformName, int value) const = 0;
 
 		/// \brief Set float uniform. Call once the program is bound with bind().
 		///
 		/// \param strUniformName The name of the float uniform in the program source code
 		/// \param value The value to set the uniform to.
+		/// 
+		/// If the programs are not compiled and uploaded to the GPU, an exception should occur.
 		virtual void setUniformFloat(const std::string& strUniformName, float value) const = 0;
 
 		/// \brief Set matrix uniform. Call once the program is bound with bind().
 		///
 		/// \param strUniformName The name of the matrix uniform in the program source code
 		/// \param value The value to set the uniform to.
+		/// 
+		/// If the programs are not compiled and uploaded to the GPU, an exception should occur.
 		virtual void setUniformMat4(const std::string& strUniformName, const CMatrix& value) const = 0;
 
 		/// \brief Set vec2 uniform. Call once the program is bound with bind().
 		///
 		/// \param strUniformName The name of the vector uniform in the program source code
 		/// \param value The value to set the uniform to.
+		/// 
+		/// If the programs are not compiled and uploaded to the GPU, an exception should occur.
 		virtual void setUniformVec2(const std::string& strUniformName, const CVector2f& value) const = 0;
 
 		/// \brief Set vec3 uniform. Call once the program is bound with bind().
 		///
 		/// \param strUniformName The name of the vector uniform in the program source code
 		/// \param value The value to set the uniform to.
+		/// 
+		/// If the programs are not compiled and uploaded to the GPU, an exception should occur.
 		virtual void setUniformVec3(const std::string& strUniformName, const CVector3f& value) const = 0;
 
 		/// \brief Set vec3 uniform. Call once the program is bound with bind().
 		///
 		/// \param strUniformName The name of the vector uniform in the program source code
 		/// \param value The value to set the uniform to.
+		/// 
+		/// If the programs are not compiled and uploaded to the GPU, an exception should occur.
 		virtual void setUniformVec3(const std::string& strUniformName, const CColourf& value) const = 0;
 
 		/// \brief Set vec4 uniform. Call once the program is bound with bind().
 		///
 		/// \param strUniformName The name of the vector uniform in the program source code
 		/// \param value The value to set the uniform to.
+		/// 
+		/// If the programs are not compiled and uploaded to the GPU, an exception should occur.
 		virtual void setUniformVec4(const std::string& strUniformName, const CColourf& value) const = 0;
 
 	};
@@ -107,6 +137,7 @@ namespace DCL
 		~CResourceGPUProgramsOpenGL();
 
 		void setProgramSourceFromFile(const std::string& strVertexProgramSourceFilename, const std::string& strFragmentProgramSourceFilename);
+		void setProgramSourceFromMemory(const std::string& strVertexProgramSourceCode, const std::string& strFragmentProgramSourceCode);
 		void upload(void);
 		void free(void);
 		void bind(void) const;
@@ -136,6 +167,7 @@ namespace DCL
 		~CResourceGPUProgramsVulkan();
 
 		void setProgramSourceFromFile(const std::string& strVertexProgramSourceFilename, const std::string& strFragmentProgramSourceFilename);
+		void setProgramSourceFromMemory(const std::string& strVertexProgramSourceCode, const std::string& strFragmentProgramSourceCode);
 		void upload(void);
 		void free(void);
 		void bind(void) const;

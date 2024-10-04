@@ -24,7 +24,9 @@ namespace DCL
 	{
 	public:
 		CPrim();
-		unsigned int uiProgramID;	///< Holds GPU program ID given to us by OpenGL
+		unsigned int uiProgramID;			///< Holds GPU program ID given to us by OpenGL
+		std::string strVertexSourceCode;	///< Holds the vertex program source code as text
+		std::string strFragmentSourceCode;	///< Holds the fragment program source code as text
 	};
 
 	CResourceGPUProgramsOpenGL::CPrim::CPrim()
@@ -53,8 +55,8 @@ namespace DCL
 	void CResourceGPUProgramsOpenGL::setProgramSourceFromFile(const std::string& strVertexProgramSourceFilename, const std::string& strFragmentProgramSourceFilename)
 	{
 		// Load in source code
-		std::string vertexCode;
-		std::string fragmentCode;
+		prim->strVertexSourceCode.clear();
+		prim->strFragmentSourceCode.clear();
 		std::ifstream vShaderFile;
 		std::ifstream fShaderFile;
 		// ensure ifstream objects can throw exceptions:
@@ -71,15 +73,37 @@ namespace DCL
 			vShaderFile.close();
 			fShaderFile.close();
 			// convert stream into string
-			vertexCode = vShaderStream.str();
-			fragmentCode = fShaderStream.str();
+			prim->strVertexSourceCode = vShaderStream.str();
+			prim->strFragmentSourceCode = fShaderStream.str();
 		}
 		catch (std::ifstream::failure e)
 		{
 			ThrowIfTrue(1, "CResourceGPUProgramsOpenGL::setProgramSourceFromFile() failed to read in program code for either " + strVertexProgramSourceFilename + " or " + strFragmentProgramSourceFilename);
 		}
-		const char* vShaderCode = vertexCode.c_str();
-		const char* fShaderCode = fragmentCode.c_str();
+		
+	}
+
+	void CResourceGPUProgramsOpenGL::setProgramSourceFromMemory(const std::string& strVertexProgramSourceCode, const std::string& strFragmentProgramSourceCode)
+	{
+		ThrowIfFalse(strVertexProgramSourceCode.length(), "CResourceGPUProgramsOpenGL::setProgramSourceFromMemory() failed. The given vertex program is of zero length.");
+		ThrowIfFalse(strFragmentProgramSourceCode.length(), "CResourceGPUProgramsOpenGL::setProgramSourceFromMemory() failed. The given fragment program is of zero length.");
+
+		// Copy the source code
+		prim->strVertexSourceCode = strVertexProgramSourceCode;
+		prim->strFragmentSourceCode = strFragmentProgramSourceCode;
+	}
+
+	void CResourceGPUProgramsOpenGL::upload(void)
+	{
+		// Make sure the source code as text exists
+		ThrowIfTrue(0 == prim->strVertexSourceCode.length(), "CResourceGPUProgramsOpenGL::upload() failed. The vertex program's source code hasn't been set. Did you forget to call setProgramSourceFromFile()?");
+		ThrowIfTrue(0 == prim->strFragmentSourceCode.length(), "CResourceGPUProgramsOpenGL::upload() failed. The fragment program's source code hasn't been set. Did you forget to call setProgramSourceFromFile()?");;
+
+		// Free the linked shader programs if they already exist
+		free();
+
+		const char* vShaderCode = prim->strVertexSourceCode.c_str();
+		const char* fShaderCode = prim->strFragmentSourceCode.c_str();
 
 		// Attempt to compile shaders
 		unsigned int vertex, fragment;
@@ -94,9 +118,9 @@ namespace DCL
 		if (!success)
 		{
 			glGetShaderInfoLog(vertex, 512, NULL, infoLog);
-			std::string err("CResourceGPUProgramsOpenGL::setProgramSourceFromFile() failed. ");
+			std::string err("CResourceGPUProgramsOpenGL::upload() failed to compile the vertex program. ");
 			err.append(infoLog);
-			ThrowIfTrue(1, err);
+			Throw(err);
 		};
 
 		// Fragment Shader
@@ -107,9 +131,9 @@ namespace DCL
 		if (!success)
 		{
 			glGetShaderInfoLog(fragment, 512, NULL, infoLog);
-			std::string err("CResourceGPUProgramsOpenGL::setProgramSourceFromFile() failed. ");
+			std::string err("CResourceGPUProgramsOpenGL::upload() failed to compile the fragment program. ");
 			err.append(infoLog);
-			ThrowIfTrue(1, err);
+			Throw(err);
 		};
 
 		// Shader Program
@@ -122,19 +146,14 @@ namespace DCL
 		glGetProgramiv(prim->uiProgramID, GL_LINK_STATUS, &success);
 		if (!success)
 		{
-			std::string err("CResourceGPUProgramsOpenGL::setProgramSourceFromFile() failed. ");
+			std::string err("CResourceGPUProgramsOpenGL::upload() failed to link the programs. ");
 			err.append(infoLog);
-			ThrowIfTrue(1, err);
+			Throw(err);
 		}
 
 		// Delete the shaders as they're linked into our program now and no longer necessary
 		glDeleteShader(vertex);
 		glDeleteShader(fragment);
-	}
-
-	void CResourceGPUProgramsOpenGL::upload(void)
-	{
-
 	}
 
 	void CResourceGPUProgramsOpenGL::free(void)
@@ -148,8 +167,8 @@ namespace DCL
 
 	void CResourceGPUProgramsOpenGL::bind(void) const
 	{
-		if (prim->uiProgramID)
-			glUseProgram(prim->uiProgramID);
+		ThrowIfFalse(prim->uiProgramID, "Shader programs not compiled and uploaded to GPU.");
+		glUseProgram(prim->uiProgramID);
 	}
 
 	void CResourceGPUProgramsOpenGL::unbind(void) const
@@ -159,32 +178,32 @@ namespace DCL
 
 	void CResourceGPUProgramsOpenGL::setUniformBool(const std::string& strUniformName, bool value) const
 	{
-		if (prim->uiProgramID)
-			glUniform1i(glGetUniformLocation(prim->uiProgramID, strUniformName.c_str()), (int)value);
+		ThrowIfFalse(prim->uiProgramID, "Shader programs not compiled and uploaded to GPU.");
+		glUniform1i(glGetUniformLocation(prim->uiProgramID, strUniformName.c_str()), (int)value);
 	}
 
 	void CResourceGPUProgramsOpenGL::setUniformInt(const std::string& strUniformName, int value) const
 	{
-		if (prim->uiProgramID)
-			glUniform1i(glGetUniformLocation(prim->uiProgramID, strUniformName.c_str()), value);
+		ThrowIfFalse(prim->uiProgramID, "Shader programs not compiled and uploaded to GPU.");
+		glUniform1i(glGetUniformLocation(prim->uiProgramID, strUniformName.c_str()), value);
 	}
 
 	void CResourceGPUProgramsOpenGL::setUniformFloat(const std::string& strUniformName, float value) const
 	{
-		if (prim->uiProgramID)
-			glUniform1f(glGetUniformLocation(prim->uiProgramID, strUniformName.c_str()), value);
+		ThrowIfFalse(prim->uiProgramID, "Shader programs not compiled and uploaded to GPU.");
+		glUniform1f(glGetUniformLocation(prim->uiProgramID, strUniformName.c_str()), value);
 	}
 
 	void CResourceGPUProgramsOpenGL::setUniformMat4(const std::string& strUniformName, const CMatrix& value) const
 	{
-		if (prim->uiProgramID)
-			glUniformMatrix4fv(glGetUniformLocation(prim->uiProgramID, strUniformName.c_str()), 1, GL_FALSE, value.getFloat());
+		ThrowIfFalse(prim->uiProgramID, "Shader programs not compiled and uploaded to GPU.");
+		glUniformMatrix4fv(glGetUniformLocation(prim->uiProgramID, strUniformName.c_str()), 1, GL_FALSE, value.getFloat());
 	}
 
 	void CResourceGPUProgramsOpenGL::setUniformVec2(const std::string& strUniformName, const CVector2f& value) const
 	{
-		if (!prim->uiProgramID)
-			return;
+		ThrowIfFalse(prim->uiProgramID, "Shader programs not compiled and uploaded to GPU.");
+
 		float array[2];
 		value.getAsArray(array);
 		glUniform2fv(glGetUniformLocation(prim->uiProgramID, strUniformName.c_str()), 1, &array[0]);
@@ -192,8 +211,7 @@ namespace DCL
 
 	void CResourceGPUProgramsOpenGL::setUniformVec3(const std::string& strUniformName, const CVector3f& value) const
 	{
-		if (!prim->uiProgramID)
-			return;
+		ThrowIfFalse(prim->uiProgramID, "Shader programs not compiled and uploaded to GPU.");
 		float array[3];
 		value.getAsArray(array);
 		glUniform3fv(glGetUniformLocation(prim->uiProgramID, strUniformName.c_str()), 1, &array[0]);
@@ -201,8 +219,7 @@ namespace DCL
 
 	void CResourceGPUProgramsOpenGL::setUniformVec3(const std::string& strUniformName, const CColourf& value) const
 	{
-		if (!prim->uiProgramID)
-			return;
+		ThrowIfFalse(prim->uiProgramID, "Shader programs not compiled and uploaded to GPU.");
 		float array[3];
 		array[0] = value.red;
 		array[1] = value.green;
@@ -212,8 +229,7 @@ namespace DCL
 
 	void CResourceGPUProgramsOpenGL::setUniformVec4(const std::string& strUniformName, const CColourf& value) const
 	{
-		if (!prim->uiProgramID)
-			return;
+		ThrowIfFalse(prim->uiProgramID, "Shader programs not compiled and uploaded to GPU.");
 		float array[4];
 		array[0] = value.red;
 		array[1] = value.green;
@@ -259,6 +275,11 @@ namespace DCL
 	}
 
 	void CResourceGPUProgramsVulkan::setProgramSourceFromFile(const std::string& strVertexProgramSourceFilename, const std::string& strFragmentProgramSourceFilename)
+	{
+
+	}
+
+	void CResourceGPUProgramsVulkan::setProgramSourceFromMemory(const std::string& strVertexProgramSourceCode, const std::string& strFragmentProgramSourceCode)
 	{
 
 	}
