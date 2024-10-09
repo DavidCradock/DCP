@@ -7,9 +7,10 @@
 /// \todo Go through ALL code and modify the comments so that duplicate "returns this or that" and mentioning of parameters in either \\brief or main stuff too.
 /// \todo Add to and check FileManager from X code project
 /// \todo Add Renderers from DCP_old
-/// \todo Add SDL2 and SDL2_Mixer
+/// \todo Add SDL2_Mixer
 /// \todo Check Doxygen build system is working WITHOUT having to have the thing installed.
-/// \todo Add memory tracking class which is threaded like the CLog class and tracks peak system memory usuage .
+/// \todo Add memory tracking class which is threaded like the CLog class and tracks peak system memory usage.
+/// \todo OpenGL uniform buffers. They're new to me, but apparently have increased performance compared to using the various glUniformMatrix4fv and friends functions. So use them.
 #ifndef DAVESCODELIBRARY_H
 #define DAVESCODELIBRARY_H
 

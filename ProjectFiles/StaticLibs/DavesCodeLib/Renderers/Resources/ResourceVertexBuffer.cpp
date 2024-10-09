@@ -9,7 +9,15 @@ namespace DCL
 	* Base
 	************************************************************************************************************************************************************************
 	***********************************************************************************************************************************************************************/
+	CResourceVertexBufferBase::CResourceVertexBufferBase()
+	{
+		eVertexBufferType = CResourceVertexBufferBase::EVertexBufferDataType::POS;
+	}
 
+	void CResourceVertexBufferBase::setDataType(CResourceVertexBufferBase::EVertexBufferDataType vertexBufferDataType)
+	{
+		eVertexBufferType = vertexBufferDataType;
+	}
 
 	/***********************************************************************************************************************************************************************
 	************************************************************************************************************************************************************************
@@ -40,7 +48,7 @@ namespace DCL
 	CResourceVertexBufferOpenGL::~CResourceVertexBufferOpenGL()
 	{
 		LOG("Destructor called.");
-		free();
+		freeGPU();
 		if (prim)
 		{
 			delete prim;
@@ -48,12 +56,17 @@ namespace DCL
 		}
 	}
 
-	void CResourceVertexBufferOpenGL::upload(void)
+	void CResourceVertexBufferOpenGL::uploadGPU(void)
 	{
 
 	}
 
-	void CResourceVertexBufferOpenGL::free(void)
+	void CResourceVertexBufferOpenGL::freeGPU(void)
+	{
+
+	}
+
+	void CResourceVertexBufferOpenGL::render(bool bWireframeMode) const
 	{
 
 	}
@@ -95,14 +108,18 @@ namespace DCL
 		}
 	}
 
-	void CResourceVertexBufferVulkan::upload(void)
+	void CResourceVertexBufferVulkan::uploadGPU(void)
 	{
 
 	}
 
-	void CResourceVertexBufferVulkan::free(void)
+	void CResourceVertexBufferVulkan::freeGPU(void)
 	{
 
 	}
 
+	void CResourceVertexBufferVulkan::render(bool bWireframeMode) const
+	{
+
+	}
 }	// namespace DCL

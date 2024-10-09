@@ -33,6 +33,12 @@ var hierarchy =
     [ "DCL::CPlane", "class_d_c_l_1_1_c_plane.html", null ],
     [ "DCL::CRendererOpenGL::CPrim", "class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_prim.html", null ],
     [ "DCL::CRendererVulkan::CPrim", "class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html", null ],
+    [ "DCL::CResourceGPUProgramsOpenGL::CPrim", "class_d_c_l_1_1_c_resource_g_p_u_programs_open_g_l_1_1_c_prim.html", null ],
+    [ "DCL::CResourceGPUProgramsVulkan::CPrim", "class_d_c_l_1_1_c_resource_g_p_u_programs_vulkan_1_1_c_prim.html", null ],
+    [ "DCL::CResourceTexture2DOpenGL::CPrim", "class_d_c_l_1_1_c_resource_texture2_d_open_g_l_1_1_c_prim.html", null ],
+    [ "DCL::CResourceTexture2DVulkan::CPrim", "class_d_c_l_1_1_c_resource_texture2_d_vulkan_1_1_c_prim.html", null ],
+    [ "DCL::CResourceVertexBufferOpenGL::CPrim", "class_d_c_l_1_1_c_resource_vertex_buffer_open_g_l_1_1_c_prim.html", null ],
+    [ "DCL::CResourceVertexBufferVulkan::CPrim", "class_d_c_l_1_1_c_resource_vertex_buffer_vulkan_1_1_c_prim.html", null ],
     [ "DCL::CProfiler", "class_d_c_l_1_1_c_profiler.html", null ],
     [ "DCL::CQuadTree", "class_d_c_l_1_1_c_quad_tree.html", null ],
     [ "DCL::CQuadTreeEntity", "class_d_c_l_1_1_c_quad_tree_entity.html", null ],
@@ -45,9 +51,17 @@ var hierarchy =
       [ "DCL::CRendererVulkan", "class_d_c_l_1_1_c_renderer_vulkan.html", null ]
     ] ],
     [ "DCL::CRendererManager", "class_d_c_l_1_1_c_renderer_manager.html", null ],
-    [ "DCL::CResourceTexture2DFromCImageBase", "class_d_c_l_1_1_c_resource_texture2_d_from_c_image_base.html", [
-      [ "DCL::CResourceTexture2DFromCImageOpenGL", "class_d_c_l_1_1_c_resource_texture2_d_from_c_image_open_g_l.html", null ],
-      [ "DCL::CResourceTexture2DFromCImageVulkan", "class_d_c_l_1_1_c_resource_texture2_d_from_c_image_vulkan.html", null ]
+    [ "DCL::CResourceGPUProgramsBase", "class_d_c_l_1_1_c_resource_g_p_u_programs_base.html", [
+      [ "DCL::CResourceGPUProgramsOpenGL", "class_d_c_l_1_1_c_resource_g_p_u_programs_open_g_l.html", null ],
+      [ "DCL::CResourceGPUProgramsVulkan", "class_d_c_l_1_1_c_resource_g_p_u_programs_vulkan.html", null ]
+    ] ],
+    [ "DCL::CResourceTexture2DBase", "class_d_c_l_1_1_c_resource_texture2_d_base.html", [
+      [ "DCL::CResourceTexture2DOpenGL", "class_d_c_l_1_1_c_resource_texture2_d_open_g_l.html", null ],
+      [ "DCL::CResourceTexture2DVulkan", "class_d_c_l_1_1_c_resource_texture2_d_vulkan.html", null ]
+    ] ],
+    [ "DCL::CResourceVertexBufferBase", "class_d_c_l_1_1_c_resource_vertex_buffer_base.html", [
+      [ "DCL::CResourceVertexBufferOpenGL", "class_d_c_l_1_1_c_resource_vertex_buffer_open_g_l.html", null ],
+      [ "DCL::CResourceVertexBufferVulkan", "class_d_c_l_1_1_c_resource_vertex_buffer_vulkan.html", null ]
     ] ],
     [ "DCL::CSingleton< T >", "class_d_c_l_1_1_c_singleton.html", null ],
     [ "DCL::CTimer", "class_d_c_l_1_1_c_timer.html", null ],

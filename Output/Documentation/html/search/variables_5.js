@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['gfilemanager_0',['gFileManager',['../namespace_d_c_l.html#a59a6d9b5f42275453df6434b51689c63',1,'DCL']]],
-  ['green_1',['green',['../class_d_c_l_1_1_c_colourf.html#adbf46ba7b6ec02249d8e75b07e6b58f7',1,'DCL::CColourf::green'],['../class_d_c_l_1_1_c_colouruc.html#a75cfd3830cc4bdfe90d68013baec609a',1,'DCL::CColouruc::green']]]
+  ['fpercentageofmain_0',['fPercentageOfMain',['../struct_d_c_l_1_1_s_profiler_results.html#aac11af4c919b08819fa3a0e716d51130',1,'DCL::SProfilerResults']]],
+  ['fsomemember_1',['fSomeMember',['../class_d_c_l_1_1_c_new_class_template.html#a293c760a5f99fb30bec1a08b71581951',1,'DCL::CNewClassTemplate']]],
+  ['ftimeseconds_2',['fTimeSeconds',['../class_d_c_l_1_1_c_log_entry.html#ab10c00c447814d37997677d6f48fd6db',1,'DCL::CLogEntry']]]
 ];

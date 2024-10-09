@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['vbl_0',['vBL',['../struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords.html#aceab5f2a86dd51cdb530a6124f3e8924',1,'DCL::CImageAtlasDetails::STexCoords']]],
-  ['vbr_1',['vBR',['../struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords.html#a0a60ad113a1214ff9366ca10a1f5fd4e',1,'DCL::CImageAtlasDetails::STexCoords']]],
-  ['vdims_2',['vDims',['../class_d_c_l_1_1_c_image_atlas_details.html#a85b2058da892f7e2cf994aa85bd1a96b',1,'DCL::CImageAtlasDetails']]],
-  ['vdirection_3',['vDirection',['../class_d_c_l_1_1_c_ray.html#a7e1e7035a5c4672ded7826b5c8e537e1',1,'DCL::CRay']]],
-  ['vecweights_4',['vecWeights',['../class_d_c_l_1_1_c_genome.html#a50da5eb074a86d8e547c9cc1b8f8c43d',1,'DCL::CGenome']]],
-  ['vorigin_5',['vOrigin',['../class_d_c_l_1_1_c_ray.html#aa6b02669c77e9984c7c60d140605baa6',1,'DCL::CRay']]],
-  ['vtl_6',['vTL',['../struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords.html#aff0eca23457e9577f08172adc9085461',1,'DCL::CImageAtlasDetails::STexCoords']]],
-  ['vtr_7',['vTR',['../struct_d_c_l_1_1_c_image_atlas_details_1_1_s_tex_coords.html#af5540bd271f3bb0760a3684df259c631',1,'DCL::CImageAtlasDetails::STexCoords']]]
+  ['uiatlasimage_0',['uiAtlasImage',['../class_d_c_l_1_1_c_image_atlas_details.html#a1421b14b195e6f887c62de5d1f7c2996',1,'DCL::CImageAtlasDetails']]],
+  ['uiprogramid_1',['uiProgramID',['../class_d_c_l_1_1_c_resource_g_p_u_programs_open_g_l_1_1_c_prim.html#a05399e40d1cfaeb867e79360e9049bce',1,'DCL::CResourceGPUProgramsOpenGL::CPrim']]],
+  ['uitextureid_2',['uiTextureID',['../class_d_c_l_1_1_c_resource_texture2_d_open_g_l_1_1_c_prim.html#a6b5c9f4a944d1e5d5a113bab37bf5cfd',1,'DCL::CResourceTexture2DOpenGL::CPrim']]],
+  ['uiwindowheight_3',['uiWindowHeight',['../class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_prim.html#a061c1c1c4647b00eba3edaca2bd4371a',1,'DCL::CRendererOpenGL::CPrim::uiWindowHeight'],['../class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a50c3ad64dc820f10a1340027733d689b',1,'DCL::CRendererVulkan::CPrim::uiWindowHeight']]],
+  ['uiwindowwidth_4',['uiWindowWidth',['../class_d_c_l_1_1_c_renderer_open_g_l_1_1_c_prim.html#a538ef3ca35ce49a9412fa86f7afb6d8a',1,'DCL::CRendererOpenGL::CPrim::uiWindowWidth'],['../class_d_c_l_1_1_c_renderer_vulkan_1_1_c_prim.html#a4a4b87d6ef05dcb65426d6f82a33d03c',1,'DCL::CRendererVulkan::CPrim::uiWindowWidth']]]
 ];

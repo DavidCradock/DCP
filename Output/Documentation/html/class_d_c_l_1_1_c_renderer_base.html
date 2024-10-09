@@ -189,34 +189,64 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aadba47cb5a237ae02a4b1bd6bde53666" id="r_aadba47cb5a237ae02a4b1bd6bde53666"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadba47cb5a237ae02a4b1bd6bde53666">scissorTestEnable</a> (void)=0</td></tr>
 <tr class="memdesc:aadba47cb5a237ae02a4b1bd6bde53666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable scissor testing.  <br /></td></tr>
 <tr class="separator:aadba47cb5a237ae02a4b1bd6bde53666"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad676774152bd4054950446234cfb80f4" id="r_ad676774152bd4054950446234cfb80f4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_d_c_l_1_1_c_resource_texture2_d_from_c_image_base.html">CResourceTexture2DFromCImageBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad676774152bd4054950446234cfb80f4">addTexture2DFromCImage</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
-<tr class="memdesc:ad676774152bd4054950446234cfb80f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RecourceTexture2DFromCImage object to be managed.  <br /></td></tr>
-<tr class="separator:ad676774152bd4054950446234cfb80f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74c1918f5bc7534a583be6cc88ecf4f1" id="r_a74c1918f5bc7534a583be6cc88ecf4f1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_d_c_l_1_1_c_resource_texture2_d_from_c_image_base.html">CResourceTexture2DFromCImageBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74c1918f5bc7534a583be6cc88ecf4f1">getTexture2DFromCImage</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
-<tr class="memdesc:a74c1918f5bc7534a583be6cc88ecf4f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to an existing resource.  <br /></td></tr>
-<tr class="separator:a74c1918f5bc7534a583be6cc88ecf4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ae44964d1db560dcb2a264ae7a95230" id="r_a7ae44964d1db560dcb2a264ae7a95230"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ae44964d1db560dcb2a264ae7a95230">getTexture2DFromCImageExists</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
-<tr class="memdesc:a7ae44964d1db560dcb2a264ae7a95230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a named resource exists.  <br /></td></tr>
-<tr class="separator:a7ae44964d1db560dcb2a264ae7a95230"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21be7430ace5bb2dae2c43541441d41f" id="r_a21be7430ace5bb2dae2c43541441d41f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21be7430ace5bb2dae2c43541441d41f">removeTexture2DFromCImage</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
-<tr class="memdesc:a21be7430ace5bb2dae2c43541441d41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a previously added resource from this manager.  <br /></td></tr>
-<tr class="separator:a21be7430ace5bb2dae2c43541441d41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98c13fc3bb8d4924eeaaa93d7fcee1f4" id="r_a98c13fc3bb8d4924eeaaa93d7fcee1f4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98c13fc3bb8d4924eeaaa93d7fcee1f4">removeAllTexture2DFromCImage</a> (unsigned int uiGroupNumber=1)=0</td></tr>
-<tr class="memdesc:a98c13fc3bb8d4924eeaaa93d7fcee1f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all previously added resources from the given numbered group.  <br /></td></tr>
-<tr class="separator:a98c13fc3bb8d4924eeaaa93d7fcee1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae17a0a029fb341705ee25e8745a995" id="r_acae17a0a029fb341705ee25e8745a995"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_d_c_l_1_1_c_resource_g_p_u_programs_base.html">CResourceGPUProgramsBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acae17a0a029fb341705ee25e8745a995">addGPUPrograms</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:acae17a0a029fb341705ee25e8745a995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new ResourceGPUPrograms object to be managed.  <br /></td></tr>
+<tr class="separator:acae17a0a029fb341705ee25e8745a995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac082f9d0dc28370a30841d587a6555ce" id="r_ac082f9d0dc28370a30841d587a6555ce"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_d_c_l_1_1_c_resource_g_p_u_programs_base.html">CResourceGPUProgramsBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac082f9d0dc28370a30841d587a6555ce">getGPUPrograms</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:ac082f9d0dc28370a30841d587a6555ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to an existing resource.  <br /></td></tr>
+<tr class="separator:ac082f9d0dc28370a30841d587a6555ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd586235ef3012a0513e0bdb44c665c" id="r_a8bd586235ef3012a0513e0bdb44c665c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bd586235ef3012a0513e0bdb44c665c">getGPUProgramsExists</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:a8bd586235ef3012a0513e0bdb44c665c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a named resource exists.  <br /></td></tr>
+<tr class="separator:a8bd586235ef3012a0513e0bdb44c665c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489c77a16f14bc75790cb8e674d7915a" id="r_a489c77a16f14bc75790cb8e674d7915a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a489c77a16f14bc75790cb8e674d7915a">removeGPUPrograms</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:a489c77a16f14bc75790cb8e674d7915a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a previously added resource from this manager.  <br /></td></tr>
+<tr class="separator:a489c77a16f14bc75790cb8e674d7915a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb65f38b713b2f010716006e71fe5a1" id="r_a3fb65f38b713b2f010716006e71fe5a1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fb65f38b713b2f010716006e71fe5a1">removeGPUProgramsAll</a> (unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:a3fb65f38b713b2f010716006e71fe5a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all previously added resources from the given numbered group.  <br /></td></tr>
+<tr class="separator:a3fb65f38b713b2f010716006e71fe5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25eb73ab29349ef86f4bbac1ea4570b2" id="r_a25eb73ab29349ef86f4bbac1ea4570b2"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_d_c_l_1_1_c_resource_texture2_d_base.html">CResourceTexture2DBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25eb73ab29349ef86f4bbac1ea4570b2">addTexture2D</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:a25eb73ab29349ef86f4bbac1ea4570b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new ResourceTexture2D object to be managed.  <br /></td></tr>
+<tr class="separator:a25eb73ab29349ef86f4bbac1ea4570b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2046e404c8c1fd232beec4675c5057f7" id="r_a2046e404c8c1fd232beec4675c5057f7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_d_c_l_1_1_c_resource_texture2_d_base.html">CResourceTexture2DBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2046e404c8c1fd232beec4675c5057f7">getTexture2D</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:a2046e404c8c1fd232beec4675c5057f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to an existing resource.  <br /></td></tr>
+<tr class="separator:a2046e404c8c1fd232beec4675c5057f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba08e0fcb64990396aebfe92bda819e" id="r_acba08e0fcb64990396aebfe92bda819e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acba08e0fcb64990396aebfe92bda819e">getTexture2DExists</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:acba08e0fcb64990396aebfe92bda819e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a named resource exists.  <br /></td></tr>
+<tr class="separator:acba08e0fcb64990396aebfe92bda819e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba45cd4593fa669e5cdb95b228626c32" id="r_aba45cd4593fa669e5cdb95b228626c32"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba45cd4593fa669e5cdb95b228626c32">removeTexture2D</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:aba45cd4593fa669e5cdb95b228626c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a previously added resource from this manager.  <br /></td></tr>
+<tr class="separator:aba45cd4593fa669e5cdb95b228626c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab20b05e09fbb03bc6154b56de7443ea0" id="r_ab20b05e09fbb03bc6154b56de7443ea0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab20b05e09fbb03bc6154b56de7443ea0">removeTexture2DAll</a> (unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:ab20b05e09fbb03bc6154b56de7443ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all previously added resources from the given numbered group.  <br /></td></tr>
+<tr class="separator:ab20b05e09fbb03bc6154b56de7443ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46ec8dd4b83e3f7f77cfa98419367000" id="r_a46ec8dd4b83e3f7f77cfa98419367000"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_d_c_l_1_1_c_resource_vertex_buffer_base.html">CResourceVertexBufferBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46ec8dd4b83e3f7f77cfa98419367000">addVertexBuffer</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:a46ec8dd4b83e3f7f77cfa98419367000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new ResourceVertexBuffer object to be managed.  <br /></td></tr>
+<tr class="separator:a46ec8dd4b83e3f7f77cfa98419367000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad44dcaf14661b49329debecc6731bb83" id="r_ad44dcaf14661b49329debecc6731bb83"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_d_c_l_1_1_c_resource_vertex_buffer_base.html">CResourceVertexBufferBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad44dcaf14661b49329debecc6731bb83">getVertexBuffer</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:ad44dcaf14661b49329debecc6731bb83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to an existing resource.  <br /></td></tr>
+<tr class="separator:ad44dcaf14661b49329debecc6731bb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2671ee2a1d9dc29579688ba52160aa7f" id="r_a2671ee2a1d9dc29579688ba52160aa7f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2671ee2a1d9dc29579688ba52160aa7f">getVertexBufferExists</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:a2671ee2a1d9dc29579688ba52160aa7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a named resource exists.  <br /></td></tr>
+<tr class="separator:a2671ee2a1d9dc29579688ba52160aa7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6d8c7a82a4268be6bc51e50176a07d8" id="r_af6d8c7a82a4268be6bc51e50176a07d8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6d8c7a82a4268be6bc51e50176a07d8">removeVertexBuffer</a> (const std::string &amp;strResourceName, unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:af6d8c7a82a4268be6bc51e50176a07d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a previously added resource from this manager.  <br /></td></tr>
+<tr class="separator:af6d8c7a82a4268be6bc51e50176a07d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b87d184969731f9ccc4080a6c12809" id="r_ac7b87d184969731f9ccc4080a6c12809"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7b87d184969731f9ccc4080a6c12809">removeVertexBufferAll</a> (unsigned int uiGroupNumber=1)=0</td></tr>
+<tr class="memdesc:ac7b87d184969731f9ccc4080a6c12809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all previously added resources from the given numbered group.  <br /></td></tr>
+<tr class="separator:ac7b87d184969731f9ccc4080a6c12809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for the various renderers. </p>
 <p>Base class which declares which methods need to be in a renderer class for each graphics API. No implementation here. Every method in here is pure virtual (The virtual keyword and the "= 0" at the end) All the various rendering classes (such as the user interface class for example) use the methods declared here to render stuff in a generic way. This allows us to write all the rendering code in an API independent way, so if we wish to use a different API, we don't have to re-write all the code which uses a renderer. We implement multiple renderer classes which are based upon this class, then create a pointer to one of those classes and store that in a <a class="el" href="class_d_c_l_1_1_c_renderer_base.html" title="Base class for the various renderers.">CRendererBase</a> pointer depending upon which renderer we wish to use (OpenGL, Vulkan, maybe software (at a later date)). The only disadvantage I can think of is more work. The advantages are plentiful! Being able to switch APIs is fun and good for a few reasons... If some end user piece of software is buggy and crashing when using the Vulkan API, I can just say "Try the more stable OpenGL renderer" as I'm a little uncertain what I'm doing with Vulkan and it gives me a nice user support feature :) It'll also be fun to compare performance between the different APIs.</p>
 <p>We use Pimpl for the derived renderer classes as we do not wish to expose/make the APIs visible to any code, otherwise we might be tempted to call the APIs and that'd make a huge mess! So all objects needed by the renderer classes go inside the private implementation instead of their header files.</p>
 <p>Although a renderer, regardless of API can render to a buffer without a window, we do not include such functionality here. Meaning, a window is required. This class is responsible for creating/checking messages/closing this window.</p>
-<p>The derived classes have sets of methods which are responsible for creating/freeing/accessing various resources such as textures, vertex buffers/programs, etc. These methods, for each resource type are... addResourceType() // Adds a new resource. Allocates an object of the derived class into a pointer of the base class for the resource type. getResourceType() // Returns a pointer to the base class of the resource type getResourceTypeExists() // Returns true if the named resource already exists in the numbered resource group removeResourceType() // Removes, or reduces the reference count of the named resource. removeAllResourceType() // Removes all resources in a group.</p>
-<p>Each resource should have a unique name and they are held within a speccified resource group number. These resource group numbers are used so we can seperate resources into groups and allow more flexibility when calling the removeAllResourceType() method, for example. There are 8 resource groups, so valid group numbers are from 0 to 7. Group 0 is supposed to be reserved for resources which are used within <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a> such as default textures, vertex/fragment programs etc. I say "supposed" as there's nothing preventing us from messing around with group 0. All methods accept a group number, which defaults to group 1. We decided to use group numbers instead of names for performance reasons. (Faster access to an array via index rather than using a hashmap lookup for a named group) </p>
+<p>The derived classes have sets of methods which are responsible for creating/freeing/accessing various resources such as textures, vertex buffers/programs, etc. These methods, for each resource type are... addResourceType() // Adds a new resource. Allocates an object of the derived class into a pointer of the base class for the resource type. getResourceType() // Returns a pointer to the base class of the resource type getResourceTypeExists() // Returns true if the named resource already exists in the numbered resource group removeResourceType() // Removes, or reduces the reference count of the named resource. removeResourceTypeAll() // Removes all resources in a group.</p>
+<p>Each resource should have a unique name and they are held within a speccified resource group number. These resource group numbers are used so we can seperate resources into groups and allow more flexibility when calling the removeAllResourceType() method, for example. There are 8 resource groups, so valid group numbers are from 0 to 7. Group 0 is supposed to be reserved for resources which are used within <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a> such as default textures, vertex/fragment programs etc. I say "supposed" as there's nothing preventing us from messing around with group 0. All methods accept a group number, which defaults to group 1. I decided to use group numbers instead of names for performance reasons. (Faster access to an array via index rather than using a hashmap lookup for a named group) </p>
 
-<p class="definition">Definition at line <a class="el" href="_renderer_base_8h_source.html#l00049">49</a> of file <a class="el" href="_renderer_base_8h_source.html">RendererBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_renderer_base_8h_source.html#l00050">50</a> of file <a class="el" href="_renderer_base_8h_source.html">RendererBase.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad676774152bd4054950446234cfb80f4" name="ad676774152bd4054950446234cfb80f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad676774152bd4054950446234cfb80f4">&#9670;&#160;</a></span>addTexture2DFromCImage()</h2>
+<a id="acae17a0a029fb341705ee25e8745a995" name="acae17a0a029fb341705ee25e8745a995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae17a0a029fb341705ee25e8745a995">&#9670;&#160;</a></span>addGPUPrograms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +255,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_d_c_l_1_1_c_resource_texture2_d_from_c_image_base.html">CResourceTexture2DFromCImageBase</a> * DCL::CRendererBase::addTexture2DFromCImage </td>
+          <td class="memname">virtual <a class="el" href="class_d_c_l_1_1_c_resource_g_p_u_programs_base.html">CResourceGPUProgramsBase</a> * DCL::CRendererBase::addGPUPrograms </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
         </tr>
@@ -242,7 +272,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Adds a new RecourceTexture2DFromCImage object to be managed. </p>
+<p>Adds a new ResourceGPUPrograms object to be managed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">strResourceName</td><td>The name of the new resource which we can use to refer to it with other methods. </td></tr>
@@ -252,7 +282,89 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned. </p>
 
-<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a78a03a83fb694d221942c469e90d63e2">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#ae7fa885cfdb17ad430fea5883370683f">DCL::CRendererVulkan</a>.</p>
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a94497579228c348e184a8814ef19e918">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#ad0c2be3692366b76828e18dd97ec3e28">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="a25eb73ab29349ef86f4bbac1ea4570b2" name="a25eb73ab29349ef86f4bbac1ea4570b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25eb73ab29349ef86f4bbac1ea4570b2">&#9670;&#160;</a></span>addTexture2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_d_c_l_1_1_c_resource_texture2_d_base.html">CResourceTexture2DBase</a> * DCL::CRendererBase::addTexture2D </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a new ResourceTexture2D object to be managed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strResourceName</td><td>The name of the new resource which we can use to refer to it with other methods. </td></tr>
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned. </p>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a82b2f7fb51deed6013e26905a086bf26">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a62eed1e6f52b1fbee1e3e918cd318e9e">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="a46ec8dd4b83e3f7f77cfa98419367000" name="a46ec8dd4b83e3f7f77cfa98419367000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46ec8dd4b83e3f7f77cfa98419367000">&#9670;&#160;</a></span>addVertexBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_d_c_l_1_1_c_resource_vertex_buffer_base.html">CResourceVertexBufferBase</a> * DCL::CRendererBase::addVertexBuffer </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a new ResourceVertexBuffer object to be managed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strResourceName</td><td>The name of the new resource which we can use to refer to it with other methods. </td></tr>
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned. </p>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a6cf954a05bbd720d4849d8dba3196d2f">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a974832496c153947f9258a37825f346e">DCL::CRendererVulkan</a>.</p>
 
 </div>
 </div>
@@ -604,8 +716,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a74c1918f5bc7534a583be6cc88ecf4f1" name="a74c1918f5bc7534a583be6cc88ecf4f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74c1918f5bc7534a583be6cc88ecf4f1">&#9670;&#160;</a></span>getTexture2DFromCImage()</h2>
+<a id="ac082f9d0dc28370a30841d587a6555ce" name="ac082f9d0dc28370a30841d587a6555ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac082f9d0dc28370a30841d587a6555ce">&#9670;&#160;</a></span>getGPUPrograms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -614,7 +726,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_d_c_l_1_1_c_resource_texture2_d_from_c_image_base.html">CResourceTexture2DFromCImageBase</a> * DCL::CRendererBase::getTexture2DFromCImage </td>
+          <td class="memname">virtual <a class="el" href="class_d_c_l_1_1_c_resource_g_p_u_programs_base.html">CResourceGPUProgramsBase</a> * DCL::CRendererBase::getGPUPrograms </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
         </tr>
@@ -641,12 +753,12 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>If the resource couldn't be found, an exception is thrown. </p>
 
-<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#ad53ade92f416cbabf9de336d6cd78509">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a6299a78ae9cb3c438e3201c20e99309c">DCL::CRendererVulkan</a>.</p>
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a36d27caa7804532fb0129a4b7c1888c2">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a6b6573e3b04a9ab0b31d88d909439642">DCL::CRendererVulkan</a>.</p>
 
 </div>
 </div>
-<a id="a7ae44964d1db560dcb2a264ae7a95230" name="a7ae44964d1db560dcb2a264ae7a95230"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ae44964d1db560dcb2a264ae7a95230">&#9670;&#160;</a></span>getTexture2DFromCImageExists()</h2>
+<a id="a8bd586235ef3012a0513e0bdb44c665c" name="a8bd586235ef3012a0513e0bdb44c665c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd586235ef3012a0513e0bdb44c665c">&#9670;&#160;</a></span>getGPUProgramsExists()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -655,7 +767,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool DCL::CRendererBase::getTexture2DFromCImageExists </td>
+          <td class="memname">virtual bool DCL::CRendererBase::getGPUProgramsExists </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
         </tr>
@@ -681,7 +793,169 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#aa6d243271e108e7a4cc1426a5c702867">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a75229dfb3519415888152bf495af7232">DCL::CRendererVulkan</a>.</p>
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a75b64b615732c09b0bfe4a601d6dfab4">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a92c420bc70b2162e7e97235a1784b607">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="a2046e404c8c1fd232beec4675c5057f7" name="a2046e404c8c1fd232beec4675c5057f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2046e404c8c1fd232beec4675c5057f7">&#9670;&#160;</a></span>getTexture2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_d_c_l_1_1_c_resource_texture2_d_base.html">CResourceTexture2DBase</a> * DCL::CRendererBase::getTexture2D </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a pointer to an existing resource. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strResourceName</td><td>The name of the resource. </td></tr>
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If the resource couldn't be found, an exception is thrown. </p>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#af7ae92b5ea059827e8bdafd7203d18ea">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a49651af3158d548ac2cbda5dd372ebb8">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="acba08e0fcb64990396aebfe92bda819e" name="acba08e0fcb64990396aebfe92bda819e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba08e0fcb64990396aebfe92bda819e">&#9670;&#160;</a></span>getTexture2DExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DCL::CRendererBase::getTexture2DExists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns whether a named resource exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strResourceName</td><td>The name of the resource. </td></tr>
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#aeaa624429ea40eb2dad436b4a95c0265">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#ac9130c1da73dbbab8cad97024f8451b3">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="ad44dcaf14661b49329debecc6731bb83" name="ad44dcaf14661b49329debecc6731bb83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad44dcaf14661b49329debecc6731bb83">&#9670;&#160;</a></span>getVertexBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_d_c_l_1_1_c_resource_vertex_buffer_base.html">CResourceVertexBufferBase</a> * DCL::CRendererBase::getVertexBuffer </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a pointer to an existing resource. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strResourceName</td><td>The name of the resource. </td></tr>
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If the resource couldn't be found, an exception is thrown. </p>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#af14587468f824c2ef9ff8d2a5578fb7b">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a6e8108bd891e76105db5e29fee950938">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="a2671ee2a1d9dc29579688ba52160aa7f" name="a2671ee2a1d9dc29579688ba52160aa7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2671ee2a1d9dc29579688ba52160aa7f">&#9670;&#160;</a></span>getVertexBufferExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool DCL::CRendererBase::getVertexBufferExists </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns whether a named resource exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strResourceName</td><td>The name of the resource. </td></tr>
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a791204483fe33577655992b7f330ad39">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a34b41df145d0fc953789a6727e31a7e5">DCL::CRendererVulkan</a>.</p>
 
 </div>
 </div>
@@ -834,8 +1108,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a98c13fc3bb8d4924eeaaa93d7fcee1f4" name="a98c13fc3bb8d4924eeaaa93d7fcee1f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98c13fc3bb8d4924eeaaa93d7fcee1f4">&#9670;&#160;</a></span>removeAllTexture2DFromCImage()</h2>
+<a id="a489c77a16f14bc75790cb8e674d7915a" name="a489c77a16f14bc75790cb8e674d7915a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a489c77a16f14bc75790cb8e674d7915a">&#9670;&#160;</a></span>removeGPUPrograms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -844,42 +1118,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void DCL::CRendererBase::removeAllTexture2DFromCImage </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes all previously added resources from the given numbered group. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a96d87a532c86cea6183fd40272593f5d">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#ad83003486c88a860c464dee4638f8e46">DCL::CRendererVulkan</a>.</p>
-
-</div>
-</div>
-<a id="a21be7430ace5bb2dae2c43541441d41f" name="a21be7430ace5bb2dae2c43541441d41f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21be7430ace5bb2dae2c43541441d41f">&#9670;&#160;</a></span>removeTexture2DFromCImage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void DCL::CRendererBase::removeTexture2DFromCImage </td>
+          <td class="memname">virtual void DCL::CRendererBase::removeGPUPrograms </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
         </tr>
@@ -906,7 +1145,194 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>If the resource doesn't exist, this silently fails. If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains. </p>
 
-<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#ad1661fe6d76bbb1ea98c9f041a9ca1fe">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a11e3d8807d9dc2c3e9b255a8afaf199a">DCL::CRendererVulkan</a>.</p>
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a6e2bc877df924a7eabd14561a1abbd9b">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a211e6f903a8f323ad8c6030e903fdcbb">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="a3fb65f38b713b2f010716006e71fe5a1" name="a3fb65f38b713b2f010716006e71fe5a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fb65f38b713b2f010716006e71fe5a1">&#9670;&#160;</a></span>removeGPUProgramsAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DCL::CRendererBase::removeGPUProgramsAll </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes all previously added resources from the given numbered group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#ae30860670148210e9dfa930cacbd72cb">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#abe17d658a37be0a1c89a78fff0b61a1e">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="aba45cd4593fa669e5cdb95b228626c32" name="aba45cd4593fa669e5cdb95b228626c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba45cd4593fa669e5cdb95b228626c32">&#9670;&#160;</a></span>removeTexture2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DCL::CRendererBase::removeTexture2D </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes a previously added resource from this manager. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strResourceName</td><td>The name of the resource. </td></tr>
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If the resource doesn't exist, this silently fails. If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains. </p>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a896089709d58d85f360b6b4fe1d1ba83">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#aa061af9bce31f0b7558a4abcb017ecb6">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="ab20b05e09fbb03bc6154b56de7443ea0" name="ab20b05e09fbb03bc6154b56de7443ea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab20b05e09fbb03bc6154b56de7443ea0">&#9670;&#160;</a></span>removeTexture2DAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DCL::CRendererBase::removeTexture2DAll </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes all previously added resources from the given numbered group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#aea7afd1f564bc28f11eead5b5060852e">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a50dfacb63501f236dc63f50aa14b678b">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="af6d8c7a82a4268be6bc51e50176a07d8" name="af6d8c7a82a4268be6bc51e50176a07d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d8c7a82a4268be6bc51e50176a07d8">&#9670;&#160;</a></span>removeVertexBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DCL::CRendererBase::removeVertexBuffer </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>strResourceName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes a previously added resource from this manager. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strResourceName</td><td>The name of the resource. </td></tr>
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If the resource doesn't exist, this silently fails. If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains. </p>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a119023a2fdf070d637345d85d3c6dbb7">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a652a27556350ee4eaace02e1f549041b">DCL::CRendererVulkan</a>.</p>
+
+</div>
+</div>
+<a id="ac7b87d184969731f9ccc4080a6c12809" name="ac7b87d184969731f9ccc4080a6c12809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b87d184969731f9ccc4080a6c12809">&#9670;&#160;</a></span>removeVertexBufferAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DCL::CRendererBase::removeVertexBufferAll </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>uiGroupNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes all previously added resources from the given numbered group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiGroupNumber</td><td>The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by <a class="el" href="namespace_d_c_l.html" title="The namespace in which everything within Dave&#39;s Code Library is stored inside.">DCL</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_d_c_l_1_1_c_renderer_open_g_l.html#a4cc986bf78e7bd1a538a6600b7458b26">DCL::CRendererOpenGL</a>, and <a class="el" href="class_d_c_l_1_1_c_renderer_vulkan.html#a2eb7b20f12cfcc6fc5bb04531bedc394">DCL::CRendererVulkan</a>.</p>
 
 </div>
 </div>

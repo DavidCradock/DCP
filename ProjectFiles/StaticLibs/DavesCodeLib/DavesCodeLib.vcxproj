@@ -134,6 +134,7 @@
     <ClInclude Include="Renderers\OpenGL\RendererOpenGLExtensions.h" />
     <ClInclude Include="Renderers\RendererBase.h" />
     <ClInclude Include="Renderers\RendererManager.h" />
+    <ClInclude Include="Renderers\Resources\ResourceFramebuffer.h" />
     <ClInclude Include="Renderers\Resources\ResourceTexture2D.h" />
     <ClInclude Include="Renderers\Resources\ResourceVertexBuffer.h" />
     <ClInclude Include="Renderers\Resources\ResourceGPUPrograms.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="Renderers\OpenGL\RendererOpenGL.cpp" />
     <ClCompile Include="Renderers\OpenGL\RendererOpenGLExtensions.cpp" />
     <ClCompile Include="Renderers\RendererManager.cpp" />
+    <ClCompile Include="Renderers\Resources\ResourceFramebuffer.cpp" />
     <ClCompile Include="Renderers\Resources\ResourceTexture2D.cpp" />
     <ClCompile Include="Renderers\Resources\ResourceVertexBuffer.cpp" />
     <ClCompile Include="Renderers\Resources\ResourceGPUPrograms.cpp" />

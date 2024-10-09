@@ -108,7 +108,7 @@ namespace DCL
 		// Attempt to compile shaders
 		unsigned int vertex, fragment;
 		int success;
-		char infoLog[512];
+		char infoLog[1024];
 
 		// Vertex Shader
 		vertex = glCreateShader(GL_VERTEX_SHADER);
@@ -117,7 +117,7 @@ namespace DCL
 		glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
 		if (!success)
 		{
-			glGetShaderInfoLog(vertex, 512, NULL, infoLog);
+			glGetShaderInfoLog(vertex, 1024, NULL, infoLog);
 			std::string err("CResourceGPUProgramsOpenGL::upload() failed to compile the vertex program. ");
 			err.append(infoLog);
 			Throw(err);
@@ -130,7 +130,7 @@ namespace DCL
 		glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
 		if (!success)
 		{
-			glGetShaderInfoLog(fragment, 512, NULL, infoLog);
+			glGetShaderInfoLog(fragment, 1024, NULL, infoLog);
 			std::string err("CResourceGPUProgramsOpenGL::upload() failed to compile the fragment program. ");
 			err.append(infoLog);
 			Throw(err);
