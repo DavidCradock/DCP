@@ -151,6 +151,9 @@ namespace DCL
 		std::vector<int> _mvecIndices;			///< Vector holding indicies to each unique vertex
 
 		/// \brief Compute tangents and binormals from currently added geometry.
+		///
+		/// This only works if the data type of this vertex buffer is set to Vertex_POS_COL_NORMAL_TEXCOORD_TANGENT_BINORMAL, otherwise an exception occurs.
+		/// If no data exists, an exception occurs.
 		void computeTangentsAndBinormals(void);
 
 		/// \brief Adds a new unique vertex's data to system memory
@@ -185,13 +188,13 @@ namespace DCL
 		void addVertex(const CVector3f& position, const CColourf& colour, const CVector3f& normal, CVector2f& texcoord0, CVector2f& texcoord1);
 
 		/// \brief Frees all previously added vertex data from system memory
-		void freeVertexDataFromSystemMemory(void);
+		void freeVertexData(void);
 
 		/// \brief Frees all vertex indicies from system memory
-		void freeVertexIndiciesFromSystemMemory(void);
+		void freeVertexIndicies(void);
 
 		/// \brief Frees all vertex data and vertex indicies from system memory
-		void freeAllFromSystemMemory(void);
+		void freeAll(void);
 
 		/// \brief Adds a new vertex index
 		void addIndex(int newIndex);
@@ -210,6 +213,20 @@ namespace DCL
 		///
 		/// If there's no vertex data, this silently fails.
 		virtual void render(bool bWireframeMode = false) const = 0;
+
+		/// \brief Converts an .obj file to our custom geometry file format and saves to disk
+		///
+		/// Does not touch any members of this class
+		void convertObj(const std::string filename) const;
+
+		/// \brief Adds vertex data and indicies from our custom file format which is created with convertObj()
+		/// 
+		/// Use the convertObj() method to generate a binary file from an .obj file exported from
+		/// some 3D modelling package such as Blender.
+		/// The method will load in, convert and save out the stored geometry information into an efficient to load file which we use here
+		/// to load the vertex information into memory.
+		void addFromFile(const std::string& strGeometryFilename);
+
 	};
 
 	
