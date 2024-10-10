@@ -4,6 +4,7 @@
 #include "../../Core/Colourf.h"
 #include "../../Math/Vector2f.h"
 #include "../../Math/Vector3f.h"
+#include <string>
 #include <vector>
 
 namespace DCL

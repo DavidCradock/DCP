@@ -53,7 +53,7 @@ namespace DCL
 
 	void CResourceVertexBufferBase::addVertex(const CVector3f& position)
 	{
-		ThrowIfFalse(CResourceVertexBufferBase::EVertexBufferDataType::POS == eVertexBufferType, "Vertex buffer type not correctly set to EVertexBufferDataType::POS");
+		ThrowIfFalse(bool(CResourceVertexBufferBase::EVertexBufferDataType::POS == eVertexBufferType), "Vertex buffer type not correctly set to EVertexBufferDataType::POS");
 		Vertex_POS vertex;
 		vertex.position = position;
 		_mvecVertexData_POS.push_back(vertex);
