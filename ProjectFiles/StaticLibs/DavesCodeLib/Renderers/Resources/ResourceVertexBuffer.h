@@ -11,6 +11,9 @@ namespace DCL
 {
 	/// \brief Base class for resource of type vertex buffer
 	///
+	/// \todo convertObj() needs to compute TBN and save to file
+	/// \todo implement addFromFile()
+	/// 
 	/// We derive resource classes from this base class for each renderer type such as OpenGL and Vulkan.
 	/// These classes are to be declared within this header file to reduce the number of files.
 	/// Eww! I know right? Three class declarations insided a single header file, the madness!
@@ -52,7 +55,7 @@ namespace DCL
 	/// vb->addIndex(1); // The second vertex to be rendered, points to the second vertex data.
 	/// vb->addIndex(2); // The third vertex to be rendered, points to the third vertex data.
 	/// 
-	/// // Finally, upload the vertex buffer data and indicies to the GPU, ready to be sent and rendered...
+	/// // Finally, upload the vertex buffer data and indicies to the GPU, ready to be rendered...
 	/// vb->uploadGPU();
 	/// 
 	/// // Now somewhere in our rendering loop, after binding textures, GPU programs and setting uniforms (Such as matricies) for those programs, send the vertex data to be rendered with...
