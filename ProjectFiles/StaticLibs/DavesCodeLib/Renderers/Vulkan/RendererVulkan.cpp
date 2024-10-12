@@ -224,6 +224,31 @@ namespace DCL
 
 	}
 
+	CResourceFramebufferBase* CRendererVulkan::addFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return 0;
+	}
+
+	CResourceFramebufferBase* CRendererVulkan::getFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return 0;
+	}
+
+	bool CRendererVulkan::getFramebufferExists(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		return false;
+	}
+
+	void CRendererVulkan::removeFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+
+	}
+
+	void CRendererVulkan::removeFramebufferAll(unsigned int uiGroupNumber)
+	{
+
+	}
+
 	CResourceVertexBufferBase* CRendererVulkan::addVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		return 0;

@@ -54,6 +54,12 @@ namespace DCL
 		void removeTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber);
 		void removeTexture2DAll(unsigned int uiGroupNumber);
 
+		CResourceFramebufferBase* addFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber = 1);
+		CResourceFramebufferBase* getFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber = 1);
+		bool getFramebufferExists(const std::string& strResourceName, unsigned int uiGroupNumber = 1);
+		void removeFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber = 1);
+		void removeFramebufferAll(unsigned int uiGroupNumber = 1);
+
 		CResourceVertexBufferBase* addVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber);
 		CResourceVertexBufferBase* getVertexBuffer(const std::string& strResourceName, unsigned int uiGroupNumber);
 		bool getVertexBufferExists(const std::string& strResourceName, unsigned int uiGroupNumber);
@@ -76,6 +82,14 @@ namespace DCL
 			unsigned int uiCount;				///< Number of times the resource has been added
 		};
 		std::map<std::string, SResourceTexture2D> _mmapResTexture2DGroups[8];	///< Each of the 8 groups holding resources for the resource type.
+
+		/// \brief Struct to hold a resource for the Framebuffer type.
+		struct SResourceFramebuffer
+		{
+			CResourceFramebufferBase* pResource;	///< Pointer to the resource
+			unsigned int uiCount;					///< Number of times the resource has been added
+		};
+		std::map<std::string, SResourceFramebuffer> _mmapResFramebufferGroups[8];	///< Each of the 8 groups holding resources for the resource type.
 
 		/// \brief Struct to hold a resource for the VertexBuffer type.
 		struct SResourceVertexBuffer

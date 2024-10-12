@@ -217,7 +217,7 @@ namespace DCL
 
 	CVector2f CImage::getDimensionsAsVector2f(void) const
 	{
-		CVector2f dims(_miWidth, _miHeight);
+		CVector2f dims((float)_miWidth, (float)_miHeight);
 		return dims;
 	}
 

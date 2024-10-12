@@ -380,7 +380,7 @@ namespace DCL
 	CResourceTexture2DBase* CRendererOpenGL::getTexture2D(const std::string& strResourceName, unsigned int uiGroupNumber)
 	{
 		// Make sure valid group number is given
-		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getTexture2De() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getTexture2D() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
 
 		auto itResource = _mmapResTexture2DGroups[uiGroupNumber].find(strResourceName);
 		ThrowIfTrue(itResource == _mmapResTexture2DGroups[uiGroupNumber].end(), "CRendererOpenGL::getTexture2D(" + strResourceName + ") failed. Named resource doesn't exist.");
@@ -423,6 +423,76 @@ namespace DCL
 			delete itResource->second.pResource;
 			_mmapResTexture2DGroups[uiGroupNumber].erase(itResource);
 			itResource = _mmapResTexture2DGroups[uiGroupNumber].begin();
+		}
+	}
+
+	CResourceFramebufferBase* CRendererOpenGL::addFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		// Make sure valid group number is given
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::addFramebuffer() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+
+		// If resource already exists
+		auto itResource = _mmapResFramebufferGroups[uiGroupNumber].find(strResourceName);
+		if (itResource != _mmapResFramebufferGroups[uiGroupNumber].end())
+		{
+			itResource->second.uiCount++;
+			return itResource->second.pResource;
+		}
+		// Resource doesn't exist, create it
+		SResourceFramebuffer newRes;
+		newRes.uiCount = 1;
+		newRes.pResource = new CResourceFramebufferOpenGL;
+		ThrowIfFalse(newRes.pResource, "CRendererOpenGL::addFramebuffer(" + strResourceName + ") failed to allocate memory for new resource.");
+		_mmapResFramebufferGroups[uiGroupNumber][strResourceName] = newRes;
+		return newRes.pResource;
+	}
+
+	CResourceFramebufferBase* CRendererOpenGL::getFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		// Make sure valid group number is given
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getFramebuffer() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+
+		auto itResource = _mmapResFramebufferGroups[uiGroupNumber].find(strResourceName);
+		ThrowIfTrue(itResource == _mmapResFramebufferGroups[uiGroupNumber].end(), "CRendererOpenGL::getFramebuffer(" + strResourceName + ") failed. Named resource doesn't exist.");
+		return itResource->second.pResource;
+	}
+
+	bool CRendererOpenGL::getFramebufferExists(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		// Make sure valid group number is given
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::getFramebufferExists() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+
+		return _mmapResFramebufferGroups[uiGroupNumber].find(strResourceName) != _mmapResFramebufferGroups[uiGroupNumber].end();
+	}
+
+	void CRendererOpenGL::removeFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber)
+	{
+		// Make sure valid group number is given
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeFramebuffer() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+
+		auto itResource = _mmapResFramebufferGroups[uiGroupNumber].find(strResourceName);
+		if (itResource == _mmapResFramebufferGroups[uiGroupNumber].end())
+			return;	// Doesn't exist.
+		if (itResource->second.uiCount > 1)
+		{
+			itResource->second.uiCount--;
+			return;
+		}
+		delete itResource->second.pResource;
+		_mmapResFramebufferGroups[uiGroupNumber].erase(itResource);
+	}
+
+	void CRendererOpenGL::removeFramebufferAll(unsigned int uiGroupNumber)
+	{
+		// Make sure valid group number is given
+		ThrowIfTrue(uiGroupNumber > 7, "CRendererOpenGL::removeFramebufferAll() failed. Invalid group number of " + std::to_string(uiGroupNumber) + " was given. Should be in range of 0 to 7");
+
+		auto itResource = _mmapResFramebufferGroups[uiGroupNumber].begin();
+		while (itResource != _mmapResFramebufferGroups[uiGroupNumber].end())
+		{
+			delete itResource->second.pResource;
+			_mmapResFramebufferGroups[uiGroupNumber].erase(itResource);
+			itResource = _mmapResFramebufferGroups[uiGroupNumber].begin();
 		}
 	}
 

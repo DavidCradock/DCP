@@ -100,7 +100,7 @@ namespace DCL
 		void unbindAll(void) const;
 	private:
 		class CPrim;		///< Declaration of this class's private implementation holding things which we do not wish to expose when including this header file.
-		///< We put this here so we can create the pointer below, without having to include the header file containing the actual code.
+							///< We put this here so we can create the pointer below, without having to include the header file containing the actual code.
 		CPrim* prim;		///< Pointer holding private implementation, new'd and delete'd in con/des tructors of this class.
 	};
 

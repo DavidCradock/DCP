@@ -2,6 +2,7 @@
 #define RENDERER_H
 
 // Resources
+#include "Resources/ResourceFramebuffer.h"
 #include "Resources/ResourceGPUPrograms.h"
 #include "Resources/ResourceTexture2D.h"
 #include "Resources/ResourceVertexBuffer.h"
@@ -202,6 +203,42 @@ namespace DCL
 		///
 		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
 		virtual void removeTexture2DAll(unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Adds a new ResourceFramebuffer object to be managed.
+		///
+		/// \param strResourceName The name of the new resource which we can use to refer to it with other methods.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the named resource already exists, it has a count value which is incremented and the pointer to the existing resource is returned.
+		virtual CResourceFramebufferBase* addFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns a pointer to an existing resource
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource couldn't be found, an exception is thrown.
+		virtual CResourceFramebufferBase* getFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Returns whether a named resource exists
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual bool getFramebufferExists(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes a previously added resource from this manager
+		///
+		/// \param strResourceName The name of the resource.
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		/// 
+		/// If the resource doesn't exist, this silently fails.
+		/// If the resource has been added multiple times and it's count value is greater than 1, the value is reduced, but the resource remains.
+		virtual void removeFramebuffer(const std::string& strResourceName, unsigned int uiGroupNumber = 1) = 0;
+
+		/// \brief Removes all previously added resources from the given numbered group
+		///
+		/// \param uiGroupNumber The resource group number which this resource is stored in. Can range from 0 to 7. Resource group 0 is reserved for resources used by DCL.
+		virtual void removeFramebufferAll(unsigned int uiGroupNumber = 1) = 0;
 
 		/// \brief Adds a new ResourceVertexBuffer object to be managed.
 		///
