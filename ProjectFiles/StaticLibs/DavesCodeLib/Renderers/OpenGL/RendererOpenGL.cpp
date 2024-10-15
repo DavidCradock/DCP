@@ -2,6 +2,7 @@
 #include "../../Core/Colourf.h"
 
 #include "RendererOpenGLExtensions.h"
+#include "../GPUProgramStrings.h"
 
 // SDL
 #include "../../../../DynamicLibs/SDL-release-2.30.6/include/SDL.h"
@@ -142,6 +143,12 @@ namespace DCL
 
 		// Detect OpenGL extensions and obtain function pointers
 		setupOpenGLExtensions(true);
+
+		// Setup default vertex/fragment programs
+		initGPUProgramStrings();
+		CResourceGPUProgramsBase* resGPUProg = addGPUPrograms("DCL_POS_VERTEX", 0);
+		resGPUProg->setProgramSourceFromMemory(gStrGPU_POS[0], gStrGPU_POS[1]);
+		resGPUProg->upload();
 	}
 
 	void CRendererOpenGL::shutdown(void)

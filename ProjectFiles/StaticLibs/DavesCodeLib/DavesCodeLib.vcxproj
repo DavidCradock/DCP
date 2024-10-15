@@ -125,6 +125,7 @@
     <ClInclude Include="Math\Vector4f.h" />
     <ClInclude Include="NewFileTemplate.h" />
     <ClInclude Include="RayTracer\Ray.h" />
+    <ClInclude Include="Renderers\GPUProgramStrings.h" />
     <ClInclude Include="Renderers\OpenGL\extern\glcorearb.h" />
     <ClInclude Include="Renderers\OpenGL\extern\glext.h" />
     <ClInclude Include="Renderers\OpenGL\extern\khrplatform.h" />
@@ -180,6 +181,7 @@
     <ClCompile Include="Math\Vector4f.cpp" />
     <ClCompile Include="NewFileTemplate.cpp" />
     <ClCompile Include="RayTracer\Ray.cpp" />
+    <ClCompile Include="Renderers\GPUProgramStrings.cpp" />
     <ClCompile Include="Renderers\OpenGL\RendererOpenGL.cpp" />
     <ClCompile Include="Renderers\OpenGL\RendererOpenGLExtensions.cpp" />
     <ClCompile Include="Renderers\RendererManager.cpp" />

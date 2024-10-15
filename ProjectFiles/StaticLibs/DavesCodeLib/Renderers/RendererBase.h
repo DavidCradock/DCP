@@ -48,6 +48,15 @@ namespace DCL
 	/// I say "supposed" as there's nothing preventing us from messing around with group 0.
 	/// All methods accept a group number, which defaults to group 1.
 	/// I decided to use group numbers instead of names for performance reasons. (Faster access to an array via index rather than using a hashmap lookup for a named group)
+	///
+	/// Each renderer derived from this base class, upon initialisation create some default GPU program pairs (vertex and fragment programs) which are stored as text inside the executable.
+	/// These GPU programs are stored inside GPUProgramStrings.h/.cpp as strings.
+	/// There is a function which needs calling to setup these strings called initGPUProgramStrings()
+	/// Once the renderer is initialised, the programs are uploaded and ready for use.
+	/// They are used throughout DCL for common, standard rendering.
+	/// They are meant to be paired with ResourceVertexBuffer data types which are set with CResourceVertexBufferBase::setDataType()
+	/// Regardless of renderer, they are named the same so that they can be accessed and used regardless of which renderer is being used.
+	/// They simply match the available data types available in the vertex buffer resource.
 	class CRendererBase
 	{
 	public:

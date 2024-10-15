@@ -210,6 +210,9 @@
     <ClInclude Include="Renderers\Resources\ResourceFramebuffer.h">
       <Filter>Renderers\Resources</Filter>
     </ClInclude>
+    <ClInclude Include="Renderers\GPUProgramStrings.h">
+      <Filter>Renderers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArtificialIntelligence\GeneticAlgorithm.cpp">
@@ -348,6 +351,9 @@
     </ClCompile>
     <ClCompile Include="Renderers\Resources\ResourceFramebuffer.cpp">
       <Filter>Renderers\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderers\GPUProgramStrings.cpp">
+      <Filter>Renderers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
