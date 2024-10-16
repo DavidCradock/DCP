@@ -75,10 +75,9 @@ namespace DCL
 
 		/// \brief Vertex buffer data types that it holds.
 		///
-		/// Default type for a vertex buffer should be POS
+		/// Default type for a vertex buffer should be POS_COL
 		enum EVertexBufferDataType
 		{
-			POS,										///< Holds vertex position
 			POS_COL,									///< Holds vertex position and colour
 			POS_COL_TEXCOORD,							///< Holds vertex position, colour and texture coordinates
 			POS_COL_NORMAL_TEXCOORD,					///< Holds vertex position, colour, normal and texture coordinates
@@ -86,12 +85,6 @@ namespace DCL
 			POS_COL_NORMAL_TEXCOORD_TANGENT_BINORMAL	///< Holds vertex position, colour, normal, texture coordinates, tangent and binormal vectors.
 		};
 		EVertexBufferDataType eVertexBufferType;	///< Which data types the vertex buffer holds.
-
-		/// \brief A single vertex's data for the EVertexBufferDataType of POS
-		struct Vertex_POS
-		{
-			CVector3f position;		///< Vertex position
-		};
 
 		/// \brief A single vertex's data for the EVertexBufferDataType of POS_COL
 		struct Vertex_POS_COL
@@ -143,9 +136,8 @@ namespace DCL
 		/// Should be of enumeration CResourceVertexBufferBase::EVertexBufferDataType
 		/// 
 		/// This will both, remove all vertex data from memory as well as the GPU.
-		void setDataType(CResourceVertexBufferBase::EVertexBufferDataType vertexBufferDataType = CResourceVertexBufferBase::EVertexBufferDataType::POS);
+		void setDataType(CResourceVertexBufferBase::EVertexBufferDataType vertexBufferDataType = CResourceVertexBufferBase::EVertexBufferDataType::POS_COL);
 
-		std::vector<Vertex_POS> _mvecVertexData_POS;																			///< Vector holding each unique vertex's data for a specific vertex buffer data type
 		std::vector<Vertex_POS_COL> _mvecVertexData_POS_COL;																	///< Vector holding each unique vertex's data for a specific vertex buffer data type
 		std::vector<Vertex_POS_COL_TEXCOORD> _mvecVertexData_POS_COL_TEXCOORD;													///< Vector holding each unique vertex's data for a specific vertex buffer data type
 		std::vector<Vertex_POS_COL_NORMAL_TEXCOORD> _mvecVertexData_POS_COL_NORMAL_TEXCOORD;									///< Vector holding each unique vertex's data for a specific vertex buffer data type
@@ -159,12 +151,6 @@ namespace DCL
 		/// This only works if the data type of this vertex buffer is set to Vertex_POS_COL_NORMAL_TEXCOORD_TANGENT_BINORMAL, otherwise an exception occurs.
 		/// If no data exists, an exception occurs.
 		void computeTangentsAndBinormals(void);
-
-		/// \brief Adds a new unique vertex's data to system memory
-		///
-		/// Used when the vertex data type is set to CResourceVertexBufferBase::EVertexBufferDataType::POS
-		/// If the vertex buffer type is not set to CResourceVertexBufferBase::EVertexBufferDataType::POS, an exception occurs
-		void addVertex(const CVector3f& position);
 
 		/// \brief Adds a new unique vertex's data to system memory
 		///

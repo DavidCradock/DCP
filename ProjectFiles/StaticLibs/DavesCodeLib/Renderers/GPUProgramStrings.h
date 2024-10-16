@@ -9,7 +9,6 @@
 /// They are meant to be paired with ResourceVertexBuffer data types which are set with CResourceVertexBufferBase::setDataType()
 /// Regardless of renderer, they are named the same so that they can be accessed and used regardless of which renderer is being used.
 /// Here are their names and a description of what each one is for...
-/// gStrGPU_POS,										// Vertex buffer data type which holds vertex position
 /// gStrGPU_POS_COL,									// Vertex buffer data type which holds vertex position and colour
 ///	gStrGPU_POS_COL_TEXCOORD,							// Vertex buffer data type which holds vertex position, colour and texture coordinates
 ///	gStrGPU_POS_COL_NORMAL_TEXCOORD,					// Vertex buffer data type which holds vertex position, colour, normal and texture coordinates
@@ -26,12 +25,11 @@ namespace DCL
 	/// \brief Sets up the various GPU program strings with their source code
 	void initGPUProgramStrings(void);
 
-	extern std::string gStrGPU_POS[2];										// Vertex buffer data type which holds vertex position
-	extern std::string gStrGPU_POS_COL[2];									// Vertex buffer data type which holds vertex position and colour
-	extern std::string gStrGPU_POS_COL_TEXCOORD[2];							// Vertex buffer data type which holds vertex position, colour and texture coordinates
-	extern std::string gStrGPU_POS_COL_NORMAL_TEXCOORD[2];					// Vertex buffer data type which holds vertex position, colour, normal and texture coordinates
-	extern std::string gStrGPU_POS_COL_NORMAL_TEXCOORDx2[2];				// Vertex buffer data type which holds vertex position, colour, normal and two sets of texture coordinates
-	extern std::string gStrGPU_POS_COL_NORMAL_TEXCOORD_TANGENT_BINORMAL[2];	// Vertex buffer data type which holds vertex position, colour, normal, texture coordinates, tangent and binormal vectors.
+	extern std::string strGPU_POS_COL[2];									// Vertex buffer data type which holds vertex position and colour
+	extern std::string strGPU_POS_COL_TEXCOORD[2];							// Vertex buffer data type which holds vertex position, colour and texture coordinates
+	extern std::string strGPU_POS_COL_NORMAL_TEXCOORD[2];					// Vertex buffer data type which holds vertex position, colour, normal and texture coordinates
+	extern std::string strGPU_POS_COL_NORMAL_TEXCOORDx2[2];					// Vertex buffer data type which holds vertex position, colour, normal and two sets of texture coordinates
+	extern std::string strGPU_POS_COL_NORMAL_TEXCOORD_TANGENT_BINORMAL[2];	// Vertex buffer data type which holds vertex position, colour, normal, texture coordinates, tangent and binormal vectors.
 
 }	// namespace DCL
 

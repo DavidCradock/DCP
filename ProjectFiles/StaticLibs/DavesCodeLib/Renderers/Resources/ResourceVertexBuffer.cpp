@@ -11,7 +11,7 @@ namespace DCL
 	***********************************************************************************************************************************************************************/
 	CResourceVertexBufferBase::CResourceVertexBufferBase()
 	{
-		eVertexBufferType = CResourceVertexBufferBase::EVertexBufferDataType::POS;
+		eVertexBufferType = CResourceVertexBufferBase::EVertexBufferDataType::POS_COL;
 	}
 
 	void CResourceVertexBufferBase::setDataType(CResourceVertexBufferBase::EVertexBufferDataType vertexBufferDataType)
@@ -49,14 +49,6 @@ namespace DCL
 			_mvecVertexData_POS_COL_NORMAL_TEXCOORD_TANGENT_BINORMAL[_mvecIndices[iIndex]].binormal.y = f * (-deltaUV2.x * edge1.y + deltaUV1.x * edge2.y);
 			_mvecVertexData_POS_COL_NORMAL_TEXCOORD_TANGENT_BINORMAL[_mvecIndices[iIndex]].binormal.z = f * (-deltaUV2.x * edge1.z + deltaUV1.x * edge2.z);
 		}
-	}
-
-	void CResourceVertexBufferBase::addVertex(const CVector3f& position)
-	{
-		ThrowIfFalse(bool(CResourceVertexBufferBase::EVertexBufferDataType::POS == eVertexBufferType), "Vertex buffer type not correctly set to EVertexBufferDataType::POS");
-		Vertex_POS vertex;
-		vertex.position = position;
-		_mvecVertexData_POS.push_back(vertex);
 	}
 
 	void CResourceVertexBufferBase::addVertex(const CVector3f& position, const CColourf& colour)
@@ -110,7 +102,6 @@ namespace DCL
 
 	void CResourceVertexBufferBase::freeVertexData(void)
 	{
-		_mvecVertexData_POS.clear();
 		_mvecVertexData_POS_COL.clear();
 		_mvecVertexData_POS_COL_TEXCOORD.clear();
 		_mvecVertexData_POS_COL_NORMAL_TEXCOORD.clear();
@@ -138,9 +129,6 @@ namespace DCL
 	{
 		switch (eVertexBufferType)
 		{
-		case CResourceVertexBufferBase::EVertexBufferDataType::POS:
-			return _mvecVertexData_POS.size();
-			break;
 		case CResourceVertexBufferBase::EVertexBufferDataType::POS_COL:
 			return _mvecVertexData_POS_COL.size();
 			break;
@@ -329,35 +317,6 @@ namespace DCL
 
 		switch (eVertexBufferType)
 		{
-		case CResourceVertexBufferBase::EVertexBufferDataType::POS:
-			if (!_mvecVertexData_POS.size())
-				return;
-			if (!_mvecIndices.size())
-				return;
-			if (!prim->_mVertexBufferObject)
-				glGenBuffers(1, &prim->_mVertexBufferObject);
-			if (!prim->_mVertexArrayObject)
-				glGenVertexArrays(1, &prim->_mVertexArrayObject);
-			if (!prim->_mElementBufferObject)
-				glGenBuffers(1, &prim->_mElementBufferObject);
-			glBindVertexArray(prim->_mVertexArrayObject);
-
-			// Bind VBO and upload vertex data in first two lines, then indicies in next two
-			glBindBuffer(GL_ARRAY_BUFFER, prim->_mVertexBufferObject);
-			glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex_POS) * _mvecVertexData_POS.size(), &_mvecVertexData_POS[0], GL_STATIC_DRAW);
-			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, prim->_mElementBufferObject);
-			glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * _mvecIndices.size(), &_mvecIndices[0], GL_STATIC_DRAW);
-
-			// Position
-			glVertexAttribPointer(0,			// Index. Specifies the index in the shader of the generic vertex attribute to be modified.
-				3,								// Size. Specifies the number of components per generic vertex attribute. Must be 1, 2, 3, 4.
-				GL_FLOAT,						// Type. Specifies the data type of each component in the array. The symbolic constants GL_HALF_FLOAT, GL_FLOAT, GL_DOUBLE, GL_FIXED, GL_INT_2_10_10_10_REV, GL_UNSIGNED_INT_2_10_10_10_REV, GL_UNSIGNED_INT_10F_11F_11F_REV, GL_BYTE, GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_INT and GL_UNSIGNED_INT are accepted
-				GL_FALSE,						// Normalized. Specifies whether fixed-point data values should be normalized (GL_TRUE) or converted directly as fixed-point values (GL_FALSE) when they are accessed.
-				sizeof(Vertex_POS),				// Stride. Specifies the byte offset between consecutive generic vertex attributes. If stride is 0, the generic vertex attributes are understood to be tightly packed in the array. The initial value is 0.
-				(void*)0);						// Pointer. Specifies an offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target. The initial value is 0.
-			glEnableVertexAttribArray(0);
-
-			break;
 		case CResourceVertexBufferBase::EVertexBufferDataType::POS_COL:
 			if (!_mvecVertexData_POS_COL.size())
 				return;
@@ -673,10 +632,6 @@ namespace DCL
 	{
 		switch (eVertexBufferType)
 		{
-		case CResourceVertexBufferBase::EVertexBufferDataType::POS:
-			if (!_mvecVertexData_POS.size())
-				return;
-			break;
 		case CResourceVertexBufferBase::EVertexBufferDataType::POS_COL:
 			if (!_mvecVertexData_POS_COL.size())
 				return;
