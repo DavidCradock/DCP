@@ -146,9 +146,12 @@ namespace DCL
 
 		// Setup default vertex/fragment programs
 		initGPUProgramStrings();
-		CResourceGPUProgramsBase* resGPUProg = addGPUPrograms("DCL_POS_VERTEX", 0);
-		resGPUProg->setProgramSourceFromMemory(strGPU_POS[0], strGPU_POS[1]);
-		resGPUProg->upload();
+		for (size_t i = 0; i < gVecDefaultGPUPrograms.size(); i++)
+		{
+			CResourceGPUProgramsBase* resGPUProg = addGPUPrograms(gVecDefaultGPUPrograms[i].strResourceName, 0);
+			resGPUProg->setProgramSourceFromMemory(gVecDefaultGPUPrograms[i].strVertexProgramSource, gVecDefaultGPUPrograms[i].strFragmentProgramSource);
+			resGPUProg->upload();
+		}
 	}
 
 	void CRendererOpenGL::shutdown(void)

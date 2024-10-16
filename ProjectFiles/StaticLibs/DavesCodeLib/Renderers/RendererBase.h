@@ -56,6 +56,13 @@ namespace DCL
 	/// They are used throughout DCL for common, standard rendering.
 	/// They are meant to be paired with ResourceVertexBuffer data types which are set with CResourceVertexBufferBase::setDataType()
 	/// Regardless of renderer, they are named the same so that they can be accessed and used regardless of which renderer is being used.
+	/// The names of these GPU programs can be found in GPUProgramStrings.h/.cpp inside a standard vector of SDefaultGPUPrograms structures holding each CResourceGPUPrograms's name and sourcecode in gVecDefaultGPUPrograms.
+	/// For example...
+	/// \code
+	/// gVecDefaultGPUPrograms[0].strResourceName;			// Holds the resource name of the GPU program resource added to a renderer with CRendererBase::addGPUPrograms()
+	/// gVecDefaultGPUPrograms[0].strVertexProgramSource;	// Holds the vertex program sourcecode of the GPU program resource added to a renderer with CRendererBase::addGPUPrograms()
+	/// gVecDefaultGPUPrograms[0].strFragmentProgramSource; // Holds the fragment program sourcecode of the GPU program resource added to a renderer with CRendererBase::addGPUPrograms()
+	/// \endcode
 	/// They simply match the available data types available in the vertex buffer resource.
 	class CRendererBase
 	{
